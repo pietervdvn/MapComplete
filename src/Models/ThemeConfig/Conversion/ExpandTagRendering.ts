@@ -59,10 +59,11 @@ export class ExpandTagRendering extends Conversion<
     }
 
     public convert(
-        spec: string | any,
+        spec: string | { "builtin": string | string[] } | (TagRenderingConfigJson),
         ctx: ConversionContext
     ): QuestionableTagRenderingConfigJson[] {
-        const trs = this.convertOnce(spec, ctx)?.map((tr) =>
+
+        const trs = this.convertOnce(<any>spec, ctx)?.map((tr) =>
             this.pruneMappings<TagRenderingConfigJson & { id: string }>(tr, ctx)
         )
         if (!Array.isArray(trs)) {
@@ -123,7 +124,7 @@ export class ExpandTagRendering extends Conversion<
                 }
                 return {
                     ...mapping,
-                    if: newIf.asJson(),
+                    if: newIf.asJson()
                 }
             })
         const after = newMappings?.length ?? 0
@@ -136,7 +137,7 @@ export class ExpandTagRendering extends Conversion<
         }
         const tr = {
             ...tagRendering,
-            mappings: newMappings,
+            mappings: newMappings
         }
         delete tr["strict"]
         return tr
@@ -155,17 +156,17 @@ export class ExpandTagRendering extends Conversion<
         for (const tagRenderingConfigJson of direct) {
             const nm: string | string[] | undefined = tagRenderingConfigJson["builtin"]
             if (nm !== undefined) {
-                let indirect: TagRenderingConfigJson[]
+                let indirect: (TagRenderingConfigJson & { id: string })[]
                 if (typeof nm === "string") {
                     indirect = this.lookup(nm, ctx)
                 } else {
                     indirect = [].concat(...nm.map((n) => this.lookup(n, ctx)))
                 }
                 for (let foundTr of indirect) {
-                    foundTr = Utils.Clone<any>(foundTr)
+                    foundTr = Utils.Clone(foundTr)
                     ctx.MergeObjectsForOverride(tagRenderingConfigJson["override"] ?? {}, foundTr)
                     foundTr["id"] = tagRenderingConfigJson["id"] ?? foundTr["id"]
-                    result.push(<any>foundTr)
+                    result.push(foundTr)
                 }
             } else {
                 result.push(tagRenderingConfigJson)
@@ -248,10 +249,14 @@ export class ExpandTagRendering extends Conversion<
     }
 
     private convertOnce(
-        tr: string | any,
+        tr: string | { "builtin": string } | TagRenderingConfigJson,
         ctx: ConversionContext
-    ): (TagRenderingConfigJson & { id: string })[] {
+    ): TagRenderingConfigJson[] {
         const state = this._state
+
+        if (tr === undefined) {
+            return []
+        }
 
         if (typeof tr === "string") {
             if (this._state.tagRenderings !== null) {
@@ -268,25 +273,25 @@ export class ExpandTagRendering extends Conversion<
                 ctx.warn(
                     `A literal rendering was detected: ${tr}
                       Did you perhaps forgot to add a layer name as 'layername.${tr}'? ` +
-                        Array.from(state.sharedLayers.keys()).join(", ")
+                    Array.from(state.sharedLayers.keys()).join(", ")
                 )
             }
 
             if (this._options?.noHardcodedStrings && this._state?.sharedLayers?.size > 0) {
                 ctx.err(
                     "Detected an invocation to a builtin tagRendering, but this tagrendering was not found: " +
-                        tr +
-                        " \n    Did you perhaps forget to add the layer as prefix, such as `icons." +
-                        tr +
-                        "`? "
+                    tr +
+                    " \n    Did you perhaps forget to add the layer as prefix, such as `icons." +
+                    tr +
+                    "`? "
                 )
             }
 
             return [
-                <any>{
+                <TagRenderingConfigJson & { id: string }>{
                     render: tr,
-                    id: tr.replace(/[^a-zA-Z0-9]/g, ""),
-                },
+                    id: tr.replace(/[^a-zA-Z0-9]/g, "")
+                }
             ]
         }
 
@@ -311,9 +316,9 @@ export class ExpandTagRendering extends Conversion<
                 }
                 ctx.err(
                     "An object calling a builtin can only have keys `builtin` or `override`, but a key with name `" +
-                        key +
-                        "` was found. This won't be picked up! The full object is: " +
-                        JSON.stringify(tr)
+                    key +
+                    "` was found. This won't be picked up! The full object is: " +
+                    JSON.stringify(tr)
                 )
             }
 
@@ -340,19 +345,19 @@ export class ExpandTagRendering extends Conversion<
                             if (state.sharedLayers.size === 0) {
                                 ctx.warn(
                                     "BOOTSTRAPPING. Rerun generate layeroverview. While reusing tagrendering: " +
-                                        name +
-                                        ": layer " +
-                                        layerName +
-                                        " not found for now, but ignoring as this is a bootstrapping run. "
+                                    name +
+                                    ": layer " +
+                                    layerName +
+                                    " not found for now, but ignoring as this is a bootstrapping run. "
                                 )
                             } else {
                                 ctx.err(
                                     ": While reusing tagrendering: " +
-                                        name +
-                                        ": layer " +
-                                        layerName +
-                                        " not found. Maybe you meant one of " +
-                                        candidates.slice(0, 3).join(", ")
+                                    name +
+                                    ": layer " +
+                                    layerName +
+                                    " not found. Maybe you meant one of " +
+                                    candidates.slice(0, 3).join(", ")
                                 )
                             }
                             continue
@@ -364,15 +369,15 @@ export class ExpandTagRendering extends Conversion<
                     candidates = Utils.sortedByLevenshteinDistance(name, candidates, (i) => i)
                     ctx.err(
                         "The tagRendering with identifier " +
-                            name +
-                            " was not found.\n\tDid you mean one of " +
-                            candidates.join(", ") +
-                            "?\n(Hint: did you add a new label and are you trying to use this label at the same time? Run 'reset:layeroverview' first"
+                        name +
+                        " was not found.\n\tDid you mean one of " +
+                        candidates.join(", ") +
+                        "?\n(Hint: did you add a new label and are you trying to use this label at the same time? Run 'reset:layeroverview' first"
                     )
                     continue
                 }
                 for (let foundTr of lookup) {
-                    foundTr = Utils.Clone<any>(foundTr)
+                    foundTr = Utils.Clone(foundTr)
                     ctx.MergeObjectsForOverride(tr["override"] ?? {}, foundTr)
                     if (names.length == 1) {
                         foundTr["id"] = tr["id"] ?? foundTr["id"]
@@ -383,6 +388,6 @@ export class ExpandTagRendering extends Conversion<
             return trs
         }
 
-        return [tr]
+        return [<TagRenderingConfigJson & { id: string }>tr]
     }
 }
