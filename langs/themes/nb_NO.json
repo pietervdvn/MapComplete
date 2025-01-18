@@ -412,26 +412,14 @@
     },
     "pets": {
         "layers": {
-            "1": {
+            "3": {
                 "override": {
                     "name": "Hundevennlige spisesteder"
                 }
             },
-            "2": {
+            "5": {
                 "override": {
-                    "name": "Hundevennlige butikker",
-                    "title": {
-                        "render": "Hundevennlige butikker"
-                    }
-                }
-            },
-            "6": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "title": "hundevennlig butikk"
-                        }
-                    }
+                    "name": "Hundevennlige butikker"
                 }
             }
         }

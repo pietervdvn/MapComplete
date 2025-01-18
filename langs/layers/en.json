@@ -12702,6 +12702,20 @@
                 }
             },
             "show_crosshair": {
+                "mappings": {
+                    "0": {
+                        "then": "Show a crosshair in the center of the map when zoomed in above level 17"
+                    },
+                    "1": {
+                        "then": "Do not show a crosshair in the center of the map"
+                    },
+                    "2": {
+                        "then": "Do not show a crosshair in the center of the map"
+                    },
+                    "3": {
+                        "then": "Always show a crosshair in the center of the map"
+                    }
+                },
                 "question": "Should a crosshair be shown in the center of the display?",
                 "questionHint": "This can help to accurately position a new element"
             },
@@ -12814,6 +12828,9 @@
                         "then": "You have contributed to translating MapComplete with {_translation_contributions} commits! That's awesome!"
                     }
                 }
+            },
+            "translations-title": {
+                "render": "<h3>Translating MapComplete</h3>"
             },
             "verified-mastodon": {
                 "mappings": {

@@ -517,17 +517,14 @@
     },
     "pets": {
         "layers": {
-            "1": {
+            "3": {
                 "override": {
                     "name": "Ristoranti che accettano i cani"
                 }
             },
-            "2": {
+            "5": {
                 "override": {
-                    "name": "Negozi che accettano i cani",
-                    "title": {
-                        "render": "Negozi che accettano i cani"
-                    }
+                    "name": "Negozi che accettano i cani"
                 }
             }
         },

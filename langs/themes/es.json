@@ -1078,27 +1078,14 @@
     "pets": {
         "description": "En este mapa, encontrarás varios lugares interesantes para tus mascotas: veterinarios, parques para perros, tiendas de mascotas, restaurantes que admiten perros...",
         "layers": {
-            "1": {
+            "3": {
                 "override": {
                     "name": "Restaurantes que admiten perros"
                 }
             },
-            "2": {
+            "5": {
                 "override": {
-                    "name": "Tiendas que admiten perros",
-                    "title": {
-                        "render": "Tiendas que admiten perros"
-                    }
-                }
-            },
-            "6": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "description": "Una tienda donde puedes llevar a un perro casi a todas partes",
-                            "title": "tienda que admite perros"
-                        }
-                    }
+                    "name": "Tiendas que admiten perros"
                 }
             }
         },

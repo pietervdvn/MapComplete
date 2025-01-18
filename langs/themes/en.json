@@ -1087,27 +1087,14 @@
     "pets": {
         "description": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
         "layers": {
-            "1": {
+            "3": {
                 "override": {
                     "name": "Dog friendly eateries"
                 }
             },
-            "2": {
+            "5": {
                 "override": {
-                    "name": "Dog-friendly shops",
-                    "title": {
-                        "render": "Dog-friendly shops"
-                    }
-                }
-            },
-            "6": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "description": "A shop where you can bring a dog almost everywhere",
-                            "title": "dog-friendly shop"
-                        }
-                    }
+                    "name": "Dog-friendly shops"
                 }
             }
         },
