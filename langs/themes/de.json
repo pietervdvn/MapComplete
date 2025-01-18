@@ -1087,27 +1087,14 @@
     "pets": {
         "description": "Diese Karte zeigt interessante Orte für Haustierbesitzer: Tierärzte, Hundeparks, Tiergeschäfte, hundefreundliche Restaurants, ...",
         "layers": {
-            "1": {
+            "3": {
                 "override": {
                     "name": "Hundefreundliche Restaurants"
                 }
             },
-            "2": {
+            "5": {
                 "override": {
-                    "name": "Hundefreundliche Geschäfte",
-                    "title": {
-                        "render": "Hundefreundliche Geschäfte"
-                    }
-                }
-            },
-            "6": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "description": "Ein Geschäft, in das man Hunde fast überall mitnehmen kann",
-                            "title": "hundefreundliches Geschäft"
-                        }
-                    }
+                    "name": "Hundefreundliche Geschäfte"
                 }
             }
         },

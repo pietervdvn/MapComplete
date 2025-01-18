@@ -655,27 +655,14 @@
     "pets": {
         "description": "Hundsteder",
         "layers": {
-            "1": {
+            "3": {
                 "override": {
                     "name": "Hundevenlige madsteder"
                 }
             },
-            "2": {
+            "5": {
                 "override": {
-                    "name": "hundevenlig butik",
-                    "title": {
-                        "render": "hundevenlig butik"
-                    }
-                }
-            },
-            "6": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "description": "En butik hvor man kan tage en hund med n&aelig;sten overalt",
-                            "title": "EN hundevenlig butik"
-                        }
-                    }
+                    "name": "hundevenlig butik"
                 }
             }
         },

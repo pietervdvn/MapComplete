@@ -927,27 +927,14 @@
     "pets": {
         "description": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc.",
         "layers": {
-            "1": {
+            "3": {
                 "override": {
                     "name": "Restaurants acceptant les chiens"
                 }
             },
-            "2": {
+            "5": {
                 "override": {
-                    "name": "Magasins acceptant les chiens",
-                    "title": {
-                        "render": "Magasins acceptant les chiens"
-                    }
-                }
-            },
-            "6": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "description": "Un magasin où vous pouvez amener votre chien presque partout",
-                            "title": "magasin acceptant les chiens"
-                        }
-                    }
+                    "name": "Magasins acceptant les chiens"
                 }
             }
         },

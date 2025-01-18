@@ -376,15 +376,6 @@
         "title": "Személyes téma"
     },
     "pets": {
-        "layers": {
-            "2": {
-                "override": {
-                    "title": {
-                        "render": "Kutyabarát üzletek"
-                    }
-                }
-            }
-        },
         "title": "Állatorvosok, kutyafuttatók és hasonló, kedvtelésből tartott állatoknak szóló létesítmények"
     },
     "playgrounds": {
