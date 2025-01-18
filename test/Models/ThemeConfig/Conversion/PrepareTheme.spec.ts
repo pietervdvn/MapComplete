@@ -68,7 +68,7 @@ describe("PrepareTheme", () => {
             tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
             sharedLayers,
             publicLayers: new Set<string>(),
-            tagRenderingOrder: []
+            tagRenderingOrder: [],
         })
         let themeConfigJsonPrepared = prepareStep.convertStrict(theme, ConversionContext.test())
         const themeConfig = new ThemeConfig(themeConfigJsonPrepared)
@@ -151,7 +151,7 @@ describe("PrepareTheme", () => {
             sharedLayers,
             tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
             publicLayers: new Set<string>(),
-            tagRenderingOrder: []
+            tagRenderingOrder: [],
         }
         const layout: ThemeConfigJson = {
             description: "A testing theme",

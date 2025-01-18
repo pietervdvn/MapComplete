@@ -8,10 +8,10 @@ export class AllSharedLayers {
     public static getSharedLayersConfigs(): Map<string, LayerConfigJson> {
         const sharedLayers = new Map<string, LayerConfigJson>()
         for (const layer of known_layers["layers"]) {
-            if(layer.id === undefined){
+            if (layer.id === undefined) {
                 continue
             }
-            sharedLayers.set(layer.id, <any> layer)
+            sharedLayers.set(layer.id, <any>layer)
         }
 
         return sharedLayers

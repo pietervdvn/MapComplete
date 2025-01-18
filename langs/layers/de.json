@@ -9440,6 +9440,24 @@
             "render": "Schule <i>{name}</i>"
         }
     },
+    "scouting_group": {
+        "name": "Pfadfinder:innenstämme",
+        "presets": {
+            "0": {
+                "title": "Pfadfinder:innenstamm"
+            }
+        },
+        "tagRenderings": {
+            "association": {
+                "question": "Zu welchem Verband/Bund gehört {name}",
+                "render": "Dieser Stamm ist im Verband {brand}"
+            },
+            "name": {
+                "question": "Was ist der Stammesname?",
+                "render": "Dieser Stamm heißt {name}"
+            }
+        }
+    },
     "search": {
         "description": "Priorisierte Ebene, die Suchergebnissen anzeigt",
         "tagRenderings": {
@@ -10091,6 +10109,12 @@
             },
             "1": {
                 "title": "einen Sportplatz"
+            },
+            "2": {
+                "title": "einen Skatepark"
+            },
+            "3": {
+                "title": "einen Reitplatz"
             }
         },
         "tagRenderings": {

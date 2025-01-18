@@ -4486,6 +4486,26 @@
                     "question": "Is this drinking water point available all year round?"
                 }
             },
+            "temperature-cold": {
+                "mappings": {
+                    "0": {
+                        "then": "Ice-cold water is provided here"
+                    },
+                    "1": {
+                        "then": "Actively cooled water is available here"
+                    },
+                    "2": {
+                        "then": "Ambient temperature water (without active cooling or heating) is available here"
+                    },
+                    "3": {
+                        "then": "Warmed water is provided here; the water is not dangerously hot"
+                    },
+                    "4": {
+                        "then": "Hot water is provided here"
+                    }
+                },
+                "question": "Is cold water available here?"
+            },
             "type": {
                 "mappings": {
                     "0": {
@@ -9572,6 +9592,28 @@
             "render": "School <i>{name}</i>"
         }
     },
+    "scouting_group": {
+        "description": "A map showing scouting groups.",
+        "name": "Scouting groups",
+        "presets": {
+            "0": {
+                "title": "scouting group"
+            }
+        },
+        "tagRenderings": {
+            "association": {
+                "question": "To which scout association does {name} belong?",
+                "render": "The scout association of this group is {brand}"
+            },
+            "name": {
+                "question": "What is the name of this group?",
+                "render": "The name of this group is {name}"
+            }
+        },
+        "title": {
+            "render": "{name}"
+        }
+    },
     "search": {
         "description": "Priviliged layer showing the search results",
         "tagRenderings": {
@@ -9757,6 +9799,11 @@
                     "+mappings": {
                         "0": {
                             "then": "Bicycle rental shop"
+                        }
+                    },
+                    "mappings+": {
+                        "0": {
+                            "then": "This shop is no longer used. It is vacant"
                         }
                     },
                     "question": "What kind of shop is this?",
@@ -10234,6 +10281,12 @@
             },
             "1": {
                 "title": "a sport pitch"
+            },
+            "2": {
+                "title": "a skatepark"
+            },
+            "3": {
+                "title": "a horse riding arena"
             }
         },
         "tagRenderings": {

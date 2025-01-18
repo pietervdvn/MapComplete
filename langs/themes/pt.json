@@ -34,7 +34,7 @@
     },
     "trees": {
         "description": "Mapeie todas as árvores!",
-        "title": "Árvores",
-        "shortDescription": "Mapeie todas as árvores"
+        "shortDescription": "Mapeie todas as árvores",
+        "title": "Árvores"
     }
 }

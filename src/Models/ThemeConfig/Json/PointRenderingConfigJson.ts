@@ -70,16 +70,18 @@ export default interface PointRenderingConfigJson {
      * They will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.
      *
      * Note: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle
+     * Alternatively, this can reuse a _tagRendering_ from another layer, e.g. one of the 'icons'-tagrenderings.
+     * See ExpandIconBadges on how this is handled
      * group: hidden
      */
-    iconBadges?: {
+    iconBadges?: (string | {
         if: TagConfigJson
         /**
          * Badge to show
          * Type: icon
          */
         then: string | MinimalTagRenderingConfigJson
-    }[]
+    })[]
 
     /**
      * question: What size should the marker be on the map?

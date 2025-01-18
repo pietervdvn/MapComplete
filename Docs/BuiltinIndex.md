@@ -33,6 +33,7 @@
  - cafe_pub
  - car_rental
  - caravansites
+ - charge_point
  - charging_station
  - cinema
  - climbing_area
@@ -326,6 +327,7 @@
  - police
  - postoffices
  - school
+ - scouting_group
  - stripclub
  - tool_library
  - tourism_accomodation
@@ -334,6 +336,7 @@
 
              - assisted_repair
  - hackerspace
+ - scouting_group
             
             ### facebook
 
@@ -489,13 +492,35 @@
             ### questions
 
              - caravansites
+ - charge_point
  - charging_station
  - etymology
  - favourite
  - hackerspace
  - play_forest
  - playground
+ - scouting_group
  - sport_pitch
+            
+            ### charging_station.capacity
+
+             - charge_point
+            
+            ### charging_station.Available_charging_stations (generated)
+
+             - charge_point
+            
+            ### charging_station.plugs-amount
+
+             - charge_point
+            
+            ### charging_station.questions-technical
+
+             - charge_point
+            
+            ### charging_station.technical
+
+             - charge_point
             
             ### maxstay
 

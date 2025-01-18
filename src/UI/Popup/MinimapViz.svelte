@@ -50,7 +50,7 @@
       }
       return features
     },
-    [tagSource],
+    [tagSource]
   )
 
   let mlmap = new UIEventSource(undefined)
@@ -76,9 +76,8 @@
     mlmap,
     new StaticFeatureSource(featuresToShow),
     state.theme.layers,
-    { zoomToFeatures: true },
+    { zoomToFeatures: true }
   )
-
 </script>
 
 <div class="h-40 rounded" style="overflow: hidden; pointer-events: none;">

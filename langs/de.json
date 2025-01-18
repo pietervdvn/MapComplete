@@ -616,28 +616,28 @@
         "title": "MapComplete"
     },
     "inspector": {
-        "menu": "Überprüfe einen Beitragenden",
+        "aggregateView": "Zusammenfassen",
+        "answeredCountTimes": "{count} mal beantwortet",
         "backToIndex": "Zurück zur Kartenübersicht",
         "createdBy": "Erstellt von {contributor}",
+        "earlierInspected": "Sieh dir Mitwirkende an, die du bereits überprüft hast",
         "images": "Erstellte Bilder",
         "load": "Änderungen für Kartenbereich prüfen",
         "mapView": "Karte",
+        "menu": "Überprüfe einen Beitragenden",
         "onlyGeometry": "Nur geometrische Veränderungen",
         "previouslySpied": {
+            "addLabel": "Ein Label hinzufügen",
+            "allChanges": "Lade alle Änderungen für Benutzer mit diesem Label",
+            "label": "Label",
+            "noLabels": "Keine Labels",
             "remove": "Entfernen",
             "time": "Zeitpunkt der letzten Überprüfung",
             "title": "Zuvor geprüfte Beitragende",
-            "username": "Benutzername",
-            "allChanges": "Lade alle Änderungen für Benutzer mit diesem Label",
-            "addLabel": "Ein Label hinzufügen",
-            "label": "Label",
-            "noLabels": "Keine Labels"
+            "username": "Benutzername"
         },
         "tableView": "Übersicht",
-        "answeredCountTimes": "{count} mal beantwortet",
-        "earlierInspected": "Sieh dir Mitwirkende an, die du bereits überprüft hast",
-        "title": "Überprüfe einen Mitwirkenden",
-        "aggregateView": "Zusammenfassen"
+        "title": "Überprüfe einen Mitwirkenden"
     },
     "move": {
         "cancel": "Einen anderen Grund auswählen",

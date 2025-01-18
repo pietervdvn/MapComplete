@@ -712,6 +712,10 @@
           "then": "<b>caravansites</b> (builtin) - camper sites"
         },
         {
+          "if": "value=charge_point",
+          "then": "<b>charge_point</b> (builtin) - Layer showing individual charge points within a charging station"
+        },
+        {
           "if": "value=charging_station",
           "then": "<b>charging_station</b> (builtin) - A charging station"
         },
@@ -1000,6 +1004,14 @@
           "then": "<b>note</b> (builtin) - This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)"
         },
         {
+          "if": "value=nsi_brand",
+          "then": "<b>nsi_brand</b> (builtin) - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
+          "if": "value=nsi_operator",
+          "then": "<b>nsi_operator</b> (builtin) - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
           "if": "value=observation_tower",
           "then": "<b>observation_tower</b> (builtin) - Towers with a panoramic view"
         },
@@ -1102,6 +1114,10 @@
         {
           "if": "value=school",
           "then": "<b>school</b> (builtin) - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+        },
+        {
+          "if": "value=scouting_group",
+          "then": "<b>scouting_group</b> (builtin) - A map showing scouting groups."
         },
         {
           "if": "value=search",
@@ -13428,6 +13444,10 @@
           "then": "caravansites - camper sites"
         },
         {
+          "if": "value=charge_point",
+          "then": "charge_point - Layer showing individual charge points within a charging station"
+        },
+        {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
         },
@@ -13716,6 +13736,14 @@
           "then": "note - This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)"
         },
         {
+          "if": "value=nsi_brand",
+          "then": "nsi_brand - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
+          "if": "value=nsi_operator",
+          "then": "nsi_operator - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
           "if": "value=observation_tower",
           "then": "observation_tower - Towers with a panoramic view"
         },
@@ -13818,6 +13846,10 @@
         {
           "if": "value=school",
           "then": "school - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+        },
+        {
+          "if": "value=scouting_group",
+          "then": "scouting_group - A map showing scouting groups."
         },
         {
           "if": "value=search",
@@ -35180,6 +35212,10 @@
           "then": "caravansites - camper sites"
         },
         {
+          "if": "value=charge_point",
+          "then": "charge_point - Layer showing individual charge points within a charging station"
+        },
+        {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
         },
@@ -35468,6 +35504,14 @@
           "then": "note - This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)"
         },
         {
+          "if": "value=nsi_brand",
+          "then": "nsi_brand - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
+          "if": "value=nsi_operator",
+          "then": "nsi_operator - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
           "if": "value=observation_tower",
           "then": "observation_tower - Towers with a panoramic view"
         },
@@ -35570,6 +35614,10 @@
         {
           "if": "value=school",
           "then": "school - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+        },
+        {
+          "if": "value=scouting_group",
+          "then": "scouting_group - A map showing scouting groups."
         },
         {
           "if": "value=search",

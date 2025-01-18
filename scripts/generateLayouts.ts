@@ -9,10 +9,7 @@ import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
 import SpecialVisualizations from "../src/UI/SpecialVisualizations"
 import Constants from "../src/Models/Constants"
-import {
-    AvailableRasterLayers,
-    RasterLayerPolygon,
-} from "../src/Models/RasterLayers"
+import { AvailableRasterLayers, RasterLayerPolygon } from "../src/Models/RasterLayers"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
 import * as eli from "../public/assets/data/editor-layer-index.json"
 import * as layers_global from "../src/assets/global-raster-layers.json"
@@ -640,9 +637,9 @@ class GenerateLayouts extends Script {
         if (theme !== undefined) {
             console.warn("Only generating layout " + theme)
         }
-        const paths = ScriptUtils.readDirRecSync("./public/assets/generated/themes/",1)
+        const paths = ScriptUtils.readDirRecSync("./public/assets/generated/themes/", 1)
         for (const i in paths) {
-            const layoutConfigJson = <ThemeConfigJson> JSON.parse(readFileSync(paths[i], "utf8"))
+            const layoutConfigJson = <ThemeConfigJson>JSON.parse(readFileSync(paths[i], "utf8"))
             if (theme !== undefined && layoutConfigJson.id !== theme) {
                 continue
             }

@@ -13,7 +13,7 @@ import TagInfo from "../src/Logic/Web/TagInfo"
 class Utilities {
     static mapValues<X extends string | number, T, TOut>(
         record: Record<X, T>,
-        f: (t: T) => TOut,
+        f: (t: T) => TOut
     ): Record<X, TOut> {
         const newR = <Record<X, TOut>>{}
         for (const x in record) {
@@ -77,10 +77,10 @@ class GenerateStats extends Script {
                             const count = tagData.data.find((item) => item.type === "all").count
                             tagTotal.get(key).set(value, count)
                             console.log(key + "=" + value, "-->", count)
-                        }),
+                        })
                     )
                 }
-            }),
+            })
         )
         writeFileSync(
             "./src/assets/key_totals.json",
@@ -92,8 +92,8 @@ class GenerateStats extends Script {
                     tags: Utils.MapToObj(tagTotal, (v) => Utils.MapToObj(v, (t) => t)),
                 },
                 null,
-                "  ",
-            ),
+                "  "
+            )
         )
     }
 
@@ -147,21 +147,16 @@ class GenerateStats extends Script {
                 Object.keys(allBrands).length,
                 " previously loaded " + type,
                 "from",
-                path,
+                path
             )
         }
         const nsi = await NameSuggestionIndex.getNsiIndex()
         const allBrandNames: string[] = Utils.Dedup(
-            nsi.allPossible(<any>type).map((item) => item.tags[type]),
+            nsi.allPossible(<any>type).map((item) => item.tags[type])
         )
         const batchSize = 50
         for (let i = 0; i < allBrandNames.length; i += batchSize) {
-            console.warn(
-                "Downloading",
-                batchSize,
-                "items: ",
-                i + "/" + allBrandNames.length,
-            )
+            console.warn("Downloading", batchSize, "items: ", i + "/" + allBrandNames.length)
             let downloaded = 0
             await Promise.all(
                 Utils.TimesT(batchSize, async (j) => {
@@ -171,10 +166,14 @@ class GenerateStats extends Script {
                     }
                     const writeInto = allBrands[brand]
                     const dloaded = await TagInfo.getGlobalDistributionsFor(
-                        writeInto, (stats) => stats.data.find((t) => t.type === "all").count,
-                        type, brand)
+                        writeInto,
+                        (stats) => stats.data.find((t) => t.type === "all").count,
+                        type,
+                        brand
+                    )
                     downloaded += dloaded
-                }))
+                })
+            )
             console.log("Downloaded ", downloaded, " values this batch")
             writeFileSync(path, JSON.stringify(allBrands), "utf8")
             console.log("Checkpointed", path)
@@ -185,7 +184,7 @@ class GenerateStats extends Script {
 
     constructor() {
         super(
-            "Downloads stats on osmSource-tags and keys from tagInfo. There are two usecases with separate outputs:\n 1. To optimize the query before sending it to overpass (generates ./src/assets/key_totals.json) \n 2. To amend the Name Suggestion Index ",
+            "Downloads stats on osmSource-tags and keys from tagInfo. There are two usecases with separate outputs:\n 1. To optimize the query before sending it to overpass (generates ./src/assets/key_totals.json) \n 2. To amend the Name Suggestion Index "
         )
     }
 

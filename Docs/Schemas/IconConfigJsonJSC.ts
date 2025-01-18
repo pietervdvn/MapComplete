@@ -2,7 +2,7 @@ export default {
   "type": "object",
   "properties": {
     "icon": {
-      "description": "question: What icon should be used?\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+      "description": "question: What icon should be used?\n\nTo reuse icons from a different layer of a library:\n- The library layer has, within tagRenderings one which will output the URL of the image (e.g. mappings: {\"if\": \"shop=xyz\", then: \"./assets/icons/shop_xyz.png\"})\n- Use \"layer_id.tagrendering_id\"\n\nNote that if you reuse icons from a different icon set, you'll probably want to use `override` to set a default rendering\n\n\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return [ \"nsi_brand.icon\", \"nsi_operator.icon\", \"id_presets.shop_rendering\", ...Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))]",
       "anyOf": [
         {
           "$ref": "#/definitions/MinimalTagRenderingConfigJson"

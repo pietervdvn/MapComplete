@@ -61,7 +61,8 @@
     "da": "Kortlæg alle træer",
     "cs": "Zmapujte všechny stromy",
     "uk": "Додайте на мапу всі дерева",
-    "ko": "모든 나무 관련 지도"
+    "ko": "모든 나무 관련 지도",
+    "pt": "Mapeie todas as árvores"
   },
   "icon": "./assets/themes/trees/logo.svg",
   "socialImage": "./assets/themes/trees/logo.svg",

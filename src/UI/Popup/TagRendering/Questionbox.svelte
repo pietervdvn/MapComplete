@@ -157,7 +157,7 @@
     {/if}
 
     <LoginToggle {state}>
-      <span slot="not-logged-in"></span>
+      <span slot="not-logged-in" />
       {#if $allQuestionsToAsk.length === 0}
         <div class="thanks">
           <Tr t={Translations.t.general.questionBox.done} />
@@ -180,7 +180,9 @@
                 <Tr t={Translations.t.general.questionBox.answeredOneSkippedOne} />
               {:else}
                 <Tr
-                  t={Translations.t.general.questionBox.answeredOneSkippedMultiple.Subs({ skipped })}
+                  t={Translations.t.general.questionBox.answeredOneSkippedMultiple.Subs({
+                    skipped,
+                  })}
                 />
               {/if}
             {:else if skipped === 0}
@@ -192,9 +194,9 @@
             {:else}
               <Tr
                 t={Translations.t.general.questionBox.answeredMultipleSkippedMultiple.Subs({
-                answered,
-                skipped,
-              })}
+                  answered,
+                  skipped,
+                })}
               />
             {/if}
           </div>
@@ -203,9 +205,9 @@
             <button
               class="w-full"
               on:click={() => {
-              skippedQuestions.setData(new Set())
-              skipped = 0
-            }}
+                skippedQuestions.setData(new Set())
+                skipped = 0
+              }}
             >
               <Tr t={Translations.t.general.questionBox.reactivate} />
             </button>
@@ -216,9 +218,9 @@
           <button
             class="w-full"
             on:click={() => {
-            skippedQuestions.setData(new Set())
-            skipped = 0
-          }}
+              skippedQuestions.setData(new Set())
+              skipped = 0
+            }}
           >
             Show the disabled questions for this object
           </button>
@@ -228,6 +230,5 @@
         {/if}
       </div>
     </LoginToggle>
-
   </div>
 {/if}

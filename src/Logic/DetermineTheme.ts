@@ -89,11 +89,11 @@ export default class DetermineTheme {
         if (themes.length == 0) {
             throw "Build failed or running, no layouts are known at all"
         }
-        const themeInfo = themes.find(th => th.id === id)
+        const themeInfo = themes.find((th) => th.id === id)
         if (themeInfo === undefined) {
             const alternatives = Utils.sortedByLevenshteinDistance(
                 id,
-                themes.map(th => th.id),
+                themes.map((th) => th.id),
                 (i) => i
             ).slice(0, 3)
             const msg = `No builtin map theme with name ${layoutId} exists. Perhaps you meant one of ${alternatives.join(
@@ -103,7 +103,10 @@ export default class DetermineTheme {
         }
         // Actually fetch the theme
 
-        const config = await Utils.downloadJsonCached<ThemeConfigJson>("./assets/generated/themes/"+id+".json", 1000*60*60*60)
+        const config = await Utils.downloadJsonCached<ThemeConfigJson>(
+            "./assets/generated/themes/" + id + ".json",
+            1000 * 60 * 60 * 60
+        )
         return new ThemeConfig(config, true)
     }
 

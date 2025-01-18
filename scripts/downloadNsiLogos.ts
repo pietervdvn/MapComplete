@@ -47,7 +47,7 @@ class DownloadNsiLogos extends Script {
             await ScriptUtils.DownloadFileTo(logos.facebook, path)
             // Validate
             const content = readFileSync(path, "utf8")
-            if (content.startsWith("{\"error\"")) {
+            if (content.startsWith('{"error"')) {
                 unlinkSync(path)
                 console.error("Attempted to fetch", logos.facebook, " but this gave an error")
             } else {
@@ -90,7 +90,6 @@ class DownloadNsiLogos extends Script {
         return false
     }
 
-
     async downloadFor(type: string): Promise<void> {
         const nsi = await NameSuggestionIndex.getNsiIndex()
         const items = nsi.allPossible(type)
@@ -109,7 +108,7 @@ class DownloadNsiLogos extends Script {
                         downloadCount++
                     }
                     return downloaded
-                }),
+                })
             )
             for (let j = 0; j < results.length; j++) {
                 let didDownload = results[j]
@@ -128,14 +127,14 @@ class DownloadNsiLogos extends Script {
     private async generateRendering(type: string) {
         const nsi = await NameSuggestionIndex.getNsiIndex()
         const items = nsi.allPossible(type)
-        const filterOptions: FilterConfigOptionJson[] = items.map(item => {
-            return ({
+        const filterOptions: FilterConfigOptionJson[] = items.map((item) => {
+            return {
                 question: item.displayName,
                 icon: nsi.getIconUrl(item, type),
                 osmTags: NameSuggestionIndex.asFilterTags(item),
-            })
+            }
         })
-        const mappings = items.map(item => ({
+        const mappings = items.map((item) => ({
             if: NameSuggestionIndex.asFilterTags(item),
             then: nsi.getIconUrl(item, type),
         }))
@@ -145,7 +144,6 @@ class DownloadNsiLogos extends Script {
             const condition = TagUtils.Tag(mappings[i].if)
             if (i % 100 === 0) {
                 console.log("Checking for shadow-mappings...", i, "/", mappings.length)
-
             }
             const shadowsSomething = mappings.some((m, j) => {
                 if (i === j) {
@@ -173,9 +171,7 @@ class DownloadNsiLogos extends Script {
             },
             source: "special:library",
             pointRendering: null,
-            tagRenderings: [
-                iconsTr,
-            ],
+            tagRenderings: [iconsTr],
             filter: [
                 <any>{
                     "#": "ignore-possible-duplicate",
@@ -203,8 +199,6 @@ class DownloadNsiLogos extends Script {
             await this.generateRendering(type)
         }
     }
-
-
 }
 
 new DownloadNsiLogos().run()

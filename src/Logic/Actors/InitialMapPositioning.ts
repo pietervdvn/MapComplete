@@ -88,7 +88,7 @@ export default class InitialMapPositioning {
                     return
                 }
                 const targetLayer = layoutToUse.getMatchingLayer(osmObject.tags)
-                if(targetLayer){
+                if (targetLayer) {
                     this.zoom.setData(Math.max(this.zoom.data, targetLayer.minzoom))
                 }
                 const [lat, lon] = osmObject.centerpoint()

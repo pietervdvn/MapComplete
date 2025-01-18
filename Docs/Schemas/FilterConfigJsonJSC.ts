@@ -5,6 +5,10 @@ export default {
       "description": "An id/name for this filter, used to set the URL parameters",
       "type": "string"
     },
+    "strict": {
+      "description": "If set, the options will be pruned. Only items for which the filter match the layer source will be kept.\n\nFor example, we import types of brands from the nsi. This contains a ton of items, e.g.\n[{question: \"Brand X\", osmTags: {\"and\": [\"shop=clothes\", \"brand=Brand X]}, {osmTags: {\"and\": \"shop=convenience\", ...} ...} ]\nOf course, when making a layer about `shop=clothes`, we'll only want to keep the clothes shops.\nIf set to strict and the source is `shop=clothes`, only those options which have shop=clothes will be returned",
+      "type": "boolean"
+    },
     "options": {
       "description": "The options for a filter\nIf there are multiple options these will be a list of radio buttons\nIf there is only one option this will be a checkbox\nFiltering is done based on the given osmTags that are compared to the objects in that layer.\n\nAn example which searches by name:\n\n```\n{\n      \"id\": \"shop-name\",\n      \"options\": [\n        {\n          \"fields\": [\n            {\n              \"name\": \"search\",\n              \"type\": \"string\"\n            }\n          ],\n          \"osmTags\": \"name~i~.*{search}.*\",\n          \"question\": {\n            \"en\": \"Only show shops with name {search}\",\n          }\n        }\n      ]\n    }\n    ```",
       "type": "array",

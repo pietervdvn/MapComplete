@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 8826,
+      "commits": 8870,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 506,
+      "commits": 514,
       "contributor": "Robin van der Linde"
     },
     {
@@ -153,6 +153,10 @@
       "contributor": "David Haberthür"
     },
     {
+      "commits": 5,
+      "contributor": "tiptoptom"
+    },
+    {
       "commits": 4,
       "contributor": "Languages add-on"
     },
@@ -170,6 +174,10 @@
     },
     {
       "commits": 3,
+      "contributor": "Hufkratzer"
+    },
+    {
+      "commits": 3,
       "contributor": "Thierry1030"
     },
     {
@@ -179,6 +187,10 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
+    },
+    {
+      "commits": 2,
+      "contributor": "Samu__"
     },
     {
       "commits": 2,
@@ -195,10 +207,6 @@
     {
       "commits": 2,
       "contributor": "Robbert Gurdeep Singh"
-    },
-    {
-      "commits": 2,
-      "contributor": "tiptoptom"
     },
     {
       "commits": 2,

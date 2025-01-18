@@ -4344,6 +4344,26 @@
                     "question": "Is dit drinkwaterpunt heel het jaar door beschikbaar?"
                 }
             },
+            "temperature-cold": {
+                "mappings": {
+                    "0": {
+                        "then": "Ijskoud water is hier beschikbaar"
+                    },
+                    "1": {
+                        "then": "Afgekoeld water is hier beschikbaar"
+                    },
+                    "2": {
+                        "then": "Water aan omgevingstemperatuur (zonder actieve koeling of opwarming) is hier beschikbaar"
+                    },
+                    "3": {
+                        "then": "Warm water is hier beschikbaar; het water is niet gevaarlijk heet"
+                    },
+                    "4": {
+                        "then": "Heet water is hier beschikbaar"
+                    }
+                },
+                "question": "Is gekoeld water hier beschikbaar?"
+            },
             "type": {
                 "mappings": {
                     "0": {
@@ -8295,6 +8315,11 @@
                     "+mappings": {
                         "0": {
                             "then": "Fietsverhuurzaak"
+                        }
+                    },
+                    "mappings+": {
+                        "0": {
+                            "then": "Deze winkel staat leeg"
                         }
                     },
                     "question": "Wat voor soort winkel is dit?",

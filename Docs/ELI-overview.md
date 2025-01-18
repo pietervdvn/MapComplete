@@ -13,6 +13,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | South_Africa-CapeTown-Aerial-2018 | City of Cape Town Aerial Imagery (2018) | historicphoto |  | City of Cape Town Aerial |
 | South_Africa-CapeTown-Aerial-2021 | City of Cape Town Aerial Imagery (2021) | historicphoto |  | City of Cape Town Aerial |
 | South_Africa-CapeTown-Aerial-2023 | City of Cape Town Aerial Imagery (2023) | photo | ⭐ | City of Cape Town Aerial |
+| South_Africa-CapeTown-Aerial-2024 | City of Cape Town Aerial Imagery (2024) | photo | ⭐ | City of Cape Town Aerial |
 | osm-cambodia_laos_thailand_vietnam-bilingual | Cambodia, Laos, Thailand, Vietnam, Malaysia, Myanmar bilingual | osmbasedmap |  | © osm-tools.org & OpenStreetMap contributors, CC-BY-SA |
 | India-PMGSY | PMGSY GeoSadak - India Rural Roads Open Data | map |  | <a href='https://geosadak-pmgsy.nic.in/opendata/' target='_blank'>PMGSY Rural Connectivity Dataset, Government Open Data License</a> | <a href='https://www.mapbox.com/about/maps/' target='_blank' title='Mapbox' aria-label='Mapbox'>© Mapbox</a> | <a href='https://www.openstreetmap.org/about/' target='_blank' title='OpenStreetMap' aria-label='OpenStreetMap'>© OpenStreetMap</a> | <a href='https://www.maxar.com/' target='_blank' title='Maxar' aria-label='Maxar'>© Maxar</a> |
 | Plateau_orthophoto_official | MLIT Plateau Official | photo |  | MLIT_PLATEAU |
@@ -769,7 +770,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Greene_OH_2023 | Greene County Orthoimagery (2023) | historicphoto |  | Greene County, State of Ohio |
 | Greene_OH_2024 | Greene County Orthoimagery (2024) | photo |  | Greene County, State of Ohio |
 | Licking_OH_2023 | Licking County Orthoimagery (2023) | photo |  | Licking County, State of Ohio |
-| Lorain_OH_2024 | Lorain County Orthoimagery (2024) | photo |  | Lorain County, State of Ohio |
+| Lorain_OH_2024 | Lorain County Orthoimagery (2024) | photo | ⭐ | Lorain County, State of Ohio |
 | Lucas_OH_2023 | Lucas County Orthoimagery (2023) | photo |  | Lucas County, State of Ohio |
 | Mercer_OH_2021 | Mercer County Orthoimagery (2021) | photo |  | Mercer County, State of Ohio |
 | Miami_OH_2023 | Miami County Orthoimagery (2023) | photo |  | Miami County, State of Ohio |

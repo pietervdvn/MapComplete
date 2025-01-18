@@ -15,47 +15,73 @@ import { FlatTag, OptimizedTag, TagsFilterClosed } from "../../../Logic/Tags/Tag
 import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
 import { And } from "../../../Logic/Tags/And"
 
-export class PruneFilters extends DesugaringStep<LayerConfigJson>{
+export class PruneFilters extends DesugaringStep<LayerConfigJson> {
     constructor() {
-        super("Removes all filters which are impossible, e.g. because they conflict with the base tags", ["filter"],"PruneFilters")
+        super(
+            "Removes all filters which are impossible, e.g. because they conflict with the base tags",
+            ["filter"],
+            "PruneFilters"
+        )
     }
 
-    private prune(sourceTags:FlatTag, filter: FilterConfigJson, context: ConversionContext): FilterConfigJson{
-        if(!filter.strict){
+    private prune(
+        sourceTags: FlatTag,
+        filter: FilterConfigJson,
+        context: ConversionContext
+    ): FilterConfigJson {
+        if (!filter.strict) {
             return filter
         }
         const countBefore = filter.options.length
-        const newOptions: FilterConfigOptionJson[] = filter.options.filter(option => {
-            if(!option.osmTags){
-                return true
-            }
-            const condition = <OptimizedTag & TagsFilterClosed> TagUtils.Tag(option.osmTags).optimize()
-            return condition.shadows(sourceTags);
-
-        }).map(option => {
-            if(!option.osmTags){
-                return option
-            }
-            let basetags = TagUtils.Tag(option.osmTags)
-            return {...option, osmTags: (<TagsFilter>TagUtils.removeKnownParts(basetags ,sourceTags)).asJson()}
-        })
+        const newOptions: FilterConfigOptionJson[] = filter.options
+            .filter((option) => {
+                if (!option.osmTags) {
+                    return true
+                }
+                const condition = <OptimizedTag & TagsFilterClosed>(
+                    TagUtils.Tag(option.osmTags).optimize()
+                )
+                return condition.shadows(sourceTags)
+            })
+            .map((option) => {
+                if (!option.osmTags) {
+                    return option
+                }
+                let basetags = TagUtils.Tag(option.osmTags)
+                return {
+                    ...option,
+                    osmTags: (<TagsFilter>TagUtils.removeKnownParts(basetags, sourceTags)).asJson(),
+                }
+            })
         const countAfter = newOptions.length
-        if(countAfter !== countBefore){
-            context.enters("filter", filter.id   ).info("Pruned "+(countBefore-countAfter)+" options away from filter (out of "+countBefore+")")
+        if (countAfter !== countBefore) {
+            context
+                .enters("filter", filter.id)
+                .info(
+                    "Pruned " +
+                        (countBefore - countAfter) +
+                        " options away from filter (out of " +
+                        countBefore +
+                        ")"
+                )
         }
-        return {...filter, options: newOptions, strict: undefined}
-
+        return { ...filter, options: newOptions, strict: undefined }
     }
 
     public convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
-        if(!Array.isArray(json.filter) || typeof json.source === "string"){
+        if (!Array.isArray(json.filter) || typeof json.source === "string") {
             return json
         }
-        if(!json.source["osmTags"]){
+        if (!json.source["osmTags"]) {
             return json
         }
         const sourceTags = TagUtils.Tag(json.source["osmTags"])
-        return {...json, filter: json.filter?.map(obj => this.prune(sourceTags, <FilterConfigJson> obj, context))}
+        return {
+            ...json,
+            filter: json.filter?.map((obj) =>
+                this.prune(sourceTags, <FilterConfigJson>obj, context)
+            ),
+        }
     }
 }
 export class ExpandFilter extends DesugaringStep<LayerConfigJson> {
@@ -69,7 +95,7 @@ export class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                 "If the string is formatted 'layername.filtername, it will be looked up into that layer instead. Note that pruning should still be done",
             ].join(" "),
             ["filter"],
-            "ExpandFilter",
+            "ExpandFilter"
         )
         this._state = state
     }
@@ -84,11 +110,11 @@ export class ExpandFilter extends DesugaringStep<LayerConfigJson> {
 
     public static buildFilterFromTagRendering(
         tr: TagRenderingConfigJson,
-        context: ConversionContext,
+        context: ConversionContext
     ): FilterConfigJson {
         if (!(tr.mappings?.length >= 1)) {
             context.err(
-                "Found a matching tagRendering to base a filter on, but this tagRendering does not contain any mappings",
+                "Found a matching tagRendering to base a filter on, but this tagRendering does not contain any mappings"
             )
         }
         const qtr = <QuestionableTagRenderingConfigJson>tr
@@ -103,7 +129,7 @@ export class ExpandFilter extends DesugaringStep<LayerConfigJson> {
             if (qtr.multiAnswer && osmTags instanceof Tag) {
                 osmTags = new RegexTag(
                     osmTags.key,
-                    new RegExp("^(.+;)?" + osmTags.value + "(;.+)$", "is"),
+                    new RegExp("^(.+;)?" + osmTags.value + "(;.+)$", "is")
                 )
             }
             if (mapping.alsoShowIf) {
@@ -161,7 +187,7 @@ export class ExpandFilter extends DesugaringStep<LayerConfigJson> {
             if (matchingTr) {
                 const filter = ExpandFilter.buildFilterFromTagRendering(
                     matchingTr,
-                    context.enters("filter", i),
+                    context.enters("filter", i)
                 )
                 newFilters.push(filter)
                 continue
@@ -175,7 +201,7 @@ export class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                 const split = filter.split(".")
                 if (split.length > 2) {
                     context.err(
-                        "invalid filter name: " + filter + ", expected `layername.filterid`",
+                        "invalid filter name: " + filter + ", expected `layername.filterid`"
                     )
                 }
                 const layer = this._state.sharedLayers.get(split[0])
@@ -184,7 +210,7 @@ export class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                 }
                 const expectedId = split[1]
                 const expandedFilter = (<(FilterConfigJson | string)[]>layer.filter).find(
-                    (f) => typeof f !== "string" && f.id === expectedId,
+                    (f) => typeof f !== "string" && f.id === expectedId
                 )
                 if (expandedFilter === undefined) {
                     context.err("Did not find filter with name " + filter)
@@ -199,15 +225,15 @@ export class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                 const suggestions = Utils.sortedByLevenshteinDistance(
                     filter,
                     Array.from(ExpandFilter.predefinedFilters.keys()),
-                    (t) => t,
+                    (t) => t
                 )
                 context
                     .enter(filter)
                     .err(
                         "While searching for predefined filter " +
-                        filter +
-                        ": this filter is not found. Perhaps you meant one of: " +
-                        suggestions,
+                            filter +
+                            ": this filter is not found. Perhaps you meant one of: " +
+                            suggestions
                     )
             }
             newFilters.push(found)

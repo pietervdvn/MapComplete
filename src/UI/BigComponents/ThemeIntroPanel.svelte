@@ -57,11 +57,17 @@
     <Tr t={theme.descriptionTail} />
     {#if !theme.official}
       <div class="flex w-full justify-end">
-
-      <button class="flex small w-fit self-end as-link" on:click={() => Utils.offerContentsAsDownloadableFile(JSON.stringify(theme.source, null, "  "), theme.id+".mapcomplete_theme.json")}>
-        Download the theme definition
-      </button>
-        </div>
+        <button
+          class="small as-link flex w-fit self-end"
+          on:click={() =>
+            Utils.offerContentsAsDownloadableFile(
+              JSON.stringify(theme.source, null, "  "),
+              theme.id + ".mapcomplete_theme.json"
+            )}
+        >
+          Download the theme definition
+        </button>
+      </div>
     {/if}
     <!-- Buttons: open map, go to location, search -->
     <NextButton
@@ -109,7 +115,6 @@
       </a>
     {/if}
   </div>
-
 
   <div class="link-underline mt-8 flex justify-end text-sm">
     <a href="https://mapcomplete.org" target="_blank">
