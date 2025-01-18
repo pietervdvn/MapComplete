@@ -1294,6 +1294,7 @@
         }
       }
     },
+    "dog-access",
     "description"
   ],
   "filter": [
@@ -1319,7 +1320,8 @@
         }
       ]
     },
-    "filters.has_organic"
+    "filters.has_organic",
+    "dogs"
   ],
   "deletion": {
     "softDeletionTags": {
