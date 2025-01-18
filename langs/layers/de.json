@@ -915,10 +915,10 @@
                         "then": "Dieses Grillgerät ist privat"
                     },
                     "3": {
-                        "then": "Zugang bis auf Widerruf"
+                        "then": "Dieses Barbecue kann von jedem benutzt werden, aber der Besitzer kann den Zugang jederzeit widerrufen"
                     },
                     "4": {
-                        "then": "Zugang nur für Kunden"
+                        "then": "Dieser Grill kann nur von Kunden genutzt werden"
                     },
                     "5": {
                         "then": "Zugang nur für Berechtigte"
