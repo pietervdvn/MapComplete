@@ -10349,6 +10349,12 @@
                         "then": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
+            },
+            "title-editing": {
+                "render": "<h3>Voorkeuren voor databewerking</h3>"
+            },
+            "title-map": {
+                "render": "<h3>Kaartvoorkeuren</h3>"
             }
         },
         "title": {
