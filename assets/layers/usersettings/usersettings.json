@@ -576,20 +576,28 @@
       "mappings": [
         {
           "if": "mapcomplete-show_crosshair=yes",
-          "then": "Show a crosshair in the center of the map when zoomed in above level 17"
+          "then": {
+            "en": "Show a crosshair in the center of the map when zoomed in above level 17"
+          }
         },
         {
           "if": "mapcomplete-show_crosshair=no",
-          "then": "Do not show a crosshair in the center of the map"
+          "then": {
+            "en": "Do not show a crosshair in the center of the map"
+          }
         },
         {
           "if": "mapcomplete-show_crosshair=",
-          "then": "Do not show a crosshair in the center of the map",
+          "then": {
+            "en": "Do not show a crosshair in the center of the map"
+          },
           "hideInAnswer": true
         },
         {
           "if": "mapcomplete-show_crosshair=always",
-          "then": "Always show a crosshair in the center of the map"
+          "then": {
+            "en": "Always show a crosshair in the center of the map"
+          }
         }
       ]
     },
@@ -1147,7 +1155,9 @@
       "label": [
         "translations"
       ],
-      "render": "<h3>Translating MapComplete</h3>"
+      "render": {
+        "en": "<h3>Translating MapComplete</h3>"
+      }
     },
     {
       "label": [
