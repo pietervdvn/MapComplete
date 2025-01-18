@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.48.1](https://github.com/pietervdvn/mapcomplete/compare/v0.48.0...v0.48.1) (2025-01-18)
+
+
+### Theme improvements
+
+* **pets:** bring pets theme more in line (visually and logically) with the other themes ([9dd252d](https://github.com/pietervdvn/mapcomplete/commits/9dd252dc862b1f6fd7638076fb238f4849d93b5c))
+* **shops:** add dog-access question ([da25464](https://github.com/pietervdvn/mapcomplete/commits/da2546465f939f28db3b602fc3f88e05041176e2))
+
 ## [0.48.0](https://github.com/pietervdvn/mapcomplete/compare/v0.47.14...v0.48.0) (2025-01-17)
 
 
