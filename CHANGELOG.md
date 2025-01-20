@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.48.2](https://github.com/pietervdvn/mapcomplete/compare/v0.48.0...v0.48.2) (2025-01-19)
+
+
+### Bug Fixes
+
+* **studio:** add check for incorrect suggestions, fix incorrect suggestion which breaks setting a 'marker' ([89b4f02](https://github.com/pietervdvn/mapcomplete/commits/89b4f02aa630c378f752f4a1c35866c915481e7d))
+
+
+### Theme improvements
+
+* **pets:** bring pets theme more in line (visually and logically) with the other themes ([cdc170b](https://github.com/pietervdvn/mapcomplete/commits/cdc170b128ae293d66f779192b6fda7867689a4e))
+* **shops:** add dog-access question ([244c976](https://github.com/pietervdvn/mapcomplete/commits/244c976af628e4c9fe2c3d98d09e4c40911284d1))
+
 ### [0.48.1](https://github.com/pietervdvn/mapcomplete/compare/v0.48.0...v0.48.1) (2025-01-18)
 
 

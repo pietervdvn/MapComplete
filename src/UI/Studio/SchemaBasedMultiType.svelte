@@ -1,5 +1,5 @@
 <script lang="ts">
-  import EditLayerState from "./EditLayerState"
+  import { EditJsonState } from "./EditLayerState"
   import type { ConfigMeta } from "./configMeta"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import type { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
@@ -9,13 +9,12 @@
   import SchemaBasedInput from "./SchemaBasedInput.svelte"
   import type { JsonSchemaType } from "./jsonSchema"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
-  import type { Translatable } from "../../Models/ThemeConfig/Json/Translatable"
 
   /**
    * If 'types' is defined: allow the user to pick one of the types to input.
    */
 
-  export let state: EditLayerState
+  export let state: EditJsonState<any>
   export let path: (string | number)[] = []
   export let schema: ConfigMeta
   let expertMode = state.expertMode
@@ -31,8 +30,9 @@
 
   let lastIsString = false
   {
+
     const types: string | string[] = Array.isArray(schema.type)
-      ? schema.type[schema.type.length - 1].type
+      ? schema.type[schema.type.length - 1]["type"]
       : []
     lastIsString = types === "string" || (Array.isArray(types) && types.some((i) => i === "string"))
   }
@@ -64,6 +64,7 @@
           inline: true,
           type: schema.hints.typehint,
           addExtraTags: ["chosen_type_index="],
+        helperArgs: []
         },
   }
   let tags = new UIEventSource<Record<string, string>>({})
@@ -114,7 +115,7 @@
       const type = schema.type[i]
       let optionalMatches = 0
       for (const key of Object.keys(type.properties ?? {})) {
-        if (!!existingValue[key]) {
+        if (existingValue[key]) {
           optionalMatches++
         }
       }

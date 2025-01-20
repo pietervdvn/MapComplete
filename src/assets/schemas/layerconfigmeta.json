@@ -1744,9 +1744,18 @@
       "types": "<span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon",
       "question": "What icon should be used?",
       "suggestions": [
-        "nsi_brand.icon",
-        "nsi_operator.icon",
-        "id_presets.shop_rendering",
+        {
+          "if": "value=nsi_brand.icon",
+          "then": "Use icons for brand from the Name Suggestion Index"
+        },
+        {
+          "if": "value=nsi_operator.icon",
+          "then": "Use icons for operator from the Name Suggestion Index"
+        },
+        {
+          "if": "value=id_presets.shop_rendering",
+          "then": "Use shop preset icons from iD"
+        },
         {
           "if": "value=addSmall",
           "then": "addSmall",
@@ -2294,8 +2303,65 @@
     "hints": {
       "group": "hidden"
     },
-    "type": "array",
-    "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle"
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "if": {
+            "$ref": "#/definitions/TagConfigJson",
+            "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
+          },
+          "then": {
+            "description": "Badge to show\nType: icon",
+            "anyOf": [
+              {
+                "description": "Mostly used for lineRendering and pointRendering",
+                "type": "object",
+                "properties": {
+                  "render": {
+                    "description": "question: What value should be shown (if no predefined option matches)?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+                    "type": "string"
+                  },
+                  "mappings": {
+                    "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "if": {
+                          "$ref": "#/definitions/TagConfigJson",
+                          "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
+                        },
+                        "then": {
+                          "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "if",
+                        "then"
+                      ]
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "required": [
+          "if",
+          "then"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle\nAlternatively, this can reuse a _tagRendering_ from another layer, e.g. one of the 'icons'-tagrenderings.\nSee ExpandIconBadges on how this is handled"
   },
   {
     "path": [

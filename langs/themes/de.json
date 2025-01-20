@@ -1410,5 +1410,9 @@
         "description": "Die Karte zeigt Abfalleimer in der Nähe. Wenn ein Abfalleimer fehlt, kannst du ihn selbst hinzufügen.",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
+    },
+    "scouting": {
+        "description": "Eine Pfadfindergruppe ist eine soziale Jugendbewegung mit einem starken Fokus auf Aktivitäten im Freien. Die Aktivitäten reichen von Camping, Wandern, Wassersport, Rucksacktouren, Erkundung der Natur, ...",
+        "title": "Pfadfindergruppen"
     }
 }
