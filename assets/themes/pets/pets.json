@@ -117,6 +117,7 @@
           "it": "Negozi che accettano i cani",
           "ko": "반려견 친화적 상점"
         },
+
         "pointRendering": [
           {
             "iconBadges+": [
@@ -142,10 +143,10 @@
     {
       "builtin": "shops",
       "override": {
-        "minzoom": 18,
         "filter": {
           "sameAs": "shop_dog_friendly"
         },
+        "minzoom": 18,
         "name": null
       }
     },
@@ -153,10 +154,13 @@
       "builtin": "waste_basket",
       "override": {
         "id": "waste_basket_dogs",
-        "name": {
-          "en": "Waste baskets with excrement bag dispensers"
+        "name=": {
+          "en": "Waste baskets with excrement bag dispensers",
+          "nl": "Vuilnisbakken met verdelers voor hondenpoepzakjes"
         },
         "presets=": [],
+        "filter=": [],
+        "minzoom": 14,
         "source": {
           "osmTags": {
             "and+": [
