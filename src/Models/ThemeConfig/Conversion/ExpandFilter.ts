@@ -13,7 +13,7 @@ import { Or } from "../../../Logic/Tags/Or"
 import Translations from "../../../UI/i18n/Translations"
 import { FlatTag, OptimizedTag, TagsFilterClosed } from "../../../Logic/Tags/TagTypes"
 import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
-import { And } from "../../../Logic/Tags/And"
+import { Translation } from "../../../UI/i18n/Translation"
 
 export class PruneFilters extends DesugaringStep<LayerConfigJson> {
     constructor() {
@@ -24,11 +24,30 @@ export class PruneFilters extends DesugaringStep<LayerConfigJson> {
         )
     }
 
+    /**
+     * Prunes a filter; returns null/undefined if keeping the filter is useless
+     */
     private prune(
         sourceTags: FlatTag,
         filter: FilterConfigJson,
         context: ConversionContext
     ): FilterConfigJson {
+
+        if (filter.options.length === 1) {
+            const option = filter.options[0]
+            const tags = TagUtils.Tag(option.osmTags)
+            const optimized = TagUtils.removeKnownParts(tags, sourceTags, true)
+            if (optimized === true) {
+                context.warn("Removing filter as always known: ", new Translation(option.question).textFor("en"))
+                return undefined
+            }
+            if (optimized === false) {
+                context.warn("Removing filter as not possible: ", new Translation(option.question).textFor("en"))
+                return undefined
+            }
+        }
+
+
         if (!filter.strict) {
             return filter
         }
@@ -47,7 +66,7 @@ export class PruneFilters extends DesugaringStep<LayerConfigJson> {
                 if (!option.osmTags) {
                     return option
                 }
-                let basetags = TagUtils.Tag(option.osmTags)
+                const basetags = TagUtils.Tag(option.osmTags)
                 return {
                     ...option,
                     osmTags: (<TagsFilter>TagUtils.removeKnownParts(basetags, sourceTags)).asJson(),
@@ -65,6 +84,8 @@ export class PruneFilters extends DesugaringStep<LayerConfigJson> {
                         ")"
                 )
         }
+
+
         return { ...filter, options: newOptions, strict: undefined }
     }
 
@@ -78,9 +99,9 @@ export class PruneFilters extends DesugaringStep<LayerConfigJson> {
         const sourceTags = TagUtils.Tag(json.source["osmTags"])
         return {
             ...json,
-            filter: json.filter?.map((obj) =>
+            filter: Utils.NoNull(json.filter?.map((obj) =>
                 this.prune(sourceTags, <FilterConfigJson>obj, context)
-            ),
+            )),
         }
     }
 }

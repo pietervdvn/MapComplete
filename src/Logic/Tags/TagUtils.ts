@@ -690,6 +690,9 @@ export class TagUtils {
         return result
     }
 
+    /**
+     * TagUtils.removeKnownParts(TagUtils.Tag({and: ["vending=excrement_bag"}),TagUtils.Tag({and: ["amenity=waste_basket", "vending=excrement_bag"]}), true) // => true
+     */
     public static removeKnownParts(
         tag: TagsFilter,
         known: TagsFilter,
@@ -702,7 +705,7 @@ export class TagUtils {
         if (tagOrBool instanceof And) {
             return tagOrBool.removePhraseConsideredKnown(known, valueOfKnown)
         }
-        return tagOrBool
+        return new And([tagOrBool]).removePhraseConsideredKnown(known, valueOfKnown)
     }
 
     /**
