@@ -227,6 +227,13 @@ function extractHintsFrom(
                     ". Remember that you should use {'if': 'value=[actual_value]', 'then': '[some explanation]'}"
                 )
             }
+            if (!hintElement.if || !hintElement.then) {
+                throw (
+                    "A suggestion generated an object missing either `if` or `then` " +
+                    path.join(".") +
+                    ". Remember that you should use {'if': 'value=[actual_value]', 'then': '[some explanation]'}"
+                )
+            }
         }
 
     }
