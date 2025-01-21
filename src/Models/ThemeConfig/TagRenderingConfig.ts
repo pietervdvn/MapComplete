@@ -5,10 +5,7 @@ import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { And } from "../../Logic/Tags/And"
 import { Utils } from "../../Utils"
 import { Tag } from "../../Logic/Tags/Tag"
-import {
-    MappingConfigJson,
-    QuestionableTagRenderingConfigJson,
-} from "./Json/QuestionableTagRenderingConfigJson"
+import { MappingConfigJson, QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
@@ -82,6 +79,7 @@ export default class TagRenderingConfig {
     public readonly classes: string[] | undefined
 
     public readonly onSoftDelete?: ReadonlyArray<UploadableTag>
+    public readonly alwaysForceSaveButton: boolean
 
     constructor(
         config:
@@ -144,6 +142,7 @@ export default class TagRenderingConfig {
         this.question = Translations.T(json.question, translationKey + ".question")
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.questionHintIsMd = json["questionHintIsMd"] ?? false
+        this.alwaysForceSaveButton = json["#force-save-button"] === "yes"
         this.description = Translations.T(json.description, translationKey + ".description")
         if (json.onSoftDelete && !Array.isArray(json.onSoftDelete)) {
             throw context + ".onSoftDelete Not an array: " + typeof json.onSoftDelete

@@ -146,7 +146,7 @@ export class OsmConnection {
         this.UpdateCapabilities()
 
         this.isLoggedIn = this.userDetails.map(
-            (user) => user !== undefined && (this.apiIsOnline.data === "unknown" || this.apiIsOnline.data === "online"),
+            (user) => user !== undefined && this.apiIsOnline.data === "online",
             [this.apiIsOnline]
         )
 
@@ -578,8 +578,10 @@ export class OsmConnection {
             if (!(this.apiIsOnline.data === "unreachable" || this.apiIsOnline.data === "offline")) {
                 return
             }
+            if (!this.isLoggedIn.data) {
+                return
+            }
             try {
-                console.log("Api is offline - trying to reconnect...")
                 this.AttemptLogin()
             } catch (e) {
                 console.log("Could not login due to", e)
