@@ -120,7 +120,8 @@
         "da": "en cykelrengøring",
         "cs": "služba mytí jízdních kol",
         "ca": "un servei de neteja de bicicletes",
-        "pl": "usługa czyszczenia rowerów"
+        "pl": "usługa czyszczenia rowerów",
+        "uk": "послуга з миття велосипедів"
       },
       "tags": [
         "amenity=bicycle_wash"

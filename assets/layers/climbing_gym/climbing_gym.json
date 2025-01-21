@@ -155,7 +155,7 @@
         "en": "Can one rent climbing shoes here to use in the gym?",
         "nl": "Kunnen hier klimschoenen gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer des chaussures d'escalade ici ?",
-        "de": "Kann man hier Kletterschuhe ausleihen?",
+        "de": "Kann man hier Kletterschuhe für die Kletterwand ausleihen?",
         "pl": "Czy można tutaj wypożyczyć buty do wspinaczki?",
         "cs": "Lze si zde půjčit lezeckou obuv?",
         "es": "¿Se pueden alquilar zapatillas de escalada aquí?"
@@ -241,7 +241,7 @@
         "en": "Can one rent a climbing harness here to use in the gym?",
         "nl": "Kan hier een klimgordel gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer un baudrier d'escalade ici ?",
-        "de": "Kann man hier einen Klettergurt ausleihen?",
+        "de": "Kann man hier einen Klettergurt für die Kletterwand ausleihen?",
         "cs": "Lze si zde zapůjčit horolezecký postroj?",
         "es": "¿Se puede alquilar un arnés de escalada aquí?"
       },
@@ -340,11 +340,13 @@
       "id": "auto_belay_toprope",
       "question": {
         "en": "Are there auto belays for top roping here?",
-        "nl": "Zijn hier auto belays voor toprope?"
+        "nl": "Zijn hier auto belays voor toprope?",
+        "de": "Gibt es hier Selbstsicherungen  für das Toprope-Klettern?"
       },
       "questionHint": {
         "en": "Excluding auto belays that are only for speed climbing",
-        "nl": "Autobelays die enkel voor speed zijn, tellen niet mee"
+        "nl": "Autobelays die enkel voor speed zijn, tellen niet mee",
+        "de": "Ausgenommen Selbstsicherungen, die nur für das Speedklettern gedacht sind"
       },
       "condition": {
         "and": [
@@ -361,41 +363,47 @@
           "if": "climbing:autobelay:toprope=no",
           "then": {
             "en": "There are no auto belays for top roping",
-            "nl": "Er zijn geen autobelays voor toprope"
+            "nl": "Er zijn geen autobelays voor toprope",
+            "de": "Es gibt keine Selbstsicherungen für das Toprope-Klettern"
           }
         },
         {
           "if": "climbing:autobelay:toprope=yes",
           "then": {
             "en": "There are a number of auto belays for top roping",
-            "nl": "Er zijn enkele autobelays voor toprope"
+            "nl": "Er zijn enkele autobelays voor toprope",
+            "de": "Es gibt eine Reihe von Selbstsicherungen für das Toprope-Klettern"
           }
         },
         {
           "if": "climbing:autobelay:toprope=all",
           "then": {
             "en": "There is an auto belay for every top rope route but manual belaying is also possible",
-            "nl": "Elke toproperoute kan op autobelay geklommen worden maar handmatig zekeren is ook mogelijk"
+            "nl": "Elke toproperoute kan op autobelay geklommen worden maar handmatig zekeren is ook mogelijk",
+            "de": "Für jede Toprope-Route gibt es eine Selbstsicherung , aber auch manuelles Sichern ist möglich"
           }
         },
         {
           "if": "climbing:autobelay:toprope=only",
           "then": {
             "en": "Top rope routes can only be climbed on auto belay",
-            "nl": "Toproperoutes kunnen enkel op autobelay geklommen worden"
+            "nl": "Toproperoutes kunnen enkel op autobelay geklommen worden",
+            "de": "Klettersteige können nur mit Selbstsicherung geklettert werden"
           }
         }
       ],
       "render": {
         "en": "There are {climbing:autobelay:toprope} auto belay devices for top roping",
-        "nl": "Er zijn {climbing:autobelay:toprope} autobelaytoestellen voor toprope"
+        "nl": "Er zijn {climbing:autobelay:toprope} autobelaytoestellen voor toprope",
+        "de": "Es gibt {climbing:autobelay:toprope} Selbstsicherungsgeräte für das Toprope-Klettern"
       }
     },
     {
       "id": "auto_belay_lead",
       "question": {
         "en": "Are there auto belays for lead climbing here?",
-        "nl": "Zijn hier autobelays voor voorklimmen?"
+        "nl": "Zijn hier autobelays voor voorklimmen?",
+        "de": "Gibt es hier Selbstsicherungen für das Vorstiegsklettern?"
       },
       "condition": {
         "and": [
@@ -412,27 +420,31 @@
           "if": "climbing:autobelay:sport=no",
           "then": {
             "en": "There are no auto belays for lead climbing",
-            "nl": "Er zijn geen autobelays voor voorklimmen"
+            "nl": "Er zijn geen autobelays voor voorklimmen",
+            "de": "Es gibt keine Selbstsicherungen für das Vorstiegsklettern"
           }
         },
         {
           "if": "climbing:autobelay:sport=yes",
           "then": {
             "en": "There is a number of auto belays for lead climbing",
-            "nl": "Er zijn enkele autobelays voor voorklimmen"
+            "nl": "Er zijn enkele autobelays voor voorklimmen",
+            "de": "Es gibt eine Reihe von Selbstsicherungen für das Vorstiegsklettern"
           }
         },
         {
           "if": "climbing:autobelay:sport=all",
           "then": {
             "en": "There is an auto belay for every lead climbing route",
-            "nl": "Elke voorklimroute kan op autobelay geklommen worden"
+            "nl": "Elke voorklimroute kan op autobelay geklommen worden",
+            "de": "Für jede Vorstiegskletterroute gibt es eine Selbstsicherung"
           }
         }
       ],
       "render": {
         "en": "There are {climbing:autobelay:sport} auto belays for lead climbing",
-        "nl": "Er zijn {climbing:autobelay:sport} autobelays voor voorklimmen"
+        "nl": "Er zijn {climbing:autobelay:sport} autobelays voor voorklimmen",
+        "de": "Es gibt {climbing:autobelay:sport} Selbstsicherungen für das Vorstiegsklettern"
       }
     },
     {
@@ -441,7 +453,7 @@
         "en": "Can one rent a belay device here to use in the gym?",
         "nl": "Kan hier een zekeringsapparaat gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer un dispositif d'assurage ici ?",
-        "de": "Kann man hier ein Sicherungsgerät ausleihen?",
+        "de": "Kann man hier ein Sicherungsgerät für die Kletterwand ausleihen?",
         "cs": "Lze si zde půjčit jištění?",
         "es": "¿Se puede alquilar un dispositivo de aseguramiento aquí?"
       },
@@ -468,7 +480,7 @@
             "en": "Belay devices are provided at each rope",
             "nl": "Een zekeringsapparaat is voorzien aan elk touw",
             "fr": "Un dispositif d'assurage est prévu à chaque corde",
-            "de": "Jeder Seil hat ein Sicherungsgerät",
+            "de": "Jedes Seil hat ein Sicherungsgerät",
             "cs": "U každého lana jsou k dispozici jistící zařízení",
             "es": "Se proporcionan dispositivos de aseguramiento en cada cuerda"
           },
@@ -555,7 +567,7 @@
         "en": "Can one rent a climbing rope here to use in the gym?",
         "nl": "Kan hier een klimtouw gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer une corde d'escalade ici ?",
-        "de": "Kann man hier ein Kletterseil ausleihen?",
+        "de": "Kann man hier ein Kletterseil für die Kletterwand ausleihen?",
         "cs": "Lze si zde půjčit lezecké lano?",
         "es": "¿Se puede alquilar una cuerda de escalada aquí?"
       },

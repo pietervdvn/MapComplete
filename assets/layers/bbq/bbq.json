@@ -73,7 +73,7 @@
       "id": "access",
       "question": {
         "en": "Who is allowed to use this barbecue?",
-        "de": "Was ist der erlaubte Zugang?",
+        "de": "Wer darf diesen Grill benutzen?",
         "cs": "Jaký přístup je povolen?",
         "es": "¿Cuál es el acceso permitido?",
         "nl": "Wie mag deze barbecue gebruiken?"
@@ -112,7 +112,7 @@
         {
           "if": "access=permissive",
           "then": {
-            "de": "Zugang bis auf Widerruf",
+            "de": "Dieses Barbecue kann von jedem benutzt werden, aber der Besitzer kann den Zugang jederzeit widerrufen",
             "en": "This barbecue can be used by anyone, but the owner can revoke access at any time",
             "cs": "Přístup až do odvolání",
             "es": "Acceso hasta que se revoque",
@@ -122,7 +122,7 @@
         {
           "if": "access=customers",
           "then": {
-            "de": "Zugang nur für Kunden",
+            "de": "Dieser Grill kann nur von Kunden genutzt werden",
             "en": "This barbecue can only be used by customers",
             "cs": "Přístup pouze pro zákazníky",
             "es": "Acceso solo para clientes",
@@ -132,7 +132,7 @@
         {
           "if": "access=permit",
           "then": {
-            "de": "Zugang nur für Berechtigte",
+            "de": "Dieses Barbecue darf nur von autorisierten Personen benutzt werden",
             "en": "This barbecue can only be used by authorized persons",
             "cs": "Přístup pouze pro oprávněné osoby",
             "es": "Acceso solo para personas autorizadas",
@@ -177,7 +177,7 @@
       "id": "fuel",
       "question": {
         "en": "How is this barbecue fuelled?",
-        "de": "Womit wird der Grill befeuert?",
+        "de": "Womit wird dieser Grill angeheizt?",
         "cs": "Jak je gril napájen?",
         "es": "¿Cómo se alimenta la parrilla?",
         "nl": "Wat voor brandstof gebruikt deze barbecue?"
@@ -186,7 +186,7 @@
         {
           "if": "fuel=wood",
           "then": {
-            "de": "Holz",
+            "de": "Dieser Grill wird mit Holz betrieben",
             "en": "This barbecue uses wood as fuel",
             "cs": "Dřevo",
             "es": "Madera",
@@ -196,7 +196,7 @@
         {
           "if": "fuel=charcoal",
           "then": {
-            "de": "Kohle",
+            "de": "Dieser Grill wird mit Kohle betrieben",
             "en": "This barbecue uses charcoal as fuel",
             "cs": "Dřevěné uhlí",
             "es": "Carbón",
@@ -206,7 +206,7 @@
         {
           "if": "fuel=electric",
           "then": {
-            "de": "Elektronisch",
+            "de": "Dieser Grill wird mit Strom betrieben",
             "en": "This barbecue is powered by electricity",
             "cs": "Elektrický",
             "es": "Eléctrica",
@@ -216,7 +216,7 @@
         {
           "if": "fuel=gas",
           "then": {
-            "de": "Gas",
+            "de": "Dieser Grill wird mit Gas betrieben",
             "en": "This barbecue uses gas as fuel",
             "cs": "Plynový",
             "es": "Gas",

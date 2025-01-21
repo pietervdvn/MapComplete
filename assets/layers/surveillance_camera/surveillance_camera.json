@@ -510,7 +510,8 @@
     {
       "question": {
         "en": "Is this camera located inside or outside?",
-        "nl": "Bevindt de camera zich binnen of buiten?"
+        "nl": "Bevindt de camera zich binnen of buiten?",
+        "de": "Befindet sich diese Kamera drinnen oder draußen?"
       },
       "condition": {
         "and": [

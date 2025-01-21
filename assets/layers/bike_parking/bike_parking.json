@@ -104,7 +104,8 @@
         "es": "un aparcamiento de bicicletas",
         "da": "en cykelparkering",
         "cs": "parkování kol",
-        "ca": "un aparcament per a bicis"
+        "ca": "un aparcament per a bicis",
+        "uk": "велопарковка"
       },
       "tags": [
         "amenity=bicycle_parking"
@@ -135,7 +136,8 @@
       },
       "questionHint": {
         "en": "This is about the physical device one places their bicycle in and uses to lock",
-        "nl": "Dit gaat over het voorwerp waarin je je fiets plaats en mee op slot zet"
+        "nl": "Dit gaat over het voorwerp waarin je je fiets plaats en mee op slot zet",
+        "de": "Hier geht es um das physische Gerät, in das man sein Fahrrad stellt und mit dem man es abschließt"
       },
       "render": {
         "en": "This is a bicycle parking of the type: {bicycle_parking}",
@@ -525,7 +527,8 @@
           ],
           "then": {
             "en": "This is a bicycle shed (with walls on at least three sides)",
-            "nl": "Dit is een fietsschuurtje (met minstens 3 muren)"
+            "nl": "Dit is een fietsschuurtje (met minstens 3 muren)",
+            "de": "Dies ist ein Fahrradschuppen (mit Wänden an mindestens drei Seiten)"
           }
         },
         {
@@ -535,7 +538,8 @@
           ],
           "then": {
             "en": "This is a bicycle parking under a roof; the roof only serves the bicycle parking",
-            "nl": "Dit is een fietsenstalling met enkel een dak (het dak dient enkel voor de fietsenstalling)"
+            "nl": "Dit is een fietsenstalling met enkel een dak (het dak dient enkel voor de fietsenstalling)",
+            "de": "Dies ist ein überdachter Fahrradabstellplatz; das Dach dient nur dem Fahrradabstellplatz"
           }
         },
         {
@@ -545,7 +549,8 @@
           ],
           "then": {
             "en": "This bicycle parking is located in a building behind a door or gate",
-            "nl": "Deze fietsenstalling bevindt zich in een gebouw achter een deur of een poort"
+            "nl": "Deze fietsenstalling bevindt zich in een gebouw achter een deur of een poort",
+            "de": "Dieser Fahrradabstellplatz befindet sich in einem Gebäude hinter einer Tür oder einem Tor"
           }
         },
         {
@@ -557,7 +562,8 @@
           },
           "then": {
             "en": "This bicycle parking is under (a part of) a building",
-            "nl": "Deze fietsenstalling bevindt onder (een deel van) een gebouw"
+            "nl": "Deze fietsenstalling bevindt onder (een deel van) een gebouw",
+            "de": "Dieser Fahrradabstellplatz befindet sich unter (einem Teil) eines Gebäudes"
           }
         },
         {

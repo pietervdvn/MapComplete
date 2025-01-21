@@ -653,8 +653,37 @@
                     "building type": {
                         "question": "Wat voor soort gebouw is dit?"
                     },
+                    "grb-fixme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Geen fixme"
+                            }
+                        },
+                        "question": "Wat zegt de fixme?",
+                        "render": "De fixme is <b>{fixme}</b>"
+                    },
+                    "grb-housenumber": {
+                        "mappings": {
+                            "0": {
+                                "then": "Geen huisnummer"
+                            }
+                        },
+                        "question": "Wat is het huisnummer?",
+                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
+                    },
+                    "grb-min-level": {
+                        "question": "Hoeveel verdiepingen ontbreken?",
+                        "render": "Dit gebouw begint maar op de {building:min_level} verdieping"
+                    },
                     "grb-reference": {
                         "render": "Werd geïmporteerd vanuit GRB, het referentienummer is {source:geometry:ref}"
+                    },
+                    "grb-street": {
+                        "question": "Wat is de straat?",
+                        "render": "De straat is <b>{addr:street}</b>"
+                    },
+                    "grb-unit": {
+                        "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
                     }
                 }
             },
@@ -671,8 +700,35 @@
                         }
                     }
                 }
+            },
+            "5": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Geen omliggend OSM-gebouw gevonden"
+                                }
+                            }
+                        },
+                        "3": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Geen omliggend OSM-gebouw gevonden. Een omliggend gebouw is nodig om dit punt als adres punt toe te voegen. <div class=subtle>Importeer eerst de gebouwen. Vernieuw dan de pagina om losse adressen toe te voegen</div>"
+                                }
+                            },
+                            "render": {
+                                "special": {
+                                    "text": "Voeg dit adres als een nieuw adrespunt toe"
+                                }
+                            }
+                        }
+                    }
+                }
             }
-        }
+        },
+        "shortDescription": "Grb import helper tool",
+        "title": "GRB import helper"
     },
     "guideposts": {
         "description": "Wegwijzers (ook wel handwijzer genoemd) zijn vaak te vinden langs officiële wandel-, fiets-, ski- of paardrijroutes om de richtingen naar verschillende bestemmingen aan te geven. Vaak zijn ze vernoemd naar een regio of plaats en geven ze de hoogte aan.\n\nDe positie van een wegwijzer kan door een wandelaar/fietser/renner/skiër worden gebruikt als bevestiging van de huidige positie, vooral als ze een gedrukte kaart zonder GPS-ontvanger gebruiken. ",
@@ -1095,6 +1151,11 @@
         },
         "title": "Dierenartsen, hondenloopzones en andere huisdiervriendelijke plaatsen"
     },
+    "play_forests": {
+        "description": "Een speelbos is een zone in een bos die vrij toegankelijk is voor spelende kinderen. Deze wordt  in bossen van het Agentschap Natuur en bos altijd aangeduid met het overeenkomstige bord.",
+        "shortDescription": "Deze kaart toont speelbossen",
+        "title": "Speelbossen"
+    },
     "playgrounds": {
         "description": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",
         "shortDescription": "Een kaart met speeltuinen",
@@ -1167,6 +1228,47 @@
     "ski": {
         "description": "Alles om te skiën",
         "title": "Skipistes en kabelbanen"
+    },
+    "speelplekken": {
+        "description": "<h3>Welkom bij de Groendoener!</h3>De Zuidrand dat is spelen, ravotten, chillen, wandelen,… in het groen. Meer dan <b>200 grote en kleine speelplekken</b> liggen er in parken, in bossen en op pleintjes te wachten om ontdekt te worden. De verschillende speelplekken werden getest én goedgekeurd door kinder- en jongerenreporters uit de Zuidrand. Met leuke challenges dagen de reporters jou uit om ook op ontdekking te gaan. Klik op een speelplek op de kaart, bekijk het filmpje en ga op verkenning!<br/><br/>Het project groendoener kadert binnen het strategisch project <a href='https://www.provincieantwerpen.be/aanbod/dlm/samenwerkingsverbanden/zuidrand/projecten/strategisch-project-beleefbare-open-ruimte.html' target='_blank'>Beleefbare Open Ruimte in de Antwerpse Zuidrand</a> en is een samenwerking tussen het departement Leefmilieu van provincie Antwerpen, Sportpret vzw, een OpenStreetMap-België Consultent en Createlli vzw. Het project kwam tot stand met steun van Departement Omgeving van de Vlaamse Overheid.<br/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/provincie_antwerpen.jpg'/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/Departement_Omgeving_Vlaanderen.png'/>",
+        "layers": {
+            "6": {
+                "name": "Wandelroutes van provincie Antwerpen",
+                "tagRenderings": {
+                    "walk-description": {
+                        "render": "<h3>Korte beschrijving:</h3>{description}"
+                    },
+                    "walk-length": {
+                        "render": "Deze wandeling is <b>{_length:km}km</b> lang"
+                    },
+                    "walk-operator": {
+                        "question": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
+                    },
+                    "walk-operator-email": {
+                        "question": "Naar wie kan men emailen bij problemen rond signalisatie?",
+                        "render": "Bij problemen met signalisatie kan men emailen naar <a href='mailto:{operator:email}'>{operator:email}</a>"
+                    },
+                    "walk-type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dit is een internationale wandelroute"
+                            },
+                            "1": {
+                                "then": "Dit is een nationale wandelroute"
+                            },
+                            "2": {
+                                "then": "Dit is een regionale wandelroute"
+                            },
+                            "3": {
+                                "then": "Dit is een lokale wandelroute"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Speelplekken in de Antwerpse Zuidrand",
+        "title": "Welkom bij de groendoener!"
     },
     "sport_pitches": {
         "description": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen",
@@ -1288,6 +1390,10 @@
         },
         "title": "Straatverlichting"
     },
+    "street_lighting_assen": {
+        "description": "Op deze kaart vind je alles over straatlantaarns + een dataset van Assen",
+        "title": "Straatverlichting - Assen"
+    },
     "surveillance": {
         "description": "Op deze open kaart kan je bewakingscamera's vinden.",
         "shortDescription": "Bewakingscameras en dergelijke",
@@ -1400,6 +1506,10 @@
     "waste": {
         "description": "Kaart met afvalbakken en recyclingfaciliteiten.",
         "title": "Afval"
+    },
+    "waste_assen": {
+        "description": "Kaart met afvalbakken en recyclingfaciliteiten + een dataset voor Assen.",
+        "title": "Afval - Assen"
     },
     "waste_basket": {
         "description": "Op deze kaart vind je afvalbakken bij jou in de buurt. Als er een afvalbak ontbreekt op deze kaart, kun je deze zelf toevoegen",

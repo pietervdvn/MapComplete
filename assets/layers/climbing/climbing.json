@@ -241,7 +241,7 @@
         {
           "if": "climbing:toprope=no",
           "then": {
-            "de": "Toprope-Climbing ist hier nicht möglich",
+            "de": "Toprope-Klettern ist hier nicht möglich",
             "en": "Toprope climbing is not possible here",
             "nl": "Toprope-klimmen kan hier niet",
             "ja": "ここではToprope登坂はできません",
@@ -395,7 +395,7 @@
       },
       "render": {
         "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>",
-        "de": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>",
+        "de": "Die Sportkletterrouten hier haben höchstens {climbing:bolts:max} Bohrhaken. <div class='subtle'>Dies gilt ohne Sicherungsstationen und gibt an, wie viele Expressschlingen ein Kletterer benötigt.</div>",
         "nl": "De sportklimroutes hebben maximum {climbing:bolts:max} haken. <div class='subtle'>Hierbij worden standplaatsen niet meegeteld. Dit geeft aan hoeveel setjes een klimmer nodig heeft.</div>",
         "es": "Las vías de escalada deportiva aquí tienen como máximo {climbing:bolts:max} parabolts.<div class='subtle'>Esto es sin reuniones e indica cuántos cintas exprés necesita un escalador</div>"
       },

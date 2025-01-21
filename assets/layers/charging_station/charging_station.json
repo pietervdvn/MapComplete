@@ -3079,7 +3079,8 @@
         "nl": "oplaadpunt voor elektrische fietsen",
         "cs": "nabíjecí stanice pro elektrokola",
         "de": "Ladestation für Elektrofahrräder",
-        "es": "punto de carga para bicicletas eléctricas"
+        "es": "punto de carga para bicicletas eléctricas",
+        "uk": "зарядна станція для електровелосипедів"
       }
     },
     {
@@ -3094,7 +3095,8 @@
         "ca": "estació de càrrega per a cotxes",
         "cs": "nabíjecí stanice pro auta",
         "de": "Ladestation für Autos",
-        "es": "punto de carga para coches"
+        "es": "punto de carga para coches",
+        "uk": "зарядна станція для автомобілів"
       }
     }
   ],

@@ -560,7 +560,8 @@
         "it": "un contenitore per il riciclo",
         "ca": "un contenidor de reciclatge",
         "fr": "un conteneur de recyclage",
-        "cs": "recyklační kontejner"
+        "cs": "recyklační kontejner",
+        "uk": "контейнер для сміття"
       },
       "tags": [
         "amenity=recycling",
@@ -576,7 +577,8 @@
         "it": "un centro di riciclo",
         "ca": "un centre de reciclatge",
         "fr": "une déchèterie",
-        "cs": "recyklační centrum"
+        "cs": "recyklační centrum",
+        "uk": "центр переробки відходів"
       },
       "tags": [
         "amenity=recycling",
@@ -1440,7 +1442,8 @@
         {
           "osmTags": "recycling_type=centre",
           "question": {
-            "en": "Only recycling centres"
+            "en": "Only recycling centres",
+            "de": "Nur Recyclingzentren"
           }
         }
       ]

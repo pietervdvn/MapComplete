@@ -5,7 +5,8 @@
     "de": "Pfadfinder:innenstämme"
   },
   "description": {
-    "en": "A map showing scouting groups."
+    "en": "A map showing scouting groups.",
+    "de": "Eine Karte mit Pfadfindergruppen."
   },
   "source": {
     "osmTags": "club=scout"
@@ -13,7 +14,8 @@
   "minzoom": 4,
   "title": {
     "render": {
-      "en": "{name}"
+      "en": "{name}",
+      "de": "{name}"
     }
   },
   "pointRendering": [

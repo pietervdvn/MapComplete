@@ -330,7 +330,8 @@
         "es": "una reparación/tienda de bicicletas",
         "da": "en cykelværksted/butik",
         "ca": "una botiga/reparació de bicicletes",
-        "cs": "opravna/obchod s jízdními koly"
+        "cs": "opravna/obchod s jízdními koly",
+        "uk": "майстерня з ремонту велосипедів"
       },
       "tags": [
         "shop=bicycle"

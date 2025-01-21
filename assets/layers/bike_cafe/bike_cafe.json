@@ -137,7 +137,8 @@
         "da": "en cykelcafé",
         "cs": "kavárna pro cyklisty",
         "ca": "un cafè ciclista",
-        "es": "un bike café"
+        "es": "un bike café",
+        "uk": "велокафе"
       },
       "tags": [
         "amenity=pub",

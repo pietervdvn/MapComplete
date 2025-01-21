@@ -3191,7 +3191,8 @@
       "id": "seating",
       "question": {
         "en": "What kind of seating does {title()} have?",
-        "nl": "Wat voor zitplaatsen heeft {title()}?"
+        "nl": "Wat voor zitplaatsen heeft {title()}?",
+        "de": "Welche Art von Sitzgelegenheiten hat {title()}?"
       },
       "mappings": [
         {
@@ -3199,7 +3200,8 @@
           "ifnot": "outdoor_seating=no",
           "then": {
             "en": "This place has outdoor seating",
-            "nl": "Deze plaats heeft zitplaatsen buiten"
+            "nl": "Deze plaats heeft zitplaatsen buiten",
+            "de": "Dieser Ort hat Sitzgelegenheiten im Freien"
           },
           "icon": "./assets/layers/outdoor_seating/outdoor_seating.svg"
         },
@@ -3208,7 +3210,8 @@
           "ifnot": "indoor_seating=no",
           "then": {
             "en": "This place has indoor seating",
-            "nl": "Deze plaats heeft zitplaatsen binnen"
+            "nl": "Deze plaats heeft zitplaatsen binnen",
+            "de": "Dieser Ort hat Sitzplätze im Innenbereich"
           }
         }
       ],
@@ -3218,7 +3221,8 @@
       "id": "maxstay",
       "question": {
         "en": "What is the maximum amount of time one is allowed to stay here?",
-        "nl": "Wat is de maximale tijd die je hier mag blijven?"
+        "nl": "Wat is de maximale tijd die je hier mag blijven?",
+        "de": "Wie lange darf man sich maximal hier aufhalten?"
       },
       "freeform": {
         "key": "maxstay",
@@ -3226,14 +3230,16 @@
       },
       "render": {
         "en": "One can stay at most <b>{canonical(maxstay)}</b>",
-        "nl": "Je mag hier maximaal <b>{canonical(maxstay)}</b> blijven"
+        "nl": "Je mag hier maximaal <b>{canonical(maxstay)}</b> blijven",
+        "de": "Man kann höchstens <b>{canonical(maxstay)}</b> bleiben"
       },
       "mappings": [
         {
           "if": "maxstay=unlimited",
           "then": {
             "en": "There is no limit to the amount of time one can stay here",
-            "nl": "Er is geen limiet aan de tijd die je hier mag blijven"
+            "nl": "Er is geen limiet aan de tijd die je hier mag blijven",
+            "de": "Es gibt keine zeitliche Begrenzung für den Aufenthalt hier"
           }
         }
       ]
@@ -3241,7 +3247,8 @@
     {
       "id": "name",
       "question": {
-        "en": "What is the name of this place?"
+        "en": "What is the name of this place?",
+        "de": "Wie heißt dieser Ort?"
       },
       "render": {
         "*": "<b>{name}</b>"

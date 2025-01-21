@@ -57,7 +57,8 @@
         "cs": "počítadlo jízdních kol",
         "de": "eine Fahrradzählstelle",
         "es": "un contador de bicicletas",
-        "nl": "een fietsteller"
+        "nl": "een fietsteller",
+        "uk": "стійка для велосипедів"
       },
       "tags": [
         "man_made=monitoring_station",
