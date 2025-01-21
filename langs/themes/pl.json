@@ -804,12 +804,12 @@
     "pets": {
         "description": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ...",
         "layers": {
-            "3": {
+            "4": {
                 "override": {
                     "name": "Restauracje przyjazne psom"
                 }
             },
-            "5": {
+            "6": {
                 "override": {
                     "name": "Sklepy przyjazne psom"
                 }

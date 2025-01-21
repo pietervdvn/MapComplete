@@ -4347,6 +4347,37 @@
             "render": "Doctors Office {name}"
         }
     },
+    "dog_toilet": {
+        "description": "A dog toilet is a facility designated for dogs to urinate and excrete. This can be a designated, signposted patch of grass, a sand pit or a fenced area.",
+        "name": "Dog toilets",
+        "presets": {
+            "0": {
+                "title": "a dog toilet"
+            }
+        },
+        "tagRenderings": {
+            "barrier": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a fence around this dog toilet"
+                    },
+                    "1": {
+                        "then": "There is a hedge around this dog toilet"
+                    },
+                    "2": {
+                        "then": "There is a barrier around this dog toilet"
+                    },
+                    "3": {
+                        "then": "There is no barrier around this dog toilet"
+                    }
+                },
+                "question": "Is this dog toilet fenced?"
+            }
+        },
+        "title": {
+            "render": "Dog toilet"
+        }
+    },
     "dogpark": {
         "name": "dog parks",
         "presets": {

@@ -1138,14 +1138,19 @@
     "pets": {
         "description": "Deze kaart helpt je op weg met je huisdier: dierenartsen, hondenloopzones, dierenwinkels, hondenvriendelijke restaurants, ...",
         "layers": {
-            "3": {
+            "4": {
                 "override": {
                     "name": "Hondvriendelijke eetgelegenheden"
                 }
             },
-            "5": {
+            "6": {
                 "override": {
                     "name": "Hondvriendelijke winkels"
+                }
+            },
+            "8": {
+                "override": {
+                    "name=": "Vuilnisbakken met verdelers voor hondenpoepzakjes"
                 }
             }
         },

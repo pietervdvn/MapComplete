@@ -1087,14 +1087,19 @@
     "pets": {
         "description": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
         "layers": {
-            "3": {
+            "4": {
                 "override": {
                     "name": "Dog friendly eateries"
                 }
             },
-            "5": {
+            "6": {
                 "override": {
                     "name": "Dog-friendly shops"
+                }
+            },
+            "8": {
+                "override": {
+                    "name=": "Waste baskets with excrement bag dispensers"
                 }
             }
         },
