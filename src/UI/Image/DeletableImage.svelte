@@ -44,7 +44,7 @@
     const imageInfo = await panoramax.imageInfo(image.id)
     let reporter_email: string = undefined
     const userdetails = state.userRelatedState.osmConnection.userDetails
-    if (userdetails.data?.loggedIn) {
+    if (userdetails.data?.name) {
       reporter_email = userdetails.data.name + "@openstreetmap.org"
     }
 
