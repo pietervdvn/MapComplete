@@ -12,10 +12,6 @@
 
   export let estimated: Store<number>
 
-  images.addCallbackAndRun(imgs => {
-    console.log(">>><<< imgs are", imgs)
-  })
-
 </script>
 {#if $estimated > 0 && $images.length < 1}
   <LoadingPlaceholder />

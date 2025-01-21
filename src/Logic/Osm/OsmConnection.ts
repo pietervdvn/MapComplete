@@ -20,7 +20,6 @@ interface OsmUserInfo {
 }
 
 export default class UserDetails {
-    public loggedIn = false
     public name = "Not logged in"
     public uid: number
     public csCount = 0
@@ -136,7 +135,6 @@ export class OsmConnection {
             const ud = this.userDetails.data
             ud.csCount = 5678
             ud.uid = 42
-            ud.loggedIn = true
             ud.unreadMessages = 0
             ud.name = "Fake user"
             ud.totalMessages = 42
@@ -148,18 +146,9 @@ export class OsmConnection {
         this.UpdateCapabilities()
 
         this.isLoggedIn = this.userDetails.map(
-            (user) =>
-                user.loggedIn &&
-                (this.apiIsOnline.data === "unknown" || this.apiIsOnline.data === "online"),
+            (user) => user !== undefined && (this.apiIsOnline.data === "unknown" || this.apiIsOnline.data === "online"),
             [this.apiIsOnline]
         )
-        this.isLoggedIn.addCallback((isLoggedIn) => {
-            if (this.userDetails.data.loggedIn == false && isLoggedIn == true) {
-                // We have an inconsistency: the userdetails say we _didn't_ log in, but this actor says we do
-                // This means someone attempted to toggle this; so we attempt to login!
-                this.AttemptLogin()
-            }
-        })
 
         this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false)
 
@@ -214,7 +203,6 @@ export class OsmConnection {
 
     public LogOut() {
         this.auth.logout()
-        this.userDetails.data.loggedIn = false
         this.userDetails.data.csCount = 0
         this.userDetails.data.name = ""
         this.userDetails.ping()
@@ -279,7 +267,6 @@ export class OsmConnection {
                 const userInfo = details.getElementsByTagName("user")[0]
 
                 const data = this.userDetails.data
-                data.loggedIn = true
                 console.log("Login completed, userinfo is ", userInfo)
                 data.name = userInfo.getAttribute("display_name")
                 data.account_created = userInfo.getAttribute("account_created")
