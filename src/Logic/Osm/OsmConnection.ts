@@ -54,7 +54,6 @@ interface OsmUserInfo {
 }
 
 export default interface UserDetails {
-    loggedIn: boolean
     name: string
     uid: number
     csCount: number
@@ -165,7 +164,6 @@ export class OsmConnection {
             const ud = this.userDetails.data
             ud.csCount = 5678
             ud.uid = 42
-            ud.loggedIn = true
             ud.unreadMessages = 0
             ud.name = "Fake user"
             ud.totalMessages = 42
@@ -236,7 +234,6 @@ export class OsmConnection {
 
     public LogOut() {
         this.auth.logout()
-        this.userDetails.data.loggedIn = false
         this.userDetails.data.csCount = 0
         this.userDetails.data.name = ""
         this.userDetails.ping()
@@ -296,7 +293,6 @@ export class OsmConnection {
                 name: user.display_name,
                 csCount: user.changesets.count,
                 description: user.description,
-                loggedIn: true,
                 backend: this.Backend(),
                 home: user.home,
                 languages: user.languages,

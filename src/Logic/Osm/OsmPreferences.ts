@@ -279,7 +279,7 @@ export class OsmPreferences {
      * @private
      */
     private deleteKeyDirectly(k: string) {
-        if (!this.osmConnection.userDetails.data.loggedIn) {
+        if (!this.osmConnection.isLoggedIn.data) {
             console.debug(`Not saving preference ${k}: user not logged in`)
             return
         }
@@ -312,7 +312,7 @@ export class OsmPreferences {
      * Deletes it if 'v' is undefined, null or empty
      */
     private async uploadKeyDirectly(k: string, v: string) {
-        if (!this.osmConnection.userDetails.data.loggedIn) {
+        if (!this.osmConnection.isLoggedIn.data) {
             console.debug(`Not saving preference ${k}: user not logged in`)
             return
         }

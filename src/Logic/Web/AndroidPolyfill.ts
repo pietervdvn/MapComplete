@@ -14,9 +14,11 @@ const DatabridgePluginSingleton = registerPlugin<DatabridgePlugin>("Databridge",
     web: () => {
         return <DatabridgePlugin>{
             async request(options: { key: string }): Promise<{ value: string | object }> {
+                console.log("Android polyfill got request for", options.key)
                 if (options.key === "meta") {
                     return { value: "web" }
                 }
+                return null
             }
         }
     }
@@ -65,6 +67,12 @@ export class AndroidPolyfill {
         console.log("Registering back button callback", callback)
         DatabridgePluginSingleton.request({ key: "backbutton" }).then(ev => {
             console.log("AndroidPolyfill: received backbutton: ", ev)
+            if(ev === null){
+                // Probably in web environment
+                return
+            }
+            // We have to re-register every time
+            AndroidPolyfill.onBackButton(callback, options)
             if (callback()) {
                 return
             }

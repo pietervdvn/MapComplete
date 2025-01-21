@@ -12,6 +12,9 @@ const tokenSrc = new UIEventSource("")
 new VariableUiElement(tokenSrc).AttachTo("token")
 new OsmConnection().finishLogin(async (_, token: string) => {
 	console.log("Login finished, redirecting to passthrough; token is "+token)
-    await Utils.waitFor(10)
-   	window.location.href = "https://app.mapcomplete.org/passthrough.html?oauth_token="+token
+    tokenSrc.set(token)
+    await Utils.waitFor(500)
+   	window.location.href = "orgmapcomplete://passthrough.html?oauth_token="+token
+    await Utils.waitFor(500)
+    window.close()
 })

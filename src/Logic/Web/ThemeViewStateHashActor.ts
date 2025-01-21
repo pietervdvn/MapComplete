@@ -153,6 +153,10 @@ export default class ThemeViewStateHashActor {
             state.previewedImage.setData(undefined)
             return true
         }
+        if(state.searchState.showSearchDrawer.data){
+            state.searchState.showSearchDrawer.set(false)
+            return true
+        }
         if (state.guistate.closeAll()) {
             return true
         }

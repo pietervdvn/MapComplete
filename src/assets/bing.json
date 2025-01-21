@@ -1,1 +1,1 @@
-{"properties":{"name":"Bing Maps Aerial","id":"Bing","url":"https://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=14880&pr=odbl&n=f","type":"bing","category":"photo","min_zoom":1,"max_zoom":22},"type":"Feature","geometry":null}
+{"properties":{"name":"Bing Maps Aerial","id":"Bing","url":"https://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=14880&pr=odbl&n=f","type":"bing","category":"photo","min_zoom":1,"max_zoom":22},"type":"Feature","geometry":null}
