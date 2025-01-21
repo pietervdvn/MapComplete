@@ -1,10 +1,12 @@
 {
   "id": "charge_point",
   "name": {
-    "en": "Charge points"
+    "en": "Charge points",
+    "de": "Ladesäulen"
   },
   "description": {
-    "en": "Layer showing individual charge points within a charging station"
+    "en": "Layer showing individual charge points within a charging station",
+    "de": "Ebene, die einzelne Ladepunkte innerhalb einer Ladestation anzeigt"
   },
   "source": {
     "osmTags": "man_made=charge_point"
@@ -12,7 +14,8 @@
   "minzoom": 18,
   "title": {
     "render": {
-      "en": "Charge point"
+      "en": "Charge point",
+      "de": "Ladesäule"
     }
   },
   "pointRendering": [
@@ -36,13 +39,15 @@
   "presets": [
     {
       "title": {
-        "en": "a charge point"
+        "en": "a charge point",
+        "de": "eine Ladesäule"
       },
       "tags": [
         "man_made=charge_point"
       ],
       "description": {
-        "en": "Add an individual charge point within a larger charging station"
+        "en": "Add an individual charge point within a larger charging station",
+        "de": "Füge eine einzelne Ladesäule innerhalb einer größeren Ladestation hinzu"
       }
     }
   ],
@@ -51,16 +56,19 @@
     {
       "id": "ref",
       "question": {
-        "en": "What is the reference number of this charge point?"
+        "en": "What is the reference number of this charge point?",
+        "de": "Wie lautet die Referenznummer dieser Ladesäule?"
       },
       "freeform": {
         "key": "ref",
         "placeholder": {
-          "en": "Reference number of the charge point, e.g. 2126"
+          "en": "Reference number of the charge point, e.g. 2126",
+          "de": "Referenznummer der Ladesäule, z. B. 2126"
         }
       },
       "render": {
-        "en": "The reference of this charge point is {ref}"
+        "en": "The reference of this charge point is {ref}",
+        "de": "Die Referenz dieser Ladesäule ist {ref}"
       }
     },
     "charging_station.capacity",

@@ -332,7 +332,8 @@
         "da": "en cykelpumpe",
         "cs": "pumpa na kolo",
         "ca": "una manxa per a bicicletes",
-        "pt": "uma bomba de bicicleta"
+        "pt": "uma bomba de bicicleta",
+        "uk": "велосипедний насос"
       },
       "tags": [
         "amenity=bicycle_repair_station",
@@ -351,7 +352,8 @@
         "es": "Un dispositivo para inflar los neumáticos en una ubicación fija en el espacio público.",
         "da": "En anordning til at fylde dine dæk op på et fast sted i det offentlige rum.",
         "cs": "Zařízení pro huštění pneumatik na pevném místě na veřejném místě.",
-        "ca": "Un dispositiu per a unflar les teues rodes en una posició fixa a l'espai públic."
+        "ca": "Un dispositiu per a unflar les teues rodes en una posició fixa a l'espai públic.",
+        "uk": "Пристрій для накачування шин на фіксованому місці в громадському просторі."
       },
       "exampleImages": [
         "./assets/layers/bike_repair_station/pump_example_round.jpg",
@@ -389,7 +391,8 @@
         "cs": "Vzduchový kompresor na kolo a nářadí na opravu kola na veřejném místě. Nářadí je často zajištěno řetězy proti krádeži.",
         "ca": "Una bomba per a bicicletes i eines per a reparar la teva bicicleta a l'espai públic. Les eines sovint estan assegurades amb cadenes contra robatoris.",
         "pt_BR": "Uma bomba de ar para bicicletas e ferramentas para reparar sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos.",
-        "pt": "Uma bomba de ar para bicicletas e ferramentas para reparar a sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos."
+        "pt": "Uma bomba de ar para bicicletas e ferramentas para reparar a sua bicicleta em espaço público. As ferramentas geralmente são protegidas com correntes contra furtos.",
+        "uk": "Велосипедний насос та інструменти для ремонту велосипеда в громадському просторі. Інструменти часто захищені ланцюгами від крадіжки."
       },
       "exampleImages": [
         "./assets/layers/bike_repair_station/repair_station_example_2.jpg",
@@ -408,7 +411,8 @@
         "es": "una estación de reparación de bicicletas sin bomba",
         "da": "en cykelreparationsstation uden pumpe",
         "cs": "opravna kol bez vzduchového kompresoru",
-        "ca": "una estació de reparació de bicicletes sense bomba"
+        "ca": "una estació de reparació de bicicletes sense bomba",
+        "uk": "станція ремонту велосипедів без насоса"
       },
       "tags": [
         "amenity=bicycle_repair_station",
@@ -423,7 +427,8 @@
         "da": "Værktøj til at reparere din cykel i det offentlige rum (uden pumpe). Værktøjet er sikret mod tyveri.",
         "fr": "Des outils pour réparer les vélos dans l’espace public (sans pompe). Les outils sont sécurisés contre le vol.",
         "cs": "nářadí pro opravu kola na veřejném místě (bez vzduchového kompresoru) Nářadí je zabezpečeno proti krádeži.",
-        "ca": "Eines per reparar la teva bicicleta a l'espai públic (sense bomba). Les eines estan assegurades contra robatoris."
+        "ca": "Eines per reparar la teva bicicleta a l'espai públic (sense bomba). Les eines estan assegurades contra robatoris.",
+        "uk": "Інструменти для ремонту велосипеда в громадському просторі (без насоса). Інструменти захищені від крадіжки."
       }
     }
   ],

@@ -144,7 +144,8 @@
         "cs": "půjčovna kol",
         "ca": "un lloguer de bicicletes",
         "pt_BR": "um aluguel de bicicletas",
-        "pt": "um aluguel de bicicletas"
+        "pt": "um aluguel de bicicletas",
+        "uk": "прокат велосипедів"
       },
       "tags": [
         "amenity=bicycle_rental"

@@ -49,7 +49,8 @@
           "header": "profile-title",
           "labels": "profile-content"
         }
-      }
+      },
+      "metacondition": "_uid~*"
     },
     {
       "id": "profile-title",
@@ -68,7 +69,8 @@
             "*": "<div class='flex'><img src={_img} class='w-12 h-12 rounded-full' style='margin-right: 0.75rem'/> <h3>{_name}</h3></div>"
           }
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "profile-description",
@@ -105,7 +107,8 @@
             }
           }
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "edit-profile",
@@ -136,7 +139,8 @@
             "es": "Editar la descripción de tu perfil"
           }
         }
-      }
+      },
+      "metacondition": "_uid~*"
     },
     {
       "id": "verified-mastodon",
@@ -172,7 +176,8 @@
           },
           "icon": "invalid"
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "cscount-thanks",
@@ -198,7 +203,8 @@
           },
           "icon": "party"
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "translation-thanks",
@@ -221,7 +227,8 @@
           },
           "icon": "party"
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "contributor-thanks",
@@ -246,7 +253,8 @@
           "icon": "party",
           "hideInAnswer": true
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "language_picker",
@@ -311,7 +319,8 @@
             }
           }
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "settings-link",
@@ -330,13 +339,15 @@
           },
           "href": "{_backend}/account/edit"
         }
-      }
+      },
+      "metacondition": "_uid~*"
     },
     {
       "id": "logout",
       "render": {
         "*": "{logout()}"
-      }
+      },
+      "metacondition": "_uid~*"
     },
     {
       "id": "title-map",
@@ -345,7 +356,8 @@
         "de": "<h3>Karte konfigurieren</h3>",
         "hu": "<h3>Térkép beállítása</h3>",
         "uk": "<h3>Налаштування мапи</h3>",
-        "es": "<h3>Configurar mapa</h3>"
+        "es": "<h3>Configurar mapa</h3>",
+        "nl": "<h3>Kaartvoorkeuren</h3>"
       }
     },
     {
@@ -401,7 +413,8 @@
             "es": "Nunca activar las funciones de accesibilidad"
           }
         }
-      ]
+      ],
+      "#force-save-button": "yes"
     },
     {
       "id": "background-layer-readonly",
@@ -421,7 +434,8 @@
         "da": "Dette temakort har angivet et foruddefineret baggrundslag. Dine standardindstillinger benyttes ikke",
         "hu": "Ennek a tematikus térképnek van előre meghatározott háttérrétegkészlete. Itt ezért nem alkalmazható az általad beállított alapértelmezett tematikustérkép-beállítás",
         "es": "Este mapa temático tiene una capa de fondo predefinida. Tu configuración de tema predeterminada no se aplica"
-      }
+      },
+      "metacondition": "_uid~*"
     },
     {
       "id": "background-layer",
@@ -550,7 +564,8 @@
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "show_crosshair",
@@ -577,29 +592,34 @@
         {
           "if": "mapcomplete-show_crosshair=yes",
           "then": {
-            "en": "Show a crosshair in the center of the map when zoomed in above level 17"
+            "en": "Show a crosshair in the center of the map when zoomed in above level 17",
+            "de": "Zeige ein Fadenkreuz in der Mitte der Karte, wenn über Stufe 17 hinaus gezoomt wird"
           }
         },
         {
           "if": "mapcomplete-show_crosshair=no",
           "then": {
-            "en": "Do not show a crosshair in the center of the map"
+            "en": "Do not show a crosshair in the center of the map",
+            "de": "Zeige kein Fadenkreuz in der Mitte der Karte an"
           }
         },
         {
           "if": "mapcomplete-show_crosshair=",
           "then": {
-            "en": "Do not show a crosshair in the center of the map"
+            "en": "Do not show a crosshair in the center of the map",
+            "de": "Zeige kein Fadenkreuz in der Mitte der Karte an"
           },
           "hideInAnswer": true
         },
         {
           "if": "mapcomplete-show_crosshair=always",
           "then": {
-            "en": "Always show a crosshair in the center of the map"
+            "en": "Always show a crosshair in the center of the map",
+            "de": "Zeige immer ein Fadenkreuz in der Mitte der Karte an"
           }
         }
-      ]
+      ],
+      "#force-save-button": "yes"
     },
     {
       "id": "fixate-north",
@@ -648,7 +668,8 @@
             "es": "Mantener siempre el norte hacia arriba"
           }
         }
-      ]
+      ],
+      "#force-save-button": "yes"
     },
     {
       "id": "scalebar",
@@ -687,7 +708,8 @@
             "es": "Ocultar la barra de escala"
           }
         }
-      ]
+      ],
+      "#force-save-button": "yes"
     },
     {
       "id": "title-editing",
@@ -697,8 +719,10 @@
         "cs": "<h3>Úprava nastavení</h3>",
         "hu": "<h3>Szerkesztési beállítások</h3>",
         "uk": "<h3>Налаштування редагування</h3>",
-        "es": "<h3>Configuración de edición</h3>"
-      }
+        "es": "<h3>Configuración de edición</h3>",
+        "nl": "<h3>Voorkeuren voor databewerking</h3>"
+      },
+      "metacondition": "_uid~*"
     },
     {
       "id": "all-questions-at-once",
@@ -748,7 +772,8 @@
             "es": "Mostrar las preguntas una por una"
           }
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "show_tags",
@@ -831,7 +856,8 @@
             "es": "Mostrar las etiquetas que se aplicarán al realizar un cambio y mostrar la tabla de etiquetas en cada elemento"
           }
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "add-new-feature",
@@ -895,7 +921,8 @@
             "es": "Al hacer clic derecho o presionar prolongadamente el mapa, aparece un marcador donde se puede agregar un nuevo elemento. Además, se muestra un botón en la parte inferior izquierda"
           }
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "disabled-questions",
@@ -903,7 +930,8 @@
         "special": {
           "type": "disabled_questions"
         }
-      }
+      },
+      "metacondition": "_uid~*"
     },
     {
       "id": "title-privacy-legal",
@@ -914,7 +942,8 @@
         "hu": "<h3>Adatvédelem és jog</h3>",
         "uk": "<h3>Захист персональних даних </h3>",
         "es": "<h3>Privacidad y legal</h3>"
-      }
+      },
+      "metacondition": "_uid~*"
     },
     {
       "id": "more_privacy_theme_override",
@@ -930,7 +959,8 @@
             "es": "Este tema es sensible. Al realizar cambios, no se indicará explícitamente si estabas cerca."
           }
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "more_privacy",
@@ -944,7 +974,7 @@
       },
       "questionHint": {
         "en": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away than 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time.",
-        "de": "Wenn du eine Änderung an einem oder mehreren Objekten vornimmst und deinen Standort aktivierst, wird eine ungefähre Angabe darüber gespeichert, wo du dich befunden hast: Es wird angezeigt, ob du näher als 25m, 500m, 5km oder weiter als 5km entfernt warst. Das hilft den Kartierern, deinen Kontext zu verstehen, wenn du Änderungen vornimmst, gibt aber auch einen Hinweis darauf, wo du zu diesem Zeitpunkt warst. ",
+        "de": "Wenn du eine Änderung an einem oder mehreren Objekten vornimmst und deinen Standort aktivierst, wird eine ungefähre Angabe darüber gespeichert, wo du dich befunden hast: Es wird angezeigt, ob du näher als 25m, 500m, 5km oder weiter als 5km entfernt warst. Das hilft den Kartierern, deinen Kontext zu verstehen, wenn du Änderungen vornimmst, gibt aber auch einen Hinweis darauf, wo du zu diesem Zeitpunkt warst.",
         "nl": "Wanneer je een wijziging maakt aan één of meer interessepunten en als MapComplete toont waar je bent, dan kan opgeslaan worden hoever je je ongeveer van deze objecten bevindt. Er wordt aangeduid of je dichter dan 25m, 500m, 5km of verder dan 5km was. Dit helpt om andere bijdragers te begrijpen hoe je je bijdragen deed, maar geeft natuurlijk ook aan waar je op dat moment was. ",
         "hu": "Ha módosítasz egy objektumot, és engedélyezed a helymeghatározást, akkor a rendszer elmenti a körülbelüli helyedet: jelzi, hogy 25 méteren, 500 méteren vagy 5 kilométeren belül vagy 5 km-nél távolabb voltál. A többi térképész így jobban látja, milyen körülmények között szerkesztetted a térképet, de egyúttal azt is jelzi, hogy hol voltál ebben az időpontban. ",
         "uk": "Якщо ви вносите зміни до одного або декількох об'єктів і ввімкнули функцію визначення вашого місцезнаходження, буде збережено приблизну інформацію про те, де ви перебували: чи були ви ближче 25 м, 500 м, 5 км або далі 5 км від об'єкта. Це допомагає картографам зрозуміти ваш контекст при внесенні змін, але дає уявлення про те, де ви були в цей час. ",
@@ -956,7 +986,7 @@
           "icon": "./assets/svg/eye.svg",
           "then": {
             "en": "When making changes to OpenStreetMap, do not indicate how far away I was from the changed objects.",
-            "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst.",
+            "de": "Wenn ich Änderungen an OpenStreetMap vornehme, gebe ich nicht an, wie weit ich von den geänderten Objekten entfernt war.",
             "nl": "Geef niet aan hoever je je van de gewijzigde objecten bevindt wanneer je wijzigingen maakt met MapComplete.",
             "cs": "Při provádění změn v OpenStreetMap neuvádějte, jak daleko jste byli od změněných objektů.",
             "hu": "Az OpenStreetMap szerkesztésekor ne jelenjék meg, hogy milyen messze voltál a módosított objektumoktól.",
@@ -977,7 +1007,8 @@
             "es": "Al realizar cambios en OpenStreetMap, indicar aproximadamente qué tan lejos estabas de los objetos modificados. Esto ayuda a otros colaboradores a comprender cómo realizaste el cambio"
           }
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "sync-visited-themes",
@@ -1028,7 +1059,8 @@
             "es": "No guardar los mapas temáticos visitados"
           }
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "sync-visited-locations",
@@ -1072,13 +1104,14 @@
           "if": "mapcomplete-preference-search-history=no",
           "then": {
             "en": "Don't save the locations I search for and inspect",
-            "de": "Gesuchte und überprüfte Orte nicht auf meinem Gerät speichern ",
+            "de": "Gesuchte und überprüfte Orte nicht auf meinem Gerät speichern",
             "hu": "Ne legyenek elmentve az általam megkeresett és szerkesztett helyek ",
             "uk": "Не зберігайте місця, які ви шукаєте та перевіряєте ",
             "es": "No guardar las ubicaciones que buscas e inspeccionas "
           }
         }
-      ]
+      ],
+      "metacondition": "_uid~*"
     },
     {
       "id": "title-id",
@@ -1156,7 +1189,8 @@
         "translations"
       ],
       "render": {
-        "en": "<h3>Translating MapComplete</h3>"
+        "en": "<h3>Translating MapComplete</h3>",
+        "de": "<h3>MapComplete übersetzen</h3>"
       }
     },
     {
@@ -1227,7 +1261,8 @@
             "es": "Mostrar siempre los botones de traducción, incluso en dispositivos móviles"
           }
         }
-      ]
+      ],
+      "#force-save-button": "yes"
     },
     {
       "label": [
@@ -1426,7 +1461,8 @@
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "#force-save-button": "yes"
     },
     {
       "id": "debug-gps",

@@ -179,7 +179,8 @@
           },
           "then": {
             "en": "This is an escalator moving in the direction of the arrows",
-            "nl": "Dit is een roltrap die beweegt in de richting van de pijlen"
+            "nl": "Dit is een roltrap die beweegt in de richting van de pijlen",
+            "de": "Dies ist eine Rolltreppe, die sich in Richtung der Pfeile bewegt"
           },
           "hideInAnswer": true
         },
@@ -187,7 +188,8 @@
           "if": "conveying=reversible",
           "then": {
             "en": "This is a reversible escalator",
-            "nl": "Dit is een roltrap die van richting kan veranderen"
+            "nl": "Dit is een roltrap die van richting kan veranderen",
+            "de": "Diese Rolltreppe ist beidseitig befahrbar"
           }
         },
         {
@@ -218,7 +220,8 @@
       ],
       "question": {
         "en": "Is this an escalator?",
-        "nl": "Is dit een roltrap?"
+        "nl": "Is dit een roltrap?",
+        "de": "Ist das eine Rolltreppe?"
       }
     },
     {

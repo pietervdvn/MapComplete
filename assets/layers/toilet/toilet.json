@@ -194,7 +194,8 @@
           "fallback": "toilet",
           "question": {
             "en": "How would you rate this toilet?",
-            "nl": "Hoe goed is deze toilet?"
+            "nl": "Hoe goed is deze toilet?",
+            "de": "Wie würdest du diese Toilette bewerten?"
           }
         }
       }

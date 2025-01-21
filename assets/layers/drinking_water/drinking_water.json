@@ -134,7 +134,8 @@
         "hu": "ivóvíz",
         "ca": "una font d'aigua potable",
         "cs": "pitná voda",
-        "es": "una fuente de agua potable"
+        "es": "una fuente de agua potable",
+        "uk": "питна вода"
       },
       "description": {
         "en": "Typically a drinking fountain, water tap, water well or natural spring",
@@ -255,7 +256,8 @@
         "nl": "Is dit drinkwaterpunt gratis te gebruiken?",
         "de": "Kann diese Trinkwasserstelle kostenlos genutzt werden?",
         "ca": "Aquest punt d'aigua potable és d'ús gratuït?",
-        "es": "¿Es de libre uso este punto de agua potable?"
+        "es": "¿Es de libre uso este punto de agua potable?",
+        "uk": "Чи можна користуватися цим пунктом питної води безкоштовно?"
       },
       "mappings": [
         {
@@ -265,7 +267,8 @@
             "nl": "Gratis te gebruiken",
             "de": "Die Nutzung ist kostenlos",
             "ca": "D'us gratuït",
-            "es": "Libre de uso"
+            "es": "Libre de uso",
+            "uk": "Безкоштовне використання"
           }
         },
         {
@@ -275,7 +278,8 @@
             "nl": "Men moet betalen om dit drinkwaterpunt te gebruiken",
             "de": "Die Nutzung ist kostenpflichtig",
             "ca": "Cal pagar per utilitzar aquest punt d'aigua potable",
-            "es": "Hay que pagar para usar este punto de agua potable"
+            "es": "Hay que pagar para usar este punto de agua potable",
+            "uk": "Користування цим пунктом питної води є платним"
           }
         }
       ]
@@ -390,7 +394,8 @@
       "id": "temperature-cold",
       "question": {
         "en": "Is cold water available here?",
-        "nl": "Is gekoeld water hier beschikbaar?"
+        "nl": "Is gekoeld water hier beschikbaar?",
+        "de": "Gibt es hier kaltes Wasser?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -399,7 +404,8 @@
           "ifnot": "iced_water=no",
           "then": {
             "en": "Ice-cold water is provided here",
-            "nl": "Ijskoud water is hier beschikbaar"
+            "nl": "Ijskoud water is hier beschikbaar",
+            "de": "Hier wird eiskaltes Wasser bereitgestellt"
           }
         },
         {
@@ -407,7 +413,8 @@
           "ifnot": "cold_water=no",
           "then": {
             "en": "Actively cooled water is available here",
-            "nl": "Afgekoeld water is hier beschikbaar"
+            "nl": "Afgekoeld water is hier beschikbaar",
+            "de": "Hier steht aktiv gekühltes Wasser zur Verfügung"
           }
         },
         {
@@ -415,7 +422,8 @@
           "ifnot": "room_temperature_water=no",
           "then": {
             "en": "Ambient temperature water (without active cooling or heating) is available here",
-            "nl": "Water aan omgevingstemperatuur (zonder actieve koeling of opwarming) is hier beschikbaar"
+            "nl": "Water aan omgevingstemperatuur (zonder actieve koeling of opwarming) is hier beschikbaar",
+            "de": "Wasser mit Umgebungstemperatur (ohne aktive Kühlung oder Heizung) ist hier verfügbar"
           }
         },
         {
@@ -423,7 +431,8 @@
           "ifnot": "warm_water=no",
           "then": {
             "en": "Warmed water is provided here; the water is not dangerously hot",
-            "nl": "Warm water is hier beschikbaar; het water is niet gevaarlijk heet"
+            "nl": "Warm water is hier beschikbaar; het water is niet gevaarlijk heet",
+            "de": "Hier wird warmes Wasser bereitgestellt; das Wasser ist nicht gefährlich heiß"
           }
         },
         {
@@ -431,7 +440,8 @@
           "ifnot": "hot_water=no",
           "then": {
             "en": "Hot water is provided here",
-            "nl": "Heet water is hier beschikbaar"
+            "nl": "Heet water is hier beschikbaar",
+            "de": "Hier wird heißes Wasser bereitgestellt"
           }
         }
       ]

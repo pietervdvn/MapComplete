@@ -93,790 +93,920 @@
           "if": "sport=9pin",
           "then": {
             "en": "Nine-pin bowling",
-            "es": "Bolos de nueve bolos"
+            "es": "Bolos de nueve bolos",
+            "de": "Kegeln"
           }
         },
         {
           "if": "sport=10pin",
           "then": {
             "en": "Ten-pin bowling",
-            "es": "Bolos de diez bolos"
+            "es": "Bolos de diez bolos",
+            "de": "Bowling"
           }
         },
         {
           "if": "sport=aerobics",
           "then": {
-            "en": "Aerobics"
+            "en": "Aerobics",
+            "de": "Aerobic"
           }
         },
         {
           "if": "sport=american_football",
           "then": {
-            "en": "American football"
+            "en": "American football",
+            "de": "American Football"
           }
         },
         {
           "if": "sport=aikido",
           "then": {
-            "en": "Aikido"
+            "en": "Aikido",
+            "de": "Aikido"
           }
         },
         {
           "if": "sport=archery",
           "then": {
-            "en": "Archery"
+            "en": "Archery",
+            "de": "Bogenschießen"
           }
         },
         {
           "if": "sport=athletics",
           "then": {
-            "en": "Athletics"
+            "en": "Athletics",
+            "de": "Leichtathletik"
           }
         },
         {
           "if": "sport=australian_football",
           "then": {
-            "en": "Australian rules football"
+            "en": "Australian rules football",
+            "de": "Australian-Football"
           }
         },
         {
           "if": "sport=badminton",
           "then": {
-            "en": "Badminton"
+            "en": "Badminton",
+            "de": "Federball"
           }
         },
         {
           "if": "sport=bandy",
           "then": {
-            "en": "Bandy"
+            "en": "Bandy",
+            "de": "Bandy"
           }
         },
         {
           "if": "sport=base",
           "then": {
             "en": "BASE jumping",
-            "es": "Salto BASE"
+            "es": "Salto BASE",
+            "de": "Basejumping"
           }
         },
         {
           "if": "sport=baseball",
           "then": {
-            "en": "Baseball"
+            "en": "Baseball",
+            "de": "Baseball"
           }
         },
         {
           "if": "sport=basketball",
           "then": {
-            "en": "Basketball"
+            "en": "Basketball",
+            "de": "Basketball"
           }
         },
         {
           "if": "sport=beachvolleyball",
           "then": {
-            "en": "Beachvolleyball"
+            "en": "Beachvolleyball",
+            "de": "Beachvolleyball"
           }
         },
         {
           "if": "sport=biathlon",
           "then": {
-            "en": "Biathlon"
+            "en": "Biathlon",
+            "de": "Biathlon"
           }
         },
         {
           "if": "sport=billiards",
           "then": {
-            "en": "Cue sports"
+            "en": "Cue sports",
+            "de": "Cuesport"
           }
         },
         {
           "if": "sport=bmx",
           "then": {
-            "en": "BMX"
+            "en": "BMX",
+            "de": "BMX"
           }
         },
         {
           "if": "sport=bobsleigh",
           "then": {
-            "en": "Bobsleigh"
+            "en": "Bobsleigh",
+            "de": "Bobfahren"
           }
         },
         {
           "if": "sport=boules",
           "then": {
-            "en": "Boules"
+            "en": "Boules",
+            "de": "Boule"
           }
         },
         {
           "if": "sport=bowls",
           "then": {
-            "en": "Bowls"
+            "en": "Bowls",
+            "de": "Bowls"
           }
         },
         {
           "if": "sport=boxing",
           "then": {
-            "en": "Boxing"
+            "en": "Boxing",
+            "de": "Boxen"
           }
         },
         {
           "if": "sport=bullfighting",
           "then": {
-            "en": "Bullfighting"
+            "en": "Bullfighting",
+            "de": "Stierkampf"
           }
         },
         {
           "if": "sport=canadian_football",
           "then": {
-            "en": "Canadian football"
+            "en": "Canadian football",
+            "de": "Kanadischer Fußball"
           }
         },
         {
           "if": "sport=canoe",
           "then": {
-            "en": "Canoe"
+            "en": "Canoe",
+            "de": "Kanu"
           }
         },
         {
           "if": "sport=chess",
           "then": {
-            "en": "Chess"
+            "en": "Chess",
+            "de": "Schach"
           }
         },
         {
           "if": "sport=cliff_diving",
           "then": {
-            "en": "Non-competitive diving"
+            "en": "Non-competitive diving",
+            "de": "Wettkampffreies Tauchen"
           }
         },
         {
           "if": "sport=climbing",
           "then": {
             "en": "Climbing",
-            "nl": "Klimmen"
+            "nl": "Klimmen",
+            "de": "Klettern"
           }
         },
         {
           "if": "sport=climbing_adventure",
           "then": {
             "en": "Climbing Adventure",
-            "nl": "Hoogteparcours"
+            "nl": "Hoogteparcours",
+            "de": "Seilgarten"
           }
         },
         {
           "if": "sport=cockfighting",
           "then": {
-            "en": "Cockfighting"
+            "en": "Cockfighting",
+            "de": "Hahnenkampf"
           }
         },
         {
           "if": "sport=cricket",
           "then": {
-            "en": "Cricket"
+            "en": "Cricket",
+            "de": "Kricket"
           }
         },
         {
           "if": "sport=crossfit",
           "then": {
-            "en": "CrossFit"
+            "en": "CrossFit",
+            "de": "CrossFit"
           }
         },
         {
           "if": "sport=croquet",
           "then": {
-            "en": "Croquet"
+            "en": "Croquet",
+            "de": "Krocket"
           }
         },
         {
           "if": "sport=curling",
           "then": {
-            "en": "Curling"
+            "en": "Curling",
+            "de": "Eisstockschießen"
           }
         },
         {
           "if": "sport=cycle_polo",
           "then": {
-            "en": "Cycle Polo"
+            "en": "Cycle Polo",
+            "de": "Radpolo"
           }
         },
         {
           "if": "sport=cycling",
           "then": {
-            "en": "Cycling"
+            "en": "Cycling",
+            "de": "Radfahren"
           }
         },
         {
           "if": "sport=dance",
           "then": {
-            "en": "Dance"
+            "en": "Dance",
+            "de": "Tanz"
           }
         },
         {
           "if": "sport=darts",
           "then": {
-            "en": "Darts"
+            "en": "Darts",
+            "de": "Dart"
           }
         },
         {
           "if": "sport=dog_agility",
           "then": {
-            "en": "Dog agility"
+            "en": "Dog agility",
+            "de": "Hundetraining"
           }
         },
         {
           "if": "sport=dog_racing",
           "then": {
-            "en": "Greyhound racing"
+            "en": "Greyhound racing",
+            "de": "Windhundrennen"
           }
         },
         {
           "if": "sport=dragon_boat",
           "then": {
-            "en": "Dragon Boat"
+            "en": "Dragon Boat",
+            "de": "Drachenboot"
           }
         },
         {
           "if": "sport=equestrian",
           "then": {
-            "en": "Equestrianism"
+            "en": "Equestrianism",
+            "de": "Reitsport"
           }
         },
         {
           "if": "sport=fencing",
           "then": {
-            "en": "Fencing"
+            "en": "Fencing",
+            "de": "Fechten"
           }
         },
         {
           "if": "sport=field_hockey",
           "then": {
-            "en": "Field hockey"
+            "en": "Field hockey",
+            "de": "Feldhockey"
           }
         },
         {
           "if": "sport=fitness",
           "then": {
-            "en": "Fitness"
+            "en": "Fitness",
+            "de": "Fitnesstraining"
           }
         },
         {
           "if": "sport=five-a-side",
           "then": {
-            "en": "5 person soccer"
+            "en": "5 person soccer",
+            "de": "Fußball mit 5 Personen"
           }
         },
         {
           "if": "sport=floorball",
           "then": {
-            "en": "Floorball"
+            "en": "Floorball",
+            "de": "Unihockey"
           }
         },
         {
           "if": "sport=four_square",
           "then": {
-            "en": "Four square"
+            "en": "Four square",
+            "de": "Four Square"
           }
         },
         {
           "if": "sport=free_flying",
           "then": {
-            "en": "Paragliding"
+            "en": "Paragliding",
+            "de": "Gleitschirmfliegen"
           }
         },
         {
           "if": "sport=futsal",
           "then": {
-            "en": "Futsal"
+            "en": "Futsal",
+            "de": "Hallenfußball"
           }
         },
         {
           "if": "sport=gaelic_games",
           "then": {
-            "en": "Gaelic games"
+            "en": "Gaelic games",
+            "de": "Gälische Spiele"
           }
         },
         {
           "if": "sport=gaga",
           "then": {
-            "en": "Gaga ball"
+            "en": "Gaga ball",
+            "de": "Gaga-Ball"
           }
         },
         {
           "if": "sport=golf",
           "then": {
-            "en": "Golf"
+            "en": "Golf",
+            "de": "Golf"
           }
         },
         {
           "if": "sport=gymnastics",
           "then": {
-            "en": "Gymnastics"
+            "en": "Gymnastics",
+            "de": "Turnen"
           }
         },
         {
           "if": "sport=handball",
           "then": {
-            "en": "Handball"
+            "en": "Handball",
+            "de": "Handball"
           }
         },
         {
           "if": "sport=hapkido",
           "then": {
-            "en": "Hapkido"
+            "en": "Hapkido",
+            "de": "Hapkido"
           }
         },
         {
           "if": "sport=hiking",
           "then": {
-            "en": "Hiking"
+            "en": "Hiking",
+            "de": "Wandern"
           }
         },
         {
           "if": "sport=horseshoes",
           "then": {
-            "en": "Horseshoes"
+            "en": "Horseshoes",
+            "de": "Hufeisenwerfen"
           }
         },
         {
           "if": "sport=horse_racing",
           "then": {
-            "en": "Horse racing"
+            "en": "Horse racing",
+            "de": "Pferderennen"
           }
         },
         {
           "if": "sport=ice_hockey",
           "then": {
-            "en": "Ice Hockey"
+            "en": "Ice Hockey",
+            "de": "Eishockey"
           }
         },
         {
           "if": "sport=ice_skating",
           "then": {
-            "en": "Ice skating"
+            "en": "Ice skating",
+            "de": "Eislaufen"
           }
         },
         {
           "if": "sport=ice_stock",
           "then": {
-            "en": "Ice stock sport"
+            "en": "Ice stock sport",
+            "de": "Eisstockschießen"
           }
         },
         {
           "if": "sport=judo",
           "then": {
-            "en": "Judo"
+            "en": "Judo",
+            "de": "Judo"
           }
         },
         {
           "if": "sport=karate",
           "then": {
-            "en": "Karate"
+            "en": "Karate",
+            "de": "Karate"
           }
         },
         {
           "if": "sport=karting",
           "then": {
-            "en": "Kart racing"
+            "en": "Kart racing",
+            "de": "Go-Kart-Rennen"
           }
         },
         {
           "if": "sport=kickboxing",
           "then": {
-            "en": "Kickboxing"
+            "en": "Kickboxing",
+            "de": "Kickboxen"
           }
         },
         {
           "if": "sport=kitesurfing",
           "then": {
-            "en": "Kitesurfing"
+            "en": "Kitesurfing",
+            "de": "Kitesurfen"
           }
         },
         {
           "if": "sport=korfball",
           "then": {
-            "en": "Korfball"
+            "en": "Korfball",
+            "de": "Korfball"
           }
         },
         {
           "if": "sport=krachtball",
           "then": {
-            "en": "Krachtball"
+            "en": "Krachtball",
+            "de": "Krachtball"
           }
         },
         {
           "if": "sport=lacrosse",
           "then": {
-            "en": "Lacrosse"
+            "en": "Lacrosse",
+            "de": "Lacrosse"
           }
         },
         {
           "if": "sport=laser_tag",
           "then": {
-            "en": "Laser tag"
+            "en": "Laser tag",
+            "de": "Laser Tag"
           }
         },
         {
           "if": "sport=martial_arts",
           "then": {
-            "en": "Martial arts"
+            "en": "Martial arts",
+            "de": "Kampfsport"
           }
         },
         {
           "if": "sport=miniature_golf",
           "then": {
-            "en": "Miniature golf"
+            "en": "Miniature golf",
+            "de": "Minigolf"
           }
         },
         {
           "if": "sport=model_aerodrome",
           "then": {
-            "en": "Radio-controlled aircraft"
+            "en": "Radio-controlled aircraft",
+            "de": "Modellflug"
           }
         },
         {
           "if": "sport=motocross",
           "then": {
-            "en": "Motocross"
+            "en": "Motocross",
+            "de": "Motocross"
           }
         },
         {
           "if": "sport=motor",
           "then": {
-            "en": "Motorsport"
+            "en": "Motorsport",
+            "de": "Motorsport"
           }
         },
         {
           "if": "sport=multi",
           "then": {
-            "en": "Multiple kind of sports"
+            "en": "Multiple kind of sports",
+            "de": "Viele verschiedene Sportarten"
           }
         },
         {
           "if": "sport=netball",
           "then": {
-            "en": "Netball"
+            "en": "Netball",
+            "de": "Netzball"
           }
         },
         {
           "if": "sport=obstacle_course",
           "then": {
-            "en": "Obstacle course"
+            "en": "Obstacle course",
+            "de": "Hindernislauf"
           }
         },
         {
           "if": "sport=orienteering",
           "then": {
-            "en": "Orienteering"
+            "en": "Orienteering",
+            "de": "Orientierungslauf"
           }
         },
         {
           "if": "sport=paddle_tennis",
           "then": {
-            "en": "Paddle tennis"
+            "en": "Paddle tennis",
+            "de": "Paddle-Tennis"
           }
         },
         {
           "if": "sport=padel",
           "then": {
-            "en": "Padel"
+            "en": "Padel",
+            "de": "Padel-Tennis"
           }
         },
         {
           "if": "sport=paintball",
           "then": {
-            "en": "Paintball"
+            "en": "Paintball",
+            "de": "Paintball"
           }
         },
         {
           "if": "sport=parachuting",
           "then": {
-            "en": "Parachuting"
+            "en": "Parachuting",
+            "de": "Fallschirmspringen"
           }
         },
         {
           "if": "sport=parkour",
           "then": {
-            "en": "Parkour"
+            "en": "Parkour",
+            "de": "Parkour"
           }
         },
         {
           "if": "sport=pelota",
           "then": {
-            "en": "Palota"
+            "en": "Palota",
+            "de": "Palota"
           }
         },
         {
           "if": "sport=pesäpallo",
           "then": {
-            "en": "Pesäpallo"
+            "en": "Pesäpallo",
+            "de": "Pesäpallo"
           }
         },
         {
           "if": "sport=pickleball",
           "then": {
-            "en": "Pickleball"
+            "en": "Pickleball",
+            "de": "Pickleball"
           }
         },
         {
           "if": "sport=pilates",
           "then": {
-            "en": "Pilates"
+            "en": "Pilates",
+            "de": "Pilates"
           }
         },
         {
           "if": "sport=pole_dance",
           "then": {
-            "en": "Pole dance"
+            "en": "Pole dance",
+            "de": "Pole-Dance"
           }
         },
         {
           "if": "sport=racquet",
           "then": {
-            "en": "Racquetball"
+            "en": "Racquetball",
+            "de": "Racquetball"
           }
         },
         {
           "if": "sport=rc_car",
           "then": {
-            "en": "Radio-controlled car"
+            "en": "Radio-controlled car",
+            "de": "Modellauto"
           }
         },
         {
           "if": "sport=roller_skating",
           "then": {
-            "en": "Roller skating"
+            "en": "Roller skating",
+            "de": "Rollschuhlaufen"
           }
         },
         {
           "if": "sport=rowing",
           "then": {
-            "en": "Rowing"
+            "en": "Rowing",
+            "de": "Rudern"
           }
         },
         {
           "if": "sport=rugby_league",
           "then": {
-            "en": "Rugby league"
+            "en": "Rugby league",
+            "de": "Rugbyliga"
           }
         },
         {
           "if": "sport=rugby_union",
           "then": {
-            "en": "Rugby union"
+            "en": "Rugby union",
+            "de": "Rugby Union"
           }
         },
         {
           "if": "sport=running",
           "then": {
-            "en": "Running"
+            "en": "Running",
+            "de": "Laufsport"
           }
         },
         {
           "if": "sport=sailing",
           "then": {
-            "en": "Sailing"
+            "en": "Sailing",
+            "de": "Segeln"
           }
         },
         {
           "if": "sport=scuba_diving",
           "then": {
-            "en": "Scuba diving"
+            "en": "Scuba diving",
+            "de": "Tauchen"
           }
         },
         {
           "if": "sport=shooting",
           "then": {
-            "en": "Shooting"
+            "en": "Shooting",
+            "de": "Schießen"
           }
         },
         {
           "if": "sport=shot-put",
           "then": {
-            "en": "Shot-put"
+            "en": "Shot-put",
+            "de": "Kugelstoßen"
           }
         },
         {
           "if": "sport=skateboard",
           "then": {
             "en": "Skateboard",
-            "es": "Monopatín"
+            "es": "Monopatín",
+            "de": "Skateboard"
           }
         },
         {
           "if": "sport=ski_jumping",
           "then": {
             "en": "Ski jumping",
-            "es": "Salto de esquí"
+            "es": "Salto de esquí",
+            "de": "Skispringen"
           }
         },
         {
           "if": "sport=snooker",
           "then": {
             "en": "Snooker",
-            "es": "Snooker"
+            "es": "Snooker",
+            "de": "Snooker"
           }
         },
         {
           "if": "sport=soccer",
           "then": {
             "en": "Soccer",
-            "es": "Fútbol"
+            "es": "Fútbol",
+            "de": "Fußball"
           }
         },
         {
           "if": "sport=softball",
           "then": {
             "en": "Softball",
-            "es": "Softball"
+            "es": "Softball",
+            "de": "Softball"
           }
         },
         {
           "if": "sport=speedway",
           "then": {
             "en": "Motorcycle speedway",
-            "es": "Circuito de motos"
+            "es": "Circuito de motos",
+            "de": "Motorrad-Speedway"
           }
         },
         {
           "if": "sport=squash",
           "then": {
-            "en": "Squash"
+            "en": "Squash",
+            "de": "Squash"
           }
         },
         {
           "if": "sport=sumo",
           "then": {
-            "en": "Sumo"
+            "en": "Sumo",
+            "de": "Sumoringen"
           }
         },
         {
           "if": "sport=surfing",
           "then": {
-            "en": "Surfing"
+            "en": "Surfing",
+            "de": "Surfen"
           }
         },
         {
           "if": "sport=swimming",
           "then": {
-            "en": "Swimming"
+            "en": "Swimming",
+            "de": "Schwimmen"
           }
         },
         {
           "if": "sport=table_tennis",
           "then": {
-            "en": "Table tennis"
+            "en": "Table tennis",
+            "de": "Tischtennis"
           }
         },
         {
           "if": "sport=table_soccer",
           "then": {
-            "en": "Table soccer"
+            "en": "Table soccer",
+            "de": "Tischfußball"
           }
         },
         {
           "if": "sport=taekwondo",
           "then": {
-            "en": "Taekwondo"
+            "en": "Taekwondo",
+            "de": "Taekwondo"
           }
         },
         {
           "if": "sport=tennis",
           "then": {
-            "en": "Tennis"
+            "en": "Tennis",
+            "de": "Tennis"
           }
         },
         {
           "if": "sport=teqball",
           "then": {
-            "en": "Teqball"
+            "en": "Teqball",
+            "de": "Teqball"
           }
         },
         {
           "if": "sport=toboggan",
           "then": {
-            "en": "Toboggan"
+            "en": "Toboggan",
+            "de": "Rodeln"
           }
         },
         {
           "if": "sport=trampoline",
           "then": {
-            "en": "Trampoline"
+            "en": "Trampoline",
+            "de": "Trampolin"
           }
         },
         {
           "if": "sport=ultimate",
           "then": {
-            "en": "Ultimate frisbee"
+            "en": "Ultimate frisbee",
+            "de": "Ultimate Frisbee"
           }
         },
         {
           "if": "sport=ultralight_aviation",
           "then": {
-            "en": "Ultralight aviation"
+            "en": "Ultralight aviation",
+            "de": "Ultraleichtflug"
           }
         },
         {
           "if": "sport=volleyball",
           "then": {
-            "en": "Volleyball"
+            "en": "Volleyball",
+            "de": "Volleyball"
           }
         },
         {
           "if": "sport=wakeboarding",
           "then": {
-            "en": "Wakeboarding"
+            "en": "Wakeboarding",
+            "de": "Wakeboarden"
           }
         },
         {
           "if": "sport=water_polo",
           "then": {
-            "en": "Water polo"
+            "en": "Water polo",
+            "de": "Wasserball"
           }
         },
         {
           "if": "sport=water_ski",
           "then": {
-            "en": "Waterskiing"
+            "en": "Waterskiing",
+            "de": "Wasserski"
           }
         },
         {
           "if": "sport=weightlifting",
           "then": {
-            "en": "Olympic weightlifting"
+            "en": "Olympic weightlifting",
+            "de": "Olympisches Gewichtheben"
           }
         },
         {
           "if": "sport=windsurfing",
           "then": {
-            "en": "Windsurfing"
+            "en": "Windsurfing",
+            "de": "Windsurfen"
           }
         },
         {
           "if": "sport=wrestling",
           "then": {
-            "en": "Wrestling"
+            "en": "Wrestling",
+            "de": "Wrestling"
           }
         },
         {
           "if": "sport=yoga",
           "then": {
-            "en": "Yoga"
+            "en": "Yoga",
+            "de": "Yoga"
           }
         },
         {
           "if": "sport=zurkhaneh_sport",
           "then": {
-            "en": "Zurkhaneh sport"
+            "en": "Zurkhaneh sport",
+            "de": "Zurkhaneh-Sport"
           }
         }
       ],
       "render": {
-        "en": "Sports played here: {sport}"
+        "en": "Sports played here: {sport}",
+        "de": "Hier werden folgende Sportarten ausgeübt: {sport}"
       },
       "freeform": {
         "key": "sport"
       },
       "question": {
-        "en": "What sports are played at this venue?"
+        "en": "What sports are played at this venue?",
+        "de": "Welche Sportarten werden hier ausgeübt?"
       }
     }
   ],
