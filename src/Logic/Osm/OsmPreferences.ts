@@ -1,8 +1,8 @@
 import { Store, UIEventSource } from "../UIEventSource"
 import { OsmConnection } from "./OsmConnection"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
-import OSMAuthInstance = OSMAuth.osmAuth
 import { Utils } from "../../Utils"
+import OSMAuthInstance = OSMAuth.osmAuth
 
 export class OsmPreferences {
     /**

@@ -8972,17 +8972,10 @@
     "recycling": {
         "description": "Una capa con contenedores y centros de reciclaje",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Todos los tipos de reciclaje"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Solo acceso público"
+                        "question": "Todos los tipos de reciclado"
                     },
                     "1": {
                         "question": "Reciclaje de pilas"
@@ -10063,6 +10056,12 @@
             },
             "1": {
                 "title": "una cancha deportiva"
+            },
+            "2": {
+                "title": "un skatepark"
+            },
+            "3": {
+                "title": "una pista ecuestre"
             }
         },
         "tagRenderings": {

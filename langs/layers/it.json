@@ -184,7 +184,7 @@
                         "then": "Masso"
                     },
                     "7": {
-                        "then": "Istallazione"
+                        "then": "Installazione"
                     },
                     "8": {
                         "then": "Graffiti"
@@ -2256,17 +2256,10 @@
     "recycling": {
         "description": "Un livello con i contenitori e centri per la raccolta rifiuti riciclabili",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Tutti i tipi di rifiuti"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Solo accesso pubblico"
+                        "question": "Tutti i tipi di rifiuti"
                     },
                     "1": {
                         "question": "Riciclo di batterie"

@@ -610,8 +610,10 @@ export class OsmConnection {
             if (!(this.apiIsOnline.data === "unreachable" || this.apiIsOnline.data === "offline")) {
                 return
             }
+            if (!this.isLoggedIn.data) {
+                return
+            }
             try {
-                console.log("Api is offline - trying to reconnect...")
                 this.AttemptLogin()
             } catch (e) {
                 console.log("Could not login due to", e)

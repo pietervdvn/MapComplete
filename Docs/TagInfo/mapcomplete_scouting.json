@@ -1,0 +1,63 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Scouting groups",
+    "description": "A scouting group is a social youth movement with a heavy emphasis on the outdoors",
+    "project_url": "https://mapcomplete.org/scouting",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/layers/scouting_group/scouting.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "club",
+      "description": "The MapComplete theme Scouting groups has a layer Scouting groups showing features with this tag",
+      "value": "scout"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Scouting groups' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Scouting groups') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Scouting groups' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Scouting groups' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Scouting groups' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Scouting groups' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Scouting groups' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Scouting groups' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Scouting groups' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Scouting groups' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Scouting groups' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "contact:mastodon",
+      "description": "Layer 'Scouting groups' shows and asks freeform values for key 'contact:mastodon' (in the mapcomplete.org theme 'Scouting groups')"
+    }
+  ]
+}

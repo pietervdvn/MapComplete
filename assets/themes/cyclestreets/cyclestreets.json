@@ -108,7 +108,8 @@
         "cs": "Cyklostezka je ulice, kde motorová doprava nesmí předjíždět cyklisty",
         "ca": "Un ciclocarrer és un carrer on el trànsit motoritzat no pot sobrepassar a un ciclista",
         "pl": "Ulica rowerowa to ulica, na której pojazdy zmotoryzowane nie mogą wyprzedzać rowerzystów",
-        "ko": "자전거 전용 도로는 차량이 자전거를 추월할 수 없는 도로 입니다"
+        "ko": "자전거 전용 도로는 차량이 자전거를 추월할 수 없는 도로 입니다",
+        "zh_Hant": "單車街道是機動車輛不被允許超車單車"
       },
       "title": "{name}",
       "tagRenderings": [
@@ -220,7 +221,8 @@
         "cs": "Tato ulice se brzy stane cyklostezkou",
         "ca": "Aquest carrer es convertirà en un ciclocarrer pròximament",
         "pl": "Ta ulica wkrótce stanie się ulicą rowerową",
-        "ko": "이 도로는 곧 자전거 전용 도로로 전환될 예정입니다"
+        "ko": "이 도로는 곧 자전거 전용 도로로 전환될 예정입니다",
+        "zh_Hant": "這條道路即將成為單車街道"
       },
       "minzoom": 9,
       "source": {
@@ -267,7 +269,8 @@
               "ca": "{name} es convertirà en un ciclocarrer pròximament",
               "eu": "{name} laster bidegorri bihurtuko da",
               "pl": "{name} wkrótce stanie się ulicą rowerową",
-              "ko": "{name} 는 곧 자전거 전용 도로로 전환될 예정입니다"
+              "ko": "{name} 는 곧 자전거 전용 도로로 전환될 예정입니다",
+              "zh_Hant": "{name} 不久會變成單車街道"
             },
             "if": "name~*"
           }
@@ -345,7 +348,8 @@
         "cs": "Vrstva pro označení jakékoli ulice jako cyklostezky",
         "ca": "Capa per a marcar qualsevol carrer com a ciclocarrer",
         "pl": "Warstwa oznaczająca dowolną ulicę jako ulicę rowerową",
-        "ko": "자전거 전용 도로로 표시할 도로를 지정하는 레이어"
+        "ko": "자전거 전용 도로로 표시할 도로를 지정하는 레이어",
+        "zh_Hant": "標記任何道路都是單車街道的圖層"
       },
       "source": {
         "osmTags": {
@@ -450,7 +454,8 @@
           "cs": "Je ulice <b>{name}</b> cyklo ulicí?",
           "ca": "El carrer <b>{name}</b> és un ciclocarrer?",
           "pl": "Czy ulica <b>{name}</b> jest ulicą rowerową?",
-          "ko": "이 도로는 <b>{name}</b> 자전거 전용 도로인가요?"
+          "ko": "이 도로는 <b>{name}</b> 자전거 전용 도로인가요?",
+          "zh_Hant": "這條道路<b>{name}</b>是單車街道嗎？"
         },
         "mappings": [
           {
@@ -476,7 +481,8 @@
               "cs": "Tato ulice je cyklostezkou (s omezením rychlosti na 30 km/h)",
               "ca": "Aquest carrer és un ciclocarrer (i té un límit de velocitat de 30km/h)",
               "pl": "Ta ulica jest ulicą rowerową (na której obowiązuje ograniczenie prędkości do 30 km/h)",
-              "ko": "이 도로는 자전거 전용 도로입니다 (제한 속도는 시속 30km입니다)"
+              "ko": "이 도로는 자전거 전용 도로입니다 (제한 속도는 시속 30km입니다)",
+              "zh_Hant": "這條道路是單車街道 (而且有速限30km/h)"
             },
             "hideInAnswer": "_country!=be"
           },
@@ -492,7 +498,8 @@
               "es": "Esta calle tiene ciclovías",
               "pl": "To jest droga dla rowerów",
               "it": "Questa strada è una strada per biciclette",
-              "ko": "이 도로는 자전거 도로 입니다"
+              "ko": "이 도로는 자전거 도로 입니다",
+              "zh_Hant": "這條道路是單車街道"
             },
             "hideInAnswer": true
           },
@@ -572,7 +579,8 @@
               "da": "Denne gade bliver snart en cykelgade",
               "cs": "Tato ulice se brzy stane cyklostezkou",
               "pl": "Ta ulica wkrótce stanie się ulicą rowerową",
-              "ko": "이 도로는 곧 자전거 도로로 전환될 예정입니다"
+              "ko": "이 도로는 곧 자전거 도로로 전환될 예정입니다",
+              "zh_Hant": "這條道路即將成為單車街道"
             },
             "hideInAnswer": "_country=de"
           },
@@ -592,7 +600,8 @@
               "es": "Esta calle se convertirá pronto en una vía ciclista",
               "ca": "Aquest carrer es convertirà aviat en una senda ciclable",
               "pl": "Już niedługo ta ulica stanie się drogą rowerową",
-              "ko": "이 도로는 곧 자전거 도로로 전환될 예정입니다"
+              "ko": "이 도로는 곧 자전거 도로로 전환될 예정입니다",
+              "zh_Hant": "這條道路即將成為單車道路"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -620,7 +629,8 @@
               "cs": "Tato ulice není cyklo ulicí",
               "ca": "Aquest carrer no és un ciclocarrer",
               "pl": "Ta ulica nie jest ulicą rowerową",
-              "ko": "이 도로는 자전거 전용 도로가 아닙니다"
+              "ko": "이 도로는 자전거 전용 도로가 아닙니다",
+              "zh_Hant": "這條道路並非單車街道"
             }
           }
         ]
@@ -658,7 +668,8 @@
               "pl": "Mieszkańcy dopuszczeni",
               "da": "Beboere tilladt",
               "it": "Permesso l'accesso ai residenti",
-              "ko": "거주자 허용"
+              "ko": "거주자 허용",
+              "zh_Hant": "允許居民通行"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",
@@ -684,7 +695,8 @@
               "pl": "Pojazdy silnikowe dozwolone",
               "da": "Motorkøretøjer tilladt",
               "it": "Permesso l'accesso ai veicoli a motore",
-              "ko": "차량 허용"
+              "ko": "차량 허용",
+              "zh_Hant": "允許機動車輛通行"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
@@ -711,7 +723,8 @@
               "pl": "Motocykle dozwolone",
               "da": "Motorcykler tilladt",
               "it": "Permesso l'accesso ai motocicli",
-              "ko": "오토바이 허용"
+              "ko": "오토바이 허용",
+              "zh_Hant": "允許機車通行"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
@@ -739,7 +752,8 @@
               "pl": "Samochody dozwolone",
               "da": "Biler tilladt",
               "it": "Permesso l'accesso alle auto",
-              "ko": "자동차 허용"
+              "ko": "자동차 허용",
+              "zh_Hant": "允許汽車通行"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",

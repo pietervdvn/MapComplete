@@ -108,7 +108,7 @@
         },
         {
           "icon": {
-            "builtin": "nsi_brand.icon",
+            "builtin": "id_presets.shop_rendering",
             "override": {
               "render": "./assets/layers/id_presets/maki-shop.svg",
               "+mappings": [
@@ -210,7 +210,8 @@
         "eo": "Butiko",
         "es": "una tienda",
         "ca": "una botiga",
-        "cs": "obchod"
+        "cs": "obchod",
+        "uk": "магазин"
       },
       "description": {
         "en": "You can specify later on what this shop sells.",
@@ -313,6 +314,28 @@
               "uk": "Пункт прокату велосипедів",
               "es": "Tienda de alquiler de bicicletas",
               "cs": "Půjčovna jízdních kol"
+            }
+          }
+        ],
+        "mappings+": [
+          {
+            "if": "disused:shop:={shop}",
+            "then": {
+              "en": "This shop is no longer used. It is vacant",
+              "nl": "Deze winkel staat leeg",
+              "de": "Dieser Laden wird nicht mehr genutzt. Er steht leer"
+            },
+            "icon": "./assets/layers/shops/shop-disused.svg",
+            "addExtraTags": [
+              "shop="
+            ],
+            "alsoShowIf": {
+              "or": [
+                "shop=disused",
+                "shop=vacant",
+                "disused:shop~*",
+                "abandoned:shop~*"
+              ]
             }
           }
         ],
@@ -535,7 +558,8 @@
       },
       "question": {
         "en": "Are medical services available here?",
-        "nl": "Zijn hier medische services beschikbaar?"
+        "nl": "Zijn hier medische services beschikbaar?",
+        "de": "Gibt es hier medizinische Versorgung?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -547,7 +571,8 @@
           ],
           "then": {
             "en": "This shop offers eye exams by certified optometrists",
-            "nl": "Hier kan men een oogtest door een erkende optometrist laten uitvoeren"
+            "nl": "Hier kan men een oogtest door een erkende optometrist laten uitvoeren",
+            "de": "Dieser Shop bietet Augenuntersuchungen durch zertifizierte Optiker an"
           }
         },
         {
@@ -555,7 +580,8 @@
           "ifnot": "not:healthcare=audiologist",
           "then": {
             "en": "This shop offers hearing tests by a certified audiologist",
-            "nl": "HIer kan men een hoortest laten uitvoeren door een erkende audioloog"
+            "nl": "HIer kan men een hoortest laten uitvoeren door een erkende audioloog",
+            "de": "Dieser Shop bietet Hörtests durch einen zertifizierten Audiologen an"
           }
         }
       ]
@@ -1273,6 +1299,7 @@
         }
       }
     },
+    "dog-access",
     "description"
   ],
   "filter": [
@@ -1298,7 +1325,8 @@
         }
       ]
     },
-    "filters.has_organic"
+    "filters.has_organic",
+    "dogs"
   ],
   "deletion": {
     "softDeletionTags": {

@@ -22,7 +22,7 @@ export default class AllImageProviders {
         ...WikimediaImageProvider.commonsPrefixes,
         ...Mapillary.valuePrefixes,
         ...AllImageProviders.dontLoadFromPrefixes,
-        "Category:",
+        "Category:"
     ])
 
     private static ImageAttributionSource: ImageProvider[] = [
@@ -31,7 +31,7 @@ export default class AllImageProviders {
         WikidataImageProvider.singleton,
         WikimediaImageProvider.singleton,
         Panoramax.singleton,
-        AllImageProviders.genericImageProvider,
+        AllImageProviders.genericImageProvider
     ]
     public static apiUrls: string[] = [].concat(
         ...AllImageProviders.ImageAttributionSource.map((src) => src.apiUrls())
@@ -44,7 +44,7 @@ export default class AllImageProviders {
         mapillary: Mapillary.singleton,
         wikidata: WikidataImageProvider.singleton,
         wikimedia: WikimediaImageProvider.singleton,
-        panoramax: Panoramax.singleton,
+        panoramax: Panoramax.singleton
     }
 
     public static byName(name: string) {
@@ -67,10 +67,33 @@ export default class AllImageProviders {
     }
 
     private static readonly _cachedImageStores: Record<string, Store<ProvidedImage[]>> = {}
+
+    /**
+     * Does a guess on the number of images that are probably there.
+     * Will simply count all image tags
+     *
+     * AllImageProviders.estimateNumberOfImages({image:"abc", "mapillary": "123", "panoramax:0": "xyz"}) // => 3
+     *
+     */
+    public static estimateNumberOfImages(tags: Record<string, string>, prefixes: string[] = undefined): number {
+        let count = 0
+
+        const allPrefixes = Utils.Dedup(prefixes ?? [].concat(...AllImageProviders.ImageAttributionSource.map(s => s.defaultKeyPrefixes)))
+        for (const prefix of allPrefixes) {
+            for (const k in tags) {
+                if (k === prefix || k.startsWith(prefix + ":")) {
+                    count++
+                    continue
+                }
+            }
+        }
+        return count
+    }
+
     /**
      * Tries to extract all image data for this image. Cached on tags?.data?.id
      */
-    public static LoadImagesFor(
+    public static loadImagesFor(
         tags: Store<Record<string, string>>,
         tagKey?: string[]
     ): Store<ProvidedImage[]> {
@@ -108,11 +131,11 @@ export default class AllImageProviders {
      */
     public static loadImagesFrom(urls: string[]): Store<ProvidedImage[]> {
         const tags = {
-            id: urls.join(";"),
+            id: urls.join(";")
         }
         for (let i = 0; i < urls.length; i++) {
             tags["image:" + i] = urls[i]
         }
-        return this.LoadImagesFor(new ImmutableStore(tags))
+        return this.loadImagesFor(new ImmutableStore(tags))
     }
 }

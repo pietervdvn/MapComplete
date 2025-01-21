@@ -370,7 +370,8 @@
         "fr": "un distributeur",
         "ca": "una màquina expenedora",
         "cs": "prodejní automat",
-        "es": "una máquina expendedora"
+        "es": "una máquina expendedora",
+        "uk": "торговий автомат"
       },
       "tags": [
         "amenity=vending_machine"

@@ -4347,6 +4347,26 @@
                     "question": "Is dit drinkwaterpunt heel het jaar door beschikbaar?"
                 }
             },
+            "temperature-cold": {
+                "mappings": {
+                    "0": {
+                        "then": "Ijskoud water is hier beschikbaar"
+                    },
+                    "1": {
+                        "then": "Afgekoeld water is hier beschikbaar"
+                    },
+                    "2": {
+                        "then": "Water aan omgevingstemperatuur (zonder actieve koeling of opwarming) is hier beschikbaar"
+                    },
+                    "3": {
+                        "then": "Warm water is hier beschikbaar; het water is niet gevaarlijk heet"
+                    },
+                    "4": {
+                        "then": "Heet water is hier beschikbaar"
+                    }
+                },
+                "question": "Is gekoeld water hier beschikbaar?"
+            },
             "type": {
                 "mappings": {
                     "0": {
@@ -7827,17 +7847,10 @@
     "recycling": {
         "description": "Een laag met recyclagingcontainers en -centrums",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Alle recyclingtypes"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Enkel publiek toegankelijke afvalcontainers"
+                        "question": "Alle recyclingtypes"
                     },
                     "1": {
                         "question": "Recycling van batterijen"
@@ -8325,6 +8338,11 @@
                     "+mappings": {
                         "0": {
                             "then": "Fietsverhuurzaak"
+                        }
+                    },
+                    "mappings+": {
+                        "0": {
+                            "then": "Deze winkel staat leeg"
                         }
                     },
                     "question": "Wat voor soort winkel is dit?",
@@ -10285,6 +10303,12 @@
                 },
                 "question": "Moeten de data-attributen getoond worden?",
                 "questionHint": "<b>Data-attributen</b> zijn stukjes data die elk element in OpenStreetMap heeft. Dit is technische data die in de databank komt. Je hoeft deze informatie niet te kennen om aanpassingen te maken met MapComplete, maar geavanceerde gebruikers kunnen dit als referentie gebruiken."
+            },
+            "title-editing": {
+                "render": "<h3>Voorkeuren voor databewerking</h3>"
+            },
+            "title-map": {
+                "render": "<h3>Kaartvoorkeuren</h3>"
             },
             "translation-completeness": {
                 "mappings": {

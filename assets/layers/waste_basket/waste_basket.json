@@ -82,7 +82,8 @@
         "ca": "una paperera",
         "fr": "une poubelle",
         "cs": "odpadkový koš",
-        "es": "un contenedor de basura"
+        "es": "un contenedor de basura",
+        "uk": "кошик для сміття"
       },
       "presiceInput": {
         "preferredBackground": "photo"
@@ -386,7 +387,7 @@
             "fr": "Poubelle pour déjections canines",
             "cs": "Odpadkový koš na psí exkrementy"
           },
-          "osmTags": "waste~i~.*dog_excrement.*"
+          "osmTags": "waste~i~.*excrement.*"
         },
         {
           "question": {
@@ -467,7 +468,7 @@
             "ru": "Корзина для мусора с дозатором для пакетов (собачьих) экскрементов",
             "uk": "Кошик для сміття з дозатором для пакетиків з (собачими) екскрементами"
           },
-          "osmTags": "vending=dog_excrement_bag"
+          "osmTags": "vending=excrement_bags"
         }
       ]
     }

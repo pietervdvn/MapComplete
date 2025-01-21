@@ -6720,17 +6720,10 @@
     "recycling": {
         "description": "Una capa amb contenidors i centres de reciclatge",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Tots els tipus de reciclatge"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Només amb accés públic"
+                        "question": "Tots els tipus de reciclatge"
                     },
                     "1": {
                         "question": "Reciclatge de piles"

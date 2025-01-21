@@ -2,7 +2,8 @@
   "id": "insect_hotel",
   "name": {
     "en": "Insect Hotels",
-    "nl": "Insectenhotels"
+    "nl": "Insectenhotels",
+    "de": "Insektenhotels"
   },
   "description": {
     "en": "Layer showing insect hotels",
@@ -15,7 +16,8 @@
   "minzoom": 11,
   "title": {
     "en": "Insect Hotel",
-    "nl": "Insectenhotel"
+    "nl": "Insectenhotel",
+    "de": "Insektenhotel"
   },
   "pointRendering": [
     {
@@ -34,7 +36,8 @@
     {
       "title": {
         "en": "an insect hotel",
-        "nl": "een insectenhotel"
+        "nl": "een insectenhotel",
+        "de": "Ein Insektenhotel"
       },
       "tags": [
         "man_made=insect_hotel"

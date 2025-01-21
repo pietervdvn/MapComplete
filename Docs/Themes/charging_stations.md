@@ -9,6 +9,7 @@ The theme introduction reads:
 This theme contains the following layers:
 
  - [charging_station](../Layers/charging_station.md)
+ - [charge_point](../Layers/charge_point.md)
 
 Available languages:
 

@@ -1864,13 +1864,6 @@
     },
     "recycling": {
         "filter": {
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Kun offentlig adgang"
-                    }
-                }
-            },
             "3": {
                 "options": {
                     "0": {

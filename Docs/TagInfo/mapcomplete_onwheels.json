@@ -2376,6 +2376,11 @@
       "value": "wine"
     },
     {
+      "key": "disused:shop",
+      "description": "Layer 'Shop' shows disused:shop= with a fixed text, namely 'This shop is no longer used. It is vacant' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') Picking this answer will delete the key disused:shop. (This is only shown if craft=)",
+      "value": ""
+    },
+    {
       "key": "brand",
       "description": "Layer 'Shop' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'OnWheels')"
     },

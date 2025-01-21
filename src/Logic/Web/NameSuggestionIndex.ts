@@ -49,12 +49,11 @@ export interface NSIItem {
         include: string[]
         exclude: string[]
     }
-    readonly  tags: Readonly<Record<string, string>>
-    readonly  fromTemplate?: boolean
+    readonly tags: Readonly<Record<string, string>>
+    readonly fromTemplate?: boolean
 }
 
 export default class NameSuggestionIndex {
-
     public static readonly supportedTypes = ["brand", "flag", "operator", "transit"] as const
     private readonly nsiFile: Readonly<NSIFile>
     private readonly nsiWdFile: Readonly<
@@ -80,7 +79,7 @@ export default class NameSuggestionIndex {
                 }
             >
         >,
-        features: Readonly<FeatureCollection>,
+        features: Readonly<FeatureCollection>
     ) {
         this.nsiFile = nsiFile
         this.nsiWdFile = nsiWdFile
@@ -94,11 +93,17 @@ export default class NameSuggestionIndex {
             return NameSuggestionIndex.inited
         }
         const [nsi, nsiWd, features] = await Promise.all(
-            ["./assets/data/nsi/nsi.min.json", "./assets/data/nsi/wikidata.min.json", "./assets/data/nsi/featureCollection.min.json"].map((url) =>
-                Utils.downloadJsonCached(url, 1000 * 60 * 60 * 24 * 30),
-            ),
+            [
+                "./assets/data/nsi/nsi.min.json",
+                "./assets/data/nsi/wikidata.min.json",
+                "./assets/data/nsi/featureCollection.min.json",
+            ].map((url) => Utils.downloadJsonCached(url, 1000 * 60 * 60 * 24 * 30))
         )
-        NameSuggestionIndex.inited = new NameSuggestionIndex(<any>nsi, <any>nsiWd["wikidata"], <any>features)
+        NameSuggestionIndex.inited = new NameSuggestionIndex(
+            <any>nsi,
+            <any>nsiWd["wikidata"],
+            <any>features
+        )
         return NameSuggestionIndex.inited
     }
 
@@ -129,13 +134,13 @@ export default class NameSuggestionIndex {
                 try {
                     return Utils.downloadJsonCached<Record<string, number>>(
                         `./assets/data/nsi/stats/${type}.${c.toUpperCase()}.json`,
-                        24 * 60 * 60 * 1000,
+                        24 * 60 * 60 * 1000
                     )
                 } catch (e) {
                     console.error("Could not fetch " + type + " statistics due to", e)
                     return undefined
                 }
-            }),
+            })
         )
         stats = Utils.NoNull(stats)
         if (stats.length === 1) {
@@ -183,10 +188,13 @@ export default class NameSuggestionIndex {
              * If set, sort by frequency instead of alphabetically
              */
             sortByFrequency: boolean
-        },
+        }
     ): Promise<Mapping[]> {
         const mappings: (Mapping & { frequency: number })[] = []
-        const frequencies = country !== undefined ? await NameSuggestionIndex.fetchFrequenciesFor(type, country) : {}
+        const frequencies =
+            country !== undefined
+                ? await NameSuggestionIndex.fetchFrequenciesFor(type, country)
+                : {}
         for (const key in tags) {
             if (key.startsWith("_")) {
                 continue
@@ -197,7 +205,7 @@ export default class NameSuggestionIndex {
                 key,
                 value,
                 country.join(";"),
-                location,
+                location
             )
             if (!actualBrands) {
                 continue
@@ -242,7 +250,7 @@ export default class NameSuggestionIndex {
     }
 
     public supportedTags(
-        type: "operator" | "brand" | "flag" | "transit" | string,
+        type: "operator" | "brand" | "flag" | "transit" | string
     ): Record<string, string[]> {
         const tags: Record<string, string[]> = {}
         const keys = Object.keys(this.nsiFile.nsi)
@@ -287,10 +295,10 @@ export default class NameSuggestionIndex {
         type: string,
         tags: { key: string; value: string }[],
         country: string = undefined,
-        location: [number, number] = undefined,
+        location: [number, number] = undefined
     ): NSIItem[] {
         return tags.flatMap((tag) =>
-            this.getSuggestionsForKV(type, tag.key, tag.value, country, location),
+            this.getSuggestionsForKV(type, tag.key, tag.value, country, location)
         )
     }
 
@@ -313,7 +321,7 @@ export default class NameSuggestionIndex {
         key: string,
         value: string,
         country: string = undefined,
-        location: [number, number] = undefined,
+        location: [number, number] = undefined
     ): NSIItem[] {
         const path = `${type}s/${key}/${value}`
         const entry = this.nsiFile.nsi[path]
@@ -353,8 +361,7 @@ export default class NameSuggestionIndex {
             }
             const key = i.locationSet.include?.join(";") + "-" + i.locationSet.exclude?.join(";")
             const fromCache = NameSuggestionIndex.resolvedSets[key]
-            const resolvedSet =
-                fromCache ?? this.loco.resolveLocationSet(i.locationSet)
+            const resolvedSet = fromCache ?? this.loco.resolveLocationSet(i.locationSet)
             if (!fromCache) {
                 NameSuggestionIndex.resolvedSets[key] = resolvedSet
             }
@@ -377,12 +384,11 @@ export default class NameSuggestionIndex {
         center: [number, number],
         options: {
             sortByFrequency: boolean
-        },
+        }
     ): Promise<Mapping[]> {
         const nsi = await NameSuggestionIndex.getNsiIndex()
         return nsi.generateMappings(key, tags, country, center, options)
     }
-
 
     /**
      * Where can we find the URL on the world wide web?
@@ -402,7 +408,7 @@ export default class NameSuggestionIndex {
         }
         return icon
     }
-    private static readonly brandPrefix = ["name", "alt_name", "operator","brand"] as const
+    private static readonly brandPrefix = ["name", "alt_name", "operator", "brand"] as const
 
     /**
      * An NSI-item might have tags such as `name=X`, `alt_name=brand X`,  `brand=X`, `brand:wikidata`, `shop=Y`, `service:abc=yes`
@@ -412,12 +418,14 @@ export default class NameSuggestionIndex {
      *
      * (More of an extension method on NSIItem)
      */
-    static asFilterTags(item: NSIItem): string | { and: TagConfigJson[] } | { or: TagConfigJson[] } {
+    static asFilterTags(
+        item: NSIItem
+    ): string | { and: TagConfigJson[] } | { or: TagConfigJson[] } {
         let brandDetection: string[] = []
         let required: string[] = []
         const tags: Record<string, string> = item.tags
         for (const k in tags) {
-            if (NameSuggestionIndex.brandPrefix.some(br => k === br || k.startsWith(br + ":"))) {
+            if (NameSuggestionIndex.brandPrefix.some((br) => k === br || k.startsWith(br + ":"))) {
                 brandDetection.push(k + "=" + tags[k])
             } else {
                 required.push(k + "=" + tags[k])

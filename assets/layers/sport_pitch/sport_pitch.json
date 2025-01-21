@@ -166,6 +166,28 @@
         "leisure=pitch",
         "fixme=Geometry to be drawn, added by MapComplete"
       ]
+    },
+    {
+      "title": {
+        "en": "a skatepark",
+        "de": "einen Skatepark",
+        "es": "un skatepark"
+      },
+      "tags": [
+        "leisure=pitch",
+        "sport=skateboard"
+      ]
+    },
+    {
+      "title": {
+        "en": "a horse riding arena",
+        "de": "einen Reitplatz",
+        "es": "una pista ecuestre"
+      },
+      "tags": [
+        "leisure=pitch",
+        "sport=equestrian"
+      ]
     }
   ],
   "tagRenderings": [
@@ -280,7 +302,7 @@
             "en": "Korfball is played here",
             "it": "Qui si gioca a korfball",
             "ru": "Здесь можно играть в корфбол",
-            "de": "Hier wird Kopfball gespielt",
+            "de": "Hier wird Korfball gespielt",
             "ca": "Aquí es juga al corfbol",
             "cs": "Zde se hraje korfbal",
             "es": "Aquí se juega al Korfbal"
@@ -306,7 +328,11 @@
           "hideInAnswer": true
         },
         {
-          "if": "sport=skateboard",
+          "if": {
+            "and": [
+              "sport=skateboard"
+            ]
+          },
           "then": {
             "en": "This is a skatepark",
             "nl": "Dit is een skatepark",
@@ -317,7 +343,11 @@
           }
         },
         {
-          "if": "sport=equestrian",
+          "if": {
+            "and": [
+              "sport=equestrian"
+            ]
+          },
           "then": {
             "en": "This is a horse riding arena",
             "de": "Dies ist ein Reitplatz",

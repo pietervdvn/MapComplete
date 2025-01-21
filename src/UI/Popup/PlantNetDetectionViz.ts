@@ -9,6 +9,7 @@ import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisua
 import SvelteUIElement from "../Base/SvelteUIElement"
 import PlantNet from "../PlantNet/PlantNet.svelte"
 import { default as PlantNetCode } from "../../Logic/Web/PlantNet"
+
 export class PlantNetDetectionViz implements SpecialVisualization {
     funcName = "plantnet_detection"
     needsUrls = [PlantNetCode.baseUrl]
@@ -33,7 +34,7 @@ export class PlantNetDetectionViz implements SpecialVisualization {
             imagePrefixes = [].concat(...args.map((a) => a.split(",")))
         }
 
-        const allProvidedImages: Store<ProvidedImage[]> = AllImageProviders.LoadImagesFor(
+        const allProvidedImages: Store<ProvidedImage[]> = AllImageProviders.loadImagesFor(
             tags,
             imagePrefixes
         )

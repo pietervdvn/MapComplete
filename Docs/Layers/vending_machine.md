@@ -4,7 +4,7 @@
 
 Layer showing vending machines
 
- - This layer is shown at zoomlevel **0** and higher
+ - This layer is shown at zoomlevel **13** and higher
 
 ## Table of contents
 

@@ -14,7 +14,6 @@
   import TagHint from "../TagHint.svelte"
   import LoginToggle from "../../Base/LoginToggle.svelte"
   import SubtleButton from "../../Base/SubtleButton.svelte"
-  import Loading from "../../Base/Loading.svelte"
   import TagRenderingMappingInput from "./TagRenderingMappingInput.svelte"
   import { Translation } from "../../i18n/Translation"
   import Constants from "../../../Models/Constants"
@@ -119,7 +118,7 @@
             seenFreeforms.push(newProps[confg.freeform.key])
           }
           return matches
-        }),
+        })
       ]
 
       if (tgs !== undefined && confg.freeform) {
@@ -227,7 +226,7 @@
               freeform: $freeformInput,
               selectedMapping,
               checkedMappings,
-              currentTags: tags.data,
+              currentTags: tags.data
             },
             " --> ",
             selectedTags
@@ -285,7 +284,7 @@
     dispatch("saved", { config, applied: selectedTags })
     const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
       theme: tags.data["_orig_theme"] ?? state.theme.id,
-      changeType: "answer",
+      changeType: "answer"
     })
     freeformInput.set(undefined)
     selectedMapping = undefined
@@ -329,7 +328,7 @@
     const tagsToSet = settableKeys.data.map((k) => new Tag(k, ""))
     const change = new ChangeTagAction(tags.data.id, new And(tagsToSet), tags.data, {
       theme: tags.data["_orig_theme"] ?? state.theme.id,
-      changeType: "answer",
+      changeType: "answer"
     })
     freeformInput.set(undefined)
     selectedMapping = undefined
@@ -542,12 +541,25 @@
         {/if}
 
         <!-- Save and cancel buttons, in a logintoggle -->
-        <LoginToggle {state}>
-          <Loading slot="loading" />
-          <SubtleButton slot="not-logged-in" on:click={() => state?.osmConnection?.AttemptLogin()}>
-            <Login slot="image" class="h-8 w-8" />
-            <Tr t={Translations.t.general.loginToStart} slot="message" />
-          </SubtleButton>
+        <LoginToggle {state} ignoreLoading>
+          <div class="flex w-full justify-end" slot="not-logged-in">
+            {#if config.alwaysForceSaveButton}
+              <button
+                on:click={() => onSave()}
+                class={twJoin(
+                      selectedTags === undefined ? "disabled" : "button-shadow",
+                      "primary"
+                    )}
+              >
+                <Tr t={Translations.t.general.save} />
+              </button>
+            {:else}
+              <SubtleButton on:click={() => state?.osmConnection?.AttemptLogin()}>
+                <Login slot="image" class="h-8 w-8" />
+                <Tr t={Translations.t.general.loginToStart} slot="message" />
+              </SubtleButton>
+            {/if}
+          </div>
           {#if $feedback !== undefined}
             <div class="alert" aria-live="assertive" role="alert">
               <Tr t={$feedback} />

@@ -16,7 +16,7 @@
   export let feature: Feature
 
   let theme = state.theme
-  let title = tags.mapD(tags => layer?.title?.GetRenderValue(tags))
+  let title = tags.mapD((tags) => layer?.title?.GetRenderValue(tags))
 </script>
 
 {#if theme === undefined}

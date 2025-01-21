@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg:svg
+   version="1.0"
+   width="725.46179"
+   height="742.64362"
+   id="svg2"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   sodipodi:docname="dog_toilet.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.73893443"
+     inkscape:cx="370.12756"
+     inkscape:cy="367.42096"
+     inkscape:window-width="1920"
+     inkscape:window-height="1005"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3531" />
+  <svg:defs
+     id="defs4" />
+  <script>{
+            document.currentScript.dataset.injected = true;
+            const o = JSON.parse(decodeURIComponent(escape(atob('eyJ1c2VyQWdlbnQiOiJNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTI1LjAuMC4wIFNhZmFyaS81MzcuMzYgR0xTLzEwMC4xMC45OTM5LjEwMCIsImFwcFZlcnNpb24iOiI1LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEyNS4wLjAuMCBTYWZhcmkvNTM3LjM2IEdMUy8xMDAuMTAuOTkzOS4xMDAiLCJwbGF0Zm9ybSI6IldpbmRvd3MiLCJ2ZW5kb3IiOiJHb29nbGUgSW5jLiIsInByb2R1Y3QiOiJHZWNrbyIsIm9zY3B1IjoiW2RlbGV0ZV0iLCJidWlsZElEIjoiW2RlbGV0ZV0iLCJwcm9kdWN0U3ViIjoiMjAwMzAxMDciLCJ1c2VyQWdlbnREYXRhQnVpbGRlciI6eyJwIjp7InVhIjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEyNS4wLjAuMCBTYWZhcmkvNTM3LjM2IEdMUy8xMDAuMTAuOTkzOS4xMDAiLCJicm93c2VyIjp7Im5hbWUiOiJDaHJvbWUiLCJ2ZXJzaW9uIjoiMTI1LjAuMC4wIiwibWFqb3IiOiIxMjUifSwiZW5naW5lIjp7Im5hbWUiOiJCbGluayIsInZlcnNpb24iOiIxMjUuMC4wLjAifSwib3MiOnsibmFtZSI6IldpbmRvd3MiLCJ2ZXJzaW9uIjoiMTAifSwiZGV2aWNlIjp7fSwiY3B1Ijp7ImFyY2hpdGVjdHVyZSI6ImFtZDY0In19LCJ1YSI6Ik1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMjUuMC4wLjAgU2FmYXJpLzUzNy4zNiBHTFMvMTAwLjEwLjk5MzkuMTAwIn19'))));
+
+            if (o.userAgentDataBuilder) {
+              const v = new class NavigatorUAData {
+                #p;
+
+                constructor({p, ua}) {
+                  this.#p = p;
+
+                  const version = p.browser.major;
+                  const name = p.browser.name === 'Chrome' ? 'Google Chrome' : p.browser.name;
+
+                  this.brands = [{
+                    brand: name,
+                    version
+                  }, {
+                    brand: 'Chromium',
+                    version
+                  }, {
+                    brand: 'Not=A?Brand',
+                    version: '24'
+                  }];
+
+                  this.mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+
+                  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA-Platform
+                  this.platform = 'Unknown';
+                  if (p.os &amp;&amp; p.os.name) {
+                    const name = p.os.name.toLowerCase();
+                    if (name.includes('mac')) {
+                      this.platform = 'macOS';
+                    }
+                    else if (name.includes('debian')) {
+                      this.platform = 'Linux';
+                    }
+                    else {
+                      this.platform = p.os.name;
+                    }
+                  }
+                }
+                toJSON() {
+                  return {
+                    brands: this.brands,
+                    mobile: this.mobile,
+                    platform: this.platform
+                  };
+                }
+                getHighEntropyValues(hints) {
+                  if (!hints || Array.isArray(hints) === false) {
+                    return Promise.reject(Error(&quot;Failed to execute 'getHighEntropyValues' on 'NavigatorUAData'&quot;));
+                  }
+
+                  const r = this.toJSON();
+
+                  if (hints.includes('architecture')) {
+                    r.architecture = this.#p?.cpu?.architecture || 'x86';
+                  }
+                  if (hints.includes('bitness')) {
+                    r.bitness = '64';
+                  }
+                  if (hints.includes('model')) {
+                    r.model = '';
+                  }
+                  if (hints.includes('platformVersion')) {
+                    r.platformVersion = this.#p?.os?.version || '10.0.0';
+                  }
+                  if (hints.includes('uaFullVersion')) {
+                    r.uaFullVersion = this.brands[0].version;
+                  }
+                  if (hints.includes('fullVersionList')) {
+                    r.fullVersionList = this.brands;
+                  }
+                  return Promise.resolve(r);
+                }
+              }(o.userAgentDataBuilder);
+
+              navigator.__defineGetter__('userAgentData', () =&gt; {
+                return v;
+              });
+            }
+            delete o.userAgentDataBuilder;
+
+            for (const key of Object.keys(o)) {
+              if (o[key] === '[delete]') {
+                delete Object.getPrototypeOf(window.navigator)[key];
+              }
+              else {
+                navigator.__defineGetter__(key, () =&gt; {
+                  if (o[key] === 'empty') {
+                    return '';
+                  }
+                  return o[key];
+                });
+              }
+            }
+          }</script>
+  <svg:g
+     transform="matrix(1.0854901,0,0,1.1120417,-177.6565,107.92783)"
+     id="g3531">
+    <svg:path
+       d="m 831.99129,236.85621 c 0,184.41338 -149.60998,333.90995 -334.16326,333.90995 -184.55327,0 -334.16325,-149.49657 -334.16325,-333.90995 0,-184.413394 149.60998,-333.909971 334.16325,-333.909971 184.55328,0 334.16326,149.496577 334.16326,333.909971 z"
+       id="path4192"
+       style="fill:#0000cb;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:79.1855;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <svg:g
+       id="g1"
+       transform="matrix(1.1052349,0,0,1.1052349,-86.652791,-48.344015)">
+      <svg:path
+         d="m 754.07756,175.34912 c 13.17166,13.17166 23.0808,29.60584 39.51498,39.51498 0,0 16.11439,-1.43063 20.47237,-1.83277 5.97295,-0.55116 8.34437,11.2057 8.79124,14.93351 1.70162,14.19509 -29.99874,31.88217 -29.99874,31.88217 -15.73281,4.39056 -44.15321,2.61857 -48.64846,12.80916 l -6.2132,5.48819 -72.8269,-70.96372 14.2693,-8.78111 c -9.38453,-32.09608 3.70608,-51.86708 13.17166,-63.66303 19.29001,-8.31278 14.77513,13.3436 20.85513,25.24568 11.3524,-16.01426 43.00727,-30.96508 39.49472,-17.9551 -3.53598,13.0968 -1.06724,25.11471 1.1179,33.32204 z"
+         id="path2539"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <svg:path
+         d="m 654.19247,214.8641 c 25.97744,25.61156 53.0424,49.77312 79.01984,75.38468 -15.01119,35.47543 -31.10989,37.94129 -46.12108,51.55861 -4.33652,10.21423 0.38952,18.61595 4.39055,20.85513 14.82018,15.79961 41.24043,17.09914 61.86064,25.64871 8.91471,4.31362 5.14183,17.3273 -14.58113,25.99095 -22.6879,-0.0642 -46.46332,2.40917 -64.43869,-16.14261 -20.18867,25.13086 24.87305,24.52407 36.94707,37.32985 5.78652,5.13582 7.94803,17.52169 -4.39056,19.75749 -31.05923,9.33387 -61.03095,1.26763 -80.1276,-29.63624 -13.11425,-25.63183 -22.24097,-49.45114 -20.85513,-83.42052 -27.07508,1.41286 -52.70015,-0.0743 -81.22524,-12.07402 -10.69494,19.62578 -39.51498,10.97639 -59.27247,16.46458 -7.60917,17.94836 -8.6933,42.42175 1.09764,60.37011 12.04363,4.41757 22.99975,12.82267 26.34332,21.95277 5.36661,10.94936 -0.14185,21.17372 -23.05041,24.14804 -15.00106,-2.83181 -35.07714,-9.16835 -45.00317,-32.92915 -3.17883,-30.37475 -28.4703,-61.112 -9.5365,-91.12425 l 37.63154,-24.07712 c 0,0 -8.03468,-22.71541 -8.68992,-38.09536 -0.65727,-15.42777 9.77743,-56.69444 9.77743,-56.69444 -13.17167,4.75644 -35.76838,13.14802 -52.23296,0.34224 -3.98077,-17.21997 -5.06152,-37.33997 2.19528,-59.27247 -5.53885,-18.61257 -20.50276,-27.80008 -32.92915,-40.61262 -0.68785,-13.453108 11.22318,-12.325196 12.07402,-13.171662 30.98831,-6.051088 44.214,14.722982 57.0772,36.222062 2.93334,10.98269 0.60983,16.70853 0,24.14805 6.23008,11.96595 15.36018,3.26928 21.95277,1.09764 37.64506,-19.55148 81.09015,-27.14038 99.88509,7.68347 7.27031,8.43211 7.29057,19.40174 6.58583,30.73387 0,0 7.8015,-25.83079 11.66086,-20.14026 2.7361,4.03431 3.70607,20.14026 3.70607,20.14026 l 35.12443,-26.34332 c 7.98913,-5.99185 4.80923,27.71 -2.19527,36.22207 -5.85407,8.41523 -11.70815,16.83045 -17.56222,25.24568 20.81798,-5.44767 33.66091,-2.19528 50.49137,-3.29292 z"
+         id="path2541"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </svg:g>
+    <svg:path
+       d="M 195.98632,368.11908 C 277.44535,212.24875 361.24114,248.00825 404.28279,246.56112"
+       id="path3313"
+       style="fill:none;fill-rule:evenodd;stroke:#fffbff;stroke-width:16.3832;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:49.1496, 49.1496;stroke-dashoffset:0;stroke-opacity:1" />
+  </svg:g>
+</svg:svg>

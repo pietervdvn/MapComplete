@@ -13,14 +13,15 @@ export interface IconConfigJson {
      *
      *
      * types: <span class="text-lg font-bold">Use a different icon depending on the value of some attributes</span> ; icon
-     * suggestions: return [ "nsi_brand.icon", "nsi_operator.icon", "id_presets.shop_rendering", ...Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))]
+     * suggestions: return [ {"if":"value=nsi_brand.icon", "then": "Use icons for brand from the Name Suggestion Index"}, {"if":"value=nsi_operator.icon", "then": "Use icons for operator from the Name Suggestion Index"}, {"if":"value=id_presets.shop_rendering", "then": "Use shop preset icons from iD"}, ...Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))]
      */
     icon: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
     /**
      * question: What colour should the icon be?
-     * This will only work for the default icons such as `pin`,`circle`,...
-     * types: <span class="text-lg font-bold">Use a different color depending on the value of some attributes</span> ; color
      *
+     * This will only work for the default icons such as `pin`,`circle`,...
+     *
+     * types: <span class="text-lg font-bold">Use a different color depending on the value of some attributes</span> ; color
      */
     color?: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
 }
@@ -70,16 +71,18 @@ export default interface PointRenderingConfigJson {
      * They will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.
      *
      * Note: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle
+     * Alternatively, this can reuse a _tagRendering_ from another layer, e.g. one of the 'icons'-tagrenderings.
+     * See ExpandIconBadges on how this is handled
      * group: hidden
      */
-    iconBadges?: {
+    iconBadges?: (string | {
         if: TagConfigJson
         /**
          * Badge to show
          * Type: icon
          */
         then: string | MinimalTagRenderingConfigJson
-    }[]
+    })[]
 
     /**
      * question: What size should the marker be on the map?

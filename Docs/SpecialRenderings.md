@@ -674,10 +674,11 @@ Invites the contributor to leave a review. Somewhat small UI-element until inter
 -----|-----|----- |
 | subjectKey | name | The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b> |
 | fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value |
+| question | _undefined_ | The question to ask during the review |
 
 #### Example usage of create_review
 
-<code>`{create_review(name,)}`</code>
+<code>`{create_review(name,,)}`</code>
 
 ### list_reviews
 
@@ -700,6 +701,7 @@ A pragmatic combination of `create_review` and `list_reviews`
 -----|-----|----- |
 | subjectKey | name | The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b> |
 | fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value |
+| question | _undefined_ | The question to ask in the review form. Optional |
 
 #### Example usage of reviews
 

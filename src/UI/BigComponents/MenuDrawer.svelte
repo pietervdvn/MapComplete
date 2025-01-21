@@ -126,12 +126,6 @@
       </svelte:fragment>
 
       <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
-      <LoginToggle {state} silentFail>
-        <div class="flex flex-col" slot="not-logged-in">
-          <LanguagePicker availableLanguages={theme.language} />
-          <Tr cls="alert" t={Translations.t.userinfo.notLoggedIn} />
-          <LoginButton clss="primary" osmConnection={state.osmConnection} />
-        </div>
         <SelectedElementView
           highlightedRendering={state.guistate.highlightedUserSetting}
           layer={usersettingslayer}
@@ -143,7 +137,6 @@
           {state}
           tags={state.userRelatedState.preferencesAsTags}
         />
-      </LoginToggle>
     </Page>
 
     <LoginToggle {state} silentFail>

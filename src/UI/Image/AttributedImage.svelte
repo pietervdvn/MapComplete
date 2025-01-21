@@ -17,6 +17,7 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import DotMenu from "../Base/DotMenu.svelte"
+  import LoadingPlaceholder from "../Base/LoadingPlaceholder.svelte"
 
   export let image: Partial<ProvidedImage>
   let fallbackImage: string = undefined
@@ -111,7 +112,11 @@
           <slot name="dot-menu-actions" />
         </DotMenu>
       {/if}
+      {#if !loaded}
+        <LoadingPlaceholder />
+      {/if}
       <img
+        class:hidden={!loaded}
         bind:this={imgEl}
         on:load={() => (loaded = true)}
         class={imgClass ?? ""}

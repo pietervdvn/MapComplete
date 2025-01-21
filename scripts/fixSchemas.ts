@@ -208,13 +208,34 @@ function extractHintsFrom(
             validators: Validators,
             Constants: Constants,
         })
-        if (hints["suggestions"]?.indexOf(null) >= 0) {
+        const evaluatedSuggestions = hints["suggestions"]
+
+        if (evaluatedSuggestions?.indexOf(null) >= 0) {
             throw (
                 "A suggestion generated 'null' for " +
                 path.join(".") +
                 ". Check the docstring, specifically 'suggestions'. Pay attention to double commas"
             )
         }
+
+        console.log(evaluatedSuggestions)
+        for (const hintElement of evaluatedSuggestions ?? []) {
+            if (typeof hintElement === "string") {
+                throw (
+                    "A suggestion generated a string for " +
+                    path.join(".") +
+                    ". Remember that you should use {'if': 'value=[actual_value]', 'then': '[some explanation]'}"
+                )
+            }
+            if (!hintElement.if || !hintElement.then) {
+                throw (
+                    "A suggestion generated an object missing either `if` or `then` " +
+                    path.join(".") +
+                    ". Remember that you should use {'if': 'value=[actual_value]', 'then': '[some explanation]'}"
+                )
+            }
+        }
+
     }
     return hints
 }

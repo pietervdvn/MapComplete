@@ -435,6 +435,13 @@ export default {
           "type": "string"
         }
       ]
+    },
+    "#dont-translate": {
+      "description": "group: hidden",
+      "enum": [
+        "*"
+      ],
+      "type": "string"
     }
   },
   "required": [
@@ -668,7 +675,7 @@ export default {
       "type": "object",
       "properties": {
         "icon": {
-          "description": "question: What icon should be used?\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "description": "question: What icon should be used?\n\nTo reuse icons from a different layer of a library:\n- The library layer has, within tagRenderings one which will output the URL of the image (e.g. mappings: {\"if\": \"shop=xyz\", then: \"./assets/icons/shop_xyz.png\"})\n- Use \"layer_id.tagrendering_id\"\n\nNote that if you reuse icons from a different icon set, you'll probably want to use `override` to set a default rendering\n\n\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return [ {\"if\":\"value=nsi_brand.icon\", \"then\": \"Use icons for brand from the Name Suggestion Index\"}, {\"if\":\"value=nsi_operator.icon\", \"then\": \"Use icons for operator from the Name Suggestion Index\"}, {\"if\":\"value=id_presets.shop_rendering\", \"then\": \"Use shop preset icons from iD\"}, ...Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))]",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -692,7 +699,7 @@ export default {
           ]
         },
         "color": {
-          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntypes: <span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
+          "description": "question: What colour should the icon be?\n\nThis will only work for the default icons such as `pin`,`circle`,...\n\ntypes: <span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -1053,30 +1060,37 @@ export default {
           }
         },
         "iconBadges": {
-          "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\n\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle\ngroup: hidden",
+          "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\n\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle\nAlternatively, this can reuse a _tagRendering_ from another layer, e.g. one of the 'icons'-tagrenderings.\nSee ExpandIconBadges on how this is handled\ngroup: hidden",
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "if": {
-                "$ref": "#/definitions/TagConfigJson",
-                "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
-              },
-              "then": {
-                "description": "Badge to show\nType: icon",
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/MinimalTagRenderingConfigJson"
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "if": {
+                    "$ref": "#/definitions/TagConfigJson",
+                    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
                   },
-                  {
-                    "type": "string"
+                  "then": {
+                    "description": "Badge to show\nType: icon",
+                    "anyOf": [
+                      {
+                        "$ref": "#/definitions/MinimalTagRenderingConfigJson"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
                   }
+                },
+                "required": [
+                  "if",
+                  "then"
                 ]
+              },
+              {
+                "type": "string"
               }
-            },
-            "required": [
-              "if",
-              "then"
             ]
           }
         },
@@ -1909,6 +1923,10 @@ export default {
         "id": {
           "description": "An id/name for this filter, used to set the URL parameters",
           "type": "string"
+        },
+        "strict": {
+          "description": "If set, the options will be pruned. Only items for which the filter match the layer source will be kept.\n\nFor example, we import types of brands from the nsi. This contains a ton of items, e.g.\n[{question: \"Brand X\", osmTags: {\"and\": [\"shop=clothes\", \"brand=Brand X]}, {osmTags: {\"and\": \"shop=convenience\", ...} ...} ]\nOf course, when making a layer about `shop=clothes`, we'll only want to keep the clothes shops.\nIf set to strict and the source is `shop=clothes`, only those options which have shop=clothes will be returned",
+          "type": "boolean"
         },
         "options": {
           "description": "The options for a filter\nIf there are multiple options these will be a list of radio buttons\nIf there is only one option this will be a checkbox\nFiltering is done based on the given osmTags that are compared to the objects in that layer.\n\nAn example which searches by name:\n\n```\n{\n      \"id\": \"shop-name\",\n      \"options\": [\n        {\n          \"fields\": [\n            {\n              \"name\": \"search\",\n              \"type\": \"string\"\n            }\n          ],\n          \"osmTags\": \"name~i~.*{search}.*\",\n          \"question\": {\n            \"en\": \"Only show shops with name {search}\",\n          }\n        }\n      ]\n    }\n    ```",

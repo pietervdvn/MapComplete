@@ -4347,6 +4347,37 @@
             "render": "Doctors Office {name}"
         }
     },
+    "dog_toilet": {
+        "description": "A dog toilet is a facility designated for dogs to urinate and excrete. This can be a designated, signposted patch of grass, a sand pit or a fenced area.",
+        "name": "Dog toilets",
+        "presets": {
+            "0": {
+                "title": "a dog toilet"
+            }
+        },
+        "tagRenderings": {
+            "barrier": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a fence around this dog toilet"
+                    },
+                    "1": {
+                        "then": "There is a hedge around this dog toilet"
+                    },
+                    "2": {
+                        "then": "There is a barrier around this dog toilet"
+                    },
+                    "3": {
+                        "then": "There is no barrier around this dog toilet"
+                    }
+                },
+                "question": "Is this dog toilet fenced?"
+            }
+        },
+        "title": {
+            "render": "Dog toilet"
+        }
+    },
     "dogpark": {
         "name": "dog parks",
         "presets": {
@@ -4485,6 +4516,26 @@
                 "override": {
                     "question": "Is this drinking water point available all year round?"
                 }
+            },
+            "temperature-cold": {
+                "mappings": {
+                    "0": {
+                        "then": "Ice-cold water is provided here"
+                    },
+                    "1": {
+                        "then": "Actively cooled water is available here"
+                    },
+                    "2": {
+                        "then": "Ambient temperature water (without active cooling or heating) is available here"
+                    },
+                    "3": {
+                        "then": "Warmed water is provided here; the water is not dangerously hot"
+                    },
+                    "4": {
+                        "then": "Hot water is provided here"
+                    }
+                },
+                "question": "Is cold water available here?"
             },
             "type": {
                 "mappings": {
@@ -9135,14 +9186,14 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "All recycling types"
+                        "question": "Only recycling centres"
                     }
                 }
             },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Only public access"
+                        "question": "All recycling types"
                     },
                     "1": {
                         "question": "Recycling of batteries"
@@ -9572,6 +9623,28 @@
             "render": "School <i>{name}</i>"
         }
     },
+    "scouting_group": {
+        "description": "A map showing scouting groups.",
+        "name": "Scouting groups",
+        "presets": {
+            "0": {
+                "title": "scouting group"
+            }
+        },
+        "tagRenderings": {
+            "association": {
+                "question": "To which scout association does {name} belong?",
+                "render": "The scout association of this group is {brand}"
+            },
+            "name": {
+                "question": "What is the name of this group?",
+                "render": "The name of this group is {name}"
+            }
+        },
+        "title": {
+            "render": "{name}"
+        }
+    },
     "search": {
         "description": "Priviliged layer showing the search results",
         "tagRenderings": {
@@ -9757,6 +9830,11 @@
                     "+mappings": {
                         "0": {
                             "then": "Bicycle rental shop"
+                        }
+                    },
+                    "mappings+": {
+                        "0": {
+                            "then": "This shop is no longer used. It is vacant"
                         }
                     },
                     "question": "What kind of shop is this?",
@@ -10234,6 +10312,12 @@
             },
             "1": {
                 "title": "a sport pitch"
+            },
+            "2": {
+                "title": "a skatepark"
+            },
+            "3": {
+                "title": "a horse riding arena"
             }
         },
         "tagRenderings": {
@@ -12649,6 +12733,20 @@
                 }
             },
             "show_crosshair": {
+                "mappings": {
+                    "0": {
+                        "then": "Show a crosshair in the center of the map when zoomed in above level 17"
+                    },
+                    "1": {
+                        "then": "Do not show a crosshair in the center of the map"
+                    },
+                    "2": {
+                        "then": "Do not show a crosshair in the center of the map"
+                    },
+                    "3": {
+                        "then": "Always show a crosshair in the center of the map"
+                    }
+                },
                 "question": "Should a crosshair be shown in the center of the display?",
                 "questionHint": "This can help to accurately position a new element"
             },
@@ -12761,6 +12859,9 @@
                         "then": "You have contributed to translating MapComplete with {_translation_contributions} commits! That's awesome!"
                     }
                 }
+            },
+            "translations-title": {
+                "render": "<h3>Translating MapComplete</h3>"
             },
             "verified-mastodon": {
                 "mappings": {

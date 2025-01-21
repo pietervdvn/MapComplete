@@ -133,11 +133,11 @@ export class TagUtils {
                 "\n" +
                 "```json\n" +
                 "{\n" +
-                "    \"mappings\": [\n" +
+                '    "mappings": [\n' +
                 "        {\n" +
-                "            \"if\":\"key:={some_other_key}\",\n" +
-                "            \"then\": \"...\",\n" +
-                "            \"hideInAnswer\": \"some_other_key=\"\n" +
+                '            "if":"key:={some_other_key}",\n' +
+                '            "then": "...",\n' +
+                '            "hideInAnswer": "some_other_key="\n' +
                 "        }\n" +
                 "    ]\n" +
                 "}\n" +
@@ -175,10 +175,10 @@ export class TagUtils {
         "\n" +
         "```json\n" +
         "{\n" +
-        "  \"osmTags\": {\n" +
-        "    \"or\": [\n" +
-        "      \"amenity=school\",\n" +
-        "      \"amenity=kindergarten\"\n" +
+        '  "osmTags": {\n' +
+        '    "or": [\n' +
+        '      "amenity=school",\n' +
+        '      "amenity=kindergarten"\n' +
         "    ]\n" +
         "  }\n" +
         "}\n" +
@@ -194,7 +194,7 @@ export class TagUtils {
         "If the schema-files note a type [`TagConfigJson`](https://github.com/pietervdvn/MapComplete/blob/develop/src/Models/ThemeConfig/Json/TagConfigJson.ts), you can use one of these values.\n" +
         "\n" +
         "In some cases, not every type of tags-filter can be used. For example,  _rendering_ an option with a regex is\n" +
-        "fine (`\"if\": \"brand~[Bb]randname\", \"then\":\" The brand is Brandname\"`); but this regex can not be used to write a value\n" +
+        'fine (`"if": "brand~[Bb]randname", "then":" The brand is Brandname"`); but this regex can not be used to write a value\n' +
         "into the database. The theme loader will however refuse to work with such inconsistencies and notify you of this while\n" +
         "you are building your theme.\n" +
         "\n" +
@@ -205,18 +205,18 @@ export class TagUtils {
         "\n" +
         "```json\n" +
         "{\n" +
-        "  \"and\": [\n" +
-        "    \"key=value\",\n" +
+        '  "and": [\n' +
+        '    "key=value",\n' +
         "    {\n" +
-        "      \"or\": [\n" +
-        "        \"other_key=value\",\n" +
-        "        \"other_key=some_other_value\"\n" +
+        '      "or": [\n' +
+        '        "other_key=value",\n' +
+        '        "other_key=some_other_value"\n' +
         "      ]\n" +
         "    },\n" +
-        "    \"key_which_should_be_missing=\",\n" +
-        "    \"key_which_should_have_a_value~*\",\n" +
-        "    \"key~.*some_regex_a*_b+_[a-z]?\",\n" +
-        "    \"height<1\"\n" +
+        '    "key_which_should_be_missing=",\n' +
+        '    "key_which_should_have_a_value~*",\n' +
+        '    "key~.*some_regex_a*_b+_[a-z]?",\n' +
+        '    "height<1"\n' +
         "  ]\n" +
         "}\n" +
         "```\n" +
@@ -246,7 +246,7 @@ export class TagUtils {
 
     static asProperties(
         tags: TagsFilter | TagsFilter[],
-        baseproperties: Record<string, string> = {},
+        baseproperties: Record<string, string> = {}
     ) {
         if (Array.isArray(tags)) {
             tags = new And(tags)
@@ -274,11 +274,11 @@ export class TagUtils {
     static SplitKeysRegex(tagsFilters: UploadableTag[], allowRegex: false): Record<string, string[]>
     static SplitKeysRegex(
         tagsFilters: UploadableTag[],
-        allowRegex: boolean,
+        allowRegex: boolean
     ): Record<string, (string | RegexTag)[]>
     static SplitKeysRegex(
         tagsFilters: UploadableTag[],
-        allowRegex: boolean,
+        allowRegex: boolean
     ): Record<string, (string | RegexTag)[]> {
         const keyValues: Record<string, (string | RegexTag)[]> = {}
         tagsFilters = [...tagsFilters] // copy all, use as queue
@@ -307,7 +307,7 @@ export class TagUtils {
                 if (typeof key !== "string") {
                     console.error(
                         "Invalid type to flatten the multiAnswer: key is a regex too",
-                        tagsFilter,
+                        tagsFilter
                     )
                     throw "Invalid type to FlattenMultiAnswer: key is a regex too"
                 }
@@ -508,7 +508,7 @@ export class TagUtils {
     public static Tag(json: TagConfigJson, context?: string | ConversionContext): TagsFilterClosed
     public static Tag(
         json: TagConfigJson,
-        context: string | ConversionContext = "",
+        context: string | ConversionContext = ""
     ): TagsFilterClosed {
         try {
             const ctx = typeof context === "string" ? context : context.path.join(".")
@@ -540,7 +540,7 @@ export class TagUtils {
             throw `Error at ${context}: detected a non-uploadable tag at a location where this is not supported: ${t.asHumanString(
                 false,
                 false,
-                {},
+                {}
             )}`
         })
 
@@ -661,7 +661,7 @@ export class TagUtils {
      */
     public static removeShadowedElementsFrom(
         blacklist: TagsFilter[],
-        listToFilter: TagsFilter[],
+        listToFilter: TagsFilter[]
     ): TagsFilter[] {
         return listToFilter.filter((tf) => !blacklist.some((guard) => guard.shadows(tf)))
     }
@@ -690,15 +690,22 @@ export class TagUtils {
         return result
     }
 
-    public static removeKnownParts(tag: TagsFilter, known: TagsFilter, valueOfKnown = true): TagsFilter | boolean{
+    /**
+     * TagUtils.removeKnownParts(TagUtils.Tag({and: ["vending=excrement_bag"}),TagUtils.Tag({and: ["amenity=waste_basket", "vending=excrement_bag"]}), true) // => true
+     */
+    public static removeKnownParts(
+        tag: TagsFilter,
+        known: TagsFilter,
+        valueOfKnown = true
+    ): TagsFilter | boolean {
         const tagOrBool = And.construct([tag]).optimize()
-        if(tagOrBool === true || tagOrBool === false){
+        if (tagOrBool === true || tagOrBool === false) {
             return tagOrBool
         }
-        if(tagOrBool instanceof And){
+        if (tagOrBool instanceof And) {
             return tagOrBool.removePhraseConsideredKnown(known, valueOfKnown)
         }
-        return tagOrBool
+        return new And([tagOrBool]).removePhraseConsideredKnown(known, valueOfKnown)
     }
 
     /**
@@ -710,7 +717,7 @@ export class TagUtils {
      */
     public static containsEquivalents(
         guards: ReadonlyArray<TagsFilter>,
-        listToFilter: ReadonlyArray<TagsFilter>,
+        listToFilter: ReadonlyArray<TagsFilter>
     ): boolean {
         return listToFilter.some((tf) => guards.some((guard) => guard.shadows(tf)))
     }
@@ -754,7 +761,7 @@ export class TagUtils {
                     values.push(i + "")
                 }
                 return values
-            }),
+            })
         )
         return Utils.NoNull(spec)
     }
@@ -762,13 +769,13 @@ export class TagUtils {
     private static ParseTagUnsafe(json: TagConfigJson, context: string = ""): TagsFilterClosed {
         if (json === undefined) {
             throw new Error(
-                `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`,
+                `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`
             )
         }
         if (typeof json != "string") {
             if (json["and"] !== undefined && json["or"] !== undefined) {
                 throw `${context}: Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined. Did you override a value? Perhaps use \`"=parent": { ... }\` instead of "parent": {...}\` to trigger a replacement and not a fuse of values. The value is ${JSON.stringify(
-                    json,
+                    json
                 )}`
             }
             if (json["and"] !== undefined) {
@@ -850,13 +857,13 @@ export class TagUtils {
                 return new RegexTag(
                     withRegex.key,
                     new RegExp(".+", "si" + withRegex.modifier),
-                    withRegex.invert,
+                    withRegex.invert
                 )
             }
             return new RegexTag(
                 withRegex.key,
                 new RegExp("^(" + value + ")$", "s" + withRegex.modifier),
-                withRegex.invert,
+                withRegex.invert
             )
         }
 
@@ -978,16 +985,15 @@ export class TagUtils {
                 return ["", "## `" + mode + "` " + doc.name, "", doc.docs, "", ""].join("\n")
             }),
             "## " +
-            TagUtils.comparators.map((comparator) => "`" + comparator[0] + "`").join(" ") +
-            " Logical comparators",
+                TagUtils.comparators.map((comparator) => "`" + comparator[0] + "`").join(" ") +
+                " Logical comparators",
             TagUtils.numberAndDateComparisonDocs,
             TagUtils.logicalOperator,
         ].join("\n")
     }
 
     static fromProperties(tags: Record<string, string>): TagConfigJson | boolean {
-
-        const opt = new And(Object.keys(tags).map(k => new Tag(k, tags[k]))).optimize()
+        const opt = new And(Object.keys(tags).map((k) => new Tag(k, tags[k]))).optimize()
         if (opt === true || opt === false) {
             return opt
         }

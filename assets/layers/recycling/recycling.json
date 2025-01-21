@@ -560,7 +560,8 @@
         "it": "un contenitore per il riciclo",
         "ca": "un contenidor de reciclatge",
         "fr": "un conteneur de recyclage",
-        "cs": "recyklační kontejner"
+        "cs": "recyklační kontejner",
+        "uk": "контейнер для сміття"
       },
       "tags": [
         "amenity=recycling",
@@ -576,7 +577,8 @@
         "it": "un centro di riciclo",
         "ca": "un centre de reciclatge",
         "fr": "une déchèterie",
-        "cs": "recyklační centrum"
+        "cs": "recyklační centrum",
+        "uk": "центр переробки відходів"
       },
       "tags": [
         "amenity=recycling",
@@ -1440,14 +1442,8 @@
         {
           "osmTags": "recycling_type=centre",
           "question": {
-            "en": "All recycling types",
-            "ca": "Tots els tipus de reciclatge",
-            "cs": "Všechny typy recyklace",
-            "de": "Alle Recyclingarten",
-            "es": "Todos los tipos de reciclaje",
-            "fr": "Tout type de recyclage",
-            "it": "Tutti i tipi di rifiuti",
-            "nl": "Alle recyclingtypes"
+            "en": "Only recycling centres",
+            "de": "Nur Recyclingzentren"
           }
         }
       ]
@@ -1457,16 +1453,14 @@
       "options": [
         {
           "question": {
-            "en": "Only public access",
-            "nl": "Enkel publiek toegankelijke afvalcontainers",
-            "de": "Nur öffentliche Recyclingeinrichtungen",
-            "es": "Solo acceso público",
-            "it": "Solo accesso pubblico",
-            "ca": "Només amb accés públic",
-            "fr": "Accès public uniquement",
-            "cs": "Pouze veřejný přístup",
-            "da": "Kun offentlig adgang",
-            "id": "Hanya akses publik"
+            "en": "All recycling types",
+            "nl": "Alle recyclingtypes",
+            "de": "Alle Recyclingarten",
+            "es": "Todos los tipos de reciclado",
+            "it": "Tutti i tipi di rifiuti",
+            "ca": "Tots els tipus de reciclatge",
+            "fr": "Tout type de recyclage",
+            "cs": "Všechny typy recyklace"
           }
         },
         {

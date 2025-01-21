@@ -71,7 +71,8 @@
         "de": "eine Eisdiele",
         "fr": "un glacier",
         "nl": "een ijssalon",
-        "es": "una heladería"
+        "es": "una heladería",
+        "uk": "кафе-морозиво"
       },
       "tags": [
         "amenity=ice_cream"
@@ -80,7 +81,8 @@
         "en": "A shop where one can buy only icecream and related items. Ice cream is normally hand-scooped.",
         "de": "Ein Geschäft, in dem man nur Eiscreme und damit verbundene Artikel kaufen kann. Normalerweise wird das Eis mit der Hand portioniert.",
         "nl": "Een plaats waar men voornamelijk ijsjes koopt, meestal met de hand geschept en bedoeld om onmiddellijk op te eten.",
-        "es": "Una tienda donde solo se puede comprar helado y artículos relacionados. El helado normalmente se sirve con cuchara."
+        "es": "Una tienda donde solo se puede comprar helado y artículos relacionados. El helado normalmente se sirve con cuchara.",
+        "uk": "Магазин, де можна купити лише морозиво та супутні товари. Зазвичай морозиво набирають вручну."
       }
     }
   ],
