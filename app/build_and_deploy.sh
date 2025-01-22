@@ -15,5 +15,5 @@ rm -rf dist
 ssh hetzner "rm -rf /root/app/"
 scp -rp to_upload/ hetzner:/root/app/
 scp -rp to_upload/.well-known/ hetzner:/root/app/
-
+ssh hetzner "cp ~/apk/mapcomplete-latest.apk ~/app/"
 rm -rf to_upload
