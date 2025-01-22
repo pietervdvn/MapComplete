@@ -54,7 +54,6 @@ async function main() {
             DetermineTheme.getTheme(),
             await getAvailableLayers(),
         ])
-        availableLayers?.delete("cycle_highways") // TODO remove after next cache.mapcomplete.org update
         console.log("The available layers on server are", Array.from(availableLayers))
         const state = new ThemeViewState(theme, availableLayers)
         const target = document.getElementById("maindiv")

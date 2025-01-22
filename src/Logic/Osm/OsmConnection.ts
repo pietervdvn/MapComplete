@@ -135,7 +135,7 @@ export class OsmConnection {
         oauth_token?: UIEventSource<string>
         // Used to keep multiple changesets open and to write to the correct changeset
         singlePage?: boolean
-        attemptLogin?: true | boolean
+        attemptLogin?: boolean
         /**
          * If true: automatically check if we're still online every 5 minutes + fetch messages
          */
@@ -183,9 +183,9 @@ export class OsmConnection {
 
         this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false)
 
-        this.createAuthObject()
+        this.updateAuthObject(false)
         AndroidPolyfill.inAndroid.addCallback(() => {
-            this.createAuthObject()
+            this.updateAuthObject(false)
         })
         if (!this.fakeUser) {
             this.CheckForMessagesContinuously()
@@ -261,8 +261,7 @@ export class OsmConnection {
             console.log("AttemptLogin called, but ignored as fakeUser is set")
             return
         }
-
-        console.log("Trying to log in...")
+        this.updateAuthObject(true)
         LocalStorageSource.get("location_before_login").setData(
             Utils.runningFromConsole ? undefined : window.location.href,
         )
@@ -577,8 +576,7 @@ export class OsmConnection {
         await this.loadUserInfo()
 
     }
-
-    private createAuthObject() {
+    private updateAuthObject(autoLogin: boolean) {
         let redirect_uri = Utils.runningFromConsole
             ? "https://mapcomplete.org/land.html"
             : window.location.protocol + "//" + window.location.host + "/land.html"
@@ -594,7 +592,7 @@ export class OsmConnection {
              * However, this breaks in iframes so we open a popup in that case
              */
             singlepage: !this._iframeMode && !AndroidPolyfill.inAndroid.data,
-            auto: false,
+            auto: autoLogin,
             apiUrl: this._oauth_config.api_url ?? this._oauth_config.url,
         })
         if (AndroidPolyfill.inAndroid.data) {
