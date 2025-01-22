@@ -190,7 +190,6 @@ class DownloadNsiLogos extends Script {
     }
 
     async main(): Promise<void> {
-        const nsi = await NameSuggestionIndex.getNsiIndex()
         const types = ["brand", "operator"]
         for (const type of types) {
             await this.downloadFor(type)
