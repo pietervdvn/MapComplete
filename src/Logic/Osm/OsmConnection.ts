@@ -640,6 +640,10 @@ export class OsmConnection {
         this.fetchCapabilities().then(({ api, gpx }) => {
             this.apiIsOnline.setData(api)
             this.gpxServiceIsOnline.setData(gpx)
+        }).catch(err => {
+            console.log("Could not reach the api:", err)
+            this.apiIsOnline.set("unreachable")
+            this.gpxServiceIsOnline.set("unreachable")
         })
     }
 

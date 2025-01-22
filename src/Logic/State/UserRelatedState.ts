@@ -419,6 +419,7 @@ export default class UserRelatedState {
         if(!Utils.runningFromConsole){
             amendedPrefs.data["_host"] = window.location.host
             amendedPrefs.data["_path"] = window.location.pathname
+            amendedPrefs.data["_userAgent"] = navigator.userAgent
         }
 
         for (const key in Constants.userJourney) {
