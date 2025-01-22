@@ -126,6 +126,9 @@ export default class TagRenderingConfig {
                 this.id
             )
         }
+        if(json.labels && !Array.isArray( json.labels)){
+            throw (`Invalid labels at ${context}: labels should be a list of strings, but got a ${typeof json.labels}`)
+        }
 
         this.labels = json.labels ?? []
         if (typeof json.classes === "string") {

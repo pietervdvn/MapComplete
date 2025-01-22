@@ -7,6 +7,7 @@
   import { ariaLabel } from "../../Utils/ariaLabel"
   import { Translation } from "../i18n/Translation"
   import Backspace from "@babeard/svelte-heroicons/outline/Backspace"
+  import { AndroidPolyfill } from "../../Logic/Web/AndroidPolyfill"
 
   export let value: UIEventSource<string>
   let _value = value.data ?? ""
@@ -36,6 +37,7 @@
   if (autofocus) {
     isFocused.set(true)
   }
+  let isAndroid = AndroidPolyfill.inAndroid
 </script>
 
 <form class="w-full" on:submit|preventDefault={() => dispatch("search")}>
@@ -62,18 +64,20 @@
       use:set_placeholder={placeholder}
       use:ariaLabel={placeholder}
     />
-
-    {#if $value.length > 0}
-      <Backspace
-        on:click={(e) => {
+    {#if !isAndroid}
+      <!-- Show a 'clear field' icon in the searchbar. The android-build already provides this for us, hence the outer if -->
+      {#if $value.length > 0}
+        <Backspace
+          on:click={(e) => {
           value.set("")
           e.preventDefault()
         }}
-        color="var(--button-background)"
-        class="mr-3 h-6 w-6 cursor-pointer"
-      />
-    {:else}
-      <div class="mr-3 w-6" />
+          color="var(--button-background)"
+          class="mr-3 h-6 w-6 cursor-pointer"
+        />
+      {:else}
+        <div class="mr-3 w-6" />
+      {/if}
     {/if}
   </label>
 </form>

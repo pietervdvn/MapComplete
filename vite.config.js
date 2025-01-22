@@ -21,11 +21,21 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input,
+      external:[
+        "android"
+      ]
     },
   },
   base: `${ASSET_URL}`,
   plugins ,
   server: {
     port: 1234,
+    watch:{
+      ignored: [
+        "**/android/**",
+        '**/.git/**',
+        '**/dist/**'
+      ]
+    }
   },
 })

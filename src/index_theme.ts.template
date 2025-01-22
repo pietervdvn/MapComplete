@@ -5,6 +5,7 @@ import MetaTagging from "./src/Logic/MetaTagging";
 import { FixedUiElement } from "./src/UI/Base/FixedUiElement";
 import { Utils } from "./src/Utils"
 import Constants from "./src/Models/Constants"
+import { AndroidPolyfill } from "./src/Logic/Web/AndroidPolyfill"
 
 function webgl_support() {
     try {

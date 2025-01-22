@@ -19,5 +19,5 @@
       "esModuleInterop": true
     }
   },
-  "exclude": ["node_modules", "test", "scripts"]
+  "exclude": ["node_modules", "test", "scripts","android","dist","dist-full"]
 }

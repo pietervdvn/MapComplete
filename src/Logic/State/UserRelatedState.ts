@@ -416,6 +416,10 @@ export default class UserRelatedState {
                 typeof window === "undefined" ? "no" : window.navigator.share ? "yes" : "no",
             _iframe: Utils.isIframe ? "yes" : "no",
         })
+        if(!Utils.runningFromConsole){
+            amendedPrefs.data["_host"] = window.location.host
+            amendedPrefs.data["_path"] = window.location.pathname
+        }
 
         for (const key in Constants.userJourney) {
             amendedPrefs.data["__userjourney_" + key] = Constants.userJourney[key]

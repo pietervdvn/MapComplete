@@ -19,9 +19,9 @@ const DatabridgePluginSingleton = registerPlugin<DatabridgePlugin>("Databridge",
                     return { value: "web" }
                 }
                 return null
-            }
+            },
         }
-    }
+    },
 })
 
 export class AndroidPolyfill {
@@ -36,10 +36,16 @@ export class AndroidPolyfill {
      * @private
      */
     private backfillGeolocation(databridgePlugin: DatabridgePlugin) {
-        const src = UIEventSource.FromPromise(databridgePlugin.request({ key: "location:request-permission" }))
+        const src = UIEventSource.FromPromise(databridgePlugin.request({ key: "location:has-permission" }))
         src.addCallbackAndRunD(permission => {
-            AndroidPolyfill._geolocationPermission.set(<"granted" | "denied">permission.value)
+            console.log("> Checking geopermission gave: ", JSON.stringify(permission), permission.value)
+            const granted = permission.value === "true"
+            AndroidPolyfill._geolocationPermission.set(granted ? "granted" : "denied")
         })
+    }
+
+    public static async requestGeoPermission(): Promise<{ value: string | object }> {
+        return DatabridgePluginSingleton.request({ key: "location:request-permission" })
     }
 
     public async init() {
@@ -55,9 +61,9 @@ export class AndroidPolyfill {
     }
 
     public static async requestLoginCodes() {
-        const result = await DatabridgePluginSingleton.request<{oauth_token: string}>({ key: "request:login" })
+        const result = await DatabridgePluginSingleton.request<{ oauth_token: string }>({ key: "request:login" })
         const token: string = result.value.oauth_token
-        console.log("AndroidPolyfill: received oauth_token; trying to pass them to the oauth lib",token)
+        console.log("AndroidPolyfill: received oauth_token; trying to pass them to the oauth lib", token)
         return token
     }
 
@@ -67,7 +73,7 @@ export class AndroidPolyfill {
         console.log("Registering back button callback", callback)
         DatabridgePluginSingleton.request({ key: "backbutton" }).then(ev => {
             console.log("AndroidPolyfill: received backbutton: ", ev)
-            if(ev === null){
+            if (ev === null) {
                 // Probably in web environment
                 return
             }
@@ -83,6 +89,27 @@ export class AndroidPolyfill {
             }
         })
 
+    }
+
+    public static watchLocation(writeInto: UIEventSource<GeolocationCoordinates>, callback: (location) => void) {
+        DatabridgePluginSingleton.request({
+            key: "location:watch",
+        }).then((l: {
+            value: { latitude: number, longitude: number, accuraccy: number, altidude: number, heading: number, speed:number }
+        }) => {
+            // example l: {"value":{"latitude":51.0618627,"longitude":3.730468566666667,"accuracy":2.0393495559692383,"altitude":46.408,"heading":168.2969970703125}}
+            console.log("Received location from Android:", JSON.stringify(l))
+            const loc = l.value
+            writeInto.set({
+                latitude: loc.latitude,
+                longitude: loc.longitude,
+                heading: loc.heading,
+                accuracy: loc.accuraccy,
+                altitude: loc.altidude,
+                altitudeAccuracy: undefined,
+                speed: loc.speed,
+            })
+        })
     }
 }
 

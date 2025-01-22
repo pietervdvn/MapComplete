@@ -1465,13 +1465,51 @@
       "#force-save-button": "yes"
     },
     {
-      "id": "debug-gps",
+      "id": "debug-gps-group",
       "condition": "mapcomplete-show_debug=yes",
+      "render": {
+        "special": {
+          "type": "group",
+          "header": "debug-gps-title",
+          "labels": "debug-gps"
+        }
+      }
+    },
+    {
+      "id": "debug-gps-title",
+      "labels": ["hidden"],
+      "render": {
+        "en": "GPS info"
+      }
+    },
+    {
+      "id": "debug-gps",
+      "labels": ["hidden"],
       "render": "{gps_all_tags()}"
+    },
+
+    {
+      "id": "debug-info-group",
+      "condition": "mapcomplete-show_debug=yes",
+
+      "render": {
+        "special": {
+          "type": "group",
+          "header": "debug-tags-title",
+          "labels": "debug"
+        }
+      }
+    },
+    {
+      "id": "debug-tags-title",
+      "labels": ["hidden"],
+      "render": {
+        "en": "Debug info"
+      }
     },
     {
       "id": "debug",
-      "condition": "mapcomplete-show_debug=yes",
+      "labels": ["hidden"],
       "render": "{all_tags()}"
     }
   ],

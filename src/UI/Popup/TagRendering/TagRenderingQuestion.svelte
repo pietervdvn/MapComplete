@@ -319,7 +319,7 @@
   if (state?.osmConnection) {
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
-        numberOfCs = ud.csCount
+        numberOfCs = ud?.csCount
       })
     )
   }

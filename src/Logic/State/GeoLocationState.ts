@@ -14,7 +14,7 @@ export interface GeoLocationPointProperties extends GeolocationCoordinates {
 }
 
 /**
- * An abstract representation of the current state of the geolocation.
+ * An abstract representation of the current state of the geolocation, keeping track of permissions and if a location is known.
  */
 export class GeoLocationState {
     /**
@@ -167,8 +167,16 @@ export class GeoLocationState {
 
         if(AndroidPolyfill.inAndroid.data){
             this.permission.setData("requested")
-            AndroidPolyfill.geolocationPermission.addCallbackAndRunD(state => this.permission.set(state))
-            this.startWatching()
+            this.permission.addCallbackAndRunD(p => {
+                if(p === "granted"){
+                    this.startWatching()
+                    return true
+                }
+            })
+            AndroidPolyfill.requestGeoPermission().then(state => {
+                const granted = state.value === "true"
+                this.permission.set(granted ? "granted" : "denied")
+            })
             return
         }
 
@@ -210,6 +218,13 @@ export class GeoLocationState {
      * @private
      */
     private async startWatching() {
+
+        if(AndroidPolyfill.inAndroid.data){
+            AndroidPolyfill.watchLocation( this.currentGPSLocation, location => {
+                console.log(JSON.stringify(location))
+            })
+        }
+
         navigator.geolocation.watchPosition(
              (position: GeolocationPosition) => {
                 this._gpsAvailable.set(true)

@@ -6,6 +6,7 @@
   import Location_locked from "../../assets/svg/Location_locked.svelte"
   import Location_unlocked from "../../assets/svg/Location_unlocked.svelte"
   import Location from "../../assets/svg/Location.svelte"
+  import Location_empty from "../../assets/svg/Location_empty.svelte"
 
   export let state: ThemeViewState
   let geolocationstate = state.geolocation.geolocationState
@@ -31,10 +32,10 @@
 {:else if $geopermission === "denied" || !$isAvailable}
   <Location_refused class={clss} />
 {:else if $geopermission === "prompt"}
-  <Location class={clss} />
+  <Location_empty class={clss} />
 {:else if $geopermission === "requested"}
   <!-- Even though disabled, when clicking we request the location again in case the contributor dismissed the location popup -->
-  <Location class={clss} style="animation: 3s linear 0s infinite normal none running spin;" />
+  <Location_empty class={clss} style="animation: 3s linear 0s infinite normal none running spin;" />
 {:else}
   <Location class={clss} style="animation: 3s linear 0s infinite normal none running spin;" />
 {/if}
