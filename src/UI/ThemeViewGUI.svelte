@@ -4,7 +4,6 @@
   import MaplibreMap from "./Map/MaplibreMap.svelte"
   import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
   import MapControlButton from "./Base/MapControlButton.svelte"
-  import ToSvelte from "./Base/ToSvelte.svelte"
   import If from "./Base/If.svelte"
   import type { Feature } from "geojson"
   import SelectedElementView from "./BigComponents/SelectedElementView.svelte"
@@ -48,6 +47,7 @@
   import { Drawer } from "flowbite-svelte"
   import { linear } from "svelte/easing"
   import DefaultIcon from "./Map/DefaultIcon.svelte"
+  import Loading from "./Base/Loading.svelte"
 
   export let state: ThemeViewState
 
@@ -421,7 +421,9 @@
       <If condition={state.featureSwitches.featureSwitchFakeUser}>
         <div class="alert w-fit">Faking a user (Testmode)</div>
       </If>
-      {#if $apiState !== "online" && $apiState !== "unknown"}
+      {#if $apiState === "unknown"}
+        <Loading />
+      {:else if $apiState !== "online"}
         <div class="alert w-fit">API is {$apiState}</div>
       {/if}
     </div>
