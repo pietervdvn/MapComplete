@@ -10,7 +10,7 @@
   import LoginToggle from "./Base/LoginToggle.svelte"
   import Pencil from "../assets/svg/Pencil.svelte"
   import Constants from "../Models/Constants"
-  import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
+  import { ImmutableStore, Store, Stores, UIEventSource } from "../Logic/UIEventSource"
   import ThemesList from "./BigComponents/ThemesList.svelte"
   import { MinimalThemeInformation } from "../Models/ThemeConfig/ThemeConfig"
   import Eye from "../assets/svg/Eye.svelte"
@@ -104,6 +104,14 @@
       event.preventDefault()
     }
   })
+
+  AndroidPolyfill.onBackButton((() => {
+    if(searchIsFocussed.data){
+      searchIsFocussed.set(false)
+      return true
+    }
+    return false
+  }), {returnToIndex: new ImmutableStore(false)})
 
   /**
    * Opens the first search candidate
