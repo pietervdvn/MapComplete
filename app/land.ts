@@ -15,9 +15,10 @@ new VariableUiElement(tokenSrc).AttachTo("token")
 new OsmConnection().finishLogin(async (_, token: string) => {
     console.log("Login finished, redirecting to passthrough; token is " + token)
     tokenSrc.set(token)
+    if(!token){
+        tokenSrc.set("ERROR: no token retrieved!")
+        return
+    }
     await Utils.waitFor(500)
     window.location.href = "orgmapcomplete://passthrough.html?oauth_token=" + token
-    tokenSrc.set("Closing...")
-    await Utils.waitFor(50)
-    window.close()
 })
