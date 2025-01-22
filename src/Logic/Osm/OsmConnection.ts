@@ -103,7 +103,7 @@ export class OsmConnection {
         oauth_token?: UIEventSource<string>
         // Used to keep multiple changesets open and to write to the correct changeset
         singlePage?: boolean
-        attemptLogin?: true | boolean
+        attemptLogin?: boolean
         /**
          * If true: automatically check if we're still online every 5 minutes + fetch messages
          */
@@ -152,7 +152,7 @@ export class OsmConnection {
 
         this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false)
 
-        this.updateAuthObject()
+        this.updateAuthObject(false)
         if (!this.fakeUser) {
             this.CheckForMessagesContinuously()
         }
@@ -230,9 +230,7 @@ export class OsmConnection {
             console.log("AttemptLogin called, but ignored as fakeUser is set")
             return
         }
-
-        console.log("Trying to log in...")
-        this.updateAuthObject()
+        this.updateAuthObject(true)
 
         LocalStorageSource.get("location_before_login").setData(
             Utils.runningFromConsole ? undefined : window.location.href
@@ -553,7 +551,7 @@ export class OsmConnection {
         })
     }
 
-    private updateAuthObject() {
+    private updateAuthObject(autoLogin: boolean) {
         this.auth = new osmAuth({
             client_id: this._oauth_config.oauth_client_id,
             url: this._oauth_config.url,
@@ -565,7 +563,7 @@ export class OsmConnection {
              * However, this breaks in iframes so we open a popup in that case
              */
             singlepage: !this._iframeMode,
-            auto: true,
+            auto: autoLogin,
             apiUrl: this._oauth_config.api_url ?? this._oauth_config.url,
         })
     }

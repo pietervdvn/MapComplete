@@ -209,7 +209,10 @@ export class OsmPreferences {
      * Bulk-downloads all preferences
      * @private
      */
-    private getPreferencesDictDirectly(): Promise<Record<string, string>> {
+    private async getPreferencesDictDirectly(): Promise<Record<string, string>> {
+        if(!this.osmConnection.isLoggedIn.data){
+            return {}
+        }
         return new Promise<Record<string, string>>((resolve, reject) => {
             this.auth.xhr(
                 {
@@ -257,6 +260,9 @@ export class OsmPreferences {
      *
      */
     private async uploadKvSplit(k: string, v: string) {
+        if(!this.osmConnection.isLoggedIn.data){
+            return
+        }
         if (v === null || v === undefined || v === "" || v === "undefined" || v === "null") {
             const keysToDelete = OsmPreferences.keysStartingWith(this.seenKeys, k)
             await Promise.all(keysToDelete.map((k) => this.deleteKeyDirectly(k)))
@@ -280,7 +286,7 @@ export class OsmPreferences {
      */
     private deleteKeyDirectly(k: string) {
         if (!this.osmConnection.isLoggedIn.data) {
-            console.debug(`Not saving preference ${k}: user not logged in`)
+            console.debug(`Not deleting preference ${k}: user not logged in`)
             return
         }
 
