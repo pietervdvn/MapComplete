@@ -3,11 +3,7 @@ import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import { default as FeatureTitle } from "./Popup/Title.svelte"
-import {
-    RenderingSpecification,
-    SpecialVisualization,
-    SpecialVisualizationState,
-} from "./SpecialVisualization"
+import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import MinimapViz from "./Popup/MinimapViz.svelte"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
@@ -453,7 +449,7 @@ export default class SpecialVisualizations {
                                 assignTo: state.userRelatedState.language,
                                 availableLanguages: languages,
                                 preferredLanguages: state.osmConnection.userDetails.map(
-                                    (ud) => ud.languages
+                                    (ud) => ud?.languages ?? []
                                 ),
                             })
                         })

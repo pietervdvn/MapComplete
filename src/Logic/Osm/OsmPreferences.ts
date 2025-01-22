@@ -317,6 +317,10 @@ export class OsmPreferences {
             return
         }
 
+        if (Utils.runningFromConsole) {
+            return
+        }
+
         if (this._fakeUser) {
             return
         }

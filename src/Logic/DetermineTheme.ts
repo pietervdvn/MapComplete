@@ -59,6 +59,21 @@ export default class DetermineTheme {
         return layoutConfig
     }
 
+    private static createConversionContext(): DesugaringContext {
+        const knownLayersDict = new Map<string, LayerConfigJson>()
+        for (const key in known_layers["layers"]) {
+            const layer = known_layers["layers"][key]
+            knownLayersDict.set(layer.id, <LayerConfigJson>layer)
+        }
+        const convertState: DesugaringContext = {
+            tagRenderings: DetermineTheme.getSharedTagRenderings(),
+            tagRenderingOrder: DetermineTheme.getSharedTagRenderingOrder(),
+            sharedLayers: knownLayersDict,
+            publicLayers: new Set<string>()
+        }
+        return convertState
+    }
+
     /**
      * Gets the correct layout for this website
      */
@@ -107,7 +122,8 @@ export default class DetermineTheme {
             "./assets/generated/themes/" + id + ".json",
             1000 * 60 * 60 * 60
         )
-        return new ThemeConfig(config, true)
+        const withDefault = new PrepareTheme(this.createConversionContext()).convertStrict(config)
+        return new ThemeConfig(withDefault, true)
     }
 
     private static getSharedTagRenderings(): Map<string, QuestionableTagRenderingConfigJson> {
@@ -163,22 +179,12 @@ export default class DetermineTheme {
             }
         }
 
-        const knownLayersDict = new Map<string, LayerConfigJson>()
-        for (const key in known_layers["layers"]) {
-            const layer = known_layers["layers"][key]
-            knownLayersDict.set(layer.id, <LayerConfigJson>layer)
-        }
-        const convertState: DesugaringContext = {
-            tagRenderings: DetermineTheme.getSharedTagRenderings(),
-            tagRenderingOrder: DetermineTheme.getSharedTagRenderingOrder(),
-            sharedLayers: knownLayersDict,
-            publicLayers: new Set<string>(),
-        }
         json = new FixLegacyTheme().convertStrict(json)
         const raw = json
 
         json = new FixImages(DetermineTheme._knownImages).convertStrict(json)
         json.enableNoteImports = json.enableNoteImports ?? false
+        const convertState = this.createConversionContext()
         json = new PrepareTheme(convertState).convertStrict(json)
         console.log("The layoutconfig is ", json)
 
