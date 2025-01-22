@@ -59,5 +59,7 @@ nvm use
 npx capacitor-assets generate
 
 npx cap sync
-
+cd android
 echo "All done! Don't forget to click 'gradle sync files' in Android Studio"
+tput bel
+tput bel

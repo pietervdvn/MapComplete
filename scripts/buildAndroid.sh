@@ -9,4 +9,3 @@ cd android
 
 # Output location of the apk:
 # MapComplete/android/app/build/outputs/apk/release/app-release-unsigned.apk
-scp ./app/build/outputs/apk/release/app-release-unsigned.apk hetzner:apk/mapcomplete-latest.apk
