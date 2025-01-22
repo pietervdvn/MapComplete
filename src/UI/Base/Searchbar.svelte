@@ -65,7 +65,7 @@
       use:ariaLabel={placeholder}
     />
     <!-- Show a 'clear field' icon in the searchbar. The android-build already provides this for us, hence the outer if -->
-    {#if !$isAndroid $value.length > 0}
+    {#if !$isAndroid && $value.length > 0}
       <Backspace
         on:click={(e) => {
           value.set("")
