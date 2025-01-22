@@ -421,7 +421,7 @@
       <If condition={state.featureSwitches.featureSwitchFakeUser}>
         <div class="alert w-fit">Faking a user (Testmode)</div>
       </If>
-      {#if $apiState !== "online"}
+      {#if $apiState !== "online" && $apiState !== "unknown"}
         <div class="alert w-fit">API is {$apiState}</div>
       {/if}
     </div>
