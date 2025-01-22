@@ -64,20 +64,18 @@
       use:set_placeholder={placeholder}
       use:ariaLabel={placeholder}
     />
-    {#if !isAndroid}
-      <!-- Show a 'clear field' icon in the searchbar. The android-build already provides this for us, hence the outer if -->
-      {#if $value.length > 0}
-        <Backspace
-          on:click={(e) => {
+    <!-- Show a 'clear field' icon in the searchbar. The android-build already provides this for us, hence the outer if -->
+    {#if !$isAndroid $value.length > 0}
+      <Backspace
+        on:click={(e) => {
           value.set("")
           e.preventDefault()
         }}
-          color="var(--button-background)"
-          class="mr-3 h-6 w-6 cursor-pointer"
-        />
-      {:else}
-        <div class="mr-3 w-6" />
-      {/if}
+        color="var(--button-background)"
+        class="mr-3 h-6 w-6 cursor-pointer"
+      />
+    {:else}
+      <div class="mr-3 w-6" />
     {/if}
   </label>
 </form>

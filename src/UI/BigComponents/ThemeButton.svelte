@@ -5,6 +5,7 @@
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
   import Marker from "../Map/Marker.svelte"
+  import { AndroidPolyfill } from "../../Logic/Web/AndroidPolyfill"
 
   export let theme: MinimalThemeInformation & { isOfficial?: boolean }
   let isCustom: boolean = theme.id.startsWith("https://") || theme.id.startsWith("http://")
@@ -16,11 +17,12 @@
   )
   $: description = Translations.T(theme.shortDescription)
 
-  function createUrl(
+  function createUrlDirect(
     layout: { id: string; definition?: string },
     isCustom: boolean,
+    isAndroid: boolean,
     state?: { layoutToUse?: { id } }
-  ): Store<string> {
+  ): string {
     if (layout === undefined) {
       return undefined
     }
@@ -43,9 +45,10 @@
 
     let linkPrefix = `${path}/${layout.id.toLowerCase()}.html?`
     if (
+      !isAndroid && (
       location.hostname === "localhost" ||
       location.hostname === "127.0.0.1" ||
-      location.port === "1234"
+      location.port === "1234")
     ) {
       // Redirect to 'theme.html?layout=* instead of 'layout.html'. This is probably a debug run, where the routing does not work
       linkPrefix = `${path}/theme.html?layout=${layout.id}&`
@@ -60,10 +63,10 @@
       hash = "#" + btoa(JSON.stringify(layout.definition))
     }
 
-    return new ImmutableStore<string>(`${linkPrefix}${hash}`)
+    return `${linkPrefix}${hash}`
   }
 
-  let href = createUrl(theme, isCustom, state)
+  let href = AndroidPolyfill.inAndroid.map(isAndroid => createUrlDirect(theme, isCustom, isAndroid, state))
 </script>
 
 <a class="low-interaction my-1 flex w-full items-center text-ellipsis rounded p-1" href={$href}>
