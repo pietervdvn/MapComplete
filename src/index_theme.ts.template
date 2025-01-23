@@ -1,65 +1,20 @@
-import ThemeViewState from "./src/Models/ThemeViewState"
-import ThemeViewGUI from "./src/UI/ThemeViewGUI.svelte"
-import ThemeConfig from "./src/Models/ThemeConfig/ThemeConfig";
-import MetaTagging from "./src/Logic/MetaTagging";
-import { FixedUiElement } from "./src/UI/Base/FixedUiElement";
-import { Utils } from "./src/Utils"
-import Constants from "./src/Models/Constants"
+import MetaTagging from "./src/Logic/MetaTagging"
+import SingleThemeGui from "./UI/SingleThemeGui.svelte"
 
-function webgl_support() {
-    try {
-        var canvas = document.createElement("canvas")
-        return (
-            !!window.WebGLRenderingContext &&
-            (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
-        )
-    } catch (e) {
-        return false
-    }
-}
-
-async function timeout(timeMS: number): Promise<{ layers: string[] }> {
-    await Utils.waitFor(timeMS)
-    return { layers: [] }
-}
-
-
-async function getAvailableLayers(): Promise<Set<string>> {
-    if(!Constants.SummaryServer){
-        return new Set<string>()
-    }
-    try {
-        const host = new URL(Constants.SummaryServer).host
-        const status = await Promise.any([
-                                   Utils.downloadJson("https://" + host + "/summary/status.json"),
-                                   timeout(0)
-                               ])
-        return new Set<string>(status.layers)
-    } catch (e) {
-        console.error("Could not get MVT available layers due to", e)
-        return new Set<string>()
-    }
-}
 
 async function main() {
-    if (!webgl_support()) {
-         new FixedUiElement("WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this.").SetClass("block alert").AttachTo("maindiv")
-    }else{
-        const availableLayers = await getAvailableLayers()
         MetaTagging.setThemeMetatagging(new ThemeMetaTagging())
         // LAYOUT.ADD_LAYERS
         // LAYOUT.ADD_CONFIG
-        const state = new WithSearchState(new ThemeConfig(<any> layout), availableLayers)
         const target =  document.getElementById("maindiv")
         const childs = Array.from(target.children)
-        new ThemeViewGUI({
+        new SingleThemeGui({
             target,
-            props: { state },
+            props: { theme },
         })
         childs.forEach(ch => target.removeChild(ch))
         Array.from(document.getElementsByClassName("delete-on-load")).forEach(el => {
                     el.parentElement.removeChild(el)
                 })
-    }
 }
 main()

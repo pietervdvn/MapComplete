@@ -1125,9 +1125,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         element.click()
     }
 
-    public static async waitFor(timeMillis: number): Promise<void> {
+    public static async waitFor(timeMillis: number): Promise<void>;
+    public static async waitFor<T>(timeMillis: number, t: T): Promise<T>;
+
+    public static async waitFor<T = void>(timeMillis: number, t: T): Promise<T> {
         return new Promise((resolve) => {
-            window.setTimeout(resolve, timeMillis)
+            window.setTimeout(() => {
+                resolve(t)
+            }, timeMillis)
         })
     }
 
