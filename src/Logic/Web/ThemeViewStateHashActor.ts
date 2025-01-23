@@ -3,7 +3,7 @@ import { MenuState } from "../../Models/MenuState"
 import { AndroidPolyfill } from "./AndroidPolyfill"
 import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
 import { Feature } from "geojson"
-import { UIEventSource } from "../UIEventSource"
+import { Store, UIEventSource } from "../UIEventSource"
 
 export default class ThemeViewStateHashActor {
     private readonly _state: {
@@ -36,6 +36,7 @@ export default class ThemeViewStateHashActor {
      *
      */
     constructor(state: {
+        featureSwitches: {featureSwitchBackToThemeOverview: Store<boolean>}
         indexedFeatures: IndexedFeatureSource,
         selectedElement: UIEventSource<Feature>,
         guistate: MenuState,

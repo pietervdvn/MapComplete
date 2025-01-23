@@ -56,6 +56,7 @@ export class WithImageState extends WithGuiState implements SpecialVisualization
     private initActors() {
 
         new ThemeViewStateHashActor({
+            featureSwitches: this.featureSwitches,
             selectedElement: this.selectedElement,
             indexedFeatures: this.indexedFeatures,
             guistate: this.guistate
