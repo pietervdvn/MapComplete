@@ -24,8 +24,9 @@ else
   exit 1
 fi
 
-cp node_modules/name-suggestion-index/dist/nsi.json public/assets/data/nsi
+cp node_modules/name-suggestion-index/dist/nsi.min.json public/assets/data/nsi
 cp node_modules/name-suggestion-index/dist/wikidata.min.json public/assets/data/nsi
+vite-node scripts/addNsiExtensions.ts -- patch
 
 export NODE_OPTIONS=--max-old-space-size=16000
 which vite
