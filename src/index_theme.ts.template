@@ -1,4 +1,5 @@
 import MetaTagging from "./src/Logic/MetaTagging"
+import ThemeConfig from "./src/Models/ThemeConfig/ThemeConfig"
 import SingleThemeGui from "./src/UI/SingleThemeGui.svelte"
 
 
@@ -10,7 +11,7 @@ async function main() {
         const childs = Array.from(target.children)
         new SingleThemeGui({
             target,
-            props: { theme },
+            props: { theme: new ThemeConfig(theme, true, {definitionRaw: theme}) },
         })
         childs.forEach(ch => target.removeChild(ch))
         Array.from(document.getElementsByClassName("delete-on-load")).forEach(el => {
