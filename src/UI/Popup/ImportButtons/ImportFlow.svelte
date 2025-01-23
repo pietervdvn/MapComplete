@@ -20,9 +20,11 @@
   import FilteredLayer from "../../../Models/FilteredLayer"
   import Confirm from "../../../assets/svg/Confirm.svelte"
   import Layers from "../../../assets/svg/Layers.svelte"
+  import { WithGuiState } from "../../../Models/ThemeViewState/WithGuiState"
+  import ThemeViewState from "../../../Models/ThemeViewState"
 
   export let importFlow: ImportFlow<ImportFlowArguments>
-  let state = importFlow.state
+  let state: ThemeViewState = importFlow.state
 
   export let currentFlowStep: "start" | "confirm" | "importing" | "imported" = "start"
 

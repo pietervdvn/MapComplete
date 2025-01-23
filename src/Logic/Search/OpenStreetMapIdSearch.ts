@@ -1,8 +1,8 @@
 import { Store, UIEventSource } from "../UIEventSource"
-import GeocodingProvider, { GeocodingOptions, GeocodeResult } from "./GeocodingProvider"
+import GeocodingProvider, { GeocodeResult, GeocodingOptions } from "./GeocodingProvider"
 import { OsmId } from "../../Models/OsmFeature"
-import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 import { Utils } from "../../Utils"
+import OsmObjectDownloader from "../Osm/OsmObjectDownloader"
 
 export default class OpenStreetMapIdSearch implements GeocodingProvider {
     private static readonly regex =
@@ -13,11 +13,11 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
         w: "way",
         r: "relation",
     }
+    private readonly _osmObjectDownloader: OsmObjectDownloader
 
-    private readonly _state: SpecialVisualizationState
 
-    constructor(state: SpecialVisualizationState) {
-        this._state = state
+    constructor(osmObjectDownloader: OsmObjectDownloader) {
+        this._osmObjectDownloader = osmObjectDownloader
     }
 
     /**
@@ -49,7 +49,7 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
 
     private async getInfoAbout(id: OsmId): Promise<GeocodeResult> {
         const [osm_type, osm_id] = id.split("/")
-        const obj = await this._state.osmObjectDownloader.DownloadObjectAsync(id)
+        const obj = await this._osmObjectDownloader.DownloadObjectAsync(id)
         if (obj === "deleted") {
             return {
                 display_name: id + " was deleted",
@@ -74,13 +74,13 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
         }
     }
 
-    async search(query: string, options?: GeocodingOptions): Promise<GeocodeResult[]> {
+    async search(query: string, _: GeocodingOptions): Promise<GeocodeResult[]> {
         if (!isNaN(Number(query))) {
             const n = Number(query)
             return Utils.NoNullInplace(
                 await Promise.all([
-                    this.getInfoAbout(`node/${n}`).catch((x) => undefined),
-                    this.getInfoAbout(`way/${n}`).catch((x) => undefined),
+                    this.getInfoAbout(`node/${n}`).catch(() => undefined),
+                    this.getInfoAbout(`way/${n}`).catch(() => undefined),
                     this.getInfoAbout(`relation/${n}`).catch(() => undefined),
                 ])
             )

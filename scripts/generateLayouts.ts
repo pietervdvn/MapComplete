@@ -22,6 +22,7 @@ import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Js
 import Script from "./Script"
 import crypto from "crypto"
 import { RasterLayerProperties } from "../src/Models/RasterLayerProperties"
+
 const sharp = require("sharp")
 
 class GenerateLayouts extends Script {
@@ -172,7 +173,7 @@ class GenerateLayouts extends Script {
         const icons = []
 
         const whiteIcons: string[] = []
-        let icon = layout.icon
+        const icon = layout.icon
         if (icon.endsWith(".svg") || icon.startsWith("<svg") || icon.startsWith("<?xml")) {
             // This is an svg. Lets create the needed pngs and do some checkes!
 
@@ -582,7 +583,7 @@ class GenerateLayouts extends Script {
         const filename = "index_" + theme.id + ".ts"
 
         const imports = [
-            `import layout from "./public/assets/generated/themes/${theme.id}.json"`,
+            `import theme from "./public/assets/generated/themes/${theme.id}.json"`,
             `import { ThemeMetaTagging } from "./src/assets/generated/metatagging/${theme.id}"`,
         ]
         for (const layerName of Constants.added_by_default) {
@@ -595,10 +596,10 @@ class GenerateLayouts extends Script {
         const addLayers = []
 
         for (const layerName of Constants.added_by_default) {
-            addLayers.push(`    layout.layers.push(<any> ${layerName})`)
+            addLayers.push(`    theme.layers.push(<any> ${layerName})`)
         }
 
-        let codeTemplate = this.codeTemplate.replace(
+        const codeTemplate = this.codeTemplate.replace(
             "    // LAYOUT.ADD_LAYERS",
             addLayers.join("\n")
         )

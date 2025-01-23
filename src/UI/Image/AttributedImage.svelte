@@ -18,6 +18,7 @@
   import Tr from "../Base/Tr.svelte"
   import DotMenu from "../Base/DotMenu.svelte"
   import LoadingPlaceholder from "../Base/LoadingPlaceholder.svelte"
+  import { MenuState } from "../../Models/MenuState"
 
   export let image: Partial<ProvidedImage>
   let fallbackImage: string = undefined
@@ -29,7 +30,7 @@
   export let imgClass: string = undefined
   export let state: SpecialVisualizationState = undefined
   export let attributionFormat: "minimal" | "medium" | "large" = "medium"
-  export let previewedImage: UIEventSource<Partial<ProvidedImage>> = undefined
+  let previewedImage: UIEventSource<Partial<ProvidedImage>> = MenuState.previewedImage
   export let canZoom = previewedImage !== undefined
   let loaded = false
   let showBigPreview = new UIEventSource(false)
@@ -70,12 +71,11 @@
         coordinates: [image.lon, image.lat],
       },
     }
-    console.log(f)
     state?.geocodedImages.set([f])
   }
 </script>
 
-<Popup shown={showBigPreview} bodyPadding="p-0" dismissable={true}>
+<Popup shown={showBigPreview} bodyPadding="p-0" dismissable={false}>
   <div slot="close" />
   <div style="height: 80vh">
     <ImageOperations {image}>
@@ -87,7 +87,6 @@
     <CloseButton
       class="normal-background"
       on:click={() => {
-        console.log("Closing")
         previewedImage?.set(undefined)
       }}
     />
@@ -122,7 +121,6 @@
         class={imgClass ?? ""}
         class:cursor-zoom-in={canZoom}
         on:click={() => {
-          console.log("Setting", image.url)
           previewedImage?.set(image)
         }}
         on:error={() => {
