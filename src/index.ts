@@ -1,6 +1,6 @@
 import DetermineTheme from "./Logic/DetermineTheme"
-import SingleThemeGui from "./UI/SingleThemeGui.svelte"
-import CustomThemeError from "./UI/CustomThemeError.svelte"
+import { default as SingleThemeGui } from "./UI/SingleThemeGui.svelte"
+import { default as CustomThemeError } from "./UI/CustomThemeError.svelte"
 
 
 async function main() {

@@ -28,7 +28,7 @@ cp node_modules/name-suggestion-index/dist/nsi.min.json public/assets/data/nsi
 cp node_modules/name-suggestion-index/dist/wikidata.min.json public/assets/data/nsi
 vite-node scripts/nsiLogos.ts -- patch
 
-export NODE_OPTIONS=--max-old-space-size=16000
+export NODE_OPTIONS=--max-old-space-size=32000
 which vite
 vite --version
 vite build --sourcemap || { echo 'Vite build failed' ; exit 1; }
