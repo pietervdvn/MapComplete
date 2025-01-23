@@ -149,7 +149,6 @@
       imgClass="carousel-max-height"
       {image}
       {state}
-      previewedImage={state?.previewedImage}
     >
       <svelte:fragment slot="dot-menu-actions">
         <button on:click={() => ImageProvider.offerImageAsDownload(image)}>

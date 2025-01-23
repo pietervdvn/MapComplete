@@ -141,7 +141,6 @@
               {state}
               imgClass="h-32 shrink-0"
               image={{ url: image, id: image }}
-              previewedImage={state.previewedImage}
             />
           </div>
         {/each}

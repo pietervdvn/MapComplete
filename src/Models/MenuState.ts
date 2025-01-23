@@ -14,6 +14,7 @@ export type PageType = (typeof MenuState.pageNames)[number]
  * Some convenience methods are provided for this as well
  */
 export class MenuState {
+
     public static readonly pageNames = [
         "copyright",
         "copyright_icons",
@@ -27,8 +28,14 @@ export class MenuState {
         "favourites",
         "usersettings",
         "share",
-        "menu",
+        "menu"
     ] as const
+
+    /**
+     * Contains the 'providedImage' which is currently displayed on top of the UI
+     * This object merely acts as lock or as means to signal the need to close
+     */
+    public static readonly previewedImage: UIEventSource<object> = new UIEventSource<object>(undefined)
 
     public readonly pageStates: Record<PageType, UIEventSource<boolean>>
 
@@ -36,8 +43,10 @@ export class MenuState {
         undefined
     )
     public highlightedUserSetting: UIEventSource<string> = new UIEventSource<string>(undefined)
+    private readonly _selectedElement: UIEventSource<any>
 
-    constructor(shouldShowWelcomeMessage: boolean, themeid: string) {
+    constructor(selectedElement: UIEventSource<any>) {
+        this._selectedElement = selectedElement
         // Note: this class is _not_ responsible to update the Hash, @see ThemeViewStateHashActor for this
         const states = {}
         for (const pageName of MenuState.pageNames) {
@@ -56,7 +65,9 @@ export class MenuState {
                 }
             })
         }
+    }
 
+    public openMenuIfNeeded(shouldShowWelcomeMessage: boolean, themeid: string) {
         const visitedBefore = LocalStorageSource.getParsed<boolean>(
             themeid + "thememenuisopened",
             false
@@ -103,6 +114,12 @@ export class MenuState {
     }
 
     public isSomethingOpen(): boolean {
+        if (MenuState.previewedImage.data !== undefined) {
+            return true
+        }
+        if (this._selectedElement.data) {
+            return true
+        }
         return Object.values(this.pageStates).some((t) => t.data)
     }
 
@@ -111,7 +128,18 @@ export class MenuState {
      * Returns 'true' if at least one menu was opened
      */
     public closeAll(): boolean {
+        console.log("Closing all")
         const ps = this.pageStates
+        if (ps.menu.data) {
+            ps.menu.set(false)
+            return true
+        }
+
+        if (MenuState.previewedImage.data !== undefined) {
+            MenuState.previewedImage.setData(undefined)
+            return true
+        }
+
         for (const key in ps) {
             const toggle = ps[key]
             const wasOpen = toggle.data
@@ -120,9 +148,10 @@ export class MenuState {
                 return true
             }
         }
-        if (ps.menu.data) {
-            ps.menu.set(false)
+        if (this._selectedElement.data) {
+            this._selectedElement.setData(undefined)
             return true
         }
+
     }
 }

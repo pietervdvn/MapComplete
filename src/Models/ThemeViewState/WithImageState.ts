@@ -1,5 +1,5 @@
 import { ImageUploadManager } from "../../Logic/ImageProviders/ImageUploadManager"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
 import { CombinedFetcher } from "../../Logic/Web/NearbyImagesSearch"
 import ThemeConfig from "../ThemeConfig/ThemeConfig"
@@ -18,7 +18,7 @@ export class WithImageState extends WithGuiState implements SpecialVisualization
     readonly nearbyImageSearcher: CombinedFetcher
 
 
-    constructor(layout: ThemeConfig, mvtAvailableLayers: Set<string>) {
+    constructor(layout: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {
         super(layout, mvtAvailableLayers)
         this.imageUploadManager = new ImageUploadManager(
             layout,
@@ -56,7 +56,6 @@ export class WithImageState extends WithGuiState implements SpecialVisualization
     private initActors() {
 
         new ThemeViewStateHashActor({
-            previewedImage: this.previewedImage,
             selectedElement: this.selectedElement,
             indexedFeatures: this.indexedFeatures,
             guistate: this.guistate
