@@ -8,7 +8,7 @@ then
   npm run generate:layeroverview
   npm run generate:layouts
 fi
-
+vite-node scripts/nsiLogos.ts -- patch
 npm run build
 echo '''
 import type { CapacitorConfig } from "@capacitor/cli";
