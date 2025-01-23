@@ -1,11 +1,7 @@
 import { Store, UIEventSource } from "../Logic/UIEventSource"
 import BaseUIElement from "./BaseUIElement"
 import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
-import {
-    FeatureSource,
-    IndexedFeatureSource,
-    WritableFeatureSource,
-} from "../Logic/FeatureSource/FeatureSource"
+import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { Changes } from "../Logic/Osm/Changes"
 import { ExportableMap, MapProperties } from "../Models/MapProperties"
@@ -15,7 +11,6 @@ import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/Fu
 import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
-import { MenuState } from "../Models/MenuState"
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
@@ -25,7 +20,6 @@ import ThemeSource from "../Logic/FeatureSource/Sources/ThemeSource"
 import { Map as MlMap } from "maplibre-gl"
 import ShowDataLayer from "./Map/ShowDataLayer"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
-import SearchState from "../Logic/State/SearchState"
 import UserRelatedState from "../Logic/State/UserRelatedState"
 import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore"
 
@@ -33,7 +27,6 @@ import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropert
  * The state needed to render a special Visualisation.
  */
 export interface SpecialVisualizationState {
-    readonly guistate: MenuState
     readonly theme: ThemeConfig
     readonly featureSwitches: FeatureSwitchState
 
@@ -82,7 +75,6 @@ export interface SpecialVisualizationState {
     readonly nearbyImageSearcher: CombinedFetcher
     readonly geolocation: GeoLocationHandler
     readonly geocodedImages: UIEventSource<Feature[]>
-    readonly searchState: SearchState
 
     getMatchingLayer(properties: Record<string, string>): LayerConfig | undefined
 

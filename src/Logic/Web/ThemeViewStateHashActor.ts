@@ -1,9 +1,16 @@
-import ThemeViewState from "../../Models/ThemeViewState"
 import Hash from "./Hash"
 import { MenuState } from "../../Models/MenuState"
+import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
+import { Feature } from "geojson"
+import { UIEventSource } from "../UIEventSource"
 
 export default class ThemeViewStateHashActor {
-    private readonly _state: ThemeViewState
+    private readonly _state: {
+        indexedFeatures: IndexedFeatureSource,
+        selectedElement: UIEventSource<Feature>,
+        guistate: MenuState,
+        previewedImage: UIEventSource<object>
+    }
     private isUpdatingHash = false
 
     public static readonly documentation = [
@@ -16,7 +23,7 @@ export default class ThemeViewStateHashActor {
         "",
         "The possible hashes are:",
         "",
-        MenuState.pageNames.map((tab) => "`" + tab + "`").join(","),
+        MenuState.pageNames.map((tab) => "`" + tab + "`").join(",")
     ]
 
     /**
@@ -28,7 +35,12 @@ export default class ThemeViewStateHashActor {
      * As such, we use a change in the hash to close the appropriate windows
      *
      */
-    constructor(state: ThemeViewState) {
+    constructor(state: {
+        indexedFeatures: IndexedFeatureSource,
+        selectedElement: UIEventSource<Feature>,
+        guistate: MenuState,
+        previewedImage: UIEventSource<object>
+    }) {
         this._state = state
 
         const hashOnLoad = Hash.hash.data

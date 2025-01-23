@@ -60,7 +60,7 @@
   export let presetProperties: Tag[] = []
   let presetPropertiesUnpacked = TagUtils.KVtoProperties(presetProperties)
 
-  export let snappedTo: UIEventSource<WayId | undefined>
+  export let snappedTo: UIEventSource<WayId | undefined> = new UIEventSource<WayId | undefined>(undefined)
 
   const map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined)
   export let mapProperties: Partial<MapProperties> & { location } = {

@@ -8,7 +8,6 @@
   import type { Feature } from "geojson"
   import SelectedElementView from "./BigComponents/SelectedElementView.svelte"
   import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-  import ThemeViewState from "../Models/ThemeViewState"
   import type { MapProperties } from "../Models/MapProperties"
   import Translations from "./i18n/Translations"
   import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid"
@@ -48,8 +47,14 @@
   import { linear } from "svelte/easing"
   import DefaultIcon from "./Map/DefaultIcon.svelte"
   import Loading from "./Base/Loading.svelte"
+  import { WithSearchState } from "../Models/ThemeViewState/WithSearchState"
+  import TitleHandler from "../Logic/Actors/TitleHandler"
 
-  export let state: ThemeViewState
+  export let state: WithSearchState
+  new TitleHandler(state.selectedElement, state)
+
+  console.log("The state is", state)
+  state.focusOnMap()
 
   let theme = state.theme
   let maplibremap: UIEventSource<MlMap> = state.map

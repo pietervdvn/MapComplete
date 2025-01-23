@@ -49,7 +49,7 @@ async function main() {
         MetaTagging.setThemeMetatagging(new ThemeMetaTagging())
         // LAYOUT.ADD_LAYERS
         // LAYOUT.ADD_CONFIG
-        const state = new ThemeViewState(new ThemeConfig(<any> layout), availableLayers)
+        const state = new WithSearchState(new ThemeConfig(<any> layout), availableLayers)
         const target =  document.getElementById("maindiv")
         const childs = Array.from(target.children)
         new ThemeViewGUI({

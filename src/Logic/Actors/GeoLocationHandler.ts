@@ -2,18 +2,17 @@ import { QueryParameters } from "../Web/QueryParameters"
 import { BBox } from "../BBox"
 import Constants from "../../Models/Constants"
 import { GeoLocationState } from "../State/GeoLocationState"
-import { UIEventSource } from "../UIEventSource"
+import { Store, UIEventSource } from "../UIEventSource"
 import { Feature, LineString, Point } from "geojson"
 import { FeatureSource, WritableFeatureSource } from "../FeatureSource/FeatureSource"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { GeoOperations } from "../GeoOperations"
 import { OsmTags } from "../../Models/OsmFeature"
-import StaticFeatureSource, {
-    WritableStaticFeatureSource,
-} from "../FeatureSource/Sources/StaticFeatureSource"
+import StaticFeatureSource, { WritableStaticFeatureSource } from "../FeatureSource/Sources/StaticFeatureSource"
 import { MapProperties } from "../../Models/MapProperties"
 import { Orientation } from "../../Sensors/Orientation"
-;("use strict")
+
+("use strict")
 /**
  * The geolocation-handler takes a map-location and a geolocation state.
  * It'll move the map as appropriate given the state of the geolocation-API
@@ -45,14 +44,14 @@ export default class GeoLocationHandler {
     public readonly mapHasMoved: UIEventSource<Date | undefined> = new UIEventSource<
         Date | undefined
     >(undefined)
-    private readonly selectedElement: UIEventSource<Feature>
-    private readonly mapProperties?: MapProperties
+    private readonly selectedElement: Store<object>
+    private readonly mapProperties: MapProperties
     private readonly gpsLocationHistoryRetentionTime?: UIEventSource<number>
 
     constructor(
         geolocationState: GeoLocationState,
-        selectedElement: UIEventSource<Feature>,
-        mapProperties?: MapProperties,
+        selectedElement: Store<object>,
+        mapProperties: MapProperties,
         gpsLocationHistoryRetentionTime?: UIEventSource<number>
     ) {
         this.geolocationState = geolocationState
@@ -62,7 +61,7 @@ export default class GeoLocationHandler {
         this.gpsLocationHistoryRetentionTime = gpsLocationHistoryRetentionTime
         // Did an interaction move the map?
         const initTime = new Date()
-        mapLocation.addCallbackD(() => {
+        mapLocation?.addCallbackD(() => {
             if (new Date().getTime() - initTime.getTime() < 250) {
                 return
             }
@@ -139,7 +138,7 @@ export default class GeoLocationHandler {
             }
         }
 
-        mapLocation.setData({
+        mapLocation?.setData({
             lon: newLocation.longitude,
             lat: newLocation.latitude,
         })

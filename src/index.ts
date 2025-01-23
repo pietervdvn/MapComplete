@@ -1,5 +1,4 @@
 import DetermineTheme from "./Logic/DetermineTheme"
-import ThemeViewState from "./Models/ThemeViewState"
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import ThemeViewGUI from "./UI/ThemeViewGUI.svelte"
 import { FixedUiElement } from "./UI/Base/FixedUiElement"
@@ -8,6 +7,7 @@ import { SubtleButton } from "./UI/Base/SubtleButton"
 import { Utils } from "./Utils"
 import Constants from "./Models/Constants"
 import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
+import { WithSearchState } from "./Models/ThemeViewState/WithSearchState"
 
 function webgl_support() {
     try {
@@ -53,7 +53,7 @@ async function main() {
             await getAvailableLayers(),
         ])
         console.log("The available layers on server are", Array.from(availableLayers))
-        const state = new ThemeViewState(theme, availableLayers)
+        const state = new WithSearchState(theme, availableLayers)
         const target = document.getElementById("maindiv")
         const childs = Array.from(target.children)
         new ThemeViewGUI({

@@ -3,7 +3,6 @@
    * This component ties together all the steps that are needed to create a new point.
    * There are many subcomponents which help with that
    */
-  import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import PresetList from "./PresetList.svelte"
   import type PresetConfig from "../../../Models/ThemeConfig/PresetConfig"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
@@ -37,9 +36,10 @@
   import ToSvelte from "../../Base/ToSvelte.svelte"
   import BaseUIElement from "../../BaseUIElement"
   import TitledPanel from "../../Base/TitledPanel.svelte"
+  import ThemeViewState from "../../../Models/ThemeViewState"
 
   export let coordinate: { lon: number; lat: number }
-  export let state: SpecialVisualizationState
+  export let state: ThemeViewState
 
   let selectedPreset: {
     preset: PresetConfig
@@ -78,7 +78,7 @@
 
   const isLoading = state.dataIsLoading
   let preciseCoordinate: UIEventSource<{ lon: number; lat: number }> = new UIEventSource(undefined)
-  let snappedToObject: UIEventSource<string> = new UIEventSource<string>(undefined)
+  let snappedToObject: UIEventSource<WayId> = new UIEventSource<string>(undefined)
 
   // Small helper variable: if the map is tapped, we should let the 'Next'-button grab some attention as users have to click _that_ to continue, not the map
   let preciseInputIsTapped = false
@@ -153,7 +153,7 @@
 
   function confirmSync() {
     confirm()
-      .then((_) => console.debug("New point successfully handled"))
+      .then(() => console.debug("New point successfully handled"))
       .catch((e) => console.error("Handling the new point went wrong due to", e))
   }
 </script>

@@ -1,7 +1,7 @@
 import { BBox } from "../BBox"
 import { Store } from "../UIEventSource"
-import ThemeViewState from "../../Models/ThemeViewState"
 import Constants from "../../Models/Constants"
+import { WithChangesState } from "../../Models/ThemeViewState/WithChangesState"
 
 export type FeatureViewState =
     | "no-data"
@@ -11,7 +11,7 @@ export type FeatureViewState =
 export default class NoElementsInViewDetector {
     public readonly hasFeatureInView: Store<FeatureViewState>
 
-    constructor(themeViewState: ThemeViewState) {
+    constructor(themeViewState: WithChangesState) {
         const state = themeViewState
         const minZoom = Math.min(
             ...themeViewState.theme.layers
@@ -32,7 +32,6 @@ export default class NoElementsInViewDetector {
                     return "zoom-to-low"
                 }
 
-                let minzoomWithData = 9999
 
                 for (const [layerName, source] of themeViewState.perLayerFiltered) {
                     if (priviliged.has(layerName)) {
@@ -45,7 +44,6 @@ export default class NoElementsInViewDetector {
                     }
                     const layer = themeViewState.theme.getLayer(layerName)
                     if (mapProperties.zoom.data < layer.minzoom) {
-                        minzoomWithData = Math.min(layer.minzoom)
                         continue
                     }
                     if (!state.layerState.filteredLayers.get(layerName).isDisplayed.data) {

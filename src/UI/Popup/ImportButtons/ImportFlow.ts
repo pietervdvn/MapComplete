@@ -1,4 +1,3 @@
-import { SpecialVisualizationState } from "../../SpecialVisualization"
 import { Utils } from "../../../Utils"
 import { ImmutableStore, Store, UIEventSource } from "../../../Logic/UIEventSource"
 import { Tag } from "../../../Logic/Tags/Tag"
@@ -10,6 +9,7 @@ import FilteredLayer from "../../../Models/FilteredLayer"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 import { LayerConfigJson } from "../../../Models/ThemeConfig/Json/LayerConfigJson"
 import conflation_json from "../../../../assets/layers/conflation/conflation.json"
+import ThemeViewState from "../../../Models/ThemeViewState"
 
 export interface ImportFlowArguments {
     readonly text: string
@@ -123,7 +123,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         argsRaw: string[]
     ): string[] {
         const deps = ImportFlowUtils.getLayerDependencies(argsRaw, argSpec)
-        const argsParsed: PointImportFlowArguments = <any>Utils.ParseVisArgs(argSpec, argsRaw)
+        const argsParsed: PointImportFlowArguments = Utils.ParseVisArgs <PointImportFlowArguments>(argSpec, argsRaw)
         const snapOntoLayers = argsParsed.snap_onto_layers?.split(";")?.map((l) => l.trim()) ?? []
         deps.push(...snapOntoLayers)
         return deps
@@ -136,14 +136,14 @@ ${Utils.special_visualizations_importRequirementDocs}
  * This class works together closely with ImportFlow.svelte
  */
 export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
-    public readonly state: SpecialVisualizationState
+    public readonly state: ThemeViewState
     public readonly args: ArgT
     public readonly targetLayer: FilteredLayer[]
     public readonly tagsToApply: Store<Tag[]>
     protected readonly _originalFeatureTags: UIEventSource<Record<string, string>>
 
     constructor(
-        state: SpecialVisualizationState,
+        state: ThemeViewState,
         args: ArgT,
         tagsToApply: Store<Tag[]>,
         originalTags: UIEventSource<Record<string, string>>
@@ -153,7 +153,7 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
         this.tagsToApply = tagsToApply
         this._originalFeatureTags = originalTags
         this.targetLayer = args.targetLayer.split(" ").map((tl) => {
-            let found = state.layerState.filteredLayers.get(tl)
+            const found = state.layerState.filteredLayers.get(tl)
             if (!found) {
                 throw "Layer " + tl + " not found"
             }
