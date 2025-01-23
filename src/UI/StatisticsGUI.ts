@@ -1,4 +1,4 @@
-import { default as StatisticsSvelte } from "../UI/Statistics/StatisticsGui.svelte"
+import StatisticsSvelte from "../UI/Statistics/StatisticsGui.svelte"
 
 const target = document.getElementById("main")
 target.innerHTML = ""

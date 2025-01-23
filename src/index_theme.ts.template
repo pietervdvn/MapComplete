@@ -1,5 +1,5 @@
 import MetaTagging from "./src/Logic/MetaTagging"
-import {default as SingleThemeGui} from "./UI/SingleThemeGui.svelte"
+import SingleThemeGui from "./src/UI/SingleThemeGui.svelte"
 
 
 async function main() {
