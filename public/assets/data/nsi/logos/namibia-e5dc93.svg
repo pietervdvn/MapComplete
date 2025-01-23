@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 90 60" fill="none">
+	<title>Flag of Namibia</title>
+	<defs>
+		<clipPath id="f">
+			<path d="m0 0h90v60H0z"/>
+		</clipPath>
+	</defs>
+	<path fill="#002f6c" d="m0 60V0h90z"/>
+	<path fill="#009a44" d="m90 0v60H0z"/>
+	<g clip-path="url(#f)">
+		<path stroke="#fff" stroke-width="20" d="m0 60L90 0"/>
+		<path stroke="#c8102e" stroke-width="15" d="m0 60L90 0"/>
+	</g>
+	<path transform="scale(.001)" fill="#ffcd00" d="m18000 6341 1553 4205 3447-2865-757 4418 4417-758-2864 3448 4204 1552-4204 1553 2864 3447-4417-757 757 4418-3447-2865-1553 4204-1553-4204-3447 2865 757-4418-4417 757 2864-3447-4204-1553 4204-1552-2864-3448 4417 758-757-4418 3447 2865z"/>
+	<circle stroke="#002f6c" r="5.5" cx="18" cy="16.341"/>
+</svg>
