@@ -1,5 +1,6 @@
 import ThemeConfig from "./ThemeConfig/ThemeConfig"
 import { WithImageState } from "./ThemeViewState/WithImageState"
+import { Store } from "../Logic/UIEventSource"
 
 /**
  *
@@ -10,7 +11,7 @@ import { WithImageState } from "./ThemeViewState/WithImageState"
  * It ties up all the needed elements and starts some actors.
  */
 export default class ThemeViewState extends WithImageState {
-    constructor(layout: ThemeConfig, mvtAvailableLayers: Set<string>) {
+    constructor(layout: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {
         super(layout, mvtAvailableLayers)
     }
 }

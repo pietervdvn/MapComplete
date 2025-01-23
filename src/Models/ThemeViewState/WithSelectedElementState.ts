@@ -28,11 +28,10 @@ export class WithSelectedElementState extends UserMapFeatureswitchState {
         })
 
         this.mapProperties.lastClickLocation.addCallbackD((lastClick) => {
-            if (lastClick.mode !== "left" || !lastClick.nearestFeature) {
+            if (lastClick.mode !== "left") {
                 return
             }
-            const f = lastClick.nearestFeature
-            this.setSelectedElement(f)
+            this.setSelectedElement(lastClick.nearestFeature)
         })
 
 
@@ -67,7 +66,7 @@ export class WithSelectedElementState extends UserMapFeatureswitchState {
         const current = this.selectedElement.data
         if (
             current?.properties?.id !== undefined &&
-            current.properties.id === feature.properties.id
+            current.properties.id === feature?.properties?.id
         ) {
             console.log("Not setting selected, same id", current, feature)
             return // already set

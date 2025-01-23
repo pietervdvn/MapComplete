@@ -8,6 +8,7 @@ import { Utils } from "./Utils"
 import Constants from "./Models/Constants"
 import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
 import { WithSearchState } from "./Models/ThemeViewState/WithSearchState"
+import { UIEventSource } from "./Logic/UIEventSource"
 
 function webgl_support() {
     try {
@@ -48,11 +49,11 @@ async function main() {
         if (!webgl_support()) {
             throw "WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this."
         }
-        const [theme, availableLayers] = await Promise.all([
-            DetermineTheme.getTheme(),
-            await getAvailableLayers(),
-        ])
-        console.log("The available layers on server are", Array.from(availableLayers))
+        const availableLayers = UIEventSource.FromPromise(getAvailableLayers())
+        const theme = await DetermineTheme.getTheme()
+        availableLayers.addCallbackAndRunD(availableLayers => {
+            console.log("The available layers on server are", Array.from(availableLayers))
+        })
         const state = new WithSearchState(theme, availableLayers)
         const target = document.getElementById("maindiv")
         const childs = Array.from(target.children)

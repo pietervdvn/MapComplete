@@ -14,7 +14,6 @@ import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
-import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
 import ThemeSource from "../Logic/FeatureSource/Sources/ThemeSource"
 import { Map as MlMap } from "maplibre-gl"
@@ -71,7 +70,6 @@ export interface SpecialVisualizationState {
 
     readonly imageUploadManager: ImageUploadManager
 
-    readonly previewedImage: UIEventSource<ProvidedImage>
     readonly nearbyImageSearcher: CombinedFetcher
     readonly geolocation: GeoLocationHandler
     readonly geocodedImages: UIEventSource<Feature[]>

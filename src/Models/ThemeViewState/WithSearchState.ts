@@ -7,11 +7,12 @@ import { WithVisualFeedbackState } from "./WithVisualFeedbackState"
 import { ShowDataLayerOptions } from "../../UI/Map/ShowDataLayerOptions"
 import LayerConfig from "../ThemeConfig/LayerConfig"
 import ShowDataLayer from "../../UI/Map/ShowDataLayer"
+import { Store } from "../../Logic/UIEventSource"
 
 export class WithSearchState extends WithVisualFeedbackState {
     public readonly searchState: SearchState
 
-    constructor(theme: ThemeConfig, mvtAvailableLayers: Set<string>) {
+    constructor(theme: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {
         super(theme, mvtAvailableLayers)
         this.searchState = new SearchState(this)
         this.initHotkeysSearch()
@@ -48,20 +49,12 @@ export class WithSearchState extends WithVisualFeedbackState {
         )
 
         Hotkeys.RegisterHotkey({ nomod: "Escape", onUp: true }, docs.closeSidebar, () => {
-            if (this.previewedImage.data !== undefined) {
-                this.previewedImage.setData(undefined)
-                return
-            }
-            if (this.selectedElement.data) {
-                this.selectedElement.setData(undefined)
+
+            if (this.guistate.closeAll()) {
                 return
             }
             if (this.searchState.showSearchDrawer.data) {
                 this.searchState.showSearchDrawer.set(false)
-                return
-            }
-            if (this.guistate.closeAll()) {
-                return
             }
             Zoomcontrol.resetzoom()
             this.focusOnMap()

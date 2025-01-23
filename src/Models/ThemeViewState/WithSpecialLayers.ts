@@ -14,7 +14,7 @@ import { LayerConfigJson } from "../ThemeConfig/Json/LayerConfigJson"
 import last_click_layerconfig from "../../assets/generated/layers/last_click.json"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import summaryLayer from "../../assets/generated/layers/summary.json"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import NearbyFeatureSource from "../../Logic/FeatureSource/Sources/NearbyFeatureSource"
 import {
     SummaryTileSource,
@@ -43,7 +43,7 @@ export class WithSpecialLayers extends WithChangesState {
     readonly visualFeedbackViewportBounds: UIEventSource<BBox> = new UIEventSource<BBox>(undefined)
 
 
-    constructor(theme: ThemeConfig, mvtAvailableLayers: Set<string>) {
+    constructor(theme: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {
         super(theme, mvtAvailableLayers)
 
         this.favourites = new FavouritesFeatureSource(this)
@@ -64,12 +64,12 @@ export class WithSpecialLayers extends WithChangesState {
 
         this.featureSummary = this.setupSummaryLayer()
         this.initActorsSpecialLayers()
+        this.drawSelectedElement()
         this.drawSpecialLayers()
         this.drawLastClick()
         // Note: the lock-range is handled by UserMapFeatureSwitchState
         {
             // Activate metatagging for the 'current_view' layer
-            console.log(">>>", this.layerState.filteredLayers)
             const currentViewLayer = this.layerState.filteredLayers.get("current_view")?.layerDef
             if (currentViewLayer?.tagRenderings?.length > 0) {
                 const params = MetaTagging.createExtraFuncParams(this)
@@ -163,8 +163,10 @@ export class WithSpecialLayers extends WithChangesState {
                     })
                 )
         // show last click = new point/note marker
+        const features = new StaticFeatureSource(lastClickFiltered)
+        this.featureProperties.trackFeatureSource(features)
         new ShowDataLayer(this.map, {
-            features: new StaticFeatureSource(lastClickFiltered),
+            features,
             layer: lastClickLayerConfig,
             onClick: (feature) => {
                 if (this.mapProperties.zoom.data >= Constants.minZoomLevelToAddNewPoint) {
@@ -179,6 +181,13 @@ export class WithSpecialLayers extends WithChangesState {
         })
     }
 
+    private drawSelectedElement() {
+        const src = new StaticFeatureSource(
+            this.selectedElement.map((f) => (f === undefined ? [] : [f]))
+        )
+        ShowDataLayer.showMultipleLayers(this.map, src, this.theme.layers)
+    }
+
     private drawSpecialLayers() {
 
         type AddedByDefaultTypes = (typeof Constants.added_by_default)[number]
@@ -187,6 +196,7 @@ export class WithSpecialLayers extends WithChangesState {
             | "last_click" // handled by this.drawLastClick()
             | "summary" // handled by setupSummaryLayer
             | "range" // handled by UserMapFeatureSwitchState
+            | "selected_element" // handled by this.drawSelectedElement
         >
         const empty = []
         /**
@@ -199,10 +209,7 @@ export class WithSpecialLayers extends WithChangesState {
             gps_track: this.geolocation.historicalUserLocationsTrack,
             current_view: this.currentView,
             favourite: this.favourites,
-            geocoded_image: new StaticFeatureSource(this.geocodedImages),
-            selected_element: new StaticFeatureSource(
-                this.selectedElement.map((f) => (f === undefined ? empty : [f]))
-            )
+            geocoded_image: new StaticFeatureSource(this.geocodedImages)
         }
 
 

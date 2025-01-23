@@ -3,6 +3,7 @@ import { MenuState } from "../MenuState"
 import Hotkeys from "../../UI/Base/Hotkeys"
 import Translations from "../../UI/i18n/Translations"
 import { WithSpecialLayers } from "./WithSpecialLayers"
+import { Store } from "../../Logic/UIEventSource"
 
 /**
  * Does all things related to:
@@ -11,9 +12,10 @@ import { WithSpecialLayers } from "./WithSpecialLayers"
 export class WithGuiState extends WithSpecialLayers {
     readonly guistate: MenuState
 
-    constructor(theme: ThemeConfig, mvtAvailableLayers: Set<string>) {
+    constructor(theme: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {
         super(theme, mvtAvailableLayers)
-        this.guistate = new MenuState(
+        this.guistate = new MenuState(this.selectedElement)
+        this.guistate.openMenuIfNeeded(
             this.featureSwitches.featureSwitchWelcomeMessage.data,
             theme.id
         )

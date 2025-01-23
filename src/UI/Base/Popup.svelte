@@ -9,7 +9,7 @@
   export let fullscreen: boolean = false
   export let bodyPadding = "p-4 md:p-5 "
   export let shown: UIEventSource<boolean>
-  export let dismissable = true
+  export let dismissable = false
   /**
    * Default: 50
    */

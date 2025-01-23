@@ -8,8 +8,7 @@ export default class ThemeViewStateHashActor {
     private readonly _state: {
         indexedFeatures: IndexedFeatureSource,
         selectedElement: UIEventSource<Feature>,
-        guistate: MenuState,
-        previewedImage: UIEventSource<object>
+        guistate: MenuState
     }
     private isUpdatingHash = false
 
@@ -39,7 +38,6 @@ export default class ThemeViewStateHashActor {
         indexedFeatures: IndexedFeatureSource,
         selectedElement: UIEventSource<Feature>,
         guistate: MenuState,
-        previewedImage: UIEventSource<object>
     }) {
         this._state = state
 
@@ -150,14 +148,8 @@ export default class ThemeViewStateHashActor {
     }
 
     private back() {
+        console.log("Going back via hash actor")
         const state = this._state
-        if (state.previewedImage.data) {
-            state.previewedImage.setData(undefined)
-            return
-        }
-        if (state.guistate.closeAll()) {
-            return
-        }
-        state.selectedElement.setData(undefined)
+        state.guistate.closeAll()
     }
 }

@@ -1,5 +1,5 @@
 import ThemeConfig from "../ThemeConfig/ThemeConfig"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import Hotkeys from "../../UI/Base/Hotkeys"
 import Translations from "../../UI/i18n/Translations"
 import ThemeViewState from "../ThemeViewState"
@@ -11,7 +11,7 @@ export class WithVisualFeedbackState extends ThemeViewState {
      */
     public readonly visualFeedback: UIEventSource<boolean> = new UIEventSource<boolean>(false)
 
-    constructor(theme: ThemeConfig, mvtAvailableLayers: Set<string>) {
+    constructor(theme: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {
         super(theme, mvtAvailableLayers)
         this.initHotkeysVisualFeedback()
 
@@ -72,7 +72,7 @@ export class WithVisualFeedbackState extends ThemeViewState {
                 if (this.selectedElement.data !== undefined) {
                     return false
                 }
-                if (this.guistate.isSomethingOpen() || this.previewedImage.data !== undefined) {
+                if (this.guistate.isSomethingOpen()) {
                     return
                 }
                 if (

@@ -35,7 +35,7 @@ export class WithChangesState extends WithLayoutSourceState {
      */
     readonly hasDataInView: Store<FeatureViewState>
 
-    constructor(theme: ThemeConfig, mvtAvailableLayers: Set<string>) {
+    constructor(theme: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {
         super(theme, mvtAvailableLayers)
         this.changes = new Changes(
             {
@@ -82,7 +82,7 @@ export class WithChangesState extends WithLayoutSourceState {
         this.perLayerFiltered = this.showNormalDataOn(this.map)
 
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
-        
+
         this.toCacheSavers = theme.enableCache ? this.initSaveToLocalStorage() : undefined
 
 

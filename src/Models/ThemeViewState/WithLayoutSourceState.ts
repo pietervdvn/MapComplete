@@ -22,7 +22,7 @@ export class WithLayoutSourceState extends WithSelectedElementState {
     readonly floors: Store<string[]>
 
 
-    constructor(theme: ThemeConfig, mvtAvailableLayers: Set<string>) {
+    constructor(theme: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {
         super(theme)
         /* Set up the layout source
          * A bit tricky, as this is heavily intertwined with the 'changes'-element, which generates a stream of new and changed features too
