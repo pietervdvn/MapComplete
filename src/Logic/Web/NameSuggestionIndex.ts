@@ -50,7 +50,8 @@ export interface NSIItem {
         exclude: string[]
     }
     readonly tags: Readonly<Record<string, string>>
-    readonly fromTemplate?: boolean
+    fromTemplate?: boolean
+    ext? : string
 }
 
 export default class NameSuggestionIndex {
@@ -215,14 +216,7 @@ export default class NameSuggestionIndex {
                 const frequency = frequencies[nsiItem.displayName]
                 const iconUrl = this.getIconExternalUrl(nsiItem, type)
                 const hasIcon = iconUrl !== undefined
-                let icon = undefined
-                if (hasIcon) {
-                    // Using <img src=...> works fine without an extension for JPG and PNG, but _not_ svg :(
-                    icon = "./assets/data/nsi/logos/" + nsiItem.id
-                    if (this.isSvg(nsiItem, type)) {
-                        icon = icon + ".svg"
-                    }
-                }
+                const icon = hasIcon ? this.getIconUrl(nsiItem, type) : undefined
                 mappings.push({
                     if: new Tag(type, tags[type]),
                     addExtraTags: Object.keys(tags)
@@ -280,6 +274,10 @@ export default class NameSuggestionIndex {
             const values = tags[osmKey]
             for (const osmValue of values) {
                 const suggestions = this.getSuggestionsForKV(type, osmKey, osmValue)
+                if(!suggestions){
+                    console.warn("No suggestions found for", type, osmKey, osmValue)
+                    continue
+                }
                 options.push(...suggestions)
             }
         }
@@ -402,11 +400,7 @@ export default class NameSuggestionIndex {
     }
 
     public getIconUrl(nsiItem: NSIItem, type: string) {
-        let icon = "./assets/data/nsi/logos/" + nsiItem.id
-        if (this.isSvg(nsiItem, type)) {
-            icon = icon + ".svg"
-        }
-        return icon
+        return "./assets/data/nsi/logos/" + nsiItem.id + "." + nsiItem.ext
     }
     private static readonly brandPrefix = ["name", "alt_name", "operator", "brand"] as const
 

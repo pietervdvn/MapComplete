@@ -114,7 +114,7 @@
     "velopark:compare": "vite-node scripts/velopark/compare.ts -- velopark_nonsynced_.geojson ~/Projecten/OSM/Fietsberaad/2024-02-02\\ Fietsenstallingen_OSM_met_velopark_ref.geojson\n",
     "velopark:download": "vite-node scripts/velopark/veloParkToGeojson.ts ",
     "### 1": "CODE AND DATA MAINTAINENCE",
-    "download:nsi-logos": "vite-node scripts/downloadNsiLogos.ts || npm run download:nsi-logos # This script crashes often without the possibility to correct - hence the auto retry with OR",
+    "download:nsi-logos": "vite-node scripts/nsiLogos.ts -- download || npm run download:nsi-logos # This script crashes often without the possibility to correct - hence the auto retry with OR",
     "download:nsi": "npm i name-suggestion-index && vite-node scripts/generateStats.ts && npm run download:nsi-logos",
     "download:editor-layer-index": "vite-node scripts/downloadEli.ts",
     "download:stats": "vite-node scripts/GenerateSeries.ts",
