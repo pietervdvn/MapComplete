@@ -104,11 +104,12 @@ class NsiLogos extends Script {
         const basePath = "./public/assets/data/nsi/logos/"
         let downloadCount = 0
         let errored = 0
+        let skipped = 0
         const alreadyDownloaded = NsiLogos.downloadedFiles()
         const stepcount = 50
         for (let i = 0; i < items.length; i += stepcount) {
             if (downloadCount > 0 || i % 200 === 0) {
-                console.log(i + "/" + items.length, "downloaded " + downloadCount + " for NSI type " + type)
+                console.log(i + "/" + items.length, `downloaded ${downloadCount}; failed ${errored}; skipped ${skipped} for NSI type ${type}`)
             }
 
             const results = await Promise.all(
@@ -120,6 +121,9 @@ class NsiLogos extends Script {
                 let didDownload = results[j]
                 if (didDownload === true) {
                     downloadCount++
+                }
+                if (didDownload === false) {
+                    skipped++
                 }
                 if (didDownload !== "error") {
                     continue
@@ -262,7 +266,7 @@ class NsiLogos extends Script {
             const id = match[1]
             if (!ids.has(id)) {
                 console.log("Obsolete file:", f, id)
-                //   unlinkSync(f)
+                unlinkSync(f)
                 pruned++
             }
         }
