@@ -492,6 +492,11 @@ export default class UserRelatedState {
         })
 
         const usersettingMetaTagging = new ThemeMetaTagging()
+        osmConnection.isLoggedIn.addCallbackAndRun(loggedIn => {
+            amendedPrefs.data["_loggedIn"] = "" + loggedIn
+            amendedPrefs.ping()
+        })
+
         osmConnection.userDetails.addCallback((userDetails) => {
             for (const k in userDetails) {
                 amendedPrefs.data["_" + k] = "" + userDetails[k]
