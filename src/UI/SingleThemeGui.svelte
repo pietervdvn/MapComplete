@@ -10,7 +10,6 @@ import Constants from "../Models/Constants.js"
 import { Utils } from "../Utils.js"
 import { UIEventSource } from "../Logic/UIEventSource"
 import { WithSearchState } from "../Models/ThemeViewState/WithSearchState"
-import { ThemeConfigJson } from "../Models/ThemeConfig/Json/ThemeConfigJson"
 import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
 
 function webgl_support() {
