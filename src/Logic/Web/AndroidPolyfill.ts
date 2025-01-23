@@ -25,7 +25,7 @@ const DatabridgePluginSingleton = registerPlugin<DatabridgePlugin>("Databridge",
 })
 
 export class AndroidPolyfill {
-    private readonly databridgePlugin: DatabridgePlugin = DatabridgePluginSingleton
+    private static readonly databridgePlugin: DatabridgePlugin = DatabridgePluginSingleton
     private static readonly _inAndroid: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public static readonly inAndroid: Store<boolean> = AndroidPolyfill._inAndroid
     private static readonly _geolocationPermission: UIEventSource<"granted" | "denied" | "prompt"> = new UIEventSource("prompt")
@@ -35,7 +35,7 @@ export class AndroidPolyfill {
      * Registers 'navigator.'
      * @private
      */
-    private backfillGeolocation(databridgePlugin: DatabridgePlugin) {
+    private static backfillGeolocation(databridgePlugin: DatabridgePlugin) {
         const src = UIEventSource.FromPromise(databridgePlugin.request({ key: "location:has-permission" }))
         src.addCallbackAndRunD(permission => {
             console.log("> Checking geopermission gave: ", JSON.stringify(permission), permission.value)
@@ -48,16 +48,16 @@ export class AndroidPolyfill {
         return DatabridgePluginSingleton.request({ key: "location:request-permission" })
     }
 
-    public async init() {
+    public static async init() {
         console.log("Sniffing shell version")
-        const shell = await this.databridgePlugin.request({ key: "meta" })
+        const shell = await AndroidPolyfill.databridgePlugin.request({ key: "meta" })
         if (shell.value === "web") {
             console.log("Not initing Android polyfill as not in a shell; web detected")
             return
         }
         AndroidPolyfill._inAndroid.set(true)
         console.log("Detected shell:", shell.value)
-        this.backfillGeolocation(this.databridgePlugin)
+        AndroidPolyfill.backfillGeolocation(AndroidPolyfill.databridgePlugin)
     }
 
     public static async requestLoginCodes() {

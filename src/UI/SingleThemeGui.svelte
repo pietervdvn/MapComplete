@@ -12,6 +12,7 @@ import { UIEventSource } from "../Logic/UIEventSource"
 import { WithSearchState } from "../Models/ThemeViewState/WithSearchState"
 import { ThemeConfigJson } from "../Models/ThemeConfig/Json/ThemeConfigJson"
 import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
+import { AndroidPolyfill } from "../Logic/Web/AndroidPolyfill"
 
 function webgl_support() {
   try {
@@ -46,7 +47,7 @@ async function getAvailableLayers(): Promise<Set<string>> {
 }
 
 export let theme: ThemeConfig
-
+AndroidPolyfill.init()
 let webgl_supported = webgl_support()
 
 let availableLayers = UIEventSource.FromPromise(getAvailableLayers())
