@@ -173,7 +173,7 @@ class NsiLogos extends Script {
             }
         }
 
-        const iconsTr: TagRenderingConfigJson = <any>{
+        const iconsTr: QuestionableTagRenderingConfigJson = <any>{
             strict: true,
             id: "icon",
             mappings,
