@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.48.3](https://github.com/pietervdvn/mapcomplete/compare/v0.48.0...v0.48.3) (2025-01-24)
+
+
+### Bug Fixes
+
+* actually parse theme file ([3f80930](https://github.com/pietervdvn/mapcomplete/commits/3f80930d48df10b403a5f59ce9159d0a7f97d922))
+* also show default layers when loading an official theme via theme.html ([b844a07](https://github.com/pietervdvn/mapcomplete/commits/b844a0700e32d52660bef09bc15d2439cf54e9c2))
+* correct usage of userdetails ([436b99a](https://github.com/pietervdvn/mapcomplete/commits/436b99a53a003f3bc700fdd50be3608146581eb1))
+* don't open login page upon first visit of MapComplete ([0910992](https://github.com/pietervdvn/mapcomplete/commits/09109925bc295130e669ccaec6768957220bd656))
+* fix crash ([a451fac](https://github.com/pietervdvn/mapcomplete/commits/a451fac8f2d6c5dabffccc2bc8411846e02876f6))
+* NSI now explicitly has extensions ([96c3944](https://github.com/pietervdvn/mapcomplete/commits/96c39447163617766e14c5517ff124194ad79a88))
+* restore "_loggedIn" metatag ([18c19e5](https://github.com/pietervdvn/mapcomplete/commits/18c19e55f3ed800110f4c45ee97a53d510bdeb9d))
+* **studio:** add check for incorrect suggestions, fix incorrect suggestion which breaks setting a 'marker' ([143dd70](https://github.com/pietervdvn/mapcomplete/commits/143dd70973d49882ee314d3b09505c1c18c96aa7))
+* tests ([392e96e](https://github.com/pietervdvn/mapcomplete/commits/392e96e4f5d184d8af64beae2f115a7a15c9f25d))
+
+
+### Theme improvements
+
+* automatically remove filters that are useless because they would filter everything or nothing; fix some logic bugs and add tests ([50ef2ba](https://github.com/pietervdvn/mapcomplete/commits/50ef2ba63674d8e543649b85b0098658ac3f52ed))
+* **pets:** add dog toilets ([860fc99](https://github.com/pietervdvn/mapcomplete/commits/860fc9994bd529ceb1917757b8ac4fea6af5efaa))
+* **pets:** add waste baskets with doggy bag dispensers as layer ([1b3066c](https://github.com/pietervdvn/mapcomplete/commits/1b3066cc28a999b2fd74cc8d7acb0397d6415156))
+* **pets:** bring pets theme more in line (visually and logically) with the other themes ([cdc170b](https://github.com/pietervdvn/mapcomplete/commits/cdc170b128ae293d66f779192b6fda7867689a4e))
+* **shops:** add dog-access question ([244c976](https://github.com/pietervdvn/mapcomplete/commits/244c976af628e4c9fe2c3d98d09e4c40911284d1))
+
 ### [0.48.2](https://github.com/pietervdvn/mapcomplete/compare/v0.48.0...v0.48.2) (2025-01-19)
 
 
