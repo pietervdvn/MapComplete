@@ -124,7 +124,7 @@ export class And extends TagsFilter {
      * t0.shadows(t0) // => true
      * t1.shadows(t1) // => true
      * t2.shadows(t2) // => true
-     * t0.shadows(t1) // => false
+     * t0.shadows(t1) // => true
      * t0.shadows(t2) // => false
      * t1.shadows(t0) // => false
      * t1.shadows(t2) // => false
@@ -135,13 +135,18 @@ export class And extends TagsFilter {
      * const t1 = new And([new Tag("shop","clothes"), new Or([new Tag("brand","XYZ"),new Tag("brand:wikidata","Q1234")])])
      * const t2 = new And([new RegexTag("shop","mall",true), new Or([TagUtils.Tag("shop~*"), new Tag("craft","shoemaker")])])
      * t1.shadows(t2) // => true
+     *
+     * const t1 = new Tag("a","b")
+     * const t2 = new And([new Tag("x","y"), new Tag("a","b")])
+     * t2.shadows(t1) // => true
+     * t1.shadows(t2) // => false
      */
     shadows(other: TagsFilter): boolean {
-        const phrases: TagsFilter[] = other instanceof And ? other.and : [other]
+        // The phrases of the _other_ and
+        const phrases: readonly TagsFilter[] = other instanceof And ? other.and : [other]
         // A phrase might be shadowed by a certain subsection. We keep track of this here
         const shadowedOthers = phrases.map(() => false)
         for (const selfTag of this.and) {
-            let shadowsSome = false
             let shadowsAll = true
             for (let i = 0; i < phrases.length; i++) {
                 const otherTag = phrases[i]
@@ -149,16 +154,12 @@ export class And extends TagsFilter {
                 if (doesShadow) {
                     shadowedOthers[i] = true
                 }
-                shadowsSome ||= doesShadow
                 shadowsAll &&= doesShadow
             }
             // If A => X and A => Y, then
             // A&B implies X&Y. We discovered an A that implies all needed values
             if (shadowsAll) {
                 return true
-            }
-            if (!shadowsSome) {
-                return false
             }
         }
         return !shadowedOthers.some((v) => !v)

@@ -1087,12 +1087,12 @@
     "pets": {
         "description": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ...",
         "layers": {
-            "3": {
+            "4": {
                 "override": {
                     "name": "Restaurace vhodné pro vstup se psy"
                 }
             },
-            "5": {
+            "6": {
                 "override": {
                     "name": "Obchody vhodné pro vstup se psy"
                 }

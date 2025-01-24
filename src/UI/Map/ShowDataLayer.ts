@@ -16,7 +16,6 @@ import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFea
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
-import { featureEach } from "@turf/turf"
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
@@ -542,7 +541,7 @@ export default class ShowDataLayer {
         mlmap: UIEventSource<MlMap>,
         features: FeatureSource,
         layers: LayerConfig[],
-        options?: Partial<ShowDataLayerOptions>
+        options?: Partial<Omit<ShowDataLayerOptions, "features" | "layer">>
     ) {
         const perLayer: PerLayerFeatureSourceSplitter<FeatureSourceForLayer> =
             new PerLayerFeatureSourceSplitter(

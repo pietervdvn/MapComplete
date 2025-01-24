@@ -4,12 +4,10 @@
   import MaplibreMap from "./Map/MaplibreMap.svelte"
   import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
   import MapControlButton from "./Base/MapControlButton.svelte"
-  import ToSvelte from "./Base/ToSvelte.svelte"
   import If from "./Base/If.svelte"
   import type { Feature } from "geojson"
   import SelectedElementView from "./BigComponents/SelectedElementView.svelte"
   import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-  import ThemeViewState from "../Models/ThemeViewState"
   import type { MapProperties } from "../Models/MapProperties"
   import Translations from "./i18n/Translations"
   import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid"
@@ -48,8 +46,15 @@
   import { Drawer } from "flowbite-svelte"
   import { linear } from "svelte/easing"
   import DefaultIcon from "./Map/DefaultIcon.svelte"
+  import Loading from "./Base/Loading.svelte"
+  import { WithSearchState } from "../Models/ThemeViewState/WithSearchState"
+  import TitleHandler from "../Logic/Actors/TitleHandler"
 
-  export let state: ThemeViewState
+  export let state: WithSearchState
+  new TitleHandler(state.selectedElement, state)
+
+  console.log("The state is", state)
+  state.focusOnMap()
 
   let theme = state.theme
   let maplibremap: UIEventSource<MlMap> = state.map
@@ -421,7 +426,9 @@
       <If condition={state.featureSwitches.featureSwitchFakeUser}>
         <div class="alert w-fit">Faking a user (Testmode)</div>
       </If>
-      {#if $apiState !== "online"}
+      {#if $apiState === "unknown"}
+        <Loading />
+      {:else if $apiState !== "online"}
         <div class="alert w-fit">API is {$apiState}</div>
       {/if}
     </div>

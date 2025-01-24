@@ -42,6 +42,7 @@
     "dogpark",
     "veterinary",
     "animal_shelter",
+    "dog_toilet",
     {
       "builtin": "food",
       "override": {
@@ -141,18 +142,40 @@
     {
       "builtin": "shops",
       "override": {
-        "minzoom": 18,
         "filter": {
           "sameAs": "shop_dog_friendly"
         },
+        "minzoom": 18,
         "name": null
       }
     },
     {
       "builtin": "waste_basket",
       "override": {
+        "id": "waste_basket_dogs",
+        "name=": {
+          "en": "Waste baskets with excrement bag dispensers",
+          "nl": "Vuilnisbakken met verdelers voor hondenpoepzakjes"
+        },
+        "presets=": [],
+        "filter=": [],
+        "minzoom": 14,
+        "source": {
+          "osmTags": {
+            "and+": [
+              "vending=excrement_bags"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "waste_basket",
+      "override": {
         "minzoom": 16,
-        "filter": null,
+        "filter": {
+          "sameAs": "waste_basket_dogs"
+        },
         "name": null
       }
     }

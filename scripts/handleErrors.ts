@@ -1,11 +1,10 @@
 import Script from "./Script"
-import { appendFileSync, readFileSync, writeFile, writeFileSync } from "fs"
+import { readFileSync, writeFileSync } from "fs"
 import { ChangeDescription } from "../src/Logic/Osm/Actions/ChangeDescription"
 import { Changes } from "../src/Logic/Osm/Changes"
 import { OsmObject } from "../src/Logic/Osm/OsmObject"
 import OsmObjectDownloader from "../src/Logic/Osm/OsmObjectDownloader"
 import { OsmConnection } from "../src/Logic/Osm/OsmConnection"
-import { ImmutableStore } from "../src/Logic/UIEventSource"
 import Constants from "../src/Models/Constants"
 
 type ErrorMessage = {
@@ -130,11 +129,10 @@ ${changeset}`
 
         const changesObj = new Changes(
             {
-                dryRun: new ImmutableStore(true),
                 osmConnection,
+                reportError: (err) => console.error(err)
             },
             false,
-            (err) => console.error(err)
         )
 
         const all: ErrorMessage[] = []

@@ -3,11 +3,7 @@ import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import { default as FeatureTitle } from "./Popup/Title.svelte"
-import {
-    RenderingSpecification,
-    SpecialVisualization,
-    SpecialVisualizationState,
-} from "./SpecialVisualization"
+import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import MinimapViz from "./Popup/MinimapViz.svelte"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
@@ -453,7 +449,7 @@ export default class SpecialVisualizations {
                                 assignTo: state.userRelatedState.language,
                                 availableLanguages: languages,
                                 preferredLanguages: state.osmConnection.userDetails.map(
-                                    (ud) => ud.languages
+                                    (ud) => ud?.languages ?? []
                                 ),
                             })
                         })
@@ -721,7 +717,8 @@ export default class SpecialVisualizations {
                         imagePrefixes = [].concat(...args.map((a) => a.split(",")))
                     }
                     const images = AllImageProviders.loadImagesFor(tags, imagePrefixes)
-                    return new SvelteUIElement(ImageCarousel, { state, tags, images })
+                    const estimated = tags.mapD(tags => AllImageProviders.estimateNumberOfImages(tags, imagePrefixes))
+                    return new SvelteUIElement(ImageCarousel, { state, tags, images, estimated })
                 },
             },
             {

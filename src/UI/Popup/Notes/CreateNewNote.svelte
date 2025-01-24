@@ -20,9 +20,10 @@
   import NextButton from "../../Base/NextButton.svelte"
   import Note from "../../../assets/svg/Note.svelte"
   import TitledPanel from "../../Base/TitledPanel.svelte"
+  import ThemeViewState from "../../../Models/ThemeViewState"
 
   export let coordinate: UIEventSource<{ lon: number; lat: number }>
-  export let state: SpecialVisualizationState
+  export let state: ThemeViewState
 
   let comment: UIEventSource<string> = LocalStorageSource.get("note-text")
   let created = false
@@ -33,7 +34,6 @@
   let isDisplayed = notelayer?.isDisplayed
 
   let submitted = false
-  let textEntered = false
 
   function enableNoteLayer() {
     state.guistate.closeAll()

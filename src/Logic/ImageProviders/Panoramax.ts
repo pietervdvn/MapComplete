@@ -149,7 +149,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
             )
         }
 
-        Stores.Chronic(1500, () => hasLoading(source.data)).addCallback(() => {
+        Stores.Chronic(5000, () => hasLoading(source.data)).addCallback(() => {
             super.getRelevantUrlsFor(tags, prefixes).then((data) => {
                 source.set(data)
                 return !hasLoading(data)

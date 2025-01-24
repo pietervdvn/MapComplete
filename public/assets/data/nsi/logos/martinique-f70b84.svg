@@ -1,0 +1,7 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect fill="#231f1e" height="600" width="900" id="noir"/>
+  <rect fill="#00a650" height="300" width="900" id="vert"/>
+  <polygon id="tri_rouge" fill="#ef1923" points="0,0 450,300 0,600"/>
+</g>
+</svg>

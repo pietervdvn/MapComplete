@@ -13,8 +13,9 @@
   import { CogIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { TrashIcon } from "@babeard/svelte-heroicons/mini"
   import type { GeocodeResult } from "../../Logic/Search/GeocodingProvider"
+  import { WithSearchState } from "../../Models/ThemeViewState/WithSearchState"
 
-  export let state: SpecialVisualizationState
+  export let state: WithSearchState
 
   let searchTerm = state.searchState.searchTerm
   let results = state.searchState.suggestions

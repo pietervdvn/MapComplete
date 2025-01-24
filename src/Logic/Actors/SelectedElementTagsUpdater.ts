@@ -4,10 +4,12 @@
 import SimpleMetaTagger from "../SimpleMetaTagger"
 import { OsmTags } from "../../Models/OsmFeature"
 import { Utils } from "../../Utils"
-import ThemeViewState from "../../Models/ThemeViewState"
 import { BBox } from "../BBox"
 import { Feature } from "geojson"
-import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
+import { Changes } from "../Osm/Changes"
+import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
+import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
+import { WithChangesState } from "../../Models/ThemeViewState/WithChangesState"
 
 export default class SelectedElementTagsUpdater {
     private static readonly metatags = new Set([
@@ -18,9 +20,9 @@ export default class SelectedElementTagsUpdater {
         "uid",
         "id",
     ])
-    private readonly state: ThemeViewState
+    private readonly state: WithChangesState
 
-    constructor(state: ThemeViewState) {
+    constructor(state: WithChangesState) {
         this.state = state
         state.osmConnection.isLoggedIn.addCallbackAndRun((isLoggedIn) => {
             if (!isLoggedIn && !Utils.runningFromConsole) {
@@ -32,7 +34,11 @@ export default class SelectedElementTagsUpdater {
         })
     }
 
-    public static applyUpdate(latestTags: OsmTags, id: string, state: SpecialVisualizationState) {
+    public static applyUpdate(latestTags: OsmTags, id: string, state: {
+        theme: ThemeConfig,
+        changes: Changes,
+        featureProperties: FeaturePropertiesStore
+    }) {
         try {
             const leftRightSensitive = state.theme.isLeftRightSensitive()
 

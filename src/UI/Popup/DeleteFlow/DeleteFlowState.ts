@@ -54,7 +54,7 @@ export class DeleteFlowState {
             if (ud === undefined) {
                 return undefined
             }
-            if (!ud.loggedIn) {
+            if (!ud) {
                 return false
             }
             return (

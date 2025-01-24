@@ -87,7 +87,6 @@
     {state}
     image={providedImage}
     imgClass="max-h-64 w-auto sm:h-32 md:h-64"
-    previewedImage={state.previewedImage}
     attributionFormat="minimal"
   >
     <!--

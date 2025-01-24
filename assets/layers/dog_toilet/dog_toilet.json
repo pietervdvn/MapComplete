@@ -1,0 +1,90 @@
+{
+  "id": "dog_toilet",
+  "name": {
+    "en": "Dog toilets"
+  },
+  "description": {
+    "en": "A dog toilet is a facility designated for dogs to urinate and excrete. This can be a designated, signposted patch of grass, a sand pit or a fenced area."
+  },
+  "source": {
+    "osmTags": "amenity=dog_toilet"
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Dog toilet"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/dog_toilet/dog_toilet.svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a dog toilet"
+      },
+      "tags": [
+        "amenity=dog_toilet"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "barrier",
+      "question": {
+        "en": "Is this dog toilet fenced?"
+      },
+      "mappings": [
+        {
+          "if": "barrier=fence",
+          "addExtraTags": [
+            "not:barrier="
+          ],
+          "then": {
+            "en": "There is a fence around this dog toilet"
+          }
+        },
+        {
+          "if": "barrier=hedge",
+          "addExtraTags": [
+            "not:barrier="
+          ],
+          "then": {
+            "en": "There is a hedge around this dog toilet"
+          }
+        },
+        {
+          "if": "barrier=yes",
+          "addExtraTags": [
+            "not:barrier="
+          ],
+          "then": {
+            "en": "There is a barrier around this dog toilet"
+          }
+        },
+        {
+          "if": "not:barrier=fence",
+          "addExtraTags": [
+            "barrier="
+          ],
+          "then": {
+            "en": "There is no barrier around this dog toilet"
+          }
+        }
+      ]
+    }
+  ],
+  "allowMove": true,
+  "credits": "Pieter Vander Vennet"
+}

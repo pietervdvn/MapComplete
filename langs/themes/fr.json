@@ -927,12 +927,12 @@
     "pets": {
         "description": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc.",
         "layers": {
-            "3": {
+            "4": {
                 "override": {
                     "name": "Restaurants acceptant les chiens"
                 }
             },
-            "5": {
+            "6": {
                 "override": {
                     "name": "Magasins acceptant les chiens"
                 }

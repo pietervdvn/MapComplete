@@ -1087,12 +1087,12 @@
     "pets": {
         "description": "Diese Karte zeigt interessante Orte für Haustierbesitzer: Tierärzte, Hundeparks, Tiergeschäfte, hundefreundliche Restaurants, ...",
         "layers": {
-            "3": {
+            "4": {
                 "override": {
                     "name": "Hundefreundliche Restaurants"
                 }
             },
-            "5": {
+            "6": {
                 "override": {
                     "name": "Hundefreundliche Geschäfte"
                 }

@@ -6,8 +6,11 @@ import { OsmId } from "../../../Models/OsmFeature"
 import { GeoOperations } from "../../GeoOperations"
 import { IndexedFeatureSource } from "../FeatureSource"
 import OsmObjectDownloader from "../../Osm/OsmObjectDownloader"
-import { SpecialVisualizationState } from "../../../UI/SpecialVisualization"
 import SelectedElementTagsUpdater from "../../Actors/SelectedElementTagsUpdater"
+import FeaturePropertiesStore from "../Actors/FeaturePropertiesStore"
+import ThemeConfig from "../../../Models/ThemeConfig/ThemeConfig"
+import { Changes } from "../../Osm/Changes"
+import { WithChangesState } from "../../../Models/ThemeViewState/WithChangesState"
 
 /**
  * Generates the favourites from the preferences and marks them as favourite
@@ -22,7 +25,7 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
      */
     public readonly allFavourites: Store<Feature[]>
 
-    constructor(state: SpecialVisualizationState) {
+    constructor(state: WithChangesState) {
         const features: Store<Feature[]> = Stores.ListStabilized(
             state.osmConnection.preferencesHandler.allPreferences.map((prefs) => {
                 const feats: Feature[] = []
@@ -71,7 +74,7 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
 
         this.allFavourites.addCallbackD((features) => {
             for (const feature of features) {
-                this.updateFeature(feature, state.osmObjectDownloader, state)
+                this.updateFeature(feature, state)
             }
 
             return true
@@ -80,11 +83,15 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
 
     private async updateFeature(
         feature: Feature,
-        osmObjectDownloader: OsmObjectDownloader,
-        state: SpecialVisualizationState
+        state: {
+            theme: ThemeConfig,
+            changes: Changes,
+            featureProperties: FeaturePropertiesStore,
+            osmObjectDownloader: OsmObjectDownloader,
+        }
     ) {
         const id = feature.properties.id
-        const upstream = await osmObjectDownloader.DownloadObjectAsync(id)
+        const upstream = await state.osmObjectDownloader.DownloadObjectAsync(id)
         if (upstream === "deleted") {
             this.removeFavourite(feature)
             return
