@@ -75,7 +75,7 @@
   }
 </script>
 
-<Popup shown={showBigPreview} bodyPadding="p-0" dismissable={false}>
+<Popup shown={showBigPreview} bodyPadding="p-0" dismissable={true}>
   <div slot="close" />
   <div style="height: 80vh">
     <ImageOperations {image}>
