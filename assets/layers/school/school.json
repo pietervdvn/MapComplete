@@ -117,15 +117,8 @@
     },
     {
       "title": {
-        "en": "a primary or secondary school",
-        "nl": "een lagere of middelbare school",
-        "de": "eine Grundschule oder weiterführende Schule",
-        "ru": "детский сад",
-        "ca": "una escola de primària o secundària",
-        "pl": "przedszkole",
-        "cs": "základní nebo střední škola",
-        "es": "una escuela primaria o secundaria",
-        "fr": "une école primaire ou secondaire"
+        "en": "a kindergarten",
+        "nl": "een kleuterschool"
       },
       "description": "A kindergarten (also known as <i>preschool</i>) is a school where small kids receive early education.",
       "tags": [

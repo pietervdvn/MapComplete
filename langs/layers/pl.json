@@ -3451,11 +3451,6 @@
         }
     },
     "school": {
-        "presets": {
-            "0": {
-                "title": "przedszkole"
-            }
-        },
         "tagRenderings": {
             "school-language": {
                 "render": {
