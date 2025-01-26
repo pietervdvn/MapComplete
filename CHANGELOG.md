@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.48.4](https://github.com/pietervdvn/mapcomplete/compare/v0.48.3...v0.48.4) (2025-01-26)
+
 ### [0.48.3](https://github.com/pietervdvn/mapcomplete/compare/v0.48.0...v0.48.3) (2025-01-24)
 
 
