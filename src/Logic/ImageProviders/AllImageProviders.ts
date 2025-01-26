@@ -73,6 +73,8 @@ export default class AllImageProviders {
      * Will simply count all image tags
      *
      * AllImageProviders.estimateNumberOfImages({image:"abc", "mapillary": "123", "panoramax:0": "xyz"}) // => 3
+     * AllImageProviders.estimateNumberOfImages({wikidata:"Q123", "wikipedia": "nl:xyz"}) // => 0
+     *
      *
      */
     public static estimateNumberOfImages(tags: Record<string, string>, prefixes: string[] = undefined): number {
@@ -80,8 +82,6 @@ export default class AllImageProviders {
 
         const sources = [Imgur.singleton,
             Mapillary.singleton,
-            WikidataImageProvider.singleton,
-            WikimediaImageProvider.singleton,
             Panoramax.singleton,
             AllImageProviders.genericImageProvider]
         const allPrefixes = Utils.Dedup(prefixes ?? [].concat(...sources.map(s => s.defaultKeyPrefixes)))
