@@ -2815,6 +2815,35 @@
             "render": "Punto de carga"
         }
     },
+    "childcare": {
+        "presets": {
+            "0": {
+                "title": "una guardería"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "¿Cuántos niños (como máximo) pueden inscribirse aquí?",
+                "render": "Este centro tiene capacidad para {capacity} niños"
+            },
+            "name": {
+                "question": "¿Cuál es el nombre de este centro?",
+                "render": "Este centro se llama <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "¿Cuándo abre esta guardería?"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Guardería {name}"
+                }
+            }
+        }
+    },
     "cinema": {
         "description": "Un lugar donde se proyectan películas (cine), generalmente abierto al público por una tarifa Comúnmente conocido como cine en Estados Unidos.",
         "name": "Cine",
@@ -6416,53 +6445,6 @@
             "render": "Bordillo"
         }
     },
-    "kindergarten_childcare": {
-        "name": "Jardines de infancia y guarderías",
-        "presets": {
-            "0": {
-                "title": "un jardín de infancia"
-            },
-            "1": {
-                "title": "una guardería"
-            }
-        },
-        "tagRenderings": {
-            "capacity": {
-                "question": "¿Cuántos niños (como máximo) pueden inscribirse aquí?",
-                "render": "Este centro tiene capacidad para {capacity} niños"
-            },
-            "childcare-type": {
-                "mappings": {
-                    "0": {
-                        "then": "Se trata de un jardín de infancia (también conocido como <i>preescolar</i>) donde los niños pequeños reciben educación temprana."
-                    },
-                    "1": {
-                        "then": "Se trata de un centro de cuidado infantil, como una guardería o una sala de juegos donde se cuida a los niños pequeños. No ofrecen educación y suelen ser empresas privadas"
-                    }
-                },
-                "question": "¿Qué tipo de centro es este?"
-            },
-            "name": {
-                "question": "¿Cuál es el nombre de este centro?",
-                "render": "Este centro se llama <b>{name}</b>"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "¿Cuándo abre esta guardería?"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Jardín de infancia {name}"
-                },
-                "1": {
-                    "then": "Guardería {name}"
-                }
-            }
-        }
-    },
     "last_click": {
         "pointRendering": {
             "0": {
@@ -9269,6 +9251,9 @@
         "presets": {
             "0": {
                 "title": "una escuela primaria o secundaria"
+            },
+            "1": {
+                "title": "una escuela primaria o secundaria"
             }
         },
         "tagRenderings": {
@@ -9369,30 +9354,21 @@
             "target-audience": {
                 "mappings": {
                     "0": {
-                        "then": "Esta es una escuela donde los alumnos estudian habilidades en su nivel adecuado para su edad. <div>Hay pocas o ninguna instalación especial para atender a alumnos con necesidades especiales o las instalaciones son improvisadas</div>"
-                    },
-                    "1": {
                         "then": "Esta es una escuela para alumnos sin necesidades especiales<div class='subtle'>Esto incluye alumnos que pueden seguir los cursos con pequeñas medidas improvisadas</div>"
                     },
-                    "2": {
-                        "then": "Esta es una escuela donde se enseñan habilidades a adultos en el nivel especificado."
-                    },
-                    "3": {
-                        "then": "Esta es una escuela para alumnos con autismo"
-                    },
-                    "4": {
+                    "1": {
                         "then": "Esta es una escuela para alumnos con dificultades de aprendizaje"
                     },
-                    "5": {
+                    "2": {
                         "then": "Esta es una escuela para alumnos ciegos o con discapacidad visual"
                     },
-                    "6": {
+                    "3": {
                         "then": "Esta es una escuela para alumnos sordos o con discapacidad auditiva"
                     },
-                    "7": {
+                    "4": {
                         "then": "Esta es una escuela para alumnos con discapacidad"
                     },
-                    "8": {
+                    "5": {
                         "then": "Esta es una escuela para alumnos con necesidades especiales"
                     }
                 },

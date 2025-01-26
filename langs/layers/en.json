@@ -2874,6 +2874,36 @@
             "render": "Charging station"
         }
     },
+    "childcare": {
+        "name": "Childcare",
+        "presets": {
+            "0": {
+                "title": "a childcare"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "How much kids (at most) can be enrolled here?",
+                "render": "This facility has room for {capacity} kids"
+            },
+            "name": {
+                "question": "What is the name of this facility?",
+                "render": "This facility is named <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "When is this childcare opened?"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Childcare {name}"
+                }
+            }
+        }
+    },
     "cinema": {
         "description": "A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US.",
         "name": "Cinema",
@@ -6604,53 +6634,6 @@
             "render": "Kerb"
         }
     },
-    "kindergarten_childcare": {
-        "name": "Kindergartens and childcare",
-        "presets": {
-            "0": {
-                "title": "a kindergarten"
-            },
-            "1": {
-                "title": "a childcare"
-            }
-        },
-        "tagRenderings": {
-            "capacity": {
-                "question": "How much kids (at most) can be enrolled here?",
-                "render": "This facility has room for {capacity} kids"
-            },
-            "childcare-type": {
-                "mappings": {
-                    "0": {
-                        "then": "This is a kindergarten (also known as <i>preschool</i>) where small kids receive early education."
-                    },
-                    "1": {
-                        "then": "This is a childcare facility, such as a nursery or daycare where small kids are looked after. They do not offer an education and are ofter run as private businesses"
-                    }
-                },
-                "question": "What type of facility is this?"
-            },
-            "name": {
-                "question": "What is the name of this facility?",
-                "render": "This facility is named <b>{name}</b>"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "When is this childcare opened?"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Kindergarten {name}"
-                },
-                "1": {
-                    "then": "Childcare {name}"
-                }
-            }
-        }
-    },
     "last_click": {
         "pointRendering": {
             "0": {
@@ -9483,9 +9466,45 @@
         }
     },
     "school": {
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "All levels of education"
+                    },
+                    "1": {
+                        "question": "Has a kindergarten"
+                    },
+                    "2": {
+                        "question": "Primary school"
+                    },
+                    "3": {
+                        "question": "Secondary school with all grades"
+                    },
+                    "4": {
+                        "question": "Has first grade"
+                    },
+                    "5": {
+                        "question": "Has second grade"
+                    },
+                    "6": {
+                        "question": "Has third grade"
+                    },
+                    "7": {
+                        "question": "This school offers post-secondary education (e.g. a seventh or eight specialisation year)"
+                    },
+                    "8": {
+                        "question": "Unknown school level"
+                    }
+                }
+            }
+        },
         "name": "Primary and secondary schools",
         "presets": {
             "0": {
+                "title": "a primary or secondary school"
+            },
+            "1": {
                 "title": "a primary or secondary school"
             }
         },
@@ -9537,6 +9556,20 @@
                 },
                 "question": "Which genders can enroll at this school?"
             },
+            "orientation_belgium": {
+                "mappings": {
+                    "0": {
+                        "then": "Prepares for an academic study at university"
+                    },
+                    "1": {
+                        "then": "Prepares for a professional study at a college"
+                    },
+                    "2": {
+                        "then": "Prepares for a job"
+                    }
+                },
+                "question": "What does this school train pupils for?"
+            },
             "pedagogy": {
                 "mappings": {
                     "0": {
@@ -9587,30 +9620,21 @@
             "target-audience": {
                 "mappings": {
                     "0": {
-                        "then": "This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>"
-                    },
-                    "1": {
                         "then": "This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>"
                     },
-                    "2": {
-                        "then": "This is a school where adults are taught skills on the level as specified."
-                    },
-                    "3": {
-                        "then": "This is a school for students with autism"
-                    },
-                    "4": {
+                    "1": {
                         "then": "This is a school for students with learning disabilities"
                     },
-                    "5": {
+                    "2": {
                         "then": "This is a school for blind students or students with sight impairments"
                     },
-                    "6": {
+                    "3": {
                         "then": "This is a school for deaf students or students with hearing impairments"
                     },
-                    "7": {
+                    "4": {
                         "then": "This is a school for students with disabilities"
                     },
-                    "8": {
+                    "5": {
                         "then": "This is a school for students with special needs"
                     }
                 },

@@ -2874,6 +2874,36 @@
             "render": "Ladestation"
         }
     },
+    "childcare": {
+        "name": "Kinderkrippen",
+        "presets": {
+            "0": {
+                "title": "eine Kinderkrippe"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "Wie viele Kinder können hier maximal angemeldet werden?",
+                "render": "Diese Einrichtung bietet Platz für {capacity} Kinder"
+            },
+            "name": {
+                "question": "Wie lautet der Name dieser Einrichtung?",
+                "render": "Diese Einrichtung hat den Namen <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kinderkrippe {name}"
+                }
+            }
+        }
+    },
     "cinema": {
         "description": "Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind.",
         "name": "Kino",
@@ -6573,53 +6603,6 @@
             "render": "Bordstein"
         }
     },
-    "kindergarten_childcare": {
-        "name": "Kindergärten und Kinderkrippen",
-        "presets": {
-            "0": {
-                "title": "einen Kindergarten"
-            },
-            "1": {
-                "title": "eine Kinderkrippe"
-            }
-        },
-        "tagRenderings": {
-            "capacity": {
-                "question": "Wie viele Kinder können hier maximal angemeldet werden?",
-                "render": "Diese Einrichtung bietet Platz für {capacity} Kinder"
-            },
-            "childcare-type": {
-                "mappings": {
-                    "0": {
-                        "then": "Dies ist ein Kindergarten (auch bekannt als <i>Vorschule</i>), in dem kleine Kinder eine Früherziehung erhalten."
-                    },
-                    "1": {
-                        "then": "Dies ist eine Kinderbetreuungseinrichtung, z. B. ein Kinderkrippe oder eine Tagesmutter, in der Kleinkinder betreut werden. Sie bieten keine Ausbildung an und werden oft als Privatunternehmen geführt"
-                    }
-                },
-                "question": "Um welche Art von Einrichtung handelt es sich?"
-            },
-            "name": {
-                "question": "Wie lautet der Name dieser Einrichtung?",
-                "render": "Diese Einrichtung hat den Namen <b>{name}</b>"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Kindergarten {name}"
-                },
-                "1": {
-                    "then": "Kinderkrippe {name}"
-                }
-            }
-        }
-    },
     "last_click": {
         "pointRendering": {
             "0": {
@@ -9456,6 +9439,9 @@
         "presets": {
             "0": {
                 "title": "eine Grundschule oder weiterführende Schule"
+            },
+            "1": {
+                "title": "eine Grundschule oder weiterführende Schule"
             }
         },
         "tagRenderings": {
@@ -9556,30 +9542,21 @@
             "target-audience": {
                 "mappings": {
                     "0": {
-                        "then": "Es handelt sich um eine Schule, in der die Schüler Fähigkeiten auf ihrem altersgemäßen Niveau erlernen. <div>Es gibt wenig oder keine speziellen Einrichtungen für Schüler mit besonderen Bedürfnissen oder die Einrichtungen sind ad-hoc</div>"
-                    },
-                    "1": {
                         "then": "Dies ist eine Schule für Schüler ohne besondere Bedürfnisse<div class='subtle'>Dazu gehören auch Schüler, die den Kursen mit kleinen Ad-hoc-Maßnahmen folgen können</div>"
                     },
-                    "2": {
-                        "then": "Dies ist eine Schule, in der Erwachsene auf dem angegebenen Niveau unterrichtet werden."
-                    },
-                    "3": {
-                        "then": "Dies ist eine Schule für Schüler mit Autismus"
-                    },
-                    "4": {
+                    "1": {
                         "then": "Dies ist eine Schule für Schüler mit Lernschwierigkeiten"
                     },
-                    "5": {
+                    "2": {
                         "then": "Dies ist eine Schule für blinde oder sehbehinderte Schüler"
                     },
-                    "6": {
+                    "3": {
                         "then": "Dies ist eine Schule für gehörlose oder hörgeschädigte Schüler"
                     },
-                    "7": {
+                    "4": {
                         "then": "Dies ist eine Schule für Schüler mit Behinderungen"
                     },
-                    "8": {
+                    "5": {
                         "then": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen"
                     }
                 },

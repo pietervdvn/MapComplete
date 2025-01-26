@@ -11,7 +11,12 @@
   },
   "description": "Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles",
   "source": {
-    "osmTags": "amenity=school"
+    "osmTags": {
+      "or": [
+        "amenity=school",
+        "amenity=kindergarten"
+      ]
+    }
   },
   "calculatedTags": [
     "_enclosing=enclosingFeatures(feat)('school').map(f => f.feat.properties.id)",
@@ -58,7 +63,32 @@
           "color": "white"
         },
         {
-          "icon": "./assets/layers/school/school.svg"
+          "icon": {
+            "render": "./assets/layers/school/school.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "amenity=kindergarten",
+                    "school=kindergarten"
+                  ]
+                },
+                "then": "./assets/layers/school/kindergarten.svg"
+              },
+              {
+                "if": "school:orientation=academic",
+                "then": "./assets/layers/school/school_academic.svg"
+              },
+              {
+                "if": "school~.*secondary.*",
+                "then": "./assets/layers/school/school.svg"
+              },
+              {
+                "if": "school~.*primary.*",
+                "then": "./assets/layers/school/school_primary.svg"
+              }
+            ]
+          }
         }
       ]
     }
@@ -70,6 +100,25 @@
     }
   ],
   "presets": [
+    {
+      "title": {
+        "en": "a primary or secondary school",
+        "nl": "een lagere of middelbare school",
+        "de": "eine Grundschule oder weiterführende Schule",
+        "ru": "детский сад",
+        "ca": "una escola de primària o secundària",
+        "pl": "przedszkole",
+        "cs": "základní nebo střední škola",
+        "es": "una escuela primaria o secundaria",
+        "fr": "une école primaire ou secondaire"
+      },
+      "description": "A kindergarten (also known as <i>preschool</i>) is a school where small kids receive early education.",
+      "tags": [
+        "amenity=kindergarten",
+        "school=kindergarten",
+        "isced:level=0"
+      ]
+    },
     {
       "tags": [
         "amenity=school",
@@ -156,10 +205,10 @@
         "cs": "Jaký stupeň vzdělání se na této škole poskytuje?",
         "es": "¿Qué nivel de educación se imparte en esta escuela?"
       },
-      "filter": true,
       "mappings": [
         {
           "if": "school=kindergarten",
+          "alsoShowIf": "amenity=kindergarten",
           "then": {
             "en": "This is a school with a kindergarten section where young kids receive some education which prepares reading and writing.",
             "nl": "Dit is een school die ook een kleuterschool bevat",
@@ -172,6 +221,9 @@
         },
         {
           "if": "school=primary",
+          "addExtraTags": [
+            "amenity=school"
+          ],
           "then": {
             "en": "This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>",
             "nl": "Dit is een lagere school",
@@ -184,6 +236,9 @@
         },
         {
           "if": "school=secondary",
+          "addExtraTags": [
+            "amenity=school"
+          ],
           "then": {
             "en": "This is a secondary school which offers all grades",
             "nl": "Dit is een middelbare school die alle schooljaren aanbiedt (dus van het eerste tot en met het zesde middelbaar)",
@@ -196,6 +251,9 @@
         },
         {
           "if": "school=lower_secondary",
+          "addExtraTags": [
+            "amenity=school"
+          ],
           "then": {
             "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade",
             "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>",
@@ -208,6 +266,9 @@
         },
         {
           "if": "school=middle_secondary",
+          "addExtraTags": [
+            "amenity=school"
+          ],
           "then": {
             "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade",
             "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>",
@@ -220,6 +281,9 @@
         },
         {
           "if": "school=upper_secondary",
+          "addExtraTags": [
+            "amenity=school"
+          ],
           "then": {
             "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade",
             "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>",
@@ -232,6 +296,9 @@
         },
         {
           "if": "school=post_secondary",
+          "addExtraTags": [
+            "amenity=school"
+          ],
           "then": {
             "en": "This school offers post-secondary education (e.g. a seventh or eight specialisation year)",
             "nl": "Deze school biedt post-secundair onderwijs (bijvoorbeeld <b>specialisatiejaren</b>)",
@@ -244,6 +311,43 @@
         }
       ],
       "multiAnswer": true
+    },
+    {
+      "id": "orientation_belgium",
+      "question": {
+        "en": "What does this school train pupils for?",
+        "nl": "Waarop wordt een leerling voorbereid?"
+      },
+      "condition": {
+        "or": [
+          "school~i~(.+;)?upper_secondary(;.+)?",
+          "school~i~(.+;)?secondary(;.+)?"
+        ]
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "school:orientation=academic",
+          "then": {
+            "en": "Prepares for an academic study at university",
+            "nl": "<b>Doorstroomfinaliteit</b>: een opleiding hier bereidt voor op universitaire studies"
+          }
+        },
+        {
+          "if": "school:orientation=professional",
+          "then": {
+            "en": "Prepares for a professional study at a college",
+            "nl": "<b>Dubbele finaliteit</b>: een opleiding hier bereidt voor op verdere studie (bv. aan een hogeschool of secundair-na-secundair) of op de arbeidsmarkt"
+          }
+        },
+        {
+          "if": "school:orientation=vocational",
+          "then": {
+            "en": "Prepares for a job",
+            "nl": "<b>Arbeidsfinaliteit</b>: een opleiding hier bereidt voor op de arbeidsmarkt"
+          }
+        }
+      ]
     },
     {
       "id": "gender",
@@ -410,7 +514,6 @@
     },
     {
       "id": "target-audience",
-      "condition": "school:for~*",
       "question": {
         "en": "Does this school target students with a special need? Which structural facilities does this school have?",
         "nl": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?",
@@ -436,20 +539,8 @@
       },
       "mappings": [
         {
-          "if": "school:for=",
-          "then": {
-            "en": "This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>",
-            "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte. <div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>",
-            "de": "Es handelt sich um eine Schule, in der die Schüler Fähigkeiten auf ihrem altersgemäßen Niveau erlernen. <div>Es gibt wenig oder keine speziellen Einrichtungen für Schüler mit besonderen Bedürfnissen oder die Einrichtungen sind ad-hoc</div>",
-            "fr": "C'est un établissement scolaire où les étudiants acquièrent des compétences à un niveau adapté à leur âge. <div>Il y a peu ou pas d'adaptations spéciales pour aider les étudiants ayant des besoins particuliers, ou les installations sont ad-hoc</div> Remark: isn't it contradictory to say there's no special facility + the facilities are ad-hoc?",
-            "ca": "Aquesta és una escola on els estudiants estudien habilitats al nivell adequat per a la seva edat. <div>Hi ha poques o cap instal·lació especial per atendre els estudiants amb necessitats especials o les instal·lacions són ad-hoc</div>",
-            "cs": "Jedná se o školu, kde studenti studují dovednosti na úrovni odpovídající jejich věku. <div>Existuje málo nebo žádná speciální zařízení pro studenty se speciálními potřebami nebo zařízení jsou ad hoc</div>",
-            "es": "Esta es una escuela donde los alumnos estudian habilidades en su nivel adecuado para su edad. <div>Hay pocas o ninguna instalación especial para atender a alumnos con necesidades especiales o las instalaciones son improvisadas</div>"
-          },
-          "hideInAnswer": true
-        },
-        {
           "if": "school:for=mainstream",
+          "alsoShowIf": "school:for=",
           "then": {
             "en": "This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>",
             "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte<div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>",
@@ -458,31 +549,6 @@
             "ca": "Aquesta és una escola per a estudiants sense necessitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites mesures</div>",
             "cs": "Toto je škola pro studenty bez speciálních potřeb<div class='subtle'>To zahrnuje studenty, kteří mohou absolvovat kurzy s malými, ad hoc měřeními</div>",
             "es": "Esta es una escuela para alumnos sin necesidades especiales<div class='subtle'>Esto incluye alumnos que pueden seguir los cursos con pequeñas medidas improvisadas</div>"
-          }
-        },
-        {
-          "if": "school:for=adults",
-          "then": {
-            "en": "This is a school where adults are taught skills on the level as specified.",
-            "nl": "Deze school richt zich op volwassenen",
-            "de": "Dies ist eine Schule, in der Erwachsene auf dem angegebenen Niveau unterrichtet werden.",
-            "fr": "C'est un établissement où des adultes sont formés au niveau mentionné.",
-            "ca": "Aquesta és una escola on els adults reben competències al nivell especificat.",
-            "cs": "Jedná se o školu, kde se dospělí učí dovednostem na stanovené úrovni.",
-            "es": "Esta es una escuela donde se enseñan habilidades a adultos en el nivel especificado."
-          }
-        },
-        {
-          "if": "school:for=autism",
-          "then": {
-            "en": "This is a school for students with autism",
-            "nl": "Deze school richt zich op studenten in het autisme-spectrum",
-            "de": "Dies ist eine Schule für Schüler mit Autismus",
-            "fr": "C'est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)",
-            "ca": "Aquesta és una escola per a estudiants amb autisme",
-            "pl": "To jest szkoła dla uczniów z autyzmem",
-            "cs": "Jedná se o školu pro studenty s autismem",
-            "es": "Esta es una escuela para alumnos con autismo"
           }
         },
         {
@@ -606,7 +672,97 @@
     }
   ],
   "filter": [
-    "pedagogy"
+    "pedagogy",
+    {
+      "id": "level",
+      "options": [
+        {
+          "question": {
+            "en": "All levels of education"
+          }
+        },
+        {
+          "question": {
+            "en": "Has a kindergarten",
+            "nl": "Kleuterafdeling"
+          },
+          "osmTags": {
+            "or": [
+              "school~i~(.+;)?kindergarten(;.+)?",
+              "amenity=kindergarten"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Primary school",
+            "nl": "Lagere school"
+          },
+          "osmTags": "school~i~(.+;)?primary(;.+)?"
+        },
+        {
+          "question": {
+            "en": "Secondary school with all grades",
+            "nl": "Secundaire school met alle graden"
+          },
+          "osmTags": "school~i~(.+;)?secondary(;.+)?"
+        },
+        {
+          "question": {
+            "en": "Has first grade",
+            "nl": "Heeft eerste graad"
+          },
+          "osmTags": {
+            "or": [
+              "school~i~(.+;)?lower_secondary(;.+)?",
+              "school~i~(.+;)?secondary(;.+)?"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Has second grade",
+            "nl": "Heeft tweede graad"
+          },
+          "osmTags": {
+            "or": [
+              "school~i~(.+;)?middle_secondary(;.+)?",
+              "school~i~(.+;)?secondary(;.+)?"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Has third grade",
+            "nl": "Heeft derde graad"
+          },
+          "osmTags": {
+            "or": [
+              "school~i~(.+;)?upper_secondary(;.+)?",
+              "school~i~(.+;)?secondary(;.+)?"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "This school offers post-secondary education (e.g. a seventh or eight specialisation year)",
+            "nl": "Heeft specialisatiejaar"
+          },
+          "osmTags": "school~i~.+;)?post_secondary(;.+"
+        },
+        {
+          "question": {
+            "en": "Unknown school level"
+          },
+          "osmTags": {
+            "and": [
+              "school=",
+              "amenity!=kindergarten"
+            ]
+          }
+        }
+      ]
+    }
   ],
   "allowMove": {
     "enableImproveAccuracy": true,
