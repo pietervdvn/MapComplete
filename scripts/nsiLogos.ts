@@ -7,8 +7,8 @@ import { Utils } from "../src/Utils"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { FilterConfigOptionJson } from "../src/Models/ThemeConfig/Json/FilterConfigJson"
 import { TagUtils } from "../src/Logic/Tags/TagUtils"
-import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 import { openSync, readSync } from "node:fs"
+import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 
 class NsiLogos extends Script {
     constructor() {
@@ -149,20 +149,21 @@ class NsiLogos extends Script {
         const filterOptions: FilterConfigOptionJson[] = items.map((item) => {
             return {
                 question: item.displayName,
-                icon: nsi.getIconUrl(item, type),
+                icon: nsi.getIconUrl(item),
                 osmTags: NameSuggestionIndex.asFilterTags(item),
             }
         })
         const mappings = items.map((item) => ({
             if: NameSuggestionIndex.asFilterTags(item),
-            then: nsi.getIconUrl(item, type),
-        }))
+            then: nsi.getIconUrl(item)
+        })).filter(mapping => mapping.then !== undefined)
 
         console.log("Checking for shadow-mappings... This will take a while")
+        let deleted = 0
         for (let i = mappings.length - 1; i >= 0; i--) {
             const condition = TagUtils.Tag(mappings[i].if)
             if (i % 100 === 0) {
-                console.log("Checking for shadow-mappings...", i, "/", mappings.length)
+                console.log("Checking for shadow-mappings...", i, "/", mappings.length, "deleted", deleted)
             }
             const shadowsSomething = mappings.some((m, j) => {
                 if (i === j) {
@@ -173,6 +174,7 @@ class NsiLogos extends Script {
             // If this one matches, the other one will match as well
             // We can thus remove this one in favour of the other one
             if (shadowsSomething) {
+                deleted++
                 mappings.splice(i, 1)
             }
         }
@@ -238,7 +240,7 @@ class NsiLogos extends Script {
         const allFiles = ScriptUtils.readDirRecSync(NsiLogos.path, 1)
         const ids = new Map<string, string>()
         for (const f of allFiles) {
-            const match = f.match("^.*/\([a-zA-Z0-9-]+\)\(.[a-z]{3}\)?")
+            const match = f.match("^.*/([a-zA-Z0-9-]+)(.[a-z]{3})?")
             const id = match[1]
             ids.set(id, f)
         }
@@ -262,7 +264,7 @@ class NsiLogos extends Script {
         const allFiles = ScriptUtils.readDirRecSync(NsiLogos.path, 1)
         let pruned = 0
         for (const f of allFiles) {
-            const match = f.match("^.*/\([a-zA-Z0-9-]+\)\(.[a-z]{3}\)?")
+            const match = f.match("^.*/([a-zA-Z0-9-]+)(.[a-z]{3})?")
             const id = match[1]
             if (!ids.has(id)) {
                 console.log("Obsolete file:", f, id)
@@ -326,7 +328,6 @@ class NsiLogos extends Script {
     private async patchNsiFile(){
         const files = NsiLogos.downloadedFiles()
         const path = "./public/assets/data/nsi/nsi.min.json"
-        const pathOut = "./public/assets/data/nsi/nsi.patched.json"
 
         const nsi = JSON.parse(readFileSync(path, "utf8"))
         const types = nsi.nsi
@@ -338,7 +339,7 @@ class NsiLogos extends Script {
                 if(!file){
                     continue
                 }
-                const extension = file.match(".*\.\([a-z]{3}\)")[1]
+                const extension = file.match(/.*\.([a-z]{3})/)[1]
                 nsiItem["ext"] = extension
                 delete nsiItem.fromTemplate
             }

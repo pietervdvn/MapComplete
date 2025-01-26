@@ -216,7 +216,7 @@ export default class NameSuggestionIndex {
                 const frequency = frequencies[nsiItem.displayName]
                 const iconUrl = this.getIconExternalUrl(nsiItem, type)
                 const hasIcon = iconUrl !== undefined
-                const icon = hasIcon ? this.getIconUrl(nsiItem, type) : undefined
+                const icon = hasIcon ? this.getIconUrl(nsiItem) : undefined
                 mappings.push({
                     if: new Tag(type, tags[type]),
                     addExtraTags: Object.keys(tags)
@@ -399,9 +399,15 @@ export default class NameSuggestionIndex {
         return logos?.facebook ?? logos?.wikidata
     }
 
-    public getIconUrl(nsiItem: NSIItem, type: string) {
+    public getIconUrl(nsiItem: NSIItem): string | undefined {
+        if (!nsiItem.ext) {
+            // No extension -> there is no logo
+            return undefined
+        }
         return "./assets/data/nsi/logos/" + nsiItem.id + "." + nsiItem.ext
     }
+
+
     private static readonly brandPrefix = ["name", "alt_name", "operator", "brand"] as const
 
     /**
