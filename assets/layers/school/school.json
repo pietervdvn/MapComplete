@@ -101,6 +101,21 @@
   ],
   "presets": [
     {
+      "tags": [
+        "amenity=school",
+        "fixme=Added with MapComplete, the precise geometry should still be drawn"
+      ],
+      "title": {
+        "en": "a primary or secondary school",
+        "nl": "een lagere of middelbare school",
+        "de": "eine Grundschule oder weiterführende Schule",
+        "fr": "une école primaire ou secondaire",
+        "ca": "una escola de primària o secundària",
+        "cs": "základní nebo střední škola",
+        "es": "una escuela primaria o secundaria"
+      }
+    },
+    {
       "title": {
         "en": "a primary or secondary school",
         "nl": "een lagere of middelbare school",
@@ -118,21 +133,6 @@
         "school=kindergarten",
         "isced:level=0"
       ]
-    },
-    {
-      "tags": [
-        "amenity=school",
-        "fixme=Added with MapComplete, the precise geometry should still be drawn"
-      ],
-      "title": {
-        "en": "a primary or secondary school",
-        "nl": "een lagere of middelbare school",
-        "de": "eine Grundschule oder weiterführende Schule",
-        "fr": "une école primaire ou secondaire",
-        "ca": "una escola de primària o secundària",
-        "cs": "základní nebo střední škola",
-        "es": "una escuela primaria o secundaria"
-      }
     }
   ],
   "tagRenderings": [
