@@ -41,7 +41,8 @@ class DownloadCommunityIndex extends Script {
     private static stripResourcesObj(resources: Readonly<Record<string, Readonly<CommunityResource>>>) {
         const stripped: Record<string, CommunityResource> = {}
         for (const k in resources) {
-            if(k === "twitter" || k === "facebook" || k === "x"){
+            const type = resources[k].type
+            if (type === "twitter" || type === "facebook" || type === "x") {
                 // These channels are toxic nowadays - we simply omit them
                 continue
             }
