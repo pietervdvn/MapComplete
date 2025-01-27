@@ -9,8 +9,6 @@ on:
 jobs:
   deploy_on_hetzner_single:
     runs-on: [ ubuntu-latest, hetzner-access ]
-
-    runs-on: [ ubuntu-latest, hetzner-access ]
     steps:
       - uses: actions/checkout@v3
 
