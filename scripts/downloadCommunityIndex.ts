@@ -2,7 +2,7 @@ import Script from "./Script"
 import { CommunityResource } from "../src/Logic/Web/CommunityIndex"
 import { Utils } from "../src/Utils"
 import { FeatureCollection, MultiPolygon, Polygon } from "geojson"
-import { writeFileSync } from "fs"
+import { existsSync, mkdirSync, writeFileSync } from "fs"
 import { GeoOperations } from "../src/Logic/GeoOperations"
 import { Tiles } from "../src/Models/TileRange"
 import ScriptUtils from "./ScriptUtils"
@@ -53,6 +53,9 @@ class DownloadCommunityIndex extends Script {
             id: string
         }>>(DownloadCommunityIndex.upstreamUrl + "completeFeatureCollection.json"
         )
+        if (!existsSync(targetDirectory)) {
+            mkdirSync(targetDirectory)
+        }
         const features = data.features
         const global = features.find(
             f => f.id === "Q2"
@@ -76,6 +79,7 @@ class DownloadCommunityIndex extends Script {
         const spread = GeoOperations.spreadIntoBboxes(local, DownloadCommunityIndex.targetZoomlevel)
         let written = 0
         let skipped = 0
+        const writtenTilesOverview: Record<number, number[]> = {}
         writeFileSync(targetDirectory + "local.geojson", JSON.stringify({ type: "FeatureCollection", features: local }))
         for (const tileIndex of spread.keys()) {
             const features = spread.get(tileIndex)
@@ -95,9 +99,16 @@ class DownloadCommunityIndex extends Script {
             })
             writeFileSync(path, JSON.stringify({ type: "FeatureCollection", features: clipped }), "utf8")
             written++
+            let yList = writtenTilesOverview[x]
+            if (!yList) {
+                yList = []
+                writtenTilesOverview[x] = yList
+            }
+            yList.push(y)
             console.log(`Written tile ${path}`)
         }
         console.log(`Created ${written} tiles, skipped ${skipped}`)
+        writeFileSync(targetDirectory + "/tiles_6_overview.json", JSON.stringify(writtenTilesOverview), "utf8")
     }
 
 

@@ -22,11 +22,14 @@ jobs:
         run: npm ci
         shell: bash
 
-      - name: update community index files
+      - name: create community index files
+        shell: bash
+        run: npm run download:community-index -- -- community-index/
+
+      - name: upload community index
         shell: bash
         run: |
-          mkdir community-index
-          npm run download:community-index -- -- community-index/
           zip community-index.zip community-index/*
           scp community-index.zip hetzner:data/
+          ssh hetzner "cd data && rm -rf community-index/ && unzip community-index.zip && rm community-index.zip"
           
