@@ -3,7 +3,7 @@ on:
     branches-ignore:
       - build/*
   schedule:
-    - cron: "* * * * 1"
+    - cron: "0 2 * * *"
 
 jobs:
   deploy_on_hetzner_single:
@@ -26,6 +26,7 @@ jobs:
         shell: bash
         run: |
           mkdir community-index
-          npm run download:community-index -- community-index/
+          npm run download:community-index -- -- community-index/
           zip community-index.zip community-index/*
           scp community-index.zip hetzner:data/
+          
