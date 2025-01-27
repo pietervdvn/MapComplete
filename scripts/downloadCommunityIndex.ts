@@ -90,12 +90,12 @@ class DownloadCommunityIndex extends Script {
             const clipped = GeoOperations.clipAllInBox(features, tileIndex)
             if (clipped.length === 0) {
                 skipped++
-                features.push(Tiles.asGeojson(tileIndex))
-                writeFileSync(`${targetDirectory + tileIndex}_skipped.geojson`, JSON.stringify({
-                    type: "FeatureCollection", features
-                }))
                 continue
             }
+            for (const f of clipped) {
+                f.properties.resources = DownloadCommunityIndex.stripResourcesObj(f.properties.resources)
+            }
+
             const [z, x, y] = Tiles.tile_from_index(tileIndex)
             const path = `${targetDirectory}/tile_${z}_${x}_${y}.geojson`
             clipped.forEach((f) => {
