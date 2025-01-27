@@ -9,6 +9,8 @@ The theme introduction reads:
 This theme contains the following layers:
 
  - [map](../Layers/map.md)
+ - [tactile_map](../Layers/tactile_map.md)
+ - [tactile_model](../Layers/tactile_model.md)
 
 Available languages:
 
@@ -28,6 +30,7 @@ Available languages:
  - pl
  - hu
  - uk
+ - ko
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

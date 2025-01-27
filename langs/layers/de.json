@@ -263,7 +263,7 @@
         }
     },
     "aerialway": {
-        "description": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. ",
+        "description": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte.",
         "name": "Seilbahnen",
         "pointRendering": {
             "1": {
@@ -305,7 +305,7 @@
                         "then": "Es handelt sich um eine Seilbahn, bei der die Kabinen in ständigen Kreisen fahren"
                     },
                     "10": {
-                        "then": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren) "
+                        "then": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren)"
                     },
                     "2": {
                         "then": "Ein offener Sessellift mit Sitzgelegenheiten und Zugang zur Außenluft."
@@ -326,7 +326,7 @@
                         "then": "Ein Schlepplift mit einem Teller für jeweils einen Passagier"
                     },
                     "8": {
-                        "then": "Eine Schleppleine, die Skifahrer mit sich zieht"
+                        "then": "Eine Zugleine, an der sich Skifahrer festhalten oder sich befestigen können"
                     },
                     "9": {
                         "then": "Ein magic carpet (ein Förderband auf dem Boden)"
@@ -389,7 +389,7 @@
         }
     },
     "animal_shelter": {
-        "description": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen. ",
+        "description": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen.",
         "name": "Tierheime",
         "presets": {
             "0": {
@@ -906,25 +906,25 @@
             "access": {
                 "mappings": {
                     "0": {
-                        "then": "Öffentlich"
+                        "then": "Dieses Grillgerät kann von jedem benutzt werden"
                     },
                     "1": {
-                        "then": "Kein Zugang"
+                        "then": "Dieses Grillgerät darf von niemandem benutzt werden"
                     },
                     "2": {
-                        "then": "Privat"
+                        "then": "Dieses Grillgerät ist privat"
                     },
                     "3": {
-                        "then": "Zugang bis auf Widerruf"
+                        "then": "Dieses Barbecue kann von jedem benutzt werden, aber der Besitzer kann den Zugang jederzeit widerrufen"
                     },
                     "4": {
-                        "then": "Zugang nur für Kunden"
+                        "then": "Dieser Grill kann nur von Kunden genutzt werden"
                     },
                     "5": {
-                        "then": "Zugang nur für Berechtigte"
+                        "then": "Dieses Barbecue darf nur von autorisierten Personen benutzt werden"
                     }
                 },
-                "question": "Was ist der erlaubte Zugang?"
+                "question": "Wer darf diesen Grill benutzen?"
             },
             "covered": {
                 "mappings": {
@@ -940,24 +940,48 @@
             "fuel": {
                 "mappings": {
                     "0": {
-                        "then": "Holz"
+                        "then": "Dieser Grill wird mit Holz betrieben"
                     },
                     "1": {
-                        "then": "Kohle"
+                        "then": "Dieser Grill wird mit Kohle betrieben"
                     },
                     "2": {
-                        "then": "Elektronisch"
+                        "then": "Dieser Grill wird mit Strom betrieben"
                     },
                     "3": {
-                        "then": "Gas"
+                        "then": "Dieser Grill wird mit Gas betrieben"
                     }
                 },
-                "question": "Womit wird der Grill befeuert?"
+                "question": "Womit wird dieser Grill angeheizt?"
             }
         },
         "title": {
             "render": "Grillstelle"
         }
+    },
+    "beehive": {
+        "description": "Ebene mit Bienenstöcken",
+        "name": "Bienenstöcke",
+        "presets": {
+            "0": {
+                "title": "ein Bienenstock"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Anzahl der Bienenstöcke"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Es gibt 1 Bienenstock"
+                    }
+                },
+                "question": "Wie viele Bienenstöcke gibt es?",
+                "render": "Es gibt {capacity} Bienenstöcke"
+            }
+        },
+        "title": "Bienenstock"
     },
     "bench": {
         "description": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
@@ -1612,6 +1636,7 @@
                     }
                 },
                 "question": "Was ist die Art dieses Fahrrad-Parkplatzes?",
+                "questionHint": "Hier geht es um das physische Gerät, in das man sein Fahrrad stellt und mit dem man es abschließt",
                 "render": "Dies ist ein Fahrrad-Parkplatz der Art: {bicycle_parking}"
             },
             "Capacity": {
@@ -1642,18 +1667,46 @@
                 },
                 "question": "Hat der Parkplatz Stellflächen für Lastenfahrräder?"
             },
-            "Is covered?": {
+            "charge": {
+                "question": "Wie viel kostet es, Ihr Fahrrad hier zu parken?",
+                "questionHint": "Das ist der Betrag, der für ein einzelnes Fahrrad berechnet wird",
+                "render": "Das Parken Ihres Fahrrads kostet {charge}"
+            },
+            "covered_and_building": {
                 "mappings": {
                     "0": {
-                        "then": "Der Parkplatz ist überdacht"
+                        "then": "Dies ist ein Fahrradschuppen (mit Wänden an mindestens drei Seiten)"
                     },
                     "1": {
+                        "then": "Dies ist ein überdachter Fahrradabstellplatz; das Dach dient nur dem Fahrradabstellplatz"
+                    },
+                    "2": {
+                        "then": "Dieser Fahrradabstellplatz befindet sich in einem Gebäude hinter einer Tür oder einem Tor"
+                    },
+                    "3": {
+                        "then": "Dieser Fahrradabstellplatz befindet sich unter (einem Teil) eines Gebäudes"
+                    },
+                    "4": {
+                        "then": "Der Parkplatz ist überdacht"
+                    },
+                    "5": {
                         "then": "Der Parkplatz ist nicht überdacht"
                     }
                 },
-                "question": "Ist der Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Parkplätze in Innenräumen."
+                "question": "Ist der Parkplatz überdacht?"
             },
-            "Underground?": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Man muss <b>zahlen</b>, um den Fahrradparkplatz zu nutzen"
+                    },
+                    "1": {
+                        "then": "Die Nutzung ist kostenlos"
+                    }
+                },
+                "question": "Sind die Fahrradparkplätze kostenlos zu benutzen?"
+            },
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "In einer Tiefgarage"
@@ -1669,22 +1722,6 @@
                     }
                 },
                 "question": "Wo befinden sich diese Fahrradabstellplätze?"
-            },
-            "charge": {
-                "question": "Wie viel kostet es, Ihr Fahrrad hier zu parken?",
-                "questionHint": "Das ist der Betrag, der für ein einzelnes Fahrrad berechnet wird",
-                "render": "Das Parken Ihres Fahrrads kostet {charge}"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Man muss <b>zahlen</b>, um den Fahrradparkplatz zu nutzen"
-                    },
-                    "1": {
-                        "then": "Die Nutzung ist kostenlos"
-                    }
-                },
-                "question": "Sind die Fahrradparkplätze kostenlos zu benutzen?"
             },
             "maxstay": {
                 "question": "Was ist die maximal erlaubte Parkdauer?",
@@ -2059,7 +2096,7 @@
         }
     },
     "brothel": {
-        "description": "Eine Einrichtung, die speziell der Prostitution gewidmet ist. ",
+        "description": "Eine Einrichtung, die speziell der Prostitution gewidmet ist.",
         "name": "Bordelle",
         "presets": {
             "0": {
@@ -2288,6 +2325,28 @@
                 }
             },
             "render": "Wohnmobilstellplatz {name}"
+        }
+    },
+    "charge_point": {
+        "description": "Ebene, die einzelne Ladepunkte innerhalb einer Ladestation anzeigt",
+        "name": "Ladesäulen",
+        "presets": {
+            "0": {
+                "description": "Füge eine einzelne Ladesäule innerhalb einer größeren Ladestation hinzu",
+                "title": "eine Ladesäule"
+            }
+        },
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referenznummer der Ladesäule, z. B. 2126"
+                },
+                "question": "Wie lautet die Referenznummer dieser Ladesäule?",
+                "render": "Die Referenz dieser Ladesäule ist {ref}"
+            }
+        },
+        "title": {
+            "render": "Ladesäule"
         }
     },
     "charging_station": {
@@ -2691,15 +2750,6 @@
                 },
                 "question": "Muss man für die Nutzung dieser Ladestation bezahlen?"
             },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "Keine Höchstparkdauer"
-                    }
-                },
-                "question": "Wie lange darf man hier maximal parken?",
-                "render": "Die maximale Parkdauer beträgt <b>{canonical(maxstay)}</b>"
-            },
             "phone": {
                 "question": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?",
                 "render": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>"
@@ -2733,7 +2783,7 @@
                     },
                     "3": {
                         "mappings": {
-                            "then": "{{description}} liefert maximal {{commonOutput}} A"
+                            "then": "{{description}} liefert maximal {{commonOutput}}"
                         },
                         "question": "Welche Leistung liefert ein einzelner Stecker des Typs {{description}}?",
                         "render": "{{description}} liefert maximal {canonical({{key}}:output)}"
@@ -2824,8 +2874,38 @@
             "render": "Ladestation"
         }
     },
+    "childcare": {
+        "name": "Kinderkrippen",
+        "presets": {
+            "0": {
+                "title": "eine Kinderkrippe"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "Wie viele Kinder können hier maximal angemeldet werden?",
+                "render": "Diese Einrichtung bietet Platz für {capacity} Kinder"
+            },
+            "name": {
+                "question": "Wie lautet der Name dieser Einrichtung?",
+                "render": "Diese Einrichtung hat den Namen <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kinderkrippe {name}"
+                }
+            }
+        }
+    },
     "cinema": {
-        "description": " Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind",
+        "description": "Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind.",
         "name": "Kino",
         "tagRenderings": {
             "cinema_type": {
@@ -2882,7 +2962,7 @@
             },
             "max_bolts": {
                 "question": "Wie viele Haken haben die Routen in {title()} maximal?",
-                "render": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>"
+                "render": "Die Sportkletterrouten hier haben höchstens {climbing:bolts:max} Bohrhaken. <div class='subtle'>Dies gilt ohne Sicherungsstationen und gibt an, wie viele Expressschlingen ein Kletterer benötigt.</div>"
             },
             "max_difficulty": {
                 "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
@@ -2912,7 +2992,7 @@
                         "then": "Toprope-Klettern ist hier möglich"
                     },
                     "1": {
-                        "then": "Toprope-Climbing ist hier nicht möglich"
+                        "then": "Toprope-Klettern ist hier nicht möglich"
                     },
                     "2": {
                         "then": "Hier gibt es {climbing:toprope} Toprope-Routen"
@@ -3060,10 +3140,44 @@
                 },
                 "question": "Gibt es hier eine Speedkletter-Wand?"
             },
+            "auto_belay_lead": {
+                "mappings": {
+                    "0": {
+                        "then": "Es gibt keine Selbstsicherungen für das Vorstiegsklettern"
+                    },
+                    "1": {
+                        "then": "Es gibt eine Reihe von Selbstsicherungen für das Vorstiegsklettern"
+                    },
+                    "2": {
+                        "then": "Für jede Vorstiegskletterroute gibt es eine Selbstsicherung"
+                    }
+                },
+                "question": "Gibt es hier Selbstsicherungen für das Vorstiegsklettern?",
+                "render": "Es gibt {climbing:autobelay:sport} Selbstsicherungen für das Vorstiegsklettern"
+            },
+            "auto_belay_toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "Es gibt keine Selbstsicherungen für das Toprope-Klettern"
+                    },
+                    "1": {
+                        "then": "Es gibt eine Reihe von Selbstsicherungen für das Toprope-Klettern"
+                    },
+                    "2": {
+                        "then": "Für jede Toprope-Route gibt es eine Selbstsicherung , aber auch manuelles Sichern ist möglich"
+                    },
+                    "3": {
+                        "then": "Klettersteige können nur mit Selbstsicherung geklettert werden"
+                    }
+                },
+                "question": "Gibt es hier Selbstsicherungen  für das Toprope-Klettern?",
+                "questionHint": "Ausgenommen Selbstsicherungen, die nur für das Speedklettern gedacht sind",
+                "render": "Es gibt {climbing:autobelay:toprope} Selbstsicherungsgeräte für das Toprope-Klettern"
+            },
             "belay_device_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Jeder Seil hat ein Sicherungsgerät"
+                        "then": "Jedes Seil hat ein Sicherungsgerät"
                     },
                     "1": {
                         "then": "Ein Sicherungsgerät kann hier kostenlos ausgeliehen werden"
@@ -3078,7 +3192,7 @@
                         "then": "Ein Sicherungsgerät kann hier <b>nicht</b> ausgeliehen werden"
                     }
                 },
-                "question": "Kann man hier ein Sicherungsgerät ausleihen?"
+                "question": "Kann man hier ein Sicherungsgerät für die Kletterwand ausleihen?"
             },
             "harness_rental": {
                 "mappings": {
@@ -3095,7 +3209,7 @@
                         "then": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden"
                     }
                 },
-                "question": "Kann man hier einen Klettergurt ausleihen?"
+                "question": "Kann man hier einen Klettergurt für die Kletterwand ausleihen?"
             },
             "name": {
                 "question": "Wie heißt diese Kletterhalle?"
@@ -3115,7 +3229,7 @@
                         "then": "Ein Kletterseil kann hier <b>nicht</b> ausgeliehen werden"
                     }
                 },
-                "question": "Kann man hier ein Kletterseil ausleihen?"
+                "question": "Kann man hier ein Kletterseil für die Kletterwand ausleihen?"
             },
             "shoe_rental": {
                 "mappings": {
@@ -3132,7 +3246,7 @@
                         "then": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden"
                     }
                 },
-                "question": "Kann man hier Kletterschuhe ausleihen?"
+                "question": "Kann man hier Kletterschuhe für die Kletterwand ausleihen?"
             }
         },
         "title": {
@@ -3207,7 +3321,7 @@
                     }
                 },
                 "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
-                "render": "Diese Route hat {climbing:bolts} Haken <div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>"
+                "render": "Diese Route hat {climbing:bolts} Bohrhaken. <div class='subtle'>Dies ist ohne Sicherungsstationen und gibt an, wie viele Expressschlingen ein Kletterer benötigt.</div>"
             }
         },
         "title": {
@@ -3959,10 +4073,10 @@
                 },
                 "question": "Ist diese Straße beleuchtet?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Wie groß ist die Fahrbahnbreite dieser Straße (in Metern)?",
                 "questionHint": "Diese wird von Bordstein zu Bordstein gemessen und schließt daher die Breite von parallelen Parkspuren ein",
-                "render": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width:carriageway}m</strong>"
+                "render": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width}m</strong>"
             }
         },
         "title": {
@@ -4401,6 +4515,26 @@
                 "override": {
                     "question": "Ist die Trinkwasserstelle ganzjährig in Betrieb?"
                 }
+            },
+            "temperature-cold": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier wird eiskaltes Wasser bereitgestellt"
+                    },
+                    "1": {
+                        "then": "Hier steht aktiv gekühltes Wasser zur Verfügung"
+                    },
+                    "2": {
+                        "then": "Wasser mit Umgebungstemperatur (ohne aktive Kühlung oder Heizung) ist hier verfügbar"
+                    },
+                    "3": {
+                        "then": "Hier wird warmes Wasser bereitgestellt; das Wasser ist nicht gefährlich heiß"
+                    },
+                    "4": {
+                        "then": "Hier wird heißes Wasser bereitgestellt"
+                    }
+                },
+                "question": "Gibt es hier kaltes Wasser?"
             },
             "type": {
                 "mappings": {
@@ -4960,6 +5094,20 @@
                 "options": {
                     "0": {
                         "question": "Hat laktosefreie Angebote"
+                    }
+                }
+            },
+            "16": {
+                "options": {
+                    "0": {
+                        "question": "Hat Sitzgelegenheiten im Freien"
+                    }
+                }
+            },
+            "17": {
+                "options": {
+                    "0": {
+                        "question": "Hat Sitzplätze im Innenbereich"
                     }
                 }
             },
@@ -5540,6 +5688,26 @@
                     }
                 },
                 "question": "Liefert {title()} Essen nach Hause?"
+            },
+            "drive-through": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Fast-Food-Restaurant hat einen Drive-In"
+                    },
+                    "1": {
+                        "then": "Dieses Fast-Food-Restaurant hat keinen Drive-in"
+                    }
+                },
+                "question": "Hat dieses Fast-Food-Restaurant eine Durchfahrtsmöglichkeit?"
+            },
+            "drive-through-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Öffnungszeiten des Drive-Ins sind dieselben wie die des Restaurants"
+                    }
+                },
+                "question": "Wie sind die Öffnungszeiten des Drive-Ins?",
+                "render": "<h3>Öffnungszeiten der Drive-in-Filiale</h3> {opening_hours_table(opening_hours:drive_through)}"
             },
             "friture-oil": {
                 "mappings": {
@@ -6333,6 +6501,16 @@
             "render": "Informationstafel"
         }
     },
+    "insect_hotel": {
+        "description": "Ebene mit Insektenhotels",
+        "name": "Insektenhotels",
+        "presets": {
+            "0": {
+                "title": "Ein Insektenhotel"
+            }
+        },
+        "title": "Insektenhotel"
+    },
     "item_with_image": {
         "name": "Element mit mindestens einem Bild",
         "title": {
@@ -6423,53 +6601,6 @@
         },
         "title": {
             "render": "Bordstein"
-        }
-    },
-    "kindergarten_childcare": {
-        "name": "Kindergärten und Kinderkrippen",
-        "presets": {
-            "0": {
-                "title": "einen Kindergarten"
-            },
-            "1": {
-                "title": "eine Kinderkrippe"
-            }
-        },
-        "tagRenderings": {
-            "capacity": {
-                "question": "Wie viele Kinder können hier maximal angemeldet werden?",
-                "render": "Diese Einrichtung bietet Platz für {capacity} Kinder"
-            },
-            "childcare-type": {
-                "mappings": {
-                    "0": {
-                        "then": "Dies ist ein Kindergarten (auch bekannt als <i>Vorschule</i>), in dem kleine Kinder eine Früherziehung erhalten."
-                    },
-                    "1": {
-                        "then": "Dies ist eine Kinderbetreuungseinrichtung, z. B. ein Kinderkrippe oder eine Tagesmutter, in der Kleinkinder betreut werden. Sie bieten keine Ausbildung an und werden oft als Privatunternehmen geführt"
-                    }
-                },
-                "question": "Um welche Art von Einrichtung handelt es sich?"
-            },
-            "name": {
-                "question": "Wie lautet der Name dieser Einrichtung?",
-                "render": "Diese Einrichtung hat den Namen <b>{name}</b>"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Kindergarten {name}"
-                },
-                "1": {
-                    "then": "Kinderkrippe {name}"
-                }
-            }
         }
     },
     "last_click": {
@@ -7659,20 +7790,6 @@
                 },
                 "question": "Wie lautet der Name der Apotheke?",
                 "render": "Der Name der Apotheke lautet {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Die Apotheke ist für Rollstuhlfahrer leicht zugänglich"
-                    },
-                    "1": {
-                        "then": "Die Apotheke ist für Rollstuhlfahrer nur schwer zugänglich"
-                    },
-                    "2": {
-                        "then": "Die Apotheke ist für Rollstuhlfahrer nur eingeschränkt zugänglich"
-                    }
-                },
-                "question": "Ist die Apotheke für Rollstuhlfahrer leicht zugänglich?"
             }
         },
         "title": {
@@ -8656,11 +8773,23 @@
             "mastodon": {
                 "question": "Wie lautet der Mastodon-Handle von {title()}?"
             },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "Es gibt keine zeitliche Begrenzung für den Aufenthalt hier"
+                    }
+                },
+                "question": "Wie lange darf man sich maximal hier aufhalten?",
+                "render": "Man kann höchstens <b>{canonical(maxstay)}</b> bleiben"
+            },
             "multilevels": {
                 "override": {
                     "question": "Auf welchen Geschossen hält dieser Aufzug?",
                     "render": "Der Aufzug hält auf den Geschossen {level}"
                 }
+            },
+            "name": {
+                "question": "Wie heißt dieser Ort?"
             },
             "nothing_known": {
                 "render": {
@@ -8768,6 +8897,17 @@
                     }
                 },
                 "question": "Ist {title()} rund um das Jahr nutzbar?"
+            },
+            "seating": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Ort hat Sitzgelegenheiten im Freien"
+                    },
+                    "1": {
+                        "then": "Dieser Ort hat Sitzplätze im Innenbereich"
+                    }
+                },
+                "question": "Welche Art von Sitzgelegenheiten hat {title()}?"
             },
             "service:electricity": {
                 "mappings": {
@@ -8998,14 +9138,14 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "Alle Recyclingarten"
+                        "question": "Nur Recyclingzentren"
                     }
                 }
             },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Nur öffentliche Recyclingeinrichtungen"
+                        "question": "Alle Recyclingarten"
                     },
                     "1": {
                         "question": "Recycling von Batterien"
@@ -9299,6 +9439,9 @@
         "presets": {
             "0": {
                 "title": "eine Grundschule oder weiterführende Schule"
+            },
+            "1": {
+                "title": "eine Grundschule oder weiterführende Schule"
             }
         },
         "tagRenderings": {
@@ -9399,30 +9542,21 @@
             "target-audience": {
                 "mappings": {
                     "0": {
-                        "then": "Es handelt sich um eine Schule, in der die Schüler Fähigkeiten auf ihrem altersgemäßen Niveau erlernen. <div>Es gibt wenig oder keine speziellen Einrichtungen für Schüler mit besonderen Bedürfnissen oder die Einrichtungen sind ad-hoc</div>"
-                    },
-                    "1": {
                         "then": "Dies ist eine Schule für Schüler ohne besondere Bedürfnisse<div class='subtle'>Dazu gehören auch Schüler, die den Kursen mit kleinen Ad-hoc-Maßnahmen folgen können</div>"
                     },
-                    "2": {
-                        "then": "Dies ist eine Schule, in der Erwachsene auf dem angegebenen Niveau unterrichtet werden."
-                    },
-                    "3": {
-                        "then": "Dies ist eine Schule für Schüler mit Autismus"
-                    },
-                    "4": {
+                    "1": {
                         "then": "Dies ist eine Schule für Schüler mit Lernschwierigkeiten"
                     },
-                    "5": {
+                    "2": {
                         "then": "Dies ist eine Schule für blinde oder sehbehinderte Schüler"
                     },
-                    "6": {
+                    "3": {
                         "then": "Dies ist eine Schule für gehörlose oder hörgeschädigte Schüler"
                     },
-                    "7": {
+                    "4": {
                         "then": "Dies ist eine Schule für Schüler mit Behinderungen"
                     },
-                    "8": {
+                    "5": {
                         "then": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen"
                     }
                 },
@@ -9433,6 +9567,28 @@
         },
         "title": {
             "render": "Schule <i>{name}</i>"
+        }
+    },
+    "scouting_group": {
+        "description": "Eine Karte mit Pfadfindergruppen.",
+        "name": "Pfadfinder:innenstämme",
+        "presets": {
+            "0": {
+                "title": "Pfadfinder:innenstamm"
+            }
+        },
+        "tagRenderings": {
+            "association": {
+                "question": "Zu welchem Verband/Bund gehört {name}",
+                "render": "Dieser Stamm ist im Verband {brand}"
+            },
+            "name": {
+                "question": "Was ist der Stammesname?",
+                "render": "Dieser Stamm heißt {name}"
+            }
+        },
+        "title": {
+            "render": "{name}"
         }
     },
     "search": {
@@ -9622,6 +9778,11 @@
                             "then": "Fahrradverleih"
                         }
                     },
+                    "mappings+": {
+                        "0": {
+                            "then": "Dieser Laden wird nicht mehr genutzt. Er steht leer"
+                        }
+                    },
                     "question": "Um was für ein Geschäft handelt es sich?",
                     "render": "Das ist ein {shop}"
                 }
@@ -9639,6 +9800,17 @@
                     }
                 },
                 "question": "Bietet dieser Laden Schlüsselschneiden an?"
+            },
+            "optometrist_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Shop bietet Augenuntersuchungen durch zertifizierte Optiker an"
+                    },
+                    "1": {
+                        "then": "Dieser Shop bietet Hörtests durch einen zertifizierten Audiologen an"
+                    }
+                },
+                "question": "Gibt es hier medizinische Versorgung?"
             },
             "organic": {
                 "mappings": {
@@ -10086,6 +10258,12 @@
             },
             "1": {
                 "title": "einen Sportplatz"
+            },
+            "2": {
+                "title": "einen Skatepark"
+            },
+            "3": {
+                "title": "einen Reitplatz"
             }
         },
         "tagRenderings": {
@@ -10175,13 +10353,16 @@
                         "then": "Hier wird Tennis gespielt"
                     },
                     "4": {
-                        "then": "Hier wird Kopfball gespielt"
+                        "then": "Hier wird Korfball gespielt"
                     },
                     "5": {
                         "then": "Hier wird Basketball gespielt"
                     },
                     "6": {
                         "then": "Dies ist ein Skatepark"
+                    },
+                    "7": {
+                        "then": "Dies ist ein Reitplatz"
                     }
                 },
                 "question": "Welche Sportarten können hier gespielt werden?",
@@ -10227,6 +10408,398 @@
                 "title": "ein Sportzentrum"
             }
         },
+        "tagRenderings": {
+            "sport_centre-sport": {
+                "mappings": {
+                    "0": {
+                        "then": "Kegeln"
+                    },
+                    "1": {
+                        "then": "Bowling"
+                    },
+                    "10": {
+                        "then": "Basejumping"
+                    },
+                    "100": {
+                        "then": "Skateboard"
+                    },
+                    "101": {
+                        "then": "Skispringen"
+                    },
+                    "102": {
+                        "then": "Snooker"
+                    },
+                    "103": {
+                        "then": "Fußball"
+                    },
+                    "104": {
+                        "then": "Softball"
+                    },
+                    "105": {
+                        "then": "Motorrad-Speedway"
+                    },
+                    "106": {
+                        "then": "Squash"
+                    },
+                    "107": {
+                        "then": "Sumoringen"
+                    },
+                    "108": {
+                        "then": "Surfen"
+                    },
+                    "109": {
+                        "then": "Schwimmen"
+                    },
+                    "11": {
+                        "then": "Baseball"
+                    },
+                    "110": {
+                        "then": "Tischtennis"
+                    },
+                    "111": {
+                        "then": "Tischfußball"
+                    },
+                    "112": {
+                        "then": "Taekwondo"
+                    },
+                    "113": {
+                        "then": "Tennis"
+                    },
+                    "114": {
+                        "then": "Teqball"
+                    },
+                    "115": {
+                        "then": "Rodeln"
+                    },
+                    "116": {
+                        "then": "Trampolin"
+                    },
+                    "117": {
+                        "then": "Ultimate Frisbee"
+                    },
+                    "118": {
+                        "then": "Ultraleichtflug"
+                    },
+                    "119": {
+                        "then": "Volleyball"
+                    },
+                    "12": {
+                        "then": "Basketball"
+                    },
+                    "120": {
+                        "then": "Wakeboarden"
+                    },
+                    "121": {
+                        "then": "Wasserball"
+                    },
+                    "122": {
+                        "then": "Wasserski"
+                    },
+                    "123": {
+                        "then": "Olympisches Gewichtheben"
+                    },
+                    "124": {
+                        "then": "Windsurfen"
+                    },
+                    "125": {
+                        "then": "Wrestling"
+                    },
+                    "126": {
+                        "then": "Yoga"
+                    },
+                    "127": {
+                        "then": "Zurkhaneh-Sport"
+                    },
+                    "13": {
+                        "then": "Beachvolleyball"
+                    },
+                    "14": {
+                        "then": "Biathlon"
+                    },
+                    "15": {
+                        "then": "Cuesport"
+                    },
+                    "16": {
+                        "then": "BMX"
+                    },
+                    "17": {
+                        "then": "Bobfahren"
+                    },
+                    "18": {
+                        "then": "Boule"
+                    },
+                    "19": {
+                        "then": "Bowls"
+                    },
+                    "2": {
+                        "then": "Aerobic"
+                    },
+                    "20": {
+                        "then": "Boxen"
+                    },
+                    "21": {
+                        "then": "Stierkampf"
+                    },
+                    "22": {
+                        "then": "Kanadischer Fußball"
+                    },
+                    "23": {
+                        "then": "Kanu"
+                    },
+                    "24": {
+                        "then": "Schach"
+                    },
+                    "25": {
+                        "then": "Wettkampffreies Tauchen"
+                    },
+                    "26": {
+                        "then": "Klettern"
+                    },
+                    "27": {
+                        "then": "Seilgarten"
+                    },
+                    "28": {
+                        "then": "Hahnenkampf"
+                    },
+                    "29": {
+                        "then": "Kricket"
+                    },
+                    "3": {
+                        "then": "American Football"
+                    },
+                    "30": {
+                        "then": "CrossFit"
+                    },
+                    "31": {
+                        "then": "Krocket"
+                    },
+                    "32": {
+                        "then": "Eisstockschießen"
+                    },
+                    "33": {
+                        "then": "Radpolo"
+                    },
+                    "34": {
+                        "then": "Radfahren"
+                    },
+                    "35": {
+                        "then": "Tanz"
+                    },
+                    "36": {
+                        "then": "Dart"
+                    },
+                    "37": {
+                        "then": "Hundetraining"
+                    },
+                    "38": {
+                        "then": "Windhundrennen"
+                    },
+                    "39": {
+                        "then": "Drachenboot"
+                    },
+                    "4": {
+                        "then": "Aikido"
+                    },
+                    "40": {
+                        "then": "Reitsport"
+                    },
+                    "41": {
+                        "then": "Fechten"
+                    },
+                    "42": {
+                        "then": "Feldhockey"
+                    },
+                    "43": {
+                        "then": "Fitnesstraining"
+                    },
+                    "44": {
+                        "then": "Fußball mit 5 Personen"
+                    },
+                    "45": {
+                        "then": "Unihockey"
+                    },
+                    "46": {
+                        "then": "Four Square"
+                    },
+                    "47": {
+                        "then": "Gleitschirmfliegen"
+                    },
+                    "48": {
+                        "then": "Hallenfußball"
+                    },
+                    "49": {
+                        "then": "Gälische Spiele"
+                    },
+                    "5": {
+                        "then": "Bogenschießen"
+                    },
+                    "50": {
+                        "then": "Gaga-Ball"
+                    },
+                    "51": {
+                        "then": "Golf"
+                    },
+                    "52": {
+                        "then": "Turnen"
+                    },
+                    "53": {
+                        "then": "Handball"
+                    },
+                    "54": {
+                        "then": "Hapkido"
+                    },
+                    "55": {
+                        "then": "Wandern"
+                    },
+                    "56": {
+                        "then": "Hufeisenwerfen"
+                    },
+                    "57": {
+                        "then": "Pferderennen"
+                    },
+                    "58": {
+                        "then": "Eishockey"
+                    },
+                    "59": {
+                        "then": "Eislaufen"
+                    },
+                    "6": {
+                        "then": "Leichtathletik"
+                    },
+                    "60": {
+                        "then": "Eisstockschießen"
+                    },
+                    "61": {
+                        "then": "Judo"
+                    },
+                    "62": {
+                        "then": "Karate"
+                    },
+                    "63": {
+                        "then": "Go-Kart-Rennen"
+                    },
+                    "64": {
+                        "then": "Kickboxen"
+                    },
+                    "65": {
+                        "then": "Kitesurfen"
+                    },
+                    "66": {
+                        "then": "Korfball"
+                    },
+                    "67": {
+                        "then": "Krachtball"
+                    },
+                    "68": {
+                        "then": "Lacrosse"
+                    },
+                    "69": {
+                        "then": "Laser Tag"
+                    },
+                    "7": {
+                        "then": "Australian-Football"
+                    },
+                    "70": {
+                        "then": "Kampfsport"
+                    },
+                    "71": {
+                        "then": "Minigolf"
+                    },
+                    "72": {
+                        "then": "Modellflug"
+                    },
+                    "73": {
+                        "then": "Motocross"
+                    },
+                    "74": {
+                        "then": "Motorsport"
+                    },
+                    "75": {
+                        "then": "Viele verschiedene Sportarten"
+                    },
+                    "76": {
+                        "then": "Netzball"
+                    },
+                    "77": {
+                        "then": "Hindernislauf"
+                    },
+                    "78": {
+                        "then": "Orientierungslauf"
+                    },
+                    "79": {
+                        "then": "Paddle-Tennis"
+                    },
+                    "8": {
+                        "then": "Federball"
+                    },
+                    "80": {
+                        "then": "Padel-Tennis"
+                    },
+                    "81": {
+                        "then": "Paintball"
+                    },
+                    "82": {
+                        "then": "Fallschirmspringen"
+                    },
+                    "83": {
+                        "then": "Parkour"
+                    },
+                    "84": {
+                        "then": "Palota"
+                    },
+                    "85": {
+                        "then": "Pesäpallo"
+                    },
+                    "86": {
+                        "then": "Pickleball"
+                    },
+                    "87": {
+                        "then": "Pilates"
+                    },
+                    "88": {
+                        "then": "Pole-Dance"
+                    },
+                    "89": {
+                        "then": "Racquetball"
+                    },
+                    "9": {
+                        "then": "Bandy"
+                    },
+                    "90": {
+                        "then": "Modellauto"
+                    },
+                    "91": {
+                        "then": "Rollschuhlaufen"
+                    },
+                    "92": {
+                        "then": "Rudern"
+                    },
+                    "93": {
+                        "then": "Rugbyliga"
+                    },
+                    "94": {
+                        "then": "Rugby Union"
+                    },
+                    "95": {
+                        "then": "Laufsport"
+                    },
+                    "96": {
+                        "then": "Segeln"
+                    },
+                    "97": {
+                        "then": "Tauchen"
+                    },
+                    "98": {
+                        "then": "Schießen"
+                    },
+                    "99": {
+                        "then": "Kugelstoßen"
+                    }
+                },
+                "question": "Welche Sportarten werden hier ausgeübt?",
+                "render": "Hier werden folgende Sportarten ausgeübt: {sport}"
+            }
+        },
         "title": {
             "render": "Sportzentrum"
         }
@@ -10241,12 +10814,19 @@
                         "then": "Das ist eine Rolltreppe"
                     },
                     "1": {
-                        "then": "Das ist keine Rolltreppe"
+                        "then": "Dies ist eine Rolltreppe, die sich in Richtung der Pfeile bewegt"
                     },
                     "2": {
+                        "then": "Diese Rolltreppe ist beidseitig befahrbar"
+                    },
+                    "3": {
+                        "then": "Das ist keine Rolltreppe"
+                    },
+                    "4": {
                         "then": "Das ist keine Rolltreppe"
                     }
-                }
+                },
+                "question": "Ist das eine Rolltreppe?"
             },
             "handrail": {
                 "mappings": {
@@ -10529,6 +11109,9 @@
                     },
                     "2": {
                         "then": "Eine bewegliche Kamera"
+                    },
+                    "3": {
+                        "then": "Eine Türklingel, die jederzeit oder per Bewegungserkennung ferngeschaltet werden kann. Dies sind typischerweise <i>Smart</i>, internetgebundene Türklingeln. Typische Marken sind Ring, Google Nest, Eufy, ..."
                     }
                 },
                 "question": "Um welchen Kameratyp handelt es sich?"
@@ -10609,19 +11192,7 @@
                 "question": "In welche Himmelsrichtung filmt diese Kamera?",
                 "render": "filmt in Himmelsrichtung {camera:direction}"
             },
-            "has_alpr": {
-                "mappings": {
-                    "0": {
-                        "then": "Dies ist eine Kamera ohne Nummernschilderkennung."
-                    },
-                    "1": {
-                        "then": "Dies ist eine Kamera mit Nummernschilderkennung"
-                    }
-                },
-                "question": "Dient diese Kamera der Nummernschilderkennung?",
-                "questionHint": "Eine Kamera zur <b>Nummernschilderkennung</b> hat üblicherweise zwei Linsen mit dazwischenliegenden Infrarot-LEDs."
-            },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "0": {
                         "then": "Diese Kamera befindet sich im Innenraum"
@@ -10633,7 +11204,19 @@
                         "then": "Diese Kamera ist möglicherweise im Freien"
                     }
                 },
-                "question": "Handelt es sich bei dem von dieser Kamera überwachten öffentlichen Raum um einen Innen- oder Außenbereich?"
+                "question": "Befindet sich diese Kamera drinnen oder draußen?"
+            },
+            "has_alpr": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist eine Kamera ohne Nummernschilderkennung."
+                    },
+                    "1": {
+                        "then": "Dies ist eine Kamera mit Nummernschilderkennung"
+                    }
+                },
+                "question": "Dient diese Kamera der Nummernschilderkennung?",
+                "questionHint": "Eine Kamera zur <b>Nummernschilderkennung</b> hat üblicherweise zwei Linsen mit dazwischenliegenden Infrarot-LEDs."
             }
         },
         "title": {
@@ -11032,6 +11615,13 @@
                     }
                 },
                 "question": "Ist Toilettenpapier vorhanden?"
+            },
+            "toilet-reviews": {
+                "render": {
+                    "special": {
+                        "question": "Wie würdest du diese Toilette bewerten?"
+                    }
+                }
             },
             "toilets-changing-table": {
                 "mappings": {
@@ -12043,14 +12633,14 @@
             "more_privacy": {
                 "mappings": {
                     "0": {
-                        "then": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst."
+                        "then": "Wenn ich Änderungen an OpenStreetMap vornehme, gebe ich nicht an, wie weit ich von den geänderten Objekten entfernt war."
                     },
                     "1": {
                         "then": "Gebe bei Änderungen an OpenStreetMap an, wie weit du ungefähr von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast"
                     }
                 },
                 "question": "Sollte bei Änderungen eine grobe Angabe gemacht werden, wie weit du vom Objekt entfernt warst?",
-                "questionHint": "Wenn du eine Änderung an einem oder mehreren Objekten vornimmst und deinen Standort aktivierst, wird eine ungefähre Angabe darüber gespeichert, wo du dich befunden hast: Es wird angezeigt, ob du näher als 25m, 500m, 5km oder weiter als 5km entfernt warst. Das hilft den Kartierern, deinen Kontext zu verstehen, wenn du Änderungen vornimmst, gibt aber auch einen Hinweis darauf, wo du zu diesem Zeitpunkt warst. "
+                "questionHint": "Wenn du eine Änderung an einem oder mehreren Objekten vornimmst und deinen Standort aktivierst, wird eine ungefähre Angabe darüber gespeichert, wo du dich befunden hast: Es wird angezeigt, ob du näher als 25m, 500m, 5km oder weiter als 5km entfernt warst. Das hilft den Kartierern, deinen Kontext zu verstehen, wenn du Änderungen vornimmst, gibt aber auch einen Hinweis darauf, wo du zu diesem Zeitpunkt warst."
             },
             "more_privacy_theme_override": {
                 "mappings": {
@@ -12089,6 +12679,20 @@
                 }
             },
             "show_crosshair": {
+                "mappings": {
+                    "0": {
+                        "then": "Zeige ein Fadenkreuz in der Mitte der Karte, wenn über Stufe 17 hinaus gezoomt wird"
+                    },
+                    "1": {
+                        "then": "Zeige kein Fadenkreuz in der Mitte der Karte an"
+                    },
+                    "2": {
+                        "then": "Zeige kein Fadenkreuz in der Mitte der Karte an"
+                    },
+                    "3": {
+                        "then": "Zeige immer ein Fadenkreuz in der Mitte der Karte an"
+                    }
+                },
                 "question": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?",
                 "questionHint": "Dies kann dazu beitragen, ein neues Element genau zu positionieren"
             },
@@ -12133,7 +12737,7 @@
                         "then": "Gesuchte und überprüfte Orte auf meinem Gerät speichern"
                     },
                     "2": {
-                        "then": "Gesuchte und überprüfte Orte nicht auf meinem Gerät speichern "
+                        "then": "Gesuchte und überprüfte Orte nicht auf meinem Gerät speichern"
                     }
                 },
                 "question": "Sollen die gesuchten und überprüften Orte gespeichert werden?",
@@ -12201,6 +12805,9 @@
                         "then": "Du hast mit {_translation_contributions} Änderungen zur Übersetzung von MapComplete beigetragen! Das ist großartig!"
                     }
                 }
+            },
+            "translations-title": {
+                "render": "<h3>MapComplete übersetzen</h3>"
             },
             "verified-mastodon": {
                 "mappings": {

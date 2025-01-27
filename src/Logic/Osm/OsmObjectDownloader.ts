@@ -14,7 +14,7 @@ export default class OsmObjectDownloader {
         readonly isUploading: Store<boolean>
     }
     private readonly backend: string
-    private historyCache = new Map<string, UIEventSource<OsmObject[]>>()
+    private historyCache = new Map<string, Promise<OsmObject[]>>()
 
     constructor(
         backend: string = "https://api.openstreetmap.org",
@@ -75,49 +75,51 @@ export default class OsmObjectDownloader {
         return await this.applyPendingChanges(obj)
     }
 
-    public DownloadHistory(id: NodeId): UIEventSource<OsmNode[]>
-
-    public DownloadHistory(id: WayId): UIEventSource<OsmWay[]>
-
-    public DownloadHistory(id: RelationId): UIEventSource<OsmRelation[]>
-
-    public DownloadHistory(id: OsmId): UIEventSource<OsmObject[]>
-
-    public DownloadHistory(id: string): UIEventSource<OsmObject[]> {
-        if (this.historyCache.has(id)) {
-            return this.historyCache.get(id)
-        }
+    private async _downloadHistoryUncached(id: string): Promise<OsmObject[]> {
         const splitted = id.split("/")
         const type = splitted[0]
         const idN = Number(splitted[1])
-        const src = new UIEventSource<OsmObject[]>([])
-        this.historyCache.set(id, src)
-        Utils.downloadJsonCached(
+        const data = await Utils.downloadJsonCached(
             `${this.backend}api/0.6/${type}/${idN}/history`,
             10 * 60 * 1000
-        ).then((data) => {
-            const elements: any[] = data.elements
-            const osmObjects: OsmObject[] = []
-            for (const element of elements) {
-                let osmObject: OsmObject = null
-                element.nodes = []
-                switch (type) {
-                    case "node":
-                        osmObject = new OsmNode(idN, element)
-                        break
-                    case "way":
-                        osmObject = new OsmWay(idN, element)
-                        break
-                    case "relation":
-                        osmObject = new OsmRelation(idN, element)
-                        break
-                }
-                osmObject?.SaveExtraData(element, [])
-                osmObjects.push(osmObject)
+        )
+        const elements: [] = data["elements"]
+        const osmObjects: OsmObject[] = []
+        for (const element of elements) {
+            let osmObject: OsmObject = null
+            element["nodes"] = []
+            switch (type) {
+                case "node":
+                    osmObject = new OsmNode(idN, element)
+                    break
+                case "way":
+                    osmObject = new OsmWay(idN, element)
+                    break
+                case "relation":
+                    osmObject = new OsmRelation(idN, element)
+                    break
             }
-            src.setData(osmObjects)
-        })
-        return src
+            osmObject?.SaveExtraData(element, [])
+            osmObjects.push(osmObject)
+        }
+        return osmObjects
+    }
+
+    public downloadHistory(id: NodeId): Promise<OsmNode[]>
+
+    public downloadHistory(id: WayId): Promise<OsmWay[]>
+
+    public downloadHistory(id: RelationId): Promise<OsmRelation[]>
+
+    public downloadHistory(id: OsmId): Promise<OsmObject[]>
+
+    public async downloadHistory(id: string): Promise<OsmObject[]> {
+        if (this.historyCache.has(id)) {
+            return this.historyCache.get(id)
+        }
+        const promise = this._downloadHistoryUncached(id)
+        this.historyCache.set(id, promise)
+        return promise
     }
 
     /**
@@ -125,7 +127,9 @@ export default class OsmObjectDownloader {
      * Beware: their geometry will be incomplete!
      */
     public async DownloadReferencingWays(id: string): Promise<OsmWay[]> {
-        const data = await Utils.downloadJsonCached(`${this.backend}api/0.6/${id}/ways`, 60 * 1000)
+        const data = await Utils.downloadJsonCached<{
+            elements: { id: number }[]
+        }>(`${this.backend}api/0.6/${id}/ways`, 60 * 1000)
         return data.elements.map((wayInfo) => new OsmWay(wayInfo.id, wayInfo))
     }
 
@@ -134,7 +138,7 @@ export default class OsmObjectDownloader {
      * Beware: their geometry will be incomplete!
      */
     public async DownloadReferencingRelations(id: string): Promise<OsmRelation[]> {
-        const data = await Utils.downloadJsonCached(
+        const data = await Utils.downloadJsonCached<{ elements: { id: number }[] }>(
             `${this.backend}api/0.6/${id}/relations`,
             60 * 1000
         )

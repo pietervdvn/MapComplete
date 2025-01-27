@@ -19,11 +19,12 @@
     "it": "Noleggio biciclette",
     "ru": "Прокат велосипедов",
     "uk": "Прокат велосипедів",
-    "hu": "Kerékpárkölcsönzők"
+    "hu": "Kerékpárkölcsönzők",
+    "ko": "자전거 대여"
   },
   "description": {
     "en": "On this map, you'll find the many bicycle rental stations as they are known by OpenStreetMap",
-    "nl": "Op deze kaart vind je verschillende fietsverhuurpunten en fietsverhuurzaken",
+    "nl": "Op deze kaart vind je de verschillende fietsverhuurpunten en fietsverhuurzaken die gekend zijn door OpenStreetMap",
     "de": "Eine Karte mit allen Fahrradverleihstationen, die in OpenStreetMap eingetragen wurden",
     "fr": "Vous trouverez sur cette carte toutes les stations de location de vélo telles qu'elles sont référencées dans OpenStreetMap",
     "es": "En este mapa, encontrarás las numerosas estaciones de alquiler de bicicletas tal como se conocen en OpenStreetMap",
@@ -35,7 +36,9 @@
     "it": "In questa mappa trovi i luoghi conosciuti da OpenStreetMap dove puoi noleggiare delle biciclette",
     "pl": "Na tej mapie znajdziesz wiele stacji wynajmu rowerów, znanych w OpenStreetMap",
     "zh_Hans": "在这张地图上，你可以找到许多由 OpenStreetMap 记录的自行车租赁站点",
-    "uk": "На цій мапі ви знайдете багато станцій прокату велосипедів, що є на OpenStreetMap"
+    "uk": "На цій мапі ви знайдете багато станцій прокату велосипедів, що є на OpenStreetMap",
+    "zh_Hant": "在這份地圖，你會在開放街圖上找到很多共享單車站",
+    "ko": "이 지도에서는 OpenStreetMap에 등록된 다양한 자전거 대여소를 확인할 수 있습니다"
   },
   "shortDescription": {
     "en": "A map with bicycle rental stations and bicycle rental shops",
@@ -52,7 +55,9 @@
     "pl": "Mapa ze stacjami wypożyczania rowerów i wypożyczalniami rowerów",
     "zh_Hans": "一张包含自行车租赁站点和自行车租赁商店的地图",
     "it": "Una mappa con le stazioni e i negozi per il noleggio delle biciclette",
-    "uk": "Мапа зі станціями та пунктами прокату велосипедів"
+    "uk": "Мапа зі станціями та пунктами прокату велосипедів",
+    "zh_Hant": "有共享單車站與單車租借服務的地圖",
+    "ko": "자전거 대여소와 상점을 보여주는 지도입니다"
   },
   "icon": "./assets/themes/bicycle_rental/logo.svg",
   "layers": [

@@ -605,7 +605,8 @@
         "sl": "Telefonska številka za vprašanja o tem defibrilatorju: <a href='tel:{phone}'>{phone}</a>",
         "ca": "Telèfon per a dubtes sobre aquest desfibril·lador: <a href='tel:{phone}'>{phone}</a>",
         "cs": "Telefon pro dotazy ohledně tohoto defibrilátoru: <a href='tel:{phone}'>{phone}</a>",
-        "es": "Teléfono para preguntas sobre este desfibrilador: <a href='tel:{phone}'>{phone}</a>"
+        "es": "Teléfono para preguntas sobre este desfibrilador: <a href='tel:{phone}'>{phone}</a>",
+        "uk": "Телефонуйте з питань щодо цього дефібрилятора: <a href='tel:{phone}'>{phone}</a>"
       },
       "question": {
         "en": "What is the phone number for questions about this defibrillator?",
@@ -616,7 +617,8 @@
         "sl": "Kakšna je telefonska številka za vprašanja o tem defibrilatorju?",
         "es": "¿Cuál es el número de teléfono para preguntas sobre este desfibrilador?",
         "ca": "Quin és el número de telèfon on preguntar sobre aquest desfibril·lador?",
-        "cs": "Jaké je telefonní číslo pro dotazy k tomuto defibrilátoru?"
+        "cs": "Jaké je telefonní číslo pro dotazy k tomuto defibrilátoru?",
+        "uk": "Який номер телефону для запитань щодо цього дефібрилятора?"
       },
       "freeform": {
         "key": "phone",
@@ -659,7 +661,7 @@
       },
       "question": {
         "en": "Is there any useful information for users that you haven't been able to describe above? (leave blank if no)",
-        "nl": "Is er nog iets bijzonder aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)",
+        "nl": "Is er nog iets bijzonders aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)",
         "fr": "Y a-t-il des informations utiles pour les utilisateurs que vous n'avez pas pu décrire ci-dessus ? (laisser vide sinon)",
         "it": "Vi sono altre informazioni utili agli utenti che non è stato possibile aggiungere prima? (lasciare vuoto in caso negativo)",
         "de": "Gibt es nützliche Informationen für Benutzer, die Sie oben nicht beschreiben konnten? (leer lassen, wenn nein)",

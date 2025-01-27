@@ -2,7 +2,6 @@ import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFile, writeFi
 import Locale from "../src/UI/i18n/Locale"
 import Translations from "../src/UI/i18n/Translations"
 import { Translation } from "../src/UI/i18n/Translation"
-import all_known_layouts from "../src/assets/generated/known_themes.json"
 import { ThemeConfigJson } from "../src/Models/ThemeConfig/Json/ThemeConfigJson"
 import ThemeConfig from "../src/Models/ThemeConfig/ThemeConfig"
 import xml2js from "xml2js"
@@ -10,11 +9,7 @@ import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
 import SpecialVisualizations from "../src/UI/SpecialVisualizations"
 import Constants from "../src/Models/Constants"
-import {
-    AvailableRasterLayers,
-    EditorLayerIndexProperties,
-    RasterLayerPolygon,
-} from "../src/Models/RasterLayers"
+import { AvailableRasterLayers, RasterLayerPolygon } from "../src/Models/RasterLayers"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
 import * as eli from "../public/assets/data/editor-layer-index.json"
 import * as layers_global from "../src/assets/global-raster-layers.json"
@@ -27,6 +22,7 @@ import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Js
 import Script from "./Script"
 import crypto from "crypto"
 import { RasterLayerProperties } from "../src/Models/RasterLayerProperties"
+
 const sharp = require("sharp")
 
 class GenerateLayouts extends Script {
@@ -122,7 +118,7 @@ class GenerateLayouts extends Script {
             return path
         }
         const svg = await ScriptUtils.ReadSvg(layout.icon)
-        let width: string = svg.$.width
+        let width: string = svg["$"].width
         if (width === undefined) {
             throw "The logo at " + layout.icon + " does not have a defined width"
         }
@@ -177,7 +173,7 @@ class GenerateLayouts extends Script {
         const icons = []
 
         const whiteIcons: string[] = []
-        let icon = layout.icon
+        const icon = layout.icon
         if (icon.endsWith(".svg") || icon.startsWith("<svg") || icon.startsWith("<?xml")) {
             // This is an svg. Lets create the needed pngs and do some checkes!
 
@@ -185,8 +181,8 @@ class GenerateLayouts extends Script {
                 "./public/assets/generated/images/theme_" + layout.id + "_white_background.svg"
             {
                 const svg = await ScriptUtils.ReadSvg(icon)
-                const width: string = svg.$.width
-                const height: string = svg.$.height
+                const width: string = svg["$"].width
+                const height: string = svg["$"].height
 
                 const builder = new xml2js.Builder()
                 const withRect = { rect: { $: { width, height, style: "fill:#ffffff;" } }, ...svg }
@@ -300,8 +296,8 @@ class GenerateLayouts extends Script {
                     Origin: "https://mapcomplete.org",
                 })
                 urls.push(...(f.properties["connect-src"] ?? []))
-                for (const key of Object.keys(styleSpec?.sources ?? {})) {
-                    const url = styleSpec.sources[key].url
+                for (const key of Object.keys(styleSpec?.["sources"] ?? {})) {
+                    const url = styleSpec["sources"][key].url
                     if (!url) {
                         continue
                     }
@@ -341,6 +337,7 @@ class GenerateLayouts extends Script {
             "https://pietervdvn.goatcounter.com",
             "https://api.panoramax.xyz",
             "https://panoramax.mapcomplete.org",
+            "https://data.velopark.be",
         ].concat(...(await this.eliUrls()))
 
         SpecialVisualizations.specialVisualizations.forEach((sv) => {
@@ -586,7 +583,7 @@ class GenerateLayouts extends Script {
         const filename = "index_" + theme.id + ".ts"
 
         const imports = [
-            `import layout from "./src/assets/generated/themes/${theme.id}.json"`,
+            `import theme from "./public/assets/generated/themes/${theme.id}.json"`,
             `import { ThemeMetaTagging } from "./src/assets/generated/metatagging/${theme.id}"`,
         ]
         for (const layerName of Constants.added_by_default) {
@@ -599,10 +596,10 @@ class GenerateLayouts extends Script {
         const addLayers = []
 
         for (const layerName of Constants.added_by_default) {
-            addLayers.push(`    layout.layers.push(<any> ${layerName})`)
+            addLayers.push(`    theme.layers.push(<any> ${layerName})`)
         }
 
-        let codeTemplate = this.codeTemplate.replace(
+        const codeTemplate = this.codeTemplate.replace(
             "    // LAYOUT.ADD_LAYERS",
             addLayers.join("\n")
         )
@@ -636,15 +633,14 @@ class GenerateLayouts extends Script {
             "custom",
             "theme",
         ]
-        // @ts-ignore
-        const all: ThemeConfigJson[] = all_known_layouts.themes
         const args = process.argv
         const theme = args[2]
         if (theme !== undefined) {
             console.warn("Only generating layout " + theme)
         }
-        for (const i in all) {
-            const layoutConfigJson: ThemeConfigJson = all[i]
+        const paths = ScriptUtils.readDirRecSync("./public/assets/generated/themes/", 1)
+        for (const i in paths) {
+            const layoutConfigJson = <ThemeConfigJson>JSON.parse(readFileSync(paths[i], "utf8"))
             if (theme !== undefined && layoutConfigJson.id !== theme) {
                 continue
             }

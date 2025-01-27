@@ -1709,6 +1709,10 @@
         {
           "if": "value=polygon_centroid",
           "then": "Show an icon at a polygon centroid (but not if it is a way)"
+        },
+        {
+          "if": "value=waypoints",
+          "then": "Show an icon on every intermediate point of a way"
         }
       ],
       "multianswer": "true"
@@ -1740,6 +1744,18 @@
       "types": "<span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon",
       "question": "What icon should be used?",
       "suggestions": [
+        {
+          "if": "value=nsi_brand.icon",
+          "then": "Use icons for brand from the Name Suggestion Index"
+        },
+        {
+          "if": "value=nsi_operator.icon",
+          "then": "Use icons for operator from the Name Suggestion Index"
+        },
+        {
+          "if": "value=id_presets.shop_rendering",
+          "then": "Use shop preset icons from iD"
+        },
         {
           "if": "value=addSmall",
           "then": "addSmall",
@@ -2057,7 +2073,7 @@
         "type": "string"
       }
     ],
-    "description": ""
+    "description": "To reuse icons from a different layer of a library:\n- The library layer has, within tagRenderings one which will output the URL of the image (e.g. mappings: {\"if\": \"shop=xyz\", then: \"./assets/icons/shop_xyz.png\"})\n- Use \"layer_id.tagrendering_id\"\nNote that if you reuse icons from a different icon set, you'll probably want to use `override` to set a default rendering"
   },
   {
     "path": [
@@ -2287,8 +2303,65 @@
     "hints": {
       "group": "hidden"
     },
-    "type": "array",
-    "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle"
+    "type": [
+      {
+        "type": "object",
+        "properties": {
+          "if": {
+            "$ref": "#/definitions/TagConfigJson",
+            "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
+          },
+          "then": {
+            "description": "Badge to show\nType: icon",
+            "anyOf": [
+              {
+                "description": "Mostly used for lineRendering and pointRendering",
+                "type": "object",
+                "properties": {
+                  "render": {
+                    "description": "question: What value should be shown (if no predefined option matches)?\n\nThis piece of text will be shown in the infobox.\nNote that \"&LBRACEkey&RBRACE\"-parts are substituted by the corresponding values of the element.\n\nThis value will be used if there is no mapping which matches (or there are no matches)\nNote that this is a HTML-interpreted value, so you can add links as e.g. '&lt;a href='{website}'>{website}&lt;/a>' or include images such as `This is of type A &lt;br>&lt;img src='typeA-icon.svg' />`",
+                    "type": "string"
+                  },
+                  "mappings": {
+                    "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "if": {
+                          "$ref": "#/definitions/TagConfigJson",
+                          "description": "question: When should this single mapping match?\n\nIf this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
+                        },
+                        "then": {
+                          "description": "question: What text should be shown?\n\nIf the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "if",
+                        "then"
+                      ]
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "required": [
+          "if",
+          "then"
+        ]
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle\nAlternatively, this can reuse a _tagRendering_ from another layer, e.g. one of the 'icons'-tagrenderings.\nSee ExpandIconBadges on how this is handled"
   },
   {
     "path": [
@@ -10561,7 +10634,7 @@
       "title": "value.title"
     },
     "type": "array",
-    "description": "<div class='flex'>\n    <div>\nPresets for this layer.\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>"
+    "description": "<div class='flex'>\n    <div>\nPresets for this layer.\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='https://github.com/pietervdvn/MapComplete/raw/refs/heads/master/Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>"
   },
   {
     "path": [
@@ -10649,7 +10722,7 @@
         },
         {
           "if": "value=aerialway",
-          "then": "aerialway - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. "
+          "then": "aerialway - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines."
         },
         {
           "if": "value=ambulancestation",
@@ -10657,7 +10730,7 @@
         },
         {
           "if": "value=animal_shelter",
-          "then": "animal_shelter - An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. "
+          "then": "animal_shelter - An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres."
         },
         {
           "if": "value=artwork",
@@ -10669,7 +10742,7 @@
         },
         {
           "if": "value=assisted_repair",
-          "then": "assisted_repair - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles."
+          "then": "assisted_repair - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location. A repair café is a type of event organized regularly along the same principles."
         },
         {
           "if": "value=atm",
@@ -10686,6 +10759,10 @@
         {
           "if": "value=bbq",
           "then": "bbq - A permanently installed barbecue, typically accessible to the public."
+        },
+        {
+          "if": "value=beehive",
+          "then": "beehive - Layer showing beehives"
         },
         {
           "if": "value=bench",
@@ -10741,7 +10818,7 @@
         },
         {
           "if": "value=brothel",
-          "then": "brothel - An establishment specifically dedicated to prostitution. "
+          "then": "brothel - An establishment specifically dedicated to prostitution."
         },
         {
           "if": "value=cafe_pub",
@@ -10756,12 +10833,16 @@
           "then": "caravansites - camper sites"
         },
         {
+          "if": "value=charge_point",
+          "then": "charge_point - Layer showing individual charge points within a charging station"
+        },
+        {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
         },
         {
           "if": "value=cinema",
-          "then": "cinema -  A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US"
+          "then": "cinema - A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US."
         },
         {
           "if": "value=climbing",
@@ -10980,6 +11061,10 @@
           "then": "information_board - A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)"
         },
         {
+          "if": "value=insect_hotel",
+          "then": "insect_hotel - Layer showing insect hotels"
+        },
+        {
           "if": "value=item_with_image",
           "then": "item_with_image - All items with an image. All alone, not a layer which is relevant for any MapComplete theme, as it is a random collection of items. However, when put into the databank, this allows to quickly fetch (the URL of) pictures nearby a different object, to quickly link this"
         },
@@ -11038,6 +11123,14 @@
         {
           "if": "value=note",
           "then": "note - This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)"
+        },
+        {
+          "if": "value=nsi_brand",
+          "then": "nsi_brand - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
+          "if": "value=nsi_operator",
+          "then": "nsi_operator - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
         },
         {
           "if": "value=observation_tower",
@@ -11142,6 +11235,10 @@
         {
           "if": "value=school",
           "then": "school - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+        },
+        {
+          "if": "value=scouting_group",
+          "then": "scouting_group - A map showing scouting groups."
         },
         {
           "if": "value=search",
@@ -11469,7 +11566,14 @@
             ]
           },
           "labels": {
-            "description": "What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
+            "description": "question: What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "onSoftDelete": {
+            "description": "question: What tags should be applied when the object is soft-deleted?",
             "type": "array",
             "items": {
               "type": "string"
@@ -12607,9 +12711,23 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
@@ -13943,9 +14061,24 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "override",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
@@ -15313,9 +15446,24 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
@@ -16700,9 +16848,25 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
@@ -18062,9 +18226,24 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
@@ -19449,9 +19628,25 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
@@ -19865,6 +20060,16 @@
     "hints": {},
     "type": "string",
     "description": "An id/name for this filter, used to set the URL parameters"
+  },
+  {
+    "path": [
+      "filter",
+      "strict"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "boolean",
+    "description": "If set, the options will be pruned. Only items for which the filter match the layer source will be kept.\nFor example, we import types of brands from the nsi. This contains a ton of items, e.g.\n[{question: \"Brand X\", osmTags: {\"and\": [\"shop=clothes\", \"brand=Brand X]}, {osmTags: {\"and\": \"shop=convenience\", ...} ...} ]\nOf course, when making a layer about `shop=clothes`, we'll only want to keep the clothes shops.\nIf set to strict and the source is `shop=clothes`, only those options which have shop=clothes will be returned"
   },
   {
     "path": [
@@ -20707,5 +20912,16 @@
       }
     ],
     "description": "In the move wizard, the option `snap object onto {snapName}` is shown"
+  },
+  {
+    "path": [
+      "#dont-translate"
+    ],
+    "required": false,
+    "hints": {
+      "group": "hidden"
+    },
+    "type": "string",
+    "description": ""
   }
 ]

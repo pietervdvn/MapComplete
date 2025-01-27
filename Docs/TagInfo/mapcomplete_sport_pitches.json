@@ -79,6 +79,11 @@
       "value": "skateboard"
     },
     {
+      "key": "sport",
+      "description": "Layer 'Sport pitches' shows sport=equestrian with a fixed text, namely 'This is a horse riding arena' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sport pitches')",
+      "value": "equestrian"
+    },
+    {
       "key": "hoops",
       "description": "Layer 'Sport pitches' shows hoops=1 with a fixed text, namely 'This basketball pitch has a single hoop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sport pitches') (This is only shown if sport~^((^|.*;)basketball(;.*|$))$)",
       "value": "1"

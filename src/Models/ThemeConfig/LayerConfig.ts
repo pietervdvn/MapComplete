@@ -24,6 +24,9 @@ import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRender
 import MarkdownUtils from "../../Utils/MarkdownUtils"
 import { And } from "../../Logic/Tags/And"
 import Combine from "../../UI/Base/Combine"
+import SvelteUIElement from "../../UI/Base/SvelteUIElement"
+import DynamicMarker from "../../UI/Map/DynamicMarker.svelte"
+import { ImmutableStore } from "../../Logic/UIEventSource"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
@@ -67,13 +70,20 @@ export default class LayerConfig extends WithContextLoader {
     public readonly popupInFloatover: boolean | string
     public readonly enableMorePrivacy: boolean
 
+    public readonly baseTags: Readonly<Record<string, string>>
+
     /**
      * If this layer is based on another layer, this might be indicated here
      * @private
      */
     private readonly _basedOn: string | undefined
 
-    constructor(json: LayerConfigJson, context?: string, official: boolean = true) {
+    constructor(
+        json: LayerConfigJson,
+        context?: string,
+        official: boolean = true,
+        allLayers?: LayerConfigJson[]
+    ) {
         context = context + "." + json?.id
         const translationContext = "layers:" + json.id
         super(json, context)
@@ -159,7 +169,7 @@ export default class LayerConfig extends WithContextLoader {
         if (json["minZoom"] !== undefined) {
             throw "At " + context + ": minzoom is written all lowercase"
         }
-        this.minzoomVisible = json.minzoomVisible ?? this.minzoom
+        this.minzoomVisible = json.minzoomVisible ?? 100
         this.shownByDefault = json.shownByDefault ?? true
         this.doCount = json.isCounted ?? this.shownByDefault ?? true
         this.forceLoad = json.forceLoad ?? false
@@ -293,20 +303,27 @@ export default class LayerConfig extends WithContextLoader {
         this.units = (json.units ?? []).flatMap((unitJson, i) =>
             Unit.fromJson(unitJson, this.tagRenderings, `${context}.unit[${i}]`)
         )
+        {
+            let filter = json.filter
 
-        if (
-            json.filter !== undefined &&
-            json.filter !== null &&
-            json.filter["sameAs"] !== undefined
-        ) {
-            this.filterIsSameAs = json.filter["sameAs"]
+            while (filter !== undefined && filter !== null && filter["sameAs"] !== undefined) {
+                const targetLayerName = filter["sameAs"]
+                this.filterIsSameAs = targetLayerName
+                const targetLayer = allLayers?.find((l) => l.id === targetLayerName)
+                if (allLayers && !targetLayer) {
+                    throw "Target layer " + targetLayerName + " not found in this theme"
+                }
+                filter = targetLayer?.filter
+            }
+
             this.filters = []
-        } else {
-            this.filters = (<FilterConfigJson[]>json.filter ?? [])
-                .filter((f) => typeof f !== "string")
-                .map((option, i) => {
-                    return new FilterConfig(option, `layers:${this.id}.filter.${i}`)
-                })
+            {
+                this.filters = (<FilterConfigJson[]>filter ?? [])
+                    .filter((f) => typeof f !== "string")
+                    .map((option, i) => {
+                        return new FilterConfig(option, `layers:${this.id}.filter.${i}`)
+                    })
+            }
         }
 
         {
@@ -352,29 +369,16 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
         this.popupInFloatover = json.popupInFloatover ?? false
-    }
-
-    public defaultIcon(properties?: Record<string, string>): BaseUIElement | undefined {
-        if (this.mapRendering === undefined || this.mapRendering === null) {
-            return undefined
-        }
-        const mapRenderings = this.mapRendering.filter((r) => r.location.has("point"))
-        if (mapRenderings.length === 0) {
-            return undefined
-        }
-        return new Combine(
-            mapRenderings.map((mr) =>
-                mr
-                    .GetBaseIcon(properties ?? this.GetBaseTags())
-                    .SetClass("absolute left-0 top-0 w-full h-full")
-            )
-        ).SetClass("relative block w-full h-full")
-    }
-
-    public GetBaseTags(): Record<string, string> {
-        return TagUtils.changeAsProperties(
+        this.baseTags = TagUtils.changeAsProperties(
             this.source?.osmTags?.asChange({ id: "node/-1" }) ?? [{ k: "id", v: "node/-1" }]
         )
+    }
+
+    public hasDefaultIcon() {
+        if (this.mapRendering === undefined || this.mapRendering === null) {
+            return false
+        }
+        return this.mapRendering.some((r) => r.location.has("point"))
     }
 
     public GenerateDocumentation(

@@ -7,11 +7,10 @@ import {
 } from "../Json/QuestionableTagRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
 import { Translation } from "../../../UI/i18n/Translation"
-import NameSuggestionIndex from "../../../Logic/Web/NameSuggestionIndex"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
-import { Tag } from "../../../Logic/Tags/Tag"
 import Validators from "../../../UI/InputElement/Validators"
 import { CheckTranslation } from "./Validation"
+import NameSuggestionIndex from "../../../Logic/Web/NameSuggestionIndex"
 
 export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
     private readonly _layerConfig: LayerConfigJson
@@ -197,11 +196,11 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                 }
             }
             if (
-                this._layerConfig?.source?.osmTags &&
-                NameSuggestionIndex.supportedTypes().indexOf(json.freeform.key) >= 0
+                this._layerConfig?.source?.["osmTags"] &&
+                NameSuggestionIndex.supportedTypes.indexOf(<any>json.freeform.key) >= 0
             ) {
-                const tags = TagUtils.TagD(this._layerConfig?.source?.osmTags)?.usedTags()
-                const suggestions = NameSuggestionIndex.getSuggestionsFor(json.freeform.key, tags)
+                const tags = TagUtils.TagD(this._layerConfig?.source?.["osmTags"])?.usedTags()
+                /* const suggestions = nameSuggestionIndexBundled.getSuggestionsFor(json.freeform.key, tags)
                 if (suggestions === undefined) {
                     context
                         .enters("freeform", "type")
@@ -209,8 +208,8 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
                             "No entry found in the 'Name Suggestion Index'. None of the 'osmSource'-tags match an entry in the NSI.\n\tOsmSource-tags are " +
                                 tags.map((t) => new Tag(t.key, t.value).asHumanString()).join(" ; ")
                         )
-                }
-            } else if (json.freeform.type === "nsi") {
+                }*/
+            } else if (json.freeform["type"] === "nsi") {
                 context
                     .enters("freeform", "type")
                     .warn(

@@ -16,7 +16,8 @@
     "pa_PK": "سائیکل ڈھانچا",
     "cs": "Cyklistická infrastruktura",
     "pl": "Infrastruktura rowerowa",
-    "uk": "Велосипедна інфраструктура"
+    "uk": "Велосипедна інфраструктура",
+    "ko": "자전거 관련 시설"
   },
   "description": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure. Made during #osoc21.",
@@ -31,7 +32,8 @@
     "da": "Et kort, hvor du kan se og redigere ting relateret til cykelinfrastrukturen. Lavet under #osoc21.",
     "cs": "Mapa, kde můžete prohlížet a upravovat věci související s cyklistickou infrastrukturou. Vytvořeno během #osoc21.",
     "pl": "Mapa, na której możesz przeglądać i edytować rzeczy związane z infrastrukturą rowerową. Wykonane podczas #osoc21.",
-    "uk": "Мапа, на якій можна переглядати та редагувати обʼєкти, повʼязані з велосипедною інфраструктурою. Створено під час #osoc21."
+    "uk": "Мапа, на якій можна переглядати та редагувати обʼєкти, повʼязані з велосипедною інфраструктурою. Створено під час #osoc21.",
+    "ko": "자전거 인프라와 관련된 항목을 조회하고 편집할 수 있는 지도입니다. #osoc21 기간 동안 제작되었습니다."
   },
   "shortDescription": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure.",
@@ -47,7 +49,8 @@
     "da": "Et kort, hvor du kan se og redigere ting relateret til cykelinfrastrukturen.",
     "cs": "Mapa, kde můžete prohlížet a upravovat věci související s cyklistickou infrastrukturou.",
     "pl": "Mapa, na której możesz przeglądać i edytować rzeczy związane z infrastrukturą rowerową.",
-    "uk": "Мапа, на якій ви можете переглядати та редагувати речі, повʼязані з велосипедною інфраструктурою."
+    "uk": "Мапа, на якій ви можете переглядати та редагувати речі, повʼязані з велосипедною інфраструктурою.",
+    "ko": "자전거 관련 시설과 항목을 조회하고 편집할 수 있는 지도입니다."
   },
   "icon": "./assets/themes/cycle_infra/cycle-infra.svg",
   "socialImage": "./assets/themes/cycle_infra/cycle-infra.svg",

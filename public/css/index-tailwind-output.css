@@ -1136,18 +1136,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   right: 0px;
 }
 
-.left-24 {
-  left: 6rem;
-}
-
-.right-24 {
-  right: 6rem;
-}
-
-.top-56 {
-  top: 14rem;
-}
-
 .bottom-0 {
   bottom: 0px;
 }
@@ -1324,8 +1312,8 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin: 0px;
 }
 
-.m-8 {
-  margin: 2rem;
+.m-1 {
+  margin: 0.25rem;
 }
 
 .m-2 {
@@ -1334,10 +1322,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .m-0\.5 {
   margin: 0.125rem;
-}
-
-.m-1 {
-  margin: 0.25rem;
 }
 
 .m-11 {
@@ -1354,6 +1338,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .m-5 {
   margin: 1.25rem;
+}
+
+.m-8 {
+  margin: 2rem;
 }
 
 .m-14 {
@@ -1694,10 +1682,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   height: 2.25rem;
 }
 
-.h-24 {
-  height: 6rem;
-}
-
 .h-screen {
   height: 100vh;
 }
@@ -1749,6 +1733,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   height: 0.75rem;
 }
 
+.h-80 {
+  height: 20rem;
+}
+
 .h-modal {
   height: calc(100% - 2rem);
 }
@@ -1785,16 +1773,16 @@ input[type="range"].range-lg::-moz-range-thumb {
   height: 16rem;
 }
 
-.h-80 {
-  height: 20rem;
-}
-
 .h-20 {
   height: 5rem;
 }
 
 .h-36 {
   height: 9rem;
+}
+
+.h-24 {
+  height: 6rem;
 }
 
 .h-96 {
@@ -2007,6 +1995,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   width: 0.75rem;
 }
 
+.w-60 {
+  width: 15rem;
+}
+
 .w-11 {
   width: 2.75rem;
 }
@@ -2023,9 +2015,8 @@ input[type="range"].range-lg::-moz-range-thumb {
   width: 3.5rem;
 }
 
-.w-max {
-  width: -webkit-max-content;
-  width: max-content;
+.w-48 {
+  width: 12rem;
 }
 
 .w-auto {
@@ -2119,10 +2110,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .w-1 {
   width: 0.25rem;
-}
-
-.w-48 {
-  width: 12rem;
 }
 
 .w-9\/12 {
@@ -2244,12 +2231,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   flex: 1 1 0%;
 }
 
-.flex-shrink {
-  flex-shrink: 1;
-}
-
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
 }
 
 .shrink-0 {
@@ -2509,16 +2496,16 @@ input[type="range"].range-lg::-moz-range-thumb {
   row-gap: 0.25rem;
 }
 
+.gap-x-2 {
+  column-gap: 0.5rem;
+}
+
 .gap-y-2 {
   row-gap: 0.5rem;
 }
 
 .gap-y-4 {
   row-gap: 1rem;
-}
-
-.gap-x-2 {
-  column-gap: 0.5rem;
 }
 
 .gap-x-1 {
@@ -3045,11 +3032,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
-.border-subtle {
-  --tw-border-opacity: 1;
-  border-color: rgb(219 234 254 / var(--tw-border-opacity));
-}
-
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -3063,6 +3045,20 @@ input[type="range"].range-lg::-moz-range-thumb {
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+.border-gray-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-border-opacity));
+}
+
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(240 82 82 / var(--tw-border-opacity));
 }
 
 .border-gray-800 {
@@ -3170,11 +3166,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   border-color: rgb(14 159 110 / var(--tw-border-opacity));
 }
 
-.border-red-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(240 82 82 / var(--tw-border-opacity));
-}
-
 .border-gray-700 {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
@@ -3183,10 +3174,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 .border-primary-600 {
   --tw-border-opacity: 1;
   border-color: rgb(239 86 47 / var(--tw-border-opacity));
-}
-
-.border-transparent {
-  border-color: transparent;
 }
 
 .border-red-300 {
@@ -3260,6 +3247,11 @@ input[type="range"].range-lg::-moz-range-thumb {
 .bg-red-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 128 128 / var(--tw-bg-opacity));
+}
+
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 
 .bg-slate-400 {
@@ -3492,11 +3484,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 .bg-primary-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 121 93 / var(--tw-bg-opacity));
-}
-
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 
 .bg-pink-500 {
@@ -4045,16 +4032,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   padding-bottom: 0.75rem;
 }
 
-.pl-4 {
-  padding-left: 1rem;
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .pr-4 {
   padding-right: 1rem;
-}
-
-.pt-2 {
-  padding-top: 0.5rem;
 }
 
 .pl-1 {
@@ -5067,7 +5050,9 @@ input[type="range"].range-lg::-moz-range-thumb {
 @font-face {
   font-family: "Source Sans Pro";
 
-  src: url("/assets/source-sans-pro.regular.ttf") format("woff");
+  /*This path might seem incorrect. However, 'index.css' will be compiled and placed in 'public/css', from where this path _is_ correct*/
+
+  src: url("../assets/fonts/source-sans-pro.regular.ttf") format("woff");
 }
 
 /***********************************************************************\

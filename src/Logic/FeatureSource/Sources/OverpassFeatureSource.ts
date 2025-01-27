@@ -1,4 +1,4 @@
-import { Feature } from "geojson"
+import { Feature, Geometry } from "geojson"
 import { UpdatableFeatureSource } from "../FeatureSource"
 import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
@@ -7,6 +7,9 @@ import { Overpass } from "../../Osm/Overpass"
 import { Utils } from "../../../Utils"
 import { TagsFilter } from "../../Tags/TagsFilter"
 import { BBox } from "../../BBox"
+import { FeatureCollection } from "@turf/turf"
+import { OsmTags } from "../../../Models/OsmFeature"
+;("use strict")
 
 /**
  * A wrapper around the 'Overpass'-object.
@@ -49,22 +52,20 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
         },
         options?: {
             padToTiles?: Store<number>
-            isActive?: Store<boolean>,
+            isActive?: Store<boolean>
             ignoreZoom?: boolean
         }
     ) {
         this.state = state
         this._isActive = options?.isActive ?? new ImmutableStore(true)
         this.padToZoomLevel = options?.padToTiles
-        const self = this
-        this._layersToDownload = options?.ignoreZoom? new ImmutableStore(state.layers) : state.zoom.map((zoom) => this.layersToDownload(zoom))
+        this._layersToDownload = options?.ignoreZoom
+            ? new ImmutableStore(state.layers)
+            : state.zoom.map((zoom) => this.layersToDownload(zoom))
 
-        state.bounds.mapD(
-            (_) => {
-                self.updateAsyncIfNeeded()
-            },
-            [this._layersToDownload]
-        )
+        state.bounds.mapD(() => {
+            this.updateAsyncIfNeeded()
+        }, [this._layersToDownload])
     }
 
     private layersToDownload(zoom: number): LayerConfig[] {
@@ -102,10 +103,11 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
 
     /**
      * Download the relevant data from overpass. Attempt to use a different server if one fails; only downloads the relevant layers
+     * Will always attempt to download, even is 'options.isActive.data' is 'false', the zoom level is incorrect, ...
      * @private
      */
     public async updateAsync(overrideBounds?: BBox): Promise<void> {
-        let data: any = undefined
+        let data: FeatureCollection<Geometry, OsmTags> = undefined
         let lastUsed = 0
         const start = new Date()
         const layersToDownload = this._layersToDownload.data
@@ -114,8 +116,7 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
             return
         }
 
-        const self = this
-        const overpassUrls = self.state.overpassUrl.data
+        const overpassUrls = this.state.overpassUrl.data
         if (overpassUrls === undefined || overpassUrls.length === 0) {
             throw "Panic: overpassFeatureSource didn't receive any overpassUrls"
         }
@@ -123,9 +124,11 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
         let bounds: BBox
         do {
             try {
-                bounds = overrideBounds ?? this.state.bounds.data
-                    ?.pad(this.state.widenFactor)
-                    ?.expandToTileBounds(this.padToZoomLevel?.data)
+                bounds =
+                    overrideBounds ??
+                    this.state.bounds.data
+                        ?.pad(this.state.widenFactor)
+                        ?.expandToTileBounds(this.padToZoomLevel?.data)
                 if (!bounds) {
                     return
                 }
@@ -136,10 +139,11 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
                     return undefined
                 }
                 this.runningQuery.setData(true)
+                console.trace("Overpass feature source: querying geojson")
                 data = (await overpass.queryGeoJson(bounds))[0]
             } catch (e) {
-                self.retries.data++
-                self.retries.ping()
+                this.retries.data++
+                this.retries.ping()
                 console.error(`QUERY FAILED due to`, e)
 
                 await Utils.waitFor(1000)
@@ -149,12 +153,12 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
                     console.log("Trying next time with", overpassUrls[lastUsed])
                 } else {
                     lastUsed = 0
-                    self.timeout.setData(self.retries.data * 5)
+                    this.timeout.setData(this.retries.data * 5)
 
-                    while (self.timeout.data > 0) {
+                    while (this.timeout.data > 0) {
                         await Utils.waitFor(1000)
-                        self.timeout.data--
-                        self.timeout.ping()
+                        this.timeout.data--
+                        this.timeout.ping()
                     }
                 }
             }
@@ -176,14 +180,14 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
                 timeNeeded,
                 "seconds"
             )
-            self.features.setData(data.features)
+            this.features.setData(data.features)
             this._lastQueryBBox = bounds
             this._lastRequestedLayers = layersToDownload
         } catch (e) {
             console.error("Got the overpass response, but could not process it: ", e, e.stack)
         } finally {
-            self.retries.setData(0)
-            self.runningQuery.setData(false)
+            this.retries.setData(0)
+            this.runningQuery.setData(false)
         }
     }
 

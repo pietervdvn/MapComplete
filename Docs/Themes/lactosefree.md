@@ -24,6 +24,8 @@ Available languages:
  - cs
  - hu
  - uk
+ - nl
+ - ko
 
 # Table of contents
 
@@ -53,6 +55,9 @@ Available languages:
     + [Reservation](#reservation)
     + [Takeaway](#takeaway)
     + [delivery](#delivery)
+    + [drive-through](#drive-through)
+    + [drive-through-opening_hours](#drive-through-opening_hours)
+    + [Drive-through opening hours](#drive-through-opening-hours)
     + [Vegetarian (no friture)](#vegetarian-(no-friture))
     + [Vegan (no friture)](#vegan-(no-friture))
     + [halal (no friture)](#halal-(no-friture))
@@ -66,6 +71,7 @@ Available languages:
     + [gluten_free](#gluten_free)
     + [smoking](#smoking)
     + [service:electricity](#serviceelectricity)
+    + [seating](#seating)
     + [dog-access](#dog-access)
     + [internet](#internet)
     + [internet-fee](#internet-fee)
@@ -116,6 +122,7 @@ Available languages:
     + [single_level](#single_level)
     + [copyshop-print-sizes](#copyshop-print-sizes)
     + [copyshop-binding](#copyshop-binding)
+    + [optometrist_service](#optometrist_service)
     + [key_cutter](#key_cutter)
     + [sells_new_bikes](#sells_new_bikes)
     + [bike_second_hand](#bike_second_hand)
@@ -188,6 +195,8 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/reservation#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/reservation/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [reservation](https://wiki.openstreetmap.org/wiki/Key:reservation) | Multiple choice | [required](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired) [recommended](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended) [yes](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/takeaway#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/takeaway/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [takeaway](https://wiki.openstreetmap.org/wiki/Key:takeaway) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/delivery#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/delivery/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [delivery](https://wiki.openstreetmap.org/wiki/Key:delivery) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/drive_through#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/drive_through/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [drive_through](https://wiki.openstreetmap.org/wiki/Key:drive_through) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:drive_through%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:drive_through%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours:drive_through#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours%3Adrive_through/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours:drive_through](https://wiki.openstreetmap.org/wiki/Key:opening_hours:drive_through) | [opening_hours](../SpecialInputElements.md#opening_hours) | [](https://wiki.openstreetmap.org/wiki/Tag:opening_hours:drive_through%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:vegetarian#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Avegetarian/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:vegetarian](https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly) [on_demand](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Don_demand) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:vegan#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Avegan/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly) [on_demand](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Don_demand) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:halal#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Ahalal/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:halal](https://wiki.openstreetmap.org/wiki/Key:diet:halal) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Donly) |
@@ -382,6 +391,24 @@ The question is `Does {title()} deliver food to your home?`
  -  *This business does home delivery (possibly via a third party)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:delivery' target='_blank'>delivery</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dyes' target='_blank'>yes</a>
  -  *This business does not deliver at home* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:delivery' target='_blank'>delivery</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dno' target='_blank'>no</a>
 
+### drive-through
+
+The question is `Does this fast-food restaurant have a drive-through?`
+
+ -  *This fast-food restaurant has a drive-through* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:drive_through' target='_blank'>drive_through</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drive_through%3Dyes' target='_blank'>yes</a>
+ -  *This fast-food restaurant does not have a drive-through* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:drive_through' target='_blank'>drive_through</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drive_through%3Dno' target='_blank'>no</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfast_food' target='_blank'>fast_food</a>
+
+### drive-through-opening_hours
+
+The question is `What are the opening hours of the drive-through?`
+*<h3>Drive-through opening hours</h3>{opening_hours_table(opening_hours:drive_through)}* is shown if `opening_hours:drive_through` is set
+
+ -  *The opening hours of the drive-through are the same as the restaurant* is shown if with opening_hours:drive_through=
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:drive_through' target='_blank'>drive_through</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drive_through%3Dyes' target='_blank'>yes</a>
+
 ### Vegetarian (no friture)
 
 The question is `Does this restaurant have a vegetarian option?`
@@ -511,6 +538,13 @@ The question is `Does this amenity have electrical outlets, available to custome
  -  *There are no sockets available indoors to customers, but charging might be possible if the staff is asked* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask' target='_blank'>ask</a>
  -  *There are a no domestic sockets available to customers seated indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno' target='_blank'>no</a>
 
+### seating
+
+The question is `What kind of seating does {title()} have?`
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/outdoor_seating/outdoor_seating.svg' style='width: 3rem; height: 3rem'> *This place has outdoor seating* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:outdoor_seating' target='_blank'>outdoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:outdoor_seating%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:outdoor_seating' target='_blank'>outdoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:outdoor_seating%3Dno' target='_blank'>no</a>
+ -  *This place has indoor seating* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor_seating' target='_blank'>indoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor_seating%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:indoor_seating' target='_blank'>indoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor_seating%3Dno' target='_blank'>no</a>
+
 ### dog-access
 
 The question is `Are dogs allowed in this business?`
@@ -585,7 +619,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -624,6 +658,14 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes | diet:lactose_free=only | diet:lactose_free=limited |
+
+| id | question | osmTags |
+-----|-----|----- |
+| outdoor_seating.0 | Has outdoor seating | outdoor_seating=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| indoor_seating.0 | Has indoor seating | indoor_seating=yes |
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -843,7 +885,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -903,6 +945,7 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:binding#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abinding/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:binding](https://wiki.openstreetmap.org/wiki/Key:service:binding) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:binding%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:binding%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/healthcare#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/healthcare/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [healthcare](https://wiki.openstreetmap.org/wiki/Key:healthcare) | Multiple choice | [optometrist](https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Doptometrist) [audiologist](https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Daudiologist) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:retail#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Aretail/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:retail](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:second_hand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Asecond_hand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:second_hand](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:repair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Arepair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:repair](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold) [brand](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand) |
@@ -1123,6 +1166,7 @@ The question is `What kind of shop is this?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Wig Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwigs' target='_blank'>wigs</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-window.svg' style='width: 3rem; height: 3rem'> *Window Blind Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwindow_blind' target='_blank'>window_blind</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-alcohol-shop.svg' style='width: 3rem; height: 3rem'> *Wine Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwine' target='_blank'>wine</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/shops/shop-disused.svg' style='width: 3rem; height: 3rem'> *This shop is no longer used. It is vacant* is shown if with disused:shop=
 
 This tagrendering has labels 
 `description`
@@ -1233,6 +1277,15 @@ The question is `Does this shop offer a binding service?`
  -  *This shop does bind books* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:binding' target='_blank'>service:binding</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:binding%3Dno' target='_blank'>no</a>
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:print' target='_blank'>service:print</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print%3Dyes' target='_blank'>yes</a> | shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$
+
+### optometrist_service
+
+The question is `Are medical services available here?`
+
+ -  *This shop offers eye exams by certified optometrists* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare' target='_blank'>healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Doptometrist' target='_blank'>optometrist</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:not:healtcare' target='_blank'>not:healtcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:healtcare%3Doptometrist' target='_blank'>optometrist</a>
+ -  *This shop offers hearing tests by a certified audiologist* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare' target='_blank'>healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Daudiologist' target='_blank'>audiologist</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:not:healthcare' target='_blank'>not:healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:healthcare%3Daudiologist' target='_blank'>audiologist</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doptician' target='_blank'>optician</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhearing_aid' target='_blank'>hearing_aid</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmedical_supply' target='_blank'>medical_supply</a>
 
 ### key_cutter
 
@@ -1683,10 +1736,11 @@ This tagrendering has labels
 | shop_types.162 | Wig Shop | shop=wigs |
 | shop_types.163 | Window Blind Store | shop=window_blind |
 | shop_types.164 | Wine Shop | shop=wine |
+| shop_types.165 | This shop is no longer used. It is vacant | disused:shop= | (shop=disused | shop=vacant | disused:shop~^(.+)$ | abandoned:shop~^(.+)$) |
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 | id | question | osmTags |
 -----|-----|----- |

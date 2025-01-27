@@ -14,11 +14,13 @@
   import Translations from "../i18n/Translations"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import Constants from "../../Models/Constants"
+  import DefaultIcon from "../Map/DefaultIcon.svelte"
 
   export let state: SpecialVisualizationState
   export let filteredLayer: FilteredLayer
   export let highlightedLayer: Store<string | undefined> = new ImmutableStore(undefined)
   export let zoomlevel: Store<number> = new ImmutableStore(22)
+  export let showLayerTitle = true
   let layer: LayerConfig = filteredLayer.layerDef
   let isDisplayed: UIEventSource<boolean> = filteredLayer.isDisplayed
 
@@ -54,19 +56,21 @@
 
 {#if filteredLayer.layerDef.name}
   <div class:focus={$highlightedLayer === filteredLayer.layerDef.id} class="mb-1.5">
-    <Checkbox selected={isDisplayed}>
-      <div class="no-image-background block h-6 w-6" class:opacity-50={!$isDisplayed}>
-        <ToSvelte construct={() => layer.defaultIcon()} />
-      </div>
+    {#if showLayerTitle}
+      <Checkbox selected={isDisplayed}>
+        <div class="no-image-background block h-6 w-6" class:opacity-50={!$isDisplayed}>
+          <DefaultIcon {layer} />
+        </div>
 
-      <Tr t={filteredLayer.layerDef.name} />
+        <Tr t={filteredLayer.layerDef.name} />
 
-      {#if $zoomlevel < layer.minzoom}
-        <span class="alert">
-          <Tr t={Translations.t.general.layerSelection.zoomInToSeeThisLayer} />
-        </span>
-      {/if}
-    </Checkbox>
+        {#if $zoomlevel < layer.minzoom}
+          <span class="alert">
+            <Tr t={Translations.t.general.layerSelection.zoomInToSeeThisLayer} />
+          </span>
+        {/if}
+      </Checkbox>
+    {/if}
 
     {#if $isDisplayed && filteredLayer.layerDef.filters?.length > 0}
       <div id="subfilters" class="ml-4 flex flex-col gap-y-1">
@@ -76,9 +80,11 @@
             {#if filter.options.length === 1 && filter.options[0].fields.length === 0}
               <Checkbox selected={getBooleanStateFor(filter)}>
                 <Tr t={filter.options[0].question} />
-                <span class="subtle">
-                  {filter.options[0].osmTags.asHumanString()}
-                </span>
+                {#if $showTags && filter.options[0].osmTags !== undefined}
+                  <span class="subtle">
+                    {filter.options[0].osmTags.asHumanString()}
+                  </span>
+                {/if}
               </Checkbox>
             {/if}
 

@@ -1125,9 +1125,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         element.click()
     }
 
-    public static async waitFor(timeMillis: number): Promise<void> {
+    public static async waitFor(timeMillis: number): Promise<void>;
+    public static async waitFor<T>(timeMillis: number, t: T): Promise<T>;
+
+    public static async waitFor<T = void>(timeMillis: number, t: T): Promise<T> {
         return new Promise((resolve) => {
-            window.setTimeout(resolve, timeMillis)
+            window.setTimeout(() => {
+                resolve(t)
+            }, timeMillis)
         })
     }
 
@@ -1289,6 +1294,21 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             }
         }
         return newD
+    }
+
+    /**
+     *
+     * {"a": "b", "c":"d"} // => {"b":"a", "d":"c"}
+     */
+    public static transposeMapSimple<K extends string, V extends string>(
+        d: Record<K, V>
+    ): Record<V, K> {
+        const inv = <Record<V, K>>{}
+        for (const k in d) {
+            const v = d[k]
+            inv[v] = k
+        }
+        return inv
     }
 
     /**

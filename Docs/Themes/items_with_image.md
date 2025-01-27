@@ -17,6 +17,8 @@ Available languages:
  - es
  - cs
  - hu
+ - nl
+ - ko
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

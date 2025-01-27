@@ -16,6 +16,7 @@
  - bank
  - barrier
  - bbq
+ - beehive
  - bench
  - bench_at_pt
  - bicycle_counter
@@ -32,6 +33,7 @@
  - cafe_pub
  - car_rental
  - caravansites
+ - charge_point
  - charging_station
  - cinema
  - climbing_area
@@ -68,6 +70,7 @@
  - ice_cream
  - indoors
  - information_board
+ - insect_hotel
  - item_with_image
  - kerbs
  - lighthouse
@@ -324,6 +327,7 @@
  - police
  - postoffices
  - school
+ - scouting_group
  - stripclub
  - tool_library
  - tourism_accomodation
@@ -332,6 +336,7 @@
 
              - assisted_repair
  - hackerspace
+ - scouting_group
             
             ### facebook
 
@@ -452,6 +457,11 @@
              - cafe_pub
  - food
             
+            ### seating
+
+             - cafe_pub
+ - food
+            
             ### dog-access
 
              - cafe_pub
@@ -482,13 +492,40 @@
             ### questions
 
              - caravansites
+ - charge_point
  - charging_station
  - etymology
  - favourite
  - hackerspace
  - play_forest
  - playground
+ - scouting_group
  - sport_pitch
+            
+            ### charging_station.capacity
+
+             - charge_point
+            
+            ### charging_station.Available_charging_stations (generated)
+
+             - charge_point
+            
+            ### charging_station.plugs-amount
+
+             - charge_point
+            
+            ### charging_station.questions-technical
+
+             - charge_point
+            
+            ### charging_station.technical
+
+             - charge_point
+            
+            ### maxstay
+
+             - charging_station
+ - parking
             
             ### climbing.website
 
@@ -643,6 +680,10 @@
              - parking_ticket_machine
  - ticket_machine
  - vending_machine
+            
+            ### wheelchair
+
+             - pharmacy
             
             ### {preset_type_select()}
 

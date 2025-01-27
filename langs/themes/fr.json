@@ -94,6 +94,7 @@
         "title": "Bancs"
     },
     "bicycle_parkings": {
+        "description": "Une carte qui présente tous les types de parkings vélos",
         "title": "Stationnement vélo"
     },
     "bicycle_rental": {
@@ -119,7 +120,7 @@
         "title": "Microbibliothèques"
     },
     "cafes_and_pubs": {
-        "description": "Bars et pubs",
+        "description": "Cafés, pubs et bars",
         "title": "Cafés et pubs"
     },
     "campersite": {
@@ -150,6 +151,16 @@
         "description": "Sur cette carte l’on trouve et ajoute des informations sur les points de recharge",
         "shortDescription": "Une carte mondiale des points de recharge",
         "title": "Points de recharge"
+    },
+    "circular_economy": {
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Commerces de produits d'occasion"
+                }
+            }
+        },
+        "title": "Économie circulaire"
     },
     "climbing": {
         "description": "Cette carte indique les sites d’escalade comme les salles d’escalade ou les sites naturels.",
@@ -223,7 +234,7 @@
                                     "then": "Ce commerce ne répare pas les chaussons d'escalade"
                                 }
                             },
-                            "question": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?"
+                            "question": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?"
                         }
                     },
                     "=presets": {
@@ -253,7 +264,7 @@
         "description": "Cette carte montre les réseaux de nœuds cyclistes et vous permet d'ajouter facilement de nouveaux nœuds",
         "layers": {
             "0": {
-                "name": "liens noeud à noeud",
+                "name": "Liens nœud à nœud",
                 "tagRenderings": {
                     "node2node-survey:date": {
                         "override": {
@@ -265,14 +276,14 @@
                 "title": {
                     "mappings": {
                         "0": {
-                            "then": "lien noeud à noeud <strong>{ref}</strong>"
+                            "then": "Lien nœud à nœud <strong>{ref}</strong>"
                         }
                     },
-                    "render": "lien noeud à noeud"
+                    "render": "Lien nœud à nœud"
                 }
             },
             "1": {
-                "name": "noeuds",
+                "name": "Nœuds",
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
                         "question": "A combien dautres nœuds vélo ce nœud est-il lié ?",
@@ -292,6 +303,14 @@
                         }
                     },
                     "render": "nœud cycliste"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Panneaux directionnels cyclables",
+                    "title": {
+                        "render": "Panneau directionnel cyclable"
+                    }
                 }
             }
         },
@@ -382,7 +401,7 @@
         "title": "Rue cyclables"
     },
     "cyclofix": {
-        "description": "Le but de cette carte est de présenter aux cyclistes une solution facile à utiliser pour trouver l'infrastructure appropriée à leurs besoins.<br><br>Vous pouvez suivre votre localisation précise (mobile uniquement) et sélectionner les couches qui vous concernent dans le coin inférieur gauche. Vous pouvez également utiliser cet outil pour ajouter ou modifier des épingles (points d'intérêt) sur la carte et fournir plus de données en répondant aux questions.<br><br>Toutes les modifications que vous apportez seront automatiquement enregistrées dans la base de données mondiale d'OpenStreetMap et peuvent être librement réutilisées par d'autres.<br><br>Pour plus d'informations sur le projet cyclofix, rendez-vous sur <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "Une carte pour permettre aux cyclistes de trouver les infrastructures appropriées à leurs besoins, telles que des pompes à vélo, de l'eau potable, des vélocystes, des stations de réparation ou des parkings.",
         "title": "Cyclofix - une carte pour les cyclistes"
     },
     "drinking_water": {
@@ -433,7 +452,7 @@
             }
         },
         "shortDescription": "Quelle est l'origine de ce toponyme ?",
-        "title": "Étymologie - d'où les rues tirent leur nom ?"
+        "title": "Étymologie - d'où les lieux tirent leur nom ?"
     },
     "facadegardens": {
         "description": "Les <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>jardins muraux</a> en ville n’apportent pas seulement paix et tranquillité mais contribuent à embellir la ville, favoriser la biodiversité, régule la température et assainit l’air. <br/> Klimaan VZW et Mechelen Klimaatneutraal veulent cartographier les jardins muraux comme exemple pour les personnes souhaitant en construire ainsi que celles aimant la nature.<br/>Plus d’infos sur <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -522,6 +541,9 @@
         "shortDescription": "Cette carte indique les murs végétalisés avec des photos et des informations comme leur orientation, l’ensoleillement et le type de plantes.",
         "title": "Jardins de façade"
     },
+    "fireplace": {
+        "description": "Lieu extérieur pour faire un feu ou barbecue fixe dans un lieu officiel."
+    },
     "food": {
         "description": "Restaurants et restaurants à service rapide",
         "title": "Restaurants et restaurants rapides"
@@ -540,6 +562,31 @@
     "ghostbikes": {
         "description": "Les <b>vélos fantômes</b> sont des mémoriaux pour les cyclistes tuées sur la route, prenant la forme de vélos blancs placés à proximité des faits.<br/><br/>Cette carte indique leur emplacement à partir d’OpenStreetMap. Il est possible de contribuer aux informations ici, sous réserve d’avoir un compte OpenStreetMap (gratuit). <p>Il existe un <a href='https://masto.bike/@ghostbikebot' target='_blank'>compte automatisé Mastodon qui publie un aperçu mensuel des vélos fantômes à travers le monde</a></p>",
         "title": "Vélo fantôme"
+    },
+    "ghostsigns": {
+        "description": "Une carte montrant les enseignes désaffectées sur des bâtiments",
+        "layers": {
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Cette œuvre d'art est une publicité historique"
+                                },
+                                "1": {
+                                    "then": "Cette œuvre d'art n'est pas une publicité historique"
+                                }
+                            },
+                            "question": "Est-ce que cette œuvre d'art est une publicité historique ?"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "glutenfree": {
+        "title": "Sans gluten"
     },
     "grb": {
         "description": "Ce thème tente d’aider l’import automatique GRB.",
@@ -602,6 +649,9 @@
         "description": "Sur cette carte, vous trouverez les hôtels dans votre zone",
         "title": "Hôtels"
     },
+    "icecream": {
+        "title": "Glace"
+    },
     "indoors": {
         "description": "Sur cette carte, les lieux intérieurs accessibles au public sont montrés",
         "title": "Intérieurs"
@@ -621,6 +671,89 @@
             }
         },
         "title": "Ressauts et traversées"
+    },
+    "lighthouses": {
+        "description": "Les phares sont des hauts bâtiments avec une lumière au sommet pour guider le trafic maritime.",
+        "title": "Phares"
+    },
+    "mapcomplete-changes": {
+        "description": "Cette carte montre tous les changements effectués avec MapComplete",
+        "layers": {
+            "0": {
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Le nom du thème contient {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Le nom du thème <b>ne contient pas</b> {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "Fait par le·a contributeur·trice {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Pas</b> fait par le·a contributeur·trice {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Fait avant {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Fait après {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Langage utilisateur (code iso) {search}"
+                            }
+                        }
+                    }
+                },
+                "name": "Centre du groupe de modifications",
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Modification faite par <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "version": {
+                        "question": "Quelle version de MapCompletee a été utilisée pour faire cette modification ?",
+                        "render": "Fait avec {editor}"
+                    }
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Plus de statistiques peuvent être trouvées <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Afficher les modifications faites avec MapComplete",
+        "title": "Modifications faites avec MapComplete"
     },
     "maproulette": {
         "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",
@@ -730,6 +863,49 @@
         },
         "title": "OnWheels"
     },
+    "openlovemap": {
+        "description": "<p><i>L'amour au creux de votre main</i></p>Open Love Map répertorie diverses informations pour adultes telles que des maisons closes, des magasins érotiques ou des clubs de strip-tease.",
+        "layers": {
+            "2": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "un magasin érotique"
+                        }
+                    },
+                    "name": "Magasins érotiques"
+                }
+            },
+            "4": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "un distributeur de préservatifs"
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "un cinéma érotique"
+                        }
+                    }
+                }
+            },
+            "9": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "question": "De quel type d'hôtel s'agit-il ?"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Open Love Map"
+    },
     "openwindpowermap": {
         "description": "Une carte indiquant les éoliennes et permettant leur édition.",
         "title": "Générateurs d'énergie éolienne"
@@ -751,27 +927,14 @@
     "pets": {
         "description": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc.",
         "layers": {
-            "1": {
+            "4": {
                 "override": {
                     "name": "Restaurants acceptant les chiens"
                 }
             },
-            "2": {
-                "override": {
-                    "name": "Magasins acceptant les chiens",
-                    "title": {
-                        "render": "Magasins acceptant les chiens"
-                    }
-                }
-            },
             "6": {
                 "override": {
-                    "presets": {
-                        "0": {
-                            "description": "Un magasin où vous pouvez amener votre chien presque partout",
-                            "title": "magasin acceptant les chiens"
-                        }
-                    }
+                    "name": "Magasins acceptant les chiens"
                 }
             }
         },
@@ -821,6 +984,7 @@
         "title": "Commerces"
     },
     "ski": {
+        "description": "Tout ce dont vous avez besoin pour aller skier",
         "title": "Pistes de ski et remontées mécaniques"
     },
     "sport_pitches": {
@@ -1000,7 +1164,7 @@
         "title": "Déchets"
     },
     "waste_basket": {
-        "description": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même",
+        "description": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même.",
         "shortDescription": "Une carte des poubelles",
         "title": "Poubelles"
     }

@@ -21,7 +21,8 @@
     "pt_BR": "Árvores",
     "eu": "Zuhaitzak",
     "pt": "Árvores",
-    "uk": "Дерева"
+    "uk": "Дерева",
+    "ko": "나무"
   },
   "description": {
     "nl": "Breng bomen in kaart!",
@@ -40,7 +41,8 @@
     "cs": "Zmapujte všechny stromy!",
     "pt_BR": "Mapeie todas as árvores!",
     "pl": "Zmapuj wszystkie drzewa!",
-    "pt": "Mapeie todas as árvores!"
+    "pt": "Mapeie todas as árvores!",
+    "ko": "모든 나무에 관련 지도!"
   },
   "shortDescription": {
     "en": "Map all the trees",
@@ -58,7 +60,9 @@
     "es": "Mapea todos los árboles",
     "da": "Kortlæg alle træer",
     "cs": "Zmapujte všechny stromy",
-    "uk": "Додайте на мапу всі дерева"
+    "uk": "Додайте на мапу всі дерева",
+    "ko": "모든 나무 관련 지도",
+    "pt": "Mapeie todas as árvores"
   },
   "icon": "./assets/themes/trees/logo.svg",
   "socialImage": "./assets/themes/trees/logo.svg",

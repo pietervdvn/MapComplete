@@ -14,7 +14,6 @@
   import TagHint from "../TagHint.svelte"
   import LoginToggle from "../../Base/LoginToggle.svelte"
   import SubtleButton from "../../Base/SubtleButton.svelte"
-  import Loading from "../../Base/Loading.svelte"
   import TagRenderingMappingInput from "./TagRenderingMappingInput.svelte"
   import { Translation } from "../../i18n/Translation"
   import Constants from "../../../Models/Constants"
@@ -33,9 +32,10 @@
   import Markdown from "../../Base/Markdown.svelte"
   import { Utils } from "../../../Utils"
   import type { UploadableTag } from "../../../Logic/Tags/TagTypes"
-  import { Modal } from "flowbite-svelte"
   import Popup from "../../Base/Popup.svelte"
   import If from "../../Base/If.svelte"
+  import DotMenu from "../../Base/DotMenu.svelte"
+  import SidebarUnit from "../../Base/SidebarUnit.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -118,7 +118,7 @@
             seenFreeforms.push(newProps[confg.freeform.key])
           }
           return matches
-        }),
+        })
       ]
 
       if (tgs !== undefined && confg.freeform) {
@@ -226,7 +226,7 @@
               freeform: $freeformInput,
               selectedMapping,
               checkedMappings,
-              currentTags: tags.data,
+              currentTags: tags.data
             },
             " --> ",
             selectedTags
@@ -284,7 +284,7 @@
     dispatch("saved", { config, applied: selectedTags })
     const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
       theme: tags.data["_orig_theme"] ?? state.theme.id,
-      changeType: "answer",
+      changeType: "answer"
     })
     freeformInput.set(undefined)
     selectedMapping = undefined
@@ -328,7 +328,7 @@
     const tagsToSet = settableKeys.data.map((k) => new Tag(k, ""))
     const change = new ChangeTagAction(tags.data.id, new And(tagsToSet), tags.data, {
       theme: tags.data["_orig_theme"] ?? state.theme.id,
-      changeType: "answer",
+      changeType: "answer"
     })
     freeformInput.set(undefined)
     selectedMapping = undefined
@@ -338,10 +338,46 @@
       .then((changes) => state.changes.applyChanges(changes))
       .catch(console.error)
   }
+
+  let disabledInTheme =
+    state.userRelatedState?.getThemeDisabled(state.theme.id, layer?.id) ??
+    new UIEventSource<string[]>([])
+  let menuIsOpened = new UIEventSource(false)
+
+  function disableQuestion() {
+    const newList = Utils.Dedup([config.id, ...disabledInTheme.data])
+    disabledInTheme.set(newList)
+    menuIsOpened.set(false)
+  }
+
+  function enableQuestion() {
+    const newList = disabledInTheme.data?.filter((id) => id !== config.id)
+    disabledInTheme.set(newList)
+    menuIsOpened.set(false)
+  }
+
+  let apiState = state.osmConnection.apiIsOnline
 </script>
 
-{#if question !== undefined}
+{#if question !== undefined && $apiState !== "readonly" && $apiState !== "offline"}
   <div class={clss}>
+    {#if layer?.isNormal()}
+      <LoginToggle {state}>
+        <DotMenu hideBackground={true} open={menuIsOpened}>
+          <SidebarUnit>
+            {#if $disabledInTheme.indexOf(config.id) >= 0}
+              <button on:click={() => enableQuestion()}>
+                <Tr t={Translations.t.general.questions.enable} />
+              </button>
+            {:else}
+              <button on:click={() => disableQuestion()}>
+                <Tr t={Translations.t.general.questions.disable} />
+              </button>
+            {/if}
+          </SidebarUnit>
+        </DotMenu>
+      </LoginToggle>
+    {/if}
     <form
       class="relative flex flex-col overflow-y-auto px-4"
       style="max-height: 75vh"
@@ -505,12 +541,25 @@
         {/if}
 
         <!-- Save and cancel buttons, in a logintoggle -->
-        <LoginToggle {state}>
-          <Loading slot="loading" />
-          <SubtleButton slot="not-logged-in" on:click={() => state?.osmConnection?.AttemptLogin()}>
-            <Login slot="image" class="h-8 w-8" />
-            <Tr t={Translations.t.general.loginToStart} slot="message" />
-          </SubtleButton>
+        <LoginToggle {state} ignoreLoading>
+          <div class="flex w-full justify-end" slot="not-logged-in">
+            {#if config.alwaysForceSaveButton}
+              <button
+                on:click={() => onSave()}
+                class={twJoin(
+                      selectedTags === undefined ? "disabled" : "button-shadow",
+                      "primary"
+                    )}
+              >
+                <Tr t={Translations.t.general.save} />
+              </button>
+            {:else}
+              <SubtleButton on:click={() => state?.osmConnection?.AttemptLogin()}>
+                <Login slot="image" class="h-8 w-8" />
+                <Tr t={Translations.t.general.loginToStart} slot="message" />
+              </SubtleButton>
+            {/if}
+          </div>
           {#if $feedback !== undefined}
             <div class="alert" aria-live="assertive" role="alert">
               <Tr t={$feedback} />
@@ -523,7 +572,7 @@
             </h2>
             <Tr t={Translations.t.unknown.explanation} />
             <If
-              condition={state.userRelatedState.showTags.map(
+              condition={state.userRelatedState?.showTags?.map(
                 (v) => v === "yes" || v === "full" || v === "always"
               )}
             >

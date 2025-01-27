@@ -1184,18 +1184,28 @@
                 },
                 "question": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Ce parking est couvert (il a un toit)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Ce parking n'est pas couvert"
                     }
                 },
-                "question": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur."
+                "question": "Ce parking est-il couvert ?"
             },
-            "Underground?": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "L'utilisation de ce parking à vélo est <b>payant</b>"
+                    },
+                    "1": {
+                        "then": "L'utilisation de ce parking à vélo est <b>gratuit</b>"
+                    }
+                }
+            },
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Parking souterrain"
@@ -1211,16 +1221,6 @@
                     }
                 },
                 "question": "Quelle est la position relative de ce parking à vélo ?"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "L'utilisation de ce parking à vélo est <b>payant</b>"
-                    },
-                    "1": {
-                        "then": "L'utilisation de ce parking à vélo est <b>gratuit</b>"
-                    }
-                }
             },
             "operator": {
                 "question": "Qui entretient ce parking à vélos ?"
@@ -2795,10 +2795,10 @@
                 },
                 "question": "Cette rue est-elle éclairée ?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Quelle est la largeur de cette chaussée (en mètres) ?",
                 "questionHint": "Elle est mesurée d'une bordure à l'autre et inclut donc la largeur des voies de stationnement parallèles",
-                "render": "La largeur de cette chaussée est de <strong>{width:carriageway}m</strong>"
+                "render": "La largeur de cette chaussée est de <strong>{width}m</strong>"
             }
         },
         "title": {
@@ -4744,20 +4744,6 @@
                 },
                 "question": "Quel est le nom de cette pharmacie ?",
                 "render": "Cette pharmacie s'appelle {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Cette pharmacie est facile d'accès en chaise roulante"
-                    },
-                    "1": {
-                        "then": "Cette pharmacie est difficilement accessible en chaise roulante"
-                    },
-                    "2": {
-                        "then": "L'accès à cette pharmacie est limité en chaise roulante"
-                    }
-                },
-                "question": "Cette pharmacie est-elle facilement accessible en chaise roulante ?"
             }
         },
         "title": {
@@ -5456,17 +5442,10 @@
     "recycling": {
         "description": "Une couche avec des conteneurs de recyclage et des déchèteries",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Tout type de recyclage"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Accès public uniquement"
+                        "question": "Tout type de recyclage"
                     },
                     "1": {
                         "question": "Recyclage de piles et batteries domestiques"
@@ -5714,6 +5693,9 @@
         "presets": {
             "0": {
                 "title": "une école primaire ou secondaire"
+            },
+            "1": {
+                "title": "une école primaire ou secondaire"
             }
         },
         "tagRenderings": {
@@ -5781,30 +5763,21 @@
             "target-audience": {
                 "mappings": {
                     "0": {
-                        "then": "C'est un établissement scolaire où les étudiants acquièrent des compétences à un niveau adapté à leur âge. <div>Il y a peu ou pas d'adaptations spéciales pour aider les étudiants ayant des besoins particuliers, ou les installations sont ad-hoc</div> Remark: isn't it contradictory to say there's no special facility + the facilities are ad-hoc?"
-                    },
-                    "1": {
                         "then": "C'est un établissement scolaire pour étudiants sans besoins particuliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>"
                     },
-                    "2": {
-                        "then": "C'est un établissement où des adultes sont formés au niveau mentionné."
-                    },
-                    "3": {
-                        "then": "C'est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)"
-                    },
-                    "4": {
+                    "1": {
                         "then": "C'est un établissement scolaire pour les étudiants ayant des troubles d’apprentissage"
                     },
-                    "5": {
+                    "2": {
                         "then": "C'est un établissement scolaire pour les étudiants aveugles ou malvoyants"
                     },
-                    "6": {
+                    "3": {
                         "then": "C'est un établissement scolaire pour les étudiants sourds ou malentendants"
                     },
-                    "7": {
+                    "4": {
                         "then": "C'est un établissement scolaire pour les étudiants en situation de handicap"
                     },
-                    "8": {
+                    "5": {
                         "then": "C'est un établissement scolaire pour les étudiants ayant des besoins particuliers"
                     }
                 },
@@ -6391,7 +6364,7 @@
                 "question": "Dans quelle direction géographique cette caméra filme-t-elle ?",
                 "render": "Filme dans une direction {camera:direction}"
             },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "0": {
                         "then": "Cette caméra est située à l'intérieur"
@@ -6402,8 +6375,7 @@
                     "2": {
                         "then": "Cette caméra est probablement située à l'extérieur"
                     }
-                },
-                "question": "L'espace public surveillé par cette caméra est-il un espace intérieur ou extérieur ?"
+                }
             }
         },
         "title": {

@@ -1,12 +1,13 @@
 import { Utils } from "../../../src/Utils"
 import ThemeConfig from "../../../src/Models/ThemeConfig/ThemeConfig"
 
-import * as bookcaseJson from "../../../src/assets/generated/themes/bookcases.json"
+import * as bookcaseJson from "../../../public/assets/generated/themes/bookcases.json"
 import { OsmTags } from "../../../src/Models/OsmFeature"
 import { Feature, Geometry } from "geojson"
 import { expect, it } from "vitest"
 import ThemeViewState from "../../../src/Models/ThemeViewState"
 import ScriptUtils from "../../../scripts/ScriptUtils"
+import { ImmutableStore } from "../../../src/Logic/UIEventSource"
 
 const latestTags = {
     amenity: "public_bookcase",
@@ -46,7 +47,8 @@ Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/node/556
 Utils.injectJsonDownloadForTests("./assets/data/editor-layer-index.json", '{"features": [] }')
 
 it("should download the latest version", async () => {
-    const state = new ThemeViewState(new ThemeConfig(<any>bookcaseJson, true), new Set<string>())
+    const state = new ThemeViewState(new ThemeConfig(<any>bookcaseJson, true),
+        new ImmutableStore<Set<string>>(new Set()))
     const feature: Feature<Geometry, OsmTags> = {
         type: "Feature",
         id: "node/5568693115",

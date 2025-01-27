@@ -1,13 +1,13 @@
 <script lang="ts">
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
   import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte"
   import type { Feature } from "geojson"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import { GeoOperations } from "../../Logic/GeoOperations"
+  import ThemeViewState from "../../Models/ThemeViewState"
 
   export let feature: Feature
   let properties: Record<string, string> = feature.properties
-  export let state: SpecialVisualizationState
+  export let state: ThemeViewState
   let tags =
     state.featureProperties.getStore(properties.id) ??
     new UIEventSource<Record<string, string>>(properties)

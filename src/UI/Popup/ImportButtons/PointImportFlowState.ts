@@ -1,5 +1,4 @@
 import ImportFlow, { ImportFlowArguments } from "./ImportFlow"
-import { SpecialVisualizationState } from "../../SpecialVisualization"
 import { Store, UIEventSource } from "../../../Logic/UIEventSource"
 import { OsmObject, OsmWay } from "../../../Logic/Osm/OsmObject"
 import CreateNewNodeAction from "../../../Logic/Osm/Actions/CreateNewNodeAction"
@@ -7,6 +6,7 @@ import { Feature, Point } from "geojson"
 import Maproulette from "../../../Logic/Maproulette"
 import { GeoOperations } from "../../../Logic/GeoOperations"
 import { Tag } from "../../../Logic/Tags/Tag"
+import ThemeViewState from "../../../Models/ThemeViewState"
 
 export interface PointImportFlowArguments extends ImportFlowArguments {
     max_snap_distance?: string
@@ -19,17 +19,15 @@ export interface PointImportFlowArguments extends ImportFlowArguments {
 
 export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
     public readonly startCoordinate: [number, number]
-    private readonly _originalFeature: Feature<Point>
 
     constructor(
-        state: SpecialVisualizationState,
+        state: ThemeViewState,
         originalFeature: Feature<Point>,
         args: PointImportFlowArguments,
         tagsToApply: Store<Tag[]>,
         originalFeatureTags: UIEventSource<Record<string, string>>
     ) {
         super(state, args, tagsToApply, originalFeatureTags)
-        this._originalFeature = originalFeature
         this.startCoordinate = GeoOperations.centerpointCoordinates(originalFeature)
     }
 
@@ -80,7 +78,7 @@ export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
             originalFeatureTags.ping()
         }
 
-        let maproulette_id = originalFeatureTags.data[this.args.maproulette_id]
+        const maproulette_id = originalFeatureTags.data[this.args.maproulette_id]
         if (maproulette_id !== undefined) {
             if (this.state.featureSwitchIsTesting.data) {
                 console.log(
@@ -90,7 +88,11 @@ export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
                 )
             } else {
                 console.log("Marking maproulette task as fixed")
-                await Maproulette.singleton.closeTask(Number(maproulette_id))
+                await Maproulette.singleton.closeTask(
+                    Number(maproulette_id),
+                    Maproulette.STATUS_FIXED,
+                    this.state
+                )
                 originalFeatureTags.data["mr_taskStatus"] = "Fixed"
                 originalFeatureTags.ping()
             }

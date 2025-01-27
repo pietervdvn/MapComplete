@@ -2,11 +2,8 @@ import Combine from "./Base/Combine"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
-import {
-    RenderingSpecification,
-    SpecialVisualization,
-    SpecialVisualizationState,
-} from "./SpecialVisualization"
+import { default as FeatureTitle } from "./Popup/Title.svelte"
+import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import MinimapViz from "./Popup/MinimapViz.svelte"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
@@ -97,6 +94,7 @@ import ClearCaches from "./Popup/ClearCaches.svelte"
 import GroupedView from "./Popup/GroupedView.svelte"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import NoteCommentElement from "./Popup/Notes/NoteCommentElement.svelte"
+import DisabledQuestions from "./Popup/DisabledQuestions.svelte"
 import FediverseLink from "./Popup/FediverseLink.svelte"
 import ImageCarousel from "./Image/ImageCarousel.svelte"
 
@@ -111,7 +109,7 @@ class NearbyImageVis implements SpecialVisualization {
         {
             name: "readonly",
             required: false,
-            doc: "If 'readonly', will not show the 'link'-button",
+            doc: "If 'readonly' or 'yes', will not show the 'link'-button",
         },
     ]
     docs =
@@ -127,7 +125,7 @@ class NearbyImageVis implements SpecialVisualization {
         layer: LayerConfig
     ): SvelteUIElement {
         const isOpen = args[0] === "open"
-        const readonly = args[1] === "readonly"
+        const readonly = args[1] === "readonly" || args[1] === "yes"
         const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
         return new SvelteUIElement(isOpen ? NearbyImages : NearbyImagesCollapsed, {
             tags,
@@ -314,7 +312,7 @@ export class QuestionViz implements SpecialVisualization {
             state,
             onlyForLabels: labels,
             notForLabels: blacklist,
-        }).SetClass("w-full")
+        })
     }
 }
 
@@ -434,7 +432,7 @@ export default class SpecialVisualizations {
                     return new SvelteUIElement(AddNewPoint, {
                         state,
                         coordinate: { lon, lat },
-                    }).SetClass("w-full h-full overflow-auto")
+                    })
                 },
             },
             {
@@ -451,7 +449,7 @@ export default class SpecialVisualizations {
                                 assignTo: state.userRelatedState.language,
                                 availableLanguages: languages,
                                 preferredLanguages: state.osmConnection.userDetails.map(
-                                    (ud) => ud.languages
+                                    (ud) => ud?.languages ?? []
                                 ),
                             })
                         })
@@ -563,7 +561,7 @@ export default class SpecialVisualizations {
                         state,
                         feature,
                         layer,
-                    }).SetClass("p-0 m-0")
+                    })
                 },
             },
             new ShareLinkViz(),
@@ -718,8 +716,9 @@ export default class SpecialVisualizations {
                     if (args.length > 0) {
                         imagePrefixes = [].concat(...args.map((a) => a.split(",")))
                     }
-                    const images = AllImageProviders.LoadImagesFor(tags, imagePrefixes)
-                    return new SvelteUIElement(ImageCarousel, { state, tags, images })
+                    const images = AllImageProviders.loadImagesFor(tags, imagePrefixes)
+                    const estimated = tags.mapD(tags => AllImageProviders.estimateNumberOfImages(tags, imagePrefixes))
+                    return new SvelteUIElement(ImageCarousel, { state, tags, images, estimated })
                 },
             },
             {
@@ -743,13 +742,14 @@ export default class SpecialVisualizations {
                         required: false,
                     },
                 ],
-                constr: (state, tags, args) => {
+                constr: (state, tags, args, feature) => {
                     const targetKey = args[0] === "" ? undefined : args[0]
                     const noBlur = args[3]?.toLowerCase()?.trim()
                     return new SvelteUIElement(UploadImage, {
                         state,
                         tags,
                         targetKey,
+                        feature,
                         labelText: args[1],
                         image: args[2],
                         noBlur: noBlur === "true" || noBlur === "yes",
@@ -804,10 +804,15 @@ export default class SpecialVisualizations {
                         name: "fallback",
                         doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
                     },
+                    {
+                        name: "question",
+                        doc: "The question to ask during the review",
+                    },
                 ],
                 constr: (state, tags, args, feature, layer) => {
                     const nameKey = args[0] ?? "name"
                     const fallbackName = args[1]
+                    const question = args[2]
                     const reviews = FeatureReviews.construct(
                         feature,
                         tags,
@@ -818,7 +823,14 @@ export default class SpecialVisualizations {
                         },
                         state.featureSwitchIsTesting
                     )
-                    return new SvelteUIElement(ReviewForm, { reviews, state, tags, feature, layer })
+                    return new SvelteUIElement(ReviewForm, {
+                        reviews,
+                        state,
+                        tags,
+                        feature,
+                        layer,
+                        question,
+                    })
                 },
             },
             {
@@ -867,6 +879,10 @@ export default class SpecialVisualizations {
                         name: "fallback",
                         doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
                     },
+                    {
+                        name: "question",
+                        doc: "The question to ask in the review form. Optional",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -876,20 +892,12 @@ export default class SpecialVisualizations {
                     layer: LayerConfig
                 ): BaseUIElement {
                     return new Combine([
-                        SpecialVisualizations.specialVisualisationsDict["create_review"].constr(
-                            state,
-                            tagSource,
-                            args,
-                            feature,
-                            layer
-                        ),
-                        SpecialVisualizations.specialVisualisationsDict["list_reviews"].constr(
-                            state,
-                            tagSource,
-                            args,
-                            feature,
-                            layer
-                        ),
+                        SpecialVisualizations.specialVisualisationsDict
+                            .get("create_review")
+                            .constr(state, tagSource, args, feature, layer),
+                        SpecialVisualizations.specialVisualisationsDict
+                            .get("list_reviews")
+                            .constr(state, tagSource, args, feature, layer),
                     ])
                 },
             },
@@ -1063,7 +1071,7 @@ export default class SpecialVisualizations {
 
                 constr: (state) => {
                     return new SubtleButton(
-                        new SvelteUIElement(Trash).SetClass("h-6"),
+                        new SvelteUIElement(Trash),
                         Translations.t.general.removeLocationHistory
                     ).onClick(() => {
                         state.historicalUserLocations.features.setData([])
@@ -1092,7 +1100,7 @@ export default class SpecialVisualizations {
                         tags
                             .map((tags) => tags[args[0]])
                             .map((commentsStr) => {
-                                const comments: any[] = JSON.parse(commentsStr)
+                                const comments: { text: string }[] = JSON.parse(commentsStr)
                                 const startLoc = Number(args[1] ?? 0)
                                 if (!isNaN(startLoc) && startLoc > 0) {
                                     comments.splice(0, startLoc)
@@ -1138,31 +1146,13 @@ export default class SpecialVisualizations {
                     "`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
                 constr: (
                     state: SpecialVisualizationState,
-                    tagsSource: UIEventSource<Record<string, string>>,
+                    tags: UIEventSource<Record<string, string>>,
                     _: string[],
                     feature: Feature,
                     layer: LayerConfig
-                ) =>
-                    new VariableUiElement(
-                        tagsSource.map((tags) => {
-                            if (state.theme === undefined) {
-                                return "<feature title>"
-                            }
-                            const title = layer?.title?.GetRenderValue(tags)
-                            if (title === undefined) {
-                                return undefined
-                            }
-                            return new SvelteUIElement(SpecialTranslation, {
-                                t: title,
-                                tags: tagsSource,
-                                state,
-                                feature,
-                                layer,
-                            })
-                                .SetClass("px-1")
-                                .setSpan()
-                        })
-                    ),
+                ) => {
+                    return new SvelteUIElement(FeatureTitle, { state, tags, feature, layer })
+                },
             },
             {
                 funcName: "maproulette_task",
@@ -1474,6 +1464,7 @@ export default class SpecialVisualizations {
                                     state,
                                     feature,
                                     layer,
+                                    // clss: classes ?? "",
                                 }).SetClass(classes)
                                 elements.push(subsTr)
                             }
@@ -1687,7 +1678,7 @@ export default class SpecialVisualizations {
                         state,
                         layer,
                         feature,
-                    }).SetClass("w-full h-full")
+                    })
                 },
             },
             {
@@ -1851,69 +1842,80 @@ export default class SpecialVisualizations {
                     const key = argument[0] ?? "website"
                     const useProxy = argument[1] !== "no"
                     const readonly = argument[3] === "readonly"
-                    const isClosed = (arguments[4] ?? "yes") === "yes"
+                    const isClosed = (argument[4] ?? "yes") === "yes"
 
-                    const url = tags
-                        .mapD((tags) => {
-                            if (!tags._country || !tags[key] || tags[key] === "undefined") {
-                                return null
-                            }
-                            return JSON.stringify({ url: tags[key], country: tags._country })
-                        })
-                        .mapD((data) => JSON.parse(data))
-                    const sourceUrl: Store<string | undefined> = url.mapD((url) => url.url)
+                    const countryStore: Store<string | undefined> = tags.mapD(
+                        (tags) => tags._country
+                    )
+                    const sourceUrl: Store<string | undefined> = tags.mapD((tags) => {
+                        if (!tags[key] || tags[key] === "undefined") {
+                            return null
+                        }
+                        return tags[key]
+                    })
                     const externalData: Store<{ success: GeoJsonProperties } | { error: any }> =
-                        url.bindD(({ url, country }) => {
-                            if (url.startsWith("https://data.velopark.be/")) {
+                        sourceUrl.bindD(
+                            (url) => {
+                                const country = countryStore.data
+                                if (url.startsWith("https://data.velopark.be/")) {
+                                    return Stores.FromPromiseWithErr(
+                                        (async () => {
+                                            try {
+                                                const loadAll =
+                                                    layer.id.toLowerCase().indexOf("maproulette") >=
+                                                    0 // Dirty hack
+                                                const features =
+                                                    await LinkedDataLoader.fetchVeloparkEntry(
+                                                        url,
+                                                        loadAll
+                                                    )
+                                                const feature =
+                                                    features.find(
+                                                        (f) => f.properties["ref:velopark"] === url
+                                                    ) ?? features[0]
+                                                const properties = feature.properties
+                                                properties["ref:velopark"] = url
+                                                console.log(
+                                                    "Got properties from velopark:",
+                                                    properties
+                                                )
+                                                return properties
+                                            } catch (e) {
+                                                console.error(e)
+                                                throw e
+                                            }
+                                        })()
+                                    )
+                                }
+                                if (country === undefined) {
+                                    return undefined
+                                }
                                 return Stores.FromPromiseWithErr(
                                     (async () => {
                                         try {
-                                            const loadAll =
-                                                layer.id.toLowerCase().indexOf("maproulette") >= 0 // Dirty hack
-                                            const features =
-                                                await LinkedDataLoader.fetchVeloparkEntry(
-                                                    url,
-                                                    loadAll
-                                                )
-                                            const feature =
-                                                features.find(
-                                                    (f) => f.properties["ref:velopark"] === url
-                                                ) ?? features[0]
-                                            const properties = feature.properties
-                                            properties["ref:velopark"] = url
-                                            console.log("Got properties from velopark:", properties)
-                                            return properties
+                                            return await LinkedDataLoader.fetchJsonLd(
+                                                url,
+                                                { country },
+                                                useProxy ? "proxy" : "fetch-lod"
+                                            )
                                         } catch (e) {
-                                            console.error(e)
-                                            throw e
+                                            console.log(
+                                                "Could not get with proxy/download LOD, attempting to download directly. Error for ",
+                                                url,
+                                                "is",
+                                                e
+                                            )
+                                            return await LinkedDataLoader.fetchJsonLd(
+                                                url,
+                                                { country },
+                                                "fetch-raw"
+                                            )
                                         }
                                     })()
                                 )
-                            }
-                            return Stores.FromPromiseWithErr(
-                                (async () => {
-                                    try {
-                                        return await LinkedDataLoader.fetchJsonLd(
-                                            url,
-                                            { country },
-                                            useProxy ? "proxy" : "fetch-lod"
-                                        )
-                                    } catch (e) {
-                                        console.log(
-                                            "Could not get with proxy/download LOD, attempting to download directly. Error for ",
-                                            url,
-                                            "is",
-                                            e
-                                        )
-                                        return await LinkedDataLoader.fetchJsonLd(
-                                            url,
-                                            { country },
-                                            "fetch-raw"
-                                        )
-                                    }
-                                })()
-                            )
-                        })
+                            },
+                            [countryStore]
+                        )
 
                     externalData.addCallbackAndRunD((lod) =>
                         console.log("linked_data_from_website received the following data:", lod)
@@ -1931,7 +1933,7 @@ export default class SpecialVisualizations {
                             collapsed: isClosed,
                         }),
                         undefined,
-                        url.map((url) => !!url)
+                        sourceUrl.map((url) => !!url)
                     )
                 },
             },
@@ -1986,13 +1988,7 @@ export default class SpecialVisualizations {
                 funcName: "pending_changes",
                 docs: "A module showing the pending changes, with the option to clear the pending changes",
                 args: [],
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): BaseUIElement {
+                constr(state: SpecialVisualizationState): BaseUIElement {
                     return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
                 },
             },
@@ -2105,6 +2101,15 @@ export default class SpecialVisualizations {
                     return new SubtleButton(undefined, text).onClick(() => {
                         state.osmConnection.preferencesHandler.ClearPreferences()
                     })
+                },
+            },
+            {
+                funcName: "disabled_questions",
+                docs: "Shows which questions are disabled for every layer. Used in 'settings'",
+                needsUrls: [],
+                args: [],
+                constr(state) {
+                    return new SvelteUIElement(DisabledQuestions, { state })
                 },
             },
         ]

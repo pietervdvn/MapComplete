@@ -951,13 +951,13 @@ export class ToTextualDescription {
      * const oh = new opening_hours("mon 12:00-16:00")
      * const ranges = OH.createRangesForApplicableWeek(oh)
      * const tr = ToTextualDescription.createTextualDescriptionFor(oh, ranges.ranges)
-     * tr.textFor("en") // => "On monday from 12:00 till 16:00"
+     * tr.textFor("en") // => "On Monday from 12:00 till 16:00"
      * tr.textFor("nl") // => "Op maandag van 12:00 tot 16:00"
      *
      * const oh = new opening_hours("mon 12:00-16:00; tu 13:00-14:00")
      * const ranges = OH.createRangesForApplicableWeek(oh)
      * const tr = ToTextualDescription.createTextualDescriptionFor(oh, ranges.ranges)
-     * tr.textFor("en") // => "On monday from 12:00 till 16:00. On tuesday from 13:00 till 14:00"
+     * tr.textFor("en") // => "On Monday from 12:00 till 16:00. On Tuesday from 13:00 till 14:00"
      * tr.textFor("nl") // => "Op maandag van 12:00 tot 16:00. Op dinsdag van 13:00 tot 14:00"
      */
     public static createTextualDescriptionFor(

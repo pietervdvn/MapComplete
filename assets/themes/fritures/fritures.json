@@ -11,7 +11,9 @@
     "cs": "Obchody s hranolky",
     "es": "Tiendas de papas fritas",
     "pl": "Sklepy z frytkami",
-    "uk": "Картопля фрі"
+    "uk": "Картопля фрі",
+    "ko": "튀김 가게",
+    "zh_Hant": "薯條店"
   },
   "description": {
     "en": "On this map, you'll find your favourite fries shop!",
@@ -23,7 +25,9 @@
     "ca": "A aquest mapa, trobaràs la teva botiga preferida de patates!",
     "es": "¡En este mapa, encontrarás tu tienda de papas fritas favorita!",
     "pl": "Na tej mapie znajdziesz swój ulubiony sklep z frytkami!",
-    "uk": "На цій мапі ви знайдете свій улюблений заклад з картоплею фрі!"
+    "uk": "На цій мапі ви знайдете свій улюблений заклад з картоплею фрі!",
+    "ko": "이 지도에서는 당신이 가장 좋아하는 튀김 가게를 찾아보세요!",
+    "zh_Hant": "在這份地圖，你會找到你最愛的薯條餐廳！"
   },
   "icon": "./assets/themes/fritures/logo.svg",
   "layers": [
@@ -43,7 +47,9 @@
           "pa_PK": "فرائیاں دی دکان",
           "cs": "Obchod s hranolky",
           "es": "Tienda de papas fritas",
-          "pl": "Sklep z frytkami"
+          "pl": "Sklep z frytkami",
+          "ko": "튀김 가게",
+          "zh_Hant": "薯條店"
         },
         "=presets": [],
         "source": {
@@ -68,7 +74,10 @@
                   "en": "No oil type preference",
                   "de": "Kein Öltyp bevorzugt",
                   "es": "Sin preferencia de tipo de aceite",
-                  "cs": "Žádný preferovaný typ oleje"
+                  "cs": "Žádný preferovaný typ oleje",
+                  "nl": "Geen voorkeur voor een bepaald type frituurolie",
+                  "ko": "기름 종류에 대한 선호가 없습니다",
+                  "zh_Hant": "沒有特定的用油偏好"
                 }
               },
               {
@@ -77,7 +86,10 @@
                   "de": "Nur Friteusen mit Pflanzenöl anzeigen",
                   "ca": "Només mostra freiduries que utilitzen oli vegetal",
                   "es": "Mostrar solo freidoras que usan aceite vegetal",
-                  "cs": "Zobrazit pouze jídla smažená na rostlinném oleji"
+                  "cs": "Zobrazit pouze jídla smažená na rostlinném oleji",
+                  "nl": "Toon enkel frituren die plantaardige frituurolie gebruiken",
+                  "ko": "식물성 기름만 사용하는 가게만 표시합니다",
+                  "zh_Hant": "只顯示採用植物油的店家"
                 },
                 "osmTags": "friture:oil=vegetable"
               },
@@ -87,7 +99,10 @@
                   "de": "Nur Friteusen mit tierischem Öl anzeigen",
                   "ca": "Només mostra freiduries que utilitzen oli animal",
                   "es": "Mostrar solo freidoras que usan aceite animal",
-                  "cs": "Zobrazit pouze jídla smažená na živočišném oleji"
+                  "cs": "Zobrazit pouze jídla smažená na živočišném oleji",
+                  "nl": "Toon enkel frituren die dierlijk frietvet gebruiken",
+                  "ko": "오직 동물성 기름만 사용하는 가게를 표시합니다",
+                  "zh_Hant": "只顯示採用動物油的店家"
                 },
                 "osmTags": "friture:oil=animal"
               }

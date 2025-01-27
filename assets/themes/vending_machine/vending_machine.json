@@ -14,7 +14,8 @@
     "it": "Distributori automatici",
     "ru": "Торговые автоматы",
     "hu": "Árusító automaták",
-    "uk": "Торгові автомати"
+    "uk": "Торгові автомати",
+    "ko": "자판기"
   },
   "description": {
     "en": "Find vending machines for everything",
@@ -26,7 +27,8 @@
     "es": "Encuentra máquinas expendedoras de todo",
     "pl": "Znajdź wszelakie automaty sprzedające",
     "it": "Trova distributori automatici per ogni cosa",
-    "uk": "Знайдіть торгові автомати для всього"
+    "uk": "Знайдіть торгові автомати для всього",
+    "ko": "모든 자판기 찾기"
   },
   "icon": "./assets/layers/vending_machine/vending_machine.svg",
   "startZoom": 19,
@@ -60,7 +62,10 @@
       "override": {
         "isCounted": false,
         "name": null,
-        "minzoom": 18
+        "minzoom": 16,
+        "=filter": {
+          "sameAs": "vending_machine"
+        }
       }
     },
     {
@@ -68,7 +73,10 @@
       "override": {
         "isCounted": false,
         "name": null,
-        "minzoom": 18
+        "minzoom": 13,
+        "=filter": {
+          "sameAs": "vending_machine"
+        }
       }
     },
     {
@@ -76,7 +84,10 @@
       "override": {
         "isCounted": false,
         "name": null,
-        "minzoom": 18
+        "minzoom": 16,
+        "=filter": {
+          "sameAs": "vending_machine"
+        }
       }
     }
   ]

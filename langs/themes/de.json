@@ -488,6 +488,11 @@
                 "override": {
                     "=name": "Sporteinrichtungen ohne Namensherkunft"
                 }
+            },
+            "8": {
+                "override": {
+                    "=name": "Parks ohne etymologische Angaben"
+                }
             }
         },
         "shortDescription": "Woher stammt der Name einer Straße oder eines Ortes?",
@@ -720,6 +725,10 @@
     "indoors": {
         "description": "Eine Karte mit öffentlich zugänglichen Innenräumen",
         "title": "Innenräume"
+    },
+    "insects": {
+        "description": "Insektenhotels bieten Insekten Unterschlupf.",
+        "title": "Insektenhotels"
     },
     "items_with_image": {
         "description": "Eine Karte, die alle Objekte auf OSM zeigt, die ein Bild haben. Dieses Thema ist sehr schlecht für MapComplete geeignet, da man nicht direkt ein Bild hinzufügen kann. Dieses Thema ist jedoch hauptsächlich dazu da, um alles in die Datenbank aufzunehmen, was es ermöglicht, Bilder in der Nähe für andere Funktionen schnell zu finden",
@@ -1078,27 +1087,14 @@
     "pets": {
         "description": "Diese Karte zeigt interessante Orte für Haustierbesitzer: Tierärzte, Hundeparks, Tiergeschäfte, hundefreundliche Restaurants, ...",
         "layers": {
-            "1": {
+            "4": {
                 "override": {
                     "name": "Hundefreundliche Restaurants"
                 }
             },
-            "2": {
-                "override": {
-                    "name": "Hundefreundliche Geschäfte",
-                    "title": {
-                        "render": "Hundefreundliche Geschäfte"
-                    }
-                }
-            },
             "6": {
                 "override": {
-                    "presets": {
-                        "0": {
-                            "description": "Ein Geschäft, in das man Hunde fast überall mitnehmen kann",
-                            "title": "hundefreundliches Geschäft"
-                        }
-                    }
+                    "name": "Hundefreundliche Geschäfte"
                 }
             }
         },
@@ -1167,6 +1163,10 @@
     "rainbow_crossings": {
         "description": "Auf dieser Karte sind Fußgängerüberwege mit Regenbogenfarben eingezeichnet und können leicht hinzugefügt werden",
         "title": "Regenbogen-Fußgängerübergänge"
+    },
+    "scouting": {
+        "description": "Eine Pfadfindergruppe ist eine soziale Jugendbewegung mit einem starken Fokus auf Aktivitäten im Freien. Die Aktivitäten reichen von Camping, Wandern, Wassersport, Rucksacktouren, Erkundung der Natur, ...",
+        "title": "Pfadfindergruppen"
     },
     "shops": {
         "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",

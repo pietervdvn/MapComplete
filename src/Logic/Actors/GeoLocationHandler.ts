@@ -2,16 +2,17 @@ import { QueryParameters } from "../Web/QueryParameters"
 import { BBox } from "../BBox"
 import Constants from "../../Models/Constants"
 import { GeoLocationState } from "../State/GeoLocationState"
-import { UIEventSource } from "../UIEventSource"
+import { Store, UIEventSource } from "../UIEventSource"
 import { Feature, LineString, Point } from "geojson"
 import { FeatureSource, WritableFeatureSource } from "../FeatureSource/FeatureSource"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { GeoOperations } from "../GeoOperations"
 import { OsmTags } from "../../Models/OsmFeature"
-import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
+import StaticFeatureSource, { WritableStaticFeatureSource } from "../FeatureSource/Sources/StaticFeatureSource"
 import { MapProperties } from "../../Models/MapProperties"
 import { Orientation } from "../../Sensors/Orientation"
 
+("use strict")
 /**
  * The geolocation-handler takes a map-location and a geolocation state.
  * It'll move the map as appropriate given the state of the geolocation-API
@@ -43,14 +44,14 @@ export default class GeoLocationHandler {
     public readonly mapHasMoved: UIEventSource<Date | undefined> = new UIEventSource<
         Date | undefined
     >(undefined)
-    private readonly selectedElement: UIEventSource<any>
-    private readonly mapProperties?: MapProperties
+    private readonly selectedElement: Store<object>
+    private readonly mapProperties: MapProperties
     private readonly gpsLocationHistoryRetentionTime?: UIEventSource<number>
 
     constructor(
         geolocationState: GeoLocationState,
-        selectedElement: UIEventSource<any>,
-        mapProperties?: MapProperties,
+        selectedElement: Store<object>,
+        mapProperties: MapProperties,
         gpsLocationHistoryRetentionTime?: UIEventSource<number>
     ) {
         this.geolocationState = geolocationState
@@ -59,13 +60,12 @@ export default class GeoLocationHandler {
         this.mapProperties = mapProperties
         this.gpsLocationHistoryRetentionTime = gpsLocationHistoryRetentionTime
         // Did an interaction move the map?
-        let self = this
-        let initTime = new Date()
-        mapLocation.addCallbackD((_) => {
+        const initTime = new Date()
+        mapLocation?.addCallbackD(() => {
             if (new Date().getTime() - initTime.getTime() < 250) {
                 return
             }
-            self.mapHasMoved.setData(new Date())
+            this.mapHasMoved.setData(new Date())
             return true // Unsubscribe
         })
 
@@ -76,12 +76,12 @@ export default class GeoLocationHandler {
             this.mapHasMoved.setData(new Date())
         }
 
-        this.geolocationState.currentGPSLocation.addCallbackAndRunD((_) => {
+        this.geolocationState.currentGPSLocation.addCallbackAndRunD(() => {
             const timeSinceLastRequest =
                 (new Date().getTime() - geolocationState.requestMoment.data?.getTime() ?? 0) / 1000
             if (!this.mapHasMoved.data) {
                 // The map hasn't moved yet; we received our first coordinates, so let's move there!
-                self.MoveMapToCurrentLocation()
+                this.MoveMapToCurrentLocation()
             }
             if (
                 timeSinceLastRequest < Constants.zoomToLocationTimeout &&
@@ -90,12 +90,12 @@ export default class GeoLocationHandler {
                         geolocationState.requestMoment.data?.getTime())
             ) {
                 // still within request time and the map hasn't moved since requesting to jump to the current location
-                self.MoveMapToCurrentLocation()
+                this.MoveMapToCurrentLocation()
             }
 
             if (!this.geolocationState.allowMoving.data) {
                 // Jup, the map is locked to the bound location: move automatically
-                self.MoveMapToCurrentLocation(0)
+                this.MoveMapToCurrentLocation(0)
                 return
             }
         })
@@ -138,7 +138,7 @@ export default class GeoLocationHandler {
             }
         }
 
-        mapLocation.setData({
+        mapLocation?.setData({
             lon: newLocation.longitude,
             lat: newLocation.latitude,
         })
@@ -183,7 +183,7 @@ export default class GeoLocationHandler {
     }
 
     private initUserLocationTrail() {
-        const features = LocalStorageSource.getParsed<Feature[]>("gps_location_history", [])
+        const features = LocalStorageSource.getParsed<Feature<Point>[]>("gps_location_history", [])
         const now = new Date().getTime()
         features.data = features.data.filter((ff) => {
             if (ff.properties === undefined) {
@@ -230,7 +230,7 @@ export default class GeoLocationHandler {
             features.ping()
         })
 
-        this.historicalUserLocations = <any>new StaticFeatureSource(features)
+        this.historicalUserLocations = new WritableStaticFeatureSource<Feature<Point>>(features)
 
         const asLine = features.map((allPoints) => {
             if (allPoints === undefined || allPoints.length < 2) {

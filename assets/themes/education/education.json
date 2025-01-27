@@ -17,11 +17,12 @@
     "it": "Istruzione",
     "ru": "Образование",
     "hu": "Oktatás",
-    "uk": "Освіта"
+    "uk": "Освіта",
+    "ko": "교육 기관"
   },
   "description": {
     "en": "On this map, you'll find information about all types of schools and education and can easily add more information",
-    "nl": "Deze kaart toont info over verschillende onderwijsinstellingen zoals kleuterscholen, middelbare scholen en tertiair onderwijs.",
+    "nl": "Deze kaart toont info over scholen en onderwijsinstellingen. Je kan er gemakkelijk meer informatie aan toevoegen",
     "de": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen",
     "fr": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations",
     "ca": "En aquest mapa trobareu informació sobre tots els tipus d'escoles i educació i podreu afegir fàcilment més informació",
@@ -30,13 +31,13 @@
     "es": "En este mapa, encontrarás información sobre todo tipo de escuelas y educación y puedes agregar fácilmente más información",
     "pl": "Na tej mapie znajdziesz informacje o wszystkich typach szkół i edukacji, a także możesz łatwo dodać więcej informacji",
     "it": "In questa mappa troverai informazioni su tutti i tipi di scuole e istituti di istruzione e puoi aggiungere facilmente ulteriori informazioni",
-    "uk": "На цій мапі ви знайдете інформацію про всі типи шкіл та заклади освіти, ви також зможете легко додати додаткову інформацію"
+    "uk": "На цій мапі ви знайдете інформацію про всі типи шкіл та заклади освіти, ви також зможете легко додати додаткову інформацію",
+    "ko": "이 지도에서는 모든 유형의 학교와 교육기관에 대한 정보를 확인할 수 있으며 추가 정보를 쉽게 추가 가능합니다"
   },
   "icon": "./assets/layers/school/college.svg",
   "layers": [
-    "tertiary_education",
+    "childcare",
     "school",
-    "kindergarten_childcare"
-  ],
-  "#layers:note": "kindergarten_childcare must be _below_ school, as it can 'catch' primary schools which do have an integrated preschool"
+    "tertiary_education"
+  ]
 }

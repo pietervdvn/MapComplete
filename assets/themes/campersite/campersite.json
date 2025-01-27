@@ -18,7 +18,8 @@
     "cs": "Kempovací místa",
     "eu": "Kanpinak",
     "pl": "Miejsca dla kamperów",
-    "uk": "Кемпінги"
+    "uk": "Кемпінги",
+    "ko": "캠핑장"
   },
   "description": {
     "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews.",
@@ -26,7 +27,7 @@
     "ru": "На этом сайте собраны все официальные места остановки кемперов и места, где можно сбросить серую и черную воду. Вы можете добавить подробную информацию о предоставляемых услугах и их стоимости. Добавлять фотографии и отзывы. Это веб-сайт и веб-приложение. Данные хранятся в OpenStreetMap, поэтому они будут бесплатными всегда и могут быть повторно использованы любым приложением.",
     "ja": "このWebサイトでは、すべてのキャンピングカーの公式停車場所と、汚水を捨てることができる場所を収集します。提供されるサービスとコストに関する詳細を追加できます。写真とレビューを追加します。これはウェブサイトとウェブアプリです。データはOpenStreetMapに保存されるので、永遠に無料で、どんなアプリからでも再利用できます。",
     "zh_Hant": "這個網站收集所有官方露營地點，以及那邊能排放廢水。你可以加上詳細的服務項目與價格，加上圖片以及評價。",
-    "nl": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslagen en is dus altijd gratis te hergebruiken, ook door andere applicaties.",
+    "nl": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kost. Voeg afbeeldingen en reviews toe.",
     "fr": "Ce site collecte les zones de camping officielles ainsi que les aires de vidange. Il est possible d’ajouter des détails à propos des services proposés ainsi que leurs coûts. Ajoutez vos images et avis.",
     "de": "Eine Karte für offizielle Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen, oder Bilder und Bewertungen ergänzen.",
     "hu": "Ez az oldal az összes olyan hivatalos lakóautós megállóhelyet és helyet gyűjti össze, ahol szürke és fekete szennyvizet lehet üríteni. Hozzáadhat részleteket a nyújtott szolgáltatásokról és a költségekről, valamint képeket és értékeléseket. Ez egyszerre egy weboldal és egy webes alkalmazás. Az adatokat az OpenStreetMapen tároljuk, így mindig ingyenesek lesznek, és bármelyik alkalmazás újra felhasználhatja őket.",
@@ -37,7 +38,8 @@
     "eu": "Karabanak gelditzeko leku ofizial guztiak eta ur gris eta beltzak botatzeko lekuak biltzen ditu. Emandako zerbitzuei eta kostuari buruzko xehetasunak gehitu ditzakezu. Erantsi argazkiak eta aipamenak.",
     "pl": "Na tej stronie zebrano wszystkie oficjalne miejsca postoju kamperów oraz miejsca, w których można wylać zanieczyszczoną wodę. Możesz dodać szczegóły dotyczące świadczonych usług i kosztów. Dodaj zdjęcia i recenzje.",
     "zh_Hans": "该网站汇总了所有官方的露营车停留点以及可以倾倒灰水和黑水的地点。你可以添加有关提供的服务和费用的详细信息，并且可以上传图片和撰写评论。",
-    "uk": "На цьому сайті зібрані всі офіційні місця зупинки автокемперів та місця, де можна здати сірі та чорні води. Ви можете додати детальну інформацію про послуги, що надаються, та вартість. Додавайте фотографії та відгуки."
+    "uk": "На цьому сайті зібрані всі офіційні місця зупинки автокемперів та місця, де можна здати сірі та чорні води. Ви можете додати детальну інформацію про послуги, що надаються, та вартість. Додавайте фотографії та відгуки.",
+    "ko": "이 사이트에는 공식 캠핑카 휴게소와 오수 및 폐수를 버릴 수 있는 장소가 모두 모여 있습니다. 제공되는 서비스 및 비용에 대한 세부 정보를 추가할 수 있습니다. 사진과 리뷰를 추가하세요."
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
@@ -56,7 +58,8 @@
     "cs": "Najděte místa, kde můžete strávit noc se svým karavanem",
     "pl": "Znajdź miejsca, w których możesz spędzić noc w kamperze",
     "pt": "Encontre locais para passar a noite com o seu campista",
-    "uk": "Знайдіть місця для ночівлі з вашим кемпером"
+    "uk": "Знайдіть місця для ночівлі з вашим кемпером",
+    "ko": "캠핑카 숙박이 가능한 캠핑장 찾기"
   },
   "icon": "./assets/themes/campersite/caravan.svg",
   "socialImage": "./assets/themes/campersite/social_image.jpg",
@@ -89,7 +92,8 @@
           "cs": "Toto místo je provozováno {operator}",
           "eu": "Leku hau {operator}k operatzen du",
           "pl": "To miejsce jest obsługiwane przez {operator}",
-          "uk": "Цим закладом керує {operator}"
+          "uk": "Цим закладом керує {operator}",
+          "ko": "이 장소의 운영자는 {operator} 입니다"
         },
         "question": {
           "en": "Who operates this place?",
@@ -105,7 +109,8 @@
           "ca": "Qui opera aquest lloc?",
           "cs": "Kdo toto místo provozuje?",
           "pl": "Kto obsługuje to miejsce?",
-          "uk": "Хто керує цим місцем?"
+          "uk": "Хто керує цим місцем?",
+          "ko": "이 장소의 운영자는 누구인가요?"
         },
         "freeform": {
           "key": "operator"
@@ -127,7 +132,9 @@
           "ca": "Aquest lloc té subministrament elèctric?",
           "cs": "Má toto místo napájecí zdroj?",
           "pl": "Czy to miejsce ma dostęp do prądu?",
-          "uk": "Чи є тут електропостачання?"
+          "uk": "Чи є тут електропостачання?",
+          "zh_Hant": "這個地方有電源供應設施嗎？",
+          "ko": "이곳에 전원 공급 장치가 있습니까?"
         },
         "mappings": [
           {
@@ -151,7 +158,9 @@
               "cs": "Toto místo má napájecí zdroj",
               "eu": "Leku honek hornidura elektrikoa du",
               "pl": "To miejsce ma dostęp do prądu",
-              "uk": "У цьому місці є електропостачання"
+              "uk": "У цьому місці є електропостачання",
+              "zh_Hant": "這個地方有電源供應設施",
+              "ko": "이곳에는 전원 공급 장치가 있습니다"
             }
           },
           {
@@ -174,7 +183,9 @@
               "ca": "Aquest lloc no té subministrament elèctric",
               "cs": "Toto místo nemá napájecí zdroj",
               "pl": "To miejsce nie ma dostępu do prądu",
-              "uk": "Це місце не має електропостачання"
+              "uk": "Це місце не має електропостачання",
+              "zh_Hant": "這個地方沒有電源供應設施",
+              "ko": "이 장소에는 전원 공급 장치가 없습니다"
             }
           }
         ]

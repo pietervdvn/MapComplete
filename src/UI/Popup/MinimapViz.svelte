@@ -7,6 +7,9 @@
   import ShowDataLayer from "../Map/ShowDataLayer"
   import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
   import MaplibreMap from "../Map/MaplibreMap.svelte"
+  import Loading from "../Base/Loading.svelte"
+  import { Utils } from "../../Utils"
+  import DelayedComponent from "../Base/DelayedComponent.svelte"
 
   export let state: SpecialVisualizationState
   export let tagSource: UIEventSource<Record<string, string>>
@@ -78,5 +81,7 @@
 </script>
 
 <div class="h-40 rounded" style="overflow: hidden; pointer-events: none;">
-  <MaplibreMap interactive={false} map={mlmap} mapProperties={mla} />
+  <DelayedComponent>
+    <MaplibreMap interactive={false} map={mlmap} mapProperties={mla} />
+  </DelayedComponent>
 </div>

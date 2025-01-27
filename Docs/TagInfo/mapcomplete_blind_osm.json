@@ -466,8 +466,8 @@
       "value": "impassable"
     },
     {
-      "key": "width:carriageway",
-      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'width:carriageway' (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if highway!=cycleway & highway!=path & highway!=footway)"
+      "key": "width",
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'width' (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if highway!=cycleway & highway!=path & highway!=footway)"
     },
     {
       "key": "cycleway:traffic_sign",
@@ -1289,17 +1289,32 @@
     },
     {
       "key": "conveying",
-      "description": "Layer 'Stairs' shows conveying=yes with a fixed text, namely 'This is an escalator' (in the mapcomplete.org theme 'OSM for the blind')",
+      "description": "Layer 'Stairs' shows conveying=yes with a fixed text, namely 'This is an escalator' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
       "value": "yes"
     },
     {
       "key": "conveying",
-      "description": "Layer 'Stairs' shows conveying=no with a fixed text, namely 'This is not an escalator' (in the mapcomplete.org theme 'OSM for the blind')",
+      "description": "Layer 'Stairs' shows conveying=forward | conveying=backward with a fixed text, namely 'This is an escalator moving in the direction of the arrows' (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "forward"
+    },
+    {
+      "key": "conveying",
+      "description": "Layer 'Stairs' shows conveying=forward | conveying=backward with a fixed text, namely 'This is an escalator moving in the direction of the arrows' (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "backward"
+    },
+    {
+      "key": "conveying",
+      "description": "Layer 'Stairs' shows conveying=reversible with a fixed text, namely 'This is a reversible escalator' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "reversible"
+    },
+    {
+      "key": "conveying",
+      "description": "Layer 'Stairs' shows conveying=no with a fixed text, namely 'This is not an escalator' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
       "value": "no"
     },
     {
       "key": "conveying",
-      "description": "Layer 'Stairs' shows conveying= with a fixed text, namely 'This is not an escalator' (in the mapcomplete.org theme 'OSM for the blind')",
+      "description": "Layer 'Stairs' shows conveying= with a fixed text, namely 'This is not an escalator' (in the mapcomplete.org theme 'OSM for the blind') Picking this answer will delete the key conveying.",
       "value": ""
     },
     {

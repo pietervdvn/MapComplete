@@ -113,6 +113,11 @@
       "value": "sports_centre"
     },
     {
+      "key": "leisure",
+      "description": "The MapComplete theme Climbing gyms, clubs and spots has a layer Climbing gyms showing features with this tag",
+      "value": "sports_hall"
+    },
+    {
       "key": "id",
       "description": "Layer 'Climbing gyms' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
@@ -294,65 +299,108 @@
     },
     {
       "key": "service:climbing_harness:rental",
-      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=yes & service:climbing_harness:rental:fee=no with a fixed text, namely 'A climbing harness can be borrowed for free here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)",
+      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=yes & service:climbing_harness:rental:fee=no with a fixed text, namely 'A climbing harness can be borrowed for free here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no) | (climbing:speed~.+ & climbing:speed!=no))",
       "value": "yes"
     },
     {
       "key": "service:climbing_harness:rental:fee",
-      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=yes & service:climbing_harness:rental:fee=no with a fixed text, namely 'A climbing harness can be borrowed for free here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)",
+      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=yes & service:climbing_harness:rental:fee=no with a fixed text, namely 'A climbing harness can be borrowed for free here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no) | (climbing:speed~.+ & climbing:speed!=no))",
       "value": "no"
     },
     {
       "key": "service:climbing_harness:rental",
-      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=yes & service:climbing_harness:rental:charge~.+ with a fixed text, namely 'A climbing harness can be rented here for {service:climbing_harness:rental:charge}' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)",
+      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=yes & service:climbing_harness:rental:charge~.+ with a fixed text, namely 'A climbing harness can be rented here for {service:climbing_harness:rental:charge}' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no) | (climbing:speed~.+ & climbing:speed!=no))",
       "value": "yes"
     },
     {
       "key": "service:climbing_harness:rental:charge",
-      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=yes & service:climbing_harness:rental:charge~.+ with a fixed text, namely 'A climbing harness can be rented here for {service:climbing_harness:rental:charge}' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)"
+      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=yes & service:climbing_harness:rental:charge~.+ with a fixed text, namely 'A climbing harness can be rented here for {service:climbing_harness:rental:charge}' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no) | (climbing:speed~.+ & climbing:speed!=no))"
     },
     {
       "key": "service:climbing_harness:rental",
-      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=yes with a fixed text, namely 'A climbing harness can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)",
+      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=yes with a fixed text, namely 'A climbing harness can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no) | (climbing:speed~.+ & climbing:speed!=no))",
       "value": "yes"
     },
     {
       "key": "service:climbing_harness:rental",
-      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=no with a fixed text, namely 'A climbing harness can <b>not</b> be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)",
+      "description": "Layer 'Climbing gyms' shows service:climbing_harness:rental=no with a fixed text, namely 'A climbing harness can <b>not</b> be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no) | (climbing:speed~.+ & climbing:speed!=no))",
       "value": "no"
     },
     {
+      "key": "climbing:autobelay:toprope",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:autobelay:toprope' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:toprope~.+ & climbing:toprope!=no)"
+    },
+    {
+      "key": "climbing:autobelay:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:autobelay:toprope=no with a fixed text, namely 'There are no auto belays for top roping' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:toprope~.+ & climbing:toprope!=no)",
+      "value": "no"
+    },
+    {
+      "key": "climbing:autobelay:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:autobelay:toprope=yes with a fixed text, namely 'There are a number of auto belays for top roping' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:toprope~.+ & climbing:toprope!=no)",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:autobelay:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:autobelay:toprope=all with a fixed text, namely 'There is an auto belay for every top rope route but manual belaying is also possible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:toprope~.+ & climbing:toprope!=no)",
+      "value": "all"
+    },
+    {
+      "key": "climbing:autobelay:toprope",
+      "description": "Layer 'Climbing gyms' shows climbing:autobelay:toprope=only with a fixed text, namely 'Top rope routes can only be climbed on auto belay' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:toprope~.+ & climbing:toprope!=no)",
+      "value": "only"
+    },
+    {
+      "key": "climbing:autobelay:sport",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:autobelay:sport' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport~.+ & climbing:sport!=no)"
+    },
+    {
+      "key": "climbing:autobelay:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:autobelay:sport=no with a fixed text, namely 'There are no auto belays for lead climbing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport~.+ & climbing:sport!=no)",
+      "value": "no"
+    },
+    {
+      "key": "climbing:autobelay:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:autobelay:sport=yes with a fixed text, namely 'There is a number of auto belays for lead climbing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport~.+ & climbing:sport!=no)",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:autobelay:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:autobelay:sport=all with a fixed text, namely 'There is an auto belay for every lead climbing route' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport~.+ & climbing:sport!=no)",
+      "value": "all"
+    },
+    {
       "key": "service:climbing_belay_device:provided_at_each_rope",
-      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:provided_at_each_rope=yes with a fixed text, namely 'Belay devices are provided at each rope' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)",
+      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:provided_at_each_rope=yes with a fixed text, namely 'Belay devices are provided at each rope' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no))",
       "value": "yes"
     },
     {
       "key": "service:climbing_belay_device:rental",
-      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=yes & service:climbing_belay_device:rental:fee=no with a fixed text, namely 'A belay device can be borrowed for free here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)",
+      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=yes & service:climbing_belay_device:rental:fee=no with a fixed text, namely 'A belay device can be borrowed for free here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no))",
       "value": "yes"
     },
     {
       "key": "service:climbing_belay_device:rental:fee",
-      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=yes & service:climbing_belay_device:rental:fee=no with a fixed text, namely 'A belay device can be borrowed for free here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)",
+      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=yes & service:climbing_belay_device:rental:fee=no with a fixed text, namely 'A belay device can be borrowed for free here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no))",
       "value": "no"
     },
     {
       "key": "service:climbing_belay_device:rental",
-      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=yes & service:climbing_belay_device:rental:charge~.+ with a fixed text, namely 'A belay device can be rented here for {service:climbing_belay_device:rental:charge}' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)",
+      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=yes & service:climbing_belay_device:rental:charge~.+ with a fixed text, namely 'A belay device can be rented here for {service:climbing_belay_device:rental:charge}' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no))",
       "value": "yes"
     },
     {
       "key": "service:climbing_belay_device:rental:charge",
-      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=yes & service:climbing_belay_device:rental:charge~.+ with a fixed text, namely 'A belay device can be rented here for {service:climbing_belay_device:rental:charge}' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)"
+      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=yes & service:climbing_belay_device:rental:charge~.+ with a fixed text, namely 'A belay device can be rented here for {service:climbing_belay_device:rental:charge}' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no))"
     },
     {
       "key": "service:climbing_belay_device:rental",
-      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=yes with a fixed text, namely 'A belay device can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)",
+      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=yes with a fixed text, namely 'A belay device can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no))",
       "value": "yes"
     },
     {
       "key": "service:climbing_belay_device:rental",
-      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=no with a fixed text, namely 'A belay device can <b>not</b> be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if climbing:sport!=no | climbing:toprope!=no)",
+      "description": "Layer 'Climbing gyms' shows service:climbing_belay_device:rental=no with a fixed text, namely 'A belay device can <b>not</b> be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no))",
       "value": "no"
     },
     {
@@ -1588,6 +1636,11 @@
       "value": "wine"
     },
     {
+      "key": "disused:shop",
+      "description": "Layer 'Shop' shows disused:shop= with a fixed text, namely 'This shop is no longer used. It is vacant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') Picking this answer will delete the key disused:shop. (This is only shown if craft=)",
+      "value": ""
+    },
+    {
       "key": "brand",
       "description": "Layer 'Shop' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
@@ -1726,6 +1779,16 @@
       "key": "service:binding",
       "description": "Layer 'Shop' shows service:binding=no with a fixed text, namely 'This shop does bind books' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$ | service:print=yes)",
       "value": "no"
+    },
+    {
+      "key": "healthcare",
+      "description": "Layer 'Shop' shows healthcare=optometrist with a fixed text, namely 'This shop offers eye exams by certified optometrists' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if shop=optician | shop=hearing_aid | shop=medical_supply)",
+      "value": "optometrist"
+    },
+    {
+      "key": "healthcare",
+      "description": "Layer 'Shop' shows healthcare=audiologist with a fixed text, namely 'This shop offers hearing tests by a certified audiologist' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') (This is only shown if shop=optician | shop=hearing_aid | shop=medical_supply)",
+      "value": "audiologist"
     },
     {
       "key": "craft",
@@ -2436,6 +2499,16 @@
       "value": "drinking_water"
     },
     {
+      "key": "fee",
+      "description": "Layer 'Drinking water' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Drinking water' shows fee=yes with a fixed text, namely 'One needs to pay to use this drinking water point' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
       "key": "fountain",
       "description": "Layer 'Drinking water' shows fountain=bubbler with a fixed text, namely 'This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "bubbler"
@@ -2461,13 +2534,28 @@
       "value": "no"
     },
     {
-      "key": "fee",
-      "description": "Layer 'Drinking water' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "no"
+      "key": "iced_water",
+      "description": "Layer 'Drinking water' shows iced_water=yes with a fixed text, namely 'Ice-cold water is provided here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
     },
     {
-      "key": "fee",
-      "description": "Layer 'Drinking water' shows fee=yes with a fixed text, namely 'One needs to pay to use this drinking water point' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "key": "cold_water",
+      "description": "Layer 'Drinking water' shows cold_water=yes with a fixed text, namely 'Actively cooled water is available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "room_temperature_water",
+      "description": "Layer 'Drinking water' shows room_temperature_water=yes with a fixed text, namely 'Ambient temperature water (without active cooling or heating) is available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "warm_water",
+      "description": "Layer 'Drinking water' shows warm_water=yes with a fixed text, namely 'Warmed water is provided here; the water is not dangerously hot' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "hot_water",
+      "description": "Layer 'Drinking water' shows hot_water=yes with a fixed text, namely 'Hot water is provided here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "yes"
     },
     {

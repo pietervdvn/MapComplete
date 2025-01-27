@@ -1,8 +1,8 @@
 import { Store, UIEventSource } from "../UIEventSource"
 import { OsmConnection } from "./OsmConnection"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
-import OSMAuthInstance = OSMAuth.osmAuth
 import { Utils } from "../../Utils"
+import OSMAuthInstance = OSMAuth.osmAuth
 
 export class OsmPreferences {
     /**
@@ -38,14 +38,27 @@ export class OsmPreferences {
         })
     }
 
-    private setPreferencesAll(key: string, value: string) {
+    /**
+     * Sets a new preferenceValue in 'allPreferences'
+     * @param key
+     * @param value
+     * @param deferping: the end user will ping '_allPreferences'
+     * @private
+     */
+    private setPreferencesAll(key: string, value: string, deferping = false) {
         if (this._allPreferences.data[key] !== value) {
             this._allPreferences.data[key] = value
-            this._allPreferences.ping()
+            if (!deferping) {
+                this._allPreferences.ping()
+            }
         }
     }
 
-    private initPreference(key: string, value: string = undefined): UIEventSource<string> {
+    private initPreference(
+        key: string,
+        value: string = undefined,
+        deferPing = false
+    ): UIEventSource<string> {
         if (this.preferences[key] !== undefined) {
             if (value !== undefined) {
                 this.preferences[key].set(value)
@@ -54,12 +67,12 @@ export class OsmPreferences {
         }
         const pref = (this.preferences[key] = new UIEventSource(value, "preference: " + key))
         if (value) {
-            this.setPreferencesAll(key, value)
+            this.setPreferencesAll(key, value, deferPing)
         }
         pref.addCallback((v) => {
             console.log("Got an update:", key, "--->", v)
             this.uploadKvSplit(key, v)
-            this.setPreferencesAll(key, v)
+            this.setPreferencesAll(key, v, deferPing)
         })
         return pref
     }
@@ -73,11 +86,12 @@ export class OsmPreferences {
             await this.removeLegacy(legacy)
         }
         for (const key in merged) {
-            this.initPreference(key, prefs[key])
+            this.initPreference(key, prefs[key], true)
         }
         for (const key in legacy) {
-            this.initPreference(key, legacy[key])
+            this.initPreference(key, legacy[key], true)
         }
+        this._allPreferences.ping()
     }
 
     public getPreference(key: string, defaultValue: string = undefined, prefix?: string) {
@@ -195,7 +209,10 @@ export class OsmPreferences {
      * Bulk-downloads all preferences
      * @private
      */
-    private getPreferencesDictDirectly(): Promise<Record<string, string>> {
+    private async getPreferencesDictDirectly(): Promise<Record<string, string>> {
+        if(!this.osmConnection.isLoggedIn.data){
+            return {}
+        }
         return new Promise<Record<string, string>>((resolve, reject) => {
             this.auth.xhr(
                 {
@@ -243,6 +260,9 @@ export class OsmPreferences {
      *
      */
     private async uploadKvSplit(k: string, v: string) {
+        if(!this.osmConnection.isLoggedIn.data){
+            return
+        }
         if (v === null || v === undefined || v === "" || v === "undefined" || v === "null") {
             const keysToDelete = OsmPreferences.keysStartingWith(this.seenKeys, k)
             await Promise.all(keysToDelete.map((k) => this.deleteKeyDirectly(k)))
@@ -265,8 +285,8 @@ export class OsmPreferences {
      * @private
      */
     private deleteKeyDirectly(k: string) {
-        if (!this.osmConnection.userDetails.data.loggedIn) {
-            console.debug(`Not saving preference ${k}: user not logged in`)
+        if (!this.osmConnection.isLoggedIn.data) {
+            console.debug(`Not deleting preference ${k}: user not logged in`)
             return
         }
 
@@ -298,8 +318,12 @@ export class OsmPreferences {
      * Deletes it if 'v' is undefined, null or empty
      */
     private async uploadKeyDirectly(k: string, v: string) {
-        if (!this.osmConnection.userDetails.data.loggedIn) {
+        if (!this.osmConnection.isLoggedIn.data) {
             console.debug(`Not saving preference ${k}: user not logged in`)
+            return
+        }
+
+        if (Utils.runningFromConsole) {
             return
         }
 

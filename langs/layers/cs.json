@@ -1492,6 +1492,17 @@
             }
         },
         "tagRenderings": {
+            "automated": {
+                "mappings": {
+                    "0": {
+                        "then": "Jedná se o ruční mycí stanici kol"
+                    },
+                    "1": {
+                        "then": "Jedná se o mytí kol bez obsluhy"
+                    }
+                },
+                "question": "Je tato služba čištění kol bez obsluhy?"
+            },
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
@@ -1515,6 +1526,17 @@
                 },
                 "question": "Kolik stojí využívání služby mytí?",
                 "render": "Využití služby mytí stojí {service:bicycle:cleaning:charge}"
+            },
+            "self_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato mycí služba je samoobslužná"
+                    },
+                    "1": {
+                        "then": "Tuto mycí službu provozuje zaměstnanec"
+                    }
+                },
+                "question": "Je tato mycí služba samoobslužná?"
             }
         },
         "title": {
@@ -1620,18 +1642,34 @@
                 },
                 "question": "Má toto parkoviště místa pro nákladní kola?"
             },
-            "Is covered?": {
+            "charge": {
+                "question": "Kolik stojí zaparkování kola na tomto místě?",
+                "questionHint": "To je částka, která se účtuje za jedno jízdní kolo",
+                "render": "Parkování kola stojí {charge}"
+            },
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Toto parkoviště je zastřešené (má střechu)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Toto parkoviště není zastřešené"
                     }
                 },
-                "question": "Je toto parkoviště zastřešené? U vnitřních parkovišť vyberte také možnost \"kryté\"."
+                "question": "Je toto parkoviště zastřešené?"
             },
-            "Underground?": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Za použití tohoto parkoviště pro kola se musí <b>platit</b>"
+                    },
+                    "1": {
+                        "then": "Bezplatné použití"
+                    }
+                },
+                "question": "Jsou tato parkoviště pro jízdní kola zdarma?"
+            },
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Podzemní parkoviště"
@@ -1647,22 +1685,6 @@
                     }
                 },
                 "question": "Jaké je relativní umístění tohoto parkoviště pro jízdní kola?"
-            },
-            "charge": {
-                "question": "Kolik stojí zaparkování kola na tomto místě?",
-                "questionHint": "To je částka, která se účtuje za jedno jízdní kolo",
-                "render": "Parkování kola stojí {charge}"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Za použití tohoto parkoviště pro kola se musí <b>platit</b>"
-                    },
-                    "1": {
-                        "then": "Bezplatné použití"
-                    }
-                },
-                "question": "Jsou tato parkoviště pro jízdní kola zdarma?"
             },
             "maxstay": {
                 "question": "Jaká je maximální povolená doba parkování?",
@@ -1972,7 +1994,8 @@
                 "title": "pozorovatelna"
             },
             "1": {
-                "description": "Obrazovka nebo stěna s otvory pro sledování ptáků"
+                "description": "Obrazovka nebo stěna s otvory pro sledování ptáků",
+                "title": "ptačí pozorovatelna"
             }
         },
         "tagRenderings": {
@@ -2036,7 +2059,7 @@
         }
     },
     "brothel": {
-        "description": "Zařízení zaměřené speciálně na prostituci. ",
+        "description": "Zařízení zaměřené speciálně na prostituci.",
         "name": "Nevěstince",
         "presets": {
             "0": {
@@ -2268,7 +2291,281 @@
         }
     },
     "charging_station": {
+        "description": "Nabíjecí stanice",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Všechny typy vozidel"
+                    },
+                    "1": {
+                        "question": "Nabíjecí stanice pro kola"
+                    },
+                    "2": {
+                        "question": "Nabíjecí stanice pro auta"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pouze funkční nabíjecí stanice"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Všechny konektory"
+                    },
+                    "1": {
+                        "question": "Má konektor <div style='display: inline-block'><b><b>nástěnné zástrčky Schuko</b> bez zemnicího kolíku (CEE7/4 typ F)</b> <img style='width:1rem; displej: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+                    },
+                    "10": {
+                        "question": "Má konektor <div style='display: inline-block'><b><b>Typ 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "11": {
+                        "question": "Má konektor <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (značkový typ2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                    },
+                    "12": {
+                        "question": "Má konektor <div style='display: inline-block'><b><b>Tesla Supercharger (destinace)</b></b> <img style='width:1rem; displej: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                    }
+                }
+            }
+        },
+        "name": "Nabíjecí stanice",
+        "presets": {
+            "0": {
+                "title": "nabíjecí stanice pro elektrokola"
+            },
+            "1": {
+                "title": "nabíjecí stanice pro auta"
+            }
+        },
         "tagRenderings": {
+            "Auth phone": {
+                "question": "Jaké je telefonní číslo pro autentizační hovor nebo SMS?"
+            },
+            "Authentication": {
+                "mappings": {
+                    "0": {
+                        "then": "Autentizace členskou kartou"
+                    },
+                    "1": {
+                        "then": "Autentizace pomocí aplikace"
+                    },
+                    "2": {
+                        "then": "K dispozici je autentizace pomocí telefonního hovoru"
+                    },
+                    "3": {
+                        "then": "K dispozici je autentizace pomocí SMS"
+                    },
+                    "4": {
+                        "then": "K dispozici je autentizace přes NFC"
+                    },
+                    "5": {
+                        "then": "K dispozici je autentizace prostřednictvím Money Card"
+                    },
+                    "6": {
+                        "then": "K dispozici je autentizace prostřednictvím debetní karty"
+                    },
+                    "7": {
+                        "then": "Nabíjení je zde (také) možné bez autentizace"
+                    }
+                },
+                "question": "Jaký druh autentizace je na nabíjecí stanici k dispozici?"
+            },
+            "Available_charging_stations (generated)": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Schuko zásuvka</b> bez zemnícího kolíku (CEE7/4 typ F)"
+                    },
+                    "1": {
+                        "then": "<b>Schuko zásuvka</b> bez zemnícího kolíku (CEE7/4 typ F)"
+                    },
+                    "10": {
+                        "then": "<b>CCS typu 1</b> (neboli kombinace typu 1)"
+                    },
+                    "11": {
+                        "then": "<b>CCS typu 1</b> (neboli kombinace typu 1)"
+                    },
+                    "12": {
+                        "then": "<b>Tesla Supercharger</b>"
+                    },
+                    "13": {
+                        "then": "<b>Tesla Supercharger</b>"
+                    },
+                    "14": {
+                        "then": "<b>Typ 2</b> (mennekes)"
+                    },
+                    "15": {
+                        "then": "<b>Typ 2</b> (mennekes)"
+                    },
+                    "16": {
+                        "then": "<b>Typ 2 CCS</b> (mennekes)"
+                    },
+                    "17": {
+                        "then": "<b>Typ 2 CCS</b> (mennekes)"
+                    },
+                    "18": {
+                        "then": "<b>Typ 2 s kabelem</b> (mennekes)"
+                    },
+                    "19": {
+                        "then": "<b>Typ 2 s kabelem</b> (mennekes)"
+                    },
+                    "2": {
+                        "then": "<b>Evropská zásuvka</b> se zemnícím kolíkem (CEE7/4 typ E)"
+                    },
+                    "20": {
+                        "then": "<b>Tesla Supercharger CCS</b> (značkový typ2_css)"
+                    },
+                    "21": {
+                        "then": "<b>Tesla Supercharger CCS</b> (značkový typ2_css)"
+                    },
+                    "22": {
+                        "then": "<b>Tesla Supercharger (cíl)</b>"
+                    },
+                    "23": {
+                        "then": "<b>Tesla Supercharger (cíl)</b>"
+                    },
+                    "32": {
+                        "then": "<b>BS1363</b> (Typ G)"
+                    },
+                    "33": {
+                        "then": "<b>BS1363</b> (Typ G)"
+                    },
+                    "34": {
+                        "then": "<b>NEMA 5-15</b> (Typ B)"
+                    },
+                    "35": {
+                        "then": "<b>NEMA 5-15</b> (Typ B)"
+                    },
+                    "36": {
+                        "then": "<b>SEV 1011 T23</b> (Typ J)"
+                    },
+                    "38": {
+                        "then": "<b>AS3112</b> (Typ I)"
+                    },
+                    "39": {
+                        "then": "<b>AS3112</b> (Typ I)"
+                    },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "40": {
+                        "then": "<b>NEMA 5-20</b> (Typ B)"
+                    },
+                    "41": {
+                        "then": "<b>NEMA 5-20</b> (Typ B)"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Typ 1 s kabelem</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Typ 1 s kabelem</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Typ 1 <i>bez</i> kabelu</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Typ 1 <i>bez</i> kabelu</b> (J1772)"
+                    }
+                },
+                "question": "Jaké nabíjecí přípojky jsou zde k dispozici?"
+            },
+            "Network": {
+                "mappings": {
+                    "0": {
+                        "then": "Není součástí větší sítě, např. protože nabíjecí stanici spravuje místní firma"
+                    },
+                    "1": {
+                        "then": "Není součástí větší sítě"
+                    }
+                },
+                "question": "Je tato nabíjecí stanice součástí sítě?",
+                "render": "Část sítě <b>{network}</b>"
+            },
+            "OH": {
+                "override": {
+                    "question": "Kdy je tato nabíjecí stanice otevřena?"
+                }
+            },
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato nabíjecí stanice funguje"
+                    },
+                    "1": {
+                        "then": "Tato nabíjecí stanice je rozbitá"
+                    },
+                    "2": {
+                        "then": "Plánuje se zde nabíjecí stanice"
+                    },
+                    "3": {
+                        "then": "Zde je budována dobíjecí stanice"
+                    },
+                    "4": {
+                        "then": "Tato nabíjecí stanice byla trvale deaktivována a již se nepoužívá, ale je stále viditelná"
+                    }
+                },
+                "question": "Používá se tento nabíjecí bod?"
+            },
+            "Operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Síť je ve skutečnosti {operator}"
+                    }
+                },
+                "question": "Kdo je provozovatelem této nabíjecí stanice?",
+                "render": "Tuto nabíjecí stanici provozuje {operator}"
+            },
+            "Parking:fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Žádné další poplatky za parkování během nabíjení"
+                    },
+                    "1": {
+                        "then": "Při nabíjení je třeba uhradit další poplatek za parkování"
+                    }
+                },
+                "question": "Musí se při nabíjení platit parkovné?"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Jízdní kola</b> lze nabíjet zde"
+                    },
+                    "1": {
+                        "then": "<b>Auta</b> lze nabíjet zde"
+                    },
+                    "2": {
+                        "then": "<b>Skútry</b> lze nabíjet zde"
+                    },
+                    "3": {
+                        "then": "<b>Těžká nákladní vozidla</b> (například nákladní automobily) lze nabíjet zde"
+                    },
+                    "4": {
+                        "then": "<b>Autobusy</b> lze nabíjet zde"
+                    }
+                },
+                "question": "Která vozidla zde smí nabíjet?"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Tuto nabíjecí stanici může používat kdokoli (může být vyžadována platba)"
+                    },
+                    "1": {
+                        "then": "Tuto nabíjecí stanici může používat kdokoli (může být vyžadována platba)"
+                    },
+                    "2": {
+                        "then": "Tuto nabíjecí stanici mohou používat pouze zákazníci místa, kam tato stanice patří<br/><span class='subtle'>Např. nabíjecí stanice provozovaná hotelem, kterou mohou používat pouze jeho hosté</span>"
+                    }
+                }
+            },
             "rewritten-questions": {
                 "renderings": {
                     "0": {
@@ -2280,8 +2577,63 @@
                         },
                         "question": "Jaké napětí mají zástrčky s {{description}} ?"
                     }
+                },
+                "rewrite": {
+                    "into": {
+                        "6": {
+                            "2": "<b>Tesla Supercharger</b>"
+                        }
+                    }
                 }
             }
+        }
+    },
+    "childcare": {
+        "presets": {
+            "0": {
+                "title": "péče o děti"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "Kolik dětí (maximálně) zde může být zapsáno?",
+                "render": "Toto zařízení má prostor pro {capacity} dětí"
+            },
+            "name": {
+                "question": "Jak se toto zařízení jmenuje?",
+                "render": "Toto zařízení se jmenuje <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Kdy je tato péče o děti otevřena?"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Péče o děti {name}"
+                }
+            }
+        }
+    },
+    "cinema": {
+        "name": "Kino",
+        "tagRenderings": {
+            "cinema_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto je normální kino promítající filmy pro všechny věkové kategorie"
+                    },
+                    "1": {
+                        "then": "Toto je erotické kino promítající filmy pro dospělé"
+                    }
+                },
+                "question": "O jaký typ kina se jedná?"
+            }
+        },
+        "title": {
+            "render": "Kino"
         }
     },
     "climbing": {
@@ -2583,6 +2935,7 @@
     "climbing_opportunity": {
         "description": "Záložní vrstva s předměty, na které je _možné_ lézt. Načítá se při velkém přiblížení, aby se zabránilo přidávání duplicitních položek",
         "name": "Lezecké příležitosti?",
+        "snapName": "zeď, útes nebo skála",
         "tagRenderings": {
             "climbing-opportunity-name": {
                 "render": "<strong>{name}</strong>"
@@ -2664,6 +3017,10 @@
             "1": {
                 "description": "Veřejně viditelné hodiny umístěné na stěně",
                 "title": "hodiny na stěně"
+            },
+            "2": {
+                "description": "Veřejně viditelné hodiny namontované přímo na stěnu",
+                "title": "nástěnné hodiny, namontované přímo na stěnu"
             }
         },
         "tagRenderings": {
@@ -2744,6 +3101,19 @@
                 },
                 "question": "Zobrazují tyto hodiny také vlhkost?"
             },
+            "indoor": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Tyto hodiny jsou uvnitř"
+                        },
+                        "1": {
+                            "then": "Tyto hodiny jsou venku"
+                        }
+                    },
+                    "question": "Jsou tyto hodiny uvnitř?"
+                }
+            },
             "support": {
                 "mappings": {
                     "0": {
@@ -2751,6 +3121,9 @@
                     },
                     "1": {
                         "then": "Tyto hodiny jsou namontovány na stěně"
+                    },
+                    "2": {
+                        "then": "Tyto hodiny jsou připevněné přímo na zeď"
                     },
                     "3": {
                         "then": "Tyto hodiny jsou součástí billboardu"
@@ -2949,6 +3322,46 @@
                     }
                 },
                 "question": "Má tento semafor vibrační signály pro usnadnění přecházení? (obvykle se nachází ve spodní části tlačítka pro přecházení)"
+            },
+            "markings": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento přechod nemá žádné značení"
+                    },
+                    "1": {
+                        "then": "Tento přechod má označení zebra"
+                    },
+                    "10": {
+                        "then": "Tento přechod má označení zebry ve střídavých barvách"
+                    },
+                    "11": {
+                        "then": "Tento přechod má dvojité značení zebry"
+                    },
+                    "12": {
+                        "then": "Tento přejezd má na silnici piktogramy"
+                    },
+                    "13": {
+                        "then": "Tento přechod má na obou stranách čáry a spojovací pruhy, přičemž v každém pruhu je přerušení"
+                    },
+                    "14": {
+                        "then": "Tento přechod má dvojité čáry na obou stranách přechodu"
+                    },
+                    "2": {
+                        "then": "Tento přejezd má značení neznámého typu"
+                    },
+                    "3": {
+                        "then": "Tento přechod má čáry na obou stranách přechodu"
+                    },
+                    "4": {
+                        "then": "Tento přechod má na obou stranách čáry a spojovací pruhy"
+                    },
+                    "5": {
+                        "then": "Tento přechod má po obou stranách přerušované čáry"
+                    },
+                    "6": {
+                        "then": "Tento přechod má tečkované čáry na obou stranách přechodu"
+                    }
+                }
             }
         },
         "title": {
@@ -2972,6 +3385,7 @@
     "cycleways_and_roads": {
         "description": "Veškerá infrastruktura, kterou může někdo projet na kole, doplněná o otázky týkající se této infrastruktury",
         "name": "Cyklostezky a silnice",
+        "snapName": "silnice nebo cyklostezka",
         "tagRenderings": {
             "Cycleway type for a road": {
                 "mappings": {
@@ -3309,10 +3723,10 @@
                 },
                 "question": "Je tato ulice osvětlená?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Jaká je šířka vozovky této silnice (v metrech)?",
                 "questionHint": "Jedná se o měření od krajnice ke krajnici a to včetně šířky paralelních parkovacích pruhů",
-                "render": "Šířka vozovky této silnice je <strong>{width:carriageway}m</strong>"
+                "render": "Šířka vozovky této silnice je <strong>{width}m</strong>"
             }
         },
         "title": {
@@ -5365,53 +5779,6 @@
             "render": "Obrubník"
         }
     },
-    "kindergarten_childcare": {
-        "name": "Mateřské školky a péče o děti",
-        "presets": {
-            "0": {
-                "title": "mateřská školka"
-            },
-            "1": {
-                "title": "péče o děti"
-            }
-        },
-        "tagRenderings": {
-            "capacity": {
-                "question": "Kolik dětí (maximálně) zde může být zapsáno?",
-                "render": "Toto zařízení má prostor pro {capacity} dětí"
-            },
-            "childcare-type": {
-                "mappings": {
-                    "0": {
-                        "then": "Jedná se o mateřskou školu (známou také jako <i>předškolní zařízení</i>), kde se malým dětem dostává raného vzdělání."
-                    },
-                    "1": {
-                        "then": "Jedná se o zařízení péče o děti, jako jsou jesle nebo školka, kde se starají o malé děti. Neposkytují vzdělání a jsou často provozovány jako soukromé podniky"
-                    }
-                },
-                "question": "O jaký typ zařízení se jedná?"
-            },
-            "name": {
-                "question": "Jak se toto zařízení jmenuje?",
-                "render": "Toto zařízení se jmenuje <b>{name}</b>"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Kdy je tato péče o děti otevřena?"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Mateřská škola {name}"
-                },
-                "1": {
-                    "then": "Péče o děti {name}"
-                }
-            }
-        }
-    },
     "last_click": {
         "pointRendering": {
             "0": {
@@ -6354,20 +6721,6 @@
                 },
                 "question": "Jak se lékárna jmenuje?",
                 "render": "Tato lékárna se jmenuje {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Tato lékárna je snadno přístupná na invalidním vozíku"
-                    },
-                    "1": {
-                        "then": "Tato lékárna je těžko přístupná na invalidním vozíku"
-                    },
-                    "2": {
-                        "then": "Tato lékárna má omezený přístup pro vozíčkáře"
-                    }
-                },
-                "question": "Je tato lékárna snadno přístupná na invalidním vozíku?"
             }
         },
         "title": {
@@ -7124,6 +7477,11 @@
             "phone": {
                 "question": "Jaké je telefonní číslo {title()}?"
             },
+            "qr_code": {
+                "render": {
+                    "after": "Naskenováním tohoto kódu otevřete toto umístění na jiném zařízení"
+                }
+            },
             "repeated": {
                 "render": "V patrech {repeat_on} lze nalézt více identických objektů."
             },
@@ -7143,6 +7501,13 @@
                     }
                 },
                 "question": "Má toto zařízení elektrické zásuvky, které jsou zákazníkům k dispozici, když jsou uvnitř?"
+            },
+            "share": {
+                "render": {
+                    "special": {
+                        "text": "Sdílet tuto lokalitu"
+                    }
+                }
             },
             "single_level": {
                 "mappings": {
@@ -7311,17 +7676,10 @@
     "recycling": {
         "description": "Vrstva s recyklačními kontejnery a středisky",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Všechny typy recyklace"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Pouze veřejný přístup"
+                        "question": "Všechny typy recyklace"
                     },
                     "1": {
                         "question": "Recyklace baterií"
@@ -7569,10 +7927,28 @@
             "render": "Recyklační zařízení"
         }
     },
+    "route_marker": {
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "4": {
+                        "then": "Toto je značka trasy pro lyžařskou cestu."
+                    }
+                },
+                "question": "Pro jaký druh trasy je tato značka určena?"
+            }
+        },
+        "title": {
+            "render": "Značka trasy"
+        }
+    },
     "school": {
         "name": "Základní a střední školy",
         "presets": {
             "0": {
+                "title": "základní nebo střední škola"
+            },
+            "1": {
                 "title": "základní nebo střední škola"
             }
         },
@@ -7624,6 +8000,39 @@
                 },
                 "question": "Které pohlaví se může na tuto školu přihlásit?"
             },
+            "pedagogy": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato škola nepoužívá specifickou pedagogiku"
+                    },
+                    "1": {
+                        "then": "Tato škola využívá Montessori metodu vzdělávání"
+                    },
+                    "2": {
+                        "then": "Tato škola je spojena s Freinet Modern School Movement"
+                    },
+                    "3": {
+                        "then": "Tato škola využívá koncept výuky Jenaplan"
+                    },
+                    "4": {
+                        "then": "Tato škola využívá filozofii vzdělávání Steiner/Waldorf"
+                    },
+                    "5": {
+                        "then": "Tato škola využívá koncept výuky podle Daltonského plánu"
+                    },
+                    "6": {
+                        "then": "Tato škola využívá venkovní výuku"
+                    },
+                    "7": {
+                        "then": "Tato škola využívá přístup Reggio Emilia"
+                    },
+                    "8": {
+                        "then": "Tato škola používá systém Sudbury"
+                    }
+                },
+                "question": "Jaká pedagogická teorie je na této škole aplikována?",
+                "render": "Tato škola používá {pedagogy}"
+            },
             "school-language": {
                 "render": {
                     "special": {
@@ -7641,30 +8050,21 @@
             "target-audience": {
                 "mappings": {
                     "0": {
-                        "then": "Jedná se o školu, kde studenti studují dovednosti na úrovni odpovídající jejich věku. <div>Existuje málo nebo žádná speciální zařízení pro studenty se speciálními potřebami nebo zařízení jsou ad hoc</div>"
-                    },
-                    "1": {
                         "then": "Toto je škola pro studenty bez speciálních potřeb<div class='subtle'>To zahrnuje studenty, kteří mohou absolvovat kurzy s malými, ad hoc měřeními</div>"
                     },
-                    "2": {
-                        "then": "Jedná se o školu, kde se dospělí učí dovednostem na stanovené úrovni."
-                    },
-                    "3": {
-                        "then": "Jedná se o školu pro studenty s autismem"
-                    },
-                    "4": {
+                    "1": {
                         "then": "Jedná se o školu pro žáky s poruchami učení"
                     },
-                    "5": {
+                    "2": {
                         "then": "Jedná se o školu pro nevidomé studenty nebo studenty se zrakovým postižením"
                     },
-                    "6": {
+                    "3": {
                         "then": "Jedná se o školu pro neslyšící studenty nebo studenty se sluchovým postižením"
                     },
-                    "7": {
+                    "4": {
                         "then": "Jedná se o školu pro studenty se zdravotním postižením"
                     },
-                    "8": {
+                    "5": {
                         "then": "Jedná se o školu pro žáky se speciálními potřebami"
                     }
                 },
@@ -7691,6 +8091,7 @@
     "shelter": {
         "description": "Vrstva zobrazující přístřešky",
         "name": "Přístřešek",
+        "snapName": "úkryt",
         "tagRenderings": {
             "shelter-type": {
                 "mappings": {
@@ -7756,7 +8157,8 @@
                         "then": "Tento obchod nepronajímá kola"
                     }
                 },
-                "question": "Pronajímá tento obchod kola?"
+                "question": "Pronajímá tento obchod kola?",
+                "questionHint": "Jedná se o pronájem např. turisté, kteří potřebují kolo. Některé opravny jízdních kol nabízejí jízdní kolo k použití při opravě kola, ale u této otázky se to nepovažuje za pronájem."
             },
             "bike_pump_service": {
                 "mappings": {
@@ -7814,6 +8216,27 @@
                 },
                 "question": "Myjí se zde jízdní kola?"
             },
+            "brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod nemá konkrétní značku, není součástí většího řetězce"
+                    }
+                },
+                "question": "Jaká je značka tohoto obchodu?",
+                "render": "Část <b>{brand}</b>"
+            },
+            "copyshop-binding": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod váže papíry do brožury"
+                    },
+                    "1": {
+                        "then": "Tento obchod váže knihy"
+                    }
+                },
+                "question": "Nabízí tento obchod službu vazby?",
+                "questionHint": "Váže tento obchod svazek stránek do malé knihy, např. hřebenem, spirálou, drátem nebo lepením?"
+            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -7836,9 +8259,28 @@
             },
             "id_presets.shop_types": {
                 "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Půjčovna jízdních kol"
+                        }
+                    },
                     "question": "Co je to za obchod?",
                     "render": "Toto je {shop}"
                 }
+            },
+            "key_cutter": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod se také specializuje na výrobu klíčů"
+                    },
+                    "1": {
+                        "then": "Tento obchod nabízí výrobu klíčů jako službu"
+                    },
+                    "2": {
+                        "then": "Tyto obchody nenabízejí výrobu klíčů jako službu"
+                    }
+                },
+                "question": "Nabízí tento obchod výrobu klíčů?"
             },
             "organic": {
                 "mappings": {
@@ -7875,6 +8317,14 @@
                 "question": "Prodává tento obchod použité zboží?"
             },
             "sells_new_bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod prodává nová kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neprodává nová kola"
+                    }
+                },
                 "question": "Prodává tento obchod jízdní kola?"
             },
             "shops-name": {
@@ -7964,7 +8414,44 @@
             "render": "Sprcha"
         }
     },
+    "ski_piste": {
+        "description": "Lyžařské a snowboardové sjezdovky",
+        "name": "Lyžařské a snowboardové sjezdovky",
+        "tagRenderings": {
+            "length": {
+                "render": "Tato část sjezdovky je dlouhá {_length:km} km"
+            },
+            "piste_difficulty": {
+                "mappings": {
+                    "0": {
+                        "then": "Nováček (zelená)"
+                    },
+                    "1": {
+                        "then": "Snadná (modrá)"
+                    },
+                    "2": {
+                        "then": "Střední (červená)"
+                    },
+                    "3": {
+                        "then": "Pokročilá(černá)"
+                    },
+                    "4": {
+                        "then": "Expert (oranžová/dvojitá černá)"
+                    },
+                    "5": {
+                        "then": "Freeride"
+                    }
+                },
+                "question": "Jaká je obtížnost této sjezdovky?"
+            }
+        },
+        "title": {
+            "render": "Lyžařská sjezdovka {name}"
+        }
+    },
     "slow_roads": {
+        "description": "Všechny cesty bez aut",
+        "name": "Stezky, silnice bez aut a pomalé cesty",
         "tagRenderings": {
             "slow_roads-surface": {
                 "mappings": {
@@ -8228,10 +8715,10 @@
                     "0": {
                         "then": "Jedná se o eskalátor"
                     },
-                    "1": {
+                    "3": {
                         "then": "Nejedná se o eskalátor"
                     },
-                    "2": {
+                    "4": {
                         "then": "Nejedná se o eskalátor"
                     }
                 }
@@ -8567,6 +9054,19 @@
                 "question": "Ve kterém geografickém směru tato kamera snímá?",
                 "render": "Snímané oblasti podle směru kompasu {camera:direction}"
             },
+            "camera_is_indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato kamera je umístěna ve vnitřním prostoru"
+                    },
+                    "1": {
+                        "then": "Tato kamera je umístěna ve venkovním prostoru"
+                    },
+                    "2": {
+                        "then": "Tato kamera je pravděpodobně umístěna venku"
+                    }
+                }
+            },
             "has_alpr": {
                 "mappings": {
                     "0": {
@@ -8578,20 +9078,6 @@
                 },
                 "question": "Dokáže tato kamera automaticky rozpoznat registrační značky?",
                 "questionHint": "Automatická čtečka registračních značek (<b>ALPR</b>) má obvykle dvě čočky a mezi nimi soustavu infračervených diod LED."
-            },
-            "is_indoor": {
-                "mappings": {
-                    "0": {
-                        "then": "Tato kamera je umístěna ve vnitřním prostoru"
-                    },
-                    "1": {
-                        "then": "Tato kamera je umístěna ve venkovním prostoru"
-                    },
-                    "2": {
-                        "then": "Tato kamera je pravděpodobně umístěna venku"
-                    }
-                },
-                "question": "Je veřejný prostor sledovaný touto kamerou vnitřní nebo venkovní prostor?"
             }
         },
         "title": {
@@ -9629,6 +10115,13 @@
                 },
                 "question": "Chcete pomoci s překladem MapComplete?"
             },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Přispěli jste k překladu MapComplete pomocí {_translation_contributions} příspěvků! To je úžasné!"
+                    }
+                }
+            },
             "verified-mastodon": {
                 "mappings": {
                     "0": {
@@ -9766,6 +10259,9 @@
                     "into": {
                         "0": {
                             "1": "duše na kolo"
+                        },
+                        "2": {
+                            "1": "kondom"
                         }
                     }
                 }
@@ -9966,6 +10462,7 @@
     },
     "walls_and_buildings": {
         "description": "Speciální zabudovaná vrstva poskytující všechny stěny a budovy. Tato vrstva je užitečná v předvolbách pro objekty, které lze umístit ke stěnám (např. AED, poštovní schránky, vchody, adresy, bezpečnostní kamery, …). Tato vrstva je ve výchozím nastavení neviditelná a uživatel ji nemůže přepínat.",
+        "snapName": "zeď nebo budova",
         "tagRenderings": {
             "entrance_info": {
                 "mappings": {

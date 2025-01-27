@@ -428,17 +428,17 @@
             "Capacity": {
                 "render": "Место для {capacity} велосипеда(ов)"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Это крытая парковка (есть крыша/навес)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Это открытая парковка"
                     }
                 }
             },
-            "Underground?": {
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Подземная парковка"
@@ -1284,13 +1284,6 @@
             "render": "Бордюр"
         }
     },
-    "kindergarten_childcare": {
-        "presets": {
-            "0": {
-                "title": "детский сад"
-            }
-        }
-    },
     "map": {
         "name": "Карты",
         "presets": {
@@ -1637,6 +1630,13 @@
             }
         }
     },
+    "school": {
+        "presets": {
+            "0": {
+                "title": "детский сад"
+            }
+        }
+    },
     "shops": {
         "description": "Магазин",
         "name": "Магазин",
@@ -1881,7 +1881,7 @@
             "camera:mount": {
                 "question": "Как расположена эта камера?"
             },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "1": {
                         "then": "Эта камера расположена снаружи"

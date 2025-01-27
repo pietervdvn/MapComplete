@@ -2,7 +2,7 @@
   "id": "climbing",
   "description": {
     "en": "A dummy layer which contains tagrenderings, shared among the climbing layers",
-    "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
+    "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsportlagen",
     "de": "Eine Dummy-Ebene, die Tagrenderings enthält, die von den Kletterebenen gemeinsam genutzt werden",
     "cs": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami",
     "ca": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada",
@@ -25,7 +25,8 @@
         "fr": "Existe-t’il un site avec plus d’informations (ex : topographie) ?",
         "it": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?",
         "cs": "Existuje (neoficiální) webová stránka s více informacemi (např. topos)?",
-        "es": "¿Hay una página web (no oficial) con más información (p. ej., croquis)?"
+        "es": "¿Hay una página web (no oficial) con más información (p. ej., croquis)?",
+        "uk": "Чи існує (неофіційний) веб-сайт з додатковою інформацією (наприклад, топос)?"
       },
       "condition": {
         "and": [
@@ -240,7 +241,7 @@
         {
           "if": "climbing:toprope=no",
           "then": {
-            "de": "Toprope-Climbing ist hier nicht möglich",
+            "de": "Toprope-Klettern ist hier nicht möglich",
             "en": "Toprope climbing is not possible here",
             "nl": "Toprope-klimmen kan hier niet",
             "ja": "ここではToprope登坂はできません",
@@ -393,9 +394,9 @@
         "es": "¿Cuántos parabolts tienen como máximo las vías en {title()}?"
       },
       "render": {
-        "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
-        "de": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>",
-        "nl": "De sportklimroutes hebben maximaal {climbing:bolts:max} bouten. <div class='subtle'>Hierbij worden relays niet meegteld. Dit geeft aan hoeveel klimsetjes een klimmer nodig heeft</div>",
+        "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>",
+        "de": "Die Sportkletterrouten hier haben höchstens {climbing:bolts:max} Bohrhaken. <div class='subtle'>Dies gilt ohne Sicherungsstationen und gibt an, wie viele Expressschlingen ein Kletterer benötigt.</div>",
+        "nl": "De sportklimroutes hebben maximum {climbing:bolts:max} haken. <div class='subtle'>Hierbij worden standplaatsen niet meegeteld. Dit geeft aan hoeveel setjes een klimmer nodig heeft.</div>",
         "es": "Las vías de escalada deportiva aquí tienen como máximo {climbing:bolts:max} parabolts.<div class='subtle'>Esto es sin reuniones e indica cuántos cintas exprés necesita un escalador</div>"
       },
       "freeform": {

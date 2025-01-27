@@ -1,13 +1,13 @@
 <script lang="ts">
   import { Drawer } from "flowbite-svelte"
-  import { sineIn } from "svelte/easing"
+  import { cubicInOut } from "svelte/easing"
   import { UIEventSource } from "../../Logic/UIEventSource.js"
 
   export let shown: UIEventSource<boolean>
   let transitionParams = {
     x: -320,
     duration: 200,
-    easing: sineIn,
+    easing: cubicInOut,
   }
   let hidden = !shown.data
   $: {

@@ -5,14 +5,16 @@
     "nl": "Wandelknooppuntnetwerken",
     "de": "Netzwerke von Wanderknoten",
     "es": "Redes de nodos de senderismo",
-    "cs": "Sítě uzlů pro pěší"
+    "cs": "Sítě uzlů pro pěší",
+    "ko": "보행 경로 네트워크"
   },
   "description": {
     "en": "This map shows walking node networks and allows you to add new nodes easily",
     "nl": "Deze kaart toont wandelknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen",
     "de": "Diese Karte zeigt Wandernetzwerke und ermöglicht es Ihnen, einfach neue Knoten hinzuzufügen",
     "cs": "Tato mapa zobrazuje sítě pěších uzlů a umožňuje snadno přidávat nové uzly",
-    "es": "Este mapa muestra redes de nodos de senderismo y te permite agregar nuevos nodos fácilmente"
+    "es": "Este mapa muestra redes de nodos de senderismo y te permite agregar nuevos nodos fácilmente",
+    "ko": "이 지도는 보행 경로를 확인 가능하며, 새로운 경로를 쉽게 추가할 수 있습니다"
   },
   "icon": "./assets/themes/walkingnodes/logo.svg",
   "startZoom": 11,
@@ -33,7 +35,8 @@
         "fr": "liens noeud à noeud",
         "ca": "enllaços node a node",
         "cs": "propojení mezi uzly",
-        "pl": "łącza węzeł do węzła"
+        "pl": "łącza węzeł do węzła",
+        "ko": "경로간 연결"
       },
       "source": {
         "osmTags": {
@@ -59,7 +62,8 @@
           "fr": "lien noeud à noeud",
           "ca": "Enllaç node a node",
           "cs": "propojení mezi uzly",
-          "pl": "połączenie węzła z węzłem"
+          "pl": "połączenie węzła z węzłem",
+          "ko": "경로간 연결"
         },
         "mappings": [
           {
@@ -72,7 +76,8 @@
               "fr": "lien noeud à noeud <strong>{ref}</strong>",
               "ca": "Enllaç node a node <strong>{ref}</strong>",
               "cs": "propojení mezi uzly <strong>{ref}</strong>",
-              "pl": "połączenie węzła z węzłem <strong>{ref}</strong>"
+              "pl": "połączenie węzła z węzłem <strong>{ref}</strong>",
+              "ko": "경로간 연결<strong>{ref}</strong>"
             }
           }
         ]
@@ -105,7 +110,8 @@
               "fr": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?",
               "ca": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?",
               "cs": "Kdy bylo toto propojení mezi uzly naposledy zkontrolováno?",
-              "pl": "Kiedy ostatnio badano to połączenie węzła z węzłem?"
+              "pl": "Kiedy ostatnio badano to połączenie węzła z węzłem?",
+              "ko": "언제 이 경로가 갱신되었습니까?"
             },
             "render": {
               "en": "This node to node link was last surveyed on {survey:date}",
@@ -115,7 +121,8 @@
               "fr": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}",
               "ca": "Aquest enllaç node a node es va sondejar per última vegada el {survey:date}",
               "cs": "Toto propojení mezi uzly bylo naposledy zkontrolováno dne {survey:date}",
-              "pl": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}"
+              "pl": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}",
+              "ko": "아 경로는 지난 {survey:date}에 갱신되었습니다"
             }
           },
           "id": "node2node-survey:date"
@@ -137,7 +144,8 @@
         "cs": "uzly",
         "eu": "nodoak",
         "pl": "węzły",
-        "zh_Hant": "節點"
+        "zh_Hant": "節點",
+        "ko": "경로들"
       },
       "source": {
         "osmTags": {
@@ -175,7 +183,8 @@
           "nl": "Wandelknooppunt",
           "de": "Wanderknoten",
           "es": "Hito de senderismo",
-          "cs": "Pěší uzel"
+          "cs": "Pěší uzel",
+          "ko": "보행 경로"
         },
         "mappings": [
           {
@@ -185,7 +194,8 @@
               "nl": "Wandelknooppunt <strong>{rwn_ref}</strong>",
               "de": "Wanderknoten <strong>{rwn_ref}</strong>",
               "es": "Hito de senderismo <strong>{rwn_ref}</strong>",
-              "cs": "Pěší uzel <strong>{rwn_ref}</strong>"
+              "cs": "Pěší uzel <strong>{rwn_ref}</strong>",
+              "ko": "보행 경로 <strong>{rwn_ref}</strong>"
             }
           },
           {
@@ -195,7 +205,8 @@
               "nl": "Voorgesteld wandelknooppunt <strong>{proposed:rwn_ref}</strong>",
               "de": "Vorgeschlagener Wanderknoten <strong>{proposed:rwn_ref}</strong>",
               "es": "Hito de senderismo propuesto <strong>{proposed:rwn_ref}</strong>",
-              "cs": "Navrhovaný pěší uzel <strong>{proposed:rwn_ref}</strong>"
+              "cs": "Navrhovaný pěší uzel <strong>{proposed:rwn_ref}</strong>",
+              "ko": "제안된 보행 경로 <strong>{proposed:rwn_ref}</strong>"
             }
           }
         ]
@@ -209,7 +220,8 @@
             "nl": "Wat is het referentienummer van dit wandelknooppunt?",
             "de": "Was ist die Referenznummer dieses Wanderknotens?",
             "cs": "Jaké je referenční číslo tohoto pěšího uzlu?",
-            "es": "¿Cuál es el número de referencia de este nodo de senderismo?"
+            "es": "¿Cuál es el número de referencia de este nodo de senderismo?",
+            "ko": "보행 경로의 조회 번호는 무엇입니까?"
           },
           "freeform": {
             "key": "rwn_ref",
@@ -219,7 +231,8 @@
               "nl": "bijv. 1",
               "de": "z.B. 1",
               "cs": "e.g. 1",
-              "es": "p.ej.1"
+              "es": "p.ej.1",
+              "ko": "사례 1"
             }
           },
           "render": {
@@ -227,7 +240,8 @@
             "nl": "Dit wandelknooppunt heeft referentienummer {rwn_ref}",
             "de": "Dieser Wanderknoten hat die Referenznummer {rwn_ref}",
             "es": "Este nodo de senderismo tiene el número de referencia {rwn_ref}",
-            "cs": "Tento pěší uzel má referenční číslo {rwn_ref}"
+            "cs": "Tento pěší uzel má referenční číslo {rwn_ref}",
+            "ko": "이 보행 경로의 조회번호는 {rwn_ref}입니다"
           },
           "condition": "rwn_ref~*"
         },
@@ -239,14 +253,16 @@
               "nl": "Wanneer is dit wandelknooppunt het laatst gesurveyed?",
               "de": "Wann wurde dieser Wanderknoten zuletzt überprüft?",
               "es": "¿Cuándo se inspeccionó por última vez este nodo de senderismo?",
-              "cs": "Kdy byl tento pěší uzel naposledy zkontrolován?"
+              "cs": "Kdy byl tento pěší uzel naposledy zkontrolován?",
+              "ko": "보행경로가 마지막으로 갱신된 것은 언제입니까?"
             },
             "render": {
               "en": "This walking node was last surveyed on {survey:date}",
               "nl": "Dit wandelknooppunt werd het laatst gesurveyed op {survey:date}",
               "de": "Dieser Wanderknoten wurde zuletzt am {survey:date} überprüft",
               "es": "Este hito de senderismo se inspeccionó por última vez el {survey:date}",
-              "cs": "Tento pěší uzel byl naposledy zkontrolován dne {survey:date}"
+              "cs": "Tento pěší uzel byl naposledy zkontrolován dne {survey:date}",
+              "ko": "이 보행경로의 마지막 갱신은 {survey:date}입니다"
             }
           }
         },
@@ -256,14 +272,16 @@
             "nl": "Met hoeveel andere wandelknooppunten heeft dit knooppunt een verbinding?",
             "de": "Mit wie vielen anderen Wanderknoten ist dieser Knoten verbunden?",
             "cs": "S kolika dalšími pěšími uzly je tento uzel propojen?",
-            "es": "¿A cuántos otros nodos de senderismo se conecta este nodo?"
+            "es": "¿A cuántos otros nodos de senderismo se conecta este nodo?",
+            "ko": "이 보행 경로는 다른 보행 경로와 몇 개 연결되어 있습니까?"
           },
           "render": {
             "en": "This node links to {expected_rwn_route_relations} other walking nodes.",
             "nl": "Dit knooppunt verbindt met {expected_rwn_route_relations} andere wandelknooppunten.",
             "de": "Dieser Knoten ist mit {expected_rwn_route_relations} anderen Wanderknoten verbunden.",
             "es": "Este nodo se conecta a {expected_rwn_route_relations} otros nodos de senderismo.",
-            "cs": "Tento uzel je propojen s {expected_rwn_route_relations} dalšími uzly pro pěší."
+            "cs": "Tento uzel je propojen s {expected_rwn_route_relations} dalšími uzly pro pěší.",
+            "ko": "이 보행 경로는 {expected_rwn_route_relations}개의 다른 보행 경로와 연결되어 있습니다."
           },
           "freeform": {
             "key": "expected_rwn_route_relations",
@@ -273,7 +291,8 @@
               "nl": "bijv. 3",
               "de": "z.B. 3",
               "cs": "e.g. 3",
-              "es": "p.ej.3"
+              "es": "p.ej.3",
+              "ko": "사례 3"
             }
           },
           "id": "node-expected_rwn_route_relations"
@@ -291,7 +310,8 @@
             "nl": "een wandelknooppunt",
             "de": "ein Wanderknoten",
             "es": "un nodo de senderismo",
-            "cs": "pěší uzel"
+            "cs": "pěší uzel",
+            "ko": "보행 경로"
           },
           "snapToLayer": [
             "cycleways_and_roads"
@@ -327,14 +347,18 @@
           "en": "Hiking guideposts",
           "de": "Wanderwegweiser",
           "es": "Señalización de senderismo",
-          "cs": "Turistické rozcestníky"
+          "cs": "Turistické rozcestníky",
+          "nl": "Wandelwegwijzers",
+          "ko": "등산 안내 표지판"
         },
         "title": {
           "render": {
             "en": "Hiking guidepost",
             "de": "Wanderwegweiser",
             "es": "Hito de senderismo",
-            "cs": "Turistický rozcestník"
+            "cs": "Turistický rozcestník",
+            "nl": "Wandelwegwijzer",
+            "ko": "등산 안내 표지판"
           }
         }
       },
@@ -367,7 +391,9 @@
               "en": "a route marker for a node to node link",
               "de": "Eine Routenmarkierung für eine Verbindung von Knoten zu Knoten",
               "es": "un marcador de ruta para un enlace de nodo a nodo",
-              "cs": "značka trasy pro spojení mezi uzly"
+              "cs": "značka trasy pro spojení mezi uzly",
+              "nl": "een knooppuntwegwijzer",
+              "ko": "경로간 루트 표시"
             },
             "=exampleImages": [
               "./assets/layers/route_marker/walking_route_marker.jpg"

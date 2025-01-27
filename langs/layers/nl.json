@@ -25,14 +25,45 @@
         }
     },
     "advertising": {
+        "description": "We vullen de informatie over de advertentie aan met de referentie, de operator en de verlichting",
         "name": "Reclame",
         "presets": {
+            "0": {
+                "description": "Een grote structuur voor reclame, meestal te vinden in gebieden met veel verkeer, zoals langs drukke wegen",
+                "title": "een reclamebord"
+            },
+            "1": {
+                "description": "Een grote structuur voor reclame, meestal te vinden in verkeersrijke gebieden zoals langs drukke wegen, bevestigd op een muur",
+                "title": "een reclamebord bevestigd aan een muur"
+            },
+            "10": {
+                "title": "een scherm gemonteerd op een schuilhokje"
+            },
             "11": {
                 "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
                 "title": "een spandoek"
             },
+            "12": {
+                "title": "eem reclamezuil"
+            },
+            "13": {
+                "description": "Gebruikt voor reclameborden, neonborden, logo's & toegangsborden voor instellingen",
+                "title": "een bord"
+            },
+            "14": {
+                "title": "een beeldhouwwerk"
+            },
             "15": {
                 "title": "een muurschildering"
+            },
+            "2": {
+                "title": "een vrijstaande posterbak"
+            },
+            "3": {
+                "title": "een aan de muur gemonteerde posterbak"
+            },
+            "4": {
+                "title": "een posterbak die deel uitmaakt van een bushokje"
             },
             "5": {
                 "description": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
@@ -53,6 +84,48 @@
             }
         },
         "tagRenderings": {
+            "Sides": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit object heeft reclame aan een enkele zijde"
+                    },
+                    "1": {
+                        "then": "Dit object heeft reclame aan beide zijdes"
+                    }
+                },
+                "question": "Vanaf hoeveel kanten kun je naar reclame kijken?"
+            },
+            "animated": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Statisch</b>, toont altijd hetzelfde bericht"
+                    },
+                    "1": {
+                        "then": "Dit object heeft een ingebouwd <b>digitaal scherm</b> om prijzen of andere berichten weer te geven"
+                    },
+                    "2": {
+                        "then": "<b>Trivision</b> - het reclamebord bestaat uit verschillende driehoekige prisma's die regelmatig ronddraaien"
+                    },
+                    "3": {
+                        "then": "<b>Roterende</b> posters"
+                    },
+                    "4": {
+                        "then": "<b>Roteert</b> vanzelf"
+                    }
+                },
+                "question": "Doorloopt deze advertentie meerdere berichten?"
+            },
+            "historic": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een historisch reclamebord (een advertentie voor een bedrijf dat niet meer bestaat of een heel oud bord met erfgoedwaarde)"
+                    },
+                    "1": {
+                        "then": "Dit reclamebord heeft geen historische waarde (het bedrijf bestaat nog steeds en heeft geen erfgoedwaarde)"
+                    }
+                },
+                "question": "Is dit bord voor een bedrijf dat niet meer bestaat of niet meer wordt onderhouden?"
+            },
             "luminous_or_lit_advertising": {
                 "override": {
                     "+mappings": {
@@ -70,14 +143,26 @@
                     "1": {
                         "then": "Lokale informatie"
                     },
+                    "2": {
+                        "then": "Veiligheidsinformatie"
+                    },
+                    "3": {
+                        "then": "Verkiezingsadvertentie"
+                    },
                     "4": {
                         "then": "Informatie over cultuurevenementen zoals theaters, optredens, …"
                     },
                     "5": {
                         "then": "Boodschap van NGO-organisaties"
                     },
+                    "6": {
+                        "then": "Om je mening te geven"
+                    },
                     "7": {
                         "then": "Religieuze boodschap"
+                    },
+                    "8": {
+                        "then": "Financieringsteken"
                     },
                     "9": {
                         "then": "Een kaart"
@@ -95,20 +180,57 @@
             },
             "type": {
                 "mappings": {
+                    "0": {
+                        "then": "Dit is een reclamebord"
+                    },
+                    "1": {
+                        "then": "Dit is een bord"
+                    },
+                    "10": {
+                        "then": "Dit is een muurschildering"
+                    },
+                    "11": {
+                        "then": "Dit is betegeling - de reclame is op tegels geschilderd"
+                    },
+                    "12": {
+                        "then": "Dit is een reliëf"
+                    },
                     "2": {
                         "then": "Dit is een aanplakzuil"
                     },
                     "3": {
                         "then": "Dit is een vlag"
+                    },
+                    "4": {
+                        "then": "Dit is een posterbak"
+                    },
+                    "5": {
+                        "then": "Dit is een scherm"
+                    },
+                    "6": {
+                        "then": "Dit is een beeldhouwerk"
+                    },
+                    "7": {
+                        "then": "Dit is een teken"
+                    },
+                    "9": {
+                        "then": "Dit is een reclamezuil"
                     }
                 },
+                "question": "Wat voor advertentieobject is dit?",
                 "render": "Dit is een {advertising}"
             }
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "Billboard"
+                },
                 "10": {
                     "then": "Muurschildering"
+                },
+                "2": {
+                    "then": "Afficheframe"
                 },
                 "3": {
                     "then": "Aanplakzuil"
@@ -126,9 +248,83 @@
                     "then": "Spandoek"
                 },
                 "9": {
-                    "then": "Aanplakzuil"
+                    "then": "Reclamezuil"
                 }
             }
+        }
+    },
+    "aerialway": {
+        "description": "Verschillende vormen van passagiers- en goederentransport die gebruikmaken van kabels, waaronder kabelbanen, gondelbanen, sleepliften en tokkelbanen.",
+        "name": "Kabelbanen",
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "tagRenderings": {
+            "duration": {
+                "question": "Hoe lang duurt een rit met deze lift?",
+                "questionHint": "Dit is exclusief wachttijd.",
+                "render": "Een enkele reis duurt {duration} minuten"
+            },
+            "length": {
+                "render": "Deze kabelbaan is {_length:km} kilometer lang"
+            },
+            "occupancy": {
+                "question": "Hoeveel mensen kunnen in één cabine?",
+                "render": "Er kunnen {aerialway:occupancy} mensen in een cabine"
+            },
+            "oneway": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze kabelbaan kan alleen naar de top worden genomen"
+                    },
+                    "1": {
+                        "then": "Deze kabelbaan kan in beide richtingen genomen worden"
+                    }
+                },
+                "question": "In welke richting kan deze kabelbaan genomen worden?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een kabelbaan waar de gondel op dezelfde kabel naar boven en naar beneden gaat."
+                    },
+                    "1": {
+                        "then": "Dit is een kabellift waar de gondel in een continue circuit gaat"
+                    },
+                    "10": {
+                        "then": "Een tokkelbaan. (Ook bekend als deathride; een toeristische attractie waarbij avontuurlijk mensen aan hoge snelheid afdalen)"
+                    },
+                    "2": {
+                        "then": "Een open stoeltjeslift met zitjes om op te zitten."
+                    },
+                    "3": {
+                        "then": "Een kabelbaan met zowel stoeltjes als gondels in dezelfde baan"
+                    },
+                    "4": {
+                        "then": "Een sleeplift"
+                    },
+                    "5": {
+                        "then": "Een sleeplift met T-vormige armen voor twee passagiers"
+                    },
+                    "6": {
+                        "then": "Een sleeplift met L-vormige stangen voor één passagier"
+                    },
+                    "7": {
+                        "then": "Een sleeplift met stangen om skiërs naar boven te slepen"
+                    },
+                    "8": {
+                        "then": "Een sleeplijn waar skiërs zich aan vasthouden of vastmaken"
+                    }
+                },
+                "question": "Wat voor kabelbaan is dit?"
+            }
+        },
+        "title": {
+            "render": "Kabelbaan {name}"
         }
     },
     "ambulancestation": {
@@ -178,6 +374,64 @@
         },
         "title": {
             "render": "Ambulancestation"
+        }
+    },
+    "animal_shelter": {
+        "description": "Een dierenasiel is een instelling waar dieren in nood binnengebracht worden en door de medewerkers gevoederd en verzorgd worden, eventueel met het oog op uitzetting. Hieronder vallen asielen voor achtergelaten huisdieren en opvangcentra voor wilde dieren.",
+        "name": "Dierenasielen",
+        "presets": {
+            "0": {
+                "title": "een dierenasiel"
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "question": "Wat is de naam van dit dierenasiel?",
+                "render": "De naam van dit dierenasiel is <b>{name}</b>"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieren worden hier gehouden totdat ze geadopteerd worden"
+                    },
+                    "1": {
+                        "then": "Dieren worden hier verzorgd voor de rest van hun leven"
+                    },
+                    "2": {
+                        "then": "Gewonde dieren worden hier gerevalideerd totdat ze terug in het wild vrijgelaten worden "
+                    }
+                },
+                "question": "Wat is het doel van dit dierenasiel?"
+            },
+            "boarded_animals": {
+                "mappings": {
+                    "0": {
+                        "then": "Honden worden hier opgevangen"
+                    },
+                    "1": {
+                        "then": "Katten worden hier opgevangen"
+                    },
+                    "2": {
+                        "then": "Paarden worden hier opgevangen"
+                    },
+                    "3": {
+                        "then": "Vogels worden hier opgevangen"
+                    },
+                    "4": {
+                        "then": "Wilde dieren worden hier opgevangen"
+                    }
+                },
+                "question": "Welke dieren worden hier opgevangen?",
+                "render": "{animal_shelter} worden hier opgevangen"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Dierenasiel"
         }
     },
     "artwork": {
@@ -270,6 +524,17 @@
                     }
                 },
                 "question": "Is dit kunstwerk ook een zitbank?"
+            },
+            "doubles_as_memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit kunstwerk doet ook dienst als herdenkingsmonument"
+                    },
+                    "1": {
+                        "then": "Dit kunstwerk fungeert niet als gedenkteken"
+                    }
+                },
+                "question": "Dient dit kunstwerk als gedenkteken?"
             }
         },
         "title": {
@@ -279,6 +544,92 @@
                 }
             },
             "render": "Kunstwerk"
+        }
+    },
+    "assembly_point": {
+        "description": "Deze laag bevat verzamelplaatsen en wachtzones waar werknemers, passagiers of menigten verzameld worden in een noodsituatie.",
+        "name": "Noodverzamelplaatsen",
+        "presets": {
+            "0": {
+                "title": "een verzamelplaats"
+            }
+        },
+        "tagRenderings": {
+            "assembly_point_name": {
+                "question": "Wat is de naam van deze verzamelplaats?",
+                "render": "De naam van deze verzamelplaats is <b>{name}</b>"
+            },
+            "assembly_point_operator": {
+                "question": "Welke organisatie beheert dit verzamelpunt?",
+                "render": "Dit verzamelpunt wordt beheerd door <b>{operator}</b>"
+            },
+            "disaster_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Aardbeving"
+                    },
+                    "1": {
+                        "then": "Overstroming"
+                    },
+                    "2": {
+                        "then": "Brand"
+                    },
+                    "3": {
+                        "then": "Aardverschuiving"
+                    }
+                },
+                "question": "Voor welk soort ramp is dit verzamelpunt bedoeld?"
+            }
+        },
+        "title": {
+            "render": "Verzamelpunt voor bij noodsituaties"
+        }
+    },
+    "assisted_repair": {
+        "description": "Een zelfondersteunde werkplaats is een locatie waar mensen hun spullen kunnen komen repareren met hulp van vrijwilligers en met het gereedschap dat op de locatie beschikbaar is. Een repair café is een soort evenement dat regelmatig wordt georganiseerd volgens dezelfde principes.",
+        "name": "Repair cafés en reparatiewerkplaatsen met ondersteuning",
+        "presets": {
+            "0": {
+                "description": "Een locatie met een permanente werkplaats waar mensen naartoe kunnen komen om spullen te repareren met hulp van vrijwilligers.",
+                "title": "een reparatiewerkplaats met ondersteuning"
+            }
+        },
+        "tagRenderings": {
+            "item:repair": {
+                "mappings": {
+                    "0": {
+                        "then": "Mobiele telefoons worden hier gerepareerd"
+                    },
+                    "1": {
+                        "then": "Computers worden hier gerepareerd"
+                    },
+                    "2": {
+                        "then": "Fietsen worden hier gerepareerd"
+                    },
+                    "3": {
+                        "then": "Elektronische apparaten worden hier gerepareerd"
+                    },
+                    "4": {
+                        "then": "Meubels worden hier gerepareerd"
+                    },
+                    "5": {
+                        "then": "Kleding wordt hier gerepareerd"
+                    }
+                },
+                "question": "Wat voor items worden hier gerepareerd?"
+            },
+            "name": {
+                "question": "Wat is de naam van deze reparatiewerkplaats?",
+                "render": "Deze werkplaats heet <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Werkplaats voor reparatie met ondersteuning"
         }
     },
     "atm": {
@@ -530,6 +881,72 @@
             "render": "Barrière"
         }
     },
+    "bbq": {
+        "description": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen.",
+        "name": "Barbecue",
+        "presets": {
+            "0": {
+                "description": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen.",
+                "title": "Barbecue"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze barbecue mag door iedereen worden gebruikt"
+                    },
+                    "1": {
+                        "then": "Deze barbecue mag door niemand worden gebruikt"
+                    },
+                    "2": {
+                        "then": "Deze barbecue is privé"
+                    },
+                    "3": {
+                        "then": "Deze barbecue mag door iedereen worden gebruikt, maar de eigenaar kan de toegang op elk moment ontzeggen"
+                    },
+                    "4": {
+                        "then": "Deze barbecue mag alleen worden gebruikt door klanten"
+                    },
+                    "5": {
+                        "then": "Deze barbecue mag alleen worden gebruikt door personen met toestemming"
+                    }
+                },
+                "question": "Wie mag deze barbecue gebruiken?"
+            },
+            "covered": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze barbecue is niet overdekt"
+                    },
+                    "1": {
+                        "then": "Deze barbecue is overdekt"
+                    }
+                },
+                "question": "Is deze barbecue overdekt?"
+            },
+            "fuel": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze barbecue gebruikt hout als brandstof"
+                    },
+                    "1": {
+                        "then": "Deze barbecue gebruikt houtskool als brandstof"
+                    },
+                    "2": {
+                        "then": "Deze barbecue werkt op elektriciteit"
+                    },
+                    "3": {
+                        "then": "Deze barbecue gebruikt gas als brandstof"
+                    }
+                },
+                "question": "Wat voor brandstof gebruikt deze barbecue?"
+            }
+        },
+        "title": {
+            "render": "BBQ"
+        }
+    },
     "bench": {
         "description": "Een zitbank is een houten, metalen, stenen, … oppervlak waar een mens kan zitten. Deze laag toont ze en stelt er enkele vragen over.",
         "filter": {
@@ -753,7 +1170,76 @@
         }
     },
     "bicycle_counter": {
-        "description": "Automatische fietstelpunten"
+        "description": "Automatische fietstelpunten",
+        "name": "Fietstellers",
+        "presets": {
+            "0": {
+                "title": "een fietsteller"
+            }
+        },
+        "tagRenderings": {
+            "clock": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze teller heeft een klok"
+                    },
+                    "1": {
+                        "then": "Deze teller heeft geen klok"
+                    }
+                },
+                "question": "Heeft deze fietsteller een klok?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze teller heeft een digitaal display"
+                    },
+                    "1": {
+                        "then": "Deze teller heeft een analoog display"
+                    },
+                    "2": {
+                        "then": "Deze teller heeft geen display"
+                    }
+                },
+                "question": "Heeft deze fietsteller een display dat het aantal passerende fietsen toont?"
+            },
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van de getelde locatie"
+                },
+                "question": "Wat is de naam van de getelde locatie?",
+                "render": "Naam van de getelde locatie: {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referentienummer van de teller"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze teller heeft geen referentienummer"
+                    }
+                },
+                "question": "Wat is het referentienummer van deze teller?",
+                "render": "Referentienummer van de teller: {ref}"
+            },
+            "start_date": {
+                "freeform": {
+                    "placeholder": "Startdatum van de teller"
+                },
+                "question": "Wanneer is deze teller begonnen met tellen?",
+                "render": "Deze teller is begonnen met teller op {start_date}"
+            },
+            "website": {
+                "freeform": {
+                    "placeholder": "Website van de teller"
+                },
+                "question": "Is er een website voor deze fietsteller?",
+                "render": "Website van de teller <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "render": "Fietsteller"
+        }
     },
     "bicycle_library": {
         "description": "Een plaats waar men voor langere tijd een fiets kan lenen",
@@ -1114,6 +1600,7 @@
                     }
                 },
                 "question": "Van welk type is deze fietsparking?",
+                "questionHint": "Dit gaat over het voorwerp waarin je je fiets plaats en mee op slot zet",
                 "render": "Dit is een fietsparking van het type: {bicycle_parking}"
             },
             "Capacity": {
@@ -1144,18 +1631,46 @@
                 },
                 "question": "Heeft deze fietsparking plaats voor bakfietsen?"
             },
-            "Is covered?": {
+            "charge": {
+                "question": "Hoeveel kost het om een fiets te stallen?",
+                "questionHint": "Dit is de kostprijs voor een enkele fiets",
+                "render": "Je fiets hier parkeren kost {charge}"
+            },
+            "covered_and_building": {
                 "mappings": {
                     "0": {
-                        "then": "Deze parking is overdekt (er is een afdak)"
+                        "then": "Dit is een fietsschuurtje (met minstens 3 muren)"
                     },
                     "1": {
+                        "then": "Dit is een fietsenstalling met enkel een dak (het dak dient enkel voor de fietsenstalling)"
+                    },
+                    "2": {
+                        "then": "Deze fietsenstalling bevindt zich in een gebouw achter een deur of een poort"
+                    },
+                    "3": {
+                        "then": "Deze fietsenstalling bevindt onder (een deel van) een gebouw"
+                    },
+                    "4": {
+                        "then": "Deze parking is overdekt (er is een afdak)"
+                    },
+                    "5": {
                         "then": "Deze parking is niet overdekt"
                     }
                 },
-                "question": "Is deze parking overdekt? Selecteer ook \"overdekt\" voor fietsparkings binnen een gebouw."
+                "question": "Is deze parking overdekt?"
             },
-            "Underground?": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Betalende</b> fietsparking"
+                    },
+                    "1": {
+                        "then": "Gratis te gebruiken"
+                    }
+                },
+                "question": "Is deze fietsenstalling gratis te gebruiken?"
+            },
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Ondergrondse parking"
@@ -1171,22 +1686,6 @@
                     }
                 },
                 "question": "Wat is de relatieve locatie van deze parking??"
-            },
-            "charge": {
-                "question": "Hoeveel kost het om een fiets te stallen?",
-                "questionHint": "Dit is de kostprijs voor een enkele fiets",
-                "render": "Je fiets hier parkeren kost {charge}"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Betalende</b> fietsparking"
-                    },
-                    "1": {
-                        "then": "Gratis te gebruiken"
-                    }
-                },
-                "question": "Is deze fietsenstalling gratis te gebruiken?"
             },
             "maxstay": {
                 "question": "Wat is de toegestane, maximale parkeerduur?",
@@ -1563,6 +2062,24 @@
             "render": "Vogelkijkplaats"
         }
     },
+    "brothel": {
+        "description": "Een etablissement dat zich specifiek richt op prostitutie.",
+        "name": "Bordelen",
+        "presets": {
+            "0": {
+                "title": "een bordeel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van dit bordeel?",
+                "render": "Dit bordeel heet <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Bordeel"
+        }
+    },
     "cafe_pub": {
         "deletion": {
             "extraDeleteReasons": {
@@ -1624,6 +2141,15 @@
             "mappings": {
                 "0": {
                     "then": "<i>{name}</i>"
+                },
+                "1": {
+                    "then": "Bar"
+                },
+                "2": {
+                    "then": "Café"
+                },
+                "3": {
+                    "then": "Nachtclub"
                 }
             },
             "render": "Café"
@@ -2169,15 +2695,6 @@
                 },
                 "question": "Moet men betalen om dit oplaadpunt te gebruiken?"
             },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "Geen maximum parkeertijd"
-                    }
-                },
-                "question": "Hoelang mag een voertuig hier blijven staan?",
-                "render": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>"
-            },
             "phone": {
                 "question": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?",
                 "render": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>"
@@ -2211,7 +2728,7 @@
                     },
                     "3": {
                         "mappings": {
-                            "then": "{{description}} levert een vermogen van maximaal {{commonOutput}} A"
+                            "then": "{{description}} levert een vermogen van maximaal {{commonOutput}}"
                         },
                         "question": "Welk vermogen levert een enkele stekker van type {{description}}?",
                         "render": "{{description}} levert een vermogen van maximaal {canonical({{key}}:output)}"
@@ -2302,8 +2819,58 @@
             "render": "Oplaadpunt"
         }
     },
+    "childcare": {
+        "name": "Kinderopvang",
+        "presets": {
+            "0": {
+                "title": "een kinderopvang"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "Hoeveel kinderen kunnen hier terecht?",
+                "render": "Hier kunnen {capacity} kinderen terecht"
+            },
+            "name": {
+                "question": "Wat is de naam van deze faciliteit?",
+                "render": "Deze faciliteit heet <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wanneer is deze kinderopvang geopend?"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kinderopvang {name}"
+                }
+            }
+        }
+    },
+    "cinema": {
+        "description": "Een plaats die films toont, meestal open voor het publiek tegen een vergoeding.",
+        "name": "Bioscoop",
+        "tagRenderings": {
+            "cinema_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een normale bioscoop met films voor alle leeftijden"
+                    },
+                    "1": {
+                        "then": "Dit is een erotische bioscoop met films voor volwassenen"
+                    }
+                },
+                "question": "Wat voor type bioscoop is dit?"
+            }
+        },
+        "title": {
+            "render": "Bioscoop"
+        }
+    },
     "climbing": {
-        "description": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
+        "description": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsportlagen",
         "tagRenderings": {
             "average_length": {
                 "question": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
@@ -2340,7 +2907,7 @@
             },
             "max_bolts": {
                 "question": "Wat is het maximum aantal bouten in routes ban {title()}?",
-                "render": "De sportklimroutes hebben maximaal {climbing:bolts:max} bouten. <div class='subtle'>Hierbij worden relays niet meegteld. Dit geeft aan hoeveel klimsetjes een klimmer nodig heeft</div>"
+                "render": "De sportklimroutes hebben maximum {climbing:bolts:max} haken. <div class='subtle'>Hierbij worden standplaatsen niet meegeteld. Dit geeft aan hoeveel setjes een klimmer nodig heeft.</div>"
             },
             "max_difficulty": {
                 "question": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
@@ -2433,6 +3000,9 @@
                     },
                     "1": {
                         "then": "Een klimzone - een enkele rots of klif met klimroutes"
+                    },
+                    "2": {
+                        "then": "Een klimgebied met een of meer klimrotsen en/of boulders"
                     }
                 }
             },
@@ -2515,6 +3085,40 @@
                 },
                 "question": "Is er een snelklimmuur (speed climbing)?"
             },
+            "auto_belay_lead": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn geen autobelays voor voorklimmen"
+                    },
+                    "1": {
+                        "then": "Er zijn enkele autobelays voor voorklimmen"
+                    },
+                    "2": {
+                        "then": "Elke voorklimroute kan op autobelay geklommen worden"
+                    }
+                },
+                "question": "Zijn hier autobelays voor voorklimmen?",
+                "render": "Er zijn {climbing:autobelay:sport} autobelays voor voorklimmen"
+            },
+            "auto_belay_toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn geen autobelays voor toprope"
+                    },
+                    "1": {
+                        "then": "Er zijn enkele autobelays voor toprope"
+                    },
+                    "2": {
+                        "then": "Elke toproperoute kan op autobelay geklommen worden maar handmatig zekeren is ook mogelijk"
+                    },
+                    "3": {
+                        "then": "Toproperoutes kunnen enkel op autobelay geklommen worden"
+                    }
+                },
+                "question": "Zijn hier auto belays voor toprope?",
+                "questionHint": "Autobelays die enkel voor speed zijn, tellen niet mee",
+                "render": "Er zijn {climbing:autobelay:toprope} autobelaytoestellen voor toprope"
+            },
             "belay_device_rental": {
                 "mappings": {
                     "0": {
@@ -2533,7 +3137,7 @@
                         "then": "Hier kan <b>geen</b> zekeringsapparaat gehuurd worden"
                     }
                 },
-                "question": "Kan een zekeringsapparaat hier gehuurd worden?"
+                "question": "Kan hier een zekeringsapparaat gehuurd worden voor gebruik in de zaal?"
             },
             "harness_rental": {
                 "mappings": {
@@ -2550,10 +3154,10 @@
                         "then": "Hier kunnen <b>geen</b> klimgordels gehuurd worden"
                     }
                 },
-                "question": "Kan een klimgordel hier gehuurd worden?"
+                "question": "Kan hier een klimgordel gehuurd worden voor gebruik in de zaal?"
             },
             "name": {
-                "question": "Wat is de naam van dit Klimzaal?"
+                "question": "Wat is de naam van deze klimzaal?"
             },
             "rope_rental": {
                 "mappings": {
@@ -2570,7 +3174,7 @@
                         "then": "Hier kan <b>geen</b> klimtouw gehuurd worden"
                     }
                 },
-                "question": "Kan een klimtouw hier gehuurd worden?"
+                "question": "Kan hier een klimtouw gehuurd worden voor gebruik in de zaal?"
             },
             "shoe_rental": {
                 "mappings": {
@@ -2587,7 +3191,7 @@
                         "then": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden"
                     }
                 },
-                "question": "Kunnen hier klimschoenen gehuurd worden?"
+                "question": "Kunnen hier klimschoenen gehuurd worden voor gebruik in de zaal?"
             }
         },
         "title": {
@@ -2602,6 +3206,7 @@
     "climbing_opportunity": {
         "description": "Laag met plaatsen waar klimmen _misschien_ mogelijk is. Deze wordt geladen als je ver inzoomt, om te voorkomen dat je per ongeluk dubbels maakt",
         "name": "Klimgelegenheiden?",
+        "snapName": "een muur, klif of rots",
         "tagRenderings": {
             "climbing-opportunity-name": {
                 "render": "<strong>{name}</strong>"
@@ -2661,7 +3266,7 @@
                     }
                 },
                 "question": "Hoeveel bouten heeft deze route voordat je het relay bereikt?",
-                "render": "Deze route heeft {climbing:bolts} klimbouten. <div class='subtle'>Dit is zonder het relay mee te tellen. Een klimmer heeft dus minstens {climbing:bolts} klimsetjes nodig om boven te raken</div>"
+                "render": "Deze route heeft {climbing:bolts} haken. <div class='subtle'>Hierbij wordt de standplaats niet meegeteld. Een klimmer heeft normaal gezien dus minstens {climbing:bolts} setjes nodig.</div>"
             }
         },
         "title": {
@@ -2738,21 +3343,21 @@
             },
             "faces": {
                 "freeform": {
-                    "placeholder": "Aantal klokken"
+                    "placeholder": "Aantal wijzerplaten"
                 },
                 "mappings": {
                     "0": {
-                        "then": "Deze klok heeft één klok"
+                        "then": "Deze klok heeft één wijzerplaat"
                     },
                     "1": {
-                        "then": "Deze klok heeft twee klokken"
+                        "then": "Deze klok heeft twee wijzerplaten"
                     },
                     "2": {
-                        "then": "Deze klok heeft vier klokken"
+                        "then": "Deze klok heeft vier wijzerplaten"
                     }
                 },
-                "question": "Hoeveel klokken heeft deze klok?",
-                "render": "Deze klok heeft {faces} klokken"
+                "question": "Hoeveel wijzerplaten heeft deze klok?",
+                "render": "Deze klok heeft {faces} wijzerplaten"
             },
             "hygrometer": {
                 "mappings": {
@@ -3376,8 +3981,13 @@
                 "mappings": {
                     "0": {
                         "then": "De straat heeft hier (waarschijnlijk) geen helling"
+                    },
+                    "1": {
+                        "then": "Deze weg heeft een helling"
                     }
-                }
+                },
+                "question": "Heeft {title()} een helling?",
+                "render": "Deze weg heeft een helling van {incline}"
             },
             "is lit?": {
                 "mappings": {
@@ -3396,10 +4006,10 @@
                 },
                 "question": "Is deze weg verlicht?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Hoe breed is de rijbaan in deze straat (in meters)?",
                 "questionHint": "Dit is gemeten van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook",
-                "render": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
+                "render": "De breedte van deze rijbaan in deze straat is <strong>{width}m</strong>"
             }
         },
         "title": {
@@ -3501,7 +4111,7 @@
                 "render": "<i>Meer informatie over de locatie (in het Frans):</i><br/>{defibrillator:location:fr}"
             },
             "defibrillator-description": {
-                "question": "Is er nog iets bijzonder aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)",
+                "question": "Is er nog iets bijzonders aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)",
                 "render": "Aanvullende info: {description}"
             },
             "defibrillator-email": {
@@ -3565,6 +4175,17 @@
     "dentist": {
         "description": "Deze laag toont tandartsen",
         "name": "Tandarts",
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                }
+            }
+        },
         "presets": {
             "0": {
                 "title": "een tandartspraktijk"
@@ -3756,6 +4377,26 @@
                     "question": "Is dit drinkwaterpunt heel het jaar door beschikbaar?"
                 }
             },
+            "temperature-cold": {
+                "mappings": {
+                    "0": {
+                        "then": "Ijskoud water is hier beschikbaar"
+                    },
+                    "1": {
+                        "then": "Afgekoeld water is hier beschikbaar"
+                    },
+                    "2": {
+                        "then": "Water aan omgevingstemperatuur (zonder actieve koeling of opwarming) is hier beschikbaar"
+                    },
+                    "3": {
+                        "then": "Warm water is hier beschikbaar; het water is niet gevaarlijk heet"
+                    },
+                    "4": {
+                        "then": "Heet water is hier beschikbaar"
+                    }
+                },
+                "question": "Is gekoeld water hier beschikbaar?"
+            },
             "type": {
                 "mappings": {
                     "0": {
@@ -3881,6 +4522,21 @@
                 "question": "Wat is de diepte van deze lift?",
                 "render": "Deze lift heeft een diepte van {canonical(length)}"
             },
+            "elevator-diameter": {
+                "question": "Wat is de diameter van deze lift?",
+                "render": "Deze lift heeft een diameter van {canonical(diameter)}"
+            },
+            "elevator-shape": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze lift is rechthoekig"
+                    },
+                    "1": {
+                        "then": "Deze lift is cirkelvormig"
+                    }
+                },
+                "question": "Wat voor vorm heeft deze lift?"
+            },
             "elevator-width": {
                 "question": "Wat is de breedte van deze lift?",
                 "render": "Deze lift heeft een breedte van {canonical(width)}"
@@ -3911,6 +4567,18 @@
                     }
                 }
             },
+            "speech_output_available": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze lift heeft spraakuitvoer"
+                    },
+                    "1": {
+                        "then": "Deze lift heeft geen spraakuitvoer"
+                    }
+                },
+                "question": "Heeft deze lift spraakuitvoer?",
+                "questionHint": "Bijv. een aankondiging van de huidige verdieping"
+            },
             "tactile_writing_language": {
                 "render": {
                     "special": {
@@ -3923,6 +4591,84 @@
         },
         "title": {
             "render": "Lift"
+        }
+    },
+    "elongated_coin": {
+        "description": "Laag met muntpersen.",
+        "name": "Muntpersen",
+        "presets": {
+            "0": {
+                "title": "een muntpers"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Kosten (bijv. 0.50 EUR)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Het kost 1 euro om een munt te persen."
+                    },
+                    "1": {
+                        "then": "Het kost 2 euro om een munt te persen."
+                    },
+                    "2": {
+                        "then": "Het kost 2 Zwitserse frank om een munt te persen."
+                    },
+                    "3": {
+                        "then": "Het kost 1 Zwitserse frank om een munt te persen."
+                    }
+                },
+                "question": "Hoe veel kost het om een munt te persen?",
+                "render": "Het kost {charge} om een munt te persen."
+            },
+            "coin": {
+                "freeform": {
+                    "placeholder": "Munttype (bijv. 10 cent)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 2 cent voor het persen."
+                    },
+                    "1": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 5 cent voor het persen."
+                    },
+                    "2": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 10 cent voor het persen."
+                    },
+                    "3": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 25 cent voor het persen."
+                    },
+                    "4": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 50 cent voor het persen."
+                    },
+                    "5": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 10 rappen voor het persen."
+                    },
+                    "6": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 20 rappen voor het persen."
+                    }
+                },
+                "question": "Welk muntstuk wordt gebruikt voor het persen?",
+                "render": "Deze muntpers gebruikt een muntstuk van {coin:type} voor het persen."
+            },
+            "designs": {
+                "freeform": {
+                    "placeholder": "Aantal ontwerpen (bijv. 5)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze muntpers heeft één ontwerp beschikbaar."
+                    },
+                    "1": {
+                        "then": "Deze muntpers heeft twee ontwerpen beschikbaar."
+                    },
+                    "2": {
+                        "then": "Deze muntpers heeft drie ontwerpen beschikbaar."
+                    }
+                }
+            }
         }
     },
     "entrance": {
@@ -4541,6 +5287,26 @@
                 },
                 "question": "Levert {title()} aan huis?"
             },
+            "drive-through": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit fastfoodrestaurant heeft een drive-through"
+                    },
+                    "1": {
+                        "then": "Dit fastfoodrestaurant heeft geen drive-through"
+                    }
+                },
+                "question": "Heeft dit fastfoodrestaurant een drive-through?"
+            },
+            "drive-through-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "De openingsuren van de drive-through zijn dezelfde als die van het restaurant"
+                    }
+                },
+                "question": "Wat zijn de openingsuren van de drive-through?",
+                "render": "<h3>Openingsuren van de drive-through</h3>{opening_hours_table(opening_hours:drive_through)}"
+            },
             "friture-oil": {
                 "mappings": {
                     "0": {
@@ -5087,6 +5853,16 @@
             "render": "Informatiebord"
         }
     },
+    "insect_hotel": {
+        "description": "Laag met insectenhotels",
+        "name": "Insectenhotels",
+        "presets": {
+            "0": {
+                "title": "een insectenhotel"
+            }
+        },
+        "title": "Insectenhotel"
+    },
     "kerbs": {
         "description": "Een laag met stoepranden.",
         "filter": {
@@ -5170,53 +5946,6 @@
         },
         "title": {
             "render": "Stoeprand"
-        }
-    },
-    "kindergarten_childcare": {
-        "name": "Kleuterscholen en kinderopvang",
-        "presets": {
-            "0": {
-                "title": "een kleuterschool"
-            },
-            "1": {
-                "title": "een kinderopvang"
-            }
-        },
-        "tagRenderings": {
-            "capacity": {
-                "question": "Hoeveel kinderen kunnen hier terecht?",
-                "render": "Hier kunnen {capacity} kinderen terecht"
-            },
-            "childcare-type": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit is een kleuterschool waar kindjes (voorbereidend) onderwijs krijgen."
-                    },
-                    "1": {
-                        "then": "Dit is een kinderopvang (ook een creche of onthaalmoeder genoemd) waar er voor kleine kinderen gezorgd wordt. Onderwijs is niet de hoofdfocus."
-                    }
-                },
-                "question": "Wat voor faciliteit is dit?"
-            },
-            "name": {
-                "question": "Wat is de naam van deze faciliteit?",
-                "render": "Deze faciliteit heet <b>{name}</b>"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Wanneer is deze kinderopvang geopend?"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Kleuterschool {name}"
-                },
-                "1": {
-                    "then": "Kinderopvang {name}"
-                }
-            }
         }
     },
     "last_click": {
@@ -5926,11 +6655,11 @@
                         "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
                     },
                     "2": {
-                        "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
+                        "then": "Er zijn geen parkeerplaatsen voor personen met een beperking"
                     }
                 },
-                "question": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
-                "render": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten"
+                "question": "Hoeveel parkeerplaatsen voor personen met een beperking zijn er op deze parking?",
+                "render": "Er zijn {capacity:disabled} parkeerplaatsen voor personen met een beperking"
             },
             "parking-type": {
                 "mappings": {
@@ -6105,20 +6834,6 @@
                 },
                 "question": "Wat is de naam van deze apotheek?",
                 "render": "Deze apotheek heet {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze apotheek is makkelijk te bereiken met een rolstoel"
-                    },
-                    "1": {
-                        "then": "Deze apotheek is moeilijk te bereiken met een rolstoel"
-                    },
-                    "2": {
-                        "then": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk"
-                    }
-                },
-                "question": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?"
             }
         },
         "title": {
@@ -6360,6 +7075,9 @@
                     },
                     "11": {
                         "then": "Dit is een rekstok"
+                    },
+                    "14": {
+                        "then": "Dit is een klimmuur"
                     },
                     "3": {
                         "then": "Dit is een zandbak"
@@ -6851,6 +7569,15 @@
                     }
                 }
             },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is geen limiet aan de tijd die je hier mag blijven"
+                    }
+                },
+                "question": "Wat is de maximale tijd die je hier mag blijven?",
+                "render": "Je mag hier maximaal <b>{canonical(maxstay)}</b> blijven"
+            },
             "multilevels": {
                 "override": {
                     "question": "Naar welke verdiepingen gaat deze lift?",
@@ -6963,6 +7690,17 @@
                     }
                 },
                 "question": "Is {title()} heel het jaar beschikbaar?"
+            },
+            "seating": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze plaats heeft zitplaatsen buiten"
+                    },
+                    "1": {
+                        "then": "Deze plaats heeft zitplaatsen binnen"
+                    }
+                },
+                "question": "Wat voor zitplaatsen heeft {title()}?"
             },
             "service:electricity": {
                 "mappings": {
@@ -7092,17 +7830,10 @@
     "recycling": {
         "description": "Een laag met recyclagingcontainers en -centrums",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Alle recyclingtypes"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Enkel publiek toegankelijke afvalcontainers"
+                        "question": "Alle recyclingtypes"
                     },
                     "1": {
                         "question": "Recycling van batterijen"
@@ -7357,9 +8088,39 @@
         }
     },
     "school": {
+        "filter": {
+            "1": {
+                "options": {
+                    "1": {
+                        "question": "Kleuterafdeling"
+                    },
+                    "2": {
+                        "question": "Lagere school"
+                    },
+                    "3": {
+                        "question": "Secundaire school met alle graden"
+                    },
+                    "4": {
+                        "question": "Heeft eerste graad"
+                    },
+                    "5": {
+                        "question": "Heeft tweede graad"
+                    },
+                    "6": {
+                        "question": "Heeft derde graad"
+                    },
+                    "7": {
+                        "question": "Heeft specialisatiejaar"
+                    }
+                }
+            }
+        },
         "name": "Lagere en middelbare scholen",
         "presets": {
             "0": {
+                "title": "een lagere of middelbare school"
+            },
+            "1": {
                 "title": "een lagere of middelbare school"
             }
         },
@@ -7411,6 +8172,20 @@
                 },
                 "question": "Mogen jongens en meisjes les volgen op deze school?"
             },
+            "orientation_belgium": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Doorstroomfinaliteit</b>: een opleiding hier bereidt voor op universitaire studies"
+                    },
+                    "1": {
+                        "then": "<b>Dubbele finaliteit</b>: een opleiding hier bereidt voor op verdere studie (bv. aan een hogeschool of secundair-na-secundair) of op de arbeidsmarkt"
+                    },
+                    "2": {
+                        "then": "<b>Arbeidsfinaliteit</b>: een opleiding hier bereidt voor op de arbeidsmarkt"
+                    }
+                },
+                "question": "Waarop wordt een leerling voorbereid?"
+            },
             "school-language": {
                 "render": {
                     "special": {
@@ -7426,30 +8201,21 @@
             "target-audience": {
                 "mappings": {
                     "0": {
-                        "then": "Deze school richt zich op studenten zonder extra zorgbehoefte. <div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>"
-                    },
-                    "1": {
                         "then": "Deze school richt zich op studenten zonder extra zorgbehoefte<div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>"
                     },
-                    "2": {
-                        "then": "Deze school richt zich op volwassenen"
-                    },
-                    "3": {
-                        "then": "Deze school richt zich op studenten in het autisme-spectrum"
-                    },
-                    "4": {
+                    "1": {
                         "then": "Deze school richt zich op leerlingen met een leerprobleem"
                     },
-                    "5": {
+                    "2": {
                         "then": "Deze school richt zich op blinde en slechtziende studenten"
                     },
-                    "6": {
+                    "3": {
                         "then": "Deze school richt zich op dove en hardhorende studenten"
                     },
-                    "7": {
+                    "4": {
                         "then": "Deze school richt zich op studenten met een beperking"
                     },
-                    "8": {
+                    "5": {
                         "then": "Deze school richt zich op studenten met extra zorgbehoeften"
                     }
                 },
@@ -7592,6 +8358,11 @@
                             "then": "Fietsverhuurzaak"
                         }
                     },
+                    "mappings+": {
+                        "0": {
+                            "then": "Deze winkel staat leeg"
+                        }
+                    },
                     "question": "Wat voor soort winkel is dit?",
                     "render": "Dit is een {shop}"
                 }
@@ -7602,6 +8373,17 @@
                         "then": "Deze winkel kopieert sleutels"
                     }
                 }
+            },
+            "optometrist_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier kan men een oogtest door een erkende optometrist laten uitvoeren"
+                    },
+                    "1": {
+                        "then": "HIer kan men een hoortest laten uitvoeren door een erkende audioloog"
+                    }
+                },
+                "question": "Zijn hier medische services beschikbaar?"
             },
             "organic": {
                 "mappings": {
@@ -7749,6 +8531,125 @@
                 }
             },
             "render": "Trage weg"
+        }
+    },
+    "souvenir_coin": {
+        "description": "Laag die machines toont die souvenirmunten verkopen",
+        "name": "Souvenirmuntmachines",
+        "presets": {
+            "0": {
+                "description": "Voeg een machine toe die souvenirmunten verkoopt",
+                "title": "een souvenirmuntmachine"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Kosten (bijv. 2 EUR)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Een souvenirmunt kost 2 euro"
+                    }
+                },
+                "question": "Hoeveel kost een souvenirmunt?",
+                "render": "Een souvenirmunt kost {charge}"
+            },
+            "designs": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Deze machine heeft één ontwerp beschikbaar"
+                        },
+                        "1": {
+                            "then": "Deze machine heeft twee ontwerpen beschikbaar"
+                        },
+                        "2": {
+                            "then": "Deze machine heeft drie ontwerpen beschikbaar"
+                        },
+                        "3": {
+                            "then": "Deze machine heeft vier ontwerpen beschikbaar"
+                        }
+                    },
+                    "render": "Deze machine heeft {coin:design_count} ontwerpen beschikbaar"
+                }
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze machine bevindt zich binnen."
+                    },
+                    "1": {
+                        "then": "Deze machine bevindt zich buiten."
+                    }
+                },
+                "question": "Bevindt deze machine zich binnen?"
+            }
+        },
+        "title": {
+            "render": "Souvenirmuntmachine"
+        }
+    },
+    "souvenir_note": {
+        "description": "Laag die machines toont die souvenirbiljetten verkopen",
+        "name": "Souvenirbiljetmachines",
+        "presets": {
+            "0": {
+                "description": "Voeg een machine toe die souvenirbiljetten verkoopt",
+                "title": "een souvenirbiljetmachine"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Kosten (bijv. 2 EUR)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Een souvenirbiljet kost 2 euro"
+                    },
+                    "1": {
+                        "then": "Een souvenirbiljet kost 3 euro"
+                    }
+                },
+                "question": "Hoeveel kost een souvenirbiljet?",
+                "render": "Een souvenirbiljet kost {charge}"
+            },
+            "designs": {
+                "freeform": {
+                    "placeholder": "Aantal ontwerpen (bijv. 5)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze machine heeft één ontwerp beschikbaar."
+                    },
+                    "1": {
+                        "then": "Deze machine heeft twee ontwerpen beschikbaar."
+                    },
+                    "2": {
+                        "then": "Deze machine heeft drie ontwerpen beschikbaar."
+                    },
+                    "3": {
+                        "then": "Deze machine heeft vier ontwerpen beschikbaar."
+                    }
+                },
+                "question": "Hoeveel ontwerpen heeft deze machine beschikbaar?",
+                "render": "Deze machine heeft {note:design_count} ontwerpen beschikbaar."
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze machine bevindt zich binnen."
+                    },
+                    "1": {
+                        "then": "Deze machine bevindt zich buiten."
+                    }
+                },
+                "question": "Bevindt deze machine zich binnen?"
+            }
+        },
+        "title": {
+            "render": "Souvenirbiljetmachine"
         }
     },
     "speed_camera": {
@@ -7941,6 +8842,20 @@
             "render": "Sportterrein"
         }
     },
+    "sports_centre": {
+        "tagRenderings": {
+            "sport_centre-sport": {
+                "mappings": {
+                    "26": {
+                        "then": "Klimmen"
+                    },
+                    "27": {
+                        "then": "Hoogteparcours"
+                    }
+                }
+            }
+        }
+    },
     "stairs": {
         "description": "Laag met trappen en roltrappen",
         "name": "Trappen",
@@ -7951,12 +8866,19 @@
                         "then": "Dit is een roltrap"
                     },
                     "1": {
-                        "then": "Dit is geen roltrap"
+                        "then": "Dit is een roltrap die beweegt in de richting van de pijlen"
                     },
                     "2": {
+                        "then": "Dit is een roltrap die van richting kan veranderen"
+                    },
+                    "3": {
+                        "then": "Dit is geen roltrap"
+                    },
+                    "4": {
                         "then": "Dit is geen roltrap"
                     }
-                }
+                },
+                "question": "Is dit een roltrap?"
             },
             "handrail": {
                 "mappings": {
@@ -8281,7 +9203,7 @@
                 "question": "In welke geografische richting filmt deze camera?",
                 "render": "Filmt in kompasrichting {camera:direction}"
             },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "0": {
                         "then": "Deze camera bevindt zich binnen"
@@ -8293,7 +9215,7 @@
                         "then": "Deze camera bevindt zich waarschijnlijk buiten"
                     }
                 },
-                "question": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?"
+                "question": "Bevindt de camera zich binnen of buiten?"
             }
         },
         "title": {
@@ -8532,6 +9454,13 @@
                     }
                 },
                 "question": "Moet je je eigen toiletpapier meenemen naar deze toilet?"
+            },
+            "toilet-reviews": {
+                "render": {
+                    "special": {
+                        "question": "Hoe goed is deze toilet?"
+                    }
+                }
             },
             "toilets-changing-table": {
                 "mappings": {
@@ -9392,6 +10321,12 @@
                 },
                 "question": "Moeten de data-attributen getoond worden?",
                 "questionHint": "<b>Data-attributen</b> zijn stukjes data die elk element in OpenStreetMap heeft. Dit is technische data die in de databank komt. Je hoeft deze informatie niet te kennen om aanpassingen te maken met MapComplete, maar geavanceerde gebruikers kunnen dit als referentie gebruiken."
+            },
+            "title-editing": {
+                "render": "<h3>Voorkeuren voor databewerking</h3>"
+            },
+            "title-map": {
+                "render": "<h3>Kaartvoorkeuren</h3>"
             },
             "translation-completeness": {
                 "mappings": {

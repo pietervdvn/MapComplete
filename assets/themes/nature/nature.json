@@ -14,7 +14,8 @@
     "pl": "W naturze",
     "ru": "На природе",
     "hu": "Ki a természetbe",
-    "uk": "На природі"
+    "uk": "На природі",
+    "ko": "자연속으로"
   },
   "description": {
     "en": "On this map, one can find interesting information for tourists and nature lovers.",
@@ -28,7 +29,8 @@
     "zh_Hant": "在這份地圖，你可以找到觀光客與自然愛好者感興趣的資訊...",
     "pl": "Na tej mapie można znaleźć ciekawe informacje dla turystów i miłośników przyrody.",
     "it": "Su questa mappa si possono trovare informazioni interessanti per turisti e amanti della natura.",
-    "uk": "На цій мапі можна знайти цікаву інформацію для туристів та любителів природи."
+    "uk": "На цій мапі можна знайти цікаву інформацію для туристів та любителів природи.",
+    "ko": "이 지도에서는 관광객과 자연 애호가를 위한 흥미로운 정보를 확인할 수 있습니다."
   },
   "shortDescription": {
     "en": "A map for nature lovers, with interesting POI's",
@@ -43,7 +45,8 @@
     "pl": "Mapa dla miłośników przyrody z ciekawymi punktami POI",
     "it": "Una mappa per amanti della natura con interessanti POI",
     "ru": "Карта для любителей природы, с интересными POI",
-    "uk": "Мапа для любителів природи, з Точками інтересу"
+    "uk": "Мапа для любителів природи, з Точками інтересу",
+    "ko": "자연 애호가를 위한 지도이며, 흥미로운 관심 지점(POI)을 제공합니다"
   },
   "icon": "./assets/themes/nature/logo.svg",
   "startZoom": 12,
@@ -63,10 +66,18 @@
         "guidepost",
         "shelter",
         "bbq",
-        "firepit"
+        "firepit",
+        "insect_hotel"
       ],
       "override": {
         "minzoom": 16
+      }
+    },
+    {
+      "builtin": "tree_node",
+      "override": {
+        "minzoom": 18,
+        "shownByDefault": false
       }
     }
   ],

@@ -144,7 +144,7 @@
     },
     {
       "key": "aerialway",
-      "description": "Layer 'Aerialways' shows aerialway=rope_tow with a fixed text, namely 'A tow line which which drags skieers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "description": "Layer 'Aerialways' shows aerialway=rope_tow with a fixed text, namely 'A tow line which skiers hold on to or attach themselves onto' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "rope_tow"
     },
     {
@@ -154,7 +154,7 @@
     },
     {
       "key": "aerialway",
-      "description": "Layer 'Aerialways' shows aerialway=zip_line with a fixed text, namely 'A zip line. (A touristical attraction where adventurous people go down at high speeds) ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "description": "Layer 'Aerialways' shows aerialway=zip_line with a fixed text, namely 'A zip line. (A touristic attraction where adventurous people go down at high speeds)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "zip_line"
     },
     {
@@ -774,6 +774,16 @@
       "value": "drinking_water"
     },
     {
+      "key": "fee",
+      "description": "Layer 'Drinking water' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Drinking water' shows fee=yes with a fixed text, namely 'One needs to pay to use this drinking water point' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
       "key": "fountain",
       "description": "Layer 'Drinking water' shows fountain=bubbler with a fixed text, namely 'This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "bubbler"
@@ -799,13 +809,28 @@
       "value": "no"
     },
     {
-      "key": "fee",
-      "description": "Layer 'Drinking water' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
-      "value": "no"
+      "key": "iced_water",
+      "description": "Layer 'Drinking water' shows iced_water=yes with a fixed text, namely 'Ice-cold water is provided here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
     },
     {
-      "key": "fee",
-      "description": "Layer 'Drinking water' shows fee=yes with a fixed text, namely 'One needs to pay to use this drinking water point' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "key": "cold_water",
+      "description": "Layer 'Drinking water' shows cold_water=yes with a fixed text, namely 'Actively cooled water is available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "room_temperature_water",
+      "description": "Layer 'Drinking water' shows room_temperature_water=yes with a fixed text, namely 'Ambient temperature water (without active cooling or heating) is available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "warm_water",
+      "description": "Layer 'Drinking water' shows warm_water=yes with a fixed text, namely 'Warmed water is provided here; the water is not dangerously hot' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "hot_water",
+      "description": "Layer 'Drinking water' shows hot_water=yes with a fixed text, namely 'Hot water is provided here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "yes"
     },
     {
@@ -1279,6 +1304,25 @@
       "value": "no"
     },
     {
+      "key": "drive_through",
+      "description": "Layer 'Restaurants and fast food' shows drive_through=yes with a fixed text, namely 'This fast-food restaurant has a drive-through' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if amenity=fast_food)",
+      "value": "yes"
+    },
+    {
+      "key": "drive_through",
+      "description": "Layer 'Restaurants and fast food' shows drive_through=no with a fixed text, namely 'This fast-food restaurant does not have a drive-through' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if amenity=fast_food)",
+      "value": "no"
+    },
+    {
+      "key": "opening_hours:drive_through",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'opening_hours:drive_through' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if drive_through=yes)"
+    },
+    {
+      "key": "opening_hours:drive_through",
+      "description": "Layer 'Restaurants and fast food' shows opening_hours:drive_through= with a fixed text, namely 'The opening hours of the drive-through are the same as the restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') Picking this answer will delete the key opening_hours:drive_through. (This is only shown if drive_through=yes)",
+      "value": ""
+    },
+    {
       "key": "diet:vegetarian",
       "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
       "value": "no"
@@ -1537,6 +1581,16 @@
       "key": "service:electricity",
       "description": "Layer 'Restaurants and fast food' shows service:electricity=no with a fixed text, namely 'There are a no domestic sockets available to customers seated indoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "no"
+    },
+    {
+      "key": "outdoor_seating",
+      "description": "Layer 'Restaurants and fast food' shows outdoor_seating=yes with a fixed text, namely 'This place has outdoor seating' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "indoor_seating",
+      "description": "Layer 'Restaurants and fast food' shows indoor_seating=yes with a fixed text, namely 'This place has indoor seating' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
     },
     {
       "key": "dog",

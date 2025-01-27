@@ -15,19 +15,21 @@
     "eu": "Abiadiura",
     "pl": "Prędkość maksymalna",
     "hu": "Sebességkorlátozások",
-    "uk": "Максимальна швидкість"
+    "uk": "Максимальна швидкість",
+    "ko": "최고 속도"
   },
   "description": {
     "en": "This map shows the legally allowed maximum speed on every road. If a maxspeed is missing or wrong, you can correct it here.",
     "de": "Diese Karte zeigt die zulässige Höchstgeschwindigkeit auf jeder Straße. Wenn eine Höchstgeschwindigkeit fehlt oder falsch ist, können Sie dies hier korrigieren.",
     "fr": "Cette carte montre la vitesse maximale autorisée sur les routes. Si la vitesse maximale est manquante ou erronée, vous pouvez la corriger ici.",
     "da": "Dette kort viser den lovligt tilladte maksimale hastighed på hver vej. Hvis en maxspeed mangler eller er forkert, kan du rette den her.",
-    "nl": "Deze kaart toont de maximum toegestane snelheid voor elke weg. Als er een maximumsnelheid mist of niet klopt, kan je hem hier aanpassen.",
+    "nl": "Deze kaart toont de maximum toegestane snelheid voor elke weg. Als er een maximumsnelheid ontbreekt of niet klopt, kan je deze hier aanpassen.",
     "cs": "Tato mapa zobrazuje zákonem povolenou maximální rychlost na každé silnici. Pokud maximální rychlost chybí nebo je nesprávná, můžete ji zde opravit.",
     "es": "Este mapa muestra la velocidad máxima legalmente permitida en cada carretera. Si falta o está mal una velocidad máxima, puedes corregirla aquí.",
     "ca": "Aquest mapa mostra la velocitat màxima permesa legalment a cada carretera. Si falta una velocitat màxima o és incorrecta, podeu corregir-la aquí.",
     "zh_Hant": "這份地圖顯示每一條道路的法定允許的最高速限，如果有缺漏的最高速限或是標示錯誤，你可以在這邊更正資訊。",
-    "pl": "Ta mapa pokazuje prawnie dozwoloną maksymalną prędkość na każdej drodze. Jeśli brakuje maksymalnej prędkości lub jest ona nieprawidłowa, możesz ją tutaj poprawić."
+    "pl": "Ta mapa pokazuje prawnie dozwoloną maksymalną prędkość na każdej drodze. Jeśli brakuje maksymalnej prędkości lub jest ona nieprawidłowa, możesz ją tutaj poprawić.",
+    "ko": "이 지도는 모든 도로의 법적으로 합법적인 최고 속도를 표시합니다. 최고 속도 정보가 누락되었거나 잘못되었다면, 여기에서 수정 가능 합니다."
   },
   "shortDescription": {
     "en": "This map shows the legally allowed maximum speed on every road.",
@@ -41,7 +43,8 @@
     "zh_Hant": "這份地圖顯示每一條道路的法定允許的最高速限。",
     "pl": "Ta mapa pokazuje prawnie dozwoloną maksymalną prędkość na każdej drodze.",
     "ru": "На этой карте показана разрешенная законом максимальная скорость на каждой дороге.",
-    "uk": "Ця мапа показує дозволену законом максимальну швидкість на кожній дорозі."
+    "uk": "Ця мапа показує дозволену законом максимальну швидкість на кожній дорозі.",
+    "ko": "이 지도는 모든 도로의 법적으로 허용된 최고 속도를 표시합니다."
   },
   "icon": "./assets/themes/maxspeed/maxspeed_logo.svg",
   "layers": [

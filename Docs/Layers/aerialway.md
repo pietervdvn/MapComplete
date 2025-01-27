@@ -2,7 +2,7 @@
 
 # aerialway
 
-Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. 
+Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines.
 
  - This layer is shown at zoomlevel **11** and higher
 
@@ -67,9 +67,9 @@ The question is `What type of aerialway is this?`
  -  *A drag lift with T-shaped carriers for two passengers at a time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dt-bar' target='_blank'>t-bar</a>
  -  *A drag lift with L-shaped bars for a single passenger at a time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dj-bar' target='_blank'>j-bar</a>
  -  *A drag lift with a platter to drag a single passenger at a time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dplatter' target='_blank'>platter</a>
- -  *A tow line which which drags skieers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Drope_tow' target='_blank'>rope_tow</a>
+ -  *A tow line which skiers hold on to or attach themselves onto* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Drope_tow' target='_blank'>rope_tow</a>
  -  *A magic carpet (a conveyor belt on the ground)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dmagic_carpet' target='_blank'>magic_carpet</a>
- -  *A zip line. (A touristical attraction where adventurous people go down at high speeds) * is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dzip_line' target='_blank'>zip_line</a>
+ -  *A zip line. (A touristic attraction where adventurous people go down at high speeds)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:aerialway' target='_blank'>aerialway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:aerialway%3Dzip_line' target='_blank'>zip_line</a>
 
 ### duration
 
@@ -117,7 +117,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 
 

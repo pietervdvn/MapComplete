@@ -13,19 +13,21 @@
     "zh_Hant": "彩虹人行穿越道",
     "pl": "Tęczowe przejścia dla pieszych",
     "hu": "Szivárványos gyalogosátkelők",
-    "uk": "Веселкові пішохідні переходи"
+    "uk": "Веселкові пішохідні переходи",
+    "ko": "무지개색 횡단보도"
   },
   "description": {
     "en": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added",
     "de": "Auf dieser Karte sind Fußgängerüberwege mit Regenbogenfarben eingezeichnet und können leicht hinzugefügt werden",
     "fr": "Cette carte affiche et permet la modification des passages cloutés peints aux couleurs de l’arc-en-ciel",
     "da": "På dette kort er regnbuemalede fodgængerfelter vist og kan nemt tilføjes",
-    "nl": "Deze kaart toont zebrapaden die in regenboogkleuren of pridekleuren geschilderd zijn.",
+    "nl": "Op deze kaart vind je regenboogzebrapaden en kan je er toevoegen",
     "ca": "A aquest mapa es mostren els pasos de vianants pintats amb l'arc de Sant Martí i poden afegir-se fàcilment",
     "es": "En este mapa, se muestran y se pueden agregar fácilmente pasos de peatones pintados con arcoíris",
     "cs": "Na této mapě si můžete zobrazit a snadno přidat přechody pro chodce s duhovými malbami",
     "pl": "Na tej mapie pokazane są tęczowo pomalowane przejścia dla pieszych, które można łatwo dodać",
-    "uk": "На цій мапі показуються пішохідні переходи позначені кольорами веселки, вони також можуть бути легко додані"
+    "uk": "На цій мапі показуються пішохідні переходи позначені кольорами веселки, вони також можуть бути легко додані",
+    "ko": "이 지도에는 무지개 색으로 칠해진 보행자 횡단보도가 표시되어 있으며 쉽게 추가할 수 있습니다"
   },
   "icon": "./assets/themes/rainbow_crossings/logo.svg",
   "startZoom": 16,

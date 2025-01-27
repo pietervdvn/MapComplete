@@ -11,7 +11,7 @@
         {
           "emoji": "⏰",
           "question": {
-            "en": "Open now",
+            "en": "Now open",
             "nl": "Nu open",
             "de": "Jetzt geöffnet",
             "ca": "Obert ara",
@@ -416,6 +416,31 @@
               "diet:lactose_free=limited"
             ]
           }
+        }
+      ]
+    },
+    {
+      "id": "outdoor_seating",
+      "options": [
+        {
+          "question": {
+            "en": "Has outdoor seating",
+            "de": "Hat Sitzgelegenheiten im Freien"
+          },
+          "icon": "./assets/layers/outdoor_seating.svg",
+          "osmTags": "outdoor_seating=yes"
+        }
+      ]
+    },
+    {
+      "id": "indoor_seating",
+      "options": [
+        {
+          "question": {
+            "en": "Has indoor seating",
+            "de": "Hat Sitzplätze im Innenbereich"
+          },
+          "osmTags": "indoor_seating=yes"
         }
       ]
     }

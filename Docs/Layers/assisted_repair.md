@@ -2,7 +2,7 @@
 
 # assisted_repair
 
-A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.
+A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location. A repair café is a type of event organized regularly along the same principles.
 
  - This layer is shown at zoomlevel **1** and higher
 
@@ -163,7 +163,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 
 

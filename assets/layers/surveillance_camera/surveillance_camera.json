@@ -68,6 +68,10 @@
                 "then": "./assets/themes/surveillance/dome.svg"
               },
               {
+                "if": "camera:type=doorbell",
+                "then": "./assets/layers/surveillance_camera/doorbell.svg"
+              },
+              {
                 "if": "_direction:leftright=right",
                 "then": "./assets/themes/surveillance/cam_right.svg"
               },
@@ -314,11 +318,7 @@
           "icon": "./assets/themes/surveillance/dome.svg"
         },
         {
-          "if": {
-            "and": [
-              "camera:type=panning"
-            ]
-          },
+          "if": "camera:type=panning",
           "then": {
             "en": "A panning camera",
             "nl": "Een camera die (met een motor) van links naar rechts kan draaien",
@@ -329,6 +329,17 @@
             "ca": "Una càmera panoràmica",
             "es": "Una cámara panorámica",
             "cs": "Otáčecí kamera"
+          }
+        },
+        {
+          "if": "camera:type=doorbell",
+          "icon": {
+            "path": "./assets/layers/surveillance_camera/doorbell.svg",
+            "size": "large"
+          },
+          "then": {
+            "en": "A doorbell which might be turned on remotely at any time or by motion detection. These are typically <i>Smart</i>, internet-connected doorbells. Typical brands are Ring, Google Nest, Eufy, ...",
+            "de": "Eine Türklingel, die jederzeit oder per Bewegungserkennung ferngeschaltet werden kann. Dies sind typischerweise <i>Smart</i>, internetgebundene Türklingeln. Typische Marken sind Ring, Google Nest, Eufy, ..."
           }
         }
       ],
@@ -445,11 +456,7 @@
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "surveillance=public"
-            ]
-          },
+          "if": "surveillance=public",
           "then": {
             "en": "A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …",
             "nl": "Bewaking van de publieke ruimte, dus een straat, een brug, een park, een plein, een stationsgebouw, een publiek toegankelijke gang of tunnel…",
@@ -464,11 +471,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "surveillance=outdoor"
-            ]
-          },
+          "if": "surveillance=outdoor",
           "then": {
             "en": "An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)",
             "nl": "Een buitenruimte met privaat karakter (zoals een privé-oprit, een parking, tankstation, …)",
@@ -506,20 +509,14 @@
     },
     {
       "question": {
-        "en": "Is the public space surveilled by this camera an indoor or outdoor space?",
-        "nl": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?",
-        "fr": "L'espace public surveillé par cette caméra est-il un espace intérieur ou extérieur ?",
-        "it": "Lo spazio pubblico sorvegliato da questa videocamera è all'aperto o al chiuso?",
-        "de": "Handelt es sich bei dem von dieser Kamera überwachten öffentlichen Raum um einen Innen- oder Außenbereich?",
-        "da": "Er det offentlige rum, der overvåges af dette kamera, et indendørs eller udendørs rum?",
-        "es": "¿El espacio público vigilado por esta cámara es interior o exterior?",
-        "ca": "L'espai públic vigilat per aquesta càmera és un espai interior o exterior?",
-        "cs": "Je veřejný prostor sledovaný touto kamerou vnitřní nebo venkovní prostor?",
-        "sl": "Ali je javni prostor, ki ga nadzoruje ta kamera, notranji ali zunanji?"
+        "en": "Is this camera located inside or outside?",
+        "nl": "Bevindt de camera zich binnen of buiten?",
+        "de": "Befindet sich diese Kamera drinnen oder draußen?"
       },
       "condition": {
         "and": [
-          "surveillance:type=public"
+          "surveillance!=outdoor",
+          "surveillance!=indoor"
         ]
       },
       "mappings": [
@@ -572,7 +569,7 @@
           "hideInAnswer": true
         }
       ],
-      "id": "is_indoor"
+      "id": "camera_is_indoor"
     },
     {
       "question": {
@@ -603,9 +600,20 @@
         "type": "nat"
       },
       "condition": {
-        "or": [
-          "indoor=yes",
-          "surveillance:type=ye"
+        "and": [
+          "camera:type!=doorbell",
+          {
+            "or": [
+              "indoor=yes",
+              "surveillance=indoor"
+            ]
+          },
+          {
+            "or": [
+              "surveillance:type=alpr",
+              "surveillance:type=camera"
+            ]
+          }
         ]
       },
       "id": "Level"

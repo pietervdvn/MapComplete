@@ -488,6 +488,11 @@
                 "override": {
                     "=name": "Sport places without etymology information"
                 }
+            },
+            "8": {
+                "override": {
+                    "=name": "Parks without etymology information"
+                }
             }
         },
         "shortDescription": "What is the origin of a toponym?",
@@ -720,6 +725,10 @@
     "indoors": {
         "description": "On this map, publicly accessible indoor places are shown",
         "title": "Indoors"
+    },
+    "insects": {
+        "description": "Insect hotels provide shelter for insects.",
+        "title": "Insect Hotels"
     },
     "items_with_image": {
         "description": "A map showing all items on OSM which have an image. This theme is a very bad fit for MapComplete as someone is not able to directly add a picture. However, this theme is mostly here to include this all into the database, which'll allow this to quickly fetch images nearby for other features",
@@ -1078,27 +1087,19 @@
     "pets": {
         "description": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
         "layers": {
-            "1": {
+            "4": {
                 "override": {
                     "name": "Dog friendly eateries"
                 }
             },
-            "2": {
-                "override": {
-                    "name": "Dog-friendly shops",
-                    "title": {
-                        "render": "Dog-friendly shops"
-                    }
-                }
-            },
             "6": {
                 "override": {
-                    "presets": {
-                        "0": {
-                            "description": "A shop where you can bring a dog almost everywhere",
-                            "title": "dog-friendly shop"
-                        }
-                    }
+                    "name": "Dog-friendly shops"
+                }
+            },
+            "8": {
+                "override": {
+                    "name=": "Waste baskets with excrement bag dispensers"
                 }
             }
         },
@@ -1167,6 +1168,10 @@
     "rainbow_crossings": {
         "description": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added",
         "title": "Rainbow pedestrian crossings"
+    },
+    "scouting": {
+        "description": "A scouting group is a social youth movement with a heavy emphasis on the outdoors. Activities range from camping, hiking, aquatics, backpacking, exploring nature, ...",
+        "title": "Scouting groups"
     },
     "shops": {
         "description": "On this map, one can mark basic information about shops, add opening hours and phone numbers",

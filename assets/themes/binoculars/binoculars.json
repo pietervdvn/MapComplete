@@ -18,11 +18,12 @@
     "pl": "Lornetki",
     "zh_Hans": "望远镜",
     "ru": "Бинокли",
-    "uk": "Біноклі"
+    "uk": "Біноклі",
+    "ko": "망원경"
   },
   "description": {
     "en": "A map with binoculars fixed in place with a pole. It can typically be found on touristic locations, viewpoints, on top of panoramic towers or occasionally on a nature reserve.",
-    "nl": "Een kaart met verrekijkers die op een vaste plaats zijn gemonteerd",
+    "nl": "Een kaart met verrekijkers die op een vaste plaats zijn gemonteerd.",
     "de": "Eine Karte fest installierter Ferngläser. Man findet sie meist an touristischen Zielen, Aussichtspunkten, Aussichtstürmen oder gelegentlich in Naturschutzgebieten.",
     "it": "Una cartina dei binocoli su un palo fissi in un luogo. Si trovano tipicamente nei luoghi turistici, nei belvedere, in cima a torri panoramiche oppure occasionalmente nelle riserve naturali.",
     "zh_Hant": "固定一地的望遠鏡地圖，特別是能夠在旅遊景點、觀景點、城鎮環景點，或是自然保護區找到。",
@@ -36,7 +37,8 @@
     "eu": "Zutoin batean prismatiko finkoak dituen mapa. Leku turistikoetan, begiratokietan, dorre panoramikoen gainean edo, batzuetan, erreserba natural batean egoten da.",
     "pl": "Mapa z lornetkami zamocowanymi na słupku. Zwykle można je odnaleźć w lokalizacjach turystycznych, punktach widokowych, na szczytach wież panoramicznych lub czasami w rezerwacie przyrody.",
     "zh_Hans": "一张显示固定在杆子上的望远镜的地图。这种望远镜通常可以在旅游景点、观景点、全景塔顶部或偶尔在自然保护区找到。",
-    "uk": "Мапа стаціонарних біноклів. Зазвичай їх можна знайти в туристичних місцях, на оглядових майданчиках, на вершинах панорамних веж та іноді в природних заповідниках."
+    "uk": "Мапа стаціонарних біноклів. Зазвичай їх можна знайти в туристичних місцях, на оглядових майданчиках, на вершинах панорамних веж та іноді в природних заповідниках.",
+    "ko": "관광 명소, 전망대, 파노라마 타워 옥상, 또는 혹은 자연 보호구역에서 볼 수 있는 망원경이 설치된 장소의 지도를 제공합니다. 망원경은 일반적으로 기둥에 고정되어 있어 특정 장소를 관찰하는 데 사용됩니다."
   },
   "shortDescription": {
     "en": "A map with fixed binoculars",
@@ -54,7 +56,8 @@
     "eu": "Prismatiko finkoak dituen mapa",
     "pl": "Mapa ze stałymi lornetkami",
     "zh_Hans": "一张显示固定望远镜的地图",
-    "uk": "Мапа стаціонарних біноклів"
+    "uk": "Мапа стаціонарних біноклів",
+    "ko": "망원경 위치 지도"
   },
   "icon": "./assets/layers/binocular/telescope.svg",
   "layers": [

@@ -1,2 +1,1414 @@
 {
+    "advertising": {
+        "description": "길거리와 도로에 얼마나 많은 편의 시설물 있는지 생각해 보신 적 있나요? 우리 지도에서는 거리에서 발견할 수 있는 모든 시설물에 대한 정보를 찾고 추가할 수 있습니다",
+        "shortDescription": "어디서 시설물을 찾을 수 있을까요?",
+        "title": "시설물"
+    },
+    "aed": {
+        "description": "이 지도에서는 주변에 있는 제세동기를 찾아볼 수 있습니다",
+        "title": "제세동기"
+    },
+    "artwork": {
+        "description": "전 세계의 여러 조각상과 예술 작품들 알려주는 오픈 맵 입니다",
+        "title": "예술 작품"
+    },
+    "atm": {
+        "description": "이 지도는 입출금을 위한 ATM 을 보여 줍니다",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "ATM 이동"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": "OpenStreetMap은 <a href='#{_closest_osm_poi}'>가장 가까운 ATM이 {_closest_osm_poi_distance}m 떨어져 있는 것을 알려줍니다.</a> "
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "가장 가까운 ATM에 대한 모든 정보를 추가하세요"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "ATM 기기"
+    },
+    "bag": {
+        "description": "이 테마는 BAG에서 데이터를 가져오는 데 도움을 줍니다",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "이 건물은 BAG에 레퍼런스가 존재하지 않습니다"
+                            }
+                        },
+                        "render": "BAG의 레퍼런스는 <b>{ref:bag}</b>입니다"
+                    }
+                }
+            },
+            "2": {
+                "description": "BAG에 등록된 건물",
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "이 건물은 <b>{_bag_obj:start_date}</b>에 착공되었습니다"
+                            }
+                        },
+                        "render": "이 건물은 <b>{_bag_obj:start_date}</b>에 지어졌습니다"
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "건물 유형은 <b>{_bag_obj:construction}</b>로 계획되어 있습니다"
+                            }
+                        },
+                        "render": "건물 유형은 <b>{_bag_obj:building}</b> 입니다"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "값을 올바르게 계산하지 못했습니다. 페이지를 새로고침 해 주세요"
+                            }
+                        }
+                    },
+                    "Reference": {
+                        "render": "BAG에서 레퍼런스는 <b>{_bag_obj:ref:bag}</b> 입니다"
+                    }
+                }
+            }
+        },
+        "shortDescription": "BAG 헬퍼 툴 불러오기",
+        "title": "BAG 헬퍼 불러오기"
+    },
+    "benches": {
+        "description": "이 지도는 OpenStreetMap에 기록된 모든 벤치를 보여줍니다: 길거리 벤치뿐만 아니라 대중교통 정류장이나 쉼터에 속한 벤치도 포함됩니다.",
+        "shortDescription": "벤치 지도",
+        "title": "벤치"
+    },
+    "bicycle_parkings": {
+        "description": "모든 종류의 자전거 주차장을 보여주는 지도입니다",
+        "title": "자전거 주차장"
+    },
+    "bicycle_rental": {
+        "description": "이 지도에서는 OpenStreetMap에 등록된 다양한 자전거 대여소를 확인할 수 있습니다",
+        "shortDescription": "자전거 대여소와 상점을 보여주는 지도입니다",
+        "title": "자전거 대여"
+    },
+    "bicyclelib": {
+        "description": "자전거 라이브러리는 자전거를 대여할 수 있는 장소로 일반적으로 소액의 연회비를 지불하면 이용 가능 합니다. 대표적인 사례로 어린이를 위한 자전거 라이브러리가 있는데, 아이들이 크면서 작은 자전거에서 더 큰 자전거로 교체할 수 있도록 도와줍니다",
+        "title": "자전거 라이브러리"
+    },
+    "binoculars": {
+        "description": "관광 명소, 전망대, 파노라마 타워 옥상, 또는 혹은 자연 보호구역에서 볼 수 있는 망원경이 설치된 장소의 지도를 제공합니다. 망원경은 일반적으로 기둥에 고정되어 있어 특정 장소를 관찰하는 데 사용됩니다.",
+        "shortDescription": "망원경 위치 지도",
+        "title": "망원경"
+    },
+    "blind_osm": {
+        "description": "시각장애인을 위한 주요 시설 지도 도움말",
+        "title": "시각장애인을 위한 OpenStreetMap"
+    },
+    "bookcases": {
+        "description": "공공 책장은 책을 보관할 수 있는 길가의 작은 책장, 상자, 오래된 공중 전화 부스와 같은 공간을 말합니다. 누구나 책을 놓거나 가져갈 수 있습니다. 이 지도는 공공 책장을 모두 수집하는 것을 목표로 두고 있습니다.",
+        "title": "공공 책장"
+    },
+    "cafes_and_pubs": {
+        "description": "커피 전문점, 펍 그리고 바",
+        "title": "카페 그리고 펍"
+    },
+    "campersite": {
+        "description": "이 사이트에는 공식 캠핑카 휴게소와 오수 및 폐수를 버릴 수 있는 장소가 모두 모여 있습니다. 제공되는 서비스 및 비용에 대한 세부 정보를 추가할 수 있습니다. 사진과 리뷰를 추가하세요.",
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "이 장소의 운영자는 누구인가요?",
+                    "render": "이 장소의 운영자는 {operator} 입니다"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "이곳에는 전원 공급 장치가 있습니다"
+                        },
+                        "1": {
+                            "then": "이 장소에는 전원 공급 장치가 없습니다"
+                        }
+                    },
+                    "question": "이곳에 전원 공급 장치가 있습니까?"
+                }
+            }
+        },
+        "shortDescription": "캠핑카 숙박이 가능한 캠핑장 찾기",
+        "title": "캠핑장"
+    },
+    "charging_stations": {
+        "description": "이 오픈 맵에서 충전소 정보를 찾고 표시할 수 있습니다",
+        "shortDescription": "전 세계 충전소 지도",
+        "title": "충전소"
+    },
+    "circular_economy": {
+        "description": "사람들이 공유하고 재사용 또는 재활용할 수 있도록 도와주는 다양한 물건.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "중고 물품 상점"
+                }
+            }
+        },
+        "title": "순환 경제"
+    },
+    "climbing": {
+        "description": "이 지도에는 클라이밍 체육관과 볼더링 홀그리고 자연 암벽 등과 같은 다양한 클라이밍 장소가 나와 있습니다.",
+        "descriptionTail": "클라이밍 지도는 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>크리스티안 노이만(Christian Neumann</a>이 제작했습니다. 피드백이나 질문이 있으면 <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>여기</a>로 연락해 주세요.</p><p>이 프로젝트는 <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> 프로젝트의 데이터를 사용합니다.</p>",
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>이<a href='#{_embedding_feature:id}'>포함된 요소</a>따르면, 이는</span>접근이 가능합니다<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>이 <a href='#{_embedding_feature:id}'>포함된 요소</a>에 따르면,</span>접근을 위한 허가가 필요합니다<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'>아<a href='#{_embedding_feature:id}'>포함된 요소</a>에 따르면, 이는</span>오직 고객만 접근 가능합니다.<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'>이<a href='#{_embedding_feature:id}'>포함된 요소</a>에 따르면, 이는 </span> 클럽 회원만 접근 가능합니다.<br/>{_embedding_feature:access:description}"
+                                }
+                            }
+                        },
+                        "1": {
+                            "mappings": {
+                                "0": {
+                                    "then": "누구나 접근 가능합니다"
+                                },
+                                "1": {
+                                    "then": "이곳에 접근하기 위한 허가가 필요합니다"
+                                },
+                                "2": {
+                                    "then": "오직 고객만"
+                                },
+                                "3": {
+                                    "then": "오직 클럽 회원만"
+                                }
+                            },
+                            "question": "누가 이곳에 접근 가능합니까?"
+                        }
+                    }
+                }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "이 상점은 클라이밍 신발을 수리합니다"
+                                },
+                                "1": {
+                                    "then": "이 상점은 클라이밍 신발을 수리하지 않습니다"
+                                }
+                            },
+                            "question": "이 신발 수리점에서는 클라이밍 신발을 수리합니까?"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "이 상점은 클라이밍 신발을 수리합니다"
+                                },
+                                "1": {
+                                    "then": "이 상점은 클라이밍 신발을 수리하지 않습니다"
+                                }
+                            },
+                            "question": "이 신발 수리점에서는 클라이밍 신발도 수리하나요?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "신발 수리점"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "클라이밍 체육관, 클럽 및 장소"
+    },
+    "clock": {
+        "description": "모든 시계탑을 표시하는 지도",
+        "title": "시계"
+    },
+    "cycle_highways": {
+        "description": "이 지도는 자전거 도로를 보여줍니다",
+        "title": "자전거 도로"
+    },
+    "cycle_infra": {
+        "description": "자전거 인프라와 관련된 항목을 조회하고 편집할 수 있는 지도입니다. #osoc21 기간 동안 제작되었습니다.",
+        "shortDescription": "자전거 관련 시설과 항목을 조회하고 편집할 수 있는 지도입니다.",
+        "title": "자전거 관련 시설"
+    },
+    "cyclenodes": {
+        "description": "이 지도는 자전거 경로를 보여주며, 새로운 경로를 쉽게 추가할 수 있습니다",
+        "layers": {
+            "0": {
+                "name": "노드간 경로",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "override": {
+                            "question": "이 노드 간 경로는 마지막으로 언제 갱신 되었습니까?",
+                            "render": "이 노드 간 링크는 마지막으로 {survey:date}에 갱신되었습니다"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "노드 간 경로 <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "노드간 경로"
+                }
+            },
+            "1": {
+                "name": "노드",
+                "presets": {
+                    "0": {
+                        "title": "자전거 노드"
+                    }
+                },
+                "tagRenderings": {
+                    "node-expected_rcn_route_relations": {
+                        "freeform": {
+                            "placeholder": "e.g. 3"
+                        },
+                        "question": "이 노드는 몇 개의 다른 자전거 노드와 연결되어 있습니까?",
+                        "render": "이 노드는 {expected_rcn_route_relations}개의 다른 자전거 노드와 연결되어 있습니다."
+                    },
+                    "node-rxn_ref": {
+                        "freeform": {
+                            "placeholder": "e.g. 1"
+                        },
+                        "question": "이 자전거 노드의 조회 번호는 무엇인가요?",
+                        "render": "이 자전거 노드의 조회 번호는 {rcn_ref} 입니다"
+                    },
+                    "node-survey:date": {
+                        "override": {
+                            "question": "자전거 노드는 마지막 갱신이 언제인가요?",
+                            "render": "이 자전거 노드의 마지막 갱신은 {survey:date} 입니다"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "자전거 노드 <strong>{rcn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "제안된 자전거 노드 <strong>{proposed:rcn_ref}</strong>"
+                        }
+                    },
+                    "render": "자전거 노드"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "자전거 안내 표지판",
+                    "title": {
+                        "render": "자전거 안내 표지판"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "노드 간 경로를 위한 경로 표지판"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "자전거 노드 네트워크"
+    },
+    "cyclestreets": {
+        "description": "자전거 전용 도로는<b>차량이 추월하는 것이 허용되지 않는 도로 입니다.</b>이러한 도로는 특별한 교통 표지판으로 표시됩니다. 자전거 도로는 주로 네덜란드와 벨기에에서 볼 수 있을 뿐만아니라, 독일과 프랑스에서도 찾아볼 수 있습니다. ",
+        "layers": {
+            "0": {
+                "description": "자전거 전용 도로는 차량이 자전거를 추월할 수 없는 도로 입니다",
+                "name": "자전거 전용 도로"
+            },
+            "1": {
+                "description": "이 도로는 곧 자전거 전용 도로로 전환될 예정입니다",
+                "name": "미래형 자전거 전용 도로",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name} 는 곧 자전거 전용 도로로 전환될 예정입니다"
+                        }
+                    },
+                    "render": "미래형 자전거 전용 도로"
+                }
+            },
+            "2": {
+                "description": "자전거 전용 도로로 표시할 도로를 지정하는 레이어",
+                "name": "모든 도로",
+                "title": {
+                    "render": "도로"
+                }
+            }
+        },
+        "overrideAll": {
+            "+tagRenderings": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "이 도로는 자전거 전용 도로입니다 (제한 속도는 시속 30km입니다)"
+                        },
+                        "1": {
+                            "then": "이 도로는 자전거 도로 입니다"
+                        },
+                        "2": {
+                            "then": "이 도로는 자전거 도로 입니다 (제한 속도는 시속 30km이고 차량의 진입이 허용되지 않습니다) (표지판은 추후 요청될 예정입니다.)"
+                        },
+                        "3": {
+                            "then": "이 도로는 자전거 전용 도로 입니다"
+                        },
+                        "4": {
+                            "then": "이 도로는 곧 자전거 도로로 전환될 예정입니다"
+                        },
+                        "5": {
+                            "then": "이 도로는 곧 자전거 도로로 전환될 예정입니다"
+                        },
+                        "6": {
+                            "then": "이 도로는 자전거 전용 도로가 아닙니다"
+                        }
+                    },
+                    "question": "이 도로는 <b>{name}</b> 자전거 전용 도로인가요?"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "거주자 허용"
+                        },
+                        "1": {
+                            "then": "차량 허용"
+                        },
+                        "2": {
+                            "then": "오토바이 허용"
+                        },
+                        "3": {
+                            "then": "자동차 허용"
+                        },
+                        "4": {
+                            "then": "이 자전거 도로에는 추가적인 표지판이 존재하지 않습니다."
+                        }
+                    },
+                    "question": "이 자전거 도로에 어떤 표지판이 존재합니까?"
+                },
+                "2": {
+                    "question": "언제 자전거 전용 도로로 전환이 되나요?",
+                    "render": "이 도로는 {cyclestreet:start_date}에 자전거 전용 도로로 전환될 예정입니다"
+                }
+            }
+        },
+        "shortDescription": "자전거 전용 도로 지도",
+        "title": "자전거 전용 도로"
+    },
+    "cyclofix": {
+        "description": "자전거 이용자를 위한 지도입니다. 이 지도에서는 자전거 펌프, 음용수 제공 장소, 자전거 상점, 수리 장소 또는 주차장 등 필요에 맞는 시설을 찾을 수 있습니다.",
+        "title": "Cyclofix - 자전거 이용자를 위한 지도"
+    },
+    "disaster_response": {
+        "description": "이 지도에는 재난에 대한 대비와 대응을 위한 요소들이 포함되어 있습니다.",
+        "title": "재난 대비와 응급 상황 서비스"
+    },
+    "drinking_water": {
+        "description": "이 지도에서는 공공 음용수 제공 장소가 표시 되며, 쉽게 추가 가능합니다",
+        "title": "음용수"
+    },
+    "education": {
+        "description": "이 지도에서는 모든 유형의 학교와 교육기관에 대한 정보를 확인할 수 있으며 추가 정보를 쉽게 추가 가능합니다",
+        "title": "교육 기관"
+    },
+    "elongated_coin": {
+        "description": "나만의 길쭉한 동전을 만들 수 있는 페니 프레스 위치를 찾아보십시오.",
+        "title": "페니 프레스"
+    },
+    "etymology": {
+        "description": "이 지도에서는 거리, 건물 등이 어떤 기준으로 이름이 붙여졌는지 확인할 수 있습니다. 데이터는 OpenStreetMap 에서 가져왔으며, Wikidata와 연결되어 있습니다. 팝업 창에서는 Wikipedia 문서(존재하는 경우) 또는 객체 이름의 유래와 관련된 Wikidata 정보가 표시됩니다. 장소 자체에 Wikipedia 페이지가 있다면 해당 페이지도 표시됩니다.<br/><br/><b>여러분도 기여할 수 있습니다</b> 충분히 확대한 후<i>모든</i>거리가 표시 됩니다. 거리를 클릭하면 Wikidata 검색 상자가 나타나며, 몇 번의 클릭으로 어원 링크를 추가할 수 있습니다. 이 작업을 위해서는 무료 OpenStreetMap 계정이 필요합니다.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=name": "어원 정보가 없는 거리"
+                }
+            },
+            "2": {
+                "override": {
+                    "=name": "어원 정보가 없는 공원과 거리"
+                }
+            },
+            "3": {
+                "override": {
+                    "=name": "어원 정보가 없는 교육 연구 시설"
+                }
+            },
+            "4": {
+                "override": {
+                    "=name": "어원 정보가 없는 문화 공간"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "어원 정보가 없는 관광 시설"
+                }
+            },
+            "6": {
+                "override": {
+                    "=name": "어원 정보가 없는 건강과 사회 복지 공간"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "어원 정보가 없는 운동 공간"
+                }
+            },
+            "8": {
+                "override": {
+                    "=name": "어원 정보가 없는 공원"
+                }
+            }
+        },
+        "shortDescription": "지명의 기원은 무엇입니까?",
+        "title": "어원- 이 장소는 무슨 기준으로 이름이 붙었나요?"
+    },
+    "facadegardens": {
+        "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>벽면 녹화 정원</a>, 녹색 벽 및 도시 내 나무는 평화와 고요를 제공할 뿐만 아니라, 더 아름다운 도시, 더 큰 생물다양성, 냉각 효과, 그리고 더 나은 공기 질을 가져옵니다. <br/> Klimaan VZW와 Mechelen Klimaatneutraal은 사람들이 자신만의 정원을 만들고 싶어 하거나 자연을 사랑하는 도시 산책을 하는 사람들를 위해 기존 및 새로운 벽면 녹화 정원을 지도에 표시하려고 합니다.<br/>프로젝트에 대한 자세한 정보는 <a href='https://klimaan.be/' target=_blank>klimaan.be</a>에서 확인할 수 있습니다.",
+        "layers": {
+            "0": {
+                "description": "벽면 녹화 정원",
+                "name": "벽면 녹화 정원",
+                "presets": {
+                    "0": {
+                        "description": "벽면 녹화 정원을 추가하십시오",
+                        "title": "벽면 녹화 정원"
+                    }
+                },
+                "tagRenderings": {
+                    "facadegardens-description": {
+                        "question": "정원에 대한 추가 설명 정보(필요한 경우 혹은 위에서 설명되지 않은 내용)",
+                        "render": "세부 정보: {description}"
+                    },
+                    "facadegardens-direction": {
+                        "question": "정원의 방향은 어디입니까?",
+                        "render": "방향: {direction} (where 0=N and 90=O)"
+                    },
+                    "facadegardens-edible": {
+                        "mappings": {
+                            "0": {
+                                "then": "식용 식물이 있습니다"
+                            },
+                            "1": {
+                                "then": "식용 식물이 없습니다"
+                            }
+                        },
+                        "question": "식용 가능 식물이 있습니까?"
+                    },
+                    "facadegardens-plants": {
+                        "mappings": {
+                            "0": {
+                                "then": "덩쿨 식물이 있습니다"
+                            },
+                            "1": {
+                                "then": "꽃이 피는 식물이 있습니다"
+                            },
+                            "2": {
+                                "then": "관목이 있습니다"
+                            },
+                            "3": {
+                                "then": "땅을 덮는 식물이 있습니다"
+                            }
+                        },
+                        "question": "어떤 종류의 식물이 이곳에서 자랍니까?"
+                    },
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "0": {
+                                "then": "빗물 저장통이 있습니다"
+                            },
+                            "1": {
+                                "then": "빗물 저장통이 없습니다"
+                            }
+                        },
+                        "question": "정원을 위한 물 저장통이 있습니까?"
+                    },
+                    "facadegardens-start_date": {
+                        "question": "정원은 언제 조성되었나요? (연도만으로 충분합니다.)",
+                        "render": "정원 조성 날짜: {start_date}"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "0": {
+                                "then": "정원은 햇볕이 잘 드는 곳에 있습니다"
+                            },
+                            "1": {
+                                "then": "정원은 부분적으로 그늘진 곳에 위치해 있습니다"
+                            },
+                            "2": {
+                                "then": "정원은 그늘진 곳에 위치해 있습니다"
+                            }
+                        },
+                        "question": "정원이 그늘진 곳에 있나요, 아니면 햇볕이 잘 드는 곳에 있나요?"
+                    }
+                },
+                "title": {
+                    "render": "벽면 녹화 정원"
+                }
+            }
+        },
+        "shortDescription": "이 지도는 벽면 녹화 정원의 사진과 함께 방향, 햇빛 유무, 식물 종류 등 유용한 정보를 제공합니다.",
+        "title": "벽면 녹화 정원"
+    },
+    "fireplace": {
+        "description": "인가된 장소에 있는 바베큐 시설과 불을 사용할 수 있는 야외 공간.",
+        "title": "화로와 바비큐 시설"
+    },
+    "food": {
+        "description": "식당과 패스트푸드점",
+        "title": "식당과 패스트푸드점"
+    },
+    "fritures": {
+        "description": "이 지도에서는 당신이 가장 좋아하는 튀김 가게를 찾아보세요!",
+        "layers": {
+            "0": {
+                "override": {
+                    "filter+": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "기름 종류에 대한 선호가 없습니다"
+                                },
+                                "1": {
+                                    "question": "식물성 기름만 사용하는 가게만 표시합니다"
+                                },
+                                "2": {
+                                    "question": "오직 동물성 기름만 사용하는 가게를 표시합니다"
+                                }
+                            }
+                        }
+                    },
+                    "name": "튀김 가게"
+                }
+            }
+        },
+        "title": "튀김 가게"
+    },
+    "ghostbikes": {
+        "description": "<b>고스트 바이크</b>는 교통사고로 사망한 자전거 이용자를 기리기 위해 사고 현장 근처에 영구적으로 설치된 하얀 자전거 형태의 추모 기념물입니다.<br/><br/>이 지도에서는 OpenStreetMap에 등록된 모든 고스트 바이크를 확인할 수 있습니다. 표시되지 않은 고스트 바이크가 있습니까? 누구나 정보를 추가하거나 업데이트할 수 있습니다. 무료 OpenStreetMap 계정만 있으면 됩니다. <p>전 세계 고스트 바이크에 대한 월간 개요를 게시하는 <a href='https://masto.bike/@ghostbikebot' target='_blank'>Mastodon의 자동화 계정도 존재합니다.</a></p>",
+        "title": "고스트 바이크"
+    },
+    "ghostsigns": {
+        "description": "건물에 부착된 사용되지 않는 표지판을 보여주는 지도입니다",
+        "layers": {
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "이 예술 작품은 역사적인 상징입니다"
+                                },
+                                "1": {
+                                    "then": "이 예술 작품은 역사적인 상징이 아닙니다"
+                                }
+                            },
+                            "question": "이 예술 작품은 역사적인 상징입니까?"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "고스트 사인"
+    },
+    "glutenfree": {
+        "description": "글루텐프리 제품이 있는 크라우드소싱 지도입니다",
+        "title": "글루텐프리"
+    },
+    "grb": {
+        "description": "GRB 데이터를 효율적으로 가져오도록 돕기 위한 테마입니다.",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "어떤 종류의 건물입니까?"
+                    },
+                    "grb-reference": {
+                        "render": "GRB에서 가져왔으며, 조회 번호는 {source:geometry:ref}입니다"
+                    }
+                }
+            },
+            "1": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "0": {
+                                "then": "메타태그를 아직 계산하지 못했습니다..팝업을 다시 실행해 주세요"
+                            },
+                            "1": {
+                                "then": "이 건물 구조 내에 비어 있는 공간이 있으며 Relation 데이터 구조를 통해 모델링 되었습니다. 따라서 자동 병합이 불가능합니다. <a href='https://buildings.osm.be/#/'>건물 내보내기 사이트를 통해 수동으로 병합하십시오.</a>{open_in_josm()}"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "guideposts": {
+        "description": "표지판(길 안내 표지 혹은 안내서라고 알려져 있다)은 공식적인 하이킹, 자전거 타기, 스키 또는 승마 경로를 따라 자주 발견되며, 다양한 목적지로 가는 방향을 나타냅니다. 또한, 종종 특정 지역이나 장소의 이름을 따서불리기도 하며 고도를 표시하기도 합니다.\n\n이 표지판의 위치는 하이커, 자전거 이용자, 승마자 또는 스키를 타는 사람의 현재 위치를 확인하는 데 사용됩니다. 특히 GPS 수신기가 없는 상태에서 종이 지도를 사용할 때 매우 유용합니다. ",
+        "title": "표지판"
+    },
+    "hackerspaces": {
+        "description": "이 지도에서는 해커스페이스를 확인할 수 있으며, 새로운 해커스페이스를 추가하거나 데이터를 직접 업데이트할 수 있습니다",
+        "shortDescription": "해커스페이스 지도",
+        "title": "해커스페이스와 메이커스페이스"
+    },
+    "hailhydrant": {
+        "description": "이 지도에서 선호하는 지역의 소화전, 소방서, 구급차 대기소, 그리고 소화기를 확인하고 업데이트할 수 있습니다.",
+        "shortDescription": "소화전, 소화기, 소방서 및 구급차 대기소를 표시하는 지도입니다.",
+        "title": "소화전, 소화기, 소방서, 구급차 대기소"
+    },
+    "healthcare": {
+        "description": "이 지도에서는 다양한 의료 관련 항목이 표시됩니다",
+        "layers": {
+            "5": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "의료 용품 상점"
+                        },
+                        "1": {
+                            "title": "보청기 상점"
+                        },
+                        "2": {
+                            "title": "안경점"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "의료"
+    },
+    "hotels": {
+        "description": "이 지도에서는 해당 지역의 호텔을 확인할 수 있습니다",
+        "title": "호텔"
+    },
+    "icecream": {
+        "description": "아이스크림 가게와 아이스크림 자판기를 표시하는 지도입니다",
+        "title": "아이스크림"
+    },
+    "indoors": {
+        "description": "이 지도에서는 누구나 접근 가능한 실내 장소가 표시됩니다",
+        "title": "실내"
+    },
+    "insects": {
+        "description": "곤충 호텔은 곤충들에게 쉼터를 제공합니다.",
+        "title": "곤충 호텔"
+    },
+    "items_with_image": {
+        "description": "이미지가 포함된 OSM의 모든 항목을 표시하는 지도입니다. 이 테마는 사용자가 직접 사진을 추가할 수 없기 때문에 MapComplete와 잘 맞지 않을 수 있습니다. 그러나 이러한 모든 데이터를 데이터베이스에 포함시켜, 다른 기능에서 근처의 이미지를 빠르게 가져올 수 있도록 하는 것이 이 테마의 주요 목적입니다",
+        "title": "모든 요소는 이미지를 가지고 있습니다"
+    },
+    "kerbs_and_crossings": {
+        "description": "보도 경계석과 횡단보도를 표시하는 지도입니다.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "description": "보행자 및/또는 자전거 이용자를 위한 횡단보도",
+                            "title": "횡단보도"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "보도 경계석 그리고 횡단보도"
+    },
+    "lactosefree": {
+        "description": "무유당 제품을 판매하는 상점과 식당을 표시하는 크라우드소싱 지도입니다",
+        "title": "무유당 제품 상점과 식당"
+    },
+    "lighthouses": {
+        "description": "등대는 해상 교통을 안내하기 위해 꼭대기에 불빛이 있는 높은 건물입니다.",
+        "title": "등대"
+    },
+    "mapcomplete-changes": {
+        "description": "이 지도는 MapComplete를 사용하여 이루어진 모든 변경 사항을 표시합니다",
+        "layers": {
+            "0": {
+                "description": "MapComplete의 모든 변화 보기",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "테마 이름에 {search}가 포함되어 있습니다"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "테마 이름에 {search}가 포함되어 있지 <b>않습니다</b>"
+                            }
+                        }
+                    },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "어원 테마 제외"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "기여자 {search}에 의해 만들어졌습니다"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "<b>{search}</b> 기여자가 만든 것이 아닙니다"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "{search} 이전에 만들어졌습니다"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "{search} 이후에 만들어졌습니다"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "사용자 언어 (iso-code) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "호스트 {search}에 의해 만들어졌습니다"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "주요 변경사항에 최소 하나의 이미지가 추가 되었습니다"
+                            }
+                        }
+                    },
+                    "9": {
+                        "options": {
+                            "0": {
+                                "question": "GRB 테마 제외"
+                            }
+                        }
+                    }
+                },
+                "name": "주요 변경 사항",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "이 변화를 만든 기여자는 누구입니까?",
+                        "render": "변경 사항은 <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>에 의해 만들어졌습니다"
+                    },
+                    "host": {
+                        "question": "이 변경은 어떤 호스트(웹사이트)를 사용하여 이루어졌나요?",
+                        "render": "<a href='{host}'>{host}</a>를 사용하여 변경되었습니다"
+                    },
+                    "locale": {
+                        "question": "이 변경은 어떤 지역(언어)로 이루어졌나요?",
+                        "render": "사용자 지역은 {locale} 입니다"
+                    },
+                    "show_changeset_id": {
+                        "render": "변경사항<a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "이 변경을 수행하는 데 무슨 테마가 사용되었나요?",
+                        "render": "테마 변경 사항<a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "이 변경을 수행하는 데 사용된 MapComplete의 버전은 무엇인가요?",
+                        "render": "{editor}에 의해 만들어졌습니다"
+                    }
+                },
+                "title": {
+                    "render": "{theme}에 대한 변경 사항"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "추가 통계는 <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>에서 확인할 수 있습니다</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "MapComplete를 통해 이루어진 변경 사항을 표시합니다",
+        "title": "MapComplete로 이루어진 변경 사항"
+    },
+    "maproulette": {
+        "description": "MapRoulette 작업을 표시하는 테마로, 작업을 검색, 필터링 허용될 수 있습니다.",
+        "title": "MapRoulette 작업"
+    },
+    "maps": {
+        "description": "이 지도에서는 OpenStreetMap에서 확인 가능한 모든 지도를 찾을수 있습니다. 일반적으로 장소, 도시 또는 지역을 보여주는 정보 게시판의 대형 지도(예: 관광지의 안내판 뒷면에 있는 지도, 자연 보호구역 지도, 지역 자전거 네트워크 지도 등)가 포함됩니다. <br/><br/>만약 누락된 지도가 있다면 OpenStreetMap에서 손쉽게 추가할 수 있습니다.",
+        "shortDescription": "이 테마는 OpenStreetMap에 등록된 모든 (관광) 지도를 표시합니다",
+        "title": "모든 지도가 포함된 지도"
+    },
+    "maxspeed": {
+        "description": "이 지도는 모든 도로의 법적으로 합법적인 최고 속도를 표시합니다. 최고 속도 정보가 누락되었거나 잘못되었다면, 여기에서 수정 가능 합니다.",
+        "shortDescription": "이 지도는 모든 도로의 법적으로 허용된 최고 속도를 표시합니다.",
+        "title": "최고 속도"
+    },
+    "memorials": {
+        "description": "기념물은 특정 인물이나 사건을 기억하기 위해 공공장소에 영구적으로 설치된 물리적 요소를 의미합니다. 기념물은 동상, 명판, 그림, 군사 장비(탱크와 같은) 등 다양한 형태일 수 있습니다.",
+        "title": "기념물"
+    },
+    "nature": {
+        "description": "이 지도에서는 관광객과 자연 애호가를 위한 흥미로운 정보를 확인할 수 있습니다.",
+        "shortDescription": "자연 애호가를 위한 지도이며, 흥미로운 관심 지점(POI)을 제공합니다",
+        "title": "자연속으로"
+    },
+    "notes": {
+        "description": "노트(Note)는 지도에 잘못된 점을 나타내기 위해 추가된 텍스트와 함께 표시된 핀입니다. <br/><br/>사용자와 텍스트를 검색하려면 <a href='#filters'>필터 보기</a>를 확인하십시오.",
+        "title": "OpenStreetMap의 노트"
+    },
+    "observation_towers": {
+        "description": "모두 접근 가능한 전망 타워",
+        "shortDescription": "모두 접근 가능한 전망 타워",
+        "title": "전망 타워"
+    },
+    "onwheels": {
+        "description": "이 지도에서는 공공 장소의 휠체어를 보여주고 쉽게 추가 가능합니다",
+        "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "통계"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "불러오기"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "제안된 모든 태그 추가"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "폭 정보 있음/없음"
+                                },
+                                "1": {
+                                    "question": "폭 정보 없음"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "모든 유형의 보도 경계석"
+                                },
+                                "1": {
+                                    "question": "높은 경계석 (3cm 이상)"
+                                },
+                                "2": {
+                                    "question": "낮은 경계석 ( 3cm 미만)"
+                                },
+                                "3": {
+                                    "question": "평평한 경계석 (0cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "8": {
+                "override": {
+                    "name": "장애인 전용 주차 공간"
+                }
+            }
+        },
+        "title": "휠체어 사용자 전용"
+    },
+    "openlovemap": {
+        "description": "<p><i>손쉽게 찾는 성인용 시설 정보</i></p>Open Love Map은 성인용 시설 정보를 제공하며, 예를 들어 성인용품점, 유흥업소, 클럽 등을 포함합니다.",
+        "layers": {
+            "2": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "성인 용품점"
+                        }
+                    },
+                    "name": "성인 용품점",
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "이 상점은 털 수갑과 같은 <b>soft BDSM-gear</b>를 제공합니다."
+                                },
+                                "1": {
+                                    "then": "이 상점은 스프레더 바와 같은 <b>specialized BDSM-gear</b>를 제공합니다."
+                                },
+                                "2": {
+                                    "then": "이 상점은 동물 마스크와 같은 <b>pet play</b> 악세사리를 제공합니다."
+                                },
+                                "3": {
+                                    "then": "이 상점은 바지, 셔츠, 가죽 하네스와 같은 <b>leather gear</b>를 제공합니다"
+                                },
+                                "4": {
+                                    "then": "이 상점은 롤플레이 유니폼 같은<b>uniforms</b> 을 제공합니다."
+                                }
+                            },
+                            "question": "이 상점은 페티시 기어를 제공하나요?"
+                        }
+                    }
+                }
+            },
+            "4": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "콘돔 자판기"
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "에로틱 시네마"
+                        }
+                    }
+                }
+            },
+            "9": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "question": "이것은 어떤 종류의 호텔입니까?"
+                        }
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "{title()}에 개인 영상 부스가 있습니까?",
+                    "questionHint": "한 사람만 이용 가능 합니다."
+                }
+            }
+        },
+        "title": "Open Love Map"
+    },
+    "openwindpowermap": {
+        "description": "풍력 발전기를 표시하고 편집할 수 있는 지도입니다.",
+        "title": "풍력 발전기"
+    },
+    "osm_community_index": {
+        "description": "OpenStreetMap 사용자들을 위한 자원 목록입니다. 여기에는 포럼, 모임, 슬랙 그룹, IRC 채널, 메일링 리스트 등 다양한 링크가 포함됩니다. 맵핑을 하는 사람들이, 특히 초보자들이 유용하거나 도움이 될 만한 자료들입니다.",
+        "shortDescription": "OpenStreetMap 커뮤니티 자원의 목록입니다.",
+        "title": "OSM 커뮤니티 인덱스"
+    },
+    "parkings": {
+        "description": "이 지도는 다양한 주차 공간을 표시합니다",
+        "shortDescription": "이 지도는 다양한 주차 공간을 표시합니다",
+        "title": "주차 공간"
+    },
+    "personal": {
+        "description": "모든 테마의 모든 레이어를 기반으로 개별 테마를 생성하세요. 데이터를 표시하려면 <a href='#filter'>레이어 선택</a>을 열어주세요",
+        "title": "개별 테마"
+    },
+    "pets": {
+        "description": "이 지도에서는 여러분의 반려동물을 위한 다양한 흥미로운 장소를 찾을 수 있습니다: 동물병원,반려견 놀이터, 반려 동물 상점, 반려동물 친화적인 레스토랑 등...",
+        "layers": {
+            "4": {
+                "override": {
+                    "name": "반려견 친화적 식당"
+                }
+            },
+            "6": {
+                "override": {
+                    "name": "반려견 친화적 상점"
+                }
+            }
+        },
+        "title": "동물병원, 반려견 놀이터 그리고 반려동물 편의시설"
+    },
+    "playgrounds": {
+        "description": "이 지도에서는 놀이터를 찾을수 있고 더 많은 정보를 추가할 수 있습니다",
+        "shortDescription": "놀이터 지도",
+        "title": "놀이터"
+    },
+    "postal_codes": {
+        "description": "우편번호",
+        "layers": {
+            "0": {
+                "name": "우편번호",
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "우편번호는{postal_code}입니다"
+                    }
+                },
+                "title": {
+                    "render": "우편번호는 {postal_code}"
+                }
+            },
+            "2": {
+                "name": "시청",
+                "title": {
+                    "render": "시청 {name}"
+                }
+            }
+        },
+        "shortDescription": "우편번호",
+        "title": "우편번호"
+    },
+    "postboxes": {
+        "description": "이 지도에서는 우체국과 우편함의 데이터를 찾고 추가할 수 있습니다. 다음 엽서를 보낼 장소를 찾는 데 이 지도를 활용할 수 있습니다<br/>! :) 오류를 발견했거나 우편함이 누락되었나요? 무료 OpenStreetMap 계정을 사용하여 이 지도를 편집할 수 있습니다.",
+        "layers": {
+            "3": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "이 상점은 우편서비스를 제공하는 제휴 상점 입니다"
+                                },
+                                "1": {
+                                    "then": "이 상점은 우편 서비스를 제공하는 제휴 상점이 아닙니다"
+                                }
+                            },
+                            "question": "우편 서비스를 제공하는 제휴 상점입니까?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "description": "우편 서비스 제휴 상점이 아직 지도에 표시되지 않은 경우, 추가할 수 있습니다.",
+                            "title": "누락된 우편 서비스 제휴 상점"
+                        }
+                    },
+                    "description": "기존 상점 지도에 우편 서비스 제휴 상점 추가"
+                }
+            }
+        },
+        "shortDescription": "우체통과 우체국을 보여주는 지도",
+        "title": "우체통과 우체국 지도"
+    },
+    "rainbow_crossings": {
+        "description": "이 지도에는 무지개 색으로 칠해진 보행자 횡단보도가 표시되어 있으며 쉽게 추가할 수 있습니다",
+        "title": "무지개색 횡단보도"
+    },
+    "shops": {
+        "description": "이 지도에서는 상점에 대한 기본 정보, 영업 시간 및 전화번호를 표시할 수 있습니다",
+        "shortDescription": "기본 상점 정보가 있는 편집 가능 지도",
+        "title": "상점"
+    },
+    "ski": {
+        "description": "스키를 타기 위해 갖춰야 할 모든 것",
+        "title": "스키 코스와 리프트"
+    },
+    "sport_pitches": {
+        "description": "스포츠 경기장은 운동 경기를 할 수 있는 공간 입니다",
+        "shortDescription": "스포츠 경기장를 보여주는 지도",
+        "title": "스포츠 경기장"
+    },
+    "sports": {
+        "description": "스포츠에 관한 모든 것, 스포츠 경기장이나 피트니스 센처 등을 찾아보실 수 있습니다.",
+        "layers": {
+            "4": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "스포츠 용품을 판매하는 새로운 상점을 추가해 보세요.",
+                            "title": "스포츠 상점"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "스포츠 시설을 보여주는 지도.",
+        "title": "스포츠"
+    },
+    "stations": {
+        "description": "기차역 보기, 세부사항 편집 또는 추가하기",
+        "layers": {
+            "16": {
+                "description": "이 역에서 출발하는 기차를 보여주는 안내 전광판",
+                "name": "출발 안내 전광판",
+                "presets": {
+                    "0": {
+                        "description": "출발 정보를 표시하는 전광판 또는 안내문을 추가하세요",
+                        "title": "출발 안내 전광판"
+                    }
+                },
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "0": {
+                                "then": "이것은 종류가 알려지지 않은 출발 정보판입니다"
+                            },
+                            "1": {
+                                "then": "이것은 실시간 출발 정보를 표시하는 전광판입니다"
+                            },
+                            "2": {
+                                "then": "종이 시간표 입니다"
+                            },
+                            "3": {
+                                "then": "기차의 빈도 표시를 보여 줍니다"
+                            }
+                        },
+                        "question": "어떤 종류의 출발 안내 전광판 입니까?"
+                    }
+                },
+                "title": {
+                    "render": "출발 안내 전광판"
+                }
+            },
+            "3": {
+                "description": "기차역을 보여주는 레이어",
+                "name": "기차역"
+            }
+        },
+        "title": "기차역"
+    },
+    "street_lighting": {
+        "description": "이 지도에서 가로등에 관한 모든 것을 찾을 수 있습니다",
+        "layers": {
+            "1": {
+                "name": "조명이 있는 거리",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "이 길은 밝습니다"
+                            },
+                            "1": {
+                                "then": "이 거리는 어둡습니다"
+                            },
+                            "2": {
+                                "then": "이 거리는 밤에 밝습니다"
+                            },
+                            "3": {
+                                "then": "이 거리는 24시간 밝습니다"
+                            }
+                        },
+                        "question": "이 거리는 밝나요?"
+                    }
+                },
+                "title": {
+                    "render": "밝은 거리"
+                }
+            },
+            "2": {
+                "name": "모든 거리",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "이 거리는 밝습니다"
+                            },
+                            "1": {
+                                "then": "이 거리는 밝지 않습니다"
+                            },
+                            "2": {
+                                "then": "이 거리는 밤에 밝습니다"
+                            },
+                            "3": {
+                                "then": "이 거리는 24시간 밝습니다"
+                            }
+                        },
+                        "question": "이 거리는 밝나요?"
+                    }
+                },
+                "title": {
+                    "render": "거리"
+                }
+            }
+        },
+        "title": "거리 조명"
+    },
+    "surveillance": {
+        "description": "이 오픈 맵에서 감시 카메라를 찾을 수 있습니다.",
+        "shortDescription": "감시 카메라 및 기타 감시 수단",
+        "title": "감시 시스템"
+    },
+    "toilets": {
+        "description": "공중화장실 지도",
+        "title": "공중 화장실"
+    },
+    "transit": {
+        "description": "대중교통 시스템을 이용한 여행 계획 세우기.",
+        "title": "버스 노선"
+    },
+    "trees": {
+        "description": "모든 나무에 관련 지도!",
+        "shortDescription": "모든 나무 관련 지도",
+        "title": "나무"
+    },
+    "vending_machine": {
+        "description": "모든 자판기 찾기",
+        "title": "자판기"
+    },
+    "walkingnodes": {
+        "description": "이 지도는 보행 경로를 확인 가능하며, 새로운 경로를 쉽게 추가할 수 있습니다",
+        "layers": {
+            "0": {
+                "name": "경로간 연결",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "override": {
+                            "question": "언제 이 경로가 갱신되었습니까?",
+                            "render": "아 경로는 지난 {survey:date}에 갱신되었습니다"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "경로간 연결<strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "경로간 연결"
+                }
+            },
+            "1": {
+                "name": "경로들",
+                "presets": {
+                    "0": {
+                        "title": "보행 경로"
+                    }
+                },
+                "tagRenderings": {
+                    "node-expected_rwn_route_relations": {
+                        "freeform": {
+                            "placeholder": "사례 3"
+                        },
+                        "question": "이 보행 경로는 다른 보행 경로와 몇 개 연결되어 있습니까?",
+                        "render": "이 보행 경로는 {expected_rwn_route_relations}개의 다른 보행 경로와 연결되어 있습니다."
+                    },
+                    "node-rwn_ref": {
+                        "freeform": {
+                            "placeholder": "사례 1"
+                        },
+                        "question": "보행 경로의 조회 번호는 무엇입니까?",
+                        "render": "이 보행 경로의 조회번호는 {rwn_ref}입니다"
+                    },
+                    "survey_date": {
+                        "override": {
+                            "question": "보행경로가 마지막으로 갱신된 것은 언제입니까?",
+                            "render": "이 보행경로의 마지막 갱신은 {survey:date}입니다"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "보행 경로 <strong>{rwn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "제안된 보행 경로 <strong>{proposed:rwn_ref}</strong>"
+                        }
+                    },
+                    "render": "보행 경로"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "등산 안내 표지판",
+                    "title": {
+                        "render": "등산 안내 표지판"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "경로간 루트 표시"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "보행 경로 네트워크"
+    },
+    "walls_and_buildings": {
+        "description": "모든 벽과 건물을 제공하는 특수 내장 레이어입니다. 이 레이어는 벽에 배치할 수 있는 요소들(예: AED, 우체통, 입구, 주소, 감시 카메라 등)을 위한 프리셋에서 유용하게 사용됩니다. 이 레이어는 기본적으로 보이지 않으며 사용자가 토글할 수 없습니다.",
+        "title": "벽과 건물"
+    },
+    "waste": {
+        "description": "쓰레기통과 재활용 시설을 보여주는 지도.",
+        "title": "쓰레기"
+    },
+    "waste_basket": {
+        "description": "이 지도에서는 근처에 있는 쓰레기통을 찾을 수 있습니다. 지도에 쓰레기통이 없는 경우, 직접 추가할 수 있습니다.",
+        "shortDescription": "쓰레기통 지도",
+        "title": "쓰레기통"
+    }
 }

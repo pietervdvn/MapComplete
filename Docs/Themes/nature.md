@@ -20,6 +20,8 @@ This theme contains the following layers:
  - [shelter](../Layers/shelter.md)
  - [bbq](../Layers/bbq.md)
  - [firepit](../Layers/firepit.md)
+ - [insect_hotel](../Layers/insect_hotel.md)
+ - [tree_node](../Layers/tree_node.md)
 
 Available languages:
 
@@ -37,6 +39,7 @@ Available languages:
  - ru
  - hu
  - uk
+ - ko
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

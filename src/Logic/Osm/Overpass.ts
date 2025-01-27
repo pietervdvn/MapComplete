@@ -6,7 +6,7 @@ import osmtogeojson from "osmtogeojson"
 import { FeatureCollection } from "@turf/turf"
 import { Geometry } from "geojson"
 import { OsmTags } from "../../Models/OsmFeature"
-
+;("use strict")
 /**
  * Interfaces overpass to get all the latest data
  */
@@ -26,7 +26,10 @@ export class Overpass {
     ) {
         this._timeout = timeout ?? new ImmutableStore<number>(90)
         this._interpreterUrl = interpreterUrl
-        const optimized = filter.optimize()
+        if (filter === undefined && !extraScripts) {
+            throw "Filter is undefined. This is probably a bug. Alternatively, pass an 'extraScript'"
+        }
+        const optimized = filter?.optimize()
         if (optimized === true || optimized === false) {
             throw "Invalid filter: optimizes to true of false"
         }
@@ -71,9 +74,9 @@ export class Overpass {
             console.warn("No features for", json)
         }
 
-        const geojson = osmtogeojson(json)
+        const geojson = <FeatureCollection<Geometry, OsmTags>>osmtogeojson(json)
         const osmTime = new Date(json.osm3s.timestamp_osm_base)
-        return [<any>geojson, osmTime]
+        return [geojson, osmTime]
     }
 
     /**
@@ -85,7 +88,7 @@ export class Overpass {
      * new Overpass(new Tag("key","value"), [], "").buildScript("{{bbox}}") // => `[out:json][timeout:90]{{bbox}};(nwr["key"="value"];);out body;out meta;>;out skel qt;`
      */
     public buildScript(bbox: string, postCall: string = "", pretty = false): string {
-        const filters = this._filter.asOverpass()
+        const filters = this._filter?.asOverpass() ?? []
         let filter = ""
         for (const filterOr of filters) {
             if (pretty) {
@@ -97,12 +100,13 @@ export class Overpass {
             }
         }
         for (const extraScript of this._extraScripts) {
-            filter += "(" + extraScript + ");"
+            filter += extraScript
         }
         return `[out:json][timeout:${this._timeout.data}]${bbox};(${filter});out body;${
             this._includeMeta ? "out meta;" : ""
         }>;out skel qt;`
     }
+
     /**
      * Constructs the actual script to execute on Overpass with geocoding
      * 'PostCall' can be used to set an extra range, see 'AsOverpassTurboLink'

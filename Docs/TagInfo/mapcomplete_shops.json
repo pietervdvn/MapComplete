@@ -877,6 +877,11 @@
       "value": "wine"
     },
     {
+      "key": "disused:shop",
+      "description": "Layer 'Shop' shows disused:shop= with a fixed text, namely 'This shop is no longer used. It is vacant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops') Picking this answer will delete the key disused:shop. (This is only shown if craft=)",
+      "value": ""
+    },
+    {
       "key": "brand",
       "description": "Layer 'Shop' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Shops')"
     },
@@ -1015,6 +1020,16 @@
       "key": "service:binding",
       "description": "Layer 'Shop' shows service:binding=no with a fixed text, namely 'This shop does bind books' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops') (This is only shown if shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$ | service:print=yes)",
       "value": "no"
+    },
+    {
+      "key": "healthcare",
+      "description": "Layer 'Shop' shows healthcare=optometrist with a fixed text, namely 'This shop offers eye exams by certified optometrists' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops') (This is only shown if shop=optician | shop=hearing_aid | shop=medical_supply)",
+      "value": "optometrist"
+    },
+    {
+      "key": "healthcare",
+      "description": "Layer 'Shop' shows healthcare=audiologist with a fixed text, namely 'This shop offers hearing tests by a certified audiologist' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops') (This is only shown if shop=optician | shop=hearing_aid | shop=medical_supply)",
+      "value": "audiologist"
     },
     {
       "key": "craft",
@@ -1449,21 +1464,6 @@
       "key": "payment:qr_code",
       "description": "Layer 'Pharmacies' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
       "value": "yes"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
-      "value": "yes"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=no with a fixed text, namely 'This pharmacy is hard to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
-      "value": "no"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=limited with a fixed text, namely 'This pharmacy has limited access for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
-      "value": "limited"
     },
     {
       "key": "amenity",

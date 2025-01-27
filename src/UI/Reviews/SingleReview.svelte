@@ -5,9 +5,9 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import { ariaLabel } from "../../Utils/ariaLabel"
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import ThemeViewState from "../../Models/ThemeViewState"
 
-  export let state: SpecialVisualizationState = undefined
+  export let state: ThemeViewState = undefined
   export let review: Review & {
     kid: string
     signature: string

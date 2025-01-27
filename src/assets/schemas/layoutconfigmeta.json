@@ -601,7 +601,7 @@
         },
         {
           "if": "value=aerialway",
-          "then": "<b>aerialway</b> (builtin) - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. "
+          "then": "<b>aerialway</b> (builtin) - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines."
         },
         {
           "if": "value=ambulancestation",
@@ -609,7 +609,7 @@
         },
         {
           "if": "value=animal_shelter",
-          "then": "<b>animal_shelter</b> (builtin) - An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. "
+          "then": "<b>animal_shelter</b> (builtin) - An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres."
         },
         {
           "if": "value=artwork",
@@ -621,7 +621,7 @@
         },
         {
           "if": "value=assisted_repair",
-          "then": "<b>assisted_repair</b> (builtin) - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles."
+          "then": "<b>assisted_repair</b> (builtin) - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location. A repair café is a type of event organized regularly along the same principles."
         },
         {
           "if": "value=atm",
@@ -638,6 +638,10 @@
         {
           "if": "value=bbq",
           "then": "<b>bbq</b> (builtin) - A permanently installed barbecue, typically accessible to the public."
+        },
+        {
+          "if": "value=beehive",
+          "then": "<b>beehive</b> (builtin) - Layer showing beehives"
         },
         {
           "if": "value=bench",
@@ -693,7 +697,7 @@
         },
         {
           "if": "value=brothel",
-          "then": "<b>brothel</b> (builtin) - An establishment specifically dedicated to prostitution. "
+          "then": "<b>brothel</b> (builtin) - An establishment specifically dedicated to prostitution."
         },
         {
           "if": "value=cafe_pub",
@@ -708,12 +712,16 @@
           "then": "<b>caravansites</b> (builtin) - camper sites"
         },
         {
+          "if": "value=charge_point",
+          "then": "<b>charge_point</b> (builtin) - Layer showing individual charge points within a charging station"
+        },
+        {
           "if": "value=charging_station",
           "then": "<b>charging_station</b> (builtin) - A charging station"
         },
         {
           "if": "value=cinema",
-          "then": "<b>cinema</b> (builtin) -  A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US"
+          "then": "<b>cinema</b> (builtin) - A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US."
         },
         {
           "if": "value=climbing",
@@ -932,6 +940,10 @@
           "then": "<b>information_board</b> (builtin) - A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)"
         },
         {
+          "if": "value=insect_hotel",
+          "then": "<b>insect_hotel</b> (builtin) - Layer showing insect hotels"
+        },
+        {
           "if": "value=item_with_image",
           "then": "<b>item_with_image</b> (builtin) - All items with an image. All alone, not a layer which is relevant for any MapComplete theme, as it is a random collection of items. However, when put into the databank, this allows to quickly fetch (the URL of) pictures nearby a different object, to quickly link this"
         },
@@ -990,6 +1002,14 @@
         {
           "if": "value=note",
           "then": "<b>note</b> (builtin) - This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)"
+        },
+        {
+          "if": "value=nsi_brand",
+          "then": "<b>nsi_brand</b> (builtin) - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
+          "if": "value=nsi_operator",
+          "then": "<b>nsi_operator</b> (builtin) - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
         },
         {
           "if": "value=observation_tower",
@@ -1094,6 +1114,10 @@
         {
           "if": "value=school",
           "then": "<b>school</b> (builtin) - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+        },
+        {
+          "if": "value=scouting_group",
+          "then": "<b>scouting_group</b> (builtin) - A map showing scouting groups."
         },
         {
           "if": "value=search",
@@ -13309,7 +13333,7 @@
         },
         {
           "if": "value=aerialway",
-          "then": "aerialway - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. "
+          "then": "aerialway - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines."
         },
         {
           "if": "value=ambulancestation",
@@ -13317,7 +13341,7 @@
         },
         {
           "if": "value=animal_shelter",
-          "then": "animal_shelter - An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. "
+          "then": "animal_shelter - An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres."
         },
         {
           "if": "value=artwork",
@@ -13329,7 +13353,7 @@
         },
         {
           "if": "value=assisted_repair",
-          "then": "assisted_repair - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles."
+          "then": "assisted_repair - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location. A repair café is a type of event organized regularly along the same principles."
         },
         {
           "if": "value=atm",
@@ -13346,6 +13370,10 @@
         {
           "if": "value=bbq",
           "then": "bbq - A permanently installed barbecue, typically accessible to the public."
+        },
+        {
+          "if": "value=beehive",
+          "then": "beehive - Layer showing beehives"
         },
         {
           "if": "value=bench",
@@ -13401,7 +13429,7 @@
         },
         {
           "if": "value=brothel",
-          "then": "brothel - An establishment specifically dedicated to prostitution. "
+          "then": "brothel - An establishment specifically dedicated to prostitution."
         },
         {
           "if": "value=cafe_pub",
@@ -13416,12 +13444,16 @@
           "then": "caravansites - camper sites"
         },
         {
+          "if": "value=charge_point",
+          "then": "charge_point - Layer showing individual charge points within a charging station"
+        },
+        {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
         },
         {
           "if": "value=cinema",
-          "then": "cinema -  A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US"
+          "then": "cinema - A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US."
         },
         {
           "if": "value=climbing",
@@ -13640,6 +13672,10 @@
           "then": "information_board - A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)"
         },
         {
+          "if": "value=insect_hotel",
+          "then": "insect_hotel - Layer showing insect hotels"
+        },
+        {
           "if": "value=item_with_image",
           "then": "item_with_image - All items with an image. All alone, not a layer which is relevant for any MapComplete theme, as it is a random collection of items. However, when put into the databank, this allows to quickly fetch (the URL of) pictures nearby a different object, to quickly link this"
         },
@@ -13698,6 +13734,14 @@
         {
           "if": "value=note",
           "then": "note - This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)"
+        },
+        {
+          "if": "value=nsi_brand",
+          "then": "nsi_brand - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
+          "if": "value=nsi_operator",
+          "then": "nsi_operator - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
         },
         {
           "if": "value=observation_tower",
@@ -13802,6 +13846,10 @@
         {
           "if": "value=school",
           "then": "school - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+        },
+        {
+          "if": "value=scouting_group",
+          "then": "scouting_group - A map showing scouting groups."
         },
         {
           "if": "value=search",
@@ -35053,7 +35101,7 @@
         },
         {
           "if": "value=aerialway",
-          "then": "aerialway - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. "
+          "then": "aerialway - Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines."
         },
         {
           "if": "value=ambulancestation",
@@ -35061,7 +35109,7 @@
         },
         {
           "if": "value=animal_shelter",
-          "then": "animal_shelter - An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. "
+          "then": "animal_shelter - An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres."
         },
         {
           "if": "value=artwork",
@@ -35073,7 +35121,7 @@
         },
         {
           "if": "value=assisted_repair",
-          "then": "assisted_repair - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles."
+          "then": "assisted_repair - A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location. A repair café is a type of event organized regularly along the same principles."
         },
         {
           "if": "value=atm",
@@ -35090,6 +35138,10 @@
         {
           "if": "value=bbq",
           "then": "bbq - A permanently installed barbecue, typically accessible to the public."
+        },
+        {
+          "if": "value=beehive",
+          "then": "beehive - Layer showing beehives"
         },
         {
           "if": "value=bench",
@@ -35145,7 +35197,7 @@
         },
         {
           "if": "value=brothel",
-          "then": "brothel - An establishment specifically dedicated to prostitution. "
+          "then": "brothel - An establishment specifically dedicated to prostitution."
         },
         {
           "if": "value=cafe_pub",
@@ -35160,12 +35212,16 @@
           "then": "caravansites - camper sites"
         },
         {
+          "if": "value=charge_point",
+          "then": "charge_point - Layer showing individual charge points within a charging station"
+        },
+        {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
         },
         {
           "if": "value=cinema",
-          "then": "cinema -  A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US"
+          "then": "cinema - A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US."
         },
         {
           "if": "value=climbing",
@@ -35384,6 +35440,10 @@
           "then": "information_board - A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)"
         },
         {
+          "if": "value=insect_hotel",
+          "then": "insect_hotel - Layer showing insect hotels"
+        },
+        {
           "if": "value=item_with_image",
           "then": "item_with_image - All items with an image. All alone, not a layer which is relevant for any MapComplete theme, as it is a random collection of items. However, when put into the databank, this allows to quickly fetch (the URL of) pictures nearby a different object, to quickly link this"
         },
@@ -35442,6 +35502,14 @@
         {
           "if": "value=note",
           "then": "note - This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)"
+        },
+        {
+          "if": "value=nsi_brand",
+          "then": "nsi_brand - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
+          "if": "value=nsi_operator",
+          "then": "nsi_operator - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
         },
         {
           "if": "value=observation_tower",
@@ -35546,6 +35614,10 @@
         {
           "if": "value=school",
           "then": "school - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+        },
+        {
+          "if": "value=scouting_group",
+          "then": "scouting_group - A map showing scouting groups."
         },
         {
           "if": "value=search",

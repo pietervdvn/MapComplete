@@ -27,11 +27,7 @@
     "cs": "Jedná se o veřejný odpadkový koš, odpadkový koš, kam můžete vyhodit odpadky."
   },
   "source": {
-    "osmTags": {
-      "and": [
-        "amenity=waste_basket"
-      ]
-    }
+    "osmTags": "amenity=waste_basket"
   },
   "minzoom": 17,
   "title": {
@@ -86,7 +82,8 @@
         "ca": "una paperera",
         "fr": "une poubelle",
         "cs": "odpadkový koš",
-        "es": "un contenedor de basura"
+        "es": "un contenedor de basura",
+        "uk": "кошик для сміття"
       },
       "presiceInput": {
         "preferredBackground": "photo"
@@ -390,7 +387,7 @@
             "fr": "Poubelle pour déjections canines",
             "cs": "Odpadkový koš na psí exkrementy"
           },
-          "osmTags": "waste~i~.*dog_excrement.*"
+          "osmTags": "waste~i~.*excrement.*"
         },
         {
           "question": {
@@ -468,9 +465,10 @@
             "ca": "Papereres amb dispensador de bosses d'excrements (per a gossos)",
             "fr": "Poubelle avec distributeur de sacs pour ramasser les déjections canines",
             "cs": "Odpadkový koš se zásobníkem na sáčky na (psí) exkrementy",
-            "ru": "Корзина для мусора с дозатором для пакетов (собачьих) экскрементов"
+            "ru": "Корзина для мусора с дозатором для пакетов (собачьих) экскрементов",
+            "uk": "Кошик для сміття з дозатором для пакетиків з (собачими) екскрементами"
           },
-          "osmTags": "vending=dog_excrement_bag"
+          "osmTags": "vending=excrement_bags"
         }
       ]
     }

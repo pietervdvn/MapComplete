@@ -79,6 +79,11 @@
       "value": "skateboard"
     },
     {
+      "key": "sport",
+      "description": "Layer 'Sport pitches' shows sport=equestrian with a fixed text, namely 'This is a horse riding arena' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "equestrian"
+    },
+    {
       "key": "hoops",
       "description": "Layer 'Sport pitches' shows hoops=1 with a fixed text, namely 'This basketball pitch has a single hoop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if sport~^((^|.*;)basketball(;.*|$))$)",
       "value": "1"
@@ -593,6 +598,650 @@
       "key": "wheelchair",
       "description": "Layer 'Sports centres' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
       "value": "no"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows and asks freeform values for key 'sport' (in the mapcomplete.org theme 'Sports')"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=9pin with a fixed text, namely 'Nine-pin bowling' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "9pin"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=10pin with a fixed text, namely 'Ten-pin bowling' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "10pin"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=aerobics with a fixed text, namely 'Aerobics' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "aerobics"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=american_football with a fixed text, namely 'American football' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "american_football"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=aikido with a fixed text, namely 'Aikido' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "aikido"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=archery with a fixed text, namely 'Archery' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "archery"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=athletics with a fixed text, namely 'Athletics' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "athletics"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=australian_football with a fixed text, namely 'Australian rules football' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "australian_football"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=badminton with a fixed text, namely 'Badminton' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "badminton"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=bandy with a fixed text, namely 'Bandy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "bandy"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=base with a fixed text, namely 'BASE jumping' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "base"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=baseball with a fixed text, namely 'Baseball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "baseball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=basketball with a fixed text, namely 'Basketball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "basketball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=beachvolleyball with a fixed text, namely 'Beachvolleyball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "beachvolleyball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=biathlon with a fixed text, namely 'Biathlon' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "biathlon"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=billiards with a fixed text, namely 'Cue sports' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "billiards"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=bmx with a fixed text, namely 'BMX' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "bmx"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=bobsleigh with a fixed text, namely 'Bobsleigh' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "bobsleigh"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=boules with a fixed text, namely 'Boules' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "boules"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=bowls with a fixed text, namely 'Bowls' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "bowls"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=boxing with a fixed text, namely 'Boxing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "boxing"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=bullfighting with a fixed text, namely 'Bullfighting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "bullfighting"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=canadian_football with a fixed text, namely 'Canadian football' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "canadian_football"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=canoe with a fixed text, namely 'Canoe' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "canoe"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=chess with a fixed text, namely 'Chess' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "chess"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=cliff_diving with a fixed text, namely 'Non-competitive diving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "cliff_diving"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=climbing with a fixed text, namely 'Climbing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "climbing"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=climbing_adventure with a fixed text, namely 'Climbing Adventure' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "climbing_adventure"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=cockfighting with a fixed text, namely 'Cockfighting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "cockfighting"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=cricket with a fixed text, namely 'Cricket' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "cricket"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=crossfit with a fixed text, namely 'CrossFit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "crossfit"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=croquet with a fixed text, namely 'Croquet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "croquet"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=curling with a fixed text, namely 'Curling' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "curling"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=cycle_polo with a fixed text, namely 'Cycle Polo' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "cycle_polo"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=cycling with a fixed text, namely 'Cycling' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "cycling"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=dance with a fixed text, namely 'Dance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "dance"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=darts with a fixed text, namely 'Darts' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "darts"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=dog_agility with a fixed text, namely 'Dog agility' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "dog_agility"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=dog_racing with a fixed text, namely 'Greyhound racing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "dog_racing"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=dragon_boat with a fixed text, namely 'Dragon Boat' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "dragon_boat"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=equestrian with a fixed text, namely 'Equestrianism' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "equestrian"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=fencing with a fixed text, namely 'Fencing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "fencing"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=field_hockey with a fixed text, namely 'Field hockey' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "field_hockey"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=fitness with a fixed text, namely 'Fitness' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "fitness"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=five-a-side with a fixed text, namely '5 person soccer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "five-a-side"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=floorball with a fixed text, namely 'Floorball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "floorball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=four_square with a fixed text, namely 'Four square' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "four_square"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=free_flying with a fixed text, namely 'Paragliding' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "free_flying"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=futsal with a fixed text, namely 'Futsal' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "futsal"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=gaelic_games with a fixed text, namely 'Gaelic games' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "gaelic_games"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=gaga with a fixed text, namely 'Gaga ball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "gaga"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=golf with a fixed text, namely 'Golf' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "golf"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=gymnastics with a fixed text, namely 'Gymnastics' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "gymnastics"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=handball with a fixed text, namely 'Handball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "handball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=hapkido with a fixed text, namely 'Hapkido' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "hapkido"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=hiking with a fixed text, namely 'Hiking' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "hiking"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=horseshoes with a fixed text, namely 'Horseshoes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "horseshoes"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=horse_racing with a fixed text, namely 'Horse racing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "horse_racing"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=ice_hockey with a fixed text, namely 'Ice Hockey' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "ice_hockey"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=ice_skating with a fixed text, namely 'Ice skating' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "ice_skating"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=ice_stock with a fixed text, namely 'Ice stock sport' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "ice_stock"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=judo with a fixed text, namely 'Judo' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "judo"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=karate with a fixed text, namely 'Karate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "karate"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=karting with a fixed text, namely 'Kart racing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "karting"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=kickboxing with a fixed text, namely 'Kickboxing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "kickboxing"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=kitesurfing with a fixed text, namely 'Kitesurfing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "kitesurfing"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=korfball with a fixed text, namely 'Korfball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "korfball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=krachtball with a fixed text, namely 'Krachtball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "krachtball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=lacrosse with a fixed text, namely 'Lacrosse' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "lacrosse"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=laser_tag with a fixed text, namely 'Laser tag' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "laser_tag"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=martial_arts with a fixed text, namely 'Martial arts' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "martial_arts"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=miniature_golf with a fixed text, namely 'Miniature golf' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "miniature_golf"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=model_aerodrome with a fixed text, namely 'Radio-controlled aircraft' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "model_aerodrome"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=motocross with a fixed text, namely 'Motocross' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "motocross"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=motor with a fixed text, namely 'Motorsport' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "motor"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=multi with a fixed text, namely 'Multiple kind of sports' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "multi"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=netball with a fixed text, namely 'Netball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "netball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=obstacle_course with a fixed text, namely 'Obstacle course' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "obstacle_course"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=orienteering with a fixed text, namely 'Orienteering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "orienteering"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=paddle_tennis with a fixed text, namely 'Paddle tennis' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "paddle_tennis"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=padel with a fixed text, namely 'Padel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "padel"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=paintball with a fixed text, namely 'Paintball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "paintball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=parachuting with a fixed text, namely 'Parachuting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "parachuting"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=parkour with a fixed text, namely 'Parkour' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "parkour"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=pelota with a fixed text, namely 'Palota' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "pelota"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=pesäpallo with a fixed text, namely 'Pesäpallo' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "pesäpallo"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=pickleball with a fixed text, namely 'Pickleball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "pickleball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=pilates with a fixed text, namely 'Pilates' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "pilates"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=pole_dance with a fixed text, namely 'Pole dance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "pole_dance"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=racquet with a fixed text, namely 'Racquetball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "racquet"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=rc_car with a fixed text, namely 'Radio-controlled car' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "rc_car"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=roller_skating with a fixed text, namely 'Roller skating' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "roller_skating"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=rowing with a fixed text, namely 'Rowing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "rowing"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=rugby_league with a fixed text, namely 'Rugby league' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "rugby_league"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=rugby_union with a fixed text, namely 'Rugby union' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "rugby_union"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=running with a fixed text, namely 'Running' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "running"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=sailing with a fixed text, namely 'Sailing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "sailing"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=scuba_diving with a fixed text, namely 'Scuba diving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "scuba_diving"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=shooting with a fixed text, namely 'Shooting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "shooting"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=shot-put with a fixed text, namely 'Shot-put' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "shot-put"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=skateboard with a fixed text, namely 'Skateboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "skateboard"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=ski_jumping with a fixed text, namely 'Ski jumping' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "ski_jumping"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=snooker with a fixed text, namely 'Snooker' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "snooker"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=soccer with a fixed text, namely 'Soccer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "soccer"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=softball with a fixed text, namely 'Softball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "softball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=speedway with a fixed text, namely 'Motorcycle speedway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "speedway"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=squash with a fixed text, namely 'Squash' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "squash"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=sumo with a fixed text, namely 'Sumo' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "sumo"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=surfing with a fixed text, namely 'Surfing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "surfing"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=swimming with a fixed text, namely 'Swimming' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "swimming"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=table_tennis with a fixed text, namely 'Table tennis' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "table_tennis"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=table_soccer with a fixed text, namely 'Table soccer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "table_soccer"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=taekwondo with a fixed text, namely 'Taekwondo' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "taekwondo"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=tennis with a fixed text, namely 'Tennis' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "tennis"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=teqball with a fixed text, namely 'Teqball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "teqball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=toboggan with a fixed text, namely 'Toboggan' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "toboggan"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=trampoline with a fixed text, namely 'Trampoline' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "trampoline"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=ultimate with a fixed text, namely 'Ultimate frisbee' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "ultimate"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=ultralight_aviation with a fixed text, namely 'Ultralight aviation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "ultralight_aviation"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=volleyball with a fixed text, namely 'Volleyball' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "volleyball"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=wakeboarding with a fixed text, namely 'Wakeboarding' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "wakeboarding"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=water_polo with a fixed text, namely 'Water polo' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "water_polo"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=water_ski with a fixed text, namely 'Waterskiing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "water_ski"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=weightlifting with a fixed text, namely 'Olympic weightlifting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "weightlifting"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=windsurfing with a fixed text, namely 'Windsurfing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "windsurfing"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=wrestling with a fixed text, namely 'Wrestling' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "wrestling"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=yoga with a fixed text, namely 'Yoga' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "yoga"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sports centres' shows sport=zurkhaneh_sport with a fixed text, namely 'Zurkhaneh sport' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "zurkhaneh_sport"
     },
     {
       "key": "shop",
@@ -1452,6 +2101,11 @@
       "value": "wine"
     },
     {
+      "key": "disused:shop",
+      "description": "Layer 'Shop' shows disused:shop= with a fixed text, namely 'This shop is no longer used. It is vacant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') Picking this answer will delete the key disused:shop. (This is only shown if craft=)",
+      "value": ""
+    },
+    {
       "key": "brand",
       "description": "Layer 'Shop' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Sports')"
     },
@@ -1590,6 +2244,16 @@
       "key": "service:binding",
       "description": "Layer 'Shop' shows service:binding=no with a fixed text, namely 'This shop does bind books' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$ | service:print=yes)",
       "value": "no"
+    },
+    {
+      "key": "healthcare",
+      "description": "Layer 'Shop' shows healthcare=optometrist with a fixed text, namely 'This shop offers eye exams by certified optometrists' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if shop=optician | shop=hearing_aid | shop=medical_supply)",
+      "value": "optometrist"
+    },
+    {
+      "key": "healthcare",
+      "description": "Layer 'Shop' shows healthcare=audiologist with a fixed text, namely 'This shop offers hearing tests by a certified audiologist' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if shop=optician | shop=hearing_aid | shop=medical_supply)",
+      "value": "audiologist"
     },
     {
       "key": "craft",

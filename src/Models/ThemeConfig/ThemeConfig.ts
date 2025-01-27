@@ -90,7 +90,7 @@ export default class ThemeConfig implements ThemeInformation {
     public readonly definitionRaw?: string
 
     private readonly layersDict: Map<string, LayerConfig>
-    private readonly source: ThemeConfigJson
+    public readonly source: ThemeConfigJson
     public readonly enableCache: boolean
 
     constructor(
@@ -183,7 +183,8 @@ export default class ThemeConfig implements ThemeInformation {
                 new LayerConfig(
                     <LayerConfigJson>lyrJson,
                     json.id + ".layers." + lyrJson["id"],
-                    official
+                    official,
+                    <LayerConfigJson[]>json.layers
                 )
         )
 
@@ -306,7 +307,10 @@ export default class ThemeConfig implements ThemeInformation {
         return { untranslated, total }
     }
 
-    public getMatchingLayer(tags: Record<string, string>): LayerConfig | undefined {
+    public getMatchingLayer(
+        tags: Record<string, string>,
+        blacklistLayers?: Set<string>
+    ): LayerConfig | undefined {
         if (tags === undefined) {
             return undefined
         }
@@ -314,6 +318,9 @@ export default class ThemeConfig implements ThemeInformation {
             return this.getLayer("current_view")
         }
         for (const layer of this.layers) {
+            if (blacklistLayers?.has(layer.id)) {
+                continue
+            }
             if (!layer.source) {
                 if (layer.isShown?.matchesProperties(tags)) {
                     return layer

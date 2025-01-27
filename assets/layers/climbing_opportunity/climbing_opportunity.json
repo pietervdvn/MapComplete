@@ -36,6 +36,7 @@
       ]
     }
   },
+  "isCounted": false,
   "minzoom": 18,
   "title": {
     "render": {
@@ -160,7 +161,8 @@
   "snapName": {
     "en": "a wall, cliff or rock",
     "de": "eine Wand, eine Klippe oder einen Felsen",
-    "es": "una pared, un acantilado o una roca"
-  },
-  "isCounted": false
+    "es": "una pared, un acantilado o una roca",
+    "cs": "zeď, útes nebo skála",
+    "nl": "een muur, klif of rots"
+  }
 }

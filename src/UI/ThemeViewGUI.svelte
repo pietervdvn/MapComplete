@@ -1,15 +1,13 @@
 <script lang="ts">
-  import { Store, UIEventSource } from "../Logic/UIEventSource"
+  import { ImmutableStore, Store, UIEventSource } from "../Logic/UIEventSource"
   import { Map as MlMap } from "maplibre-gl"
   import MaplibreMap from "./Map/MaplibreMap.svelte"
   import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
   import MapControlButton from "./Base/MapControlButton.svelte"
-  import ToSvelte from "./Base/ToSvelte.svelte"
   import If from "./Base/If.svelte"
   import type { Feature } from "geojson"
   import SelectedElementView from "./BigComponents/SelectedElementView.svelte"
   import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-  import ThemeViewState from "../Models/ThemeViewState"
   import type { MapProperties } from "../Models/MapProperties"
   import Translations from "./i18n/Translations"
   import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid"
@@ -42,19 +40,24 @@
   import DrawerLeft from "./Base/DrawerLeft.svelte"
   import DrawerRight from "./Base/DrawerRight.svelte"
   import SearchResults from "./Search/SearchResults.svelte"
-  import { CloseButton } from "flowbite-svelte"
   import Hash from "../Logic/Web/Hash"
   import Searchbar from "./Base/Searchbar.svelte"
   import ChevronRight from "@babeard/svelte-heroicons/mini/ChevronRight"
-  import ChevronLeft from "@babeard/svelte-heroicons/solid/ChevronLeft"
   import { Drawer } from "flowbite-svelte"
   import { linear } from "svelte/easing"
+  import DefaultIcon from "./Map/DefaultIcon.svelte"
+  import Loading from "./Base/Loading.svelte"
+  import { WithSearchState } from "../Models/ThemeViewState/WithSearchState"
+  import TitleHandler from "../Logic/Actors/TitleHandler"
 
-  export let state: ThemeViewState
+  export let state: WithSearchState
+  new TitleHandler(state.selectedElement, state)
+
+  console.log("The state is", state)
+  state.focusOnMap()
 
   let theme = state.theme
   let maplibremap: UIEventSource<MlMap> = state.map
-  let state_selectedElement = state.selectedElement
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
@@ -99,7 +102,7 @@
 
   state.mapProperties.installCustomKeyboardHandler(viewport)
 
-  let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
+  let selectedLayer: Store<LayerConfig> = selectedElement.mapD((element) => {
     if (element.properties.id.startsWith("current_view")) {
       return currentViewLayer
     }
@@ -168,6 +171,8 @@
     const animation = mlmap.keyboard?.keydown(e)
     animation?.cameraAnimation(mlmap)
   }
+
+  let apiState = state?.osmConnection?.apiIsOnline ?? new ImmutableStore("online")
 </script>
 
 <main>
@@ -176,7 +181,7 @@
     <MaplibreMap map={maplibremap} mapProperties={mapproperties} autorecovery={true} />
   </div>
 
-  <LoginToggle ignoreLoading={true} {state}>
+  <LoginToggle ignoreLoading={true} silentFail {state}>
     {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
       <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
       <div
@@ -202,8 +207,8 @@
     </div>
   {/if}
 
+  <!-- bottom controls -->
   <div class="pointer-events-none absolute bottom-0 left-0 mb-4 w-screen">
-    <!-- bottom controls -->
     <div class="flex w-full items-end justify-between px-4">
       <div class="flex flex-col">
         <If condition={featureSwitches.featureSwitchEnableLogin}>
@@ -219,9 +224,10 @@
               {#if $currentZoom < Constants.minZoomLevelToAddNewPoint}
                 <Tr t={Translations.t.general.add.zoomInFurther} />
               {:else if state.theme.hasPresets()}
-                ✨ <Tr t={Translations.t.general.add.title} />
+                ✨
+                <Tr t={Translations.t.general.add.title} />
               {:else}
-                <Tr t={Translations.t.notes.addAComment} />
+                <Tr t={Translations.t.notes.createNote} />
               {/if}
             </button>
           {/if}
@@ -395,7 +401,7 @@
 
     <div class="float-left m-1 flex flex-col sm:mt-2">
       <!-- Current view tools -->
-      {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
+      {#if currentViewLayer?.tagRenderings && currentViewLayer.hasDefaultIcon()}
         <MapControlButton
           on:click={() => {
             state.selectCurrentView()
@@ -403,7 +409,7 @@
           on:keydown={forwardEventToMap}
         >
           <div class="h-8 w-8 cursor-pointer">
-            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
+            <DefaultIcon layer={currentViewLayer} />
           </div>
         </MapControlButton>
       {/if}
@@ -420,6 +426,11 @@
       <If condition={state.featureSwitches.featureSwitchFakeUser}>
         <div class="alert w-fit">Faking a user (Testmode)</div>
       </If>
+      {#if $apiState === "unknown"}
+        <Loading />
+      {:else if $apiState !== "online"}
+        <div class="alert w-fit">API is {$apiState}</div>
+      {/if}
     </div>
 
     <div class="flex w-full flex-col items-center justify-center">
@@ -430,11 +441,13 @@
     </div>
   </div>
 
-  <DrawerLeft shown={state.guistate.pageStates.menu}>
-    <div class="h-screen overflow-y-auto">
-      <MenuDrawer onlyLink={true} {state} />
-    </div>
-  </DrawerLeft>
+  <div class="h-full overflow-hidden">
+    <DrawerLeft shown={state.guistate.pageStates.menu}>
+      <div class="h-screen overflow-y-auto">
+        <MenuDrawer onlyLink={true} {state} />
+      </div>
+    </DrawerLeft>
+  </div>
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && !$selectedLayer.popupInFloatover}
     <!-- right modal with the selected element view -->
@@ -458,7 +471,7 @@
       }}
     >
       <div slot="close-button" />
-      <SelectedElementPanel {state} selected={$state_selectedElement} />
+      <SelectedElementPanel {state} selected={$selectedElement} />
     </Drawer>
   {/if}
 
@@ -472,7 +485,7 @@
         }}
       >
         <span slot="close-button" />
-        <SelectedElementPanel absolute={false} {state} selected={$state_selectedElement} />
+        <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
       </FloatOver>
     {:else}
       <FloatOver
@@ -480,11 +493,7 @@
           state.selectedElement.setData(undefined)
         }}
       >
-        <SelectedElementView
-          {state}
-          layer={$selectedLayer}
-          selectedElement={$state_selectedElement}
-        />
+        <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
       </FloatOver>
     {/if}
   {/if}

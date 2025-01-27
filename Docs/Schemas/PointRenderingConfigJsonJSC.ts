@@ -3,7 +3,7 @@ export default {
   "type": "object",
   "properties": {
     "location": {
-      "description": "question: At what location should this icon be shown?\nmultianswer: true\nsuggestions: return [{if: \"value=point\",then: \"Show an icon for point (node) objects\"},{if: \"value=centroid\",then: \"Show an icon for line or polygon (way) objects at their centroid location\"}, {if: \"value=start\",then: \"Show an icon for line (way) objects at the start\"},{if: \"value=end\",then: \"Show an icon for line (way) object at the end\"},{if: \"value=projected_centerpoint\",then: \"Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons\"}, {if: \"value=polygon_centroid\",then: \"Show an icon at a polygon centroid (but not if it is a way)\"}]",
+      "description": "question: At what location should this icon be shown?\nmultianswer: true\nsuggestions: return [{if: \"value=point\",then: \"Show an icon for point (node) objects\"},{if: \"value=centroid\",then: \"Show an icon for line or polygon (way) objects at their centroid location\"}, {if: \"value=start\",then: \"Show an icon for line (way) objects at the start\"},{if: \"value=end\",then: \"Show an icon for line (way) object at the end\"},{if: \"value=projected_centerpoint\",then: \"Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons\"}, {if: \"value=polygon_centroid\",then: \"Show an icon at a polygon centroid (but not if it is a way)\"}, {if: \"value=waypoints\", then: \"Show an icon on every intermediate point of a way\"}]",
       "type": "array",
       "items": {
         "type": "string"
@@ -17,30 +17,37 @@ export default {
       }
     },
     "iconBadges": {
-      "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\n\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle\ngroup: hidden",
+      "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\n\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle\nAlternatively, this can reuse a _tagRendering_ from another layer, e.g. one of the 'icons'-tagrenderings.\nSee ExpandIconBadges on how this is handled\ngroup: hidden",
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "if": {
-            "$ref": "#/definitions/TagConfigJson",
-            "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
-          },
-          "then": {
-            "description": "Badge to show\nType: icon",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/MinimalTagRenderingConfigJson"
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "if": {
+                "$ref": "#/definitions/TagConfigJson",
+                "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
               },
-              {
-                "type": "string"
+              "then": {
+                "description": "Badge to show\nType: icon",
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/MinimalTagRenderingConfigJson"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
               }
+            },
+            "required": [
+              "if",
+              "then"
             ]
+          },
+          {
+            "type": "string"
           }
-        },
-        "required": [
-          "if",
-          "then"
         ]
       }
     },
@@ -393,7 +400,7 @@ export default {
       "type": "object",
       "properties": {
         "icon": {
-          "description": "question: What icon should be used?\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "description": "question: What icon should be used?\n\nTo reuse icons from a different layer of a library:\n- The library layer has, within tagRenderings one which will output the URL of the image (e.g. mappings: {\"if\": \"shop=xyz\", then: \"./assets/icons/shop_xyz.png\"})\n- Use \"layer_id.tagrendering_id\"\n\nNote that if you reuse icons from a different icon set, you'll probably want to use `override` to set a default rendering\n\n\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return [ {\"if\":\"value=nsi_brand.icon\", \"then\": \"Use icons for brand from the Name Suggestion Index\"}, {\"if\":\"value=nsi_operator.icon\", \"then\": \"Use icons for operator from the Name Suggestion Index\"}, {\"if\":\"value=id_presets.shop_rendering\", \"then\": \"Use shop preset icons from iD\"}, ...Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))]",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -417,7 +424,7 @@ export default {
           ]
         },
         "color": {
-          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntypes: <span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
+          "description": "question: What colour should the icon be?\n\nThis will only work for the default icons such as `pin`,`circle`,...\n\ntypes: <span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"

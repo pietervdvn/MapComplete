@@ -1,34 +1,21 @@
 {
   "id": "tactile_model",
   "name": {
-    "en": "Tactile Models"
+    "en": "Tactile Models",
+    "de": "Taktile Modelle"
   },
   "description": {
-    "en": "Layer showing tactile models, three-dimensional models of the surrounding area."
+    "en": "Layer showing tactile models, three-dimensional models of the surrounding area.",
+    "de": "Ebene mit dreidimensionalen ertastbaren Modellen der Umgebung."
   },
   "source": {
     "osmTags": "information=tactile_model"
   },
-  "title": {
-    "en": "Tactile Model"
-  },
-  "presets": [
-    {
-      "tags": [
-        "tourism=information",
-        "information=tactile_model"
-      ],
-      "title": {
-        "en": "a tactile model"
-      },
-      "description": {
-        "en": "A tactile model is a three-dimensional model of an area, allowing people to explore/see an area by touch."
-      }
-    }
-  ],
-  "deletion": true,
-  "allowMove": true,
   "minzoom": 10,
+  "title": {
+    "en": "Tactile Model",
+    "de": "Taktiles Modell"
+  },
   "pointRendering": [
     {
       "marker": [
@@ -42,39 +29,61 @@
       ]
     }
   ],
+  "presets": [
+    {
+      "tags": [
+        "tourism=information",
+        "information=tactile_model"
+      ],
+      "title": {
+        "en": "a tactile model",
+        "de": "ein taktiles Modell"
+      },
+      "description": {
+        "en": "A tactile model is a three-dimensional model of an area, allowing people to explore/see an area by touch.",
+        "de": "Ein taktiles Modell ist ein dreidimensionales Modell eines Gebiets, das es den Menschen ermöglicht, ein Gebiet durch Berührung zu erkunden/sehen."
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
       "id": "description",
       "question": {
-        "en": "What does this tactile model show?"
+        "en": "What does this tactile model show?",
+        "de": "Was zeigt dieses taktile Modell?"
       },
       "freeform": {
         "key": "blind:description:en",
         "placeholder": {
-          "en": "e.g. Tactile model of the city center"
+          "en": "e.g. Tactile model of the city center",
+          "de": "z.B. Taktiles Modell des Stadtzentrums"
         }
       },
       "render": {
-        "en": "Description: {blind:description:en}."
+        "en": "Description: {blind:description:en}.",
+        "de": "Beschreibung: {blind:description:en}."
       }
     },
     {
       "id": "braille",
       "question": {
-        "en": "Is there a braille description?"
+        "en": "Is there a braille description?",
+        "de": "Gibt es eine Beschreibung in Blindenschrift?"
       },
       "mappings": [
         {
           "if": "braille=yes",
           "then": {
-            "en": "There is a braille description."
+            "en": "There is a braille description.",
+            "de": "Es gibt eine Beschreibung in Blindenschrift."
           }
         },
         {
           "if": "braille=no",
           "then": {
-            "en": "There is no braille description."
+            "en": "There is no braille description.",
+            "de": "Es gibt keine Beschreibung in Blindenschrift."
           }
         }
       ]
@@ -87,13 +96,16 @@
           "type": "language_chooser",
           "key": "tactile_writing:braille",
           "question": {
-            "en": "In which languages is there a braille description?"
+            "en": "In which languages is there a braille description?",
+            "de": "In welchen Sprachen gibt es eine Beschreibung in Blindenschrift?"
           },
           "render_list_item": {
-            "en": "This model has a braille description in {language()}"
+            "en": "This model has a braille description in {language()}",
+            "de": "Dieses Modell hat eine Beschreibung in Brailleschrift in {language()}"
           },
           "render_single_language": {
-            "en": "This model has a braille description in {language}"
+            "en": "This model has a braille description in {language}",
+            "de": "Dieses Modell hat eine Beschreibung in Brailleschrift in {language}"
           }
         }
       }
@@ -101,19 +113,22 @@
     {
       "id": "embossed_letters",
       "question": {
-        "en": "Are there embossed letters describing the model?"
+        "en": "Are there embossed letters describing the model?",
+        "de": "Gibt es eingeprägte Buchstaben, die das Modell beschreiben?"
       },
       "mappings": [
         {
           "if": "embossed_letters=yes",
           "then": {
-            "en": "There are embossed letters describing the model."
+            "en": "There are embossed letters describing the model.",
+            "de": "Das Modell ist mit geprägten Buchstaben beschrieben."
           }
         },
         {
           "if": "embossed_letters=no",
           "then": {
-            "en": "There are no embossed letters describing the model."
+            "en": "There are no embossed letters describing the model.",
+            "de": "Es gibt keine eingeprägten Buchstaben, die das Modell beschreiben."
           }
         }
       ]
@@ -126,13 +141,16 @@
           "type": "language_chooser",
           "key": "tactile_writing:embossed_letters",
           "question": {
-            "en": "In which languages are there embossed letters?"
+            "en": "In which languages are there embossed letters?",
+            "de": "In welchen Sprachen gibt es geprägte Buchstaben?"
           },
           "render_list_item": {
-            "en": "This model has embossed letters in {language()}"
+            "en": "This model has embossed letters in {language()}",
+            "de": "Dieses Modell hat geprägte Buchstaben in {language()}"
           },
           "render_single_language": {
-            "en": "This model has embossed letters in {language}"
+            "en": "This model has embossed letters in {language}",
+            "de": "Dieses Modell hat geprägte Buchstaben in {language}"
           }
         }
       }
@@ -140,18 +158,23 @@
     {
       "id": "scale",
       "question": {
-        "en": "What scale is the model?"
+        "en": "What scale is the model?",
+        "de": "Welchen Maßstab hat das Modell?"
       },
       "freeform": {
         "key": "scale",
         "placeholder": {
-          "en": "e.g. 1:1000"
+          "en": "e.g. 1:1000",
+          "de": "z.B. 1:1000"
         }
       },
       "render": {
-        "en": "The scale of this model is {scale}."
+        "en": "The scale of this model is {scale}.",
+        "de": "Der Maßstab dieses Modells ist {scale}."
       }
     },
     "website"
-  ]
+  ],
+  "deletion": true,
+  "allowMove": true
 }

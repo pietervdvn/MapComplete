@@ -4,9 +4,10 @@ node_modules
 .cache/*
 .idea/*
 scratch
+src/assets/editor-layer-index.json
+src/assets/generated/
 assets/editor-layer-index.json
 assets/generated/*
-src/assets/generated/
 assets/layers/favourite/favourite.json
 public/*.webmanifest
 /*.html
@@ -20,8 +21,6 @@ missing_translations.txt
 .DS_Store
 Svg.ts
 data/
-src/assets/generated/nsi_stats/brand.json
-src/assets/generated/nsi_stats/brand.summarized.json
 
 Folder.DotSettings.user
 index_*.ts
@@ -29,7 +28,6 @@ index_*.ts
 *.doctest.ts
 service-worker.js
 .env
-src/assets/editor-layer-index.json
 
 error_changeset_*
 
@@ -53,3 +51,4 @@ public/assets/langs/*
 android/
 dist-full/
 public/assets/icons/*.webp
+uploaded_images.json

@@ -46,7 +46,7 @@ export class Changes {
 
     constructor(
         state: {
-            featureSwitches: {
+            featureSwitches?: {
                 featureSwitchMorePrivacy?: Store<boolean>
                 featureSwitchIsTesting?: Store<boolean>
             }
@@ -56,8 +56,7 @@ export class Changes {
             historicalUserLocations?: FeatureSource
             allElements?: IndexedFeatureSource
         },
-        leftRightSensitive: boolean = false,
-        reportError?: (string: string | Error, extramessage?: string) => void
+        leftRightSensitive: boolean = false
     ) {
         this._leftRightSensitive = leftRightSensitive
         // We keep track of all changes just as well
@@ -73,7 +72,7 @@ export class Changes {
         }
         this.state = state
         this.backend = state.osmConnection.Backend()
-        this._reportError = reportError
+        this._reportError = state.reportError
         this._changesetHandler = new ChangesetHandler(
             state.featureSwitches?.featureSwitchIsTesting ?? new ImmutableStore(false),
             state.osmConnection,
@@ -600,7 +599,7 @@ export class Changes {
                     " trying again before dropping it from the changes (" +
                     e +
                     ")"
-                this._reportError(msg)
+                // this._reportError(msg) // We don't report this yet, might be a temporary fluke
                 const osmObj = await downloader.DownloadObjectAsync(id, 0)
                 return { id, osmObj }
             }

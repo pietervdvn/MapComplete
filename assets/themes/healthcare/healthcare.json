@@ -17,7 +17,8 @@
     "zh_Hant": "醫療保健",
     "it": "Assistenza sanitaria",
     "hu": "Egészségügy",
-    "uk": "Охорона здоров'я"
+    "uk": "Охорона здоров'я",
+    "ko": "의료"
   },
   "description": {
     "en": "On this map, various healthcare related items are shown",
@@ -30,7 +31,8 @@
     "es": "En este mapa, se muestran varios elementos relacionados con la atención médica",
     "pl": "Na tej mapie pokazane są różne elementy związane z opieką zdrowotną",
     "it": "Su questa mappa sono indicati vari elementi relativi all'assistenza sanitaria",
-    "uk": "На цій мапі показані різні обʼєкти, повʼязані з охороною здоровʼя"
+    "uk": "На цій мапі показані різні обʼєкти, повʼязані з охороною здоровʼя",
+    "ko": "이 지도에서는 다양한 의료 관련 항목이 표시됩니다"
   },
   "icon": "./assets/layers/doctors/doctors.svg",
   "startZoom": 16,
@@ -63,7 +65,8 @@
               "nl": "een winkel voor medische hulpmiddelen",
               "fr": "un commerce d'équipements médicaux",
               "pl": "sklep z artykułami medycznymi",
-              "it": "un negozio di forniture mediche"
+              "it": "un negozio di forniture mediche",
+              "ko": "의료 용품 상점"
             },
             "tags": [
               "shop=medical_supply"
@@ -79,7 +82,8 @@
               "nl": "een hoorapparatenwinkel",
               "fr": "un magasin d'appareils auditifs",
               "pl": "sklep z aparatami słuchowymi",
-              "it": "un negozio di apparecchi acustici"
+              "it": "un negozio di apparecchi acustici",
+              "ko": "보청기 상점"
             },
             "tags": [
               "shop=hearing_aids"
@@ -96,7 +100,8 @@
               "nl": "een optieker",
               "pl": "optyk",
               "zh_Hant": "配鏡師",
-              "it": "un ottico"
+              "it": "un ottico",
+              "ko": "안경점"
             },
             "tags": [
               "shop=optician"

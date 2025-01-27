@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   x="0"
+   y="0"
+   viewBox="0 0 15 15"
+   id="svg6"
+   sodipodi:docname="school_academic.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10">
+    <rect
+       x="54.803806"
+       y="20.094456"
+       width="58.343585"
+       height="48.378575"
+       id="rect1" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="26.25896"
+     inkscape:cx="6.5120629"
+     inkscape:cy="14.718785"
+     inkscape:current-layer="svg6"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:window-width="1920"
+     inkscape:window-height="1005"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <path
+     d="M 10.110447,2.1457729 V 12.854227 H 2.0027214 V 2.1457729 Z M 9.3965499,2.8596699 H 2.7166183 V 12.14033 h 6.6799316 z"
+     id="path2"
+     style="stroke-width:0.713897"
+     sodipodi:nodetypes="cccccccccc" />
+  <path
+     d="m 11.351837,11.350311 c 0.356948,0.356949 1.784742,0.356949 2.141691,0 0,0 -0.713897,1.427794 -1.070846,1.427794 -0.356948,0 -1.070845,-1.427794 -1.070845,-1.427794 z m 0,-7.1389689 c 0,0.3569485 2.141691,0.3569485 2.141691,0 0,0 0,6.4250719 0,6.4250719 0,0.356949 -2.141691,0.356949 -2.141691,0 0,0 0,-6.4250719 0,-6.4250719 z m 1.070845,-2.1416908 c -1.070845,0 -1.070845,0.3569485 -1.070845,0.713897 0,0 0,0.7138969 0,0.7138969 0,0.3569485 2.141691,0.3569485 2.141691,0 0,0 0,-0.7138969 0,-0.7138969 0,-0.3569485 0,-0.713897 -1.070846,-0.713897 z"
+     id="path4"
+     style="stroke-width:0.713897" />
+  <text
+     xml:space="preserve"
+     id="text1"
+     style="font-size:12px;line-height:1;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';white-space:pre;shape-inside:url(#rect1);display:inline;fill:#ffffff;stroke:#fffbff;stroke-width:18;stroke-linecap:square;stroke-dasharray:53.9999, 53.9999" />
+  <g
+     id="g7"
+     transform="matrix(1.0811056,0,0,1.0811056,0.03244121,-0.04815401)"
+     style="stroke-width:0.73998322;stroke-dasharray:none">
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.73998322;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 3.4591194,7.5098544 4.4428922,9.3097195 5.2227716,4.6540993 7.6852928,4.6813575"
+       id="path5"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.73998322;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 5.8524143,6.7799431 7.6266425,9.1791123"
+       id="path6" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.73998322;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 7.6266425,6.7799431 5.8524143,9.1791123"
+       id="path7" />
+  </g>
+</svg>

@@ -9,6 +9,7 @@ The theme introduction reads:
 This theme contains the following layers:
 
  - [charging_station](../Layers/charging_station.md)
+ - [charge_point](../Layers/charge_point.md)
 
 Available languages:
 
@@ -30,6 +31,7 @@ Available languages:
  - cs
  - pl
  - uk
+ - ko
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

@@ -2,7 +2,7 @@
 
 # brothel
 
-An establishment specifically dedicated to prostitution. 
+An establishment specifically dedicated to prostitution.
 
  - This layer is shown at zoomlevel **6** and higher
 
@@ -134,7 +134,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 
 

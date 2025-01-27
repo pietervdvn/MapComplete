@@ -41,6 +41,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         "end",
         "projected_centerpoint",
         "polygon_centroid",
+        "waypoints",
     ])
     public readonly location: Set<
         | "point"
@@ -49,6 +50,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         | "end"
         | "projected_centerpoint"
         | "polygon_centroid"
+        | "waypoints"
         | string
     >
 
@@ -141,15 +143,6 @@ export default class PointRenderingConfig extends WithContextLoader {
             "w-full h-full block absolute top-0 left-0"
         )
     }
-
-    public GetBaseIcon(tags?: Record<string, string>): BaseUIElement {
-        return new SvelteUIElement(DynamicMarker, {
-            marker: this.marker,
-            rotation: this.rotation,
-            tags: new ImmutableStore(tags),
-        })
-    }
-
     public RenderIcon(
         tags: Store<Record<string, string>>,
         options?: {

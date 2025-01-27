@@ -5,13 +5,17 @@
     "de": "Alle Elemente mit Bildern",
     "es": "Todos los elementos con imágenes",
     "cs": "Všechny položky s obrázky",
-    "hu": "Minden képpel rendelkező térképobjektum"
+    "hu": "Minden képpel rendelkező térképobjektum",
+    "nl": "Alle items met afbeeldingen",
+    "ko": "모든 요소는 이미지를 가지고 있습니다"
   },
   "description": {
     "en": "A map showing all items on OSM which have an image. This theme is a very bad fit for MapComplete as someone is not able to directly add a picture. However, this theme is mostly here to include this all into the database, which'll allow this to quickly fetch images nearby for other features",
     "de": "Eine Karte, die alle Objekte auf OSM zeigt, die ein Bild haben. Dieses Thema ist sehr schlecht für MapComplete geeignet, da man nicht direkt ein Bild hinzufügen kann. Dieses Thema ist jedoch hauptsächlich dazu da, um alles in die Datenbank aufzunehmen, was es ermöglicht, Bilder in der Nähe für andere Funktionen schnell zu finden",
     "es": "Un mapa que muestra todos los elementos en OSM que tienen una imagen. Este tema no es adecuado para MapComplete, ya que no se puede agregar una imagen directamente. Sin embargo, este tema está aquí principalmente para incluir todo esto en la base de datos, lo que permitirá obtener rápidamente imágenes cercanas para otras funciones",
-    "cs": "Mapa zobrazující všechny položky v OSM, které mají obrázek. Toto téma je pro MapComplete velmi nevhodné, protože někdo nemůže přímo přidat obrázek. Nicméně toto téma je zde hlavně proto, aby to vše zahrnovalo do databáze, což umožní rychle načítat obrázky v okolí pro další funkce"
+    "cs": "Mapa zobrazující všechny položky v OSM, které mají obrázek. Toto téma je pro MapComplete velmi nevhodné, protože někdo nemůže přímo přidat obrázek. Nicméně toto téma je zde hlavně proto, aby to vše zahrnovalo do databáze, což umožní rychle načítat obrázky v okolí pro další funkce",
+    "nl": "Een kaart die alle items op OSM toont die een afbeelding hebben. Dit thema past heel slecht bij MapComplete omdat het niet mogelijk is een afbeelding toe te voegen. Dit thema is er vooral om alles in de database op te nemen, waardoor het snel afbeeldingen in de buurt kan ophalen voor andere functies",
+    "ko": "이미지가 포함된 OSM의 모든 항목을 표시하는 지도입니다. 이 테마는 사용자가 직접 사진을 추가할 수 없기 때문에 MapComplete와 잘 맞지 않을 수 있습니다. 그러나 이러한 모든 데이터를 데이터베이스에 포함시켜, 다른 기능에서 근처의 이미지를 빠르게 가져올 수 있도록 하는 것이 이 테마의 주요 목적입니다"
   },
   "icon": "./assets/layers/item_with_image/camera.svg",
   "hideFromOverview": true,

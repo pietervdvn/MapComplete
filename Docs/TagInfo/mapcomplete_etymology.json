@@ -615,6 +615,82 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Sport places without etymology information allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Parks without etymology information showing features with this tag"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Parks without etymology information showing features with this tag",
+      "value": "park"
+    },
+    {
+      "key": "landuse",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Parks without etymology information showing features with this tag",
+      "value": "village_green"
+    },
+    {
+      "key": "landuse",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Parks without etymology information showing features with this tag",
+      "value": "recreation_ground"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Parks without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Parks without etymology information shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Parks without etymology information shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Parks without etymology information shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Parks without etymology information shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Parks without etymology information shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Parks without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology!=unknown)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Parks without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Parks without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
+      "value": "unknown"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Parks without etymology information allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Parks without etymology information allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Parks without etymology information allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Parks without etymology information allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Parks without etymology information allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     }
   ]
 }

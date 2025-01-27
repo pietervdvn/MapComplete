@@ -46,7 +46,8 @@
     "eu": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia",
     "pl": "Otwarta mapa posągów, popiersi, graffiti i innych dzieł sztuki z całego świata",
     "pt_BR": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo",
-    "uk": "Відкрита мапа статуй, бюстів, графіті та інших творів мистецтва по всьому світу"
+    "uk": "Відкрита мапа статуй, бюстів, графіті та інших творів мистецтва по всьому світу",
+    "ko": "전 세계의 여러 조각상과 예술 작품들 알려주는 오픈 맵 입니다"
   },
   "source": {
     "osmTags": "tourism=artwork"
@@ -438,7 +439,7 @@
             "nl": "Installatie",
             "fr": "Installation",
             "de": "Installation",
-            "it": "Istallazione",
+            "it": "Installazione",
             "ru": "Инсталляция",
             "ja": "インスタレーション",
             "zh_Hant": "安裝",
@@ -706,7 +707,8 @@
         "cs": "Existuje webová stránka s dalšími informacemi o tomto uměleckém díle?",
         "ca": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?",
         "he": "האם יש אתר אינטרנט עם מידע נוסף על היצירה הזו?",
-        "pt_BR": "Há um website com mais informações sobre essa arte?"
+        "pt_BR": "Há um website com mais informações sobre essa arte?",
+        "uk": "Чи є веб-сайт із додатковою інформацією про цей твір мистецтва?"
       },
       "render": {
         "special": {
@@ -730,7 +732,8 @@
             "da": "Yderligere oplysninger på  dette websted",
             "cs": "Více informací na této webové stránce",
             "ca": "Més informació a aquesta pàgina web",
-            "pt_BR": "Mais informações nesse website"
+            "pt_BR": "Mais informações nesse website",
+            "uk": "Більше інформації на цьому сайті"
           }
         }
       },
@@ -812,7 +815,8 @@
         "fr": "Cet œuvre a-t-elle un rôle de mémorial ?",
         "cs": "Slouží toto dílo jako památník?",
         "es": "¿Esta obra de arte sirve como monumento?",
-        "uk": "Чи слугує ця робота меморіалом?"
+        "uk": "Чи слугує ця робота меморіалом?",
+        "nl": "Dient dit kunstwerk als gedenkteken?"
       },
       "mappings": [
         {
@@ -824,7 +828,8 @@
             "fr": "Cette œuvre est un mémorial",
             "cs": "Toto dílo slouží také jako památník",
             "es": "Esta obra de arte también sirve como monumento",
-            "uk": "Цей витвір мистецтва також слугує меморіалом"
+            "uk": "Цей витвір мистецтва також слугує меморіалом",
+            "nl": "Dit kunstwerk doet ook dienst als herdenkingsmonument"
           }
         },
         {
@@ -835,7 +840,8 @@
             "de": "Dieses Kunstwerk dient nicht als Denkmal",
             "uk": "Ця робота не є меморіалом",
             "cs": "Toto umělecké dílo neslouží jako památník",
-            "es": "Esta obra de arte no sirve como monumento"
+            "es": "Esta obra de arte no sirve como monumento",
+            "nl": "Dit kunstwerk fungeert niet als gedenkteken"
           }
         }
       ]

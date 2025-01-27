@@ -16,7 +16,8 @@
     "cs": "Mapa map",
     "pl": "Mapa map",
     "hu": "Térképek térképe",
-    "uk": "Мапа мап"
+    "uk": "Мапа мап",
+    "ko": "모든 지도가 포함된 지도"
   },
   "description": {
     "en": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",
@@ -30,7 +31,9 @@
     "da": "På dette kort kan du finde alle kort, OpenStreetMap kender - typisk et stort kort på en informationstavle, der viser området, byen eller regionen, f.eks. et turistkort på bagsiden af en tavle, et kort over et naturreservat, et kort over cykelnetværk i regionen, ...) <br/><br/>Hvis der mangler et kort, kan du nemt kortlægge dette kort på OpenStreetMap.",
     "cs": "Na této mapě najdete všechny mapy, které OpenStreetMap zná - typicky je zde velká mapa na informační tabuli zobrazující oblast, město nebo region, (např. turistická mapa na zadní straně billboardu, mapa přírodní rezervace, mapa cyklistických sítí v regionu, ...). <br/><br/>Pokud mapa chybí, můžete ji snadno zmapovat na OpenStreetMap.",
     "ca": "En aquest mapa podeu trobar tots els mapes que OpenStreetMap coneix, normalment un mapa gran en un tauler informatiu que mostra la zona, la ciutat o la regió, p. un mapa turístic al dors d'una tanca publicitària, un mapa d'una reserva natural, un mapa de les xarxes ciclistes de la regió, ...) <br/><br/>Si falta un mapa, podeu mapejar aquest mapa fàcilment a OpenStreetMap.",
-    "pl": "Na tej mapie możesz znaleźć wszystkie mapy, jakie zna OpenStreetMap - zazwyczaj duże mapy na tablicy informacyjnej pokazująca obszar, miasto lub region, np. mapy turystyczne na odwrocie billboardu, mapy rezerwatu przyrody, mapy sieci rowerowych w regionie, ...) <br/><br/>Jeśli brakuje mapy, możesz łatwo zmapować ją na OpenStreetMap."
+    "pl": "Na tej mapie możesz znaleźć wszystkie mapy, jakie zna OpenStreetMap - zazwyczaj duże mapy na tablicy informacyjnej pokazująca obszar, miasto lub region, np. mapy turystyczne na odwrocie billboardu, mapy rezerwatu przyrody, mapy sieci rowerowych w regionie, ...) <br/><br/>Jeśli brakuje mapy, możesz łatwo zmapować ją na OpenStreetMap.",
+    "ko": "이 지도에서는 OpenStreetMap에서 확인 가능한 모든 지도를 찾을수 있습니다. 일반적으로 장소, 도시 또는 지역을 보여주는 정보 게시판의 대형 지도(예: 관광지의 안내판 뒷면에 있는 지도, 자연 보호구역 지도, 지역 자전거 네트워크 지도 등)가 포함됩니다. <br/><br/>만약 누락된 지도가 있다면 OpenStreetMap에서 손쉽게 추가할 수 있습니다.",
+    "uk": "На цій карті ви можете знайти всі карти, які знає OpenStreetMap - зазвичай це велика карта на інформаційному щиті, на якій показано місцевість, місто чи регіон, напр. туристична карта на зворотному боці рекламного щита, карта природного заповідника, карта велосипедних мереж регіону, ...) <br/><br/>Якщо карта відсутня, ви можете легко нанести на неї карту на OpenStreetMap."
   },
   "shortDescription": {
     "en": "This theme shows all (touristic) maps that OpenStreetMap knows of",
@@ -46,12 +49,17 @@
     "ca": "Aquest tema mostra tots els mapes (turístics) que OpenStreetMap coneix",
     "pl": "Ten motyw pokazuje wszystkie mapy (turystyczne), które zna OpenStreetMap",
     "ru": "Эта тема показывает все (туристические) карты, известные OpenStreetMap",
-    "uk": "Ця тема показує всі (туристичні) мапи, які відомі OpenStreetMap"
+    "uk": "Ця тема показує всі (туристичні) мапи, які відомі OpenStreetMap",
+    "ko": "이 테마는 OpenStreetMap에 등록된 모든 (관광) 지도를 표시합니다"
   },
   "icon": "./assets/themes/maps/logo.svg",
   "defaultBackgroundId": "protomaps.white",
   "layers": [
-    "map"
+    "map",
+    "tactile_map",
+    "tactile_model"
   ],
-  "widenFactor": 5
+  "overrideAll": {
+    "minzoom": 11
+  }
 }

@@ -79,7 +79,7 @@ describe("ImageProviders", () => {
             if (!Array.isArray(urls)) {
                 urls = [urls]
             }
-            const images = await AllImageProviders.LoadImagesFor(
+            const images = await AllImageProviders.loadImagesFor(
                 new ImmutableStore(tags)
             ).AsPromise((imgs) => imgs !== undefined && imgs.length > 0)
             console.log("ImageProvider test", tags.id, "for", tags)

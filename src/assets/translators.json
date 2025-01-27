@@ -5,7 +5,7 @@
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 420,
+      "commits": 421,
       "contributor": "kjon"
     },
     {
@@ -13,11 +13,11 @@
       "contributor": "paunofu"
     },
     {
-      "commits": 122,
+      "commits": 154,
       "contributor": "Anonymous"
     },
     {
-      "commits": 102,
+      "commits": 112,
       "contributor": "mcliquid"
     },
     {
@@ -25,39 +25,43 @@
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 83,
+      "commits": 89,
       "contributor": "Robin van der Linde"
+    },
+    {
+      "commits": 80,
+      "contributor": "mike140"
     },
     {
       "commits": 70,
       "contributor": "danieldegroot2"
     },
     {
-      "commits": 64,
-      "contributor": "mike140"
+      "commits": 59,
+      "contributor": "Midgard"
+    },
+    {
+      "commits": 56,
+      "contributor": "Jiří Podhorecký"
     },
     {
       "commits": 53,
       "contributor": "Harry Bond"
     },
     {
-      "commits": 50,
-      "contributor": "Jiří Podhorecký"
-    },
-    {
-      "commits": 49,
-      "contributor": "gallegonovato"
-    },
-    {
-      "commits": 44,
+      "commits": 51,
       "contributor": "Supaplex"
     },
     {
-      "commits": 43,
+      "commits": 51,
+      "contributor": "gallegonovato"
+    },
+    {
+      "commits": 45,
       "contributor": "Babos Gábor"
     },
     {
-      "commits": 37,
+      "commits": 38,
       "contributor": "Lucas"
     },
     {
@@ -102,6 +106,10 @@
     },
     {
       "commits": 15,
+      "contributor": "Ettore Atalan"
+    },
+    {
+      "commits": 15,
       "contributor": "WaldiS"
     },
     {
@@ -114,7 +122,7 @@
     },
     {
       "commits": 13,
-      "contributor": "Ettore Atalan"
+      "contributor": "small"
     },
     {
       "commits": 13,
@@ -147,6 +155,10 @@
     {
       "commits": 11,
       "contributor": "Túllio Franca"
+    },
+    {
+      "commits": 10,
+      "contributor": "JiwonShin"
     },
     {
       "commits": 10,
@@ -206,6 +218,10 @@
     },
     {
       "commits": 8,
+      "contributor": "Joost Schouppe"
+    },
+    {
+      "commits": 8,
       "contributor": "nilocram"
     },
     {
@@ -214,15 +230,15 @@
     },
     {
       "commits": 7,
+      "contributor": "Weblate Admin"
+    },
+    {
+      "commits": 7,
       "contributor": "Franco"
     },
     {
       "commits": 7,
       "contributor": "NetworkedPoncho"
-    },
-    {
-      "commits": 7,
-      "contributor": "Joost Schouppe"
     },
     {
       "commits": 7,
@@ -271,6 +287,14 @@
     {
       "commits": 6,
       "contributor": "lvgx"
+    },
+    {
+      "commits": 5,
+      "contributor": "Eric Armijo"
+    },
+    {
+      "commits": 5,
+      "contributor": "foxandpotatoes"
     },
     {
       "commits": 5,
@@ -346,6 +370,14 @@
     },
     {
       "commits": 3,
+      "contributor": "Gábor"
+    },
+    {
+      "commits": 3,
+      "contributor": "Michal Čermák"
+    },
+    {
+      "commits": 3,
       "contributor": "Andrii Holovin"
     },
     {
@@ -390,10 +422,6 @@
     },
     {
       "commits": 3,
-      "contributor": "foxandpotatoes"
-    },
-    {
-      "commits": 3,
       "contributor": "Sasha"
     },
     {
@@ -427,6 +455,14 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "Héctor Ochoa Ortiz"
+    },
+    {
+      "commits": 2,
+      "contributor": "SmallSoap"
     },
     {
       "commits": 2,
@@ -510,19 +546,11 @@
     },
     {
       "commits": 2,
-      "contributor": "Midgard"
-    },
-    {
-      "commits": 2,
       "contributor": "M. Rey"
     },
     {
       "commits": 2,
       "contributor": "Localizer"
-    },
-    {
-      "commits": 2,
-      "contributor": "Eric Armijo"
     },
     {
       "commits": 2,
@@ -559,6 +587,22 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Túllio Morais Franca"
+    },
+    {
+      "commits": 1,
+      "contributor": "Moimoi Ty"
+    },
+    {
+      "commits": 1,
+      "contributor": "Roger"
+    },
+    {
+      "commits": 1,
+      "contributor": "M1chaelWang"
     },
     {
       "commits": 1,
@@ -607,10 +651,6 @@
     {
       "commits": 1,
       "contributor": "Julio Salas"
-    },
-    {
-      "commits": 1,
-      "contributor": "Michal Čermák"
     },
     {
       "commits": 1,

@@ -1,0 +1,83 @@
+{
+  "id": "beehive",
+  "name": {
+    "en": "Beehives",
+    "de": "Bienenstöcke"
+  },
+  "description": {
+    "en": "Layer showing beehives",
+    "de": "Ebene mit Bienenstöcken"
+  },
+  "source": {
+    "osmTags": "man_made=beehive"
+  },
+  "minzoom": 11,
+  "title": {
+    "en": "Beehive",
+    "de": "Bienenstock"
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/beehive/beehive.svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a beehive",
+        "de": "ein Bienenstock"
+      },
+      "tags": [
+        "man_made=beehive"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "capacity",
+      "question": {
+        "en": "How many beehives are there?",
+        "de": "Wie viele Bienenstöcke gibt es?"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat",
+        "placeholder": {
+          "en": "Number of beehives",
+          "de": "Anzahl der Bienenstöcke"
+        }
+      },
+      "render": {
+        "en": "There are {capacity} beehives",
+        "de": "Es gibt {capacity} Bienenstöcke"
+      },
+      "mappings": [
+        {
+          "if": "capacity=1",
+          "then": {
+            "en": "There is 1 beehive",
+            "de": "Es gibt 1 Bienenstock"
+          }
+        }
+      ]
+    }
+  ],
+  "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  }
+}

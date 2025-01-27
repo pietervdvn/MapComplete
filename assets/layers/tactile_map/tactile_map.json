@@ -1,34 +1,21 @@
 {
   "id": "tactile_map",
   "name": {
-    "en": "Tactile Maps"
+    "en": "Tactile Maps",
+    "de": "Taktile Karten"
   },
   "description": {
-    "en": "Layer showing tactile maps, which can be used by visually impaired people to navigate the city."
+    "en": "Layer showing tactile maps, which can be used by visually impaired people to navigate the city.",
+    "de": "Ebene mit taktilen Karten, die von sehbehinderten Menschen zur Navigation in der Stadt verwendet werden können."
   },
   "source": {
     "osmTags": "information=tactile_map"
   },
-  "title": {
-    "en": "Tactile Map"
-  },
-  "presets": [
-    {
-      "tags": [
-        "tourism=information",
-        "information=tactile_map"
-      ],
-      "title": {
-        "en": "a tactile map"
-      },
-      "description": {
-        "en": "A tactile map that can be read using touch. Unlike a tactile model, this is relatively flat and does not feature three-dimensional buildings and such."
-      }
-    }
-  ],
-  "deletion": true,
-  "allowMove": true,
   "minzoom": 10,
+  "title": {
+    "en": "Tactile Map",
+    "de": "Taktile Karte"
+  },
   "pointRendering": [
     {
       "marker": [
@@ -46,39 +33,61 @@
       ]
     }
   ],
+  "presets": [
+    {
+      "tags": [
+        "tourism=information",
+        "information=tactile_map"
+      ],
+      "title": {
+        "en": "a tactile map",
+        "de": "eine taktile Karte"
+      },
+      "description": {
+        "en": "A tactile map that can be read using touch. Unlike a tactile model, this is relatively flat and does not feature three-dimensional buildings and such.",
+        "de": "Eine taktile Karte, die durch Berühren gelesen werden kann. Im Gegensatz zu einem taktilen Modell ist diese Karte relativ flach und enthält keine dreidimensionalen Gebäude oder ähnliches."
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
       "id": "description",
       "question": {
-        "en": "What does this tactile map show?"
+        "en": "What does this tactile map show?",
+        "de": "Was zeigt diese taktile Karte?"
       },
       "freeform": {
         "key": "blind:description:en",
         "placeholder": {
-          "en": "e.g. Tactile map of the city center"
+          "en": "e.g. Tactile map of the city center",
+          "de": "z.B. Taktile Karte des Stadtzentrums"
         }
       },
       "render": {
-        "en": "Description: {blind:description:en}."
+        "en": "Description: {blind:description:en}.",
+        "de": "Beschreibung: {blind:description:en}."
       }
     },
     {
       "id": "braille",
       "question": {
-        "en": "Is there braille text on this tactile map?"
+        "en": "Is there braille text on this tactile map?",
+        "de": "Gibt es einen Text in Blindenschrift auf dieser taktilen Karte?"
       },
       "mappings": [
         {
           "if": "braille=yes",
           "then": {
-            "en": "This tactile map has braille text."
+            "en": "This tactile map has braille text.",
+            "de": "Diese taktile Karte hat einen Text in Blindenschrift."
           }
         },
         {
           "if": "braille=no",
           "then": {
-            "en": "This tactile map does not have braille text."
+            "en": "This tactile map does not have braille text.",
+            "de": "Diese taktile Karte hat keinen Text in Blindenschrift."
           }
         }
       ]
@@ -91,13 +100,16 @@
           "type": "language_chooser",
           "key": "tactile_writing:braille",
           "question": {
-            "en": "In which languages is the braille text on this tactile map?"
+            "en": "In which languages is the braille text on this tactile map?",
+            "de": "In welchen Sprachen ist der Text in Blindenschrift auf dieser taktilen Karte?"
           },
           "render_list_item": {
-            "en": "This map has braille text in {language}"
+            "en": "This map has braille text in {language}",
+            "de": "Diese Karte hat Text in Blindenschrift in {language}"
           },
           "render_single_language": {
-            "en": "This map has braille text in {language}"
+            "en": "This map has braille text in {language}",
+            "de": "Diese Karte hat Text in Blindenschrift in {language}"
           }
         }
       }
@@ -105,19 +117,22 @@
     {
       "id": "embossed_letters",
       "question": {
-        "en": "Are there embossed letters on this tactile map?"
+        "en": "Are there embossed letters on this tactile map?",
+        "de": "Gibt es auf dieser taktilen Karte geprägte Buchstaben?"
       },
       "mappings": [
         {
           "if": "embossed_letters=yes",
           "then": {
-            "en": "This tactile map has embossed letters."
+            "en": "This tactile map has embossed letters.",
+            "de": "Diese taktile Karte hat geprägte Buchstaben."
           }
         },
         {
           "if": "embossed_letters=no",
           "then": {
-            "en": "This tactile map does not have embossed letters."
+            "en": "This tactile map does not have embossed letters.",
+            "de": "Diese taktile Karte hat keine geprägten Buchstaben."
           }
         }
       ]
@@ -130,17 +145,22 @@
           "type": "language_chooser",
           "key": "tactile_writing:embossed",
           "question": {
-            "en": "In which languages are the embossed letters on this tactile map?"
+            "en": "In which languages are the embossed letters on this tactile map?",
+            "de": "In welchen Sprachen sind die geprägten Buchstaben auf dieser taktilen Karte?"
           },
           "render_list_item": {
-            "en": "This map has embossed letters in {language}"
+            "en": "This map has embossed letters in {language}",
+            "de": "Diese Karte hat geprägte Buchstaben in {language}"
           },
           "render_single_language": {
-            "en": "This map has embossed letters in {language}"
+            "en": "This map has embossed letters in {language}",
+            "de": "Diese Karte hat geprägte Buchstaben in {language}"
           }
         }
       }
     },
     "website"
-  ]
+  ],
+  "deletion": true,
+  "allowMove": true
 }

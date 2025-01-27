@@ -12,8 +12,8 @@
   import Translations from "../../i18n/Translations.js"
   import { Utils } from "../../../Utils"
   import { onDestroy } from "svelte"
-  import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
   import TagRenderingQuestionDynamic from "./TagRenderingQuestionDynamic.svelte"
+  import LoginToggle from "../../Base/LoginToggle.svelte"
 
   export let layer: LayerConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -43,11 +43,20 @@
     }
     return true
   }
+
   const baseQuestions = (layer?.tagRenderings ?? [])?.filter(
     (tr) => allowed(tr.labels) && tr.question !== undefined
   )
 
+  /**
+   * Ids of skipped questions
+   */
   let skippedQuestions = new UIEventSource<Set<string>>(new Set<string>())
+  let layerDisabledForTheme = state.userRelatedState.getThemeDisabled(state.theme.id, layer.id)
+  layerDisabledForTheme.addCallbackAndRunD((disabled) => {
+    console.log("Disabled questions are ", disabled)
+    skippedQuestions.set(new Set(disabled.concat(Array.from(skippedQuestions.data))))
+  })
   let questionboxElem: HTMLDivElement
   let questionsToAsk = tags.map(
     (tags) => {
@@ -95,6 +104,7 @@
   let skipped: number = 0
 
   let loginEnabled = state.featureSwitches.featureSwitchEnableLogin
+  let debug = state.featureSwitches.featureSwitchIsDebugging
 
   function skip(question: { id: string }, didAnswer: boolean = false) {
     skippedQuestions.data.add(question.id) // Must use ID, the config object might be a copy of the original
@@ -117,43 +127,94 @@
     class="marker-questionbox-root"
     class:hidden={$questionsToAsk.length === 0 && skipped === 0 && answered === 0}
   >
-    {#if $allQuestionsToAsk.length === 0}
-      {#if skipped + answered > 0}
+    {#if $showAllQuestionsAtOnce}
+      <div class="flex flex-col gap-y-1">
+        {#each $allQuestionsToAsk as question (question.id)}
+          <TagRenderingQuestionDynamic config={question} {tags} {selectedElement} {state} {layer} />
+        {/each}
+      </div>
+    {:else if $firstQuestion !== undefined}
+      <TagRenderingQuestionDynamic
+        config={$firstQuestion}
+        {layer}
+        {selectedElement}
+        {state}
+        {tags}
+        on:saved={() => {
+          skip($firstQuestion, true)
+        }}
+      >
+        <button
+          class="secondary"
+          on:click={() => {
+            skip($firstQuestion)
+          }}
+          slot="cancel"
+        >
+          <Tr t={Translations.t.general.skip} />
+        </button>
+      </TagRenderingQuestionDynamic>
+    {/if}
+
+    <LoginToggle {state}>
+      <span slot="not-logged-in" />
+      {#if $allQuestionsToAsk.length === 0}
         <div class="thanks">
           <Tr t={Translations.t.general.questionBox.done} />
         </div>
-        {#if answered === 0}
-          {#if skipped === 1}
-            <Tr t={Translations.t.general.questionBox.skippedOne} />
-          {:else}
-            <Tr t={Translations.t.general.questionBox.skippedMultiple.Subs({ skipped })} />
+      {/if}
+
+      <div class="mt-4 mb-8">
+        {#if skipped + answered > 0}
+          <div class="flex justify-center">
+            {#if answered === 0}
+              {#if skipped === 1}
+                <Tr t={Translations.t.general.questionBox.skippedOne} />
+              {:else}
+                <Tr t={Translations.t.general.questionBox.skippedMultiple.Subs({ skipped })} />
+              {/if}
+            {:else if answered === 1}
+              {#if skipped === 0}
+                <Tr t={Translations.t.general.questionBox.answeredOne} />
+              {:else if skipped === 1}
+                <Tr t={Translations.t.general.questionBox.answeredOneSkippedOne} />
+              {:else}
+                <Tr
+                  t={Translations.t.general.questionBox.answeredOneSkippedMultiple.Subs({
+                    skipped,
+                  })}
+                />
+              {/if}
+            {:else if skipped === 0}
+              <Tr t={Translations.t.general.questionBox.answeredMultiple.Subs({ answered })} />
+            {:else if skipped === 1}
+              <Tr
+                t={Translations.t.general.questionBox.answeredMultipleSkippedOne.Subs({ answered })}
+              />
+            {:else}
+              <Tr
+                t={Translations.t.general.questionBox.answeredMultipleSkippedMultiple.Subs({
+                  answered,
+                  skipped,
+                })}
+              />
+            {/if}
+          </div>
+
+          {#if skipped + $skippedQuestions.size > 0}
+            <button
+              class="w-full"
+              on:click={() => {
+                skippedQuestions.setData(new Set())
+                skipped = 0
+              }}
+            >
+              <Tr t={Translations.t.general.questionBox.reactivate} />
+            </button>
           {/if}
-        {:else if answered === 1}
-          {#if skipped === 0}
-            <Tr t={Translations.t.general.questionBox.answeredOne} />
-          {:else if skipped === 1}
-            <Tr t={Translations.t.general.questionBox.answeredOneSkippedOne} />
-          {:else}
-            <Tr
-              t={Translations.t.general.questionBox.answeredOneSkippedMultiple.Subs({ skipped })}
-            />
-          {/if}
-        {:else if skipped === 0}
-          <Tr t={Translations.t.general.questionBox.answeredMultiple.Subs({ answered })} />
-        {:else if skipped === 1}
-          <Tr
-            t={Translations.t.general.questionBox.answeredMultipleSkippedOne.Subs({ answered })}
-          />
-        {:else}
-          <Tr
-            t={Translations.t.general.questionBox.answeredMultipleSkippedMultiple.Subs({
-              answered,
-              skipped,
-            })}
-          />
         {/if}
 
-        {#if skipped > 0}
+        {#if $skippedQuestions.size - skipped > 0}
           <button
             class="w-full"
             on:click={() => {
@@ -161,47 +222,13 @@
               skipped = 0
             }}
           >
-            <Tr t={Translations.t.general.questionBox.reactivate} />
+            Show the disabled questions for this object
           </button>
         {/if}
-      {/if}
-    {:else}
-      <div>
-        {#if $showAllQuestionsAtOnce}
-          <div class="flex flex-col gap-y-1">
-            {#each $allQuestionsToAsk as question (question.id)}
-              <TagRenderingQuestionDynamic
-                config={question}
-                {tags}
-                {selectedElement}
-                {state}
-                {layer}
-              />
-            {/each}
-          </div>
-        {:else if $firstQuestion !== undefined}
-          <TagRenderingQuestionDynamic
-            config={$firstQuestion}
-            {layer}
-            {selectedElement}
-            {state}
-            {tags}
-            on:saved={() => {
-              skip($firstQuestion, true)
-            }}
-          >
-            <button
-              class="secondary"
-              on:click={() => {
-                skip($firstQuestion)
-              }}
-              slot="cancel"
-            >
-              <Tr t={Translations.t.general.skip} />
-            </button>
-          </TagRenderingQuestionDynamic>
+        {#if $debug}
+          Skipped questions are {Array.from($skippedQuestions).join(", ")}
         {/if}
       </div>
-    {/if}
+    </LoginToggle>
   </div>
 {/if}

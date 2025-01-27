@@ -122,7 +122,8 @@
         "da": "et cykelbibliotek",
         "es": "una biblioteca de bicicletas",
         "cs": "půjčovna kol",
-        "ca": "una biblioteca de bicicletes"
+        "ca": "una biblioteca de bicicletes",
+        "uk": "велосипедна бібліотека"
       },
       "tags": [
         "amenity=bicycle_library"
@@ -140,7 +141,8 @@
         "cs": "Cyklistická půjčovna má k dispozici sbírku kol, která lze zapůjčit",
         "ca": "Una biblioteca de bicicletes té una col·lecció de bicicletes que es poden cedir",
         "pt": "Uma \"biblioteca de bicicletas\" tem uma coleção de bicicletas que podem ser emprestadas",
-        "pt_BR": "Uma biblioteca de bicicletas tem uma coleção de bicicletas que podem ser emprestadas"
+        "pt_BR": "Uma biblioteca de bicicletas tem uma coleção de bicicletas que podem ser emprestadas",
+        "uk": "Велосипедна бібліотека має колекцію велосипедів, які можна взяти напрокат"
       }
     }
   ],

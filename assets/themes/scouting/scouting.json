@@ -1,0 +1,16 @@
+{
+  "id": "scouting",
+  "title": {
+    "en": "Scouting groups",
+    "de": "Pfadfindergruppen"
+  },
+  "description": {
+    "en": "A scouting group is a social youth movement with a heavy emphasis on the outdoors. Activities range from camping, hiking, aquatics, backpacking, exploring nature, ...",
+    "de": "Eine Pfadfindergruppe ist eine soziale Jugendbewegung mit einem starken Fokus auf Aktivitäten im Freien. Die Aktivitäten reichen von Camping, Wandern, Wassersport, Rucksacktouren, Erkundung der Natur, ..."
+  },
+  "icon": "./assets/layers/scouting_group/scouting.svg",
+  "defaultBackgroundId": "protomaps.dark",
+  "layers": [
+    "scouting_group"
+  ]
+}

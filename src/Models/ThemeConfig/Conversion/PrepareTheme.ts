@@ -1,14 +1,4 @@
-import {
-    Concat,
-    Conversion,
-    DesugaringContext,
-    DesugaringStep,
-    Each,
-    Fuse,
-    On,
-    Pass,
-    SetDefault,
-} from "./Conversion"
+import { Concat, Conversion, DesugaringContext, DesugaringStep, Each, Fuse, On, Pass, SetDefault } from "./Conversion"
 import { ThemeConfigJson } from "../Json/ThemeConfigJson"
 import { PrepareLayer } from "./PrepareLayer"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
@@ -175,7 +165,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
     }
 }
 
-class AddDefaultLayers extends DesugaringStep<ThemeConfigJson> {
+export class AddDefaultLayers extends DesugaringStep<ThemeConfigJson> {
     private readonly _state: DesugaringContext
 
     constructor(state: DesugaringContext) {
@@ -472,7 +462,7 @@ class PreparePersonalTheme extends DesugaringStep<ThemeConfigJson> {
 class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<ThemeConfigJson> {
     constructor() {
         super(
-            "Generates a warning if a theme uses an unsubstituted layer",
+            "Generates a warning if a theme uses an inline layer; we recommend splitting of all layers in separate files",
             ["layers"],
             "WarnForUnsubstitutedLayersInTheme"
         )

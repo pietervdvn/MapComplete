@@ -16,9 +16,10 @@ A layer showing drinking water fountains
 4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [Still in use?](#still-in-use)
+  - [fee](#fee)
   - [type](#type)
   - [Bottle refill](#bottle-refill)
-  - [fee](#fee)
+  - [temperature-cold](#temperature-cold)
   - [seasonal](#seasonal)
   - [opening_hours_24_7](#opening_hours_24_7)
   - [Opening hours](#opening-hours)
@@ -69,8 +70,8 @@ Elements must match **all** of the following expressions:
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operational_status#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operational_status/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3D) [broken](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken) [closed](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/bottle#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/bottle/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [bottle](https://wiki.openstreetmap.org/wiki/Key:bottle) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fee](https://wiki.openstreetmap.org/wiki/Key:fee) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/bottle#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/bottle/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [bottle](https://wiki.openstreetmap.org/wiki/Key:bottle) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/seasonal#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/seasonal/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [seasonal](https://wiki.openstreetmap.org/wiki/Key:seasonal) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dno) [summer](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dsummer) [spring;summer;autumn](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dspring;summer;autumn) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/artwork_type#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/artwork_type/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [artwork_type](https://wiki.openstreetmap.org/wiki/Key:artwork_type) | [string](../SpecialInputElements.md#string) | [architecture](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Darchitecture) [mural](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dmural) [painting](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dpainting) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dsculpture) [statue](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstatue) [bust](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dbust) [stone](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstone) [installation](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dinstallation) [graffiti](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dgraffiti) [relief](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Drelief) [azulejo](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dazulejo) [tilework](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dtilework) [woodcarving](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dwoodcarving) |
@@ -94,6 +95,13 @@ The question is `Is this drinking water spot still operational?`
  -  *This drinking water is closed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
  -  *This drinking water is permanently closed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:disused:amenity' target='_blank'>disused:amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:amenity%3Ddrinking_water' target='_blank'>drinking_water</a>
 
+### fee
+
+The question is `Is this drinking water point free to use?`
+
+ -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+ -  *One needs to pay to use this drinking water point* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+
 ### type
 
 The question is `What type of drinking water point is this?`
@@ -109,12 +117,15 @@ The question is `How easy is it to fill water bottles?`
  -  *It is easy to refill water bottles* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes' target='_blank'>yes</a>
  -  *Water bottles may not fit* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno' target='_blank'>no</a>
 
-### fee
+### temperature-cold
 
-The question is `Is this drinking water point free to use?`
+The question is `Is cold water available here?`
 
- -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
- -  *One needs to pay to use this drinking water point* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+ -  *Ice-cold water is provided here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:iced_water' target='_blank'>iced_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:iced_water%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:iced_water' target='_blank'>iced_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:iced_water%3Dno' target='_blank'>no</a>
+ -  *Actively cooled water is available here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cold_water' target='_blank'>cold_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cold_water%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:cold_water' target='_blank'>cold_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cold_water%3Dno' target='_blank'>no</a>
+ -  *Ambient temperature water (without active cooling or heating) is available here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:room_temperature_water' target='_blank'>room_temperature_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room_temperature_water%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:room_temperature_water' target='_blank'>room_temperature_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:room_temperature_water%3Dno' target='_blank'>no</a>
+ -  *Warmed water is provided here; the water is not dangerously hot* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:warm_water' target='_blank'>warm_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:warm_water%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:warm_water' target='_blank'>warm_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:warm_water%3Dno' target='_blank'>no</a>
+ -  *Hot water is provided here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hot_water' target='_blank'>hot_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hot_water%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:hot_water' target='_blank'>hot_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hot_water%3Dno' target='_blank'>no</a>
 
 ### seasonal
 
@@ -234,7 +245,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 
 

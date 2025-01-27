@@ -28,6 +28,7 @@ A shop specifically selling bicycles or related items
   - [single_level](#single_level)
   - [copyshop-print-sizes](#copyshop-print-sizes)
   - [copyshop-binding](#copyshop-binding)
+  - [optometrist_service](#optometrist_service)
   - [key_cutter](#key_cutter)
   - [sells_new_bikes](#sells_new_bikes)
   - [bike_second_hand](#bike_second_hand)
@@ -76,10 +77,11 @@ Elements must match **any** of the following expressions:
 
  - <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>
  - <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a>
+ - <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a>
  - <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a>
  - <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> & (<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dcycling' target='_blank'>cycling</a> | sport=) & service:bicycle:retail!=no & service:bicycle:repair!=no
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22service%3Abicycle%3Arepair%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22service%3Abicycle%3Aretail%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22bicycle%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22sports%22%5D%5B%22sport%22%3D%22bicycle%22%5D%5B%22service%3Abicycle%3Aretail%22!%3D%22no%22%5D%5B%22service%3Abicycle%3Arepair%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22sports%22%5D%5B%22sport%22%3D%22cycling%22%5D%5B%22service%3Abicycle%3Aretail%22!%3D%22no%22%5D%5B%22service%3Abicycle%3Arepair%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22sports%22%5D%5B!%22sport%22%5D%5B%22service%3Abicycle%3Aretail%22!%3D%22no%22%5D%5B%22service%3Abicycle%3Arepair%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22service%3Abicycle%3Arepair%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22service%3Abicycle%3Aretail%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22service%3Abicycle%3Asecond_hand%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22bicycle%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22sports%22%5D%5B%22sport%22%3D%22bicycle%22%5D%5B%22service%3Abicycle%3Aretail%22!%3D%22no%22%5D%5B%22service%3Abicycle%3Arepair%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22sports%22%5D%5B%22sport%22%3D%22cycling%22%5D%5B%22service%3Abicycle%3Aretail%22!%3D%22no%22%5D%5B%22service%3Abicycle%3Arepair%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22sports%22%5D%5B!%22sport%22%5D%5B%22service%3Abicycle%3Aretail%22!%3D%22no%22%5D%5B%22service%3Abicycle%3Arepair%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 ## Supported attributes
 
@@ -97,6 +99,7 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:binding#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abinding/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:binding](https://wiki.openstreetmap.org/wiki/Key:service:binding) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:binding%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:binding%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/healthcare#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/healthcare/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [healthcare](https://wiki.openstreetmap.org/wiki/Key:healthcare) | Multiple choice | [optometrist](https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Doptometrist) [audiologist](https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Daudiologist) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:retail#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Aretail/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:retail](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:second_hand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Asecond_hand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:second_hand](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:repair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Arepair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:repair](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold) [brand](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand) |
@@ -306,6 +309,7 @@ The question is `What kind of shop is this?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Wig Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwigs' target='_blank'>wigs</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-window.svg' style='width: 3rem; height: 3rem'> *Window Blind Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwindow_blind' target='_blank'>window_blind</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-alcohol-shop.svg' style='width: 3rem; height: 3rem'> *Wine Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwine' target='_blank'>wine</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/shops/shop-disused.svg' style='width: 3rem; height: 3rem'> *This shop is no longer used. It is vacant* is shown if with disused:shop=
 
 This tagrendering has labels 
 `description`
@@ -416,6 +420,15 @@ The question is `Does this shop offer a binding service?`
  -  *This shop does bind books* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:binding' target='_blank'>service:binding</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:binding%3Dno' target='_blank'>no</a>
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:print' target='_blank'>service:print</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print%3Dyes' target='_blank'>yes</a> | shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$
+
+### optometrist_service
+
+The question is `Are medical services available here?`
+
+ -  *This shop offers eye exams by certified optometrists* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare' target='_blank'>healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Doptometrist' target='_blank'>optometrist</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:not:healtcare' target='_blank'>not:healtcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:healtcare%3Doptometrist' target='_blank'>optometrist</a>
+ -  *This shop offers hearing tests by a certified audiologist* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare' target='_blank'>healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Daudiologist' target='_blank'>audiologist</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:not:healthcare' target='_blank'>not:healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:healthcare%3Daudiologist' target='_blank'>audiologist</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doptician' target='_blank'>optician</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhearing_aid' target='_blank'>hearing_aid</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmedical_supply' target='_blank'>medical_supply</a>
 
 ### key_cutter
 
@@ -714,7 +727,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 
 

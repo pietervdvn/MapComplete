@@ -230,6 +230,16 @@
       "value": "no"
     },
     {
+      "key": "outdoor_seating",
+      "description": "Layer 'Cafés and pubs' shows outdoor_seating=yes with a fixed text, namely 'This place has outdoor seating' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs')",
+      "value": "yes"
+    },
+    {
+      "key": "indoor_seating",
+      "description": "Layer 'Cafés and pubs' shows indoor_seating=yes with a fixed text, namely 'This place has indoor seating' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs')",
+      "value": "yes"
+    },
+    {
       "key": "dog",
       "description": "Layer 'Cafés and pubs' shows dog=yes with a fixed text, namely 'Dogs are allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs')",
       "value": "yes"

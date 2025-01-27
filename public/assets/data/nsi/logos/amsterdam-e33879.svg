@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="450" height="300">
+	<rect width="450" height="300" fill="#da121a"/>
+	<rect y="100" width="450" height="100"/>
+	<g stroke="#fff" stroke-width="30">
+		<path d="M 98,105 v 90 m -45,-45 h 90" transform="rotate(45 98,150)"/>
+		<path d="M 225,105 v 90 m -45,-45 h 90" transform="rotate(45 225,150)"/>
+		<path d="M 352,105 v 90 m -45,-45 h 90" transform="rotate(45 352,150)"/>
+	</g>
+</svg>

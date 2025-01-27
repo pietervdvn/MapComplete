@@ -40,6 +40,8 @@ The following options to create new points are included:
 
  - **a tabletennis table** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch' target='_blank'>pitch</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis' target='_blank'>table_tennis</a>
  - **a sport pitch** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch' target='_blank'>pitch</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DGeometry to be drawn, added by MapComplete' target='_blank'>Geometry to be drawn, added by MapComplete</a>
+ - **a skatepark** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch' target='_blank'>pitch</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dskateboard' target='_blank'>skateboard</a>
+ - **a horse riding arena** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch' target='_blank'>pitch</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dequestrian' target='_blank'>equestrian</a>
 
 ## Basic tags for this layer
 
@@ -53,7 +55,7 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/sport#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/sport/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [sport](https://wiki.openstreetmap.org/wiki/Key:sport) | [string](../SpecialInputElements.md#string) | [basketball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball) [soccer](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer) [table_tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis) [tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis) [korfball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball) [skateboard](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dskateboard) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/sport#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/sport/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [sport](https://wiki.openstreetmap.org/wiki/Key:sport) | [string](../SpecialInputElements.md#string) | [basketball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball) [soccer](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer) [table_tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis) [tennis](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis) [korfball](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball) [skateboard](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dskateboard) [equestrian](https://wiki.openstreetmap.org/wiki/Tag:sport%3Dequestrian) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/hoops#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/hoops/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [hoops](https://wiki.openstreetmap.org/wiki/Key:hoops) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D2) [4](https://wiki.openstreetmap.org/wiki/Tag:hoops%3D4) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/surface#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/surface/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [surface](https://wiki.openstreetmap.org/wiki/Key:surface) | [string](../SpecialInputElements.md#string) | [grass](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass) [sand](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand) [paving_stones](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones) [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) [fine_gravel](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dfine_gravel) [tartan](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dtartan) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:access%3Dlimited) [members](https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate) |
@@ -79,6 +81,7 @@ The question is `Which sport can be played here?`
  -  *Korfball is played here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball' target='_blank'>korfball</a>
  -  *Basketball is played here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasket' target='_blank'>basket</a>. _This option cannot be chosen as answer_
  -  *This is a skatepark* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dskateboard' target='_blank'>skateboard</a>
+ -  *This is a horse riding arena* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dequestrian' target='_blank'>equestrian</a>
 
 ### basketball-hoops
 
@@ -174,7 +177,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -185,7 +188,8 @@ This tagrendering has labels
 | sport_pitch-sport.4 | Tennis is played here | sport=tennis |
 | sport_pitch-sport.5 | Korfball is played here | sport=korfball |
 | sport_pitch-sport.6 | Basketball is played here | sport=basket |
-| sport_pitch-sport.7 | This is a skatepark | sport~^(.+;)?skateboard(;.+)$ |
+| sport_pitch-sport.7 | This is a skatepark | sport=skateboard |
+| sport_pitch-sport.8 | This is a horse riding arena | sport=equestrian |
 
 
 

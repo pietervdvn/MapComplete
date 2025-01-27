@@ -709,18 +709,18 @@
                 },
                 "question": "Har denne cykelparkering plads til ladcykler?"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Denne parkeringsplads er overdækket (den har et tag)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Denne parkeringsplads er ikke overdækket"
                     }
                 },
-                "question": "Er denne parkering overdækket? Vælg også \"overdækket\" for indendørs parkeringspladser."
+                "question": "Er denne parkering overdækket?"
             },
-            "Underground?": {
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Underjordisk parkering"
@@ -1864,13 +1864,6 @@
     },
     "recycling": {
         "filter": {
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Kun offentlig adgang"
-                    }
-                }
-            },
             "3": {
                 "options": {
                     "0": {
@@ -2049,7 +2042,7 @@
                 "question": "I hvilken geografisk retning filmer dette kamera?",
                 "render": "Filmer til en kompasretning af {camera:direction}"
             },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "0": {
                         "then": "Dette kamera er placeret indendørs"
@@ -2060,8 +2053,7 @@
                     "2": {
                         "then": "Dette kamera er sandsynligvis placeret udendørs"
                     }
-                },
-                "question": "Er det offentlige rum, der overvåges af dette kamera, et indendørs eller udendørs rum?"
+                }
             }
         },
         "title": {

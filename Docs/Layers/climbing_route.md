@@ -80,7 +80,7 @@ The question is `What is the grade of this climbing route according to the frenc
 ### bolts
 
 The question is `How many bolts does this route have before reaching the anchor?`
-*This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>* is shown if `climbing:bolts` is set
+*This route has {climbing:bolts} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>* is shown if `climbing:bolts` is set
 
  -  *This route is not bolted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:bolted' target='_blank'>climbing:bolted</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:bolted%3Dno' target='_blank'>no</a>
 

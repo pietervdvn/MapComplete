@@ -5,7 +5,7 @@ import ThemeConfig from "../../../../src/Models/ThemeConfig/ThemeConfig"
 import bookcaseLayer from "../../../../src/assets/generated/layers/public_bookcase.json"
 import LayerConfig from "../../../../src/Models/ThemeConfig/LayerConfig"
 import { ExtractImages } from "../../../../src/Models/ThemeConfig/Conversion/FixImages"
-import cyclofix from "../../../../src/assets/generated/themes/cyclofix.json"
+import cyclofix from "../../../../public/assets/generated/themes/cyclofix.json"
 import { Tag } from "../../../../src/Logic/Tags/Tag"
 import { DesugaringContext } from "../../../../src/Models/ThemeConfig/Conversion/Conversion"
 import { And } from "../../../../src/Logic/Tags/And"
@@ -68,6 +68,7 @@ describe("PrepareTheme", () => {
             tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
             sharedLayers,
             publicLayers: new Set<string>(),
+            tagRenderingOrder: [],
         })
         let themeConfigJsonPrepared = prepareStep.convertStrict(theme, ConversionContext.test())
         const themeConfig = new ThemeConfig(themeConfigJsonPrepared)
@@ -86,6 +87,7 @@ describe("PrepareTheme", () => {
             tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
             sharedLayers,
             publicLayers: new Set<string>(),
+            tagRenderingOrder: [],
         }).convertStrict(themeConfigJson, ConversionContext.test())
         const themeConfig = new ThemeConfig(themeConfigJsonPrepared)
         const layerUnderTest = <LayerConfig>(
@@ -101,6 +103,7 @@ describe("PrepareTheme", () => {
             tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
             sharedLayers,
             publicLayers: new Set<string>(),
+            tagRenderingOrder: [],
         }).convertStrict(
             {
                 ...themeConfigJson,
@@ -148,6 +151,7 @@ describe("PrepareTheme", () => {
             sharedLayers,
             tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
             publicLayers: new Set<string>(),
+            tagRenderingOrder: [],
         }
         const layout: ThemeConfigJson = {
             description: "A testing theme",

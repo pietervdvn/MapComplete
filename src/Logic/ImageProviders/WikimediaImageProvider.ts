@@ -138,7 +138,12 @@ export class WikimediaImageProvider extends ImageProvider {
             query: { pages: { title: string; imageinfo: { extmetadata }[] }[] }
         }>(url, 365 * 24 * 60 * 60)
         const licenseInfo = new LicenseInfo()
-        const pageInfo = data.query.pages.at(-1)
+        const pages = data.query.pages
+        /*jup, a literal "-1" in an object, not a list!*/
+        let pageInfo = pages["-1"]
+        if (Array.isArray(pages)) {
+            pageInfo = pages.at(-1)
+        }
         if (pageInfo === undefined) {
             return undefined
         }

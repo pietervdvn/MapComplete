@@ -929,21 +929,6 @@
       "key": "payment:qr_code",
       "description": "Layer 'Pharmacies' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Disaster response and emergency services')",
       "value": "yes"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Disaster response and emergency services')",
-      "value": "yes"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=no with a fixed text, namely 'This pharmacy is hard to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Disaster response and emergency services')",
-      "value": "no"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=limited with a fixed text, namely 'This pharmacy has limited access for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Disaster response and emergency services')",
-      "value": "limited"
     }
   ]
 }

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="CoA VG Arzfeld.svg"
+   id="svg2130"
+   version="1.1"
+   viewBox="0 0 480.35957 538.56409"
+   height="538.56409"
+   width="480.35959"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2124" />
+  <sodipodi:namedview
+     inkscape:pagecheckerboard="false"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     lock-margins="true"
+     units="px"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-11"
+     inkscape:window-x="-11"
+     inkscape:window-height="1506"
+     inkscape:window-width="2560"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="269.33333"
+     inkscape:cx="240"
+     inkscape:zoom="1.5"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#333333"
+     id="base"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-paths="true"
+     inkscape:snap-grids="false"
+     inkscape:snap-global="false"
+     inkscape:lockguides="false"
+     guidecolor="#00ffff"
+     guideopacity="0.49803922"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-to-guides="true" />
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="arzfeld"
+     transform="translate(-63.640415,-29.500001)">
+    <g
+       id="g3845"
+       inkscape:label="coa">
+      <path
+         style="opacity:1;fill:#ffdd00;stroke:#000000;stroke-width:9;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+         d="M 539.5,34.000001 V 329 C 539.5,457.86553 433.42158,563.5641 303.82021,563.5641 174.21884,563.5641 68.140415,457.86553 68.140415,329 V 34.000005 Z"
+         id="path2001"
+         sodipodi:nodetypes="cszscc"
+         inkscape:label="coa-0" />
+      <path
+         id="path2003"
+         style="opacity:1;fill:#ed1c24;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m 342.24023,277.18555 -39.36328,38.64843 V 434 L 342.24023,395.35156 381.60156,434 420.96484,395.35156 460.32617,434 499.68945,395.35156 522,417.25781 C 533.24561,389.96505 539.5,360.17212 539.5,329 v -13.16602 h -0.44922 l -39.36133,-38.64843 -39.36328,38.64843 -39.36133,-38.64843 -39.36328,38.64843 z"
+         inkscape:label="coa-g" />
+      <path
+         id="path1111"
+         style="opacity:1;fill:#0066b3;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+         d="m 118.97461,86 v 37.66602 H 68.140625 V 329 c 0,128.86553 106.078315,234.56445 235.679685,234.56445 V 185 H 539.5 V 123.66602 H 488.66602 V 86 H 415 v 37.66602 H 340.6543 V 86 h -73.66797 v 37.66602 H 192.64062 V 86 Z"
+         inkscape:label="coa-b" />
+      <path
+         id="rect1748"
+         style="opacity:1;fill:#ffffff;stroke:#000000;stroke-width:5"
+         d="M 68.140411,185 H 303.82022 v 63.03202 H 68.140411 Z m 2.14e-4,126.06445 V 329 c 0,15.41476 1.556785,30.48518 4.451172,45.0957 H 303.82031 v -63.03125 z m 26.814453,126.06446 c 12.454552,23.63958 28.827702,44.93881 48.271482,63.03125 h 160.59375 v -63.03125 z"
+         inkscape:label="coa-a" />
+      <path
+         style="opacity:1;fill:none;stroke:#000000;stroke-width:9;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+         d="M 539.5,34.000001 V 329 C 539.5,457.86553 433.42158,563.5641 303.82021,563.5641 174.21884,563.5641 68.140415,457.86553 68.140415,329 V 34.000005 Z"
+         id="path975"
+         sodipodi:nodetypes="cszscc"
+         inkscape:label="coa-f" />
+    </g>
+  </g>
+</svg>

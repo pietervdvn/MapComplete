@@ -186,7 +186,8 @@
         "es": "un restaurante",
         "fr": "un restaurant",
         "pl": "restauracja",
-        "cs": "restaurace"
+        "cs": "restaurace",
+        "uk": "ресторан"
       },
       "tags": [
         "amenity=restaurant"
@@ -199,7 +200,8 @@
         "fr": "Un lieu de restauration formel avec des installations pour s'asseoir vendant des repas complets servis par des serveurs",
         "ca": "Un lloc per menjar formal amb instal·lacions per seure que venen àpats complets servits per cambrers",
         "cs": "Formální jídelna s posezením, kde se prodávají kompletní jídla podávaná číšníky",
-        "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
+        "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)",
+        "uk": "Офіційний заклад харчування з місцями для сидіння, де продають повноцінні обіди, які обслуговують офіціанти"
       }
     },
     {
@@ -211,7 +213,8 @@
         "ca": "un negoci de menjar ràpid",
         "fr": "un fast-food",
         "cs": "rychlé občerstvení",
-        "es": "un establecimiento de comida rápida"
+        "es": "un establecimiento de comida rápida",
+        "uk": "фаст-фуд"
       },
       "tags": [
         "amenity=fast_food"
@@ -223,7 +226,8 @@
         "es": "Un negocio de comida que se centra en el servicio rápido solo en el mostrador y comida para llevar",
         "fr": "Une entreprise alimentaire se concentrant sur le service rapide au comptoir et les plats à emporter",
         "ca": "Un negoci de menjar centrat en el servei ràpid sols en mostrador i menjar per a endur",
-        "cs": "Potravinářský podnik se zaměřením na rychlou obsluhu u pultu a jídlo s sebou"
+        "cs": "Potravinářský podnik se zaměřením na rychlou obsluhu u pultu a jídlo s sebou",
+        "uk": "Харчовий бізнес, що зосереджується на швидкому обслуговуванні на прилавку та їжі на винос"
       }
     },
     {
@@ -247,7 +251,8 @@
         "fr": "Une restauration rapide centré sur la vente de frites",
         "ca": "Un local de menjar ràpid centrat en les patates fregides",
         "cs": "Podnik s rychlým občerstvením zaměřený na hranolky",
-        "es": "Un negocio de comida rápida centrado en papas fritas"
+        "es": "Un negocio de comida rápida centrado en papas fritas",
+        "uk": "Бізнес швидкого харчування, орієнтований на картоплю фрі"
       }
     }
   ],
@@ -625,7 +630,8 @@
         "en": "On what webpage is the menu published?",
         "de": "Auf welcher Webseite wird das Menü veröffentlicht?",
         "ca": "A quina web està publicat el menú?",
-        "es": "¿En qué página web se publica el menú?"
+        "es": "¿En qué página web se publica el menú?",
+        "uk": "На якій веб-сторінці опубліковано меню?"
       },
       "render": {
         "special": {
@@ -634,7 +640,8 @@
           "text": {
             "en": "Consult the menu",
             "de": "Das Menü einsehen",
-            "es": "Consultar el menú"
+            "es": "Consultar el menú",
+            "uk": "Зверніться до меню"
           }
         }
       },
@@ -801,6 +808,61 @@
           }
         }
       ]
+    },
+    {
+      "id": "drive-through",
+      "condition": "amenity=fast_food",
+      "question": {
+        "en": "Does this fast-food restaurant have a drive-through?",
+        "nl": "Heeft dit fastfoodrestaurant een drive-through?",
+        "de": "Hat dieses Fast-Food-Restaurant eine Durchfahrtsmöglichkeit?"
+      },
+      "mappings": [
+        {
+          "if": "drive_through=yes",
+          "then": {
+            "en": "This fast-food restaurant has a drive-through",
+            "nl": "Dit fastfoodrestaurant heeft een drive-through",
+            "de": "Dieses Fast-Food-Restaurant hat einen Drive-In"
+          }
+        },
+        {
+          "if": "drive_through=no",
+          "then": {
+            "en": "This fast-food restaurant does not have a drive-through",
+            "nl": "Dit fastfoodrestaurant heeft geen drive-through",
+            "de": "Dieses Fast-Food-Restaurant hat keinen Drive-in"
+          }
+        }
+      ]
+    },
+    {
+      "id": "drive-through-opening_hours",
+      "condition": "drive_through=yes",
+      "question": {
+        "en": "What are the opening hours of the drive-through?",
+        "nl": "Wat zijn de openingsuren van de drive-through?",
+        "de": "Wie sind die Öffnungszeiten des Drive-Ins?"
+      },
+      "freeform": {
+        "key": "opening_hours:drive_through",
+        "type": "opening_hours"
+      },
+      "mappings": [
+        {
+          "if": "opening_hours:drive_through=",
+          "then": {
+            "en": "The opening hours of the drive-through are the same as the restaurant",
+            "nl": "De openingsuren van de drive-through zijn dezelfde als die van het restaurant",
+            "de": "Die Öffnungszeiten des Drive-Ins sind dieselben wie die des Restaurants"
+          }
+        }
+      ],
+      "render": {
+        "en": "<h3>Drive-through opening hours</h3>{opening_hours_table(opening_hours:drive_through)}",
+        "nl": "<h3>Openingsuren van de drive-through</h3>{opening_hours_table(opening_hours:drive_through)}",
+        "de": "<h3>Öffnungszeiten der Drive-in-Filiale</h3> {opening_hours_table(opening_hours:drive_through)}"
+      }
     },
     {
       "question": {
@@ -1339,6 +1401,7 @@
     "lactose_free",
     "smoking",
     "service:electricity",
+    "seating",
     "dog-access",
     "internet",
     "internet-fee",
@@ -1486,6 +1549,8 @@
     "filters.sugar_free",
     "filters.gluten_free",
     "filters.lactose_free",
+    "outdoor_seating",
+    "indoor_seating",
     "accepts_cash",
     "accepts_cards",
     "dogs"

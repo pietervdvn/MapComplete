@@ -390,18 +390,18 @@
                 "question": "Milyen típusú ez a kerékpártároló?",
                 "render": "Ez egy {bicycle_parking} típusú kerékpártároló"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Ez a parkoló fedett"
                     },
-                    "1": {
+                    "5": {
                         "then": "Ez a parkoló nem fedett"
                     }
                 },
-                "question": "Fedett-e ez a parkoló? Beltéri parkolónál is válaszd a „fedett” opciót."
+                "question": "Fedett-e ez a parkoló?"
             },
-            "Underground?": {
+            "location": {
                 "mappings": {
                     "1": {
                         "then": "Felszíni parkoló"

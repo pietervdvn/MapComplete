@@ -16,10 +16,11 @@
     "cs": "Lezecké tělocvičny, kluby a místa",
     "es": "Gimnasios, clubes y lugares de escalada",
     "pl": "Siłownie, kluby i miejsca wspinaczkowe",
-    "uk": "Скелелазні тренажерні зали, клуби та місця"
+    "uk": "Скелелазні тренажерні зали, клуби та місця",
+    "ko": "클라이밍 체육관, 클럽 및 장소"
   },
   "description": {
-    "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
+    "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, boulderzalen en klimmen in de natuur.",
     "de": "Eine Karte mit Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen.",
     "en": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.",
     "ru": "На этой карте вы найдете различные возможности для скалолазания, такие как скалодромы, залы для боулдеринга и скалы на природе.",
@@ -34,7 +35,8 @@
     "ca": "A aquest mapa trobaràs varies oportunitats d'escalada, como gimnasos d'escalada, sales d'escalada en bloc i roques a la natura.",
     "es": "En este mapa encontrarás varias oportunidades de escalada como gimnasios de escalada, salas de bouldering y rocas en la naturaleza.",
     "pl": "Na tej mapie znajdziesz różne możliwości wspinaczki, takie jak sale wspinaczkowe, hale do boulderingu i skały w przyrodzie.",
-    "uk": "На цій мапі ви знайдете різні можливості для скелелазіння, такі як скелелазні зали, боулдерингові зали та скелі на природі."
+    "uk": "На цій мапі ви знайдете різні можливості для скелелазіння, такі як скелелазні зали, боулдерингові зали та скелі на природі.",
+    "ko": "이 지도에는 클라이밍 체육관과 볼더링 홀그리고 자연 암벽 등과 같은 다양한 클라이밍 장소가 나와 있습니다."
   },
   "descriptionTail": {
     "nl": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
@@ -50,7 +52,8 @@
     "es": "El mapa de escalada fue creado originalmente por <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Por favor, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ponte en contacto</a> si tienes comentarios o preguntas.</p><p>El proyecto utiliza datos del proyecto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
     "ca": "El mapa d'escalada va ser creat originalment per <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>Contacteu-vos</a> si teniu comentaris o preguntes.</p>< p>El projecte utilitza dades del projecte <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
     "pl": "Mapa wspinaczkowa została pierwotnie stworzona przez <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christiana Neumanna</a>. Jeśli masz uwagi lub pytania, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>skontaktuj się z nim</a>.</p>< p>Projekt wykorzystuje dane projektu <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
-    "uk": "Мапу альпіністських маршрутів спочатку склав <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Крістіан Нойманн</a>. Будь ласка, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>звʼяжіться</a> з ним, якщо у вас є відгуки чи запитання.</p>< p>Проєкт використовує дані <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
+    "uk": "Мапу альпіністських маршрутів спочатку склав <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Крістіан Нойманн</a>. Будь ласка, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>звʼяжіться</a> з ним, якщо у вас є відгуки чи запитання.</p>< p>Проєкт використовує дані <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
+    "ko": "클라이밍 지도는 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>크리스티안 노이만(Christian Neumann</a>이 제작했습니다. 피드백이나 질문이 있으면 <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>여기</a>로 연락해 주세요.</p><p>이 프로젝트는 <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> 프로젝트의 데이터를 사용합니다.</p>"
   },
   "icon": "./assets/themes/climbing/climbing_icon.svg",
   "credits": [
@@ -159,7 +162,9 @@
                   "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>l'element que el conté</a>indica que és d'</span>accés públic<br/>{_embedding_feature:access:description}",
                   "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> veřejně dostupné<br/>{_embedding_feature:access:description}",
                   "pl": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że jest on</span> publicznie dostępny<br/>{_embedding_feature:access:description}",
-                  "uk": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>що містить об'єкт</a> зазначено, що це</span> загальнодоступне<br/>{_embedding_feature:access:description}"
+                  "uk": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>що містить об'єкт</a> зазначено, що це</span> загальнодоступне<br/>{_embedding_feature:access:description}",
+                  "zh_Hant": "<span class='subtle'><a href='#{_embedding_feature:id}'>強調這邊</a>包含</span> 公共可及的圖徵<br/>{_embedding_feature:access:description}",
+                  "ko": "<span class='subtle'>이<a href='#{_embedding_feature:id}'>포함된 요소</a>따르면, 이는</span>접근이 가능합니다<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -175,7 +180,9 @@
                   "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>l'element que el conté</a> indica que es necessita </span> un permís per a accedir-hi<br/>{_embedding_feature:access:description}",
                   "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že </span> je k přístupu potřeba povolení<br/>{_embedding_feature:access:description}",
                   "pl": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że</span> potrzebne jest pozwolenie, aby do niego wejść<br/>{_embedding_feature:access:description}",
-                  "uk": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>функції</a> зазначено, що </span> потрібен дозвіл для доступу<br/>{_embedding_feature:access:description}"
+                  "uk": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>функції</a> зазначено, що </span> потрібен дозвіл для доступу<br/>{_embedding_feature:access:description}",
+                  "zh_Hant": "<span class='subtle'> <a href='#{_embedding_feature:id}'>強調</a>包含 </span> 需要獲得核准才能進入的圖徵<br/>{_embedding_feature:access:description}",
+                  "ko": "<span class='subtle'>이 <a href='#{_embedding_feature:id}'>포함된 요소</a>에 따르면,</span>접근을 위한 허가가 필요합니다<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -191,7 +198,9 @@
                   "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze zákazníkům<br/>{_embedding_feature:access:description}",
                   "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que ho conté</a> indica que</span> sols és accessible per als clients<br/>{_embedding_feature:access:description}",
                   "pl": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że jest on</span> dostępny tylko dla jego klientów<br/>{_embedding_feature:access:description}",
-                  "uk": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>що містить об'єкт</a> зазначено, що вона</span> доступна лише клієнтам<br/>{_embedding_feature:access:description}"
+                  "uk": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>що містить об'єкт</a> зазначено, що вона</span> доступна лише клієнтам<br/>{_embedding_feature:access:description}",
+                  "zh_Hant": "<span class='subtle'><a href='#{_embedding_feature:id}'>強調</a>包含</span>只有顧客才能進入的圖徵<br/>{_embedding_feature:access:description}",
+                  "ko": "<span class='subtle'>아<a href='#{_embedding_feature:id}'>포함된 요소</a>에 따르면, 이는</span>오직 고객만 접근 가능합니다.<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -207,7 +216,9 @@
                   "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze členům klubu<br/>{_embedding_feature:access:description}",
                   "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que ho conté</a> indica que</span> sols és accessible per als socis del club<br/>{_embedding_feature:access:description}",
                   "pl": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że jest on</span> dostępny tylko dla członków klubu<br/>{_embedding_feature:access:description}",
-                  "uk": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>що містить функцію</a> зазначено, що вона</span> доступна лише для членів клубу<br/>{_embedding_feature:access:description}"
+                  "uk": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>що містить функцію</a> зазначено, що вона</span> доступна лише для членів клубу<br/>{_embedding_feature:access:description}",
+                  "zh_Hant": "<span class='subtle'><a href='#{_embedding_feature:id}'>強調</a>包含</span>只有會員才能進入的圖徵<br/>{_embedding_feature:access:description}",
+                  "ko": "<span class='subtle'>이<a href='#{_embedding_feature:id}'>포함된 요소</a>에 따르면, 이는 </span> 클럽 회원만 접근 가능합니다.<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -230,7 +241,9 @@
               "da": "Hvem kan få adgang her?",
               "cs": "Kdo sem má přístup?",
               "pl": "Kto ma tutaj dostęp?",
-              "uk": "Хто може сюди потрапити?"
+              "uk": "Хто може сюди потрапити?",
+              "zh_Hant": "誰能進入這裡？",
+              "ko": "누가 이곳에 접근 가능합니까?"
             },
             "mappings": [
               {
@@ -247,7 +260,9 @@
                   "cs": "Veřejně přístupné komukoli",
                   "ca": "Accessible públicament a qualsevol",
                   "pl": "Publicznie dostępne dla każdego",
-                  "uk": "Загальнодоступний для всіх"
+                  "uk": "Загальнодоступний для всіх",
+                  "zh_Hant": "開放給所有人",
+                  "ko": "누구나 접근 가능합니다"
                 }
               },
               {
@@ -263,7 +278,9 @@
                   "ca": "Necesites un permís per a accedir ací",
                   "cs": "K přístupu je potřeba povolení",
                   "pl": "Potrzebujesz pozwolenia, żeby tu wejść",
-                  "uk": "Для доступу сюди потрібен дозвіл"
+                  "uk": "Для доступу сюди потрібен дозвіл",
+                  "zh_Hant": "你需要獲得核准才能進入這裡",
+                  "ko": "이곳에 접근하기 위한 허가가 필요합니다"
                 }
               },
               {
@@ -281,7 +298,9 @@
                   "pa_PK": "صرف گاہک",
                   "cs": "Pouze zákazníci",
                   "pl": "Tylko klienci",
-                  "uk": "Тільки клієнти"
+                  "uk": "Тільки клієнти",
+                  "zh_Hant": "只有顧客",
+                  "ko": "오직 고객만"
                 }
               },
               {
@@ -300,7 +319,9 @@
                   "pa_PK": "صرف کلب دے میمبر",
                   "cs": "Pouze členové klubu",
                   "pl": "Tylko członkowie klubu",
-                  "uk": "Тільки члени клубу"
+                  "uk": "Тільки члени клубу",
+                  "zh_Hant": "只有會員",
+                  "ko": "오직 클럽 회원만"
                 }
               },
               {
@@ -359,7 +380,10 @@
               "pl": "Czy ten warsztat szewski naprawia buty wspinaczkowe?",
               "da": "Reparerer denne butik klatresko?",
               "it": "Questo negozio ripara scarpe da arrampicata?",
-              "uk": "Чи ремонтує ця майстерня альпіністське взуття?"
+              "uk": "Чи ремонтує ця майстерня альпіністське взуття?",
+              "nl": "Repareert deze schoenwinkel bergschoenen?",
+              "zh_Hant": "這家店能夠修理登山鞋嗎？",
+              "ko": "이 신발 수리점에서는 클라이밍 신발을 수리합니까?"
             },
             "mappings": [
               {
@@ -374,7 +398,10 @@
                   "pl": "Ten warsztat naprawia buty wspinaczkowe",
                   "da": "Denne butik reparerer klatresko",
                   "it": "Questo negozio ripara scarpe da arrampicata",
-                  "uk": "У цій майстерні ремонтують альпіністське взуття"
+                  "uk": "У цій майстерні ремонтують альпіністське взуття",
+                  "nl": "Deze winkel repareert bergschoenen",
+                  "zh_Hant": "這家店能夠修理登山鞋",
+                  "ko": "이 상점은 클라이밍 신발을 수리합니다"
                 }
               },
               {
@@ -389,7 +416,10 @@
                   "pl": "Ten warsztat nie naprawia butów wspinaczkowych",
                   "da": "Denne butik reparerer ikke klatresko",
                   "it": "Questo negozio non ripara scarpe da arrampicata",
-                  "uk": "Цей магазин не займається ремонтом альпіністського взуття"
+                  "uk": "Цей магазин не займається ремонтом альпіністського взуття",
+                  "nl": "Deze winkel repareert geen bergschoenen",
+                  "zh_Hant": "這家店無法修理登山鞋",
+                  "ko": "이 상점은 클라이밍 신발을 수리하지 않습니다"
                 }
               }
             ]
@@ -417,14 +447,17 @@
             "question": {
               "en": "Does this shoe repair shop also repair climbing shoes?",
               "de": "Repariert dieses Schuhgeschäft auch Kletterschuhe?",
-              "fr": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?",
+              "fr": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?",
               "es": "¿Esta zapatería también repara zapatillas de escalada?",
               "ca": "Aquesta botiga de reparació de calçat també repara sabates d'escalada?",
               "cs": "Opravuje tato opravna obuvy také lezeckou obuv?",
               "pl": "Czy ten warsztat obuwniczy naprawia również buty wspinaczkowe?",
               "da": "Reparerer denne skomager klatresko?",
               "it": "Questo negozio ripara scarpe da arrampicata?",
-              "uk": "Чи ремонтує ця майстерня також альпіністське взуття?"
+              "uk": "Чи ремонтує ця майстерня також альпіністське взуття?",
+              "nl": "Repareert deze schoenmaker ook bergschoenen?",
+              "zh_Hant": "這家店也會修理登山鞋嗎？",
+              "ko": "이 신발 수리점에서는 클라이밍 신발도 수리하나요?"
             },
             "mappings": [
               {
@@ -439,7 +472,10 @@
                   "pl": "Ten warsztat naprawia buty wspinaczkowe",
                   "da": "Denne butik reparerer klatresko",
                   "it": "Questo negozio ripara scarpe da arrampicata",
-                  "uk": "У цій майстерні ремонтують альпіністське взуття"
+                  "uk": "У цій майстерні ремонтують альпіністське взуття",
+                  "nl": "Deze winkel repareert bergschoenen",
+                  "zh_Hant": "這家店能夠修理登山鞋",
+                  "ko": "이 상점은 클라이밍 신발을 수리합니다"
                 }
               },
               {
@@ -454,7 +490,10 @@
                   "pl": "Ten warsztat nie naprawia butów wspinaczkowych",
                   "da": "Denne butik reparerer ikke klatresko",
                   "it": "Questo negozio non ripara scarpe da arrampicata",
-                  "uk": "Цей магазин не займається ремонтом альпіністського взуття"
+                  "uk": "Цей магазин не займається ремонтом альпіністського взуття",
+                  "nl": "Deze winkel repareert geen bergschoenen",
+                  "zh_Hant": "這家店無法修理登山鞋",
+                  "ko": "이 상점은 클라이밍 신발을 수리하지 않습니다"
                 }
               }
             ]
@@ -476,7 +515,10 @@
               "da": "en skomager",
               "it": "un calzolaio",
               "uk": "майстерня по ремонту взуття",
-              "hu": "egy cipészműhely"
+              "hu": "egy cipészműhely",
+              "nl": "een schoenmaker",
+              "zh_Hant": "修鞋店",
+              "ko": "신발 수리점"
             }
           }
         ]

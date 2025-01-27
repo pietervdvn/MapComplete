@@ -244,7 +244,10 @@
               "{{key}}~*",
               "{{key}}!=0"
             ]
-          }
+          },
+          "labels": [
+            "plugs-amount"
+          ]
         },
         {
           "id": "voltage-{{id}}",
@@ -266,7 +269,7 @@
             "type": "pfloat"
           },
           "mappings": {
-            "if": "{{key}}:voltage={{commonVoltages}} V",
+            "if": "{{key}}:voltage={{commonVoltages}}",
             "then": {
               "en": "{{description}} outputs {{commonVoltages}} volt",
               "nl": "{{description}} heeft een spanning van {{commonVoltages}} volt",
@@ -299,7 +302,7 @@
             "type": "pfloat"
           },
           "mappings": {
-            "if": "{{key}}:current={{commonCurrent}} A",
+            "if": "{{key}}:current={{commonCurrent}}",
             "then": {
               "en": "{{description}} outputs at most {{commonCurrent}} A",
               "nl": "{{description}} levert een stroom van maximaal {{commonCurrent}} A"
@@ -332,8 +335,8 @@
           "mappings": {
             "if": "{{key}}:output={{commonOutput}}",
             "then": {
-              "en": "{{description}} outputs at most {{commonOutput}} A",
-              "nl": "{{description}} levert een vermogen van maximaal {{commonOutput}} A"
+              "en": "{{description}} outputs at most {{commonOutput}} kW",
+              "nl": "{{description}} levert een vermogen van maximaal {{commonOutput}} kW"
             }
           },
           "condition": {
@@ -559,34 +562,15 @@
     },
     {
       "id": "maxstay",
-      "question": {
-        "en": "What is the maximum amount of time one is allowed to stay here?",
-        "nl": "Hoelang mag een voertuig hier blijven staan?"
-      },
-      "freeform": {
-        "key": "maxstay",
-        "type": "pfloat"
-      },
-      "render": {
-        "en": "One can stay at most <b>{canonical(maxstay)}</b>",
-        "nl": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>"
-      },
-      "mappings": [
-        {
-          "if": "maxstay=unlimited",
-          "then": {
-            "en": "No timelimit on leaving your vehicle here",
-            "nl": "Geen maximum parkeertijd"
-          }
+      "builtin": "maxstay",
+      "override": {
+        "condition": {
+          "or": [
+            "motorcar=yes",
+            "hgv=yes",
+            "bus=yes"
+          ]
         }
-      ],
-      "condition": {
-        "or": [
-          "maxstay~*",
-          "motorcar=yes",
-          "hgv=yes",
-          "bus=yes"
-        ]
       }
     },
     {

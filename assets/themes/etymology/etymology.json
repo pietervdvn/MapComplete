@@ -2,20 +2,21 @@
   "id": "etymology",
   "title": {
     "en": "Etymology - what is a place named after?",
-    "nl": "Etymologie - waarnaar is een straat vernoemd?",
+    "nl": "Etymologie - waarnaar is een plaats naar vernoemd?",
     "de": "Etymologie - Wonach ist ein Ort benannt?",
     "it": "Etimologia - da cosa prende nome un luogo?",
     "ru": "Открытая этимологическая карта",
     "zh_Hant": "開放詞源地圖",
     "hu": "Etimológiai térkép – miről kapta a nevét ez a hely?",
-    "fr": "Étymologie - d'où les rues tirent leur nom ?",
+    "fr": "Étymologie - d'où les lieux tirent leur nom ?",
     "ca": "Etimologia: com rep el nom un lloc?",
     "da": "Etymology - hvad er et sted opkaldt efter?",
     "nb_NO": "Åpent etymologikart",
     "cs": "Etymologie - podle čeho je místo pojmenováno?",
     "es": "Etimología - ¿De qué proviene el nombre de un lugar?",
     "pl": "Etymologia - od czego pochodzi nazwa ulicy?",
-    "uk": "Етимологія — на честь чого названо місце?"
+    "uk": "Етимологія — на честь чого названо місце?",
+    "ko": "어원- 이 장소는 무슨 기준으로 이름이 붙었나요?"
   },
   "description": {
     "en": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
@@ -30,7 +31,8 @@
     "es": "En este mapa, puedes ver el origen del nombre de un objeto. Las calles, edificios, etc., provienen de OpenStreetMap, que se ha vinculado con Wikidata. En la ventana emergente, verás el artículo de Wikipedia (si existe) o un cuadro de Wikidata sobre el origen del nombre del objeto. Si el objeto en sí tiene una página de Wikipedia, también se mostrará.<br/><br/><b>¡También puedes ayudar a contribuir!</b>Amplía lo suficiente y <i>todas</i> las calles aparecerán. Puedes hacer clic en una y aparecerá un cuadro de búsqueda de Wikidata. Con unos pocos clics, puedes agregar un enlace de etimología. Ten en cuenta que necesitas una cuenta gratuita de OpenStreetMap para hacer esto.",
     "ca": "En aquest mapa, podeu veure el nom d'un objecte. Els carrers, edificis, ... provenen d'OpenStreetMap que tenen un enllaça a Wikidata. A la finestra emergent, veuràs l'article de la Viquipèdia (si existeix) o un quadre de wikidata amb el nom de l'objecte. Si l'objecte en si té una pàgina de viquipèdia, també es mostrarà.<br/><br/><b>També pots ajudar a contribuir!</b>Amplia prou i <i>tots</i> els carrers apareixerà. Podeu fer clic en un i apareixerà un quadre de cerca de Wikidata. Amb uns quants clics, podeu afegir un enllaç d'etimologia. Tingueu en compte que necessiteu un compte d'OpenStreetMap gratuït per fer-ho.",
     "pl": "Na tej mapie możesz zobaczyć, od czego pochodzi nazwa obiektu. Ulice, budynki,... pochodzą z OpenStreetMap, który został powiązany z Wikidanymi. W wyskakującym okienku zobaczysz artykuł w Wikipedii (jeśli istnieje) lub pole wikidanych zawierające nazwę obiektu. Jeśli sam obiekt ma stronę w Wikipedii, ona również zostanie wyświetlona.<br/><br/><b>Ty też możesz pomóc!</b>Powiększ wystarczająco mapę i <i>wszystkie</i> ulice się pojawią. Możesz kliknąć jedną, a pojawi się okno wyszukiwania Wikidanych. Za pomocą kilku kliknięć możesz dodać odnośnik etymologiczny. Pamiętaj, że potrzebujesz do tego darmowego konta OpenStreetMap.",
-    "uk": "На цій мапі можна побачити, на честь чого або кого названо обʼєкт. Вулиці, будинки, …взяті з OpenStreetMap, пов’язані з Wikidata. У спливаючому вікні ви побачите статтю Вікіпедії (якщо вона існує) або вікно вікіданих, на честь кого або чого об’єкт отримав свою назву. Якщо сам об’єкт має сторінку у Вікіпедії, це також буде показано.<br/><br/><b>Ви також можете допомогти!</b>Наблизьтесь та <i>всі</i> вулиці зʼявляться. Ви можете клацнути одну з них, і з’явиться вікно пошуку Вікіданих. За допомогою кількох клацань ви можете додати етимологічне посилання. Зауважте, що для цього вам потрібен обліковий запис OpenStreetMap."
+    "uk": "На цій мапі можна побачити, на честь чого або кого названо обʼєкт. Вулиці, будинки, …взяті з OpenStreetMap, пов’язані з Wikidata. У спливаючому вікні ви побачите статтю Вікіпедії (якщо вона існує) або вікно вікіданих, на честь кого або чого об’єкт отримав свою назву. Якщо сам об’єкт має сторінку у Вікіпедії, це також буде показано.<br/><br/><b>Ви також можете допомогти!</b>Наблизьтесь та <i>всі</i> вулиці зʼявляться. Ви можете клацнути одну з них, і з’явиться вікно пошуку Вікіданих. За допомогою кількох клацань ви можете додати етимологічне посилання. Зауважте, що для цього вам потрібен обліковий запис OpenStreetMap.",
+    "ko": "이 지도에서는 거리, 건물 등이 어떤 기준으로 이름이 붙여졌는지 확인할 수 있습니다. 데이터는 OpenStreetMap 에서 가져왔으며, Wikidata와 연결되어 있습니다. 팝업 창에서는 Wikipedia 문서(존재하는 경우) 또는 객체 이름의 유래와 관련된 Wikidata 정보가 표시됩니다. 장소 자체에 Wikipedia 페이지가 있다면 해당 페이지도 표시됩니다.<br/><br/><b>여러분도 기여할 수 있습니다</b> 충분히 확대한 후<i>모든</i>거리가 표시 됩니다. 거리를 클릭하면 Wikidata 검색 상자가 나타나며, 몇 번의 클릭으로 어원 링크를 추가할 수 있습니다. 이 작업을 위해서는 무료 OpenStreetMap 계정이 필요합니다."
   },
   "shortDescription": {
     "en": "What is the origin of a toponym?",
@@ -46,7 +48,8 @@
     "cs": "Jaký je původ toponyma?",
     "pl": "Jakie jest pochodzenie toponimów?",
     "ru": "Каково происхождение топонима?",
-    "uk": "Від чого походить назва топоніма?"
+    "uk": "Від чого походить назва топоніма?",
+    "ko": "지명의 기원은 무엇입니까?"
   },
   "icon": "./assets/layers/etymology/logo.svg",
   "hideFromOverview": false,
@@ -70,7 +73,8 @@
           "nb_NO": "Gater uten etymologi-info",
           "cs": "Ulice bez etymologických informací",
           "pl": "Ulice bez informacji o etymologii",
-          "uk": "Вулиці без етимологічної інформації"
+          "uk": "Вулиці без етимологічної інформації",
+          "ko": "어원 정보가 없는 거리"
         },
         "minzoom": 15,
         "isCounted": false,
@@ -103,7 +107,8 @@
           "nb_NO": "Parker og skoger uten etymologi-info",
           "cs": "Parky a lesy bez etymologických informací",
           "pl": "Parki i lasy bez informacji o etymologii",
-          "uk": "Парки та ліси без етимологічної інформації"
+          "uk": "Парки та ліси без етимологічної інформації",
+          "ko": "어원 정보가 없는 공원과 거리"
         },
         "minzoom": 18,
         "isCounted": false,
@@ -137,7 +142,8 @@
           "nb_NO": "Utdannelsesinstitusjoner uten etymologi-info",
           "cs": "Vzdělávací instituce bez etymologických informací",
           "pl": "Instytucje edukacyjne bez informacji o etymologii",
-          "uk": "Навчальні заклади без етимологічної інформації"
+          "uk": "Навчальні заклади без етимологічної інформації",
+          "ko": "어원 정보가 없는 교육 연구 시설"
         },
         "minzoom": 18,
         "isCounted": false,
@@ -174,7 +180,8 @@
           "nb_NO": "Kulturelle steder uten etymologi-info",
           "cs": "Kulturní místa bez etymologických informací",
           "pl": "Miejsca kulturowe bez informacji o etymologii",
-          "uk": "Культурні місця без етимологічної інформації"
+          "uk": "Культурні місця без етимологічної інформації",
+          "ko": "어원 정보가 없는 문화 공간"
         },
         "minzoom": 18,
         "isCounted": false,
@@ -211,7 +218,8 @@
           "nb_NO": "Turiststeder uten etymologi-info",
           "cs": "Turistická místa bez etymologických informací",
           "pl": "Miejsca turystyczne bez informacji o etymologii",
-          "uk": "Туристичні місця без інформації про етимологію"
+          "uk": "Туристичні місця без інформації про етимологію",
+          "ko": "어원 정보가 없는 관광 시설"
         },
         "minzoom": 18,
         "isCounted": false,
@@ -247,7 +255,8 @@
           "cs": "Zdravotní a sociální místa bez etymologických informací",
           "es": "Lugares de salud y sociales sin información de etimología",
           "pl": "Miejsca związane ze zdrowiem i społeczeństwem bez informacji o etymologii",
-          "uk": "Медичні та соціальні заклади без етимологічної інформації"
+          "uk": "Медичні та соціальні заклади без етимологічної інформації",
+          "ko": "어원 정보가 없는 건강과 사회 복지 공간"
         },
         "minzoom": 18,
         "isCounted": false,
@@ -282,7 +291,8 @@
           "nb_NO": "Sportssteder uten etymologi-info",
           "cs": "Sportovní místa bez etymologických informací",
           "pl": "Miejsca sportowe bez informacji o etymologii",
-          "uk": "Спортивні місця без етимологічної інформації"
+          "uk": "Спортивні місця без етимологічної інформації",
+          "ko": "어원 정보가 없는 운동 공간"
         },
         "minzoom": 18,
         "isCounted": false,
@@ -295,6 +305,34 @@
                   "leisure=sports_centre",
                   "leisure=stadium",
                   "leisure=swimming_pool"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "etymology",
+      "override": {
+        "id": "parks_without_etymology",
+        "=name": {
+          "en": "Parks without etymology information",
+          "de": "Parks ohne etymologische Angaben",
+          "cs": "Parky bez etymologických informací",
+          "ko": "어원 정보가 없는 공원"
+        },
+        "minzoom": 18,
+        "isCounted": false,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              {
+                "or": [
+                  "leisure=park",
+                  "landuse=village_green",
+                  "landuse=recreation_ground"
                 ]
               }
             ]

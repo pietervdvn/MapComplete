@@ -1,6 +1,6 @@
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import { Utils } from "../Utils"
-import known_layers from "../assets/generated/known_layers.json"
+import * as known_layers from "../assets/generated/known_layers.json"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 
 export class AllSharedLayers {
@@ -8,8 +8,10 @@ export class AllSharedLayers {
     public static getSharedLayersConfigs(): Map<string, LayerConfigJson> {
         const sharedLayers = new Map<string, LayerConfigJson>()
         for (const layer of known_layers["layers"]) {
-            // @ts-ignore
-            sharedLayers.set(layer.id, layer)
+            if (layer.id === undefined) {
+                continue
+            }
+            sharedLayers.set(layer.id, <any>layer)
         }
 
         return sharedLayers

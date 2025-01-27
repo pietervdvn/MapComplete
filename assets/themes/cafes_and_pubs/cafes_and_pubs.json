@@ -11,7 +11,7 @@
     "ru": "Кафе и пабы",
     "hu": "Kávézók és kocsmák",
     "ca": "Cafés i bars",
-    "es": "Cafés y pubs",
+    "es": "Cafeterías y bares",
     "fr": "Cafés et pubs",
     "da": "Caféer og pubber",
     "pa_PK": "کیفے یا پب",
@@ -19,15 +19,16 @@
     "eu": "Kafetegiak eta pubak",
     "pl": "Kawiarnie i puby",
     "zh_Hans": "咖啡馆和酒吧",
-    "uk": "Кафе та паби"
+    "uk": "Кафе та паби",
+    "ko": "카페 그리고 펍"
   },
   "description": {
     "en": "Coffeehouses, pubs and bars",
-    "nl": "Cafés, kroegen en drinkgelegenheden",
+    "nl": "Koffiehuizen, Cafés, en drinkgelegenheden",
     "de": "Cafés, Kneipen und Bars",
     "ca": "Cafeteries, bars i pubs",
     "es": "Cafeterías, pubs y bares",
-    "fr": "Bars et pubs",
+    "fr": "Cafés, pubs et bars",
     "da": "Pubber og barer",
     "nb_NO": "Kneiper og barer",
     "pa_PK": "پب (بار)",
@@ -37,7 +38,8 @@
     "eu": "Kafetegiak, pubak eta tabernak",
     "pl": "Kawiarnie, puby i bary",
     "zh_Hans": "咖啡馆、酒吧和酒吧",
-    "uk": "Кав'ярні, паби та бари"
+    "uk": "Кав'ярні, паби та бари",
+    "ko": "커피 전문점, 펍 그리고 바"
   },
   "icon": "./assets/layers/cafe_pub/pub.svg",
   "layers": [

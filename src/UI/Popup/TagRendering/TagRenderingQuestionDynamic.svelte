@@ -18,6 +18,7 @@
   import { twJoin } from "tailwind-merge"
   import Tr from "../../Base/Tr.svelte"
   import { TrashIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import Loading from "../../Base/Loading.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -31,14 +32,18 @@
   let dynamicConfig = TagRenderingConfigUtils.withNameSuggestionIndex(config, tags, selectedElement)
 </script>
 
-<TagRenderingQuestion
-  {tags}
-  config={$dynamicConfig}
-  {state}
-  {selectedElement}
-  {layer}
-  {selectedTags}
-  {extraTags}
->
-  <slot name="cancel" slot="cancel" />
-</TagRenderingQuestion>
+{#if $dynamicConfig}
+  <TagRenderingQuestion
+    {tags}
+    config={$dynamicConfig}
+    {state}
+    {selectedElement}
+    {layer}
+    {selectedTags}
+    {extraTags}
+  >
+    <slot name="cancel" slot="cancel" />
+  </TagRenderingQuestion>
+{:else}
+  <Loading />
+{/if}

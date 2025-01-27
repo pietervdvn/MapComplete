@@ -12,6 +12,7 @@
   import Icon from "../Map/Icon.svelte"
   import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte"
   import ArrowUp from "@babeard/svelte-heroicons/mini/ArrowUp"
+  import DefaultIcon from "../Map/DefaultIcon.svelte"
 
   export let entry: GeocodeResult
   export let state: SpecialVisualizationState
@@ -62,9 +63,7 @@
   <div class="flex w-full items-center gap-y-2 p-2">
     {#if layer}
       <div class="h-6">
-        <ToSvelte
-          construct={() => layer.defaultIcon(entry.feature.properties)?.SetClass("w-6 h-6")}
-        />
+        <DefaultIcon {layer} properties={entry.feature.properties} clss="w-6 h-6" />
       </div>
     {:else if entry.category}
       <Icon

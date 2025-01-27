@@ -4,13 +4,15 @@
     "en": "BBQ",
     "de": "Grillstelle",
     "cs": "BBQ",
-    "es": "Barbacoa"
+    "es": "Barbacoa",
+    "nl": "Barbecue"
   },
   "description": {
     "de": "Ein ortsfest installierter Grill, typischerweise öffentlich zugänglich.",
     "en": "A permanently installed barbecue, typically accessible to the public.",
     "cs": "Trvale instalovaný gril, obvykle přístupný veřejnosti.",
-    "es": "Una barbacoa instalada permanentemente, normalmente accesible al público."
+    "es": "Una barbacoa instalada permanentemente, normalmente accesible al público.",
+    "nl": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen."
   },
   "source": {
     "osmTags": "amenity=bbq"
@@ -21,7 +23,8 @@
       "en": "BBQ",
       "de": "Grillstelle",
       "cs": "BBQ",
-      "es": "Barbacoa"
+      "es": "Barbacoa",
+      "nl": "BBQ"
     }
   },
   "pointRendering": [
@@ -49,13 +52,15 @@
         "en": "BBQ",
         "de": "Grillstelle",
         "cs": "BBQ",
-        "es": "Barbacoa"
+        "es": "Barbacoa",
+        "nl": "Barbecue"
       },
       "description": {
         "de": "Ein ortsfest installierter Grill, typischerweise öffentlich zugänglich.",
         "en": "A permanently installed barbecue, typically accessible to the public.",
         "cs": "Trvale instalovaný gril, obvykle přístupný veřejnosti.",
-        "es": "Una barbacoa instalada permanentemente, normalmente accesible al público."
+        "es": "Una barbacoa instalada permanentemente, normalmente accesible al público.",
+        "nl": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen."
       },
       "tags": [
         "amenity=bbq"
@@ -67,64 +72,71 @@
     {
       "id": "access",
       "question": {
-        "en": "What is the permitted access?",
-        "de": "Was ist der erlaubte Zugang?",
+        "en": "Who is allowed to use this barbecue?",
+        "de": "Wer darf diesen Grill benutzen?",
         "cs": "Jaký přístup je povolen?",
-        "es": "¿Cuál es el acceso permitido?"
+        "es": "¿Cuál es el acceso permitido?",
+        "nl": "Wie mag deze barbecue gebruiken?"
       },
       "mappings": [
         {
           "if": "access=yes",
           "then": {
-            "de": "Öffentlich",
-            "en": "Public",
+            "de": "Dieses Grillgerät kann von jedem benutzt werden",
+            "en": "This barbecue can be used by anyone",
             "cs": "Veřejné",
-            "es": "Público"
+            "es": "Público",
+            "nl": "Deze barbecue mag door iedereen worden gebruikt"
           }
         },
         {
           "if": "access=no",
           "then": {
-            "de": "Kein Zugang",
-            "en": "No access",
+            "de": "Dieses Grillgerät darf von niemandem benutzt werden",
+            "en": "This barbecue can't be used by anyone",
             "cs": "Zákaz vstupu",
-            "es": "Sin acceso"
+            "es": "Sin acceso",
+            "nl": "Deze barbecue mag door niemand worden gebruikt"
           }
         },
         {
           "if": "access=private",
           "then": {
-            "de": "Privat",
-            "en": "Private",
+            "de": "Dieses Grillgerät ist privat",
+            "en": "This barbecue is private",
             "cs": "Soukromé",
-            "es": "Privado"
+            "es": "Privado",
+            "nl": "Deze barbecue is privé"
           }
         },
         {
           "if": "access=permissive",
           "then": {
-            "de": "Zugang bis auf Widerruf",
-            "en": "Access until revoked",
+            "de": "Dieses Barbecue kann von jedem benutzt werden, aber der Besitzer kann den Zugang jederzeit widerrufen",
+            "en": "This barbecue can be used by anyone, but the owner can revoke access at any time",
             "cs": "Přístup až do odvolání",
-            "es": "Acceso hasta que se revoque"
+            "es": "Acceso hasta que se revoque",
+            "nl": "Deze barbecue mag door iedereen worden gebruikt, maar de eigenaar kan de toegang op elk moment ontzeggen"
           }
         },
         {
           "if": "access=customers",
           "then": {
-            "de": "Zugang nur für Kunden",
-            "en": "Access only for customers",
+            "de": "Dieser Grill kann nur von Kunden genutzt werden",
+            "en": "This barbecue can only be used by customers",
             "cs": "Přístup pouze pro zákazníky",
-            "es": "Acceso solo para clientes"
+            "es": "Acceso solo para clientes",
+            "nl": "Deze barbecue mag alleen worden gebruikt door klanten"
           }
         },
         {
           "if": "access=permit",
           "then": {
-            "de": "Zugang nur für Berechtigte",
-            "en": "Access only for authorized persons",
+            "de": "Dieses Barbecue darf nur von autorisierten Personen benutzt werden",
+            "en": "This barbecue can only be used by authorized persons",
             "cs": "Přístup pouze pro oprávněné osoby",
-            "es": "Acceso solo para personas autorizadas"
+            "es": "Acceso solo para personas autorizadas",
+            "nl": "Deze barbecue mag alleen worden gebruikt door personen met toestemming"
           }
         }
       ]
@@ -132,28 +144,31 @@
     {
       "id": "covered",
       "question": {
-        "en": "Is the grill covered?",
+        "en": "Is this barbecue covered?",
         "de": "Ist die Grillstelle überdacht?",
         "cs": "Je gril zakrytý?",
-        "es": "¿Está cubierta la parrilla?"
+        "es": "¿Está cubierta la parrilla?",
+        "nl": "Is deze barbecue overdekt?"
       },
       "mappings": [
         {
           "if": "covered=no",
           "then": {
             "de": "Die Grillstelle ist nicht überdacht",
-            "en": "The grill is not covered",
+            "en": "This barbecue is not covered",
             "cs": "Gril není zakrytý",
-            "es": "La parrilla no está cubierta"
+            "es": "La parrilla no está cubierta",
+            "nl": "Deze barbecue is niet overdekt"
           }
         },
         {
           "if": "covered=yes",
           "then": {
             "de": "Die Grillstelle ist überdacht",
-            "en": "The grill is covered",
+            "en": "This barbecue is covered",
             "cs": "Gril je zakrytý",
-            "es": "La parrilla está cubierta"
+            "es": "La parrilla está cubierta",
+            "nl": "Deze barbecue is overdekt"
           }
         }
       ]
@@ -161,46 +176,51 @@
     {
       "id": "fuel",
       "question": {
-        "en": "How ist the grill fueled?",
-        "de": "Womit wird der Grill befeuert?",
+        "en": "How is this barbecue fuelled?",
+        "de": "Womit wird dieser Grill angeheizt?",
         "cs": "Jak je gril napájen?",
-        "es": "¿Cómo se alimenta la parrilla?"
+        "es": "¿Cómo se alimenta la parrilla?",
+        "nl": "Wat voor brandstof gebruikt deze barbecue?"
       },
       "mappings": [
         {
           "if": "fuel=wood",
           "then": {
-            "de": "Holz",
-            "en": "Wood",
+            "de": "Dieser Grill wird mit Holz betrieben",
+            "en": "This barbecue uses wood as fuel",
             "cs": "Dřevo",
-            "es": "Madera"
+            "es": "Madera",
+            "nl": "Deze barbecue gebruikt hout als brandstof"
           }
         },
         {
           "if": "fuel=charcoal",
           "then": {
-            "de": "Kohle",
-            "en": "Charcoal",
+            "de": "Dieser Grill wird mit Kohle betrieben",
+            "en": "This barbecue uses charcoal as fuel",
             "cs": "Dřevěné uhlí",
-            "es": "Carbón"
+            "es": "Carbón",
+            "nl": "Deze barbecue gebruikt houtskool als brandstof"
           }
         },
         {
           "if": "fuel=electric",
           "then": {
-            "de": "Elektronisch",
-            "en": "Electric",
+            "de": "Dieser Grill wird mit Strom betrieben",
+            "en": "This barbecue is powered by electricity",
             "cs": "Elektrický",
-            "es": "Eléctrica"
+            "es": "Eléctrica",
+            "nl": "Deze barbecue werkt op elektriciteit"
           }
         },
         {
           "if": "fuel=gas",
           "then": {
-            "de": "Gas",
-            "en": "Gas",
+            "de": "Dieser Grill wird mit Gas betrieben",
+            "en": "This barbecue uses gas as fuel",
             "cs": "Plynový",
-            "es": "Gas"
+            "es": "Gas",
+            "nl": "Deze barbecue gebruikt gas als brandstof"
           }
         }
       ]

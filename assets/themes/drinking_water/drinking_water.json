@@ -17,7 +17,8 @@
     "pa_PK": "پیݨ والا پاݨی",
     "cs": "Pitná voda",
     "pl": "Woda pitna",
-    "uk": "Питна вода"
+    "uk": "Питна вода",
+    "ko": "음용수"
   },
   "description": {
     "en": "On this map, publicly accessible drinking water spots are shown and can be easily added",
@@ -35,7 +36,8 @@
     "da": "På dette kort er offentligt tilgængelige drikkevandsteder vist og kan nemt tilføjes",
     "cs": "Na této mapě jsou zobrazena veřejně přístupná místa s pitnou vodou, která lze snadno přidat",
     "pl": "Na tej mapie znajdują się dostępne publicznie źródła pitnej wody i mogą łatwo być dodane",
-    "uk": "На цій мапі показуються і можуть бути легко додані загальнодоступні місця з питною водою"
+    "uk": "На цій мапі показуються і можуть бути легко додані загальнодоступні місця з питною водою",
+    "ko": "이 지도에서는 공공 음용수 제공 장소가 표시 되며, 쉽게 추가 가능합니다"
   },
   "icon": "./assets/themes/drinking_water/logo.svg",
   "startLat": 50.8465573,

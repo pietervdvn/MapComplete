@@ -1,9 +1,7 @@
-import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
+import ThemeConfig, { MinimalThemeInformation } from "../Models/ThemeConfig/ThemeConfig"
 import { QueryParameters } from "./Web/QueryParameters"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
 import { FixedUiElement } from "../UI/Base/FixedUiElement"
 import { Utils } from "../Utils"
-import LZString from "lz-string"
 import { FixLegacyTheme } from "../Models/ThemeConfig/Conversion/LegacyJsonConvert"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 import known_layers from "../assets/generated/known_layers.json"
@@ -15,10 +13,10 @@ import questions from "../assets/generated/layers/questions.json"
 import { DoesImageExist, PrevalidateTheme } from "../Models/ThemeConfig/Conversion/Validation"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
-import Hash from "./Web/Hash"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import { ThemeConfigJson } from "../Models/ThemeConfig/Json/ThemeConfigJson"
 import { ValidateThemeAndLayers } from "../Models/ThemeConfig/Conversion/ValidateThemeAndLayers"
+import * as theme_overview from "../assets/generated/theme_overview.json"
 
 export default class DetermineTheme {
     private static readonly _knownImages = new Set(Array.from(licenses).map((l) => l.path))
@@ -61,6 +59,21 @@ export default class DetermineTheme {
         return layoutConfig
     }
 
+    private static createConversionContext(): DesugaringContext {
+        const knownLayersDict = new Map<string, LayerConfigJson>()
+        for (const key in known_layers["layers"]) {
+            const layer = known_layers["layers"][key]
+            knownLayersDict.set(layer.id, <LayerConfigJson>layer)
+        }
+        const convertState: DesugaringContext = {
+            tagRenderings: DetermineTheme.getSharedTagRenderings(),
+            tagRenderingOrder: DetermineTheme.getSharedTagRenderingOrder(),
+            sharedLayers: knownLayersDict,
+            publicLayers: new Set<string>()
+        }
+        return convertState
+    }
+
     /**
      * Gets the correct layout for this website
      */
@@ -87,14 +100,15 @@ export default class DetermineTheme {
             "The layout to load into MapComplete"
         ).data
         const id = layoutId?.toLowerCase()
-        const layouts = AllKnownLayouts.allKnownLayouts
-        if (layouts.size() == 0) {
+        const themes: MinimalThemeInformation[] = theme_overview.themes
+        if (themes.length == 0) {
             throw "Build failed or running, no layouts are known at all"
         }
-        if (layouts.getConfig(id) === undefined) {
+        const themeInfo = themes.find((th) => th.id === id)
+        if (themeInfo === undefined) {
             const alternatives = Utils.sortedByLevenshteinDistance(
                 id,
-                Array.from(layouts.keys()),
+                themes.map((th) => th.id),
                 (i) => i
             ).slice(0, 3)
             const msg = `No builtin map theme with name ${layoutId} exists. Perhaps you meant one of ${alternatives.join(
@@ -102,7 +116,14 @@ export default class DetermineTheme {
             )}`
             throw msg
         }
-        return layouts.get(id)
+        // Actually fetch the theme
+
+        const config = await Utils.downloadJsonCached<ThemeConfigJson>(
+            "./assets/generated/themes/" + id + ".json",
+            1000 * 60 * 60 * 60
+        )
+        const withDefault = new PrepareTheme(this.createConversionContext()).convertStrict(config)
+        return new ThemeConfig(withDefault, true)
     }
 
     private static getSharedTagRenderings(): Map<string, QuestionableTagRenderingConfigJson> {
@@ -152,31 +173,18 @@ export default class DetermineTheme {
             json = {
                 id: json.id,
                 description: json.description,
-                descriptionTail: {
-                    en: "<div class='alert'>Layer only mode.</div> The loaded custom theme actually isn't a custom theme, but only contains a layer.",
-                },
                 icon,
                 title: json.name,
                 layers: [json],
             }
         }
 
-        const knownLayersDict = new Map<string, LayerConfigJson>()
-        for (const key in known_layers["layers"]) {
-            const layer = known_layers["layers"][key]
-            knownLayersDict.set(layer.id, <LayerConfigJson>layer)
-        }
-        const convertState: DesugaringContext = {
-            tagRenderings: DetermineTheme.getSharedTagRenderings(),
-            tagRenderingOrder: DetermineTheme.getSharedTagRenderingOrder(),
-            sharedLayers: knownLayersDict,
-            publicLayers: new Set<string>(),
-        }
         json = new FixLegacyTheme().convertStrict(json)
         const raw = json
 
         json = new FixImages(DetermineTheme._knownImages).convertStrict(json)
         json.enableNoteImports = json.enableNoteImports ?? false
+        const convertState = this.createConversionContext()
         json = new PrepareTheme(convertState).convertStrict(json)
         console.log("The layoutconfig is ", json)
 

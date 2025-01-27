@@ -1,6 +1,5 @@
 {
   "ca": "català",
-  "cs": "čeština",
   "da": "dansk",
   "de": "Deutsch",
   "en": "English",
@@ -15,6 +14,7 @@
   "id": "bahasa Indonesia",
   "it": "italiano",
   "ja": "日本語",
+  "ko": "한국어",
   "nb_NO": "bokmål",
   "nl": "Nederlands",
   "pl": "język polski",
@@ -24,6 +24,7 @@
   "sl": "slovenščina",
   "sv": "svenska",
   "uk": "українська мова",
+  "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ ⵜⴰⵎⵖⵔⵉⴱⵉⵜ",
   "zh_Hans": "简体中文",
   "zh_Hant": "繁體中文"
 }

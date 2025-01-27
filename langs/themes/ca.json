@@ -825,27 +825,14 @@
     "pets": {
         "description": "A aquest mapa, trobaràs diferents llocs interesants per a les teves mascotes: veterinaris, parcs per a gossos, botigues d'animals, restaurants amables amb gossos, ...",
         "layers": {
-            "1": {
+            "4": {
                 "override": {
                     "name": "Restaurants que accepten gossos"
                 }
             },
-            "2": {
-                "override": {
-                    "name": "Botigues amigues dels gossos",
-                    "title": {
-                        "render": "Botigues amigues dels gossos"
-                    }
-                }
-            },
             "6": {
                 "override": {
-                    "presets": {
-                        "0": {
-                            "description": "Una botiga on pots dur al gos gairebé a tot arreu",
-                            "title": "botiga amiga dels gossos"
-                        }
-                    }
+                    "name": "Botigues amigues dels gossos"
                 }
             }
         },

@@ -17,6 +17,9 @@ Available languages:
  - de
  - cs
  - es
+ - fr
+ - nl
+ - ko
 
 # Table of contents
 

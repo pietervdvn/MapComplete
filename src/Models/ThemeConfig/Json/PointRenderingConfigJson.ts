@@ -4,15 +4,24 @@ import { TagConfigJson } from "./TagConfigJson"
 export interface IconConfigJson {
     /**
      * question: What icon should be used?
+     *
+     * To reuse icons from a different layer of a library:
+     * - The library layer has, within tagRenderings one which will output the URL of the image (e.g. mappings: {"if": "shop=xyz", then: "./assets/icons/shop_xyz.png"})
+     * - Use "layer_id.tagrendering_id"
+     *
+     * Note that if you reuse icons from a different icon set, you'll probably want to use `override` to set a default rendering
+     *
+     *
      * types: <span class="text-lg font-bold">Use a different icon depending on the value of some attributes</span> ; icon
-     * suggestions: return Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))
+     * suggestions: return [ {"if":"value=nsi_brand.icon", "then": "Use icons for brand from the Name Suggestion Index"}, {"if":"value=nsi_operator.icon", "then": "Use icons for operator from the Name Suggestion Index"}, {"if":"value=id_presets.shop_rendering", "then": "Use shop preset icons from iD"}, ...Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))]
      */
     icon: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
     /**
      * question: What colour should the icon be?
-     * This will only work for the default icons such as `pin`,`circle`,...
-     * types: <span class="text-lg font-bold">Use a different color depending on the value of some attributes</span> ; color
      *
+     * This will only work for the default icons such as `pin`,`circle`,...
+     *
+     * types: <span class="text-lg font-bold">Use a different color depending on the value of some attributes</span> ; color
      */
     color?: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
 }
@@ -29,7 +38,7 @@ export default interface PointRenderingConfigJson {
     /**
      * question: At what location should this icon be shown?
      * multianswer: true
-     * suggestions: return [{if: "value=point",then: "Show an icon for point (node) objects"},{if: "value=centroid",then: "Show an icon for line or polygon (way) objects at their centroid location"}, {if: "value=start",then: "Show an icon for line (way) objects at the start"},{if: "value=end",then: "Show an icon for line (way) object at the end"},{if: "value=projected_centerpoint",then: "Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons"}, {if: "value=polygon_centroid",then: "Show an icon at a polygon centroid (but not if it is a way)"}]
+     * suggestions: return [{if: "value=point",then: "Show an icon for point (node) objects"},{if: "value=centroid",then: "Show an icon for line or polygon (way) objects at their centroid location"}, {if: "value=start",then: "Show an icon for line (way) objects at the start"},{if: "value=end",then: "Show an icon for line (way) object at the end"},{if: "value=projected_centerpoint",then: "Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons"}, {if: "value=polygon_centroid",then: "Show an icon at a polygon centroid (but not if it is a way)"}, {if: "value=waypoints", then: "Show an icon on every intermediate point of a way"}]
      */
     location: (
         | "point"
@@ -38,6 +47,7 @@ export default interface PointRenderingConfigJson {
         | "end"
         | "projected_centerpoint"
         | "polygon_centroid"
+        | "waypoints"
         | string
     )[]
 
@@ -61,16 +71,18 @@ export default interface PointRenderingConfigJson {
      * They will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.
      *
      * Note: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle
+     * Alternatively, this can reuse a _tagRendering_ from another layer, e.g. one of the 'icons'-tagrenderings.
+     * See ExpandIconBadges on how this is handled
      * group: hidden
      */
-    iconBadges?: {
+    iconBadges?: (string | {
         if: TagConfigJson
         /**
          * Badge to show
          * Type: icon
          */
         then: string | MinimalTagRenderingConfigJson
-    }[]
+    })[]
 
     /**
      * question: What size should the marker be on the map?

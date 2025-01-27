@@ -5,6 +5,7 @@ import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { AuthConfig } from "./AuthConfig"
 import Constants from "../../Models/Constants"
+import { Feature, Point } from "geojson"
 
 interface OsmUserInfo {
     id: number
@@ -19,7 +20,6 @@ interface OsmUserInfo {
 }
 
 export default class UserDetails {
-    public loggedIn = false
     public name = "Not logged in"
     public uid: number
     public csCount = 0
@@ -39,6 +39,39 @@ export default class UserDetails {
 }
 
 export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
+
+interface CapabilityResult {
+    version: "0.6" | string
+    generator: "OpenStreetMap server" | string
+    copyright: "OpenStreetMap and contributors" | string
+    attribution: "http://www.openstreetmap.org/copyright" | string
+    license: "http://opendatacommons.org/licenses/odbl/1-0/" | string
+    api: {
+        version: { minimum: "0.6"; maximum: "0.6" }
+        area: { maximum: 0.25 | number }
+        note_area: { maximum: 25 | number }
+        tracepoints: { per_page: 5000 | number }
+        waynodes: { maximum: 2000 | number }
+        relationmembers: { maximum: 32000 | number }
+        changesets: {
+            maximum_elements: 10000 | number
+            default_query_limit: 100 | number
+            maximum_query_limit: 100 | number
+        }
+        notes: { default_query_limit: 100 | number; maximum_query_limit: 10000 | number }
+        timeout: { seconds: 300 | number }
+        status: {
+            database: OsmServiceState
+            api: OsmServiceState
+            gpx: OsmServiceState
+        }
+    }
+    policy: {
+        imagery: {
+            blacklist: { regex: string }[]
+        }
+    }
+}
 
 export class OsmConnection {
     public auth: osmAuth
@@ -70,7 +103,7 @@ export class OsmConnection {
         oauth_token?: UIEventSource<string>
         // Used to keep multiple changesets open and to write to the correct changeset
         singlePage?: boolean
-        attemptLogin?: true | boolean
+        attemptLogin?: boolean
         /**
          * If true: automatically check if we're still online every 5 minutes + fetch messages
          */
@@ -102,7 +135,6 @@ export class OsmConnection {
             const ud = this.userDetails.data
             ud.csCount = 5678
             ud.uid = 42
-            ud.loggedIn = true
             ud.unreadMessages = 0
             ud.name = "Fake user"
             ud.totalMessages = 42
@@ -114,22 +146,13 @@ export class OsmConnection {
         this.UpdateCapabilities()
 
         this.isLoggedIn = this.userDetails.map(
-            (user) =>
-                user.loggedIn &&
-                (this.apiIsOnline.data === "unknown" || this.apiIsOnline.data === "online"),
+            (user) => user !== undefined && this.apiIsOnline.data === "online",
             [this.apiIsOnline]
         )
-        this.isLoggedIn.addCallback((isLoggedIn) => {
-            if (this.userDetails.data.loggedIn == false && isLoggedIn == true) {
-                // We have an inconsistency: the userdetails say we _didn't_ log in, but this actor says we do
-                // This means someone attempted to toggle this; so we attempt to login!
-                this.AttemptLogin()
-            }
-        })
 
         this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false)
 
-        this.updateAuthObject()
+        this.updateAuthObject(false)
         if (!this.fakeUser) {
             this.CheckForMessagesContinuously()
         }
@@ -180,7 +203,6 @@ export class OsmConnection {
 
     public LogOut() {
         this.auth.logout()
-        this.userDetails.data.loggedIn = false
         this.userDetails.data.csCount = 0
         this.userDetails.data.name = ""
         this.userDetails.ping()
@@ -208,9 +230,7 @@ export class OsmConnection {
             console.log("AttemptLogin called, but ignored as fakeUser is set")
             return
         }
-
-        console.log("Trying to log in...")
-        this.updateAuthObject()
+        this.updateAuthObject(true)
 
         LocalStorageSource.get("location_before_login").setData(
             Utils.runningFromConsole ? undefined : window.location.href
@@ -245,7 +265,6 @@ export class OsmConnection {
                 const userInfo = details.getElementsByTagName("user")[0]
 
                 const data = this.userDetails.data
-                data.loggedIn = true
                 console.log("Login completed, userinfo is ", userInfo)
                 data.name = userInfo.getAttribute("display_name")
                 data.account_created = userInfo.getAttribute("account_created")
@@ -423,6 +442,10 @@ export class OsmConnection {
         return id
     }
 
+    public async getNote(id: number): Promise<Feature<Point>> {
+        return JSON.parse(await this.get("notes/" + id + ".json"))
+    }
+
     public static GpxTrackVisibility = ["private", "public", "trackable", "identifiable"] as const
 
     public async uploadGpxTrack(
@@ -528,11 +551,11 @@ export class OsmConnection {
         })
     }
 
-    private updateAuthObject() {
+    private updateAuthObject(autoLogin: boolean) {
         this.auth = new osmAuth({
             client_id: this._oauth_config.oauth_client_id,
             url: this._oauth_config.url,
-            scope: "read_prefs write_prefs write_api write_gpx write_notes openid",
+            scope: "read_prefs write_prefs write_api write_gpx write_notes",
             redirect_uri: Utils.runningFromConsole
                 ? "https://mapcomplete.org/land.html"
                 : window.location.protocol + "//" + window.location.host + "/land.html",
@@ -540,7 +563,7 @@ export class OsmConnection {
              * However, this breaks in iframes so we open a popup in that case
              */
             singlepage: !this._iframeMode,
-            auto: true,
+            auto: autoLogin,
             apiUrl: this._oauth_config.api_url ?? this._oauth_config.url,
         })
     }
@@ -553,8 +576,10 @@ export class OsmConnection {
             if (!(this.apiIsOnline.data === "unreachable" || this.apiIsOnline.data === "offline")) {
                 return
             }
+            if (!this.isLoggedIn.data) {
+                return
+            }
             try {
-                console.log("Api is offline - trying to reconnect...")
                 this.AttemptLogin()
             } catch (e) {
                 console.log("Could not login due to", e)
@@ -582,6 +607,10 @@ export class OsmConnection {
         this.FetchCapabilities().then(({ api, gpx }) => {
             this.apiIsOnline.setData(api)
             this.gpxServiceIsOnline.setData(gpx)
+        }).catch(err => {
+            console.log("Could not reach the api:", err)
+            this.apiIsOnline.set("unreachable")
+            this.gpxServiceIsOnline.set("unreachable")
         })
     }
 
@@ -600,20 +629,26 @@ export class OsmConnection {
         return parsed
     }
 
-    private async FetchCapabilities(): Promise<{ api: OsmServiceState; gpx: OsmServiceState }> {
+    private async FetchCapabilities(): Promise<{
+        api: OsmServiceState
+        gpx: OsmServiceState
+        database: OsmServiceState
+    }> {
         if (Utils.runningFromConsole) {
-            return { api: "online", gpx: "online" }
+            return { api: "online", gpx: "online", database: "online" }
         }
-        const result = await Utils.downloadAdvanced(this.Backend() + "/api/0.6/capabilities")
-        if (result["content"] === undefined) {
-            console.log("Something went wrong:", result)
-            return { api: "unreachable", gpx: "unreachable" }
+        try {
+            const result = await Utils.downloadJson<CapabilityResult>(
+                this.Backend() + "/api/0.6/capabilities.json"
+            )
+            if (result?.api?.status === undefined) {
+                console.log("Something went wrong:", result)
+                return { api: "unreachable", gpx: "unreachable", database: "unreachable" }
+            }
+            return result.api.status
+        } catch (e) {
+            console.error("Could not fetch capabilities")
+            return { api: "offline", gpx: "offline", database: "online" }
         }
-        const xmlRaw = result["content"]
-        const parsed = new DOMParser().parseFromString(xmlRaw, "text/xml")
-        const statusEl = parsed.getElementsByTagName("status")[0]
-        const api = <OsmServiceState>statusEl.getAttribute("api")
-        const gpx = <OsmServiceState>statusEl.getAttribute("gpx")
-        return { api, gpx }
     }
 }

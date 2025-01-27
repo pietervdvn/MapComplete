@@ -107,12 +107,15 @@ export class ImageUploadManager {
      * @param file a jpg file to upload
      * @param tagsStore The tags of the feature
      * @param targetKey Use this key to save the attribute under. Default: 'image'
+     * @param noblur if true, then the api call will indicate that the image is already blurred. The server won't apply blurring in this case
+     * @param feature the feature this image is about. Will be used as fallback to get the GPS-coordinates
      */
     public async uploadImageAndApply(
         file: File,
         tagsStore: UIEventSource<OsmTags>,
         targetKey: string,
-        noblur: boolean
+        noblur: boolean,
+        feature: Feature
     ): Promise<void> {
         const canBeUploaded = this.canBeUploaded(file)
         if (canBeUploaded !== true) {
@@ -130,7 +133,8 @@ export class ImageUploadManager {
             author,
             file,
             targetKey,
-            noblur
+            noblur,
+            feature
         )
         if (!uploadResult) {
             return
@@ -157,19 +161,33 @@ export class ImageUploadManager {
         blob: File,
         targetKey: string | undefined,
         noblur: boolean,
-        feature?: Feature
+        feature: Feature,
+        ignoreGps: boolean = false
     ): Promise<UploadResult> {
         this.increaseCountFor(this._uploadStarted, featureId)
         let key: string
         let value: string
         let absoluteUrl: string
         let location: [number, number] = undefined
-        if (this._gps.data) {
+        if (this._gps.data && !ignoreGps) {
             location = [this._gps.data.longitude, this._gps.data.latitude]
         }
-        if (location === undefined || location?.some((l) => l === undefined)) {
+        {
             feature ??= this._indexedFeatures.featuresById.data.get(featureId)
-            location = GeoOperations.centerpointCoordinates(feature)
+            if (feature === undefined) {
+                throw "ImageUploadManager: no feature given and no feature found in the indexedFeature. Cannot upload this image"
+            }
+            const featureCenterpoint = GeoOperations.centerpointCoordinates(feature)
+            if (
+                location === undefined ||
+                location?.some((l) => l === undefined) ||
+                GeoOperations.distanceBetween(location, featureCenterpoint) > 150
+            ) {
+                /* GPS location is either unknown or very far away from the photographed location.
+                 * Default to the centerpoint
+                 */
+                location = featureCenterpoint
+            }
         }
         try {
             ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(

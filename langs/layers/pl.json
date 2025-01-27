@@ -857,7 +857,7 @@
                 "questionHint": "To obejmuje zwykłe rowery, do transportu dóbr, elektryczne, ...",
                 "render": "Miejsce na {capacity} rowerów"
             },
-            "Underground?": {
+            "location": {
                 "mappings": {
                     "2": {
                         "then": "Parking na dachu"
@@ -1244,6 +1244,35 @@
             "ref": {
                 "question": "Jaki jest numer referencyjny tej stacji ładowania?",
                 "render": "Numer referencyjny to <b>{ref}</b>"
+            }
+        }
+    },
+    "childcare": {
+        "presets": {
+            "0": {
+                "title": "żłobek"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "Jak wiele dzieci (maksymalnie) może być tutaj zapisanych?",
+                "render": "Ta placówka ma miejsce na {capacity} dzieci"
+            },
+            "name": {
+                "question": "Jaka jest nazwa tej placówki?",
+                "render": "Ta placówka nazywa się <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "W jakich godzinach ten żłobek jest otwarty?"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Żłobek {name}"
+                }
             }
         }
     },
@@ -2377,50 +2406,6 @@
             "render": "Krawężnik"
         }
     },
-    "kindergarten_childcare": {
-        "name": "Przedszkola i żłobki",
-        "presets": {
-            "0": {
-                "title": "przedszkole"
-            },
-            "1": {
-                "title": "żłobek"
-            }
-        },
-        "tagRenderings": {
-            "capacity": {
-                "question": "Jak wiele dzieci (maksymalnie) może być tutaj zapisanych?",
-                "render": "Ta placówka ma miejsce na {capacity} dzieci"
-            },
-            "childcare-type": {
-                "mappings": {
-                    "0": {
-                        "then": "To jest przedszkole, gdzie małe dzieci otrzymują wczesną edukację."
-                    }
-                },
-                "question": "Jaki to rodzaj placówki?"
-            },
-            "name": {
-                "question": "Jaka jest nazwa tej placówki?",
-                "render": "Ta placówka nazywa się <b>{name}</b>"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "W jakich godzinach ten żłobek jest otwarty?"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Przedszkole {name}"
-                },
-                "1": {
-                    "then": "Żłobek {name}"
-                }
-            }
-        }
-    },
     "last_click": {
         "pointRendering": {
             "0": {
@@ -2963,13 +2948,6 @@
             "name": {
                 "question": "Jak nazywa się ta apteka?",
                 "render": "Nazwa tej apteki to {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Ta apteka jest łatwo dostępna na wózku"
-                    }
-                }
             }
         },
         "title": {
@@ -3473,6 +3451,11 @@
         }
     },
     "school": {
+        "presets": {
+            "0": {
+                "title": "przedszkole"
+            }
+        },
         "tagRenderings": {
             "school-language": {
                 "render": {
@@ -3489,15 +3472,12 @@
             "target-audience": {
                 "mappings": {
                     "3": {
-                        "then": "To jest szkoła dla uczniów z autyzmem"
-                    },
-                    "6": {
                         "then": "To jest szkoła dla uczniów głuchych i słabosłyszących"
                     },
-                    "7": {
+                    "4": {
                         "then": "To jest szkoła dla uczniów z niepełnosprawnościami"
                     },
-                    "8": {
+                    "5": {
                         "then": "To jest szkoła dla uczniów z specjalnymi potrzebami"
                     }
                 }

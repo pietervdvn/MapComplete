@@ -27,6 +27,8 @@ A climbing gym
   - [toprope](#toprope)
   - [shoe_rental](#shoe_rental)
   - [harness_rental](#harness_rental)
+  - [auto_belay_toprope](#auto_belay_toprope)
+  - [auto_belay_lead](#auto_belay_lead)
   - [belay_device_rental](#belay_device_rental)
   - [rope_rental](#rope_rental)
   - [average_length](#average_length)
@@ -59,9 +61,9 @@ The following options to create new points are included:
 Elements must match **all** of the following expressions:
 
 0. <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>
-1. <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dsports_centre' target='_blank'>sports_centre</a>
+1. <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dsports_centre' target='_blank'>sports_centre</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dsports_hall' target='_blank'>sports_hall</a>
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22sport%22%3D%22climbing%22%5D%5B%22leisure%22%3D%22sports_centre%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22sport%22%3D%22climbing%22%5D%5B%22leisure%22%3D%22sports_centre%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22sport%22%3D%22climbing%22%5D%5B%22leisure%22%3D%22sports_hall%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 ## Supported attributes
 
@@ -80,6 +82,8 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:toprope#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Atoprope/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:toprope](https://wiki.openstreetmap.org/wiki/Key:climbing:toprope) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:climbing_shoes:rental#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aclimbing_shoes%3Arental/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:climbing_shoes:rental](https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:climbing_harness:rental#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aclimbing_harness%3Arental/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:climbing_harness:rental](https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:autobelay:toprope#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Aautobelay%3Atoprope/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:autobelay:toprope](https://wiki.openstreetmap.org/wiki/Key:climbing:autobelay:toprope) | [nat](../SpecialInputElements.md#nat) | [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:toprope%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:toprope%3Dyes) [all](https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:toprope%3Dall) [only](https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:toprope%3Donly) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:autobelay:sport#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Aautobelay%3Asport/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:autobelay:sport](https://wiki.openstreetmap.org/wiki/Key:climbing:autobelay:sport) | [nat](../SpecialInputElements.md#nat) | [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:sport%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:sport%3Dyes) [all](https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:sport%3Dall) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:climbing_rope:rental#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aclimbing_rope%3Arental/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:climbing_rope:rental](https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:length#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Alength/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) | [pfloat](../SpecialInputElements.md#pfloat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:grade:french:min#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Agrade%3Afrench%3Amin/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) | [string](../SpecialInputElements.md#string) |  |
@@ -187,7 +191,7 @@ The question is `Is toprope climbing possible here?`
 
 ### shoe_rental
 
-The question is `Can one rent climbing shoes here?`
+The question is `Can one rent climbing shoes here to use in the gym?`
 
  -  *Climbing shoes can be borrowed for free here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental:fee' target='_blank'>service:climbing_shoes:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental:fee%3Dno' target='_blank'>no</a>
  -  *Climbing shoes can be rented here for {service:climbing_shoes:rental:charge}* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes' target='_blank'>yes</a> & service:climbing_shoes:rental:charge~.+. _This option cannot be chosen as answer_
@@ -196,16 +200,41 @@ The question is `Can one rent climbing shoes here?`
 
 ### harness_rental
 
-The question is `Can one rent a climbing harness here?`
+The question is `Can one rent a climbing harness here to use in the gym?`
 
  -  *A climbing harness can be borrowed for free here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental:fee' target='_blank'>service:climbing_harness:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental:fee%3Dno' target='_blank'>no</a>
  -  *A climbing harness can be rented here for {service:climbing_harness:rental:charge}* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a> & service:climbing_harness:rental:charge~.+. _This option cannot be chosen as answer_
  -  *A climbing harness can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a>
  -  *A climbing harness can <b>not</b> be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dno' target='_blank'>no</a>
 
+This tagrendering is only visible in the popup if the following condition is met: (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no) | (climbing:speed~.+ & climbing:speed!=no)
+
+### auto_belay_toprope
+
+The question is `Are there auto belays for top roping here?`
+*There are {climbing:autobelay:toprope} auto belay devices for top roping* is shown if `climbing:autobelay:toprope` is set
+
+ -  *There are no auto belays for top roping* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:autobelay:toprope' target='_blank'>climbing:autobelay:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:toprope%3Dno' target='_blank'>no</a>
+ -  *There are a number of auto belays for top roping* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:autobelay:toprope' target='_blank'>climbing:autobelay:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:toprope%3Dyes' target='_blank'>yes</a>
+ -  *There is an auto belay for every top rope route but manual belaying is also possible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:autobelay:toprope' target='_blank'>climbing:autobelay:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:toprope%3Dall' target='_blank'>all</a>
+ -  *Top rope routes can only be climbed on auto belay* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:autobelay:toprope' target='_blank'>climbing:autobelay:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:toprope%3Donly' target='_blank'>only</a>
+
+This tagrendering is only visible in the popup if the following condition is met: climbing:toprope~.+ & climbing:toprope!=no
+
+### auto_belay_lead
+
+The question is `Are there auto belays for lead climbing here?`
+*There are {climbing:autobelay:sport} auto belays for lead climbing* is shown if `climbing:autobelay:sport` is set
+
+ -  *There are no auto belays for lead climbing* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:autobelay:sport' target='_blank'>climbing:autobelay:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:sport%3Dno' target='_blank'>no</a>
+ -  *There is a number of auto belays for lead climbing* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:autobelay:sport' target='_blank'>climbing:autobelay:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:sport%3Dyes' target='_blank'>yes</a>
+ -  *There is an auto belay for every lead climbing route* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:autobelay:sport' target='_blank'>climbing:autobelay:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:autobelay:sport%3Dall' target='_blank'>all</a>
+
+This tagrendering is only visible in the popup if the following condition is met: climbing:sport~.+ & climbing:sport!=no
+
 ### belay_device_rental
 
-The question is `Can one rent a belay device here?`
+The question is `Can one rent a belay device here to use in the gym?`
 
  -  *Belay devices are provided at each rope* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:provided_at_each_rope' target='_blank'>service:climbing_belay_device:provided_at_each_rope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:provided_at_each_rope%3Dyes' target='_blank'>yes</a>
  -  *A belay device can be borrowed for free here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental:fee' target='_blank'>service:climbing_belay_device:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental:fee%3Dno' target='_blank'>no</a>
@@ -213,9 +242,11 @@ The question is `Can one rent a belay device here?`
  -  *A belay device can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dyes' target='_blank'>yes</a>
  -  *A belay device can <b>not</b> be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dno' target='_blank'>no</a>
 
+This tagrendering is only visible in the popup if the following condition is met: (climbing:sport~.+ & climbing:sport!=no) | (climbing:toprope~.+ & climbing:toprope!=no)
+
 ### rope_rental
 
-The question is `Can one rent a climbing rope here?`
+The question is `Can one rent a climbing rope here to use in the gym?`
 
  -  *A climbing rope can be borrowed for free here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental:fee' target='_blank'>service:climbing_rope:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental:fee%3Dno' target='_blank'>no</a>
  -  *A climbing rope can be rented here for {service:climbing_rope:rental:charge}* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes' target='_blank'>yes</a> & service:climbing_rope:rental:charge~.+. _This option cannot be chosen as answer_
@@ -242,7 +273,7 @@ This tagrendering is only visible in the popup if the following condition is met
 ### max_bolts
 
 The question is `How many bolts do routes in {title()} have at most?`
-*The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>* is shown if `climbing:bolts:max` is set
+*The sport climbing routes here have at most {climbing:bolts:max} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>* is shown if `climbing:bolts:max` is set
 
 ### Speed climbing?
 
@@ -328,7 +359,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 | id | question | osmTags |
 -----|-----|----- |

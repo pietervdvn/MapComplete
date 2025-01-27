@@ -22,7 +22,8 @@
     "cs": "Lavičky",
     "pa_PK": "بینچ",
     "he": "ספסלים",
-    "eu": "Bankuak"
+    "eu": "Bankuak",
+    "uk": "Лавки"
   },
   "description": {
     "nl": "Een zitbank is een houten, metalen, stenen, … oppervlak waar een mens kan zitten. Deze laag toont ze en stelt er enkele vragen over.",
@@ -398,7 +399,8 @@
             "ca": "El seient està fet de fusta",
             "da": "Siddepladserne er lavet af træ",
             "cs": "Sedací část je vyrobena ze dřeva",
-            "he": "מקום הישיבה עשוי מעץ"
+            "he": "מקום הישיבה עשוי מעץ",
+            "uk": "Сидіння виготовлені з дерева"
           }
         },
         {
@@ -422,7 +424,8 @@
             "ca": "El seient està fet de metall",
             "da": "Sædet er lavet af metal",
             "cs": "Sedací část je vyrobena z kovu",
-            "he": "מקום הישיבה עשוי מתכת"
+            "he": "מקום הישיבה עשוי מתכת",
+            "uk": "Сидіння виготовлені з металу"
           }
         },
         {
@@ -447,7 +450,8 @@
             "ca": "El seient està fet de pedra",
             "da": "Siddepladserne er lavet af sten",
             "cs": "Sedací část je vyrobena z kamene",
-            "he": "מקום הישיבה עשוי אבן"
+            "he": "מקום הישיבה עשוי אבן",
+            "uk": "Сидіння виготовлені з каменю"
           }
         },
         {
@@ -472,7 +476,8 @@
             "ca": "El seient està fet de ciment",
             "da": "Siddepladserne er lavet af beton",
             "cs": "Sedací část je vyrobena z betonu",
-            "he": "מקום הישיבה עשוי בטון"
+            "he": "מקום הישיבה עשוי בטון",
+            "uk": "Сидіння виготовлені з бетону"
           }
         },
         {
@@ -497,7 +502,8 @@
             "ca": "El seient està fet de plàstic",
             "da": "Sædet er lavet af plastik",
             "cs": "Sedací část je vyrobena z plastu",
-            "he": "מקום הישיבה עשוי פלסטיק"
+            "he": "מקום הישיבה עשוי פלסטיק",
+            "uk": "Сидіння виготовлені з пластику"
           }
         },
         {
@@ -522,7 +528,8 @@
             "ca": "El seient està fet d'acer",
             "da": "Siddepladserne er lavet af stål",
             "cs": "Sedací část je vyrobena z oceli",
-            "he": "מקום הישיבה עשוי פלדה"
+            "he": "מקום הישיבה עשוי פלדה",
+            "uk": "Сидіння виготовлені зі сталі"
           }
         }
       ],
@@ -543,7 +550,8 @@
         "da": "Hvad er bænken (sædet) lavet af?",
         "cs": "Z čeho je vyrobena lavice (sedadlo)?",
         "ca": "De què està fent el banc (seient)?",
-        "he": "ממה עשוי הספסל (המושב)?"
+        "he": "ממה עשוי הספסל (המושב)?",
+        "uk": "З чого зроблені сидіння?"
       },
       "id": "bench-material",
       "labels": [
@@ -1071,7 +1079,8 @@
             "pt_BR": "Esse banco <span class=\"subtle\">provavelmente</span> não tem uma obra de arte integrada",
             "es": "Este banco <span class=\"subtle\">probablemente</span> no tiene una obra de arte integrada",
             "pt": "Este banco <span class=\"subtle\">provavelmente</span> não tem uma obra de arte integrada",
-            "fr": "Ce banc ne comporte <span class=\"subtle\">probablement</span> pas d'œuvre d'art"
+            "fr": "Ce banc ne comporte <span class=\"subtle\">probablement</span> pas d'œuvre d'art",
+            "uk": "Ця лавка <span class=\"subtle\">імовірно</span> не має інтегрованого художнього оформлення"
           },
           "hideInAnswer": true
         }
@@ -1196,7 +1205,8 @@
             "he": "הוא אנדרטה",
             "pt_BR": "é um memorial",
             "es": "es un monumento",
-            "pt": "é um memorial"
+            "pt": "é um memorial",
+            "uk": "це меморіал"
           }
         }
       ]

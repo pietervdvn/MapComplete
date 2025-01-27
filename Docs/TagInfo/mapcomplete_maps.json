@@ -127,6 +127,132 @@
       "key": "map_source:attribution",
       "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the mapcomplete.org theme 'A map of maps') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ | map_source=osm | map_source=OSM)",
       "value": "no"
+    },
+    {
+      "key": "information",
+      "description": "The MapComplete theme A map of maps has a layer Tactile Maps showing features with this tag",
+      "value": "tactile_map"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Tactile Maps' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'A map of maps') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Tactile Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Tactile Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Tactile Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Tactile Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Tactile Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "blind:description:en",
+      "description": "Layer 'Tactile Maps' shows and asks freeform values for key 'blind:description:en' (in the mapcomplete.org theme 'A map of maps')"
+    },
+    {
+      "key": "braille",
+      "description": "Layer 'Tactile Maps' shows braille=yes with a fixed text, namely 'This tactile map has braille text.' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps')",
+      "value": "yes"
+    },
+    {
+      "key": "braille",
+      "description": "Layer 'Tactile Maps' shows braille=no with a fixed text, namely 'This tactile map does not have braille text.' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps')",
+      "value": "no"
+    },
+    {
+      "key": "embossed_letters",
+      "description": "Layer 'Tactile Maps' shows embossed_letters=yes with a fixed text, namely 'This tactile map has embossed letters.' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps')",
+      "value": "yes"
+    },
+    {
+      "key": "embossed_letters",
+      "description": "Layer 'Tactile Maps' shows embossed_letters=no with a fixed text, namely 'This tactile map does not have embossed letters.' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps')",
+      "value": "no"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Tactile Maps' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'A map of maps')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Tactile Maps' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'A map of maps')"
+    },
+    {
+      "key": "information",
+      "description": "The MapComplete theme A map of maps has a layer Tactile Models showing features with this tag",
+      "value": "tactile_model"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Tactile Models' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'A map of maps') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Tactile Models allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Tactile Models allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Tactile Models allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Tactile Models allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Tactile Models allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "blind:description:en",
+      "description": "Layer 'Tactile Models' shows and asks freeform values for key 'blind:description:en' (in the mapcomplete.org theme 'A map of maps')"
+    },
+    {
+      "key": "braille",
+      "description": "Layer 'Tactile Models' shows braille=yes with a fixed text, namely 'There is a braille description.' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps')",
+      "value": "yes"
+    },
+    {
+      "key": "braille",
+      "description": "Layer 'Tactile Models' shows braille=no with a fixed text, namely 'There is no braille description.' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps')",
+      "value": "no"
+    },
+    {
+      "key": "embossed_letters",
+      "description": "Layer 'Tactile Models' shows embossed_letters=yes with a fixed text, namely 'There are embossed letters describing the model.' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps')",
+      "value": "yes"
+    },
+    {
+      "key": "embossed_letters",
+      "description": "Layer 'Tactile Models' shows embossed_letters=no with a fixed text, namely 'There are no embossed letters describing the model.' and allows to pick this as a default answer (in the mapcomplete.org theme 'A map of maps')",
+      "value": "no"
+    },
+    {
+      "key": "scale",
+      "description": "Layer 'Tactile Models' shows and asks freeform values for key 'scale' (in the mapcomplete.org theme 'A map of maps')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Tactile Models' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'A map of maps')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Tactile Models' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'A map of maps')"
     }
   ]
 }

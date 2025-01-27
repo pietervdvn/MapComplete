@@ -19,6 +19,7 @@ This theme contains the following layers:
  - [bank](../Layers/bank.md)
  - [barrier](../Layers/barrier.md)
  - [bbq](../Layers/bbq.md)
+ - [beehive](../Layers/beehive.md)
  - [bench](../Layers/bench.md)
  - [bench_at_pt](../Layers/bench_at_pt.md)
  - [bicycle_counter](../Layers/bicycle_counter.md)
@@ -34,6 +35,7 @@ This theme contains the following layers:
  - [birdhide](../Layers/birdhide.md)
  - [cafe_pub](../Layers/cafe_pub.md)
  - [caravansites](../Layers/caravansites.md)
+ - [charge_point](../Layers/charge_point.md)
  - [charging_station](../Layers/charging_station.md)
  - [climbing_area](../Layers/climbing_area.md)
  - [climbing_club](../Layers/climbing_club.md)
@@ -75,6 +77,7 @@ This theme contains the following layers:
  - [ice_cream](../Layers/ice_cream.md)
  - [indoors](../Layers/indoors.md)
  - [information_board](../Layers/information_board.md)
+ - [insect_hotel](../Layers/insect_hotel.md)
  - [kerbs](../Layers/kerbs.md)
  - [kindergarten_childcare](../Layers/kindergarten_childcare.md)
  - [lighthouse](../Layers/lighthouse.md)
@@ -107,6 +110,7 @@ This theme contains the following layers:
  - [reception_desk](../Layers/reception_desk.md)
  - [recycling](../Layers/recycling.md)
  - [school](../Layers/school.md)
+ - [scouting_group](../Layers/scouting_group.md)
  - [shelter](../Layers/shelter.md)
  - [shops](../Layers/shops.md)
  - [shower](../Layers/shower.md)
@@ -161,6 +165,7 @@ Available languages:
  - ru
  - hu
  - uk
+ - ko
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

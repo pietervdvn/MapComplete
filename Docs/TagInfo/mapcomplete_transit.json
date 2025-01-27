@@ -275,7 +275,7 @@
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=shed with a fixed text, namely 'Shed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=shed with a fixed text, namely 'Shed' (in the mapcomplete.org theme 'Bus routes')",
       "value": "shed"
     },
     {
@@ -317,6 +317,31 @@
       "key": "location",
       "description": "Layer 'Bike parking' shows location= with a fixed text, namely 'Surface level parking' (in the mapcomplete.org theme 'Bus routes') Picking this answer will delete the key location.",
       "value": ""
+    },
+    {
+      "key": "building",
+      "description": "Layer 'Bike parking' shows building=bicycle_shed with a fixed text, namely 'This is a bicycle shed (with walls on at least three sides)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes') (This is only shown if bicycle_parking!=shed & location!=underground)",
+      "value": "bicycle_shed"
+    },
+    {
+      "key": "building",
+      "description": "Layer 'Bike parking' shows building=roof with a fixed text, namely 'This is a bicycle parking under a roof; the roof only serves the bicycle parking' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes') (This is only shown if bicycle_parking!=shed & location!=underground)",
+      "value": "roof"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Bike parking' shows indoor=yes with a fixed text, namely 'This bicycle parking is located in a building behind a door or gate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes') (This is only shown if bicycle_parking!=shed & location!=underground)",
+      "value": "yes"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Bike parking' shows indoor=no & covered=yes with a fixed text, namely 'This bicycle parking is under (a part of) a building' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes') (This is only shown if bicycle_parking!=shed & location!=underground)",
+      "value": "no"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'Bike parking' shows indoor=no & covered=yes with a fixed text, namely 'This bicycle parking is under (a part of) a building' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes') (This is only shown if bicycle_parking!=shed & location!=underground)",
+      "value": "yes"
     },
     {
       "key": "covered",
@@ -574,6 +599,15 @@
     {
       "key": "capacity",
       "description": "Layer 'Parking' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Bus routes')"
+    },
+    {
+      "key": "maxstay",
+      "description": "Layer 'Parking' shows and asks freeform values for key 'maxstay' (in the mapcomplete.org theme 'Bus routes')"
+    },
+    {
+      "key": "maxstay",
+      "description": "Layer 'Parking' shows maxstay=unlimited with a fixed text, namely 'There is no limit to the amount of time one can stay here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
+      "value": "unlimited"
     },
     {
       "key": "amenity",

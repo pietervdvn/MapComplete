@@ -27,7 +27,6 @@
     "osmTags": "amenity=waste_disposal"
   },
   "minzoom": 12,
-  "minzoomVisible": 12,
   "title": {
     "render": {
       "en": "Waste Disposal",
@@ -75,7 +74,8 @@
         "cs": "koš na odpadky",
         "pl": "kosz na śmieci",
         "zh_Hant": "廢棄物處理桶",
-        "es": "un contenedor de residuos"
+        "es": "un contenedor de residuos",
+        "uk": "сміттєвий бак для відходів"
       },
       "tags": [
         "amenity=waste_disposal"

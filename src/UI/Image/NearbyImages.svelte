@@ -36,7 +36,7 @@
 
   let imagesProvider = state.nearbyImageSearcher
 
-  let loadedImages = AllImageProviders.LoadImagesFor(tags).mapD(
+  let loadedImages = AllImageProviders.loadImagesFor(tags).mapD(
     (loaded) => new Set(loaded.map((img) => img.url))
   )
   let imageState = imagesProvider.getImagesAround(lon, lat)
@@ -143,6 +143,18 @@
       highlighted.set(feature.properties.id)
     },
   })
+  onDestroy(
+    tags.addCallbackAndRunD((tags) => {
+      if (
+        tags.id.startsWith("node/") ||
+        tags.id.startsWith("way/") ||
+        tags.id.startsWith("relation/")
+      ) {
+        return
+      }
+      linkable = false
+    })
+  )
 </script>
 
 <div class="flex flex-col">

@@ -31,6 +31,7 @@ Available languages:
  - ru
  - hu
  - uk
+ - ko
 
 # Table of contents
 

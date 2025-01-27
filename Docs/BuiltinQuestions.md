@@ -68,6 +68,9 @@ This is a special layer - data is not sourced from OpenStreetMap
   - [preset_description](#preset_description)
   - [brand](#brand)
   - [indoor](#indoor)
+  - [seating](#seating)
+  - [maxstay](#maxstay)
+  - [name](#name)
 2. [Filters](#filters)
 
 ## Supported attributes
@@ -109,6 +112,8 @@ This is a special layer - data is not sourced from OpenStreetMap
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/shower#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/shower/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [shower](https://wiki.openstreetmap.org/wiki/Key:shower) | Multiple choice | [hot](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dhot) [cold](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dcold) [yes](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/brand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/brand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/indoor#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/indoor/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/maxstay#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/maxstay/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay) | [pfloat](../SpecialInputElements.md#pfloat) | [unlimited](https://wiki.openstreetmap.org/wiki/Tag:maxstay%3Dunlimited) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |  |
 
 ### questions
 Show the questions block at this location
@@ -549,6 +554,25 @@ The question is `Is this object located indoors?`
  -  *This object is located indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
  -  *This object is located outdoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
 
+### seating
+
+The question is `What kind of seating does {title()} have?`
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/outdoor_seating/outdoor_seating.svg' style='width: 3rem; height: 3rem'> *This place has outdoor seating* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:outdoor_seating' target='_blank'>outdoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:outdoor_seating%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:outdoor_seating' target='_blank'>outdoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:outdoor_seating%3Dno' target='_blank'>no</a>
+ -  *This place has indoor seating* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor_seating' target='_blank'>indoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor_seating%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:indoor_seating' target='_blank'>indoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor_seating%3Dno' target='_blank'>no</a>
+
+### maxstay
+
+The question is `What is the maximum amount of time one is allowed to stay here?`
+*One can stay at most <b>{canonical(maxstay)}</b>* is shown if `maxstay` is set
+
+ -  *There is no limit to the amount of time one can stay here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:maxstay' target='_blank'>maxstay</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxstay%3Dunlimited' target='_blank'>unlimited</a>
+
+### name
+
+The question is `What is the name of this place?`
+*<b>{name}</b>* is shown if `name` is set
+
 ## Filters
 
 | id | question | osmTags |
@@ -559,7 +583,7 @@ The question is `Is this object located indoors?`
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 | id | question | osmTags |
 -----|-----|----- |

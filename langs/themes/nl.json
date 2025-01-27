@@ -88,25 +88,29 @@
                 }
             }
         },
-        "shortDescription": "BAG import helper tool",
-        "title": "BAG import helper"
+        "shortDescription": "BAG-importeerhulptool",
+        "title": "BAG-importeerhulp"
     },
     "benches": {
         "description": "Deze kaart toont alle zitbanken die zijn opgenomen in OpenStreetMap: individuele banken en banken bij bushaltes.",
         "shortDescription": "Een kaart van zitbanken",
         "title": "Zitbanken"
     },
+    "bicycle_parkings": {
+        "description": "Een kaart met alle soorten fietsenstallingen",
+        "title": "Fietsenstallingen"
+    },
     "bicycle_rental": {
-        "description": "Op deze kaart vind je verschillende fietsverhuurpunten en fietsverhuurzaken",
+        "description": "Op deze kaart vind je de verschillende fietsverhuurpunten en fietsverhuurzaken die gekend zijn door OpenStreetMap",
         "shortDescription": "Een kaart met fietsverhuurpunten en fietsverhuurzaken",
         "title": "Fietsverhuur"
     },
     "bicyclelib": {
-        "description": "Een fietsbibliotheek is een plaats waar men een fiets kan lenen, vaak voor een klein bedrag per jaar. Een typisch voorbeeld zijn kinderfietsbibliotheken, waar men een fiets op maat van het kind kan lenen. Is het kind de fiets ontgroeid, dan kan het te kleine fietsje omgeruild worden voor een grotere.",
+        "description": "Een fietsbibliotheek is een plaats waar men een fiets kan lenen, vaak voor een klein bedrag per jaar. Een typisch voorbeeld zijn kinderfietsbibliotheken, waar men een fiets op maat van het kind kan lenen. Is het kind de fiets ontgroeid, dan kan het te kleine fietsje omgeruild worden voor een grotere",
         "title": "Fietsbibliotheken"
     },
     "binoculars": {
-        "description": "Een kaart met verrekijkers die op een vaste plaats zijn gemonteerd",
+        "description": "Een kaart met verrekijkers die op een vaste plaats zijn gemonteerd.",
         "shortDescription": "Een kaart met publieke verrekijker",
         "title": "Verrekijkers"
     },
@@ -119,11 +123,11 @@
         "title": "Boekenruilkasten"
     },
     "cafes_and_pubs": {
-        "description": "Cafés, kroegen en drinkgelegenheden",
+        "description": "Koffiehuizen, Cafés, en drinkgelegenheden",
         "title": "Cafés"
     },
     "campersite": {
-        "description": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslagen en is dus altijd gratis te hergebruiken, ook door andere applicaties.",
+        "description": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kost. Voeg afbeeldingen en reviews toe.",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -151,8 +155,19 @@
         "shortDescription": "Een wereldwijde kaart van oplaadpunten",
         "title": "Oplaadpunten"
     },
+    "circular_economy": {
+        "description": "Verschillende items die mensen helpen om te delen, te hergebruiken of te recycleren.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Tweedehandswinkels"
+                }
+            }
+        },
+        "title": "Circulaire economie"
+    },
     "climbing": {
-        "description": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
+        "description": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, boulderzalen en klimmen in de natuur.",
         "descriptionTail": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
         "layers": {
             "0": {
@@ -190,6 +205,45 @@
                                 }
                             },
                             "question": "Wie heeft hier toegang toe?"
+                        }
+                    }
+                }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Deze winkel repareert bergschoenen"
+                                },
+                                "1": {
+                                    "then": "Deze winkel repareert geen bergschoenen"
+                                }
+                            },
+                            "question": "Repareert deze schoenwinkel bergschoenen?"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Deze winkel repareert bergschoenen"
+                                },
+                                "1": {
+                                    "then": "Deze winkel repareert geen bergschoenen"
+                                }
+                            },
+                            "question": "Repareert deze schoenmaker ook bergschoenen?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "een schoenmaker"
                         }
                     }
                 }
@@ -271,6 +325,23 @@
                         }
                     },
                     "render": "Fietsknooppunt"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Fietswegwijzers",
+                    "title": {
+                        "render": "Fietswegwijzer"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "een knooppuntwegwijzer"
+                        }
+                    }
                 }
             }
         },
@@ -361,16 +432,24 @@
         "title": "Fietsstraten en fietszones"
     },
     "cyclofix": {
-        "description": "Het doel van deze kaart is om fietsers een gebruiksvriendelijke oplossing te bieden voor het vinden van de juiste infrastructuur voor hun behoeften.<br><br>U kunt uw exacte locatie volgen (enkel mobiel) en in de linkerbenedenhoek categorieën selecteren die voor u relevant zijn. U kunt deze tool ook gebruiken om 'spelden' aan de kaart toe te voegen of te bewerken en meer gegevens te verstrekken door de vragen te beantwoorden.<br><br>Alle wijzigingen die u maakt worden automatisch opgeslagen in de wereldwijde database van OpenStreetMap en kunnen  door anderen vrij worden hergebruikt.<br><br>Bekijk voor meer info over cyclofix ook <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "Een kaart waarop fietsers gepaste infrastructuur kunnen vinden zoals fietspompen, drinkwater, fietsenwinkels, reparatiepunten of stallingen.",
         "title": "Cyclofix - een kaart voor fietsers"
+    },
+    "disaster_response": {
+        "description": "Deze kaart bevat elementen die bedoeld zijn voor rampbestrijding en -voorbereiding.",
+        "title": "Rampbestrijding en hulpdiensten"
     },
     "drinking_water": {
         "description": "Op deze kaart staan publiek toegankelijke drinkwaterpunten en kan je makkelijk een nieuw drinkwaterpunt toevoegen",
         "title": "Drinkwaterpunten"
     },
     "education": {
-        "description": "Deze kaart toont info over verschillende onderwijsinstellingen zoals kleuterscholen, middelbare scholen en tertiair onderwijs.",
+        "description": "Deze kaart toont info over scholen en onderwijsinstellingen. Je kan er gemakkelijk meer informatie aan toevoegen",
         "title": "Onderwijs"
+    },
+    "elongated_coin": {
+        "description": "Zoek muntpersen om uitgetrokken munten te maken.",
+        "title": "Muntpersen"
     },
     "etymology": {
         "description": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. In de popup zie je het Wikipedia-artikel van hetgeen naarwaar het vernoemd is of de Wikidata-box.<br/><br/><b>Je kan zelf ook meehelpen!</b>Als je ver inzoomt, krijg je alle straten te zien. Klik je een straat aan, dan krijg je een zoekfunctie waarmee je snel een nieuwe link kan leggen. Je hebt hiervoor een gratis OpenStreetMap account nodig.",
@@ -412,7 +491,7 @@
             }
         },
         "shortDescription": "Wat is de oorsprong van een plaatsnaam?",
-        "title": "Etymologie - waarnaar is een straat vernoemd?"
+        "title": "Etymologie - waarnaar is een plaats naar vernoemd?"
     },
     "facadegardens": {
         "description": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -501,15 +580,34 @@
         "shortDescription": "Deze kaart toont geveltuintjes met foto's en bruikbare info over oriëntatie, zonlicht en planttypes.",
         "title": "Straatgeveltuintjes"
     },
+    "fireplace": {
+        "description": "Buitenruimte om een vuur te maken of een vaste barbecue op een officiële plaats.",
+        "title": "Haarden en barbecues"
+    },
     "food": {
-        "description": "Restaurants en fast food",
-        "title": "Eetgelegenheden"
+        "description": "Restaurants en fastfood",
+        "title": "Restaurants en fastfood"
     },
     "fritures": {
         "description": "Op deze kaart vind je je favoriete frituur!",
         "layers": {
             "0": {
                 "override": {
+                    "filter+": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Geen voorkeur voor een bepaald type frituurolie"
+                                },
+                                "1": {
+                                    "question": "Toon enkel frituren die plantaardige frituurolie gebruiken"
+                                },
+                                "2": {
+                                    "question": "Toon enkel frituren die dierlijk frietvet gebruiken"
+                                }
+                            }
+                        }
+                    },
                     "name": "Frituren"
                 }
             }
@@ -517,8 +615,35 @@
         "title": "Friturenkaart"
     },
     "ghostbikes": {
-        "description": "Een <b>Witte Fiets</b> of <b>Spookfiets</b> is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat om een fiets die volledig wit is geschilderd en in de buurt van het ongeval werd geinstalleerd.<br/><br/>Op deze kaart zie je alle witte fietsen die door OpenStreetMap gekend zijn. Ontbreekt er een Witte Fiets of wens je informatie aan te passen? Meld je dan aan met een (gratis) OpenStreetMap account.",
+        "description": "Een <b>Witte Fiets</b> of <b>Spookfiets</b> is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat om een fiets die volledig wit is geschilderd en in de buurt van het ongeval werd geplaatst.<br/><br/>Op deze kaart zie je alle witte fietsen die door OpenStreetMap gekend zijn. Ontbreekt er een Witte Fiets of wens je informatie aan te passen? Meld je dan aan met een (gratis) OpenStreetMap account. <p>Er bestaat een <a href='https://masto.bike/@ghostbikebot' target='_blank'>geautomatiseerd account op Mastodon dat maandelijks een overzicht van spookfietsen wereldwijd post</a></p>",
         "title": "Witte Fietsen"
+    },
+    "ghostsigns": {
+        "description": "Een kaart met ongebruikte borden op gebouwen",
+        "layers": {
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Dit kunstwerk is een historische advertentie"
+                                },
+                                "1": {
+                                    "then": "Dit kunstwerk is geen historische advertentie"
+                                }
+                            },
+                            "question": "Is dit kunstwerk een historische advertentie?"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Spookreclames"
+    },
+    "glutenfree": {
+        "description": "Een gecrowdsourcete kaart met glutenvrije artikelen",
+        "title": "Glutenvrij"
     },
     "grb": {
         "description": "Dit thema helpt het GRB importeren.",
@@ -549,6 +674,9 @@
                     "grb-min-level": {
                         "question": "Hoeveel verdiepingen ontbreken?",
                         "render": "Dit gebouw begint maar op de {building:min_level} verdieping"
+                    },
+                    "grb-reference": {
+                        "render": "Werd geïmporteerd vanuit GRB, het referentienummer is {source:geometry:ref}"
                     },
                     "grb-street": {
                         "question": "Wat is de straat?",
@@ -602,6 +730,10 @@
         "shortDescription": "Grb import helper tool",
         "title": "GRB import helper"
     },
+    "guideposts": {
+        "description": "Wegwijzers (ook wel handwijzer genoemd) zijn vaak te vinden langs officiële wandel-, fiets-, ski- of paardrijroutes om de richtingen naar verschillende bestemmingen aan te geven. Vaak zijn ze vernoemd naar een regio of plaats en geven ze de hoogte aan.\n\nDe positie van een wegwijzer kan door een wandelaar/fietser/renner/skiër worden gebruikt als bevestiging van de huidige positie, vooral als ze een gedrukte kaart zonder GPS-ontvanger gebruiken. ",
+        "title": "Wegwijzers"
+    },
     "hackerspaces": {
         "description": "Op deze kaart kan je hackerspaces zien, toevoegen en updaten",
         "shortDescription": "Een kaart van hackerspaces",
@@ -637,9 +769,21 @@
         "description": "Op deze kaart vind je hotels in je omgeving",
         "title": "Hotels"
     },
+    "icecream": {
+        "description": "Een kaart met ijssalons en ijsautomaten",
+        "title": "IJs"
+    },
     "indoors": {
         "description": "Op deze kaart worden publiek toegankelijke binnenruimtes getoond",
         "title": "Binnenruimtes"
+    },
+    "insects": {
+        "description": "Insectenhotels bieden onderdak aan insecten.",
+        "title": "Insectenhotels"
+    },
+    "items_with_image": {
+        "description": "Een kaart die alle items op OSM toont die een afbeelding hebben. Dit thema past heel slecht bij MapComplete omdat het niet mogelijk is een afbeelding toe te voegen. Dit thema is er vooral om alles in de database op te nemen, waardoor het snel afbeeldingen in de buurt kan ophalen voor andere functies",
+        "title": "Alle items met afbeeldingen"
     },
     "kerbs_and_crossings": {
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
@@ -657,8 +801,143 @@
         },
         "title": "Stoepranden en oversteekplaatsen"
     },
+    "lactosefree": {
+        "description": "Een gecrowdsourcete kaart met lactosevrije winkels en restaurants",
+        "title": "Lactosevrije winkels en restaurants"
+    },
+    "lighthouses": {
+        "description": "Vuurtorens zijn hoge gebouwen met een licht erop om het scheepvaartverkeer te leiden.",
+        "title": "Vuurtorens"
+    },
+    "mapcomplete-changes": {
+        "description": "Deze kaarten tonen alle wijzigingen die zijn gemaakt met MapComplete",
+        "layers": {
+            "0": {
+                "description": "Toon alle MapComplete-wijzigingen",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themanaam bevat {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Themanaam bevat <b>geen</b> {search}"
+                            }
+                        }
+                    },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Thema etymologie uitsluiten"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "Toegevoegd door {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Niet</b> toegevoegd door {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Toegevoegd vóór {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Toegevoegd na {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Gebruikerstaal (iso-code) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Gemaakt met {search}"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "Changeset voegde minstens één afbeelding toe"
+                            }
+                        }
+                    },
+                    "9": {
+                        "options": {
+                            "0": {
+                                "question": "GRB-thema uitsluiten"
+                            }
+                        }
+                    }
+                },
+                "name": "Changeset centra",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Welke bijdrager maakte deze verandering?",
+                        "render": "Wijziging aangebracht door <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "Met welke host (website) is deze wijziging gemaakt?",
+                        "render": "Gewijzigd met <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "In welke 'locale' (taal) is deze wijziging gemaakt?",
+                        "render": "De gebruikerstaal (locale) is {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Welk thema werd gebruikt voor deze wijziging?",
+                        "render": "Verander met thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "Welke versie van MapComplete is gebruikt voor deze wijziging?",
+                        "render": "Gemaakt met {editor}"
+                    }
+                },
+                "title": {
+                    "render": "Changeset voor {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Meer statistieken vind je <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Toont wijzigingen gemaakt met MapComplete",
+        "title": "Wijzigingen gemaakt met MapComplete"
+    },
     "maproulette": {
-        "description": "Thema met MapRoulette taken, waar je ze kunt zoeken, filteren en ze oplossen.",
+        "description": "Thema met MapRoulette taken, waar je ze kunt zoeken, filteren en oplossen.",
         "title": "MapRoulette taken"
     },
     "maps": {
@@ -667,7 +946,7 @@
         "title": "Een kaart van kaarten"
     },
     "maxspeed": {
-        "description": "Deze kaart toont de maximum toegestane snelheid voor elke weg. Als er een maximumsnelheid mist of niet klopt, kan je hem hier aanpassen.",
+        "description": "Deze kaart toont de maximum toegestane snelheid voor elke weg. Als er een maximumsnelheid ontbreekt of niet klopt, kan je deze hier aanpassen.",
         "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat.",
         "title": "Maximale snelheden"
     },
@@ -690,7 +969,7 @@
         "title": "Uitkijktorens"
     },
     "onwheels": {
-        "description": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants.",
+        "description": "Op deze kaart kan je rolstoeltoegankelijke plaatsen vinden en toevoegen",
         "layers": {
             "19": {
                 "override": {
@@ -765,6 +1044,79 @@
         },
         "title": "OnWheels"
     },
+    "openlovemap": {
+        "description": "<p><i>Liefde in de palm van je hand</i></p>Open Love Map geeft een overzicht van verschillende items voor volwassenen, zoals bordelen, erotische winkels en stripclubs.",
+        "layers": {
+            "2": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "een erotiekwinkel"
+                        }
+                    },
+                    "name": "Erotiekwinkels",
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Deze winkel biedt <b>soft BDSM-accessoires</b>, zoals zachte handboeien, een 'fifty-shade-of-grey'-starterset, ..."
+                                },
+                                "1": {
+                                    "then": "Deze winkel biedt <b>gespecialiseerde BDSM-benodigdheden</b>, zoals spreidstangen, benodigdheden voor naaldspellen, medische bondagebenodigdheden, slagwerktuigen, kluisters, metalen kleuren, boeien, tepelklemmen, shibari-accessoires, ..."
+                                },
+                                "2": {
+                                    "then": "Deze winkel biedt '<b>pet play</b>'-accessoires, zoals puppymaskers, dierenmaskers, ponyspellen, staarten, hoefschoenen, ..."
+                                },
+                                "3": {
+                                    "then": "Deze winkel biedt <b>leren kledij</b> aan, waaronder broeken en shirts die je in het dagelijks leven kunt gebruiken tot en met leren harnassen"
+                                },
+                                "4": {
+                                    "then": "Deze winkel biedt <b>uniformen</b> voor rollenspelen aan, zoals verpleegsteruniformen, militaire uniformen, politie, schoolmeisje, Franse dienstmeid, ..."
+                                }
+                            },
+                            "question": "Biedt deze winkel fetisjspullen aan?"
+                        }
+                    }
+                }
+            },
+            "4": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "een condoomautomaat"
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "een erotiekcinema"
+                        }
+                    }
+                }
+            },
+            "9": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "question": "Welk type hotel is dit?"
+                        }
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Heeft {title()} een privévideocabine?",
+                    "questionHint": "Dit is voor gebruik door één persoon."
+                }
+            }
+        },
+        "title": "Open Love Kaart"
+    },
     "openwindpowermap": {
         "description": "Een kaart om windturbines te tonen en te bewerken.",
         "title": "Windmolens"
@@ -780,33 +1132,25 @@
         "title": "Parking"
     },
     "personal": {
-        "description": "Stel je eigen thema samen door lagen te combineren van alle andere themas",
+        "description": "Stel je eigen thema samen door lagen te combineren van alle andere themas. Open <a href='#filter'>Selectie lagen</a> om gegevens te tonen",
         "title": "Persoonlijk thema"
     },
     "pets": {
         "description": "Deze kaart helpt je op weg met je huisdier: dierenartsen, hondenloopzones, dierenwinkels, hondenvriendelijke restaurants, ...",
         "layers": {
-            "1": {
+            "4": {
                 "override": {
                     "name": "Hondvriendelijke eetgelegenheden"
                 }
             },
-            "2": {
-                "override": {
-                    "name": "Hondvriendelijke winkels",
-                    "title": {
-                        "render": "Hondvriendelijke winkels"
-                    }
-                }
-            },
             "6": {
                 "override": {
-                    "presets": {
-                        "0": {
-                            "description": "Een winkel waar je je hond in bijna heel de winkel mag meenemen",
-                            "title": "Hondvriendelijke winkels"
-                        }
-                    }
+                    "name": "Hondvriendelijke winkels"
+                }
+            },
+            "8": {
+                "override": {
+                    "name=": "Vuilnisbakken met verdelers voor hondenpoepzakjes"
                 }
             }
         },
@@ -847,7 +1191,7 @@
         "title": "Postcodes"
     },
     "postboxes": {
-        "description": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
+        "description": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Vond je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account.",
         "layers": {
             "3": {
                 "override": {
@@ -863,7 +1207,14 @@
                             },
                             "question": "Is deze winkel een post-partner?"
                         }
-                    }
+                    },
+                    "=presets": {
+                        "0": {
+                            "description": "Als een winkel nog niet op de kaart staat en een postpartner is, kun je deze hier toevoegen.",
+                            "title": "een ontbrekende winkel die postpartner is"
+                        }
+                    },
+                    "description": "Een nieuwe postpartner toevoegen aan de kaart in een bestaande winkel"
                 }
             }
         },
@@ -871,13 +1222,17 @@
         "title": "Brievenbussen en postkantoren"
     },
     "rainbow_crossings": {
-        "description": "Deze kaart toont zebrapaden die in regenboogkleuren of pridekleuren geschilderd zijn.",
+        "description": "Op deze kaart vind je regenboogzebrapaden en kan je er toevoegen",
         "title": "Regenboogzebrapaden"
     },
     "shops": {
         "description": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers",
         "shortDescription": "Een bewerkbare kaart met simpele informatie over winkels",
         "title": "Winkels"
+    },
+    "ski": {
+        "description": "Alles om te skiën",
+        "title": "Skipistes en kabelbanen"
     },
     "speelplekken": {
         "description": "<h3>Welkom bij de Groendoener!</h3>De Zuidrand dat is spelen, ravotten, chillen, wandelen,… in het groen. Meer dan <b>200 grote en kleine speelplekken</b> liggen er in parken, in bossen en op pleintjes te wachten om ontdekt te worden. De verschillende speelplekken werden getest én goedgekeurd door kinder- en jongerenreporters uit de Zuidrand. Met leuke challenges dagen de reporters jou uit om ook op ontdekking te gaan. Klik op een speelplek op de kaart, bekijk het filmpje en ga op verkenning!<br/><br/>Het project groendoener kadert binnen het strategisch project <a href='https://www.provincieantwerpen.be/aanbod/dlm/samenwerkingsverbanden/zuidrand/projecten/strategisch-project-beleefbare-open-ruimte.html' target='_blank'>Beleefbare Open Ruimte in de Antwerpse Zuidrand</a> en is een samenwerking tussen het departement Leefmilieu van provincie Antwerpen, Sportpret vzw, een OpenStreetMap-België Consultent en Createlli vzw. Het project kwam tot stand met steun van Departement Omgeving van de Vlaamse Overheid.<br/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/provincie_antwerpen.jpg'/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/Departement_Omgeving_Vlaanderen.png'/>",
@@ -1047,7 +1402,7 @@
     "surveillance": {
         "description": "Op deze open kaart kan je bewakingscamera's vinden.",
         "shortDescription": "Bewakingscameras en dergelijke",
-        "title": "Surveillance under Surveillance"
+        "title": "Bewaking"
     },
     "toilets": {
         "description": "Een kaart met openbare toiletten",
@@ -1128,6 +1483,23 @@
                     },
                     "render": "Wandelknooppunt"
                 }
+            },
+            "2": {
+                "override": {
+                    "name": "Wandelwegwijzers",
+                    "title": {
+                        "render": "Wandelwegwijzer"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "een knooppuntwegwijzer"
+                        }
+                    }
+                }
             }
         },
         "title": "Wandelknooppuntnetwerken"
@@ -1145,7 +1517,7 @@
         "title": "Afval - Assen"
     },
     "waste_basket": {
-        "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
+        "description": "Op deze kaart vind je afvalbakken bij jou in de buurt. Als er een afvalbak ontbreekt op deze kaart, kun je deze zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbakken"
     }

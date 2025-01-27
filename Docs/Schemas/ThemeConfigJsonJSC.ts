@@ -548,7 +548,7 @@ export default {
       "type": "object",
       "properties": {
         "icon": {
-          "description": "question: What icon should be used?\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))",
+          "description": "question: What icon should be used?\n\nTo reuse icons from a different layer of a library:\n- The library layer has, within tagRenderings one which will output the URL of the image (e.g. mappings: {\"if\": \"shop=xyz\", then: \"./assets/icons/shop_xyz.png\"})\n- Use \"layer_id.tagrendering_id\"\n\nNote that if you reuse icons from a different icon set, you'll probably want to use `override` to set a default rendering\n\n\ntypes: <span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon\nsuggestions: return [ {\"if\":\"value=nsi_brand.icon\", \"then\": \"Use icons for brand from the Name Suggestion Index\"}, {\"if\":\"value=nsi_operator.icon\", \"then\": \"Use icons for operator from the Name Suggestion Index\"}, {\"if\":\"value=id_presets.shop_rendering\", \"then\": \"Use shop preset icons from iD\"}, ...Constants.defaultPinIcons.map(i => ({if: \"value=\"+i, then: i, icon: i}))]",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -572,7 +572,7 @@ export default {
           ]
         },
         "color": {
-          "description": "question: What colour should the icon be?\nThis will only work for the default icons such as `pin`,`circle`,...\ntypes: <span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
+          "description": "question: What colour should the icon be?\n\nThis will only work for the default icons such as `pin`,`circle`,...\n\ntypes: <span class=\"text-lg font-bold\">Use a different color depending on the value of some attributes</span> ; color",
           "anyOf": [
             {
               "$ref": "#/definitions/MinimalTagRenderingConfigJson"
@@ -919,7 +919,7 @@ export default {
       "type": "object",
       "properties": {
         "location": {
-          "description": "question: At what location should this icon be shown?\nmultianswer: true\nsuggestions: return [{if: \"value=point\",then: \"Show an icon for point (node) objects\"},{if: \"value=centroid\",then: \"Show an icon for line or polygon (way) objects at their centroid location\"}, {if: \"value=start\",then: \"Show an icon for line (way) objects at the start\"},{if: \"value=end\",then: \"Show an icon for line (way) object at the end\"},{if: \"value=projected_centerpoint\",then: \"Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons\"}, {if: \"value=polygon_centroid\",then: \"Show an icon at a polygon centroid (but not if it is a way)\"}]",
+          "description": "question: At what location should this icon be shown?\nmultianswer: true\nsuggestions: return [{if: \"value=point\",then: \"Show an icon for point (node) objects\"},{if: \"value=centroid\",then: \"Show an icon for line or polygon (way) objects at their centroid location\"}, {if: \"value=start\",then: \"Show an icon for line (way) objects at the start\"},{if: \"value=end\",then: \"Show an icon for line (way) object at the end\"},{if: \"value=projected_centerpoint\",then: \"Show an icon for line (way) object near the centroid location, but moved onto the line. Does not show an item on polygons\"}, {if: \"value=polygon_centroid\",then: \"Show an icon at a polygon centroid (but not if it is a way)\"}, {if: \"value=waypoints\", then: \"Show an icon on every intermediate point of a way\"}]",
           "type": "array",
           "items": {
             "type": "string"
@@ -933,30 +933,37 @@ export default {
           }
         },
         "iconBadges": {
-          "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\n\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle\ngroup: hidden",
+          "description": "A list of extra badges to show next to the icon as small badge\nThey will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.\n\nNote: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle\nAlternatively, this can reuse a _tagRendering_ from another layer, e.g. one of the 'icons'-tagrenderings.\nSee ExpandIconBadges on how this is handled\ngroup: hidden",
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "if": {
-                "$ref": "#/definitions/TagConfigJson",
-                "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
-              },
-              "then": {
-                "description": "Badge to show\nType: icon",
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/MinimalTagRenderingConfigJson"
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "if": {
+                    "$ref": "#/definitions/TagConfigJson",
+                    "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag"
                   },
-                  {
-                    "type": "string"
+                  "then": {
+                    "description": "Badge to show\nType: icon",
+                    "anyOf": [
+                      {
+                        "$ref": "#/definitions/MinimalTagRenderingConfigJson"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
                   }
+                },
+                "required": [
+                  "if",
+                  "then"
                 ]
+              },
+              {
+                "type": "string"
               }
-            },
-            "required": [
-              "if",
-              "then"
             ]
           }
         },
@@ -1294,7 +1301,14 @@ export default {
           ]
         },
         "labels": {
-          "description": "What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
+          "description": "question: What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "onSoftDelete": {
+          "description": "question: What tags should be applied when the object is soft-deleted?",
           "type": "array",
           "items": {
             "type": "string"
@@ -1541,7 +1555,14 @@ export default {
           ]
         },
         "labels": {
-          "description": "What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
+          "description": "question: What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "onSoftDelete": {
+          "description": "question: What tags should be applied when the object is soft-deleted?",
           "type": "array",
           "items": {
             "type": "string"
@@ -1775,6 +1796,10 @@ export default {
         "id": {
           "description": "An id/name for this filter, used to set the URL parameters",
           "type": "string"
+        },
+        "strict": {
+          "description": "If set, the options will be pruned. Only items for which the filter match the layer source will be kept.\n\nFor example, we import types of brands from the nsi. This contains a ton of items, e.g.\n[{question: \"Brand X\", osmTags: {\"and\": [\"shop=clothes\", \"brand=Brand X]}, {osmTags: {\"and\": \"shop=convenience\", ...} ...} ]\nOf course, when making a layer about `shop=clothes`, we'll only want to keep the clothes shops.\nIf set to strict and the source is `shop=clothes`, only those options which have shop=clothes will be returned",
+          "type": "boolean"
         },
         "options": {
           "description": "The options for a filter\nIf there are multiple options these will be a list of radio buttons\nIf there is only one option this will be a checkbox\nFiltering is done based on the given osmTags that are compared to the objects in that layer.\n\nAn example which searches by name:\n\n```\n{\n      \"id\": \"shop-name\",\n      \"options\": [\n        {\n          \"fields\": [\n            {\n              \"name\": \"search\",\n              \"type\": \"string\"\n            }\n          ],\n          \"osmTags\": \"name~i~.*{search}.*\",\n          \"question\": {\n            \"en\": \"Only show shops with name {search}\",\n          }\n        }\n      ]\n    }\n    ```",
@@ -2183,7 +2208,7 @@ export default {
           "type": "boolean"
         },
         "presets": {
-          "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>\n\ngroup: presets\ntitle: value.title",
+          "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='https://github.com/pietervdvn/MapComplete/raw/refs/heads/master/Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>\n\ngroup: presets\ntitle: value.title",
           "type": "array",
           "items": {
             "type": "object",
@@ -2410,6 +2435,13 @@ export default {
               "type": "string"
             }
           ]
+        },
+        "#dont-translate": {
+          "description": "group: hidden",
+          "enum": [
+            "*"
+          ],
+          "type": "string"
         }
       },
       "required": [
@@ -2626,7 +2658,7 @@ export default {
           "type": "boolean"
         },
         "presets": {
-          "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>\n\ngroup: presets\ntitle: value.title",
+          "description": "<div class='flex'>\n    <div>\nPresets for this layer.\n\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\n\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\n\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='https://github.com/pietervdvn/MapComplete/raw/refs/heads/master/Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>\n\ngroup: presets\ntitle: value.title",
           "type": "array",
           "items": {
             "type": "object",
@@ -2853,6 +2885,13 @@ export default {
               "type": "string"
             }
           ]
+        },
+        "#dont-translate": {
+          "description": "group: hidden",
+          "enum": [
+            "*"
+          ],
+          "type": "string"
         }
       }
     },

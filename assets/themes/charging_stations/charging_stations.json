@@ -18,7 +18,8 @@
     "pa_PK": "چارج سٹیشن",
     "cs": "Nabíjecí stanice",
     "pl": "Stacje ładowania",
-    "uk": "Зарядні станції"
+    "uk": "Зарядні станції",
+    "ko": "충전소"
   },
   "description": {
     "en": "On this open map, one can find and mark information about charging stations",
@@ -36,7 +37,8 @@
     "ca": "A aquest mapa, un pot trobar i marcar informació sobre punts de càrrega",
     "cs": "Na této otevřené mapě lze vyhledávat a označovat informace o nabíjecích stanicích",
     "pl": "Na tej otwartej mapie można znaleźć i zaznaczyć informacje o stacjach ładowania",
-    "uk": "На цій відкритій мапі можна знайти та позначити інформацію про зарядні станції"
+    "uk": "На цій відкритій мапі можна знайти та позначити інформацію про зарядні станції",
+    "ko": "이 오픈 맵에서 충전소 정보를 찾고 표시할 수 있습니다"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",
@@ -55,11 +57,12 @@
     "cs": "Celosvětová mapa nabíjecích stanic",
     "eu": "Karga-estazioen munduko mapa",
     "pl": "Światowa mapa stacji ładowania",
-    "uk": "Мапа зарядних станцій по всьому світу"
+    "uk": "Мапа зарядних станцій по всьому світу",
+    "ko": "전 세계 충전소 지도"
   },
   "icon": "./assets/themes/charging_stations/logo.svg",
   "layers": [
-    "charging_station"
-  ],
-  "widenFactor": 1.5
+    "charging_station",
+    "charge_point"
+  ]
 }

@@ -390,6 +390,19 @@
                 "question": "V katero geografsko smer snema ta kamera?",
                 "render": "Snema v smeri kompasa {camera:direction}"
             },
+            "camera_is_indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Ta kamera je znotraj"
+                    },
+                    "1": {
+                        "then": "Ta kamera je zunaj"
+                    },
+                    "2": {
+                        "then": "Ta kamera je verjetno zunaj"
+                    }
+                }
+            },
             "has_alpr": {
                 "mappings": {
                     "0": {
@@ -401,20 +414,6 @@
                 },
                 "question": "Ali ta kamera lahko samodejno prepoznava registrske tablice?",
                 "questionHint": "Kamera za <b>prepoznavo registrskih tablic</b> ima običajno dve leči in med njima polje infrardečih LED svetil."
-            },
-            "is_indoor": {
-                "mappings": {
-                    "0": {
-                        "then": "Ta kamera je znotraj"
-                    },
-                    "1": {
-                        "then": "Ta kamera je zunaj"
-                    },
-                    "2": {
-                        "then": "Ta kamera je verjetno zunaj"
-                    }
-                },
-                "question": "Ali je javni prostor, ki ga nadzoruje ta kamera, notranji ali zunanji?"
             }
         },
         "title": {

@@ -9,6 +9,7 @@ import { PointImportFlowArguments, PointImportFlowState } from "./PointImportFlo
 import { Utils } from "../../../Utils"
 import { ImportFlowUtils } from "./ImportFlow"
 import Translations from "../../i18n/Translations"
+import { GeoOperations } from "../../../Logic/GeoOperations"
 
 /**
  * The wrapper to make the special visualisation for the PointImportFlow
@@ -44,6 +45,10 @@ export class PointImportButtonViz implements SpecialVisualization {
                 name: "maproulette_id",
                 doc: "The property name of the maproulette_id - this is probably `mr_taskId`. If given, the maproulette challenge will be marked as fixed. Only use this if part of a maproulette-layer.",
             },
+            {
+                name: "to_point",
+                doc: "If set, a feature will be converted to a centerpoint",
+            },
         ]
     }
 
@@ -53,8 +58,14 @@ export class PointImportButtonViz implements SpecialVisualization {
         argument: string[],
         feature: Feature
     ): BaseUIElement {
+        const to_point_index = this.args.findIndex((arg) => arg.name === "to_point")
+        const summarizePointArg = argument[to_point_index].toLowerCase()
         if (feature.geometry.type !== "Point") {
-            return Translations.t.general.add.import.wrongType.SetClass("alert")
+            if (summarizePointArg !== "no" && summarizePointArg !== "false") {
+                feature = GeoOperations.centerpoint(feature)
+            } else {
+                return Translations.t.general.add.import.wrongType.SetClass("alert")
+            }
         }
         const baseArgs: PointImportFlowArguments = <any>Utils.ParseVisArgs(this.args, argument)
         const tagsToApply = ImportFlowUtils.getTagsToApply(tagSource, baseArgs)

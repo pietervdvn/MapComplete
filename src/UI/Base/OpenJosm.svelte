@@ -14,7 +14,7 @@
   josmState.stabilized(15000).addCallbackD(() => josmState.setData(undefined))
 
   const showButton = state.osmConnection.userDetails.map(
-    (ud) => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible
+    (ud) => ud?.csCount >= Constants.userJourney.historyLinkVisible
   )
 
   function openJosm() {

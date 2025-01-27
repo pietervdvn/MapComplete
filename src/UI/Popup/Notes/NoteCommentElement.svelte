@@ -44,7 +44,7 @@
     })
     .filter((link) => !link.startsWith("https://wiki.openstreetmap.org/wiki/File:"))
 
-  const attributedImages = AllImageProviders.loadImagesFrom(images)
+  let attributedImages = AllImageProviders.loadImagesFrom(images)
   /**
    * Class of the little icons indicating 'opened', 'comment' and 'resolved'
    */
@@ -87,7 +87,6 @@
           {state}
           {image}
           imgClass="max-h-64 w-auto sm:h-32 md:h-64"
-          previewedImage={state.previewedImage}
           attributionFormat="minimal"
         />
       {/each}

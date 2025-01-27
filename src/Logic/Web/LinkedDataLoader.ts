@@ -371,7 +371,7 @@ export default class LinkedDataLoader {
             const match = maxstay.match(/P([0-9]+)D/)
             if (match) {
                 const days = Number(match[1])
-                if(days === 30){
+                if (days === 30) {
                     // 30 is the default which is set if velopark didn't know the actual value
                     return undefined
                 }
@@ -421,6 +421,7 @@ export default class LinkedDataLoader {
         delete output["chargeEnd"]
         delete output["chargeStart"]
         delete output["timeUnit"]
+        delete output["id"]
 
         asBoolean("covered")
         asBoolean("fee", true)
@@ -518,6 +519,9 @@ export default class LinkedDataLoader {
         property: string,
         variable?: string
     ): Promise<SparqlResult<T, G>> {
+        if (property === "schema:photos") {
+            console.log(">> Getting photos")
+        }
         const results = await new TypedSparql().typedSparql<T, G>(
             {
                 schema: "http://schema.org/",
@@ -531,15 +535,23 @@ export default class LinkedDataLoader {
             "  ?parking a <http://schema.mobivoc.org/BicycleParkingStation>",
             "?parking " + property + " " + (variable ?? "")
         )
+
         return results
     }
 
+    /**
+     *
+     * @param url
+     * @param property
+     * @param subExpr
+     * @private
+     */
     private static async fetchVeloparkGraphProperty<T extends string>(
         url: string,
         property: string,
         subExpr?: string
     ): Promise<SparqlResult<T, "g">> {
-        return await new TypedSparql().typedSparql<T, "g">(
+        const result = await new TypedSparql().typedSparql<T, "g">(
             {
                 schema: "http://schema.org/",
                 mv: "http://schema.mobivoc.org/",
@@ -551,8 +563,15 @@ export default class LinkedDataLoader {
             "g",
             "  ?parking a <http://schema.mobivoc.org/BicycleParkingStation>",
 
-            S.graph("g", "?section " + property + " " + (subExpr ?? ""), "?section a ?type")
+            S.graph(
+                "g",
+                "?section " + property + " " + (subExpr ?? ""),
+                "?section a ?type",
+                "BIND(STR(?section) AS ?id)"
+            )
         )
+
+        return result
     }
 
     /**
@@ -569,26 +588,69 @@ export default class LinkedDataLoader {
                 continue
             }
             for (const sectionKey in subResult) {
-                if (!r[sectionKey]) {
-                    r[sectionKey] = {}
-                }
-                const section = subResult[sectionKey]
-                for (const key in section) {
-                    r[sectionKey][key] ??= section[key]
+                if (sectionKey === "default") {
+                    r["default"] ??= {}
+                    const section = subResult["default"]
+                    for (const key in section) {
+                        r["default"][key] ??= section[key]
+                    }
+                } else {
+                    const section = subResult[sectionKey]
+                    const actualId = Array.from(section["id"] ?? [])[0] ?? sectionKey
+                    r[actualId] ??= {}
+                    for (const key in section) {
+                        r[actualId][key] ??= section[key]
+                    }
                 }
             }
         }
 
-        if (r["default"] !== undefined && Object.keys(r).length > 1) {
+        /**
+         * Copy all values from the section with name "key" into the other sections,
+         * remove section "key" afterwards
+         * @param key
+         */
+        function spreadSection(key: string) {
             for (const section in r) {
-                if (section === "default") {
+                if (section === key) {
                     continue
                 }
-                for (const k in r.default) {
-                    r[section][k] ??= r.default[k]
+                for (const k in r[key]) {
+                    r[section][k] ??= r[key][k]
                 }
             }
-            delete r.default
+            delete r[key]
+        }
+
+        // The "default" part of the result contains all general info
+        // The other 'sections' need to get those copied! Then, we delete the "default"-section
+        if (r["default"] !== undefined && Object.keys(r).length > 1) {
+            spreadSection("default")
+        }
+        if (Object.keys(r).length > 1) {
+            // This result has multiple sections
+            // We should check that the naked URL got distributed and scrapped
+            const keys = Object.keys(r)
+            if (Object.keys(r).length > 2) {
+                console.log("Multiple sections detected: ", JSON.stringify(keys))
+            }
+            const shortestKeyLength: number = Math.min(...keys.map((k) => k.length))
+            const key = keys.find((k) => k.length === shortestKeyLength)
+            if (keys.some((k) => !k.startsWith(key))) {
+                throw (
+                    "Invalid multi-object: the shortest key is not the start of all the others: " +
+                    JSON.stringify(keys)
+                )
+            }
+            spreadSection(key)
+        }
+        if (Object.keys(r).length == 1) {
+            const key = Object.keys(r)[0]
+            if (key.indexOf("#") > 0) {
+                const newKey = key.split("#")[0]
+                r[newKey] = r[key]
+                delete r[key]
+            }
         }
         return r
     }
@@ -675,6 +737,7 @@ export default class LinkedDataLoader {
     /**
      * Fetches all data relevant to velopark.
      * The id will be saved as `ref:velopark`
+     * If the entry has multiple sections, this will return multiple items
      * @param url
      */
     public static async fetchVeloparkEntry(
@@ -685,6 +748,7 @@ export default class LinkedDataLoader {
         if (this.veloparkCache[cacheKey]) {
             return this.veloparkCache[cacheKey]
         }
+        // Note: the proxy doesn't make any changes in this case
         const withProxyUrl = Constants.linkedDataProxy.replace("{url}", encodeURIComponent(url))
         const optionalPaths: Record<string, string | Record<string, string>> = {
             "schema:interactionService": {
@@ -697,6 +761,7 @@ export default class LinkedDataLoader {
                 "schema:email": "email",
                 "schema:telephone": "phone",
             },
+            //  "schema:photos": "images",
             "schema:dateModified": "_last_edit_timestamp",
         }
         if (includeExtras) {
@@ -740,9 +805,22 @@ export default class LinkedDataLoader {
             graphOptionalPaths,
             extra
         )
+        for (const unpatchedKey in unpatched) {
+            // Dirty hack
+            const rawData = await Utils.downloadJsonCached<object>(url, 1000 * 60 * 60)
+            const images = rawData["photos"]?.map((ph) => <string>ph.image)
+            if (images) {
+                unpatched[unpatchedKey].images = new Set<string>(images)
+            }
+        }
+
+        console.log("Got unpatched:", unpatched)
         const patched: Feature[] = []
-        for (const section in unpatched) {
+        for (let section in unpatched) {
             const p = LinkedDataLoader.patchVeloparkProperties(unpatched[section])
+            if (Object.keys(unpatched).length === 1 && section.endsWith("#section1")) {
+                section = section.split("#")[0]
+            }
             p["ref:velopark"] = [section]
             patched.push(LinkedDataLoader.asGeojson(p))
         }

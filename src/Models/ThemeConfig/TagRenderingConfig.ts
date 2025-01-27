@@ -5,10 +5,7 @@ import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { And } from "../../Logic/Tags/And"
 import { Utils } from "../../Utils"
 import { Tag } from "../../Logic/Tags/Tag"
-import {
-    MappingConfigJson,
-    QuestionableTagRenderingConfigJson,
-} from "./Json/QuestionableTagRenderingConfigJson"
+import { MappingConfigJson, QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
@@ -19,6 +16,7 @@ import { Feature } from "geojson"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
 import { UploadableTag } from "../../Logic/Tags/TagTypes"
 import LayerConfig from "./LayerConfig"
+import ComparingTag from "../../Logic/Tags/ComparingTag"
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -79,6 +77,9 @@ export default class TagRenderingConfig {
     public readonly editButtonAriaLabel?: Translation
     public readonly labels: string[]
     public readonly classes: string[] | undefined
+
+    public readonly onSoftDelete?: ReadonlyArray<UploadableTag>
+    public readonly alwaysForceSaveButton: boolean
 
     constructor(
         config:
@@ -141,7 +142,21 @@ export default class TagRenderingConfig {
         this.question = Translations.T(json.question, translationKey + ".question")
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.questionHintIsMd = json["questionHintIsMd"] ?? false
+        this.alwaysForceSaveButton = json["#force-save-button"] === "yes"
         this.description = Translations.T(json.description, translationKey + ".description")
+        if (json.onSoftDelete && !Array.isArray(json.onSoftDelete)) {
+            throw context + ".onSoftDelete Not an array: " + typeof json.onSoftDelete
+        }
+        this.onSoftDelete = json.onSoftDelete?.map((t) => {
+            const tag = TagUtils.Tag(t, context)
+            if (tag instanceof RegexTag) {
+                throw context + ".onSoftDelete Invalid onSoftDelete: cannot upload tag " + t
+            }
+            if (tag instanceof ComparingTag) {
+                throw context + ".onSoftDelete Invalid onSoftDelete: cannot upload tag " + t
+            }
+            return tag
+        })
         this.editButtonAriaLabel = Translations.T(
             json.editButtonAriaLabel,
             translationKey + ".editButtonAriaLabel"
@@ -371,8 +386,14 @@ export default class TagRenderingConfig {
             throw `${ctx}.addExtraTags: expected a list, but got a ${typeof mapping.addExtraTags}`
         }
         if (mapping.addExtraTags !== undefined && multiAnswer) {
-            const usedKeys = mapping.addExtraTags?.flatMap((et) => TagUtils.Tag(et).usedKeys())
-            if (usedKeys.some((key) => TagUtils.Tag(mapping.if).usedKeys().indexOf(key) > 0)) {
+            const usedKeys = mapping.addExtraTags?.flatMap((et) =>
+                TagUtils.Tag(et, context).usedKeys()
+            )
+            if (
+                usedKeys.some(
+                    (key) => TagUtils.Tag(mapping.if, context).usedKeys().indexOf(key) > 0
+                )
+            ) {
                 throw `${ctx}: Invalid mapping: got a multi-Answer with addExtraTags which also modifies one of the keys; this is not allowed`
             }
         }
@@ -977,7 +998,7 @@ export class TagRenderingConfigUtils {
         tags: UIEventSource<Record<string, string>>,
         feature?: Feature
     ): Store<TagRenderingConfig> {
-        const isNSI = NameSuggestionIndex.supportedTypes().indexOf(config.freeform?.key) >= 0
+        const isNSI = NameSuggestionIndex.supportedTypes.indexOf(<any>config.freeform?.key) >= 0
         if (!isNSI) {
             return new ImmutableStore(config)
         }
@@ -997,8 +1018,8 @@ export class TagRenderingConfigUtils {
                 )
             )
         })
-        return extraMappings.map((extraMappings) => {
-            if (!extraMappings || extraMappings.length == 0) {
+        return extraMappings.mapD((extraMappings) => {
+            if (extraMappings.length == 0) {
                 return config
             }
             const clone: TagRenderingConfig = Object.create(config)

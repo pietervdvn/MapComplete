@@ -107,7 +107,7 @@
     },
     "bicyclelib": {
         "description": "\"Bicycle library\" je místo, kde si lze půjčit jízdní kola, často za malý roční poplatek. Významným případem použití jsou \"bicycle libraries\" pro děti, které jim umožňují vyměnit kolo za větší, když ze svého stávajícího kola vyrostou",
-        "title": "Bicycle libraries"
+        "title": "Knihovna jízdních kol"
     },
     "binoculars": {
         "description": "Mapa s dalekohledem upevněným na místě pomocí tyče. Obvykle se nachází na turistických místech, rozhlednách, vrcholech panoramatických věží nebo příležitostně v přírodních rezervacích.",
@@ -488,6 +488,11 @@
                 "override": {
                     "=name": "Sportovní místa bez etymologických informací"
                 }
+            },
+            "8": {
+                "override": {
+                    "=name": "Parky bez etymologických informací"
+                }
             }
         },
         "shortDescription": "Jaký je původ toponyma?",
@@ -585,7 +590,7 @@
         "title": "Ohniště a grily"
     },
     "food": {
-        "description": "Restaurace a rychlého občerstvení",
+        "description": "Restaurace a rychlé občerstvení",
         "title": "Restaurace a rychlé občerstvení"
     },
     "fritures": {
@@ -721,6 +726,10 @@
         "description": "Na této mapě jsou zobrazeny veřejně přístupné vnitřní prostory",
         "title": "Vnitřní prostory"
     },
+    "insects": {
+        "description": "Hmyzí hotely poskytují hmyzu úkryt.",
+        "title": "Hmyzí hotely"
+    },
     "items_with_image": {
         "description": "Mapa zobrazující všechny položky v OSM, které mají obrázek. Toto téma je pro MapComplete velmi nevhodné, protože někdo nemůže přímo přidat obrázek. Nicméně toto téma je zde hlavně proto, aby to vše zahrnovalo do databáze, což umožní rychle načítat obrázky v okolí pro další funkce",
         "title": "Všechny položky s obrázky"
@@ -833,6 +842,7 @@
                         }
                     }
                 },
+                "name": "Changeset centra",
                 "tagRenderings": {
                     "contributor": {
                         "question": "Který přispěvatel provedl tuto změnu?",
@@ -850,7 +860,8 @@
                         "render": "Sada změn <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
                     },
                     "theme-id": {
-                        "question": "Jaký motiv byl použit k provedení této změny?"
+                        "question": "Jaký motiv byl použit k provedení této změny?",
+                        "render": "Změna pomocí tématu <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
                     },
                     "version": {
                         "question": "Jaká verze aplikace MapComplete byla použita k provedení této změny?",
@@ -1053,7 +1064,7 @@
                 }
             }
         },
-        "title": "Open Love Map"
+        "title": "Open Love mapa"
     },
     "openwindpowermap": {
         "description": "Mapa pro zobrazení a úpravy větrných turbín.",
@@ -1076,27 +1087,14 @@
     "pets": {
         "description": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ...",
         "layers": {
-            "1": {
+            "4": {
                 "override": {
                     "name": "Restaurace vhodné pro vstup se psy"
                 }
             },
-            "2": {
-                "override": {
-                    "name": "Obchody vhodné pro vstup se psy",
-                    "title": {
-                        "render": "Obchody vhodné pro vstup se psy"
-                    }
-                }
-            },
             "6": {
                 "override": {
-                    "presets": {
-                        "0": {
-                            "description": "Obchod, ve kterém si můžete vzít psa téměř kamkoli",
-                            "title": "obchod vhodný pro vstup se psem"
-                        }
-                    }
+                    "name": "Obchody vhodné pro vstup se psy"
                 }
             }
         },

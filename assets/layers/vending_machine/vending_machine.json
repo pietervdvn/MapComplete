@@ -29,6 +29,7 @@
   "calculatedTags": [
     "_vending_count=feat.properties.vending.split(';').length"
   ],
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Vending machine",
@@ -37,7 +38,8 @@
       "fr": "Distributeur",
       "ca": "Màquina expenedora",
       "cs": "Prodejní automat",
-      "es": "Máquina expendedora"
+      "es": "Máquina expendedora",
+      "uk": "Торговий автомат"
     },
     "mappings": [
       {
@@ -368,7 +370,8 @@
         "fr": "un distributeur",
         "ca": "una màquina expenedora",
         "cs": "prodejní automat",
-        "es": "una máquina expendedora"
+        "es": "una máquina expendedora",
+        "uk": "торговий автомат"
       },
       "tags": [
         "amenity=vending_machine"
@@ -387,7 +390,8 @@
         "fr": "Que vent ce distributeur ?",
         "ca": "Que ven aquesta màquina expenedora?",
         "cs": "Co tento automat prodává?",
-        "es": "¿Qué vende esta máquina expendedora?"
+        "es": "¿Qué vende esta máquina expendedora?",
+        "uk": "Що продає цей автомат?"
       },
       "freeform": {
         "key": "vending",
@@ -402,7 +406,8 @@
         "fr": "Ce distributeur vent {vending}",
         "ca": "Aquesta màquina expenedora ven {vending}",
         "cs": "Tento automat prodává {vending}",
-        "es": "Esta máquina expendedora vende {vending}"
+        "es": "Esta máquina expendedora vende {vending}",
+        "uk": "Цей торговий автомат продає {vending}"
       },
       "mappings": [
         {
@@ -414,7 +419,8 @@
             "fr": "Vent des boissons",
             "ca": "Es venen begudes",
             "cs": "Prodává nápoje",
-            "es": "Se venden bebidas"
+            "es": "Se venden bebidas",
+            "uk": "Напої"
           },
           "icon": "./assets/layers/id_presets/temaki-bottles.svg"
         },
@@ -427,7 +433,8 @@
             "fr": "Vent des confiseries",
             "ca": "Es venen llaminadures",
             "cs": "Prodává sladkosti",
-            "es": "Se venden dulces"
+            "es": "Se venden dulces",
+            "uk": "Солодощі"
           },
           "icon": "./assets/layers/id_presets/maki-confectionery.svg"
         },
@@ -440,7 +447,8 @@
             "fr": "Vent de la nourriture",
             "ca": "Es ven menjar",
             "cs": "Prodává jídlo",
-            "es": "Se vende comida"
+            "es": "Se vende comida",
+            "uk": "Продукти харчування"
           },
           "icon": "./assets/layers/vending_machine/utensils.svg"
         },
@@ -453,7 +461,8 @@
             "fr": "Vent des cigarettes",
             "ca": "Es ven tabaco",
             "cs": "Prodává cigarety",
-            "es": "Se venden cigarrillos"
+            "es": "Se venden cigarrillos",
+            "uk": "Сигарети"
           },
           "icon": "./assets/layers/vending_machine/smoking.svg"
         },
@@ -466,7 +475,8 @@
             "fr": "Vent des préservatifs",
             "ca": "Es venen preservatius",
             "cs": "Prodává kondomy",
-            "es": "Se venden preservativos"
+            "es": "Se venden preservativos",
+            "uk": "Презервативи"
           },
           "icon": "./assets/layers/vending_machine/condom.svg"
         },
@@ -479,7 +489,8 @@
             "fr": "Vent du café",
             "ca": "Es ven cafè",
             "cs": "Prodává kafe",
-            "es": "Se vende café"
+            "es": "Se vende café",
+            "uk": "Кава"
           },
           "icon": "./assets/layers/vending_machine/mug-saucer.svg"
         },
@@ -492,7 +503,8 @@
             "fr": "Vent de l'eau",
             "ca": "Es ven aigua",
             "cs": "Prodává pitnou vodu",
-            "es": "Se vende agua potable"
+            "es": "Se vende agua potable",
+            "uk": "Питна вода"
           },
           "icon": "./assets/layers/id_presets/temaki-water_bottle.svg"
         },
@@ -505,7 +517,8 @@
             "fr": "Vent des journaux",
             "ca": "Es venen diaris",
             "cs": "Prodává noviny",
-            "es": "Se venden periódicos"
+            "es": "Se venden periódicos",
+            "uk": "Газети"
           },
           "icon": "./assets/layers/id_presets/fas-newspaper.svg"
         },
@@ -520,7 +533,8 @@
             "cs": "Prodává duše na kola",
             "pt_BR": "Câmaras de ar para bicicletas são vendidas aqui",
             "es": "Se venden cámaras de aire para bicicleta",
-            "pt": "Câmaras de ar para bicicletas são vendidas aqui"
+            "pt": "Câmaras de ar para bicicletas são vendidas aqui",
+            "uk": "Велосипедні внутрішні трубки"
           }
         },
         {
@@ -532,7 +546,8 @@
             "fr": "Vent du lait",
             "ca": "Es ven llet",
             "cs": "Prodává mléko",
-            "es": "Se vende leche"
+            "es": "Se vende leche",
+            "uk": "Молоко"
           },
           "icon": "./assets/layers/vending_machine/cow.svg"
         },
@@ -545,7 +560,8 @@
             "fr": "Vent du pain",
             "ca": "Es ven pa",
             "cs": "Prodává chléb",
-            "es": "Se vende pan"
+            "es": "Se vende pan",
+            "uk": "Хліб"
           },
           "icon": "./assets/layers/id_presets/maki-bakery.svg"
         },
@@ -558,7 +574,8 @@
             "fr": "Vent des œufs",
             "ca": "Es venen ous",
             "cs": "Prodává vejce",
-            "es": "Se venden huevos"
+            "es": "Se venden huevos",
+            "uk": "Яйця"
           },
           "icon": "./assets/layers/vending_machine/egg.svg"
         },
@@ -568,7 +585,8 @@
             "en": "Ice cream is sold",
             "nl": "IJs wordt verkocht",
             "de": "Speiseeis wird verkauft",
-            "es": "Se venden helados"
+            "es": "Se venden helados",
+            "uk": "Морозиво"
           },
           "icon": "./assets/layers/ice_cream/ice_cream.svg"
         },
@@ -581,7 +599,8 @@
             "fr": "Vent du fromage",
             "ca": "Es ven formatge",
             "cs": "Prodává sýr",
-            "es": "Se vende queso"
+            "es": "Se vende queso",
+            "uk": "Твердий сир"
           },
           "icon": "./assets/layers/id_presets/fas-cheese.svg"
         },
@@ -594,7 +613,8 @@
             "fr": "Vent du miel",
             "ca": "Es ven mel",
             "cs": "Prodává med",
-            "es": "Se vende miel"
+            "es": "Se vende miel",
+            "uk": "Мед"
           },
           "icon": "./assets/layers/vending_machine/honey.svg"
         },
@@ -607,7 +627,8 @@
             "fr": "Vent des pommes de terre",
             "ca": "Es venen papes",
             "cs": "Prodává brambory",
-            "es": "Se venden patatas"
+            "es": "Se venden patatas",
+            "uk": "Картопля"
           },
           "icon": "./assets/layers/vending_machine/potato.svg"
         },
@@ -619,7 +640,8 @@
             "ca": "Es venen productes carnis",
             "de": "Fleisch wird verkauft",
             "cs": "Prodává maso",
-            "es": "Se vende carne"
+            "es": "Se vende carne",
+            "uk": "М'ясо"
           },
           "icon": "./assets/layers/id_presets/temaki-meat.svg"
         },
@@ -631,7 +653,8 @@
             "de": "Obst wird verkauft",
             "cs": "Prodává ovoce",
             "ca": "Es ven fruita",
-            "es": "Se vende fruta"
+            "es": "Se vende fruta",
+            "uk": "Фрукти"
           },
           "icon": "./assets/layers/vending_machine/fruits.svg"
         },
@@ -643,7 +666,8 @@
             "de": "Erdbeeren werden verkauft",
             "cs": "Prodává jahody",
             "ca": "Es venen maduixes",
-            "es": "Se venden fresas"
+            "es": "Se venden fresas",
+            "uk": "Полуниця"
           },
           "icon": "./assets/layers/vending_machine/strawberry.svg"
         },
@@ -656,7 +680,8 @@
             "fr": "Vent des fleurs",
             "ca": "Es venen flors",
             "cs": "Prodává květiny",
-            "es": "Se venden flores"
+            "es": "Se venden flores",
+            "uk": "Квіти"
           },
           "icon": "./assets/layers/id_presets/maki-florist.svg"
         },
@@ -668,7 +693,8 @@
             "de": "Parkscheine werden verkauft",
             "ca": "Es venen tiquets d'aparcament",
             "cs": "Prodává parkovací lístky",
-            "es": "Se venden tickets de aparcamiento"
+            "es": "Se venden tickets de aparcamiento",
+            "uk": "Паркувальні талони"
           },
           "icon": "./assets/layers/parking_ticket_machine/parking_tickets.svg"
         },
@@ -679,7 +705,8 @@
             "ca": "Es venen cèntims premsats",
             "de": "Souvenirmünzen werden verkauft",
             "cs": "Prodává pamětní mince/lisované",
-            "es": "Se venden monedas conmemorativas"
+            "es": "Se venden monedas conmemorativas",
+            "uk": "Пресовані монети"
           },
           "icon": "./assets/themes/elongated_coin/penny.svg"
         },
@@ -691,7 +718,8 @@
             "de": "Fahrscheine werden verkauft",
             "ca": "Es venen bitllets de transport públic",
             "cs": "Prodává lístky na MHD",
-            "es": "Se venden billetes de transporte público"
+            "es": "Se venden billetes de transporte público",
+            "uk": "Квитки на громадський транспорт"
           },
           "icon": "./assets/themes/stations/public_transport_tickets.svg"
         },
@@ -705,7 +733,8 @@
             "ca": "Es venen llums per a bicicletes",
             "pt_BR": "Luzes para bicicleta são vendidas aqui",
             "es": "Se venden luces para bicicleta",
-            "pt": "Luzes para bicicleta são vendidas aqui"
+            "pt": "Luzes para bicicleta são vendidas aqui",
+            "uk": "Велосипедні ліхтарі"
           }
         },
         {
@@ -718,7 +747,8 @@
             "ca": "Es venen guants",
             "pt_BR": "Luvas são vendidas aqui",
             "es": "Se venden guantes",
-            "pt": "Luvas são vendidas aqui"
+            "pt": "Luvas são vendidas aqui",
+            "uk": "Рукавички"
           }
         },
         {
@@ -731,7 +761,8 @@
             "ca": "Es venen kits de reparació de bicicletes",
             "pt_BR": "Kits para reparo de bicicleta são vendidos aqui",
             "es": "Se venden kits de reparación para bicicletas",
-            "pt": "Kits para reparo de bicicleta são vendidos aqui"
+            "pt": "Kits para reparo de bicicleta são vendidos aqui",
+            "uk": "Набори для ремонту велосипедів"
           }
         },
         {
@@ -744,7 +775,8 @@
             "ca": "Es venen bombes de bicicletes",
             "pt_BR": "Bombas de ar para bicicleta são vendidas aqui",
             "es": "Se venden bombas para bicicletas",
-            "pt": "Bombas de ar para bicicleta são vendidas aqui"
+            "pt": "Bombas de ar para bicicleta são vendidas aqui",
+            "uk": "Велосипедні насоси"
           }
         },
         {
@@ -757,7 +789,8 @@
             "ca": "Es venen cadenats per a bicicletes",
             "pt_BR": "Cadeados para bicicleta são vendidos aqui",
             "es": "Se venden candados para bicicletas",
-            "pt": "Cadeados para bicicleta são vendidos aqui"
+            "pt": "Cadeados para bicicleta são vendidos aqui",
+            "uk": "Велосипедні замки"
           }
         }
       ],
@@ -832,7 +865,8 @@
         "fr": "Qui exploite ce distributeur ?",
         "ca": "Qui opera aquesta màquina expenedora?",
         "cs": "Kdo provozuje tento automat?",
-        "es": "¿Quién opera esta máquina expendedora?"
+        "es": "¿Quién opera esta máquina expendedora?",
+        "uk": "Хто керує цим автоматом?"
       },
       "freeform": {
         "key": "operator",
@@ -853,7 +887,8 @@
         "fr": "Ce distributeur est exploité par {operator}",
         "ca": "{operator} gestiona aquesta màquina expenedora",
         "cs": "Tento prodejní automat provozuje {operator}",
-        "es": "Esta máquina expendedora es operada por {operator}"
+        "es": "Esta máquina expendedora es operada por {operator}",
+        "uk": "Цим торговим автоматом керує {operator}"
       }
     },
     {
@@ -865,7 +900,8 @@
         "fr": "Est-ce que ce distributeur est en intérieur ?",
         "ca": "Aquesta màquina expenedora està a l'exterior?",
         "cs": "Je tento automat uvnitř?",
-        "es": "¿Esta máquina expendedora está en interiores?"
+        "es": "¿Esta máquina expendedora está en interiores?",
+        "uk": "Цей торговий автомат знаходиться в приміщенні?"
       },
       "mappings": [
         {
@@ -890,7 +926,8 @@
             "fr": "Ce distributeur est à l'intérieur",
             "ca": "Aquesta màquina expenedora està a l'interior",
             "cs": "Tento prodejní automat je uvnitř",
-            "es": "Esta máquina expendedora está en interiores"
+            "es": "Esta máquina expendedora está en interiores",
+            "uk": "Цей торговий автомат знаходиться в приміщенні"
           }
         },
         {
@@ -902,7 +939,8 @@
             "fr": "Ce distributeur est à l'extérieur",
             "ca": "Aquesta màquina expenedora està a l'exterior",
             "cs": "Tento prodejní automat je venku",
-            "es": "Esta máquina expendedora está al aire libre"
+            "es": "Esta máquina expendedora está al aire libre",
+            "uk": "Цей торговий автомат знаходиться на відкритому повітрі"
           }
         }
       ]
@@ -923,7 +961,8 @@
           "ca": "Aquest és el número al qual podeu trucar en cas de problemes amb la màquina expenedora",
           "de": "Die ist die Telefonnummer, die bei Problemen mit dem Automaten kontaktiert werden kann",
           "cs": "Toto je číslo, na které můžete zavolat v případě problémů s automatem",
-          "es": "Este es el número al que puedes llamar en caso de problemas con la máquina expendedora"
+          "es": "Este es el número al que puedes llamar en caso de problemas con la máquina expendedora",
+          "uk": "Це номер, за яким ви можете зателефонувати у разі виникнення проблем з торговим автоматом"
         }
       }
     },
@@ -965,7 +1004,8 @@
               "nl": "een condoom",
               "de": "ein Kondom",
               "ca": "un preservatiu",
-              "es": "preservativo"
+              "es": "preservativo",
+              "cs": "kondom"
             }
           ]
         ]
@@ -1018,7 +1058,8 @@
         "es": "¿Esta máquina expendedora sigue operativa?",
         "da": "Er denne salgsautomat stadig i drift?",
         "cs": "Je tento automat stále v provozu?",
-        "ca": "Aquesta màquina expenedora encara funciona?"
+        "ca": "Aquesta màquina expenedora encara funciona?",
+        "uk": "Чи працює цей торговий автомат досі?"
       },
       "mappings": [
         {
@@ -1038,7 +1079,8 @@
             "da": "Denne salgsautomat virker",
             "es": "Esta máquina expendedora funciona",
             "cs": "Tento prodejní automat funguje",
-            "ca": "Aquesta màquina expenedora funciona"
+            "ca": "Aquesta màquina expenedora funciona",
+            "uk": "Цей торговий автомат працює"
           }
         },
         {
@@ -1058,7 +1100,8 @@
             "es": "Esta máquina expendedora está rota",
             "da": "Denne salgsautomat er i stykker",
             "cs": "Tento prodejní automat je rozbitý",
-            "ca": "Aquesta màquina expenedora està trencada"
+            "ca": "Aquesta màquina expenedora està trencada",
+            "uk": "Цей торговий автомат несправний"
           }
         },
         {
@@ -1078,7 +1121,8 @@
             "es": "Esta máquina expendedora está cerrada",
             "da": "Denne salgsautomat er lukket",
             "cs": "Tento prodejní automat je uzavřen",
-            "ca": "Aquesta màquina expenedora està tancada"
+            "ca": "Aquesta màquina expenedora està tancada",
+            "uk": "Цей торговий автомат закрито"
           }
         },
         {

@@ -5,7 +5,8 @@
     "nl": "Paadjes, trage wegen en autoluwe straten",
     "de": "Pfade, autofreie und geschwindigkeitsreduzierte Straßen",
     "fr": "Chemins, routes non carrossables et routes à vitesse réduite",
-    "es": "Senderos, caminos lentos y sin coches"
+    "es": "Senderos, caminos lentos y sin coches",
+    "cs": "Stezky, silnice bez aut a pomalé cesty"
   },
   "description": {
     "en": "All carfree roads",
@@ -13,7 +14,8 @@
     "de": "Alle autofreien Straßen",
     "ca": "Totes les carreteres sense cotxe",
     "fr": "Toutes les routes non carrossables",
-    "es": "Todos los caminos sin coches"
+    "es": "Todos los caminos sin coches",
+    "cs": "Všechny cesty bez aut"
   },
   "source": {
     "osmTags": {

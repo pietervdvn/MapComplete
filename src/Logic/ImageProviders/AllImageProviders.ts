@@ -22,29 +22,29 @@ export default class AllImageProviders {
         ...WikimediaImageProvider.commonsPrefixes,
         ...Mapillary.valuePrefixes,
         ...AllImageProviders.dontLoadFromPrefixes,
-        "Category:",
+        "Category:"
     ])
 
-    private static ImageAttributionSource: ImageProvider[] = [
+    private static imageAttributionSources: ImageProvider[] = [
         Imgur.singleton,
         Mapillary.singleton,
         WikidataImageProvider.singleton,
         WikimediaImageProvider.singleton,
         Panoramax.singleton,
-        AllImageProviders.genericImageProvider,
+        AllImageProviders.genericImageProvider
     ]
     public static apiUrls: string[] = [].concat(
-        ...AllImageProviders.ImageAttributionSource.map((src) => src.apiUrls())
+        ...AllImageProviders.imageAttributionSources.map((src) => src.apiUrls())
     )
     public static defaultKeys = [].concat(
-        AllImageProviders.ImageAttributionSource.map((provider) => provider.defaultKeyPrefixes)
+        AllImageProviders.imageAttributionSources.map((provider) => provider.defaultKeyPrefixes)
     )
     private static providersByName = {
         imgur: Imgur.singleton,
         mapillary: Mapillary.singleton,
         wikidata: WikidataImageProvider.singleton,
         wikimedia: WikimediaImageProvider.singleton,
-        panoramax: Panoramax.singleton,
+        panoramax: Panoramax.singleton
     }
 
     public static byName(name: string) {
@@ -52,7 +52,7 @@ export default class AllImageProviders {
     }
 
     public static async selectBestProvider(key: string, value: string): Promise<ImageProvider> {
-        for (const imageProvider of AllImageProviders.ImageAttributionSource) {
+        for (const imageProvider of AllImageProviders.imageAttributionSources) {
             try {
                 const extracted = await Promise.all(await imageProvider.ExtractUrls(key, value))
                 if (extracted?.length > 0) {
@@ -67,10 +67,39 @@ export default class AllImageProviders {
     }
 
     private static readonly _cachedImageStores: Record<string, Store<ProvidedImage[]>> = {}
+
     /**
-     * Tries to extract all image data for this image. Cachedon tags?.data?.id
+     * Does a guess on the number of images that are probably there.
+     * Will simply count all image tags
+     *
+     * AllImageProviders.estimateNumberOfImages({image:"abc", "mapillary": "123", "panoramax:0": "xyz"}) // => 3
+     * AllImageProviders.estimateNumberOfImages({wikidata:"Q123", "wikipedia": "nl:xyz"}) // => 0
+     *
+     *
      */
-    public static LoadImagesFor(
+    public static estimateNumberOfImages(tags: Record<string, string>, prefixes: string[] = undefined): number {
+        let count = 0
+
+        const sources = [Imgur.singleton,
+            Mapillary.singleton,
+            Panoramax.singleton,
+            AllImageProviders.genericImageProvider]
+        const allPrefixes = Utils.Dedup(prefixes ?? [].concat(...sources.map(s => s.defaultKeyPrefixes)))
+        for (const prefix of allPrefixes) {
+            for (const k in tags) {
+                if (k === prefix || k.startsWith(prefix + ":")) {
+                    count++
+                    continue
+                }
+            }
+        }
+        return count
+    }
+
+    /**
+     * Tries to extract all image data for this image. Cached on tags?.data?.id
+     */
+    public static loadImagesFor(
         tags: Store<Record<string, string>>,
         tagKey?: string[]
     ): Store<ProvidedImage[]> {
@@ -78,13 +107,14 @@ export default class AllImageProviders {
             return undefined
         }
         const id = tags?.data?.id
-        if (this._cachedImageStores[id]) {
-            return this._cachedImageStores[id]
+        const cachekey = id + (tagKey?.join(";") ?? "")
+        if (this._cachedImageStores[cachekey]) {
+            return this._cachedImageStores[cachekey]
         }
 
         const source = new UIEventSource([])
         const allSources: Store<ProvidedImage[]>[] = []
-        for (const imageProvider of AllImageProviders.ImageAttributionSource) {
+        for (const imageProvider of AllImageProviders.imageAttributionSources) {
             /*
                 By default, 'GetRelevantUrls' uses the defaultKeyPrefixes.
                 However, we override them if a custom image tag is set, e.g. 'image:menu'
@@ -98,22 +128,20 @@ export default class AllImageProviders {
                 source.set(dedup)
             })
         }
-        this._cachedImageStores[id] = source
+        this._cachedImageStores[cachekey] = source
         return source
     }
 
     /**
      * Given a list of URLs, tries to detect the images. Used in e.g. the comments
-     * @param url
      */
     public static loadImagesFrom(urls: string[]): Store<ProvidedImage[]> {
         const tags = {
-            id: "na",
+            id: urls.join(";")
         }
         for (let i = 0; i < urls.length; i++) {
-            const url = urls[i]
-            tags["image:" + i] = url
+            tags["image:" + i] = urls[i]
         }
-        return this.LoadImagesFor(new ImmutableStore(tags))
+        return this.loadImagesFor(new ImmutableStore(tags))
     }
 }

@@ -131,11 +131,17 @@
       ],
       "title": {
         "en": "a wall-mounted clock, mounted directly on a wall",
-        "nl": "een klok aan een muur, rechtstreeks bevestigd aan een muur"
+        "nl": "een klok aan een muur, rechtstreeks bevestigd aan een muur",
+        "de": "eine Wanduhr, die direkt an der Wand angebracht ist",
+        "es": "un reloj, montado directamente en una pared",
+        "cs": "nástěnné hodiny, namontované přímo na stěnu"
       },
       "description": {
         "en": "A publicly visible clock mounted directly on a wall",
-        "nl": "Een publiekelijk zichtbare klok rechtstreeks bevestigd aan een muur"
+        "nl": "Een publiekelijk zichtbare klok rechtstreeks bevestigd aan een muur",
+        "de": "Eine öffentlich sichtbare Uhr, die direkt an einer Wand angebracht ist",
+        "es": "Un reloj visible públicamente montado directamente en una pared",
+        "cs": "Veřejně viditelné hodiny namontované přímo na stěnu"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -175,12 +181,12 @@
           "then": {
             "en": "This clock is mounted on a wall, usually through a support perpendicular to the wall",
             "nl": "Deze klok is bevestigd aan een muur, meestal met een steun loodrecht op de muur",
-            "de": "Diese Uhr ist an einer Wand montiert",
+            "de": "Diese Uhr wird an der Wand befestigt, in der Regel durch einen Träger, der senkrecht zur Wand steht",
             "ca": "Aquest rellotge està muntat en una paret",
             "fr": "Cette horloge est fixée sur un mur",
             "pl": "Ten zegar jest zamontowany na ścianie",
             "cs": "Tyto hodiny jsou namontovány na stěně",
-            "es": "Este reloj está montado en una pared"
+            "es": "Este reloj está montado en una pared, generalmente a través de un soporte perpendicular a la pared"
           }
         },
         {
@@ -188,7 +194,9 @@
           "then": {
             "en": "This clock is mounted directly on a wall",
             "nl": "Deze klok is rechtstreeks aan een muur bevestigd",
-            "es": "Este reloj forma parte de una cartelera"
+            "es": "Este reloj está montado directamente en una pared",
+            "de": "Diese Uhr ist direkt an einer Wand montiert",
+            "cs": "Tyto hodiny jsou připevněné přímo na zeď"
           }
         },
         {
@@ -202,7 +210,7 @@
             "pl": "Ten zegar jest częścią bilbordu",
             "cs": "Tyto hodiny jsou součástí billboardu",
             "uk": "Цей годинник є частиною білборду",
-            "es": "Este reloj está en el suelo"
+            "es": "Este reloj es parte de un cartel"
           }
         },
         {
@@ -291,20 +299,29 @@
       "override": {
         "question": {
           "en": "Is this clock indoors?",
-          "nl": "Is deze klok binnen?"
+          "nl": "Is deze klok binnen?",
+          "de": "Befindet sich diese Uhr in Innenräumen?",
+          "es": "¿Este reloj está en el interior?",
+          "cs": "Jsou tyto hodiny uvnitř?"
         },
         "mappings": [
           {
             "then": {
               "en": "This clock is indoors",
-              "nl": "Deze klok is binnen"
+              "nl": "Deze klok is binnen",
+              "de": "Diese Uhr befindet sich in Innenräumen",
+              "es": "Este reloj está en un espacio interior",
+              "cs": "Tyto hodiny jsou uvnitř"
             }
           },
           {
             "if": "indoor=no",
             "then": {
               "en": "This clock is outdoors",
-              "nl": "Deze klok is buiten"
+              "nl": "Deze klok is buiten",
+              "de": "Diese Uhr ist im Freien",
+              "es": "Este reloj está en un espacio exterior",
+              "cs": "Tyto hodiny jsou venku"
             }
           }
         ]
@@ -589,7 +606,7 @@
       "id": "faces",
       "question": {
         "en": "How many faces does this clock have?",
-        "nl": "Hoeveel klokken heeft deze klok?",
+        "nl": "Hoeveel wijzerplaten heeft deze klok?",
         "de": "Wie viele Zifferblätter hat diese Uhr?",
         "ca": "Quantes cares té aquest rellotge?",
         "fr": "Combien de faces a cette horloge ?",
@@ -602,7 +619,7 @@
         "inline": true,
         "placeholder": {
           "en": "Number of faces",
-          "nl": "Aantal klokken",
+          "nl": "Aantal wijzerplaten",
           "de": "Anzahl der Zifferblätter",
           "ca": "Nombre de cares",
           "fr": "Nombre de faces",
@@ -612,7 +629,7 @@
       },
       "render": {
         "en": "This clock has {faces} faces",
-        "nl": "Deze klok heeft {faces} klokken",
+        "nl": "Deze klok heeft {faces} wijzerplaten",
         "de": "Diese Uhr hat {faces} Zifferblätter",
         "ca": "Aquest rellotge té {faces} cares",
         "fr": "Cette horloge a {faces} faces",
@@ -624,7 +641,7 @@
           "if": "faces=1",
           "then": {
             "en": "This clock has one face",
-            "nl": "Deze klok heeft één klok",
+            "nl": "Deze klok heeft één wijzerplaat",
             "de": "Diese Uhr hat ein Zifferblatt",
             "ca": "Aquest rellotge té una cara",
             "fr": "Cette horloge a une face",
@@ -636,7 +653,7 @@
           "if": "faces=2",
           "then": {
             "en": "This clock has two faces",
-            "nl": "Deze klok heeft twee klokken",
+            "nl": "Deze klok heeft twee wijzerplaten",
             "de": "Diese Uhr hat zwei Zifferblätter",
             "ca": "Aquest rellotge té dues cares",
             "fr": "Cette horloge a deux faces",
@@ -648,7 +665,7 @@
           "if": "faces=4",
           "then": {
             "en": "This clock has four faces",
-            "nl": "Deze klok heeft vier klokken",
+            "nl": "Deze klok heeft vier wijzerplaten",
             "de": "Diese Uhr hat vier Zifferblätter",
             "ca": "Aquest rellotge té quatre cares",
             "fr": "Cette horloge a quatre faces",

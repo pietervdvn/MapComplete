@@ -13,6 +13,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | South_Africa-CapeTown-Aerial-2018 | City of Cape Town Aerial Imagery (2018) | historicphoto |  | City of Cape Town Aerial |
 | South_Africa-CapeTown-Aerial-2021 | City of Cape Town Aerial Imagery (2021) | historicphoto |  | City of Cape Town Aerial |
 | South_Africa-CapeTown-Aerial-2023 | City of Cape Town Aerial Imagery (2023) | photo | ⭐ | City of Cape Town Aerial |
+| South_Africa-CapeTown-Aerial-2024 | City of Cape Town Aerial Imagery (2024) | photo | ⭐ | City of Cape Town Aerial |
 | osm-cambodia_laos_thailand_vietnam-bilingual | Cambodia, Laos, Thailand, Vietnam, Malaysia, Myanmar bilingual | osmbasedmap |  | © osm-tools.org & OpenStreetMap contributors, CC-BY-SA |
 | India-PMGSY | PMGSY GeoSadak - India Rural Roads Open Data | map |  | <a href='https://geosadak-pmgsy.nic.in/opendata/' target='_blank'>PMGSY Rural Connectivity Dataset, Government Open Data License</a> | <a href='https://www.mapbox.com/about/maps/' target='_blank' title='Mapbox' aria-label='Mapbox'>© Mapbox</a> | <a href='https://www.openstreetmap.org/about/' target='_blank' title='OpenStreetMap' aria-label='OpenStreetMap'>© OpenStreetMap</a> | <a href='https://www.maxar.com/' target='_blank' title='Maxar' aria-label='Maxar'>© Maxar</a> |
 | Plateau_orthophoto_official | MLIT Plateau Official | photo |  | MLIT_PLATEAU |
@@ -309,6 +310,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Tours-Orthophoto-2008_2010 | Tours - Orthophotos 2008-2010 | historicphoto |  | Orthophoto Tour(s) Plus 2008 |
 | fr.dpt.84.2010 | Vaucluse 2010 | historicphoto |  | ORTHO 2010 © PACA-04-05-84 |
 | Vercors-Orthophotos-1999 | Vercors (Réserve naturelle des Hauts-Plateaux du Vercors) - Orthophoto - 1999 - 1 m | historicphoto |  | Parc Naturel Régional du Vercors |
+| EA_LIDAR_DSM_1m_2022 | EA LiDAR Digital Surface Model 1m (2022) | elevation |  | Environment Agency |
+| EA_LIDAR_DTM_1m_2022 | EA LiDAR Digital Terrain Model 1m (2022) | elevation |  | Environment Agency |
 | Hampshire-Aerial-FCIR | Hampshire Aerial FCIR | photo |  |  |
 | Hampshire-Aerial-RGB | Hampshire Aerial RGB | photo |  |  |
 | NLS-OS-NatGrid-11250-1940-60 | NLS - OS 1:1,250 National Grid Maps, 1940s-1960s | historicmap |  | National Library of Scotland Historic Maps |
@@ -519,6 +522,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | UkraineVinnytsiaTG2021 | Ukraine - Vinnytsia TG 2021 | photo |  | © Вінницька міська рада |
 | Canvec_French | Canvec - French | map |  |  |
 | Canvec | Canvec - English | map |  |  |
+| Toronto-Imagery-Most-Current-Year | Toronto Latest Orthoimagery | photo |  | Contains information licensed under the Open Government Licence – Toronto |
 | Geobase_Roads_French | Geobase Roads - French | other |  |  |
 | Geobase_Roads | Geobase Roads - English | other |  |  |
 | canaan_drone_red_cross_201712 | Canaan - American Red Cross, Dec-2017 | photo |  | American Red Cross |
@@ -597,7 +601,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Delaware2012Orthophotography | Delaware 2012 Orthophotography | historicphoto |  | Digital Aerial Solutions, LLC, FirstMap |
 | DE_Orthophotography_2017_NC | Delaware 2017 Orthophotography (Natural Color) | historicphoto |  | Surdex Corp, FirstMap |
 | Delaware_FirstMap_2021 | Delaware FirstMap 2021 | historicphoto |  | Hexagon, FirstMap |
-| Delaware_FirstMap_2022 | Delaware FirstMap 2022 | photo |  | Sanborn Map Company, FirstMap |
+| Delaware_FirstMap_2022 | Delaware FirstMap 2022 | photo | ⭐ | Sanborn Map Company, FirstMap |
 | Delaware_Parks_2022 | Delaware Parks 2022 | photo |  | Sanborn Map Company, FirstMap |
 | Alachua_Ortho_2020 | Alachua County Orthoimagery (2020) | historicphoto |  | Alachua County Property Appraiser’s Office |
 | Alachua_Ortho_2023 | Alachua County Orthoimagery (2023) | photo |  | Alachua County Property Appraiser’s Office |
@@ -766,7 +770,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Greene_OH_2023 | Greene County Orthoimagery (2023) | historicphoto |  | Greene County, State of Ohio |
 | Greene_OH_2024 | Greene County Orthoimagery (2024) | photo |  | Greene County, State of Ohio |
 | Licking_OH_2023 | Licking County Orthoimagery (2023) | photo |  | Licking County, State of Ohio |
-| Lorain_OH_2024 | Lorain County Orthoimagery (2024) | photo |  | Lorain County, State of Ohio |
+| Lorain_OH_2024 | Lorain County Orthoimagery (2024) | photo | ⭐ | Lorain County, State of Ohio |
 | Lucas_OH_2023 | Lucas County Orthoimagery (2023) | photo |  | Lucas County, State of Ohio |
 | Mercer_OH_2021 | Mercer County Orthoimagery (2021) | photo |  | Mercer County, State of Ohio |
 | Miami_OH_2023 | Miami County Orthoimagery (2023) | photo |  | Miami County, State of Ohio |
@@ -791,7 +795,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | DVRPC_2020_MontgomeryPA | DVRPC Orthoimagery 2020 - Montgomery County (1ft) | photo |  | Delaware Valley Regional Planning Commission |
 | DVRPC_2020_PhiladelphiaPA | DVRPC Orthoimagery 2020 - Philadelphia County (1ft) | photo |  | Delaware Valley Regional Planning Commission |
 | PEMA_Orthoimagery | PEMA Orthoimagery (2018-2020) | historicphoto |  | Pennsylvania Emergency Management Agency |
-| PEMA_Orthoimagery_2022 | PEMA Orthoimagery (Western) [2022] | photo | ⭐ | Pennsylvania Emergency Management Agency |
+| PEMA_Orthoimagery_2023 | PEMA Orthoimagery Cycle 2 (2021-2023) | photo |  | Pennsylvania Emergency Management Agency |
 | Philadelphia_Ortho_2020 | Philadelphia Orthoimagery 2020 (3in) | historicphoto |  | City of Philadelphia |
 | Philadelphia_Ortho_2022 | Philadelphia Orthoimagery 2022 (2in) | historicphoto |  | City of Philadelphia |
 | Philadelphia_Ortho_2023 | Philadelphia Orthoimagery 2023 | photo | ⭐ | City of Philadelphia |
@@ -836,7 +840,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | ACT202305 | ACTmapi Imagery May 2023 | photo |  | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
 | ACT202309 | ACTmapi Imagery Sep 2023 | photo |  | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
 | ACT202311 | ACTmapi Imagery Nov 2023 | photo |  | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
-| ACT202402 | ACTmapi Imagery Feb 2024 | photo | ⭐ | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
+| ACT202402 | ACTmapi Imagery Feb 2024 | photo |  | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
+| ACT202409 | ACTmapi Imagery Sep 2024 | photo | ⭐ | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
 | Maxar_19-20_Australian_Bushfires_PreEvent | Maxar 2019-2020 Australian Bushfires Pre-event | photo |  | ©2020 DigitalGlobe |
 | NSW_LPI_BaseMap | DCS NSW Base Map | map |  | © State of New South Wales (Spatial Services, a business unit of the Department of Customer Service NSW). For current information go to spatial.nsw.gov.au. |
 | DCS_NSW_Floods2021 | DCS NSW Floods 2021 | photo |  | © State of New South Wales (Spatial Services, a business unit of the Department of Customer Service NSW). For current information go to spatial.nsw.gov.au. |

@@ -24,7 +24,7 @@
   }
 </script>
 
-{#if marker && marker}
+{#if marker}
   <div class="relative h-full w-full" style={`transform: rotate(${$_rotation})`}>
     {#each marker as icon}
       <div class="absolute top-0 left-0 h-full w-full">

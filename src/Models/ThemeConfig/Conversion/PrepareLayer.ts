@@ -1,28 +1,13 @@
-import {
-    Concat,
-    Conversion,
-    DesugaringContext,
-    DesugaringStep,
-    Each,
-    FirstOf,
-    Fuse,
-    On,
-    SetDefault,
-} from "./Conversion"
+import { Concat, DesugaringContext, DesugaringStep, Each, FirstOf, Fuse, On, SetDefault } from "./Conversion"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
-import {
-    MinimalTagRenderingConfigJson,
-    TagRenderingConfigJson,
-} from "../Json/TagRenderingConfigJson"
+import { MinimalTagRenderingConfigJson, TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { Utils } from "../../../Utils"
 import RewritableConfigJson from "../Json/RewritableConfigJson"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
 import Translations from "../../../UI/i18n/Translations"
 import { Translation } from "../../../UI/i18n/Translation"
 import tagrenderingconfigmeta from "../../../../src/assets/schemas/tagrenderingconfigmeta.json"
-import { AddContextToTranslations } from "./AddContextToTranslations"
-import FilterConfigJson, { FilterConfigOptionJson } from "../Json/FilterConfigJson"
-import predifined_filters from "../../../../assets/layers/filters/filters.json"
+import FilterConfigJson from "../Json/FilterConfigJson"
 import { TagConfigJson } from "../Json/TagConfigJson"
 import PointRenderingConfigJson, { IconConfigJson } from "../Json/PointRenderingConfigJson"
 import ValidationUtils from "./ValidationUtils"
@@ -33,14 +18,13 @@ import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
 import { ExpandRewrite } from "./ExpandRewrite"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
-import { Tag } from "../../../Logic/Tags/Tag"
-import { RegexTag } from "../../../Logic/Tags/RegexTag"
-import { Or } from "../../../Logic/Tags/Or"
+import { ExpandFilter, PruneFilters } from "./ExpandFilter"
+import { ExpandTagRendering } from "./ExpandTagRendering"
 
 class AddFiltersFromTagRenderings extends DesugaringStep<LayerConfigJson> {
     constructor() {
         super(
-            'Inspects all the tagRenderings. If some tagRenderings have the `filter` attribute set, introduce those filters. This step might introduce shorthand filter names, thus \'ExpandFilter\' should be run afterwards. Can be disabled with "#filter":"no-auto"',
+            "Inspects all the tagRenderings. If some tagRenderings have the `filter` attribute set, introduce those filters. This step might introduce shorthand filter names, thus 'ExpandFilter' should be run afterwards. Can be disabled with \"#filter\":\"no-auto\"",
             ["filter"],
             "AddFiltersFromTagRenderings"
         )
@@ -108,476 +92,6 @@ class AddFiltersFromTagRenderings extends DesugaringStep<LayerConfigJson> {
         return { ...json, filter: filters }
     }
 }
-class ExpandFilter extends DesugaringStep<LayerConfigJson> {
-    private static readonly predefinedFilters = ExpandFilter.load_filters()
-    private _state: DesugaringContext
-
-    constructor(state: DesugaringContext) {
-        super(
-            [
-                "Expands filters: replaces a shorthand by the value found in 'filters.json'.",
-                "If the string is formatted 'layername.filtername, it will be looked up into that layer instead.",
-            ].join(" "),
-            ["filter"],
-            "ExpandFilter"
-        )
-        this._state = state
-    }
-
-    private static load_filters(): Map<string, FilterConfigJson> {
-        const filters = new Map<string, FilterConfigJson>()
-        for (const filter of <FilterConfigJson[]>predifined_filters.filter) {
-            filters.set(filter.id, filter)
-        }
-        return filters
-    }
-
-    public static buildFilterFromTagRendering(
-        tr: TagRenderingConfigJson,
-        context: ConversionContext
-    ): FilterConfigJson {
-        if (!(tr.mappings?.length >= 1)) {
-            context.err(
-                "Found a matching tagRendering to base a filter on, but this tagRendering does not contain any mappings"
-            )
-        }
-        const qtr = <QuestionableTagRenderingConfigJson>tr
-        const options = qtr.mappings.map((mapping) => {
-            let icon: string = mapping.icon?.["path"] ?? mapping.icon
-            let emoji: string = undefined
-            if (Utils.isEmoji(icon)) {
-                emoji = icon
-                icon = undefined
-            }
-            let osmTags = TagUtils.Tag(mapping.if)
-            if (qtr.multiAnswer && osmTags instanceof Tag) {
-                osmTags = new RegexTag(
-                    osmTags.key,
-                    new RegExp("^(.+;)?" + osmTags.value + "(;.+)$", "is")
-                )
-            }
-            if (mapping.alsoShowIf) {
-                osmTags = new Or([osmTags, TagUtils.Tag(mapping.alsoShowIf)])
-            }
-
-            return <FilterConfigOptionJson>{
-                question: mapping.then,
-                osmTags: osmTags.asJson(),
-                searchTerms: mapping.searchTerms,
-                icon,
-                emoji,
-            }
-        })
-        // Add default option
-        options.unshift({
-            question: tr["question"] ?? Translations.t.general.filterPanel.allTypes,
-            osmTags: undefined,
-            searchTerms: undefined,
-        })
-        return {
-            id: tr["id"],
-            options,
-        }
-    }
-
-    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
-        if (json?.filter === undefined || json?.filter === null) {
-            return json // Nothing to change here
-        }
-
-        if (json.filter["sameAs"] !== undefined) {
-            return json // Nothing to change here
-        }
-
-        const newFilters: FilterConfigJson[] = []
-        const filters = <(FilterConfigJson | string)[]>json.filter
-
-        /**
-         * Create filters based on builtin filters or create them based on the tagRendering
-         */
-        for (let i = 0; i < filters.length; i++) {
-            const filter = filters[i]
-            if (filter === undefined) {
-                continue
-            }
-            if (typeof filter !== "string") {
-                newFilters.push(filter)
-                continue
-            }
-
-            const matchingTr = <TagRenderingConfigJson>(
-                json.tagRenderings.find((tr) => !!tr && tr["id"] === filter)
-            )
-            if (matchingTr) {
-                const filter = ExpandFilter.buildFilterFromTagRendering(
-                    matchingTr,
-                    context.enters("filter", i)
-                )
-                newFilters.push(filter)
-                continue
-            }
-
-            if (filter.indexOf(".") > 0) {
-                if (!(this._state.sharedLayers?.size > 0)) {
-                    // This is a bootstrapping-run, we can safely ignore this
-                    continue
-                }
-                const split = filter.split(".")
-                if (split.length > 2) {
-                    context.err(
-                        "invalid filter name: " + filter + ", expected `layername.filterid`"
-                    )
-                }
-                const layer = this._state.sharedLayers.get(split[0])
-                if (layer === undefined) {
-                    context.err("Layer '" + split[0] + "' not found")
-                }
-                const expectedId = split[1]
-                const expandedFilter = (<(FilterConfigJson | string)[]>layer.filter).find(
-                    (f) => typeof f !== "string" && f.id === expectedId
-                )
-                if (expandedFilter === undefined) {
-                    context.err("Did not find filter with name " + filter)
-                } else {
-                    newFilters.push(<FilterConfigJson>expandedFilter)
-                }
-                continue
-            }
-            // Search for the filter:
-            const found = ExpandFilter.predefinedFilters.get(filter)
-            if (found === undefined) {
-                const suggestions = Utils.sortedByLevenshteinDistance(
-                    filter,
-                    Array.from(ExpandFilter.predefinedFilters.keys()),
-                    (t) => t
-                )
-                context
-                    .enter(filter)
-                    .err(
-                        "While searching for predefined filter " +
-                            filter +
-                            ": this filter is not found. Perhaps you meant one of: " +
-                            suggestions
-                    )
-            }
-            newFilters.push(found)
-        }
-        return { ...json, filter: newFilters }
-    }
-}
-
-class ExpandTagRendering extends Conversion<
-    | string
-    | TagRenderingConfigJson
-    | {
-          builtin: string | string[]
-          override: any
-      },
-    TagRenderingConfigJson[]
-> {
-    private readonly _state: DesugaringContext
-    private readonly _tagRenderingsByLabel: Map<string, TagRenderingConfigJson[]>
-    // Only used for self-reference
-    private readonly _self: LayerConfigJson
-    private readonly _options: {
-        /* If true, will copy the 'osmSource'-tags into the condition */
-        applyCondition?: true | boolean
-        noHardcodedStrings?: false | boolean
-        addToContext?: false | boolean
-    }
-
-    constructor(
-        state: DesugaringContext,
-        self: LayerConfigJson,
-        options?: {
-            applyCondition?: true | boolean
-            noHardcodedStrings?: false | boolean
-            // If set, a question will be added to the 'sharedTagRenderings'. Should only be used for 'questions.json'
-            addToContext?: false | boolean
-        }
-    ) {
-        super(
-            "Converts a tagRenderingSpec into the full tagRendering, e.g. by substituting the tagRendering by the shared-question and reusing the builtins",
-            [],
-            "ExpandTagRendering"
-        )
-        this._state = state
-        this._self = self
-        this._options = options
-        this._tagRenderingsByLabel = new Map<string, TagRenderingConfigJson[]>()
-        for (const trconfig of state.tagRenderings?.values() ?? []) {
-            for (const label of trconfig["labels"] ?? []) {
-                let withLabel = this._tagRenderingsByLabel.get(label)
-                if (withLabel === undefined) {
-                    withLabel = []
-                    this._tagRenderingsByLabel.set(label, withLabel)
-                }
-                withLabel.push(trconfig)
-            }
-        }
-    }
-
-    public convert(
-        spec: string | any,
-        ctx: ConversionContext
-    ): QuestionableTagRenderingConfigJson[] {
-        const trs = this.convertOnce(spec, ctx)
-
-        const result = []
-        for (const tr of trs) {
-            if (typeof tr === "string" || tr["builtin"] !== undefined) {
-                const stable = this.convert(tr, ctx.inOperation("recursive_resolve"))
-                result.push(...stable)
-                if (this._options?.addToContext) {
-                    for (const tr of stable) {
-                        this._state.tagRenderings?.set(tr.id, tr)
-                    }
-                }
-            } else {
-                result.push(tr)
-                if (this._options?.addToContext) {
-                    this._state.tagRenderings?.set(tr["id"], <QuestionableTagRenderingConfigJson>tr)
-                }
-            }
-        }
-
-        return result
-    }
-
-    private lookup(name: string, ctx: ConversionContext): TagRenderingConfigJson[] | undefined {
-        const direct = this.directLookup(name)
-
-        if (direct === undefined) {
-            return undefined
-        }
-        const result: TagRenderingConfigJson[] = []
-        for (const tagRenderingConfigJson of direct) {
-            const nm: string | string[] | undefined = tagRenderingConfigJson["builtin"]
-            if (nm !== undefined) {
-                let indirect: TagRenderingConfigJson[]
-                if (typeof nm === "string") {
-                    indirect = this.lookup(nm, ctx)
-                } else {
-                    indirect = [].concat(...nm.map((n) => this.lookup(n, ctx)))
-                }
-                for (let foundTr of indirect) {
-                    foundTr = Utils.Clone<any>(foundTr)
-                    ctx.MergeObjectsForOverride(tagRenderingConfigJson["override"] ?? {}, foundTr)
-                    foundTr["id"] = tagRenderingConfigJson["id"] ?? foundTr["id"]
-                    result.push(foundTr)
-                }
-            } else {
-                result.push(tagRenderingConfigJson)
-            }
-        }
-        return result
-    }
-
-    /**
-     * Looks up a tagRendering or group of tagRenderings based on the name.
-     */
-    private directLookup(name: string): TagRenderingConfigJson[] | undefined {
-        const state = this._state
-        if (state.tagRenderings.has(name)) {
-            return [state.tagRenderings.get(name)]
-        }
-        if (this._tagRenderingsByLabel.has(name)) {
-            return this._tagRenderingsByLabel.get(name)
-        }
-
-        if (name.indexOf(".") < 0) {
-            return undefined
-        }
-
-        const spl = name.split(".")
-        let layer = state.sharedLayers?.get(spl[0])
-        if (spl[0] === this._self?.id) {
-            layer = this._self
-        }
-
-        if (spl.length !== 2 || !layer) {
-            return undefined
-        }
-
-        const id = spl[1]
-
-        const layerTrs = <TagRenderingConfigJson[]>(
-            layer.tagRenderings.filter((tr) => tr["id"] !== undefined)
-        )
-        let matchingTrs: TagRenderingConfigJson[]
-        if (id === "*") {
-            matchingTrs = layerTrs
-        } else if (id.startsWith("*")) {
-            const id_ = id.substring(1)
-            matchingTrs = layerTrs.filter((tr) => tr["labels"]?.indexOf(id_) >= 0)
-        } else {
-            matchingTrs = layerTrs.filter((tr) => tr["id"] === id || tr["labels"]?.indexOf(id) >= 0)
-        }
-
-        const contextWriter = new AddContextToTranslations<TagRenderingConfigJson>("layers:")
-        for (let i = 0; i < matchingTrs.length; i++) {
-            let found: TagRenderingConfigJson = Utils.Clone(matchingTrs[i])
-            if (this._options?.applyCondition) {
-                // The matched tagRenderings are 'stolen' from another layer. This means that they must match the layer condition before being shown
-                if (typeof layer.source !== "string") {
-                    if (found.condition === undefined) {
-                        found.condition = layer.source["osmTags"]
-                    } else {
-                        found.condition = { and: [found.condition, layer.source["osmTags"]] }
-                    }
-                }
-            }
-
-            found = contextWriter.convertStrict(
-                found,
-                ConversionContext.construct(
-                    [layer.id, "tagRenderings", found["id"]],
-                    ["AddContextToTranslations"]
-                )
-            )
-            matchingTrs[i] = found
-        }
-
-        if (matchingTrs.length !== 0) {
-            return matchingTrs
-        }
-        return undefined
-    }
-
-    private convertOnce(tr: string | any, ctx: ConversionContext): TagRenderingConfigJson[] {
-        const state = this._state
-
-        if (typeof tr === "string") {
-            let lookup
-            if (this._state.tagRenderings !== null) {
-                lookup = this.lookup(tr, ctx)
-            }
-            if (lookup === undefined) {
-                if (
-                    this._state.sharedLayers?.size > 0 &&
-                    ctx.path.at(-1) !== "icon" &&
-                    !ctx.path.find((p) => p === "pointRendering")
-                ) {
-                    ctx.warn(
-                        `A literal rendering was detected: ${tr}
-                      Did you perhaps forgot to add a layer name as 'layername.${tr}'? ` +
-                            Array.from(state.sharedLayers.keys()).join(", ")
-                    )
-                }
-
-                if (this._options?.noHardcodedStrings && this._state?.sharedLayers?.size > 0) {
-                    ctx.err(
-                        "Detected an invocation to a builtin tagRendering, but this tagrendering was not found: " +
-                            tr +
-                            " \n    Did you perhaps forget to add the layer as prefix, such as `icons." +
-                            tr +
-                            "`? "
-                    )
-                }
-
-                return [
-                    <any>{
-                        render: tr,
-                        id: tr.replace(/[^a-zA-Z0-9]/g, ""),
-                    },
-                ]
-            }
-            return lookup
-        }
-
-        if (tr["builtin"] !== undefined) {
-            let names: string | string[] = tr["builtin"]
-            if (typeof names === "string") {
-                names = [names]
-            }
-
-            if (this._state.tagRenderings === null) {
-                return []
-            }
-
-            for (const key of Object.keys(tr)) {
-                if (
-                    key === "builtin" ||
-                    key === "override" ||
-                    key === "id" ||
-                    key.startsWith("#")
-                ) {
-                    continue
-                }
-                ctx.err(
-                    "An object calling a builtin can only have keys `builtin` or `override`, but a key with name `" +
-                        key +
-                        "` was found. This won't be picked up! The full object is: " +
-                        JSON.stringify(tr)
-                )
-            }
-
-            const trs: TagRenderingConfigJson[] = []
-            for (const name of names) {
-                const lookup = this.lookup(name, ctx)
-                if (lookup === undefined) {
-                    let candidates = Array.from(state.tagRenderings.keys())
-                    if (name.indexOf(".") > 0) {
-                        const [layerName] = name.split(".")
-                        let layer = state.sharedLayers.get(layerName)
-                        if (layerName === this._self?.id) {
-                            layer = this._self
-                        }
-                        if (layer === undefined) {
-                            const candidates = Utils.sortedByLevenshteinDistance(
-                                layerName,
-                                Array.from(state.sharedLayers.keys()),
-                                (s) => s
-                            )
-                            if (state.sharedLayers.size === 0) {
-                                ctx.warn(
-                                    "BOOTSTRAPPING. Rerun generate layeroverview. While reusing tagrendering: " +
-                                        name +
-                                        ": layer " +
-                                        layerName +
-                                        " not found for now, but ignoring as this is a bootstrapping run. "
-                                )
-                            } else {
-                                ctx.err(
-                                    ": While reusing tagrendering: " +
-                                        name +
-                                        ": layer " +
-                                        layerName +
-                                        " not found. Maybe you meant one of " +
-                                        candidates.slice(0, 3).join(", ")
-                                )
-                            }
-                            continue
-                        }
-                        candidates = Utils.NoNull(layer.tagRenderings.map((tr) => tr["id"])).map(
-                            (id) => layerName + "." + id
-                        )
-                    }
-                    candidates = Utils.sortedByLevenshteinDistance(name, candidates, (i) => i)
-                    ctx.err(
-                        "The tagRendering with identifier " +
-                            name +
-                            " was not found.\n\tDid you mean one of " +
-                            candidates.join(", ") +
-                            "?\n(Hint: did you add a new label and are you trying to use this label at the same time? Run 'reset:layeroverview' first"
-                    )
-                    continue
-                }
-                for (let foundTr of lookup) {
-                    foundTr = Utils.Clone<any>(foundTr)
-                    ctx.MergeObjectsForOverride(tr["override"] ?? {}, foundTr)
-                    if (names.length == 1) {
-                        foundTr["id"] = tr["id"] ?? foundTr["id"]
-                    }
-                    trs.push(foundTr)
-                }
-            }
-            return trs
-        }
-
-        return [tr]
-    }
-}
 
 class DetectInline extends DesugaringStep<QuestionableTagRenderingConfigJson> {
     constructor() {
@@ -613,7 +127,7 @@ class DetectInline extends DesugaringStep<QuestionableTagRenderingConfigJson> {
                 if (json.freeform.inline === true) {
                     context.err(
                         "'inline' is set, but the rendering contains a special visualisation...\n    " +
-                            spec[key]
+                        spec[key]
                     )
                 }
                 json = JSON.parse(JSON.stringify(json))
@@ -712,20 +226,20 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
             if (blacklisted?.length > 0 && used?.length > 0) {
                 context.err(
                     "The {questions()}-special rendering only supports either a blacklist OR a whitelist, but not both." +
-                        "\n    Whitelisted: " +
-                        used.join(", ") +
-                        "\n    Blacklisted: " +
-                        blacklisted.join(", ")
+                    "\n    Whitelisted: " +
+                    used.join(", ") +
+                    "\n    Blacklisted: " +
+                    blacklisted.join(", ")
                 )
             }
             for (const usedLabel of used) {
                 if (!allLabels.has(usedLabel)) {
                     context.err(
                         "This layers specifies a special question element for label `" +
-                            usedLabel +
-                            "`, but this label doesn't exist.\n" +
-                            "    Available labels are " +
-                            Array.from(allLabels).join(", ")
+                        usedLabel +
+                        "`, but this label doesn't exist.\n" +
+                        "    Available labels are " +
+                        Array.from(allLabels).join(", ")
                     )
                 }
                 seen.add(usedLabel)
@@ -739,8 +253,8 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
             const question: QuestionableTagRenderingConfigJson = {
                 id: "leftover-questions",
                 render: {
-                    "*": `{questions( ,${Array.from(seen).join(";")})}`,
-                },
+                    "*": `{questions( ,${Array.from(seen).join(";")})}`
+                }
             }
             json.tagRenderings.push(question)
         }
@@ -822,13 +336,13 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         if (json.allowMove && !usedSpecialFunctions.has("move_button")) {
             json.tagRenderings.push({
                 id: "move-button",
-                render: { "*": "{move_button()}" },
+                render: { "*": "{move_button()}" }
             })
         }
         if (json.deletion && !usedSpecialFunctions.has("delete_button")) {
             json.tagRenderings.push({
                 id: "delete-button",
-                render: { "*": "{delete_button()}" },
+                render: { "*": "{delete_button()}" }
             })
         }
 
@@ -843,9 +357,9 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
                     or: [
                         "__featureSwitchIsDebugging=true",
                         "mapcomplete-show_tags=full",
-                        "mapcomplete-show_debug=yes",
-                    ],
-                },
+                        "mapcomplete-show_debug=yes"
+                    ]
+                }
             }
             json.tagRenderings?.push(trc)
         }
@@ -953,10 +467,10 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
     private static convertIfNeeded(
         input:
             | (object & {
-                  special: {
-                      type: string
-                  }
-              })
+            special: {
+                type: string
+            }
+        })
             | any,
         context: ConversionContext
     ): any {
@@ -1054,7 +568,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                 .map((nm) => RewriteSpecial.escapeStr(special[nm] ?? "", context))
                 .join(",")
             return {
-                "*": `{${type}(${args})${clss}}`,
+                "*": `{${type}(${args})${clss}}`
             }
         }
 
@@ -1152,11 +666,50 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
         }[] = []
 
         for (let i = 0; i < badgesJson.length; i++) {
-            const iconBadge: {
+            const iconBadge: string | ({
                 if: TagConfigJson
                 then: string | MinimalTagRenderingConfigJson
-            } = badgesJson[i]
-            const expanded = this._expand.convert(
+            }) = badgesJson[i]
+
+
+            if (typeof iconBadge === "string") {
+
+                const expanded: QuestionableTagRenderingConfigJson[] = this._expand.convert(
+                    iconBadge,
+                    context.enters("iconBadges", i)
+                )
+
+                for (const tr of expanded) {
+                    const condition = tr.condition
+                    for (const trElement of tr.mappings) {
+                        const showIf = TagUtils.optimzeJson({
+                            and: Utils.NoNull([condition,
+                                {
+                                    or: Utils.NoNull([
+                                        trElement.alsoShowIf, trElement.if
+                                    ])
+                                }
+                            ])
+                        })
+                        if (showIf === true) {
+                            context.warn("Dropping iconBadge that would be _always_ shown: " + (trElement.icon ?? trElement.then))
+                            continue
+                        }
+                        if (showIf === false) {
+                            continue
+                        }
+                        iconBadges.push({
+                            if: showIf,
+                            then: trElement.icon ?? trElement.then
+                        })
+                    }
+
+
+                }
+                continue
+            }
+
+            const expanded: QuestionableTagRenderingConfigJson[] = this._expand.convert(
                 <QuestionableTagRenderingConfigJson>iconBadge.then,
                 context.enters("iconBadges", i)
             )
@@ -1168,7 +721,7 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
             iconBadges.push(
                 ...expanded.map((resolved) => ({
                     if: iconBadge.if,
-                    then: <MinimalTagRenderingConfigJson>resolved,
+                    then: <MinimalTagRenderingConfigJson>resolved
                 }))
             )
         }
@@ -1180,7 +733,8 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
 class PreparePointRendering extends Fuse<PointRenderingConfigJson> {
     constructor(state: DesugaringContext, layer: LayerConfigJson) {
         super(
-            "Prepares point renderings by expanding 'icon' and 'iconBadges'",
+            "Prepares point renderings by expanding 'icon' and 'iconBadges'." +
+            " A tagRendering from the host tagRenderings will be substituted in",
             new On(
                 "marker",
                 new Each(
@@ -1236,19 +790,21 @@ class ExpandMarkerRenderings extends DesugaringStep<IconConfigJson> {
     }
 
     convert(json: IconConfigJson, context: ConversionContext): IconConfigJson {
-        const expander = new ExpandTagRendering(this._state, this._layer)
+        const expander = new ExpandTagRendering(this._state, this._layer, { applyCondition: false })
         const result: IconConfigJson = { icon: undefined, color: undefined }
         if (json.icon && json.icon["builtin"]) {
-            result.icon = <MinimalTagRenderingConfigJson>(
-                expander.convert(<any>json.icon, context.enter("icon"))[0]
-            )
+            result.icon =
+                <MinimalTagRenderingConfigJson>(
+                    expander.convert(<any>json.icon, context.enter("icon"))[0]
+                ) ?? json.icon
         } else {
             result.icon = json.icon
         }
         if (json.color && json.color["builtin"]) {
-            result.color = <MinimalTagRenderingConfigJson>(
-                expander.convert(<any>json.color, context.enter("color"))[0]
-            )
+            result.color =
+                <MinimalTagRenderingConfigJson>(
+                    expander.convert(<any>json.color, context.enter("color"))[0]
+                ) ?? json.color
         } else {
             result.color = json.color
         }
@@ -1305,7 +861,7 @@ export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
 
         const specialVis: Exclude<RenderingSpecification, string>[] = <
             Exclude<RenderingSpecification, string>[]
-        >ValidationUtils.getAllSpecialVisualisations(<any>json.tagRenderings).filter(
+            >ValidationUtils.getAllSpecialVisualisations(<any>json.tagRenderings).filter(
             (rs) => typeof rs !== "string"
         )
         const funcs = new Set<string>(specialVis.map((rs) => rs.func.funcName))
@@ -1341,7 +897,7 @@ export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
         }
         return <TagRenderingConfigJson>{
             id: "title_icon_auto_" + tr.id,
-            mappings,
+            mappings
         }
     }
 
@@ -1386,8 +942,8 @@ export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
                     .enters("titleIcons", i)
                     .warn(
                         "TagRendering with id " +
-                            trId +
-                            " does not have any icons, not generating an icon for this"
+                        trId +
+                        " does not have any icons, not generating an icon for this"
                     )
                 continue
             }
@@ -1450,7 +1006,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
                 (layer) =>
                     new Concat(
                         new ExpandTagRendering(state, layer, {
-                            addToContext: options?.addTagRenderingsToContext ?? false,
+                            addToContext: options?.addTagRenderingsToContext ?? false
                         })
                     )
             ),
@@ -1481,7 +1037,15 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
                     new Concat(new ExpandTagRendering(state, layer, { noHardcodedStrings: true }))
             ),
             new AddFiltersFromTagRenderings(),
-            new ExpandFilter(state)
+            new ExpandFilter(state),
+            new PruneFilters()
         )
+    }
+
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+        if (json === undefined || json === null) {
+            throw "Error: prepareLayer got null"
+        }
+        return super.convert(json, context)
     }
 }

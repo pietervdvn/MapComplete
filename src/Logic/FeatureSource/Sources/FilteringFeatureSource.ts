@@ -13,60 +13,74 @@ export default class FilteringFeatureSource implements FeatureSource {
     private readonly _is_dirty = new UIEventSource(false)
     private readonly _layer: FilteredLayer
     private previousFeatureSet: Set<any> = undefined
+    private readonly _zoomlevel: Store<number>
+    private readonly _selectedElement: Store<Feature>
 
     constructor(
         layer: FilteredLayer,
         upstream: FeatureSource,
         fetchStore?: (id: string) => Store<Record<string, string>>,
         globalFilters?: Store<GlobalFilter[]>,
-        metataggingUpdated?: Store<any>
+        metataggingUpdated?: Store<any>,
+        zoomlevel?: Store<number>,
+        selectedElement?: Store<Feature>
     ) {
         this.upstream = upstream
         this._fetchStore = fetchStore
         this._layer = layer
         this._globalFilters = globalFilters
+        this._zoomlevel = zoomlevel
+        this._selectedElement = selectedElement
 
-        const self = this
         upstream.features.addCallback(() => {
-            self.update()
+            this.update()
         })
         layer.isDisplayed.addCallback(() => {
-            self.update()
+            this.update()
         })
 
         layer.appliedFilters.forEach((value) =>
             value.addCallback((_) => {
-                self.update()
+                this.update()
             })
         )
 
         this._is_dirty.stabilized(1000).addCallbackAndRunD((dirty) => {
             if (dirty) {
-                self.update()
+                this.update()
             }
         })
 
-        metataggingUpdated?.addCallback((_) => {
-            self._is_dirty.setData(true)
+        metataggingUpdated?.addCallback(() => {
+            this._is_dirty.setData(true)
         })
 
-        globalFilters?.addCallback((_) => {
-            self.update()
+        globalFilters?.addCallback(() => {
+            this.update()
         })
+
+        selectedElement?.addCallback(() => this.update())
+
+        zoomlevel?.mapD((z) => Math.floor(z)).addCallback(() => this.update())
 
         this.update()
     }
 
     private update() {
-        const self = this
         const layer = this._layer
         const features: Feature[] = this.upstream.features.data ?? []
         const includedFeatureIds = new Set<string>()
-        const globalFilters = self._globalFilters?.data?.map((f) => f)
+        const globalFilters = this._globalFilters?.data?.map((f) => f)
+        const zoomlevel = this._zoomlevel?.data
+        const selectedElement = this._selectedElement?.data?.properties?.id
         const newFeatures = (features ?? []).filter((f) => {
-            self.registerCallback(f.properties.id)
+            this.registerCallback(f.properties.id)
 
-            if (!layer.isShown(f.properties, globalFilters)) {
+            if (selectedElement === f.properties.id) {
+                return true
+            }
+
+            if (!layer.isShown(f.properties, globalFilters, zoomlevel)) {
                 return false
             }
 

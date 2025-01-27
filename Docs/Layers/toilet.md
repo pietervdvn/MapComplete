@@ -13,6 +13,7 @@ A layer showing (public) toilets
 3. [Basic tags for this layer](#basic-tags-for-this-layer)
 4. [Supported attributes](#supported-attributes)
   - [images](#images)
+  - [toilet-reviews](#toilet-reviews)
   - [repeated](#repeated)
   - [single_level](#single_level)
   - [toilet-access](#toilet-access)
@@ -91,6 +92,11 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
+
+### toilet-reviews
+
+_This tagrendering has no question and is thus read-only_
+*{reviews(,toilet,How would you rate this toilet?)}*
 
 ### repeated
 
@@ -321,7 +327,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 | id | question | osmTags |
 -----|-----|----- |

@@ -1,9 +1,11 @@
-import known_themes from "../assets/generated/known_themes.json"
 import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
 import favourite from "../assets/generated/layers/favourite.json"
 import { ThemeConfigJson } from "../Models/ThemeConfig/Json/ThemeConfigJson"
 import { AllSharedLayers } from "./AllSharedLayers"
 import Constants from "../Models/Constants"
+import ScriptUtils from "../../scripts/ScriptUtils"
+import { readFileSync } from "fs"
+import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 
 /**
  * Somewhat of a dictionary, which lazily parses needed themes
@@ -13,22 +15,24 @@ export class AllKnownLayoutsLazy {
     private readonly dict: Map<string, ThemeConfig> = new Map()
 
     constructor(includeFavouriteLayer = true) {
-        for (const layoutConfigJson of known_themes["themes"]) {
+        const paths = ScriptUtils.readDirRecSync("./public/assets/generated/themes/", 1)
+
+        for (const path of paths) {
+            const themeConfigJson = <ThemeConfigJson>JSON.parse(readFileSync(path, "utf8"))
             for (const layerId of Constants.added_by_default) {
                 if (layerId === "favourite" && favourite.id) {
                     if (includeFavouriteLayer) {
-                        layoutConfigJson.layers.push(favourite)
+                        themeConfigJson.layers.push(<LayerConfigJson>favourite)
                     }
                     continue
                 }
                 const defaultLayer = AllSharedLayers.getSharedLayersConfigs().get(layerId)
                 if (defaultLayer === undefined) {
-                    console.error("Could not find builtin layer", layerId)
                     continue
                 }
-                layoutConfigJson.layers.push(defaultLayer)
+                themeConfigJson.layers.push(defaultLayer)
             }
-            this.raw.set(layoutConfigJson.id, layoutConfigJson)
+            this.raw.set(themeConfigJson.id, themeConfigJson)
         }
     }
 

@@ -9,7 +9,8 @@ export abstract class TagsFilter {
 
     /**
      * Indicates some form of equivalency:
-     * if `this.shadows(t)`, then `this.matches(properties)` implies that `t.matches(properties)` for all possible properties
+     * if `this.shadows(t)`, then `this.matches(properties)` implies that `t.matches(properties)` for all possible properties.
+     * In other words: 'this' is a _stronger_ condition then 't'
      */
     abstract shadows(other: TagsFilter): boolean
 

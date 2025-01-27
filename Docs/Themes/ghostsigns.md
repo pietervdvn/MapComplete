@@ -20,6 +20,8 @@ Available languages:
  - es
  - cs
  - uk
+ - nl
+ - ko
 
 # Table of contents
 

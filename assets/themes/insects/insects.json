@@ -1,0 +1,24 @@
+{
+  "id": "insects",
+  "title": {
+    "en": "Insect Hotels",
+    "nl": "Insectenhotels",
+    "de": "Insektenhotels",
+    "cs": "Hmyzí hotely",
+    "ko": "곤충 호텔",
+    "uk": "Готелі для комах"
+  },
+  "description": {
+    "en": "Insect hotels provide shelter for insects.",
+    "nl": "Insectenhotels bieden onderdak aan insecten.",
+    "de": "Insektenhotels bieten Insekten Unterschlupf.",
+    "cs": "Hmyzí hotely poskytují hmyzu úkryt.",
+    "ko": "곤충 호텔은 곤충들에게 쉼터를 제공합니다.",
+    "uk": "Готелі для комах надають притулок комахам."
+  },
+  "icon": "./assets/layers/insect_hotel/insect_hotel.svg",
+  "layers": [
+    "insect_hotel",
+    "beehive"
+  ]
+}

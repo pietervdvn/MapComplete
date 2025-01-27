@@ -39,9 +39,9 @@ export default class SearchState {
             new LocalElementSearch(state, 5),
             new CoordinateSearch(),
             new OpenLocationCodeSearch(),
-            new OpenStreetMapIdSearch(state),
+            new OpenStreetMapIdSearch(state.osmObjectDownloader),
             new PhotonSearch(true, 2),
-            new PhotonSearch(),
+            new PhotonSearch()
             // new NominatimGeocoding(),
         ]
 
@@ -122,7 +122,7 @@ export default class SearchState {
 
         const layersToShow = payload.map((fsr) => fsr.layer.id)
         console.log("Layers to show are", layersToShow)
-        for (const [name, otherLayer] of state.layerState.filteredLayers) {
+        for (const otherLayer of state.layerState.filteredLayers.values()) {
             const layer = otherLayer.layerDef
             if (!layer.isNormal()) {
                 continue

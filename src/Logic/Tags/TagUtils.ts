@@ -10,7 +10,7 @@ import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import key_counts from "../../assets/key_totals.json"
 
 import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext"
-import { TagsFilterClosed, UploadableTag } from "./TagTypes"
+import { FlatTag, TagsFilterClosed, UploadableTag } from "./TagTypes"
 
 type Tags = Record<string, string>
 
@@ -504,6 +504,8 @@ export class TagUtils {
      * regex.matchesProperties({maxspeed: "50 mph"}) // => true
      */
 
+    public static Tag(json: string, context?: string | ConversionContext): FlatTag
+    public static Tag(json: TagConfigJson, context?: string | ConversionContext): TagsFilterClosed
     public static Tag(
         json: TagConfigJson,
         context: string | ConversionContext = ""
@@ -689,6 +691,24 @@ export class TagUtils {
     }
 
     /**
+     * TagUtils.removeKnownParts(TagUtils.Tag({and: ["vending=excrement_bag"}),TagUtils.Tag({and: ["amenity=waste_basket", "vending=excrement_bag"]}), true) // => true
+     */
+    public static removeKnownParts(
+        tag: TagsFilter,
+        known: TagsFilter,
+        valueOfKnown = true
+    ): TagsFilter | boolean {
+        const tagOrBool = And.construct([tag]).optimize()
+        if (tagOrBool === true || tagOrBool === false) {
+            return tagOrBool
+        }
+        if (tagOrBool instanceof And) {
+            return tagOrBool.removePhraseConsideredKnown(known, valueOfKnown)
+        }
+        return new And([tagOrBool]).removePhraseConsideredKnown(known, valueOfKnown)
+    }
+
+    /**
      * Returns `true` if at least one element of the 'guards' shadows one element of the 'listToFilter'.
      *
      * TagUtils.containsEquivalents([new Tag("key","value")],  [new Tag("key","value"), new Tag("other_key","value")]) // => true
@@ -866,7 +886,7 @@ export class TagUtils {
                     tag +
                     ". To indicate a missing tag, use '" +
                     split[0] +
-                    "!=' instead"
+                    "=' instead"
                 )
             }
             if (split[1] === "") {
@@ -970,5 +990,13 @@ export class TagUtils {
             TagUtils.numberAndDateComparisonDocs,
             TagUtils.logicalOperator,
         ].join("\n")
+    }
+
+    static fromProperties(tags: Record<string, string>): TagConfigJson | boolean {
+        const opt = new And(Object.keys(tags).map((k) => new Tag(k, tags[k]))).optimize()
+        if (opt === true || opt === false) {
+            return opt
+        }
+        return opt.asJson()
     }
 }

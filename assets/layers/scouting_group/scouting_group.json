@@ -1,0 +1,95 @@
+{
+  "id": "scouting_group",
+  "name": {
+    "en": "Scouting groups",
+    "de": "Pfadfinder:innenstämme"
+  },
+  "description": {
+    "en": "A map showing scouting groups.",
+    "de": "Eine Karte mit Pfadfindergruppen."
+  },
+  "source": {
+    "osmTags": "club=scout"
+  },
+  "minzoom": 4,
+  "title": {
+    "render": {
+      "en": "{name}",
+      "de": "{name}"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "builtin": "nsi_brand.icon",
+            "override": {
+              "render": "./assets/layers/scouting_group/scouting.svg"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "scouting group",
+        "de": "Pfadfinder:innenstamm"
+      },
+      "tags": [
+        "club=scout"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "question": {
+        "de": "Was ist der Stammesname?",
+        "en": "What is the name of this group?"
+      },
+      "render": {
+        "en": "The name of this group is {name}",
+        "de": "Dieser Stamm heißt {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "name"
+    },
+    {
+      "question": {
+        "de": "Zu welchem Verband/Bund gehört {name}",
+        "en": "To which scout association does {name} belong?"
+      },
+      "render": {
+        "en": "The scout association of this group is {brand}",
+        "de": "Dieser Stamm ist im Verband {brand}"
+      },
+      "freeform": {
+        "key": "brand"
+      },
+      "id": "association"
+    },
+    "contact",
+    "questions",
+    "mastodon"
+  ],
+  "filter": [
+    "nsi_brand.brand"
+  ],
+  "allowMove": true,
+  "credits": "Osmwithspace",
+  "credits:uid": 8770388
+}

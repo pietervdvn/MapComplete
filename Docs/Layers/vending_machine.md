@@ -4,7 +4,7 @@
 
 Layer showing vending machines
 
- - This layer is shown at zoomlevel **0** and higher
+ - This layer is shown at zoomlevel **13** and higher
 
 ## Table of contents
 
@@ -303,7 +303,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 | id | question | osmTags |
 -----|-----|----- |

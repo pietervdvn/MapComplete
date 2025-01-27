@@ -17,7 +17,6 @@ import FeatureSwitchState from "./FeatureSwitchState"
 import Constants from "../../Models/Constants"
 import { QueryParameters } from "../Web/QueryParameters"
 import { ThemeMetaTagging } from "./UserSettingsMetaTagging"
-import { MapProperties } from "../../Models/MapProperties"
 import Showdown from "showdown"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { GeocodeResult } from "../Search/GeocodingProvider"
@@ -53,7 +52,7 @@ export class OptionallySyncedHistory<T> {
         ))
         this.syncPreference.addCallback((syncmode) => {
             if (syncmode === "sync") {
-                let list = [...thisSession.data, ...synced.data].slice(0, maxHistory)
+                const list = [...thisSession.data, ...synced.data].slice(0, maxHistory)
                 if (this._isSame) {
                     for (let i = 0; i < list.length; i++) {
                         for (let j = i + 1; j < list.length; j++) {
@@ -178,7 +177,6 @@ export default class UserRelatedState {
      * Note: these are linked via OsmConnection.preferences which exports all preferences as UIEventSource
      */
     public readonly preferencesAsTags: UIEventSource<Record<string, string>>
-    private readonly _mapProperties: MapProperties
 
     public readonly recentlyVisitedThemes: OptionallySyncedHistory<string>
     public readonly recentlyVisitedSearch: OptionallySyncedHistory<GeocodeResult>
@@ -187,10 +185,9 @@ export default class UserRelatedState {
         osmConnection: OsmConnection,
         layout?: ThemeConfig,
         featureSwitches?: FeatureSwitchState,
-        mapProperties?: MapProperties
+        currentRasterLayer?: Store<{ properties: { id: string } }>
     ) {
         this.osmConnection = osmConnection
-        this._mapProperties = mapProperties
 
         this.showAllQuestionsAtOnce = UIEventSource.asBoolean(
             this.osmConnection.getPreference("show-all-questions", "false")
@@ -224,7 +221,7 @@ export default class UserRelatedState {
         this.translationMode = this.initTranslationMode()
         this.homeLocation = this.initHomeLocation()
 
-        this.preferencesAsTags = this.initAmendedPrefs(layout, featureSwitches)
+        this.preferencesAsTags = this.initAmendedPrefs(layout, featureSwitches, currentRasterLayer)
 
         this.recentlyVisitedThemes = new OptionallySyncedHistory<string>(
             "theme",
@@ -405,7 +402,8 @@ export default class UserRelatedState {
      * */
     private initAmendedPrefs(
         layout?: ThemeConfig,
-        featureSwitches?: FeatureSwitchState
+        featureSwitches?: FeatureSwitchState,
+        currentRasterLayer?: Store<{ properties: { id: string } }>
     ): UIEventSource<Record<string, string>> {
         const amendedPrefs = new UIEventSource<Record<string, string>>({
             _theme: layout?.id,
@@ -416,6 +414,11 @@ export default class UserRelatedState {
                 typeof window === "undefined" ? "no" : window.navigator.share ? "yes" : "no",
             _iframe: Utils.isIframe ? "yes" : "no",
         })
+        if(!Utils.runningFromConsole){
+            amendedPrefs.data["_host"] = window.location.host
+            amendedPrefs.data["_path"] = window.location.pathname
+            amendedPrefs.data["_userAgent"] = navigator.userAgent
+        }
 
         for (const key in Constants.userJourney) {
             amendedPrefs.data["__userjourney_" + key] = Constants.userJourney[key]
@@ -489,6 +492,11 @@ export default class UserRelatedState {
         })
 
         const usersettingMetaTagging = new ThemeMetaTagging()
+        osmConnection.isLoggedIn.addCallbackAndRun(loggedIn => {
+            amendedPrefs.data["_loggedIn"] = "" + loggedIn
+            amendedPrefs.ping()
+        })
+
         osmConnection.userDetails.addCallback((userDetails) => {
             for (const k in userDetails) {
                 amendedPrefs.data["_" + k] = "" + userDetails[k]
@@ -536,7 +544,7 @@ export default class UserRelatedState {
                 if (tags[key] === null) {
                     continue
                 }
-                let pref = this.osmConnection.GetPreference(key, undefined, { prefix: "" })
+                const pref = this.osmConnection.GetPreference(key, undefined, { prefix: "" })
 
                 pref.set(tags[key])
             }
@@ -555,11 +563,22 @@ export default class UserRelatedState {
             }
         }
 
-        this._mapProperties?.rasterLayer?.addCallbackAndRun((l) => {
+        currentRasterLayer?.addCallbackAndRun((l) => {
             amendedPrefs.data["__current_background"] = l?.properties?.id
             amendedPrefs.ping()
         })
 
         return amendedPrefs
+    }
+
+    /**
+     * The disabled questions for this theme and layer
+     */
+    public getThemeDisabled(themeId: string, layerId: string): UIEventSource<string[]> {
+        const flatSource = this.osmConnection.getPreference(
+            "disabled-questions-" + themeId + "-" + layerId,
+            "[]"
+        )
+        return UIEventSource.asObject<string[]>(flatSource, [])
     }
 }

@@ -804,27 +804,14 @@
     "pets": {
         "description": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ...",
         "layers": {
-            "1": {
+            "4": {
                 "override": {
                     "name": "Restauracje przyjazne psom"
                 }
             },
-            "2": {
-                "override": {
-                    "name": "Sklepy przyjazne psom",
-                    "title": {
-                        "render": "Sklepy przyjazne psom"
-                    }
-                }
-            },
             "6": {
                 "override": {
-                    "presets": {
-                        "0": {
-                            "description": "Sklep, w którym niemal wszędzie można zabrać psa",
-                            "title": "sklep przyjazny psom"
-                        }
-                    }
+                    "name": "Sklepy przyjazne psom"
                 }
             }
         },

@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 8576,
+      "commits": 8870,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 495,
+      "commits": 514,
       "contributor": "Robin van der Linde"
     },
     {
@@ -13,7 +13,7 @@
       "contributor": "Tobias"
     },
     {
-      "commits": 41,
+      "commits": 42,
       "contributor": "dependabot[bot]"
     },
     {
@@ -55,6 +55,10 @@
     {
       "commits": 24,
       "contributor": "Ward"
+    },
+    {
+      "commits": 23,
+      "contributor": "Midgard"
     },
     {
       "commits": 21,
@@ -129,10 +133,6 @@
       "contributor": "Codain"
     },
     {
-      "commits": 9,
-      "contributor": "Midgard"
-    },
-    {
       "commits": 8,
       "contributor": "Binnette"
     },
@@ -153,6 +153,14 @@
       "contributor": "David Haberthür"
     },
     {
+      "commits": 5,
+      "contributor": "tiptoptom"
+    },
+    {
+      "commits": 4,
+      "contributor": "Languages add-on"
+    },
+    {
       "commits": 4,
       "contributor": "Daniele Santini"
     },
@@ -166,7 +174,7 @@
     },
     {
       "commits": 3,
-      "contributor": "Languages add-on"
+      "contributor": "Hufkratzer"
     },
     {
       "commits": 3,
@@ -182,15 +190,23 @@
     },
     {
       "commits": 2,
+      "contributor": "Samu__"
+    },
+    {
+      "commits": 2,
+      "contributor": "Jens Köcke"
+    },
+    {
+      "commits": 2,
+      "contributor": "Jim Kats"
+    },
+    {
+      "commits": 2,
       "contributor": "Kim Minwoo"
     },
     {
       "commits": 2,
       "contributor": "Robbert Gurdeep Singh"
-    },
-    {
-      "commits": 2,
-      "contributor": "tiptoptom"
     },
     {
       "commits": 2,

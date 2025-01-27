@@ -1,0 +1,55 @@
+{
+  "id": "insect_hotel",
+  "name": {
+    "en": "Insect Hotels",
+    "nl": "Insectenhotels",
+    "de": "Insektenhotels"
+  },
+  "description": {
+    "en": "Layer showing insect hotels",
+    "nl": "Laag met insectenhotels",
+    "de": "Ebene mit Insektenhotels"
+  },
+  "source": {
+    "osmTags": "man_made=insect_hotel"
+  },
+  "minzoom": 11,
+  "title": {
+    "en": "Insect Hotel",
+    "nl": "Insectenhotel",
+    "de": "Insektenhotel"
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/insect_hotel/insect_hotel.svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "an insect hotel",
+        "nl": "een insectenhotel",
+        "de": "Ein Insektenhotel"
+      },
+      "tags": [
+        "man_made=insect_hotel"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images"
+  ],
+  "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  }
+}

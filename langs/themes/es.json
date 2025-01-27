@@ -124,7 +124,7 @@
     },
     "cafes_and_pubs": {
         "description": "Cafeterías, pubs y bares",
-        "title": "Cafés y pubs"
+        "title": "Cafeterías y bares"
     },
     "campersite": {
         "description": "Este sitio recopila todos los lugares oficiales de estacionamiento para autocaravanas y lugares donde puedes vaciar aguas grises y negras. Puedes agregar detalles sobre los servicios proporcionados y el costo. Agrega fotos y reseñas.",
@@ -1078,27 +1078,14 @@
     "pets": {
         "description": "En este mapa, encontrarás varios lugares interesantes para tus mascotas: veterinarios, parques para perros, tiendas de mascotas, restaurantes que admiten perros...",
         "layers": {
-            "1": {
+            "4": {
                 "override": {
                     "name": "Restaurantes que admiten perros"
                 }
             },
-            "2": {
-                "override": {
-                    "name": "Tiendas que admiten perros",
-                    "title": {
-                        "render": "Tiendas que admiten perros"
-                    }
-                }
-            },
             "6": {
                 "override": {
-                    "presets": {
-                        "0": {
-                            "description": "Una tienda donde puedes llevar a un perro casi a todas partes",
-                            "title": "tienda que admite perros"
-                        }
-                    }
+                    "name": "Tiendas que admiten perros"
                 }
             }
         },

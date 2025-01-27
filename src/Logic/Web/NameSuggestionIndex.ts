@@ -1,15 +1,13 @@
-import * as nsi from "../../../node_modules/name-suggestion-index/dist/nsi.json"
-import * as nsiWD from "../../../node_modules/name-suggestion-index/dist/wikidata.min.json"
-
-import * as nsiFeatures from "../../../node_modules/name-suggestion-index/dist/featureCollection.json"
 import { LocationConflation } from "@rapideditor/location-conflation"
-import type { Feature, MultiPolygon } from "geojson"
+import type { Feature, FeatureCollection, MultiPolygon } from "geojson"
 import { Utils } from "../../Utils"
 import * as turf from "@turf/turf"
 import { Mapping } from "../../Models/ThemeConfig/TagRenderingConfig"
 import { Tag } from "../Tags/Tag"
 import { TypedTranslation } from "../../UI/i18n/Translation"
 import { RegexTag } from "../Tags/RegexTag"
+import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
+import { TagUtils } from "../Tags/TagUtils"
 
 /**
  * Main name suggestion index file
@@ -45,39 +43,77 @@ interface NSIEntry {
  * Represents a single brand/operator/flagpole/...
  */
 export interface NSIItem {
-    displayName: string
-    id: string
+    readonly displayName: string
+    readonly id: string
     locationSet: {
         include: string[]
         exclude: string[]
     }
-    tags: Record<string, string>
+    readonly tags: Readonly<Record<string, string>>
     fromTemplate?: boolean
+    ext? : string
 }
 
 export default class NameSuggestionIndex {
-    private static readonly nsiFile: Readonly<NSIFile> = <any>nsi
-    private static readonly nsiWdFile: Readonly<
+    public static readonly supportedTypes = ["brand", "flag", "operator", "transit"] as const
+    private readonly nsiFile: Readonly<NSIFile>
+    private readonly nsiWdFile: Readonly<
         Record<
             string,
             {
                 logos: { wikidata?: string; facebook?: string }
             }
         >
-    > = <any>nsiWD["wikidata"]
+    >
 
-    private static loco = new LocationConflation(nsiFeatures) // Some additional boundaries
+    private loco: LocationConflation // Some additional boundaries
 
-    private static _supportedTypes: string[]
+    private _supportedTypes: string[]
 
-    public static supportedTypes(): string[] {
+    constructor(
+        nsiFile: Readonly<NSIFile>,
+        nsiWdFile: Readonly<
+            Record<
+                string,
+                {
+                    logos: { wikidata?: string; facebook?: string }
+                }
+            >
+        >,
+        features: Readonly<FeatureCollection>
+    ) {
+        this.nsiFile = nsiFile
+        this.nsiWdFile = nsiWdFile
+        this.loco = new LocationConflation(features)
+    }
+
+    private static inited: NameSuggestionIndex = undefined
+
+    public static async getNsiIndex(): Promise<NameSuggestionIndex> {
+        if (NameSuggestionIndex.inited) {
+            return NameSuggestionIndex.inited
+        }
+        const [nsi, nsiWd, features] = await Promise.all(
+            [
+                "./assets/data/nsi/nsi.min.json",
+                "./assets/data/nsi/wikidata.min.json",
+                "./assets/data/nsi/featureCollection.min.json",
+            ].map((url) => Utils.downloadJsonCached(url, 1000 * 60 * 60 * 24 * 30))
+        )
+        NameSuggestionIndex.inited = new NameSuggestionIndex(
+            <any>nsi,
+            <any>nsiWd["wikidata"],
+            <any>features
+        )
+        return NameSuggestionIndex.inited
+    }
+
+    public supportedTypes(): string[] {
         if (this._supportedTypes) {
             return this._supportedTypes
         }
-        const keys = Object.keys(NameSuggestionIndex.nsiFile.nsi)
-        const all = keys.map(
-            (k) => NameSuggestionIndex.nsiFile.nsi[k].properties.path.split("/")[0]
-        )
+        const keys = Object.keys(this.nsiFile.nsi)
+        const all = keys.map((k) => this.nsiFile.nsi[k].properties.path.split("/")[0])
         this._supportedTypes = Utils.Dedup(all).map((s) => {
             if (s.endsWith("s")) {
                 s = s.substring(0, s.length - 1)
@@ -123,7 +159,12 @@ export default class NameSuggestionIndex {
         return merged
     }
 
-    public static isSvg(nsiItem: NSIItem, type: string): boolean | undefined {
+    public isSvg(nsiItem: NSIItem, type: string): boolean | undefined {
+        if (this.nsiWdFile === undefined) {
+            throw (
+                "nsiWdi file is not loaded, cannot determine if " + nsiItem.id + " has an SVG image"
+            )
+        }
         const logos = this.nsiWdFile[nsiItem?.tags?.[type + ":wikidata"]]?.logos
         if (!logos) {
             return undefined
@@ -138,10 +179,10 @@ export default class NameSuggestionIndex {
         return false
     }
 
-    public static async generateMappings(
+    public async generateMappings(
         type: string,
         tags: Record<string, string>,
-        country: string[],
+        country?: string[],
         location?: [number, number],
         options?: {
             /**
@@ -151,13 +192,16 @@ export default class NameSuggestionIndex {
         }
     ): Promise<Mapping[]> {
         const mappings: (Mapping & { frequency: number })[] = []
-        const frequencies = await NameSuggestionIndex.fetchFrequenciesFor(type, country)
+        const frequencies =
+            country !== undefined
+                ? await NameSuggestionIndex.fetchFrequenciesFor(type, country)
+                : {}
         for (const key in tags) {
             if (key.startsWith("_")) {
                 continue
             }
             const value = tags[key]
-            const actualBrands = NameSuggestionIndex.getSuggestionsForKV(
+            const actualBrands = this.getSuggestionsForKV(
                 type,
                 key,
                 value,
@@ -170,17 +214,9 @@ export default class NameSuggestionIndex {
             for (const nsiItem of actualBrands) {
                 const tags = nsiItem.tags
                 const frequency = frequencies[nsiItem.displayName]
-                const logos = this.nsiWdFile[nsiItem.tags[type + ":wikidata"]]?.logos
-                const iconUrl = logos?.facebook ?? logos?.wikidata
+                const iconUrl = this.getIconExternalUrl(nsiItem, type)
                 const hasIcon = iconUrl !== undefined
-                let icon = undefined
-                if (hasIcon) {
-                    // Using <img src=...> works fine without an extension for JPG and PNG, but _not_ svg :(
-                    icon = "./assets/data/nsi/logos/" + nsiItem.id
-                    if (NameSuggestionIndex.isSvg(nsiItem, type)) {
-                        icon = icon + ".svg"
-                    }
-                }
+                const icon = hasIcon ? this.getIconUrl(nsiItem, type) : undefined
                 mappings.push({
                     if: new Tag(type, tags[type]),
                     addExtraTags: Object.keys(tags)
@@ -207,13 +243,13 @@ export default class NameSuggestionIndex {
         return mappings
     }
 
-    public static supportedTags(
+    public supportedTags(
         type: "operator" | "brand" | "flag" | "transit" | string
     ): Record<string, string[]> {
         const tags: Record<string, string[]> = {}
-        const keys = Object.keys(NameSuggestionIndex.nsiFile.nsi)
+        const keys = Object.keys(this.nsiFile.nsi)
         for (const key of keys) {
-            const nsiItem = NameSuggestionIndex.nsiFile.nsi[key]
+            const nsiItem = this.nsiFile.nsi[key]
             const path = nsiItem.properties.path
             const [osmType, osmkey, osmvalue] = path.split("/")
             if (type !== osmType && type + "s" !== osmType) {
@@ -231,13 +267,17 @@ export default class NameSuggestionIndex {
      * Returns a list of all brands/operators
      * @param type
      */
-    public static allPossible(type: "brand" | "operator"): NSIItem[] {
+    public allPossible(type: string): NSIItem[] {
         const options: NSIItem[] = []
-        const tags = NameSuggestionIndex.supportedTags(type)
+        const tags = this.supportedTags(type)
         for (const osmKey in tags) {
             const values = tags[osmKey]
             for (const osmValue of values) {
                 const suggestions = this.getSuggestionsForKV(type, osmKey, osmValue)
+                if(!suggestions){
+                    console.warn("No suggestions found for", type, osmKey, osmValue)
+                    continue
+                }
                 options.push(...suggestions)
             }
         }
@@ -249,7 +289,7 @@ export default class NameSuggestionIndex {
      * @param country: a string containing one or more country codes, separated by ";"
      * @param location: center point of the feature, should be [lon, lat]
      */
-    public static getSuggestionsFor(
+    public getSuggestionsFor(
         type: string,
         tags: { key: string; value: string }[],
         country: string = undefined,
@@ -274,7 +314,7 @@ export default class NameSuggestionIndex {
      * @param country: a string containing one or more country codes, separated by ";"
      * @param location: center point of the feature, should be [lon, lat]
      */
-    public static getSuggestionsForKV(
+    public getSuggestionsForKV(
         type: string,
         key: string,
         value: string,
@@ -282,7 +322,7 @@ export default class NameSuggestionIndex {
         location: [number, number] = undefined
     ): NSIItem[] {
         const path = `${type}s/${key}/${value}`
-        const entry = NameSuggestionIndex.nsiFile.nsi[path]
+        const entry = this.nsiFile.nsi[path]
         const countries = country?.split(";") ?? []
         return entry?.items?.filter((i) => {
             if (i.locationSet.include.indexOf("001") >= 0) {
@@ -312,15 +352,14 @@ export default class NameSuggestionIndex {
             }
 
             const hasSpecial =
-                i.locationSet.include?.some((i) => i.endsWith(".geojson") || Array.isArray(i)) ||
-                i.locationSet.exclude?.some((i) => i.endsWith(".geojson") || Array.isArray(i))
+                i.locationSet.include?.some((i) => Array.isArray(i) || i.endsWith(".geojson")) ||
+                i.locationSet.exclude?.some((i) => Array.isArray(i) || i.endsWith(".geojson"))
             if (!hasSpecial) {
                 return false
             }
             const key = i.locationSet.include?.join(";") + "-" + i.locationSet.exclude?.join(";")
             const fromCache = NameSuggestionIndex.resolvedSets[key]
-            const resolvedSet =
-                fromCache ?? NameSuggestionIndex.loco.resolveLocationSet(i.locationSet)
+            const resolvedSet = fromCache ?? this.loco.resolveLocationSet(i.locationSet)
             if (!fromCache) {
                 NameSuggestionIndex.resolvedSets[key] = resolvedSet
             }
@@ -334,5 +373,58 @@ export default class NameSuggestionIndex {
 
             return false
         })
+    }
+
+    public static async generateMappings(
+        key: string,
+        tags: Exclude<Record<string, string>, undefined | null>,
+        country: string[],
+        center: [number, number],
+        options: {
+            sortByFrequency: boolean
+        }
+    ): Promise<Mapping[]> {
+        const nsi = await NameSuggestionIndex.getNsiIndex()
+        return nsi.generateMappings(key, tags, country, center, options)
+    }
+
+    /**
+     * Where can we find the URL on the world wide web?
+     * Probably facebook! Don't use in the website, might expose people
+     * @param nsiItem
+     * @param type
+     */
+    private getIconExternalUrl(nsiItem: NSIItem, type: string): string {
+        const logos = this.nsiWdFile[nsiItem.tags[type + ":wikidata"]]?.logos
+        return logos?.facebook ?? logos?.wikidata
+    }
+
+    public getIconUrl(nsiItem: NSIItem, type: string) {
+        return "./assets/data/nsi/logos/" + nsiItem.id + "." + nsiItem.ext
+    }
+    private static readonly brandPrefix = ["name", "alt_name", "operator", "brand"] as const
+
+    /**
+     * An NSI-item might have tags such as `name=X`, `alt_name=brand X`,  `brand=X`, `brand:wikidata`, `shop=Y`, `service:abc=yes`
+     * Many of those tags are all added, but having only one of them is a good indication that it should match this item.
+     *
+     * This method is a heuristic which attempts to move all the brand-related tags into an `or` but still requiring the `shop` and other tags
+     *
+     * (More of an extension method on NSIItem)
+     */
+    static asFilterTags(
+        item: NSIItem
+    ): string | { and: TagConfigJson[] } | { or: TagConfigJson[] } {
+        let brandDetection: string[] = []
+        let required: string[] = []
+        const tags: Record<string, string> = item.tags
+        for (const k in tags) {
+            if (NameSuggestionIndex.brandPrefix.some((br) => k === br || k.startsWith(br + ":"))) {
+                brandDetection.push(k + "=" + tags[k])
+            } else {
+                required.push(k + "=" + tags[k])
+            }
+        }
+        return <TagConfigJson>TagUtils.optimzeJson({ and: [...required, { or: brandDetection }] })
     }
 }
