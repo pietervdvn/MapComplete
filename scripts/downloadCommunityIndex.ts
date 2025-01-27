@@ -108,7 +108,8 @@ class DownloadCommunityIndex extends Script {
             console.log(`Written tile ${path}`)
         }
         console.log(`Created ${written} tiles, skipped ${skipped}`)
-        writeFileSync(targetDirectory + "/tiles_6_overview.json", JSON.stringify(writtenTilesOverview), "utf8")
+        writeFileSync(targetDirectory + "/tile_6_overview.json", JSON.stringify(writtenTilesOverview), "utf8")
+        console.log("Created overview file")
     }
 
 
