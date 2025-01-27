@@ -7,6 +7,7 @@
   import { TypedTranslation } from "../i18n/Translation"
   import Tr from "../Base/Tr.svelte"
   import type { CommunityResource } from "../../Logic/Web/CommunityIndex"
+  import Constants from "../../Models/Constants"
 
   const availableTranslationTyped: TypedTranslation<{ native: string }> =
     Translations.t.communityIndex.available
@@ -16,7 +17,6 @@
   export let country: { resources: Record<string, CommunityResource>; nameEn: string }
   let resources: CommunityResource[] = []
   $: resources = Array.from(Object.values(country?.resources ?? {}))
-
   const language = Locale.language
 </script>
 
@@ -28,16 +28,16 @@
     <div class="link-underline my-4 flex items-center">
       <img
         class="m-2 h-8 w-8"
-        src={`https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/${resource.type}.svg`}
+        src={`${Constants.communityIndexHost}${resource.type}.svg`}
       />
       <div class="flex flex-col">
         <a
-          href={resource.resolved.url}
+          href={resource.resolved?.url}
           target="_blank"
           rel="noreferrer nofollow noopener"
           class="font-bold"
         >
-          {resource.resolved.name ?? resource.resolved.url}
+          {resource.resolved?.name ?? resource.resolved?.url}
         </a>
         {resource.resolved?.description}
         {#if resource.languageCodes?.indexOf($language) >= 0}

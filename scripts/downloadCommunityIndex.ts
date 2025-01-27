@@ -1,5 +1,5 @@
 import Script from "./Script"
-import { CommunityResource } from "../src/Logic/Web/CommunityIndex"
+import { CommunityResource } from "../src/Logic/Web/CommunityIndex"downlaodComm
 import { Utils } from "../src/Utils"
 import { FeatureCollection, MultiPolygon, Polygon } from "geojson"
 import { existsSync, mkdirSync, writeFileSync } from "fs"
@@ -41,6 +41,10 @@ class DownloadCommunityIndex extends Script {
     private static stripResourcesObj(resources: Readonly<Record<string, Readonly<CommunityResource>>>) {
         const stripped: Record<string, CommunityResource> = {}
         for (const k in resources) {
+            if(k === "twitter" || k === "facebook" || k === "x"){
+                // These channels are toxic nowadays - we simply omit them
+                continue
+            }
             stripped[k] = DownloadCommunityIndex.stripResource(resources[k])
         }
         return stripped
