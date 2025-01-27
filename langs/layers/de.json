@@ -13411,5 +13411,36 @@
             },
             "render": "Windrad"
         }
+    },
+    "dog_toilet": {
+        "description": "Eine Hundetoilette ist eine Einrichtung, die für das Urinieren und die Ausscheidung von Hunden vorgesehen ist. Dabei kann es sich um eine ausgewiesene, ausgeschilderte Rasenfläche, eine Sandgrube oder einen eingezäunten Bereich handeln.",
+        "name": "Hundetoiletten",
+        "presets": {
+            "0": {
+                "title": "eine Hundetoilette"
+            }
+        },
+        "tagRenderings": {
+            "barrier": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Hundetoilette ist eingezäunt"
+                    },
+                    "1": {
+                        "then": "Diese Hundetoilette ist von einer Hecke umgeben"
+                    },
+                    "2": {
+                        "then": "Um diese Hundetoilette herum befindet sich eine Barriere"
+                    },
+                    "3": {
+                        "then": "Es gibt keine Barriere um diese Hundetoilette herum"
+                    }
+                },
+                "question": "Ist diese Hundetoilette eingezäunt?"
+            }
+        },
+        "title": {
+            "render": "Hundetoilette"
+        }
     }
 }
