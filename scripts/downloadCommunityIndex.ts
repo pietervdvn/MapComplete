@@ -1,5 +1,5 @@
 import Script from "./Script"
-import { CommunityResource } from "../src/Logic/Web/CommunityIndex"downlaodComm
+import { CommunityResource } from "../src/Logic/Web/CommunityIndex"
 import { Utils } from "../src/Utils"
 import { FeatureCollection, MultiPolygon, Polygon } from "geojson"
 import { existsSync, mkdirSync, writeFileSync } from "fs"
