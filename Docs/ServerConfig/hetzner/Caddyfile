@@ -64,6 +64,15 @@ countrycoder.mapcomplete.org {
 	}
 }
 
+data.mapcomplete.org {
+	root * data/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+		+Access-Control-Allow-Origin *
+	}
+}
+
 report.mapcomplete.org {
 	reverse_proxy http://127.0.0.1:2348
 }
