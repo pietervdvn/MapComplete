@@ -6,8 +6,10 @@
   import ContactLink from "./ContactLink.svelte"
   import { GeoOperations } from "../../Logic/GeoOperations"
   import Translations from "../i18n/Translations"
-  import ToSvelte from "../Base/ToSvelte.svelte"
   import type { Feature, Geometry, GeometryCollection } from "@turf/turf"
+  import type { FeatureCollection, Polygon } from "geojson"
+  import type { CommunityResource } from "../../Logic/Web/CommunityIndex"
+  import Tr from "../Base/Tr.svelte"
 
   export let location: Store<{ lat: number; lon: number }>
   const tileToFetch: Store<string> = location.mapD((l) => {
@@ -20,7 +22,10 @@
   >([])
 
   tileToFetch.addCallbackAndRun(async (url) => {
-    const data = await Utils.downloadJsonCached(url, 24 * 60 * 60)
+    const data = await Utils.downloadJsonCached<FeatureCollection<Polygon, {
+      nameEn: string,
+      resources: Record<string, CommunityResource>
+    }>>(url, 24 * 60 * 60)
     if (data === undefined) {
       return
     }
@@ -29,15 +34,13 @@
 
   const filteredResources = resources.map(
     (features) =>
-      features.filter((f) => {
-        return GeoOperations.inside([location.data.lon, location.data.lat], f)
-      }),
+      features.filter((f) => GeoOperations.inside([location.data.lon, location.data.lat], f)),
     [location]
   )
 </script>
 
 <div>
-  <ToSvelte construct={t.intro} />
+  <Tr t={t.intro} />
   {#each $filteredResources as feature}
     <ContactLink country={feature.properties} />
   {/each}

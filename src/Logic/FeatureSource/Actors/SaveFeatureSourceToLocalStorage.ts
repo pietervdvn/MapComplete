@@ -75,7 +75,7 @@ export default class SaveFeatureSourceToLocalStorage {
         this.storage = storage
         const singleTileSavers: Map<number, SingleTileSaver> = new Map<number, SingleTileSaver>()
         features.features.addCallbackAndRunD((features) => {
-            const sliced = GeoOperations.slice(zoomlevel, features)
+            const sliced = GeoOperations.spreadIntoBboxes(features, zoomlevel)
 
             sliced.forEach((features, tileIndex) => {
                 let tileSaver = singleTileSavers.get(tileIndex)

@@ -119,6 +119,7 @@
     "download:editor-layer-index": "vite-node scripts/downloadEli.ts",
     "download:stats": "vite-node scripts/GenerateSeries.ts",
     "download:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/",
+    "download:community-index": "vite-node scripts/downloadCommunityIndex.ts -- /tmp/test",
     "weblate:add-upstream": "git remote add weblate https://translate.mapcomplete.org/git/mapcomplete/core/ ; git remote update weblate",
     "weblate:fix": "npm run weblate:add-upstream && git merge weblate/master && git rebase origin/master && git push origin master",
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:themes",

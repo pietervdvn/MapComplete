@@ -3,23 +3,18 @@
   // The _properties_ of a community feature
   import Locale from "../i18n/Locale.js"
   import Translations from "../i18n/Translations"
-  import ToSvelte from "../Base/ToSvelte.svelte"
   import * as native from "../../assets/language_native.json"
   import { TypedTranslation } from "../i18n/Translation"
   import Tr from "../Base/Tr.svelte"
+  import type { CommunityResource } from "../../Logic/Web/CommunityIndex"
 
   const availableTranslationTyped: TypedTranslation<{ native: string }> =
     Translations.t.communityIndex.available
   const availableTranslation = availableTranslationTyped.OnEveryLanguage((s, ln) =>
     s.replace("{native}", native[ln] ?? ln)
   )
-  export let country: { resources; nameEn: string }
-  let resources: {
-    id: string
-    resolved: Record<string, string>
-    languageCodes: string[]
-    type: string
-  }[] = []
+  export let country: { resources: Record<string, CommunityResource>; nameEn: string }
+  let resources: CommunityResource[] = []
   $: resources = Array.from(Object.values(country?.resources ?? {}))
 
   const language = Locale.language

@@ -1,4 +1,5 @@
 import { BBox } from "../Logic/BBox"
+import { Feature, Polygon } from "geojson"
 
 export interface TileRange {
     xstart: number
@@ -78,6 +79,17 @@ export class Tiles {
         index = Math.floor(index / 100)
         const x = Math.floor(index / factor)
         return [z, x, index % factor]
+    }
+
+    static asGeojson(index: number): Feature<Polygon>;
+    static asGeojson(x: number, y: number, z: number): Feature<Polygon>;
+    static asGeojson(zIndex: number, x?: number, y?: number): Feature<Polygon> {
+        let z = zIndex
+        if (x === undefined) {
+            [z, x, y] = Tiles.tile_from_index(zIndex)
+        }
+        const bounds = Tiles.tile_bounds_lon_lat(z, x, y)
+        return new BBox(bounds).asGeoJson()
     }
 
     /**

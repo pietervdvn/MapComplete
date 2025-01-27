@@ -1,0 +1,31 @@
+name: Weekly data updates
+on:
+  schedule:
+    -cron: "* * * * 1"
+
+jobs:
+  deploy_on_hetzner_single:
+    runs-on: [ ubuntu-latest, hetzner-access ]
+
+    runs-on: [ ubuntu-latest, hetzner-access ]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: package-lock.json
+
+      - name: install deps
+        run: npm ci
+        shell: bash
+
+      - name: update community index files
+        shell: bash
+        run: |
+          mkdir community-index
+          npm run download:community-index -- community-index/
+          zip community-index.zip community-index/*
+          scp community-index.zip hetzner:data/
