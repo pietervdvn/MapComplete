@@ -1,7 +1,10 @@
 name: Weekly data updates
 on:
+  push:
+    branches-ignore:
+      - build/*
   schedule:
-    -cron: "* * * * 1"
+    - cron: "* * * * 1"
 
 jobs:
   deploy_on_hetzner_single:
