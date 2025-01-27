@@ -2079,6 +2079,31 @@
       "value": "no"
     },
     {
+      "key": "dog",
+      "description": "Layer 'Second hand shops' shows dog=yes with a fixed text, namely 'Dogs are allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy')",
+      "value": "yes"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Second hand shops' shows dog=no with a fixed text, namely 'Dogs are <b>not</b> allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Second hand shops' shows dog=leashed with a fixed text, namely 'Dogs are allowed, but they have to be leashed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy')",
+      "value": "leashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Second hand shops' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy')",
+      "value": "unleashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Second hand shops' shows dog=outside with a fixed text, namely 'Dogs are allowed only outside' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy')",
+      "value": "outside"
+    },
+    {
       "key": "description",
       "description": "Layer 'Second hand shops' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Circular economy')"
     }

@@ -109,7 +109,7 @@ This tagrendering has labels
 | waste-type.0 | *All types* (default) |  |
 | waste-type.1 | Waste basket for cigarettes | waste~^(.*cigarettes.*)$ |
 | waste-type.2 | Waste basket for drugs | waste~^(.*drugs.*)$ |
-| waste-type.3 | Waste basket for dog excrement | waste~^(.*dog_excrement.*)$ |
+| waste-type.3 | Waste basket for dog excrement | waste~^(.*excrement.*)$ |
 | waste-type.4 | Waste basket for trash | waste~^(.*trash.*)$ |
 | waste-type.5 | Waste basket for sharps | waste~^(.*sharps.*)$ |
 | waste-type.6 | Waste basket for plastic | waste~^(.*plastic.*)$ |
@@ -118,7 +118,7 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| waste-vending.0 | Waste basket with dispenser for (dog) excrement bags | vending=dog_excrement_bag |
+| waste-vending.0 | Waste basket with dispenser for (dog) excrement bags | vending=excrement_bags |
 
 
 

@@ -13,6 +13,7 @@ This theme contains the following layers:
 Available languages:
 
  - en
+ - de
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

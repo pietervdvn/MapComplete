@@ -97,13 +97,223 @@
     },
     {
       "key": "amenity",
-      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog friendly eateries showing features with this tag",
-      "value": "restaurant"
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer veterinary showing features with this tag",
+      "value": "veterinary"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'veterinary' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'veterinary' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'veterinary' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'veterinary' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "closed"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Animal shelters showing features with this tag",
+      "value": "animal_shelter"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Animal shelters' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Animal shelters' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Animal shelters' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Animal shelters' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Animal shelters' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "purpose",
+      "description": "Layer 'Animal shelters' shows purpose=adoption with a fixed text, namely 'Animals are kept here until adopted by a new owner' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "adoption"
+    },
+    {
+      "key": "purpose",
+      "description": "Layer 'Animal shelters' shows purpose=sanctuary with a fixed text, namely 'Animals are taken care of for the rest of their lives' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "sanctuary"
+    },
+    {
+      "key": "purpose",
+      "description": "Layer 'Animal shelters' shows purpose=release with a fixed text, namely 'Injured animals are rehabilitated here until they can be released in nature again ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "release"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Animal shelters' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "\"by appointment\""
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Animal shelters' shows opening_hours~^(\"by appointment\"|by appointment)$ with a fixed text, namely 'Only by appointment' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Animal shelters' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "closed"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'animal_shelter' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows animal_shelter=dog with a fixed text, namely 'Dogs are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "dog"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows animal_shelter=cat with a fixed text, namely 'Cats are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "cat"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows animal_shelter=horse with a fixed text, namely 'Horses are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "horse"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows animal_shelter=bird with a fixed text, namely 'Birds are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "bird"
+    },
+    {
+      "key": "animal_shelter",
+      "description": "Layer 'Animal shelters' shows animal_shelter=wildlife with a fixed text, namely 'Wild animals are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "wildlife"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog toilets showing features with this tag",
+      "value": "dog_toilet"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Dog toilets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Dog toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Dog toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Dog toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Dog toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Dog toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "barrier",
+      "description": "Layer 'Dog toilets' shows barrier=fence with a fixed text, namely 'There is a fence around this dog toilet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "fence"
+    },
+    {
+      "key": "barrier",
+      "description": "Layer 'Dog toilets' shows barrier=hedge with a fixed text, namely 'There is a hedge around this dog toilet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "hedge"
+    },
+    {
+      "key": "barrier",
+      "description": "Layer 'Dog toilets' shows barrier=yes with a fixed text, namely 'There is a barrier around this dog toilet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "not:barrier",
+      "description": "Layer 'Dog toilets' shows not:barrier=fence with a fixed text, namely 'There is no barrier around this dog toilet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "fence"
     },
     {
       "key": "amenity",
       "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog friendly eateries showing features with this tag",
-      "value": "cafe"
+      "value": "fast_food"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog friendly eateries showing features with this tag",
+      "value": "restaurant"
     },
     {
       "key": "dog",
@@ -820,6 +1030,16 @@
       "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog-friendly shops showing features with this tag"
     },
     {
+      "key": "craft",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog-friendly shops showing features with this tag",
+      "value": "shoe_repair"
+    },
+    {
+      "key": "craft",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog-friendly shops showing features with this tag",
+      "value": "key_cutter"
+    },
+    {
       "key": "dog",
       "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog-friendly shops showing features with this tag",
       "value": "leashed"
@@ -828,11 +1048,6 @@
       "key": "dog",
       "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog-friendly shops showing features with this tag",
       "value": "yes"
-    },
-    {
-      "key": "shop",
-      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog-friendly shops showing features with this tag",
-      "value": "pet"
     },
     {
       "key": "id",
@@ -2187,169 +2402,137 @@
       "value": "no"
     },
     {
+      "key": "dog",
+      "description": "Layer 'Dog-friendly shops' shows dog=yes with a fixed text, namely 'Dogs are allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Dog-friendly shops' shows dog=no with a fixed text, namely 'Dogs are <b>not</b> allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Dog-friendly shops' shows dog=leashed with a fixed text, namely 'Dogs are allowed, but they have to be leashed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "leashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Dog-friendly shops' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "unleashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Dog-friendly shops' shows dog=outside with a fixed text, namely 'Dogs are allowed only outside' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "outside"
+    },
+    {
       "key": "description",
       "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "amenity",
-      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer veterinary showing features with this tag",
-      "value": "veterinary"
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Waste baskets with excrement bag dispensers showing features with this tag",
+      "value": "waste_basket"
+    },
+    {
+      "key": "vending",
+      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Waste baskets with excrement bag dispensers showing features with this tag",
+      "value": "excrement_bags"
     },
     {
       "key": "id",
-      "description": "Layer 'veterinary' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
-    },
-    {
-      "key": "website",
-      "description": "Layer 'veterinary' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
-    },
-    {
-      "key": "contact:website",
-      "description": "Layer 'veterinary' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
-    },
-    {
-      "key": "phone",
-      "description": "Layer 'veterinary' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
-    },
-    {
-      "key": "contact:phone",
-      "description": "Layer 'veterinary' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'veterinary' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'veterinary' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
-      "value": "closed"
-    },
-    {
-      "key": "name",
-      "description": "Layer 'veterinary' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
-    },
-    {
-      "key": "amenity",
-      "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Animal shelters showing features with this tag",
-      "value": "animal_shelter"
-    },
-    {
-      "key": "id",
-      "description": "Layer 'Animal shelters' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
-      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Waste baskets with excrement bag dispensers allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "panoramax",
-      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Waste baskets with excrement bag dispensers allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Waste baskets with excrement bag dispensers allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Waste baskets with excrement bag dispensers allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Animal shelters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Waste baskets with excrement bag dispensers allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
-      "key": "name",
-      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "key": "waste",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows waste= with a fixed text, namely 'A waste basket for general waste' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') Picking this answer will delete the key waste.",
+      "value": ""
     },
     {
-      "key": "website",
-      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "key": "waste",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows waste=trash with a fixed text, namely 'A waste basket for general waste' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "trash"
     },
     {
-      "key": "contact:website",
-      "description": "Layer 'Animal shelters' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "key": "waste",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows waste=dog_excrement with a fixed text, namely 'A waste basket for dog excrements' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "dog_excrement"
     },
     {
-      "key": "phone",
-      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "key": "waste",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows waste=cigarettes with a fixed text, namely 'A waste basket for cigarettes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "cigarettes"
     },
     {
-      "key": "contact:phone",
-      "description": "Layer 'Animal shelters' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "key": "waste",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows waste=drugs with a fixed text, namely 'A waste basket for drugs' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "drugs"
     },
     {
-      "key": "email",
-      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "key": "waste",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows waste=sharps with a fixed text, namely 'A waste basket for needles and other sharp objects' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "sharps"
     },
     {
-      "key": "contact:email",
-      "description": "Layer 'Animal shelters' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "key": "waste",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows waste=plastic with a fixed text, namely 'A waste basket for plastic' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "plastic"
     },
     {
-      "key": "operator:email",
-      "description": "Layer 'Animal shelters' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "key": "waste",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows waste=pmd with a fixed text, namely 'A waste basket for plastic packaging, metal packaging and drink cartons (PMD)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "pmd"
     },
     {
-      "key": "purpose",
-      "description": "Layer 'Animal shelters' shows purpose=adoption with a fixed text, namely 'Animals are kept here until adopted by a new owner' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
-      "value": "adoption"
+      "key": "waste",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows waste=paper with a fixed text, namely 'A waste basket for paper' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "paper"
     },
     {
-      "key": "purpose",
-      "description": "Layer 'Animal shelters' shows purpose=sanctuary with a fixed text, namely 'Animals are taken care of for the rest of their lives' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
-      "value": "sanctuary"
+      "key": "vending",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows vending=excrement_bags & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": "excrement_bags"
     },
     {
-      "key": "purpose",
-      "description": "Layer 'Animal shelters' shows purpose=release with a fixed text, namely 'Injured animals are rehabilitated here until they can be released in nature again ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
-      "value": "release"
+      "key": "not:vending",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows vending=excrement_bags & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') Picking this answer will delete the key not:vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": ""
     },
     {
-      "key": "opening_hours",
-      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "key": "not:vending",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows not:vending=excrement_bags & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": "excrement_bags"
     },
     {
-      "key": "opening_hours",
-      "description": "Layer 'Animal shelters' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
-      "value": "\"by appointment\""
+      "key": "vending",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows not:vending=excrement_bags & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') Picking this answer will delete the key vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": ""
     },
     {
-      "key": "opening_hours",
-      "description": "Layer 'Animal shelters' shows opening_hours~^(\"by appointment\"|by appointment)$ with a fixed text, namely 'Only by appointment' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Animal shelters' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
-      "value": "closed"
-    },
-    {
-      "key": "animal_shelter",
-      "description": "Layer 'Animal shelters' shows and asks freeform values for key 'animal_shelter' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
-    },
-    {
-      "key": "animal_shelter",
-      "description": "Layer 'Animal shelters' shows animal_shelter=dog with a fixed text, namely 'Dogs are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
-      "value": "dog"
-    },
-    {
-      "key": "animal_shelter",
-      "description": "Layer 'Animal shelters' shows animal_shelter=cat with a fixed text, namely 'Cats are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
-      "value": "cat"
-    },
-    {
-      "key": "animal_shelter",
-      "description": "Layer 'Animal shelters' shows animal_shelter=horse with a fixed text, namely 'Horses are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
-      "value": "horse"
-    },
-    {
-      "key": "animal_shelter",
-      "description": "Layer 'Animal shelters' shows animal_shelter=bird with a fixed text, namely 'Birds are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
-      "value": "bird"
-    },
-    {
-      "key": "animal_shelter",
-      "description": "Layer 'Animal shelters' shows animal_shelter=wildlife with a fixed text, namely 'Wild animals are kept here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
-      "value": "wildlife"
+      "key": "vending",
+      "description": "Layer 'Waste baskets with excrement bag dispensers' shows vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') Picking this answer will delete the key vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": ""
     }
   ]
 }

@@ -124,17 +124,20 @@ This tagrendering has labels
 | brand.0 | *brand* (default) |  |
 | brand.1 | Associação de Escuteiros de Angola | brand=Associação de Escuteiros de Angola | brand:wikidata=Q4810279 |
 | brand.2 | Bund der Pfadfinderinnen und Pfadfinder | brand=Bund der Pfadfinderinnen und Pfadfinder | brand:wikidata=Q1005225 |
-| brand.3 | Deutsche Pfadfinderschaft Sankt Georg | brand=Deutsche Pfadfinderschaft Sankt Georg | brand:wikidata=Q1203670 |
-| brand.4 | Girl Scouts | brand=Girl Scouts | brand:wikidata=Q2576280 | name=Girl Scouts |
-| brand.5 | Norges KFUK-KFUM-speidere | brand=Norges KFUK-KFUM-speidere | brand:wikidata=Q8046067 |
-| brand.6 | Norges speiderforbund | brand=Norges speiderforbund | brand:wikidata=Q1769346 |
-| brand.7 | Scoutisme Béninois | brand=Scoutisme Béninois | brand:wikidata=Q13534588 |
-| brand.8 | Scouts South Africa | brand=Scouts South Africa | brand:wikidata=Q7565791 |
-| brand.9 | The Botswana Scouts Association | brand=The Botswana Scouts Association | brand:wikidata=Q7719478 |
-| brand.10 | The Scout Association | brand=The Scout Association | brand:wikidata=Q849740 | name=The Scout Association |
-| brand.11 | Verband Christlicher Pfadfinder*innen | brand=Verband Christlicher Pfadfinder*innen | brand:wikidata=Q1316309 |
-| brand.12 | 香港女童軍總會 Hong Kong Girl Guides Association | brand=香港女童軍總會 | brand:en=Hong Kong Girl Guides Association | brand:wikidata=Q5894627 | brand:zh=香港女童軍總會 | brand:zh-Hans=香港女童军总会 | brand:zh-Hant=香港女童軍總會 |
-| brand.13 | 香港童軍總會 Scout Association of Hong Kong | brand=香港童軍總會 Scout Association of Hong Kong | brand:en=Scout Association of Hong Kong | brand:wikidata=Q1883585 | brand:zh=香港童軍總會 | brand:zh-Hans=香港童军总会 | brand:zh-Hant=香港童軍總會 |
+| brand.3 | Bund Muslimischer Pfadfinderinnen und Pfadfinder Deutschlands | brand=Bund Muslimischer Pfadfinderinnen und Pfadfinder Deutschlands | brand:wikidata=Q16318690 |
+| brand.4 | Deutsche Pfadfinderschaft Sankt Georg | brand=Deutsche Pfadfinderschaft Sankt Georg | brand:wikidata=Q1203670 |
+| brand.5 | Girl Scouts | brand=Girl Scouts | brand:wikidata=Q2576280 | name=Girl Scouts |
+| brand.6 | Norges KFUK-KFUM-speidere | brand=Norges KFUK-KFUM-speidere | brand:wikidata=Q8046067 |
+| brand.7 | Norges speiderforbund | brand=Norges speiderforbund | brand:wikidata=Q1769346 |
+| brand.8 | Pfadfinderbund Weltenbummler | brand=Pfadfinderbund Weltenbummler | brand:wikidata=Q1755705 |
+| brand.9 | Pfadfinderinnenschaft St. Georg | brand=Pfadfinderinnenschaft St. Georg | brand:wikidata=Q2081993 |
+| brand.10 | Scoutisme Béninois | brand=Scoutisme Béninois | brand:wikidata=Q13534588 |
+| brand.11 | Scouts South Africa | brand=Scouts South Africa | brand:wikidata=Q7565791 |
+| brand.12 | The Botswana Scouts Association | brand=The Botswana Scouts Association | brand:wikidata=Q7719478 |
+| brand.13 | The Scout Association | brand=The Scout Association | brand:wikidata=Q849740 | name=The Scout Association |
+| brand.14 | Verband Christlicher Pfadfinder*innen | brand=Verband Christlicher Pfadfinder*innen | brand:wikidata=Q1316309 |
+| brand.15 | 香港女童軍總會 Hong Kong Girl Guides Association | brand=香港女童軍總會 | brand:en=Hong Kong Girl Guides Association | brand:wikidata=Q5894627 | brand:zh=香港女童軍總會 | brand:zh-Hans=香港女童军总会 | brand:zh-Hant=香港女童軍總會 |
+| brand.16 | 香港童軍總會 Scout Association of Hong Kong | brand=香港童軍總會 Scout Association of Hong Kong | brand:en=Scout Association of Hong Kong | brand:wikidata=Q1883585 | brand:zh=香港童軍總會 | brand:zh-Hans=香港童军总会 | brand:zh-Hant=香港童軍總會 |
 
 
 

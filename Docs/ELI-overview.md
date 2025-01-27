@@ -238,6 +238,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | ICGC-orto25c | ICGC - Ortofoto de Catalunya 1:2.500 vigent | photo | ⭐ | Institut Cartogràfic i Geològic de Catalunya |
 | ICGC-topo | ICGC - Topogràfic de Catalunya  | other |  | Institut Cartogràfic i Geològic de Catalunya |
 | PNOA-Spain-TMS | PNOA Spain | photo | ⭐ | PNOA |
+| SITNA-catastro | Catastro Navarra | other |  | SITNA - Gobierno de Navarra / Nafarroako Gobernua |
 | geoEuskadi-ORTO | geoEuskadiren Ortoargazkiak | photo | ⭐ | Eusko Jaurlaritza / Gobierno Vasco. geoEuskadi |
 | IDEIB | IDEIB - Ortofoto més recent de les Illes Balears | photo | ⭐ | Infraestructura de Dades Espacials de les Illes Balears |
 | hri-orto | Helsinki region orthophoto | photo | ⭐ | © Espoon, Helsingin ja Vantaan kaupungit, Kirkkonummen ja Nurmijärven kunnat sekä HSL ja HSY |
@@ -263,7 +264,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Brest_2004 | Brest - 2004 | historicphoto |  | Brest Métropole - 2004 |
 | enedis | Enedis | photo |  | Enedis 2018 |
 | EMS-Orthophotographie-2022 | Eurométropole de Strasbourg - Orthophotographie 2022 | photo | ⭐ | Ville et eurométropole de Strasbourg - DataGrandEst 2022 |
-| Cadastre | Cadastre | map |  | cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2021 |
+| Cadastre | Cadastre | map |  | cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2022 |
 | Geolittoral-Orthophotos2000 | Géolittoral - Orthophotos 2000 | historicphoto |  | Ortho Littorale 2000 - Ministère en charge de l’environnement |
 | GeolittoralV2-Orthophotos | Géolittoral V2 - Orthophotos 2011-2014 | historicphoto |  | Ortho Littorale v2 - Ministère en charge de l’environnement |
 | montauban_2020 | Grand Montauban 2020 | photo |  | Grand Montauban 2020 |
@@ -448,9 +449,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | German-1944_Aerial | German Aerial Imagery (1944) | historicphoto |  | © Simpals SRL, Bundesarchiv - Stabsbildabteilung |
 | American-1966_Aerial | American Aerial Imagery (1966) | historicphoto |  | © Simpals SRL, U.S. Geological Survey |
 | Actueel_orthoHR_WMTS | PDOK aerial imagery Beeldmateriaal.nl 8cm (WMTS) latest | photo | ⭐ | Kadaster / Beeldmateriaal.nl, CC BY 4.0 |
-| kartverket-topo4 | Kartverket topo | map |  | © Kartverket |
 | kartverket-ok-1st | Kartverket Economic Maps (historic) | historicmap |  | © Kartverket |
-| kartverket-sjokart | Kartverket Nautical Charts | map |  | © Kartverket |
 | geovekst-nib | Norway Orthophoto | photo | ⭐ | © Geovekst |
 | geovekst-nib2 | Norway Orthophoto (more recent, less zoom) | photo | ⭐ | © Geovekst |
 | geovekst-nib-historic | Norway Orthophoto (historic) | historicphoto |  | © Geovekst |
@@ -692,6 +691,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Cook_IL_2021 | Cook County Orthoimagery 2021 | photo |  | Cook County GIS |
 | Cook_IL_2022 | Cook County Orthoimagery 2022 | photo |  | Cook County GIS |
 | Cook_IL_2023 | Cook County Orthoimagery 2023 | photo |  | Cook County GIS |
+| Cook_IL_2024 | Cook County Orthoimagery 2024 | photo |  | Cook County GIS |
 | IN_2021 | Indiana Statewide Imagery Program (2021) | photo |  | Indiana Geographic Information Office |
 | IndianaMap_Latest | IndianaMap Orthoimagery - Latest Available | photo |  | IndianaMap, Indiana Geographic Information Office |
 | Kansas_NG911_2014 | Kansas NG911 Orthoimagery (2014) | historicphoto |  | Kansas 911 Coordinating Council |

@@ -9,7 +9,7 @@ A layer showing the OpenStreetMap Communities
 
 This layer is loaded from an external source, namely 
 
-`https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_{z}_{x}_{y}.geojson`
+`https://data.mapcomplete.org/community-index/tile_{z}_{x}_{y}.geojson`
 
 ## Table of contents
 

@@ -8,9 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
- - [tertiary_education](../Layers/tertiary_education.md)
+ - [childcare](../Layers/childcare.md)
  - [school](../Layers/school.md)
- - [kindergarten_childcare](../Layers/kindergarten_childcare.md)
+ - [tertiary_education](../Layers/tertiary_education.md)
 
 Available languages:
 

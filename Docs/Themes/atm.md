@@ -145,10 +145,6 @@ This tagrendering has labels
 -----|-----|----- |
 | open_now.0 | Now open | _isOpen=yes |
 
-| id | question | osmTags |
------|-----|----- |
-| has_atm.0 | With an ATM | atm=yes |
-
 # post_offices_with_atm
 
 This layer is based on [postoffices](../Layers/postoffices.md)
