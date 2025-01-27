@@ -1096,6 +1096,11 @@
                 "override": {
                     "name": "Hundefreundliche Geschäfte"
                 }
+            },
+            "8": {
+                "override": {
+                    "name=": "Mülleimer mit Spender für Kotbeutel"
+                }
             }
         },
         "title": "Haustiere"
