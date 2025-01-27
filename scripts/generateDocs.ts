@@ -30,6 +30,7 @@ import TableOfContents from "../src/UI/Base/TableOfContents"
 import MarkdownUtils from "../src/Utils/MarkdownUtils"
 import { parse as parse_html } from "node-html-parser"
 import { AvailableRasterLayers } from "../src/Models/RasterLayers"
+import { ImmutableStore } from "../src/Logic/UIEventSource"
 
 /**
  * Converts a markdown-file into a .json file, which a walkthrough/slideshow element can use
@@ -253,7 +254,7 @@ export class GenerateDocs extends Script {
     }
 
     private generateHotkeyDocs() {
-        new ThemeViewState(new ThemeConfig(<any>bookcases), new Set())
+        new ThemeViewState(new ThemeConfig(<any>bookcases), new ImmutableStore(new Set()))
         this.WriteMarkdownFile("./Docs/Hotkeys.md", Hotkeys.generateDocumentation(), [
             "src/UI/Base/Hotkeys.ts",
         ])
