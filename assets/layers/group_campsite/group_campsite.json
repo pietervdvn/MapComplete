@@ -1,0 +1,235 @@
+{
+  "credits": "Osmwithspace",
+  "minzoom": 7,
+  "filter": [
+    {
+      "id": "capacity_persons_filter",
+      "options": [
+        {
+          "question": {
+            "en": "persons",
+            "de": "Personen"
+          }
+        },
+        {
+          "question": {
+            "en": "1-20"
+          },
+          "osmTags": {
+            "and": [
+              "capacity:persons>=1",
+              "capacity:persons<=20"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "21-50"
+          },
+          "osmTags": {
+            "and": [
+              "capacity:persons>=21",
+              "capacity:persons<=50"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "51-100"
+          },
+          "osmTags": {
+            "and": [
+              "capacity:persons>=51",
+              "capacity:persons<=100"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "101-200"
+          },
+          "osmTags": {
+            "and": [
+              "capacity:persons>=101",
+              "capacity:persons<=200"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "201-500"
+          },
+          "osmTags": {
+            "and": [
+              "capacity:persons>=201",
+              "capacity:persons<=500"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "500+"
+          },
+          "osmTags": "capacity:persons>=501"
+        },
+        {
+          "question": {
+            "en": "?"
+          },
+          "osmTags": "capacity:persons="
+        }
+      ]
+    }
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "https://opencampingmap.org/markers/l_standard.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "scout=yes",
+                    "group_only=yes"
+                  ]
+                },
+                "then": "https://wiki.openstreetmap.org/w/images/6/6b/OCM_l_group_only.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "question": {
+        "de": "Wie heißt dieser Zeltplatz?",
+        "en": "What is the name of this campsite?"
+      },
+      "render": {
+        "en": "The name of this campsite is {name}",
+        "de": "Dieser Zeltplatz heißt {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "Name"
+    },
+    {
+      "id": "fee",
+      "question": {
+        "en": "Is a fee charged here?",
+        "de": "Wird hier eine Gebühr erhoben?"
+      },
+      "render": {
+        "en": "A fee of {charge} should be paid for here",
+        "de": "Hier wird eine Gebühr von {charge} erhoben"
+      },
+      "freeform": {
+        "key": "charge",
+        "type": "currency",
+        "addExtraTags": [
+          "fee=yes"
+        ],
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "fee=no",
+          "addExtraTags": [
+            "charge="
+          ],
+          "then": {
+            "en": "The campsite is free of charge",
+            "de": "Der Zeltplatz ist kostenlos"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "fee=yes",
+              "charge="
+            ]
+          },
+          "then": {
+            "en": "A fee is charged here.",
+            "de": "Hier wird eine Gebühr erhoben."
+          },
+          "hideInAnswer": "charge~*"
+        }
+      ]
+    },
+    {
+      "question": {
+        "de": "Wie viele Personen können hier übernachten?",
+        "en": "How many people can stay here?"
+      },
+      "render": {
+        "en": "{capacity:persons} people can stay here",
+        "de": "Hier können {capacity:persons} Personen übernachten"
+      },
+      "freeform": {
+        "key": "capacity:persons",
+        "type": "pnat"
+      },
+      "id": "capacity:persons"
+    },
+    "contact",
+    "questions",
+    "mastodon",
+    "images"
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "credits:uid": 8770388,
+  "id": "groupcampsites",
+  "name": {
+    "en": "Campsites for groups and scouts",
+    "de": "Zeltplatz für Gruppen/Pfadfinder:innen"
+  },
+  "description": {
+    "en": "Campsites for groups and scouts",
+    "de": "Zeltplatz für Gruppen/Pfadfinder:innen"
+  },
+  "title": {
+    "render": {
+      "en": "{name}"
+    }
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "tourism=camp_site",
+        {
+          "or": [
+            "scout=yes",
+            "group_only=yes"
+          ]
+        }
+      ]
+    }
+  },
+  "shownByDefault": true,
+  "presets": [
+    {
+      "title": {
+        "en": "campsite for groups"
+      },
+      "tags": [
+        "tourism=camp_site",
+        "group_only=yes"
+      ]
+    }
+  ]
+}
