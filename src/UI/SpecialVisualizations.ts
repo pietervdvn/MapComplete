@@ -5,17 +5,13 @@ import Title from "./Base/Title"
 import { default as FeatureTitle } from "./Popup/Title.svelte"
 import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
-import MinimapViz from "./Popup/MinimapViz.svelte"
-import { ShareLinkViz } from "./Popup/ShareLinkViz"
 import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
 import { MultiApplyViz } from "./Popup/MultiApplyViz"
-import { AddNoteCommentViz } from "./Popup/Notes/AddNoteCommentViz"
 import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
 import TagApplyButton from "./Popup/TagApplyButton"
 import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
 import { ImmutableStore, Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
-import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
 import { VariableUiElement } from "./Base/VariableUIElement"
 import { Utils } from "../Utils"
 import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
@@ -27,13 +23,11 @@ import List from "./Base/List"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
 import { LanguageElement } from "./Popup/LanguageElement/LanguageElement"
-import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette, { MaprouletteTask } from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import { Feature, GeoJsonProperties, LineString } from "geojson"
 import { GeoOperations } from "../Logic/GeoOperations"
-import CreateNewNote from "./Popup/Notes/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
@@ -43,101 +37,40 @@ import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svel
 import { PointImportButtonViz } from "./Popup/ImportButtons/PointImportButtonViz"
 import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz"
 import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz"
-import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte"
 import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
 import SendEmail from "./Popup/SendEmail.svelte"
-import UploadImage from "./Image/UploadImage.svelte"
-import { Imgur } from "../Logic/ImageProviders/Imgur"
 import Constants from "../Models/Constants"
-import { MangroveReviews } from "mangrove-reviews-typescript"
 import Wikipedia from "../Logic/Web/Wikipedia"
-import AllReviews from "./Reviews/AllReviews.svelte"
-import StarsBarIcon from "./Reviews/StarsBarIcon.svelte"
-import ReviewForm from "./Reviews/ReviewForm.svelte"
-import Questionbox from "./Popup/TagRendering/Questionbox.svelte"
 import { TagUtils } from "../Logic/Tags/TagUtils"
-import Giggity from "./BigComponents/Giggity.svelte"
-import ThemeViewState from "../Models/ThemeViewState"
 import LanguagePicker from "./InputElement/LanguagePicker.svelte"
-import LogoutButton from "./Base/LogoutButton.svelte"
 import OpenJosm from "./Base/OpenJosm.svelte"
-import MarkAsFavourite from "./Popup/MarkAsFavourite.svelte"
-import MarkAsFavouriteMini from "./Popup/MarkAsFavouriteMini.svelte"
 import NextChangeViz from "./OpeningHours/NextChangeViz.svelte"
-import NearbyImages from "./Image/NearbyImages.svelte"
-import NearbyImagesCollapsed from "./Image/NearbyImagesCollapsed.svelte"
-import MoveWizard from "./Popup/MoveWizard.svelte"
 import { Unit } from "../Models/Unit"
-import OrientationDebugPanel from "./Debug/OrientationDebugPanel.svelte"
 import MaprouletteSetStatus from "./MapRoulette/MaprouletteSetStatus.svelte"
 import DirectionIndicator from "./Base/DirectionIndicator.svelte"
 import ComparisonTool from "./Comparison/ComparisonTool.svelte"
 import SpecialTranslation from "./Popup/TagRendering/SpecialTranslation.svelte"
 import SpecialVisualisationUtils from "./SpecialVisualisationUtils"
-import LoginButton from "./Base/LoginButton.svelte"
 import Toggle from "./Input/Toggle"
-import ImportReviewIdentity from "./Reviews/ImportReviewIdentity.svelte"
 import LinkedDataLoader from "../Logic/Web/LinkedDataLoader"
-import SplitRoadWizard from "./Popup/SplitRoadWizard.svelte"
 import DynLink from "./Base/DynLink.svelte"
 import Locale from "./i18n/Locale"
 import LanguageUtils from "../Utils/LanguageUtils"
 import MarkdownUtils from "../Utils/MarkdownUtils"
 import Trash from "@babeard/svelte-heroicons/mini/Trash"
-import NothingKnown from "./Popup/NothingKnown.svelte"
-import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import { And } from "../Logic/Tags/And"
-import CloseNoteButton from "./Popup/Notes/CloseNoteButton.svelte"
 import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
-import QrCode from "./Popup/QrCode.svelte"
-import ClearCaches from "./Popup/ClearCaches.svelte"
 import GroupedView from "./Popup/GroupedView.svelte"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import NoteCommentElement from "./Popup/Notes/NoteCommentElement.svelte"
-import DisabledQuestions from "./Popup/DisabledQuestions.svelte"
 import FediverseLink from "./Popup/FediverseLink.svelte"
-import ImageCarousel from "./Image/ImageCarousel.svelte"
+import { ImageVisualisations } from "./SpecialVisualisations/ImageVisualisations"
+import { NoteVisualisations } from "./SpecialVisualisations/NoteVisualisations"
+import { FavouriteVisualisations } from "./SpecialVisualisations/FavouriteVisualisations"
+import { UISpecialVisualisations } from "./SpecialVisualisations/UISpecialVisualisations"
+import { SettingsVisualisations } from "./SpecialVisualisations/SettingsVisualisations"
+import { ReviewSpecialVisualisations } from "./SpecialVisualisations/ReviewSpecialVisualisations"
 
-class NearbyImageVis implements SpecialVisualization {
-    // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
-    args: { name: string; defaultValue?: string; doc: string; required?: boolean }[] = [
-        {
-            name: "mode",
-            defaultValue: "closed",
-            doc: "Either `open` or `closed`. If `open`, then the image carousel will always be shown",
-        },
-        {
-            name: "readonly",
-            required: false,
-            doc: "If 'readonly' or 'yes', will not show the 'link'-button",
-        },
-    ]
-    docs =
-        "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
-    funcName = "nearby_images"
-    needsUrls = CombinedFetcher.apiUrls
-
-    constr(
-        state: SpecialVisualizationState,
-        tags: UIEventSource<Record<string, string>>,
-        args: string[],
-        feature: Feature,
-        layer: LayerConfig
-    ): SvelteUIElement {
-        const isOpen = args[0] === "open"
-        const readonly = args[1] === "readonly" || args[1] === "yes"
-        const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-        return new SvelteUIElement(isOpen ? NearbyImages : NearbyImagesCollapsed, {
-            tags,
-            state,
-            lon,
-            lat,
-            feature,
-            layer,
-            linkable: !readonly,
-        })
-    }
-}
 
 class StealViz implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -212,109 +145,7 @@ class StealViz implements SpecialVisualization {
     }
 }
 
-class CloseNoteViz implements SpecialVisualization {
-    public readonly funcName = "close_note"
-    public readonly needsUrls = [Constants.osmAuthConfig.url]
-    public readonly docs =
-        "Button to close a note. A predefined text can be defined to close the note with. If the note is already closed, will show a small text."
-    public readonly args = [
-        {
-            name: "text",
-            doc: "Text to show on this button",
-            required: true,
-        },
-        {
-            name: "icon",
-            doc: "Icon to show",
-            defaultValue: "checkmark.svg",
-        },
-        {
-            name: "idkey",
-            doc: "The property name where the ID of the note to close can be found",
-            defaultValue: "id",
-        },
-        {
-            name: "comment",
-            doc: "Text to add onto the note when closing",
-        },
-        {
-            name: "minZoom",
-            doc: "If set, only show the closenote button if zoomed in enough",
-        },
-        {
-            name: "zoomButton",
-            doc: "Text to show if not zoomed in enough",
-        },
-    ]
 
-    public constr(
-        state: SpecialVisualizationState,
-        tags: UIEventSource<Record<string, string>>,
-        args: string[]
-    ): SvelteUIElement {
-        const { text, icon, idkey, comment, minZoom, zoomButton } = Utils.ParseVisArgs(
-            this.args,
-            args
-        )
-
-        return new SvelteUIElement(CloseNoteButton, {
-            state,
-            tags,
-            icon,
-            idkey,
-            message: comment,
-            text: Translations.T(text),
-            minzoom: minZoom,
-            zoomMoreMessage: zoomButton,
-        })
-    }
-}
-
-/**
- * Thin wrapper around QuestionBox.svelte to include it into the special Visualisations
- */
-export class QuestionViz implements SpecialVisualization {
-    funcName = "questions"
-    needsUrls = []
-    docs =
-        "The special element which shows the questions which are unkown. Added by default if not yet there"
-    args = [
-        {
-            name: "labels",
-            doc: "One or more ';'-separated labels. If these are given, only questions with these labels will be given. Use `unlabeled` for all questions that don't have an explicit label. If none given, all questions will be shown",
-        },
-        {
-            name: "blacklisted-labels",
-            doc: "One or more ';'-separated labels of questions which should _not_ be included",
-        },
-    ]
-    svelteBased = true
-
-    constr(
-        state: SpecialVisualizationState,
-        tags: UIEventSource<Record<string, string>>,
-        args: string[],
-        feature: Feature,
-        layer: LayerConfig
-    ): SvelteUIElement {
-        const labels = args[0]
-            ?.split(";")
-            ?.map((s) => s.trim())
-            ?.filter((s) => s !== "")
-        const blacklist = args[1]
-            ?.split(";")
-            ?.map((s) => s.trim())
-            ?.filter((s) => s !== "")
-        return new SvelteUIElement(Questionbox, {
-            layer,
-            tags,
-            selectedElement: feature,
-            state,
-            onlyForLabels: labels,
-            notForLabels: blacklist,
-        })
-    }
-}
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
@@ -421,7 +252,12 @@ export default class SpecialVisualizations {
 
     private static initList(): SpecialVisualization[] {
         const specialVisualizations: SpecialVisualization[] = [
-            new QuestionViz(),
+            ...ImageVisualisations.initList(),
+            ...NoteVisualisations.initList(),
+            ...FavouriteVisualisations.initList(),
+            ...UISpecialVisualisations.initList(),
+            ...SettingsVisualisations.initList(),
+            ...ReviewSpecialVisualisations.initList(),
             {
                 funcName: "add_new_point",
                 docs: "An element which allows to add a new point on the 'last_click'-location. Only makes sense in the layer `last_click`",
@@ -456,115 +292,11 @@ export default class SpecialVisualizations {
                     )
                 },
             },
-            {
-                funcName: "logout",
-                args: [],
-                needsUrls: [Constants.osmAuthConfig.url],
-                docs: "Shows a button where the user can log out",
 
-                constr(state: SpecialVisualizationState): BaseUIElement {
-                    return new SvelteUIElement(LogoutButton, { osmConnection: state.osmConnection })
-                },
-            },
             new HistogramViz(),
             new StealViz(),
-            {
-                funcName: "minimap",
-                docs: "A small map showing the selected feature.",
-                needsUrls: [],
-                args: [
-                    {
-                        doc: "The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close",
-                        name: "zoomlevel",
-                        defaultValue: "18",
-                    },
-                    {
-                        doc: "(Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap. (Note: if the key is 'id', list interpration is disabled)",
-                        name: "idKey",
-                        defaultValue: "id",
-                    },
-                ],
-                example:
-                    "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
 
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    args: string[],
-                    feature: Feature
-                ): SvelteUIElement {
-                    return new SvelteUIElement(MinimapViz, { state, args, feature, tagSource })
-                },
-            },
-            {
-                funcName: "split_button",
-                docs: "Adds a button which allows to split a way",
-                args: [],
 
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>
-                ): BaseUIElement {
-                    return new VariableUiElement(
-                        tagSource
-                            .map((tags) => tags.id)
-                            .map((id) => {
-                                if (id.startsWith("way/")) {
-                                    return new SvelteUIElement(SplitRoadWizard, { id, state })
-                                }
-                                return undefined
-                            })
-                    )
-                },
-            },
-            {
-                funcName: "move_button",
-                docs: "Adds a button which allows to move the object to another location. The config will be read from the layer config",
-                args: [],
-
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): BaseUIElement {
-                    if (feature.geometry.type !== "Point") {
-                        return undefined
-                    }
-
-                    return new SvelteUIElement(MoveWizard, {
-                        state,
-                        featureToMove: feature,
-                        layer,
-                    })
-                },
-            },
-            {
-                funcName: "delete_button",
-                docs: "Adds a button which allows to delete the object at this location. The config will be read from the layer config",
-                args: [],
-
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): BaseUIElement {
-                    if (!layer.deletion) {
-                        return undefined
-                    }
-                    return new SvelteUIElement(DeleteWizard, {
-                        tags: tagSource,
-                        deleteConfig: layer.deletion,
-                        state,
-                        feature,
-                        layer,
-                    })
-                },
-            },
-            new ShareLinkViz(),
             {
                 funcName: "export_as_gpx",
                 docs: "Exports the selected feature as GPX-file",
@@ -598,26 +330,7 @@ export default class SpecialVisualizations {
             },
             new UploadToOsmViz(),
             new MultiApplyViz(),
-            new AddNoteCommentViz(),
-            {
-                funcName: "open_note",
-                args: [],
-                needsUrls: [Constants.osmAuthConfig.url],
-                docs: "Creates a new map note on the given location. This options is placed in the 'last_click'-popup automatically if the 'notes'-layer is enabled",
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature
-                ): BaseUIElement {
-                    const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                    return new SvelteUIElement(CreateNewNote, {
-                        state,
-                        coordinate: new UIEventSource({ lon, lat }),
-                    })
-                },
-            },
-            new CloseNoteViz(),
+
             new PlantNetDetectionViz(),
 
             new TagApplyButton(),
@@ -625,7 +338,6 @@ export default class SpecialVisualizations {
             new PointImportButtonViz(),
             new WayImportButtonViz(),
             new ConflateImportButtonViz(),
-            new NearbyImageVis(),
 
             {
                 funcName: "wikipedia",
@@ -701,171 +413,9 @@ export default class SpecialVisualizations {
                 ) => new SvelteUIElement(AllTagsPanel, { tags, layer }),
             },
             {
-                funcName: "image_carousel",
-                docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
-                args: [
-                    {
-                        name: "image_key",
-                        defaultValue: AllImageProviders.defaultKeys.join(","),
-                        doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated ",
-                    },
-                ],
-                needsUrls: AllImageProviders.apiUrls,
-                constr: (state, tags, args) => {
-                    let imagePrefixes: string[] = undefined
-                    if (args.length > 0) {
-                        imagePrefixes = [].concat(...args.map((a) => a.split(",")))
-                    }
-                    const images = AllImageProviders.loadImagesFor(tags, imagePrefixes)
-                    const estimated = tags.mapD(tags => AllImageProviders.estimateNumberOfImages(tags, imagePrefixes))
-                    return new SvelteUIElement(ImageCarousel, { state, tags, images, estimated })
-                },
-            },
-            {
-                funcName: "image_upload",
-                docs: "Creates a button where a user can upload an image to IMGUR",
-                needsUrls: [Imgur.apiUrl, ...Imgur.supportingUrls],
-                args: [
-                    {
-                        name: "image-key",
-                        doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
-                        required: false,
-                    },
-                    {
-                        name: "label",
-                        doc: "The text to show on the button",
-                        required: false,
-                    },
-                    {
-                        name: "disable_blur",
-                        doc: "If set to 'true' or 'yes', then face blurring will be disabled. To be used sparingly",
-                        required: false,
-                    },
-                ],
-                constr: (state, tags, args, feature) => {
-                    const targetKey = args[0] === "" ? undefined : args[0]
-                    const noBlur = args[3]?.toLowerCase()?.trim()
-                    return new SvelteUIElement(UploadImage, {
-                        state,
-                        tags,
-                        targetKey,
-                        feature,
-                        labelText: args[1],
-                        image: args[2],
-                        noBlur: noBlur === "true" || noBlur === "yes",
-                    })
-                },
-            },
-            {
-                funcName: "rating",
-                docs: "Shows stars which represent the average rating on mangrove.",
-                needsUrls: [MangroveReviews.ORIGINAL_API],
-                args: [
-                    {
-                        name: "subjectKey",
-                        defaultValue: "name",
-                        doc: "The key to use to determine the subject. If the value is specified, the subject will be <b>tags[subjectKey]</b> and will use this to filter the reviews.",
-                    },
-                    {
-                        name: "fallback",
-                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
-                    },
-                ],
-                constr: (state, tags, args, feature) => {
-                    const nameKey = args[0] ?? "name"
-                    const fallbackName = args[1]
-                    const reviews = FeatureReviews.construct(
-                        feature,
-                        tags,
-                        state.userRelatedState.mangroveIdentity,
-                        {
-                            nameKey: nameKey,
-                            fallbackName,
-                        },
-                        state.featureSwitchIsTesting
-                    )
-                    return new SvelteUIElement(StarsBarIcon, {
-                        score: reviews.average,
-                    })
-                },
-            },
-
-            {
-                funcName: "create_review",
-                docs: "Invites the contributor to leave a review. Somewhat small UI-element until interacted",
-                needsUrls: [MangroveReviews.ORIGINAL_API],
-                args: [
-                    {
-                        name: "subjectKey",
-                        defaultValue: "name",
-                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
-                    },
-                    {
-                        name: "fallback",
-                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
-                    },
-                    {
-                        name: "question",
-                        doc: "The question to ask during the review",
-                    },
-                ],
-                constr: (state, tags, args, feature, layer) => {
-                    const nameKey = args[0] ?? "name"
-                    const fallbackName = args[1]
-                    const question = args[2]
-                    const reviews = FeatureReviews.construct(
-                        feature,
-                        tags,
-                        state.userRelatedState?.mangroveIdentity,
-                        {
-                            nameKey: nameKey,
-                            fallbackName,
-                        },
-                        state.featureSwitchIsTesting
-                    )
-                    return new SvelteUIElement(ReviewForm, {
-                        reviews,
-                        state,
-                        tags,
-                        feature,
-                        layer,
-                        question,
-                    })
-                },
-            },
-            {
-                funcName: "list_reviews",
-                docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
-                needsUrls: [MangroveReviews.ORIGINAL_API],
-                args: [
-                    {
-                        name: "subjectKey",
-                        defaultValue: "name",
-                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
-                    },
-                    {
-                        name: "fallback",
-                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
-                    },
-                ],
-                constr: (state, tags, args, feature, layer) => {
-                    const nameKey = args[0] ?? "name"
-                    const fallbackName = args[1]
-                    const reviews = FeatureReviews.construct(
-                        feature,
-                        tags,
-                        state.userRelatedState?.mangroveIdentity,
-                        {
-                            nameKey: nameKey,
-                            fallbackName,
-                        },
-                        state.featureSwitchIsTesting
-                    )
-                    return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
-                },
-            },
-            {
                 funcName: "reviews",
+                group: "reviews",
+
                 example:
                     "`{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
                 docs: "A pragmatic combination of `create_review` and `list_reviews`",
@@ -873,16 +423,16 @@ export default class SpecialVisualizations {
                     {
                         name: "subjectKey",
                         defaultValue: "name",
-                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>"
                     },
                     {
                         name: "fallback",
-                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
                     },
                     {
                         name: "question",
-                        doc: "The question to ask in the review form. Optional",
-                    },
+                        doc: "The question to ask in the review form. Optional"
+                    }
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -897,29 +447,12 @@ export default class SpecialVisualizations {
                             .constr(state, tagSource, args, feature, layer),
                         SpecialVisualizations.specialVisualisationsDict
                             .get("list_reviews")
-                            .constr(state, tagSource, args, feature, layer),
+                            .constr(state, tagSource, args, feature, layer)
                     ])
-                },
+                }
             },
-            {
-                funcName: "import_mangrove_key",
-                docs: "Only makes sense in the usersettings. Allows to import a mangrove public key and to use this to make reviews",
-                args: [
-                    {
-                        name: "text",
-                        doc: "The text that is shown on the button",
-                    },
-                ],
-                needsUrls: [],
-                constr(
-                    state: SpecialVisualizationState,
-                    _: UIEventSource<Record<string, string>>,
-                    argument: string[]
-                ): BaseUIElement {
-                    const [text] = argument
-                    return new SvelteUIElement(ImportReviewIdentity, { state, text })
-                },
-            },
+
+
             {
                 funcName: "opening_hours_table",
                 docs: "Creates an opening-hours table. Usage: {opening_hours_table(opening_hours)} to create a table of the tag 'opening_hours'.",
@@ -1118,24 +651,6 @@ export default class SpecialVisualizations {
                                 ).SetClass("flex flex-col")
                             })
                     ),
-            },
-            {
-                funcName: "add_image_to_note",
-                docs: "Adds an image to a node",
-                args: [
-                    {
-                        name: "Id-key",
-                        doc: "The property name where the ID of the note to close can be found",
-                        defaultValue: "id",
-                    },
-                ],
-                needsUrls: [Imgur.apiUrl, ...Imgur.supportingUrls],
-
-                constr: (state, tags, args, feature, layer) => {
-                    const id = tags.data[args[0] ?? "id"]
-                    tags = state.featureProperties.getStore(id)
-                    return new SvelteUIElement(UploadImage, { state, tags, layer, feature })
-                },
             },
             {
                 funcName: "title",
@@ -1591,96 +1106,7 @@ export default class SpecialVisualizations {
                     )
                 },
             },
-            {
-                funcName: "giggity",
-                args: [
-                    {
-                        name: "giggityUrl",
-                        required: true,
-                        doc: "The URL of the giggity-XML",
-                    },
-                ],
-                docs: "Shows events that are happening based on a Giggity URL",
-                needsUrls: (args) => args[0],
 
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): BaseUIElement {
-                    const giggityUrl = argument[0]
-                    return new SvelteUIElement(Giggity, { tags: tagSource, state, giggityUrl })
-                },
-            },
-            {
-                funcName: "gps_all_tags",
-
-                docs: "Shows the current tags of the GPS-representing object, used for debugging",
-                args: [],
-                constr(
-                    state: SpecialVisualizationState,
-                    _: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): BaseUIElement {
-                    const tags = (<ThemeViewState>(
-                        state
-                    )).geolocation.currentUserLocation.features.map(
-                        (features) => features[0]?.properties
-                    )
-                    return new Combine([
-                        new SvelteUIElement(OrientationDebugPanel, {}),
-                        new SvelteUIElement(AllTagsPanel, {
-                            state,
-                            tags,
-                        }),
-                    ])
-                },
-            },
-            {
-                funcName: "favourite_status",
-
-                docs: "A button that allows a (logged in) contributor to mark a location as a favourite location",
-                args: [],
-
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): BaseUIElement {
-                    return new SvelteUIElement(MarkAsFavourite, {
-                        tags: tagSource,
-                        state,
-                        layer,
-                        feature,
-                    })
-                },
-            },
-            {
-                funcName: "favourite_icon",
-
-                docs: "A small button that allows a (logged in) contributor to mark a location as a favourite location, sized to fit a title-icon",
-                args: [],
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): BaseUIElement {
-                    return new SvelteUIElement(MarkAsFavouriteMini, {
-                        tags: tagSource,
-                        state,
-                        layer,
-                        feature,
-                    })
-                },
-            },
             {
                 funcName: "direction_indicator",
                 args: [],
@@ -1696,19 +1122,7 @@ export default class SpecialVisualizations {
                     return new SvelteUIElement(DirectionIndicator, { state, feature })
                 },
             },
-            {
-                funcName: "qr_code",
-                args: [],
-                docs: "Generates a QR-code to share the selected object",
-                constr(
-                    state: SpecialVisualizationState,
-                    tags: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature
-                ): SvelteUIElement {
-                    return new SvelteUIElement(QrCode, { state, tags, feature })
-                },
-            },
+
             {
                 funcName: "direction_absolute",
                 docs: "Converts compass degrees (with 0° being north, 90° being east, ...) into a human readable, translated direction such as 'north', 'northeast'",
@@ -1782,25 +1196,6 @@ export default class SpecialVisualizations {
                         readonly,
                         externalData,
                     })
-                },
-            },
-            {
-                funcName: "login_button",
-                args: [],
-                docs: "Show a login button",
-                needsUrls: [],
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    args: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): BaseUIElement {
-                    return new Toggle(
-                        undefined,
-                        new SvelteUIElement(LoginButton, { osmConnection: state.osmConnection }),
-                        state.osmConnection.isLoggedIn
-                    )
                 },
             },
             {
@@ -1937,35 +1332,7 @@ export default class SpecialVisualizations {
                     )
                 },
             },
-            {
-                funcName: "if_nothing_known",
-                args: [
-                    {
-                        name: "text",
-                        doc: "Text to show",
-                        required: true,
-                    },
-                    { name: "cssClasses", doc: "Classes to apply onto the text" },
-                ],
-                docs: "Shows a 'nothing is currently known-message if there is at least one unanswered question and no known (answerable) question",
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): BaseUIElement {
-                    const text = argument[0]
-                    const cssClasses = argument[1]
-                    return new SvelteUIElement(NothingKnown, {
-                        state,
-                        tags: tagSource,
-                        layer,
-                        text,
-                        cssClasses,
-                    })
-                },
-            },
+
             {
                 funcName: "preset_description",
                 docs: "Shows the extra description from the presets of the layer, if one matches. It will pick the most specific one (e.g. if preset `A` implies `B`, but `B` does not imply `A`, it'll pick B) or the first one if no ordering can be made. Might be empty",
@@ -1992,28 +1359,7 @@ export default class SpecialVisualizations {
                     return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
                 },
             },
-            {
-                funcName: "clear_caches",
-                docs: "A button which clears the locally downloaded data and the service worker. Login status etc will be kept",
-                args: [
-                    {
-                        name: "text",
-                        required: true,
-                        doc: "The text to show on the button",
-                    },
-                ],
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): SvelteUIElement {
-                    return new SvelteUIElement<any, any, any>(ClearCaches, {
-                        msg: argument[0] ?? "Clear local caches",
-                    })
-                },
-            },
+
             {
                 funcName: "group",
                 docs: "A collapsable group (accordion)",
@@ -2080,38 +1426,7 @@ export default class SpecialVisualizations {
                     })
                 },
             },
-            {
-                funcName: "clear_all",
-                docs: "Clears all user preferences",
-                needsUrls: [],
-                args: [
-                    {
-                        name: "text",
-                        doc: "Text to show on the button",
-                    },
-                ],
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): BaseUIElement {
-                    const text = argument[0]
-                    return new SubtleButton(undefined, text).onClick(() => {
-                        state.osmConnection.preferencesHandler.ClearPreferences()
-                    })
-                },
-            },
-            {
-                funcName: "disabled_questions",
-                docs: "Shows which questions are disabled for every layer. Used in 'settings'",
-                needsUrls: [],
-                args: [],
-                constr(state) {
-                    return new SvelteUIElement(DisabledQuestions, { state })
-                },
-            },
+
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
