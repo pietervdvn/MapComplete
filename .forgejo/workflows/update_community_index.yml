@@ -1,4 +1,3 @@
-name: Weekly data updates
 on:
   push:
     branches-ignore:
