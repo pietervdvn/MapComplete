@@ -214,9 +214,7 @@ export default class NameSuggestionIndex {
             for (const nsiItem of actualBrands) {
                 const tags = nsiItem.tags
                 const frequency = frequencies[nsiItem.displayName]
-                const iconUrl = this.getIconExternalUrl(nsiItem, type)
-                const hasIcon = iconUrl !== undefined
-                const icon = hasIcon ? this.getIconUrl(nsiItem) : undefined
+                const icon = this.getIconUrl(nsiItem)
                 mappings.push({
                     if: new Tag(type, tags[type]),
                     addExtraTags: Object.keys(tags)
