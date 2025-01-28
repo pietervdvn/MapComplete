@@ -1,7 +1,4 @@
 on:
-  push:
-    branches-ignore:
-      - build/*
   schedule:
     - cron: "0 2 * * *"
 
