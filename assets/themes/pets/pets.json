@@ -155,7 +155,8 @@
         "id": "waste_basket_dogs",
         "name=": {
           "en": "Waste baskets with excrement bag dispensers",
-          "nl": "Vuilnisbakken met verdelers voor hondenpoepzakjes"
+          "nl": "Vuilnisbakken met verdelers voor hondenpoepzakjes",
+          "de": "Mülleimer mit Spender für Kotbeutel"
         },
         "presets=": [],
         "filter=": [],
