@@ -11,6 +11,8 @@ import DeleteWizard from "../Popup/DeleteFlow/DeleteWizard.svelte"
 import QrCode from "../Popup/QrCode.svelte"
 import NothingKnown from "../Popup/NothingKnown.svelte"
 import { ShareLinkViz } from "../Popup/ShareLinkViz"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import AddNewPoint from "../Popup/AddNewPoint/AddNewPoint.svelte"
 
 /**
  * Thin wrapper around QuestionBox.svelte to include it into the special Visualisations
@@ -198,7 +200,20 @@ export class UISpecialVisualisations {
                     })
                 }
             },
-            new ShareLinkViz()
+            new ShareLinkViz(),
+            {
+                funcName: "add_new_point",
+                docs: "An element which allows to add a new point on the 'last_click'-location. Only makes sense in the layer `last_click`",
+                args: [],
+                group: "default",
+                constr(state: SpecialVisualizationState, _, __, feature): SvelteUIElement {
+                    const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                    return new SvelteUIElement(AddNewPoint, {
+                        state,
+                        coordinate: { lon, lat }
+                    })
+                }
+            }
         ]
     }
 }

@@ -1,7 +1,6 @@
 import Combine from "./Base/Combine"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
-import Title from "./Base/Title"
 import { default as FeatureTitle } from "./Popup/Title.svelte"
 import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
@@ -19,16 +18,13 @@ import { Translation } from "./i18n/Translation"
 import Translations from "./i18n/Translations"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import { SubtleButton } from "./Base/SubtleButton"
-import List from "./Base/List"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
 import { LanguageElement } from "./Popup/LanguageElement/LanguageElement"
-import Maproulette, { MaprouletteTask } from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import { Feature, GeoJsonProperties, LineString } from "geojson"
 import { GeoOperations } from "../Logic/GeoOperations"
-import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import ExportFeatureButton from "./Popup/ExportFeatureButton.svelte"
@@ -42,11 +38,9 @@ import SendEmail from "./Popup/SendEmail.svelte"
 import Constants from "../Models/Constants"
 import Wikipedia from "../Logic/Web/Wikipedia"
 import { TagUtils } from "../Logic/Tags/TagUtils"
-import LanguagePicker from "./InputElement/LanguagePicker.svelte"
 import OpenJosm from "./Base/OpenJosm.svelte"
 import NextChangeViz from "./OpeningHours/NextChangeViz.svelte"
 import { Unit } from "../Models/Unit"
-import MaprouletteSetStatus from "./MapRoulette/MaprouletteSetStatus.svelte"
 import DirectionIndicator from "./Base/DirectionIndicator.svelte"
 import ComparisonTool from "./Comparison/ComparisonTool.svelte"
 import SpecialTranslation from "./Popup/TagRendering/SpecialTranslation.svelte"
@@ -54,12 +48,9 @@ import SpecialVisualisationUtils from "./SpecialVisualisationUtils"
 import Toggle from "./Input/Toggle"
 import LinkedDataLoader from "../Logic/Web/LinkedDataLoader"
 import DynLink from "./Base/DynLink.svelte"
-import Locale from "./i18n/Locale"
-import LanguageUtils from "../Utils/LanguageUtils"
 import MarkdownUtils from "../Utils/MarkdownUtils"
 import Trash from "@babeard/svelte-heroicons/mini/Trash"
 import { And } from "../Logic/Tags/And"
-import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
 import GroupedView from "./Popup/GroupedView.svelte"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import NoteCommentElement from "./Popup/Notes/NoteCommentElement.svelte"
@@ -70,6 +61,7 @@ import { FavouriteVisualisations } from "./SpecialVisualisations/FavouriteVisual
 import { UISpecialVisualisations } from "./SpecialVisualisations/UISpecialVisualisations"
 import { SettingsVisualisations } from "./SpecialVisualisations/SettingsVisualisations"
 import { ReviewSpecialVisualisations } from "./SpecialVisualisations/ReviewSpecialVisualisations"
+import { MapRouletteSpecialVisualisations } from "./SpecialVisualisations/MapRouletteSpecialVisualisations"
 
 
 class StealViz implements SpecialVisualization {
@@ -217,12 +209,13 @@ export default class SpecialVisualizations {
         })
 
         const groupExplanations: Record<string, string> = {
-            "default": "These special visualisations are interactive components that most elements get by default. You'll normally won't need them in custom layers",
+            "default": "These special visualisations are (mostly) interactive components that most elements get by default. You'll normally won't need them in custom layers. There are also a few miscellaneous elements supporting the map UI.",
             "favourites": "Elements relating to marking an object as favourite (giving it a heart). Default element",
             "settings": "Elements part of the usersettings-ui",
             "images": "Elements related to adding or manipulating images. Normally also added by default, but in some cases a tweaked version is needed",
             "notes": "Elements relating to OpenStreetMap-notes, e.g. the component to close and/or add a comment",
-            "reviews": "Elements relating to seeing and adding ratings and reviews with Mangrove.reviews"
+            "reviews": "Elements relating to seeing and adding ratings and reviews with Mangrove.reviews",
+            "maproulette": "Elements to close a maproulette task"
         }
 
         const helpTexts: string[] = []
@@ -291,40 +284,7 @@ export default class SpecialVisualizations {
             ...UISpecialVisualisations.initList(),
             ...SettingsVisualisations.initList(),
             ...ReviewSpecialVisualisations.initList(),
-            {
-                funcName: "add_new_point",
-                docs: "An element which allows to add a new point on the 'last_click'-location. Only makes sense in the layer `last_click`",
-                args: [],
-
-                constr(state: SpecialVisualizationState, _, __, feature): BaseUIElement {
-                    const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                    return new SvelteUIElement(AddNewPoint, {
-                        state,
-                        coordinate: { lon, lat }
-                    })
-                }
-            },
-            {
-                funcName: "language_picker",
-                args: [],
-                docs: "A component to set the language of the user interface",
-                constr(state: SpecialVisualizationState): BaseUIElement {
-                    return new VariableUiElement(
-                        Locale.showLinkToWeblate.map((showTranslations) => {
-                            const languages = showTranslations
-                                ? LanguageUtils.usedLanguagesSorted
-                                : state.theme.language
-                            return new SvelteUIElement(LanguagePicker, {
-                                assignTo: state.userRelatedState.language,
-                                availableLanguages: languages,
-                                preferredLanguages: state.osmConnection.userDetails.map(
-                                    (ud) => ud?.languages ?? []
-                                )
-                            })
-                        })
-                    )
-                }
-            },
+            ...MapRouletteSpecialVisualisations.initList(),
 
             new HistogramViz(),
             new StealViz(),
@@ -703,131 +663,6 @@ export default class SpecialVisualizations {
                 }
             },
             {
-                funcName: "maproulette_task",
-                args: [],
-                needsUrls: [Maproulette.defaultEndpoint],
-                constr(state, tagSource) {
-                    const parentId = tagSource.data.mr_challengeId
-                    if (parentId === undefined) {
-                        console.warn("Element ", tagSource.data.id, " has no mr_challengeId")
-                        return undefined
-                    }
-                    const challenge = Stores.FromPromise(
-                        Utils.downloadJsonCached<MaprouletteTask>(
-                            `${Maproulette.defaultEndpoint}/challenge/${parentId}`,
-                            24 * 60 * 60 * 1000
-                        )
-                    )
-
-                    return new VariableUiElement(
-                        challenge.map((challenge) => {
-                            const listItems: BaseUIElement[] = []
-                            let title: BaseUIElement
-
-                            if (challenge?.name) {
-                                title = new Title(challenge.name)
-                            }
-
-                            if (challenge?.description) {
-                                listItems.push(new FixedUiElement(challenge.description))
-                            }
-
-                            if (challenge?.instruction) {
-                                listItems.push(new FixedUiElement(challenge.instruction))
-                            }
-
-                            if (listItems.length === 0) {
-                                return undefined
-                            } else {
-                                return [title, new List(listItems)]
-                            }
-                        })
-                    )
-                },
-                docs: "Fetches the metadata of MapRoulette campaign that this task is part of and shows those details (namely `title`, `description` and `instruction`).\n\nThis reads the property `mr_challengeId` to detect the parent campaign."
-            },
-            {
-                funcName: "maproulette_set_status",
-                docs: "Change the status of the given MapRoulette task",
-                needsUrls: [Maproulette.defaultEndpoint],
-                example:
-                    " The following example sets the status to '2' (false positive)\n" +
-                    "\n" +
-                    "```json\n" +
-                    "{\n" +
-                    "   \"id\": \"mark_duplicate\",\n" +
-                    "   \"render\": {\n" +
-                    "      \"special\": {\n" +
-                    "         \"type\": \"maproulette_set_status\",\n" +
-                    "         \"message\": {\n" +
-                    "            \"en\": \"Mark as not found or false positive\"\n" +
-                    "         },\n" +
-                    "         \"status\": \"2\",\n" +
-                    "         \"image\": \"close\"\n" +
-                    "      }\n" +
-                    "   }\n" +
-                    "}\n" +
-                    "```",
-                args: [
-                    {
-                        name: "message",
-                        doc: "A message to show to the user"
-                    },
-                    {
-                        name: "image",
-                        doc: "Image to show",
-                        defaultValue: "confirm"
-                    },
-                    {
-                        name: "message_confirm",
-                        doc: "What to show when the task is closed, either by the user or was already closed."
-                    },
-                    {
-                        name: "status",
-                        doc: "A statuscode to apply when the button is clicked. 1 = `close`, 2 = `false_positive`, 3 = `skip`, 4 = `deleted`, 5 = `already fixed` (on the map, e.g. for duplicates), 6 = `too hard`",
-                        defaultValue: "1"
-                    },
-                    {
-                        name: "maproulette_id",
-                        doc: "The property name containing the maproulette id",
-                        defaultValue: "mr_taskId"
-                    },
-                    {
-                        name: "ask_feedback",
-                        doc: "If not an empty string, this will be used as question to ask some additional feedback. A text field will be added",
-                        defaultValue: ""
-                    }
-                ],
-
-                constr: (state, tagsSource, args) => {
-                    let [
-                        message,
-                        image,
-                        message_closed,
-                        statusToSet,
-                        maproulette_id_key,
-                        askFeedback
-                    ] = args
-                    if (image === "") {
-                        image = "confirm"
-                    }
-                    if (maproulette_id_key === "" || maproulette_id_key === undefined) {
-                        maproulette_id_key = "mr_taskId"
-                    }
-                    statusToSet = statusToSet ?? "1"
-                    return new SvelteUIElement(MaprouletteSetStatus, {
-                        state,
-                        tags: tagsSource,
-                        message,
-                        image,
-                        message_closed,
-                        statusToSet,
-                        maproulette_id_key,
-                        askFeedback
-                    })
-                }
-            },
-            {
                 funcName: "statistics",
                 docs: "Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer",
                 args: [],
@@ -1036,8 +871,6 @@ export default class SpecialVisualizations {
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
                     argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
                 ): BaseUIElement {
                     return new VariableUiElement(
                         tagSource.map((tags) => {
@@ -1384,14 +1217,7 @@ export default class SpecialVisualizations {
                     return new VariableUiElement(translation)
                 }
             },
-            {
-                funcName: "pending_changes",
-                docs: "A module showing the pending changes, with the option to clear the pending changes",
-                args: [],
-                constr(state: SpecialVisualizationState): BaseUIElement {
-                    return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
-                }
-            },
+
 
             {
                 funcName: "group",

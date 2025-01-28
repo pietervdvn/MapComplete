@@ -8,13 +8,35 @@ import ThemeViewState from "../../Models/ThemeViewState"
 import OrientationDebugPanel from "../Debug/OrientationDebugPanel.svelte"
 import AllTagsPanel from "../Popup/AllTagsPanel.svelte"
 import { UIEventSource } from "../../Logic/UIEventSource"
-import { Feature } from "geojson"
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import ClearCaches from "../Popup/ClearCaches.svelte"
+import Locale from "../i18n/Locale"
+import LanguageUtils from "../../Utils/LanguageUtils"
+import LanguagePicker from "../InputElement/LanguagePicker.svelte"
+import PendingChangesIndicator from "../BigComponents/PendingChangesIndicator.svelte"
 
 export class SettingsVisualisations {
     public static initList(): SpecialVisualizationSvelte[] {
         return [
+            {
+                funcName: "language_picker",
+                args: [],
+                group: "settings",
+                docs: "A component to set the language of the user interface",
+                constr(state: SpecialVisualizationState): SvelteUIElement {
+                    const availableLanguages = Locale.showLinkToWeblate.map((showTranslations) =>
+                        showTranslations
+                            ? LanguageUtils.usedLanguagesSorted
+                            : state.theme.language)
+                    return new SvelteUIElement(LanguagePicker, {
+                        assignTo: state.userRelatedState.language,
+                        availableLanguages,
+                        preferredLanguages: state.osmConnection.userDetails.map(
+                            (ud) => ud?.languages ?? []
+                        )
+                    })
+                }
+            },
+
             {
                 funcName: "disabled_questions",
                 group: "settings",
@@ -65,13 +87,11 @@ export class SettingsVisualisations {
                 ],
                 group: "settings",
                 constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
+                    _: SpecialVisualizationState,
+                    __: UIEventSource<Record<string, string>>,
                     argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
                 ): SvelteUIElement {
-                    return new SvelteUIElement<any, any, any>(ClearCaches, {
+                    return new SvelteUIElement(ClearCaches, {
                         msg: argument[0] ?? "Clear local caches"
                     })
                 }
@@ -96,8 +116,16 @@ export class SettingsVisualisations {
                 constr(state: SpecialVisualizationState): SvelteUIElement {
                     return new SvelteUIElement(LogoutButton, { osmConnection: state.osmConnection })
                 }
+            },
+            {
+                funcName: "pending_changes",
+                docs: "A module showing the pending changes, with the option to clear the pending changes",
+                group: "settings",
+                args: [],
+                constr(state: SpecialVisualizationState): SvelteUIElement {
+                    return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
+                }
             }
-
         ]
     }
 }
