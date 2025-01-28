@@ -10,8 +10,8 @@
   export let tags: UIEventSource<Record<string, string>>
 
   export let estimated: Store<number>
-
 </script>
+
 {#if $estimated > 0 && $images.length < 1}
   <LoadingPlaceholder />
 {:else}

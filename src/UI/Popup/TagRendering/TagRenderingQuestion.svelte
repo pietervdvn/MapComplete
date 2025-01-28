@@ -118,7 +118,7 @@
             seenFreeforms.push(newProps[confg.freeform.key])
           }
           return matches
-        })
+        }),
       ]
 
       if (tgs !== undefined && confg.freeform) {
@@ -226,7 +226,7 @@
               freeform: $freeformInput,
               selectedMapping,
               checkedMappings,
-              currentTags: tags.data
+              currentTags: tags.data,
             },
             " --> ",
             selectedTags
@@ -284,7 +284,7 @@
     dispatch("saved", { config, applied: selectedTags })
     const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
       theme: tags.data["_orig_theme"] ?? state.theme.id,
-      changeType: "answer"
+      changeType: "answer",
     })
     freeformInput.set(undefined)
     selectedMapping = undefined
@@ -328,7 +328,7 @@
     const tagsToSet = settableKeys.data.map((k) => new Tag(k, ""))
     const change = new ChangeTagAction(tags.data.id, new And(tagsToSet), tags.data, {
       theme: tags.data["_orig_theme"] ?? state.theme.id,
-      changeType: "answer"
+      changeType: "answer",
     })
     freeformInput.set(undefined)
     selectedMapping = undefined
@@ -546,10 +546,7 @@
             {#if config.alwaysForceSaveButton}
               <button
                 on:click={() => onSave()}
-                class={twJoin(
-                      selectedTags === undefined ? "disabled" : "button-shadow",
-                      "primary"
-                    )}
+                class={twJoin(selectedTags === undefined ? "disabled" : "button-shadow", "primary")}
               >
                 <Tr t={Translations.t.general.save} />
               </button>

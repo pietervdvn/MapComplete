@@ -1,6 +1,18 @@
-import { Concat, DesugaringContext, DesugaringStep, Each, FirstOf, Fuse, On, SetDefault } from "./Conversion"
+import {
+    Concat,
+    DesugaringContext,
+    DesugaringStep,
+    Each,
+    FirstOf,
+    Fuse,
+    On,
+    SetDefault,
+} from "./Conversion"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
-import { MinimalTagRenderingConfigJson, TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
+import {
+    MinimalTagRenderingConfigJson,
+    TagRenderingConfigJson,
+} from "../Json/TagRenderingConfigJson"
 import { Utils } from "../../../Utils"
 import RewritableConfigJson from "../Json/RewritableConfigJson"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
@@ -24,7 +36,7 @@ import { ExpandTagRendering } from "./ExpandTagRendering"
 class AddFiltersFromTagRenderings extends DesugaringStep<LayerConfigJson> {
     constructor() {
         super(
-            "Inspects all the tagRenderings. If some tagRenderings have the `filter` attribute set, introduce those filters. This step might introduce shorthand filter names, thus 'ExpandFilter' should be run afterwards. Can be disabled with \"#filter\":\"no-auto\"",
+            'Inspects all the tagRenderings. If some tagRenderings have the `filter` attribute set, introduce those filters. This step might introduce shorthand filter names, thus \'ExpandFilter\' should be run afterwards. Can be disabled with "#filter":"no-auto"',
             ["filter"],
             "AddFiltersFromTagRenderings"
         )
@@ -127,7 +139,7 @@ class DetectInline extends DesugaringStep<QuestionableTagRenderingConfigJson> {
                 if (json.freeform.inline === true) {
                     context.err(
                         "'inline' is set, but the rendering contains a special visualisation...\n    " +
-                        spec[key]
+                            spec[key]
                     )
                 }
                 json = JSON.parse(JSON.stringify(json))
@@ -226,20 +238,20 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
             if (blacklisted?.length > 0 && used?.length > 0) {
                 context.err(
                     "The {questions()}-special rendering only supports either a blacklist OR a whitelist, but not both." +
-                    "\n    Whitelisted: " +
-                    used.join(", ") +
-                    "\n    Blacklisted: " +
-                    blacklisted.join(", ")
+                        "\n    Whitelisted: " +
+                        used.join(", ") +
+                        "\n    Blacklisted: " +
+                        blacklisted.join(", ")
                 )
             }
             for (const usedLabel of used) {
                 if (!allLabels.has(usedLabel)) {
                     context.err(
                         "This layers specifies a special question element for label `" +
-                        usedLabel +
-                        "`, but this label doesn't exist.\n" +
-                        "    Available labels are " +
-                        Array.from(allLabels).join(", ")
+                            usedLabel +
+                            "`, but this label doesn't exist.\n" +
+                            "    Available labels are " +
+                            Array.from(allLabels).join(", ")
                     )
                 }
                 seen.add(usedLabel)
@@ -253,8 +265,8 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
             const question: QuestionableTagRenderingConfigJson = {
                 id: "leftover-questions",
                 render: {
-                    "*": `{questions( ,${Array.from(seen).join(";")})}`
-                }
+                    "*": `{questions( ,${Array.from(seen).join(";")})}`,
+                },
             }
             json.tagRenderings.push(question)
         }
@@ -336,13 +348,13 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
         if (json.allowMove && !usedSpecialFunctions.has("move_button")) {
             json.tagRenderings.push({
                 id: "move-button",
-                render: { "*": "{move_button()}" }
+                render: { "*": "{move_button()}" },
             })
         }
         if (json.deletion && !usedSpecialFunctions.has("delete_button")) {
             json.tagRenderings.push({
                 id: "delete-button",
-                render: { "*": "{delete_button()}" }
+                render: { "*": "{delete_button()}" },
             })
         }
 
@@ -357,9 +369,9 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
                     or: [
                         "__featureSwitchIsDebugging=true",
                         "mapcomplete-show_tags=full",
-                        "mapcomplete-show_debug=yes"
-                    ]
-                }
+                        "mapcomplete-show_debug=yes",
+                    ],
+                },
             }
             json.tagRenderings?.push(trc)
         }
@@ -467,10 +479,10 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
     private static convertIfNeeded(
         input:
             | (object & {
-            special: {
-                type: string
-            }
-        })
+                  special: {
+                      type: string
+                  }
+              })
             | any,
         context: ConversionContext
     ): any {
@@ -568,7 +580,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                 .map((nm) => RewriteSpecial.escapeStr(special[nm] ?? "", context))
                 .join(",")
             return {
-                "*": `{${type}(${args})${clss}}`
+                "*": `{${type}(${args})${clss}}`,
             }
         }
 
@@ -666,14 +678,14 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
         }[] = []
 
         for (let i = 0; i < badgesJson.length; i++) {
-            const iconBadge: string | ({
-                if: TagConfigJson
-                then: string | MinimalTagRenderingConfigJson
-            }) = badgesJson[i]
-
+            const iconBadge:
+                | string
+                | {
+                      if: TagConfigJson
+                      then: string | MinimalTagRenderingConfigJson
+                  } = badgesJson[i]
 
             if (typeof iconBadge === "string") {
-
                 const expanded: QuestionableTagRenderingConfigJson[] = this._expand.convert(
                     iconBadge,
                     context.enters("iconBadges", i)
@@ -683,16 +695,18 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
                     const condition = tr.condition
                     for (const trElement of tr.mappings) {
                         const showIf = TagUtils.optimzeJson({
-                            and: Utils.NoNull([condition,
+                            and: Utils.NoNull([
+                                condition,
                                 {
-                                    or: Utils.NoNull([
-                                        trElement.alsoShowIf, trElement.if
-                                    ])
-                                }
-                            ])
+                                    or: Utils.NoNull([trElement.alsoShowIf, trElement.if]),
+                                },
+                            ]),
                         })
                         if (showIf === true) {
-                            context.warn("Dropping iconBadge that would be _always_ shown: " + (trElement.icon ?? trElement.then))
+                            context.warn(
+                                "Dropping iconBadge that would be _always_ shown: " +
+                                    (trElement.icon ?? trElement.then)
+                            )
                             continue
                         }
                         if (showIf === false) {
@@ -700,11 +714,9 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
                         }
                         iconBadges.push({
                             if: showIf,
-                            then: trElement.icon ?? trElement.then
+                            then: trElement.icon ?? trElement.then,
                         })
                     }
-
-
                 }
                 continue
             }
@@ -721,7 +733,7 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
             iconBadges.push(
                 ...expanded.map((resolved) => ({
                     if: iconBadge.if,
-                    then: <MinimalTagRenderingConfigJson>resolved
+                    then: <MinimalTagRenderingConfigJson>resolved,
                 }))
             )
         }
@@ -734,7 +746,7 @@ class PreparePointRendering extends Fuse<PointRenderingConfigJson> {
     constructor(state: DesugaringContext, layer: LayerConfigJson) {
         super(
             "Prepares point renderings by expanding 'icon' and 'iconBadges'." +
-            " A tagRendering from the host tagRenderings will be substituted in",
+                " A tagRendering from the host tagRenderings will be substituted in",
             new On(
                 "marker",
                 new Each(
@@ -861,7 +873,7 @@ export class AddRatingBadge extends DesugaringStep<LayerConfigJson> {
 
         const specialVis: Exclude<RenderingSpecification, string>[] = <
             Exclude<RenderingSpecification, string>[]
-            >ValidationUtils.getAllSpecialVisualisations(<any>json.tagRenderings).filter(
+        >ValidationUtils.getAllSpecialVisualisations(<any>json.tagRenderings).filter(
             (rs) => typeof rs !== "string"
         )
         const funcs = new Set<string>(specialVis.map((rs) => rs.func.funcName))
@@ -897,7 +909,7 @@ export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
         }
         return <TagRenderingConfigJson>{
             id: "title_icon_auto_" + tr.id,
-            mappings
+            mappings,
         }
     }
 
@@ -942,8 +954,8 @@ export class AutoTitleIcon extends DesugaringStep<LayerConfigJson> {
                     .enters("titleIcons", i)
                     .warn(
                         "TagRendering with id " +
-                        trId +
-                        " does not have any icons, not generating an icon for this"
+                            trId +
+                            " does not have any icons, not generating an icon for this"
                     )
                 continue
             }
@@ -1006,7 +1018,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
                 (layer) =>
                     new Concat(
                         new ExpandTagRendering(state, layer, {
-                            addToContext: options?.addTagRenderingsToContext ?? false
+                            addToContext: options?.addTagRenderingsToContext ?? false,
                         })
                     )
             ),

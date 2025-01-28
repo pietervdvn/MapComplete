@@ -84,10 +84,10 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
     private async updateFeature(
         feature: Feature,
         state: {
-            theme: ThemeConfig,
-            changes: Changes,
-            featureProperties: FeaturePropertiesStore,
-            osmObjectDownloader: OsmObjectDownloader,
+            theme: ThemeConfig
+            changes: Changes
+            featureProperties: FeaturePropertiesStore
+            osmObjectDownloader: OsmObjectDownloader
         }
     ) {
         const id = feature.properties.id

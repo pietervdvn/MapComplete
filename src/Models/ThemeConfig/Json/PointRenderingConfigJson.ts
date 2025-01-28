@@ -75,14 +75,17 @@ export default interface PointRenderingConfigJson {
      * See ExpandIconBadges on how this is handled
      * group: hidden
      */
-    iconBadges?: (string | {
-        if: TagConfigJson
-        /**
-         * Badge to show
-         * Type: icon
-         */
-        then: string | MinimalTagRenderingConfigJson
-    })[]
+    iconBadges?: (
+        | string
+        | {
+              if: TagConfigJson
+              /**
+               * Badge to show
+               * Type: icon
+               */
+              then: string | MinimalTagRenderingConfigJson
+          }
+    )[]
 
     /**
      * question: What size should the marker be on the map?

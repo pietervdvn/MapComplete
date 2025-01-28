@@ -32,7 +32,6 @@ export default class NoElementsInViewDetector {
                     return "zoom-to-low"
                 }
 
-
                 for (const [layerName, source] of themeViewState.perLayerFiltered) {
                     if (priviliged.has(layerName)) {
                         continue

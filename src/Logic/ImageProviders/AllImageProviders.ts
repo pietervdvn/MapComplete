@@ -22,7 +22,7 @@ export default class AllImageProviders {
         ...WikimediaImageProvider.commonsPrefixes,
         ...Mapillary.valuePrefixes,
         ...AllImageProviders.dontLoadFromPrefixes,
-        "Category:"
+        "Category:",
     ])
 
     private static imageAttributionSources: ImageProvider[] = [
@@ -31,7 +31,7 @@ export default class AllImageProviders {
         WikidataImageProvider.singleton,
         WikimediaImageProvider.singleton,
         Panoramax.singleton,
-        AllImageProviders.genericImageProvider
+        AllImageProviders.genericImageProvider,
     ]
     public static apiUrls: string[] = [].concat(
         ...AllImageProviders.imageAttributionSources.map((src) => src.apiUrls())
@@ -44,7 +44,7 @@ export default class AllImageProviders {
         mapillary: Mapillary.singleton,
         wikidata: WikidataImageProvider.singleton,
         wikimedia: WikimediaImageProvider.singleton,
-        panoramax: Panoramax.singleton
+        panoramax: Panoramax.singleton,
     }
 
     public static byName(name: string) {
@@ -77,7 +77,10 @@ export default class AllImageProviders {
      *
      *
      */
-    public static estimateNumberOfImages(tags: Record<string, string>, prefixes: string[] = undefined): number {
+    public static estimateNumberOfImages(
+        tags: Record<string, string>,
+        prefixes: string[] = undefined
+    ): number {
         let count = 0
 
         const sources = [Imgur.singleton,
@@ -137,7 +140,7 @@ export default class AllImageProviders {
      */
     public static loadImagesFrom(urls: string[]): Store<ProvidedImage[]> {
         const tags = {
-            id: urls.join(";")
+            id: urls.join(";"),
         }
         for (let i = 0; i < urls.length; i++) {
             tags["image:" + i] = urls[i]

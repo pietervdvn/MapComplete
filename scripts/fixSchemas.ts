@@ -235,7 +235,6 @@ function extractHintsFrom(
                 )
             }
         }
-
     }
     return hints
 }

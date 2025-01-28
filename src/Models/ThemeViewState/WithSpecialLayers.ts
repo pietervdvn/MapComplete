@@ -18,12 +18,11 @@ import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import NearbyFeatureSource from "../../Logic/FeatureSource/Sources/NearbyFeatureSource"
 import {
     SummaryTileSource,
-    SummaryTileSourceRewriter
+    SummaryTileSourceRewriter,
 } from "../../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
 import { ShowDataLayerOptions } from "../../UI/Map/ShowDataLayerOptions"
 
 export class WithSpecialLayers extends WithChangesState {
-
     readonly favourites: FavouritesFeatureSource
     /**
      * When hovering (in the popup) an image, the location of the image will be revealed on the main map.
@@ -42,7 +41,6 @@ export class WithSpecialLayers extends WithChangesState {
      */
     readonly visualFeedbackViewportBounds: UIEventSource<BBox> = new UIEventSource<BBox>(undefined)
 
-
     constructor(theme: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {
         super(theme, mvtAvailableLayers)
 
@@ -57,7 +55,7 @@ export class WithSpecialLayers extends WithChangesState {
                 bounds: this.visualFeedbackViewportBounds.map(
                     (bounds) => bounds ?? this.mapProperties.bounds?.data,
                     [this.mapProperties.bounds]
-                )
+                ),
             }
         )
         this.closestFeatures.registerSource(this.favourites, "favourite")
@@ -85,10 +83,7 @@ export class WithSpecialLayers extends WithChangesState {
                 })
             }
         }
-
-
     }
-
 
     private setupSummaryLayer(): SummaryTileSourceRewriter | undefined {
         /**
@@ -113,17 +108,20 @@ export class WithSpecialLayers extends WithChangesState {
             this.mapProperties.zoom.map((z) => Math.max(Math.floor(z), 0)),
             this.mapProperties,
             {
-                isActive: this.mapProperties.zoom.map((z) => z < maxzoom)
+                isActive: this.mapProperties.zoom.map((z) => z < maxzoom),
             }
         )
 
-        const source = new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
+        const source = new SummaryTileSourceRewriter(
+            summaryTileSource,
+            this.layerState.filteredLayers
+        )
 
         new ShowDataLayer(this.map, {
             features: source,
             layer: new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer"),
             // doShowLayer: this.mapProperties.zoom.map((z) => z < maxzoom),
-            selectedElement: this.selectedElement
+            selectedElement: this.selectedElement,
         })
         return source
     }
@@ -139,7 +137,7 @@ export class WithSpecialLayers extends WithChangesState {
             doShowLayer: flayer.isDisplayed,
             layer: flayer.layerDef,
             metaTags: this.userRelatedState.preferencesAsTags,
-            selectedElement: this.selectedElement
+            selectedElement: this.selectedElement,
         }
         new ShowDataLayer(this.map, options)
     }
@@ -154,14 +152,14 @@ export class WithSpecialLayers extends WithChangesState {
             lastClickLayerConfig.isShown === undefined
                 ? source
                 : source.features.mapD((fs) =>
-                    fs.filter((f) => {
-                        const matches = lastClickLayerConfig.isShown.matchesProperties(
-                            f.properties
-                        )
-                        console.debug("LastClick ", f, "matches", matches)
-                        return matches
-                    })
-                )
+                      fs.filter((f) => {
+                          const matches = lastClickLayerConfig.isShown.matchesProperties(
+                              f.properties
+                          )
+                          console.debug("LastClick ", f, "matches", matches)
+                          return matches
+                      })
+                  )
         // show last click = new point/note marker
         const features = new StaticFeatureSource(lastClickFiltered)
         this.featureProperties.trackFeatureSource(features)
@@ -175,9 +173,9 @@ export class WithSpecialLayers extends WithChangesState {
                 }
                 this.map.data.flyTo({
                     zoom: Constants.minZoomLevelToAddNewPoint,
-                    center: GeoOperations.centerpointCoordinates(feature)
+                    center: GeoOperations.centerpointCoordinates(feature),
                 })
-            }
+            },
         })
     }
 
@@ -189,15 +187,17 @@ export class WithSpecialLayers extends WithChangesState {
     }
 
     private drawSpecialLayers() {
-
         type AddedByDefaultTypes = (typeof Constants.added_by_default)[number]
-        type LayersToAdd = "current_view" | Exclude<AddedByDefaultTypes,
-            "search" // Handled by WithSearchState
-            | "last_click" // handled by this.drawLastClick()
-            | "summary" // handled by setupSummaryLayer
-            | "range" // handled by UserMapFeatureSwitchState
-            | "selected_element" // handled by this.drawSelectedElement
-        >
+        type LayersToAdd =
+            | "current_view"
+            | Exclude<
+                  AddedByDefaultTypes,
+                  | "search" // Handled by WithSearchState
+                  | "last_click" // handled by this.drawLastClick()
+                  | "summary" // handled by setupSummaryLayer
+                  | "range" // handled by UserMapFeatureSwitchState
+                  | "selected_element" // handled by this.drawSelectedElement
+              >
         const empty = []
         /**
          * A listing which maps the layerId onto the featureSource
@@ -209,15 +209,13 @@ export class WithSpecialLayers extends WithChangesState {
             gps_track: this.geolocation.historicalUserLocationsTrack,
             current_view: this.currentView,
             favourite: this.favourites,
-            geocoded_image: new StaticFeatureSource(this.geocodedImages)
+            geocoded_image: new StaticFeatureSource(this.geocodedImages),
         }
-
 
         // enumerate all 'normal' layers and match them with the appropriate 'special' layer - if applicable
         this.layerState.filteredLayers.forEach((flayer) => {
             this.registerSpecialLayer(flayer, specialLayers[flayer.layerDef.id])
         })
-
     }
 
     private initActorsSpecialLayers() {
@@ -230,5 +228,4 @@ export class WithSpecialLayers extends WithChangesState {
             }
         })
     }
-
 }

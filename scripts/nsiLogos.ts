@@ -7,19 +7,24 @@ import { Utils } from "../src/Utils"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { FilterConfigOptionJson } from "../src/Models/ThemeConfig/Json/FilterConfigJson"
 import { TagUtils } from "../src/Logic/Tags/TagUtils"
-import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 import { openSync, readSync } from "node:fs"
+import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 
 class NsiLogos extends Script {
     constructor() {
         super("Contains various subcommands for NSI logo maintainance")
     }
 
-    private async downloadLogo(nsiItem: NSIItem, type: string, basePath: string, alreadyDownloaded: Map<string, string>) {
-        if(nsiItem === undefined){
+    private async downloadLogo(
+        nsiItem: NSIItem,
+        type: string,
+        basePath: string,
+        alreadyDownloaded: Map<string, string>
+    ) {
+        if (nsiItem === undefined) {
             return false
         }
-        if(alreadyDownloaded.has(nsiItem.id)){
+        if (alreadyDownloaded.has(nsiItem.id)) {
             return false
         }
         try {
@@ -54,7 +59,7 @@ class NsiLogos extends Script {
             await ScriptUtils.DownloadFileTo(logos.facebook, path)
             // Validate
             const content = readFileSync(path, "utf8")
-            if (content.startsWith("{\"error\"")) {
+            if (content.startsWith('{"error"')) {
                 unlinkSync(path)
                 console.error("Attempted to fetch", logos.facebook, " but this gave an error")
             } else {
@@ -109,13 +114,16 @@ class NsiLogos extends Script {
         const stepcount = 50
         for (let i = 0; i < items.length; i += stepcount) {
             if (downloadCount > 0 || i % 200 === 0) {
-                console.log(i + "/" + items.length, `downloaded ${downloadCount}; failed ${errored}; skipped ${skipped} for NSI type ${type}`)
+                console.log(
+                    i + "/" + items.length,
+                    `downloaded ${downloadCount}; failed ${errored}; skipped ${skipped} for NSI type ${type}`
+                )
             }
 
             const results = await Promise.all(
                 Utils.TimesT(stepcount, (j) => j).map(async (j) => {
                     return await this.downloadLogo(items[i + j], type, basePath, alreadyDownloaded)
-                }),
+                })
             )
             for (let j = 0; j < results.length; j++) {
                 let didDownload = results[j]
@@ -129,7 +137,12 @@ class NsiLogos extends Script {
                     continue
                 }
                 console.log("Retrying", items[i + j].id, type)
-                didDownload = await this.downloadLogo(items[i + j], type, basePath, alreadyDownloaded)
+                didDownload = await this.downloadLogo(
+                    items[i + j],
+                    type,
+                    basePath,
+                    alreadyDownloaded
+                )
                 if (didDownload === "error") {
                     errored++
                     console.log("Failed again:", items[i + j].id)
@@ -139,7 +152,8 @@ class NsiLogos extends Script {
             }
         }
         return {
-            downloadCount, errored,
+            downloadCount,
+            errored,
         }
     }
 
@@ -149,20 +163,30 @@ class NsiLogos extends Script {
         const filterOptions: FilterConfigOptionJson[] = items.map((item) => {
             return {
                 question: item.displayName,
-                icon: nsi.getIconUrl(item, type),
+                icon: nsi.getIconUrl(item),
                 osmTags: NameSuggestionIndex.asFilterTags(item),
             }
         })
-        const mappings = items.map((item) => ({
-            if: NameSuggestionIndex.asFilterTags(item),
-            then: nsi.getIconUrl(item, type),
-        }))
+        const mappings = items
+            .map((item) => ({
+                if: NameSuggestionIndex.asFilterTags(item),
+                then: nsi.getIconUrl(item),
+            }))
+            .filter((mapping) => mapping.then !== undefined)
 
         console.log("Checking for shadow-mappings... This will take a while")
+        let deleted = 0
         for (let i = mappings.length - 1; i >= 0; i--) {
             const condition = TagUtils.Tag(mappings[i].if)
             if (i % 100 === 0) {
-                console.log("Checking for shadow-mappings...", i, "/", mappings.length)
+                console.log(
+                    "Checking for shadow-mappings...",
+                    i,
+                    "/",
+                    mappings.length,
+                    "deleted",
+                    deleted
+                )
             }
             const shadowsSomething = mappings.some((m, j) => {
                 if (i === j) {
@@ -173,6 +197,7 @@ class NsiLogos extends Script {
             // If this one matches, the other one will match as well
             // We can thus remove this one in favour of the other one
             if (shadowsSomething) {
+                deleted++
                 mappings.splice(i, 1)
             }
         }
@@ -229,16 +254,19 @@ class NsiLogos extends Script {
 
     private static readonly path: string = "./public/assets/data/nsi/logos"
     private static headers: Readonly<Record<string, ReadonlyArray<ReadonlyArray<number>>>> = {
-        "png": [[137, 80, 78, 71, 13, 10, 26, 10]],
-        "jpg": [[255, 216], [255, 232]],
-        "gif": [[71, 73]],
+        png: [[137, 80, 78, 71, 13, 10, 26, 10]],
+        jpg: [
+            [255, 216],
+            [255, 232],
+        ],
+        gif: [[71, 73]],
     }
 
     private static downloadedFiles(): Map<string, string> {
         const allFiles = ScriptUtils.readDirRecSync(NsiLogos.path, 1)
         const ids = new Map<string, string>()
         for (const f of allFiles) {
-            const match = f.match("^.*/\([a-zA-Z0-9-]+\)\(.[a-z]{3}\)?")
+            const match = f.match("^.*/([a-zA-Z0-9-]+)(.[a-z]{3})?")
             const id = match[1]
             ids.set(id, f)
         }
@@ -262,7 +290,7 @@ class NsiLogos extends Script {
         const allFiles = ScriptUtils.readDirRecSync(NsiLogos.path, 1)
         let pruned = 0
         for (const f of allFiles) {
-            const match = f.match("^.*/\([a-zA-Z0-9-]+\)\(.[a-z]{3}\)?")
+            const match = f.match("^.*/([a-zA-Z0-9-]+)(.[a-z]{3})?")
             const id = match[1]
             if (!ids.has(id)) {
                 console.log("Obsolete file:", f, id)
@@ -271,8 +299,6 @@ class NsiLogos extends Script {
             }
         }
         console.log("Removed ", pruned, "files")
-
-
     }
 
     private startsWith(buffer: Buffer, header: ReadonlyArray<number>): boolean {
@@ -283,8 +309,11 @@ class NsiLogos extends Script {
         return doesMatch
     }
 
-    private startsWithAnyOf(buffer: Buffer, headers: ReadonlyArray<ReadonlyArray<number>>): boolean {
-        return headers.some(header => this.startsWith(buffer, header))
+    private startsWithAnyOf(
+        buffer: Buffer,
+        headers: ReadonlyArray<ReadonlyArray<number>>
+    ): boolean {
+        return headers.some((header) => this.startsWith(buffer, header))
     }
 
     private async addExtensions() {
@@ -297,8 +326,7 @@ class NsiLogos extends Script {
             const fd = openSync(f, "r")
             const buffer = Buffer.alloc(10)
             const num = readSync(fd, buffer, 0, 10, null)
-            if (num === 0)
-                throw "INvalid file:" + f
+            if (num === 0) throw "INvalid file:" + f
 
             let matchFound = false
             for (const format in NsiLogos.headers) {
@@ -318,16 +346,23 @@ class NsiLogos extends Script {
                 unlinkSync(f)
                 continue
             }
-            throw "No format found for " + f + buffer.slice(0, 10).join(" ") + " ascii: " + text.slice(0, 40)
-
+            throw (
+                "No format found for " +
+                f +
+                buffer.slice(0, 10).join(" ") +
+                " ascii: " +
+                text.slice(0, 40)
+            )
         }
     }
 
-    private async patchNsiFile(){
+    private async patchNsiFile() {
         const files = NsiLogos.downloadedFiles()
-        const path = "./public/assets/data/nsi/nsi.min.json"
-        const pathOut = "./public/assets/data/nsi/nsi.patched.json"
-
+        let path = "./public/assets/data/nsi/nsi.min.json"
+        const otherPath = "./assets/data/nsi/nsi.min.json"
+        if (existsSync(otherPath) && !existsSync(path)) {
+            path = otherPath
+        }
         const nsi = JSON.parse(readFileSync(path, "utf8"))
         const types = nsi.nsi
 
@@ -335,34 +370,33 @@ class NsiLogos extends Script {
             const t: NSIItem[] = types[k].items
             for (const nsiItem of t) {
                 const file = files.get(nsiItem.id)
-                if(!file){
+                delete nsiItem.fromTemplate
+                if (!file) {
                     continue
                 }
-                const extension = file.match(".*\.\([a-z]{3}\)")[1]
+                const extension = file.match(/.*\.([a-z]{3})/)[1]
                 nsiItem["ext"] = extension
-                delete nsiItem.fromTemplate
             }
         }
         writeFileSync(path, JSON.stringify(nsi), "utf8")
-
     }
 
-    private commands: Record<string, { f: () => Promise<void>, doc?: string }> = {
-        "download": { f: () => this.download(), doc: "Download all icons" },
-        "generateRenderings": {
+    private commands: Record<string, { f: () => Promise<void>; doc?: string }> = {
+        download: { f: () => this.download(), doc: "Download all icons" },
+        generateRenderings: {
             f: () => this.generateRenderings(),
             doc: "Generates the layer files 'nsi_brand' and 'nsi_operator' which allows to reuse the icons in renderings",
         },
-        "prune": { f: () => NsiLogos.prune(), doc: "Remove no longer needed files" },
-        "addExtensions": {
+        prune: { f: () => NsiLogos.prune(), doc: "Remove no longer needed files" },
+        addExtensions: {
             f: () => this.addExtensions(),
             doc: "Inspects all files without an extension; might remove invalid files",
         },
-        "patch": {
+        patch: {
             f: () => this.patchNsiFile(),
-            doc: "Reads nsi.min.json, adds the 'ext' (extension) field to every relevant entry"
+            doc: "Reads nsi.min.json, adds the 'ext' (extension) field to every relevant entry",
         },
-        "all": {
+        all: {
             doc: "Run `download`, `generateRenderings`, `prune`  and `addExtensions`",
             f: async () => {
                 await NsiLogos.prune()
@@ -389,7 +423,6 @@ class NsiLogos extends Script {
         }
 
         for (const command of args) {
-
             const c = this.commands[command]
             if (!c) {
                 console.log("Unrecognized command:", c)

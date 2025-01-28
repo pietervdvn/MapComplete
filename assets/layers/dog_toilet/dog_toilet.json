@@ -1,10 +1,12 @@
 {
   "id": "dog_toilet",
   "name": {
-    "en": "Dog toilets"
+    "en": "Dog toilets",
+    "de": "Hundetoiletten"
   },
   "description": {
-    "en": "A dog toilet is a facility designated for dogs to urinate and excrete. This can be a designated, signposted patch of grass, a sand pit or a fenced area."
+    "en": "A dog toilet is a facility designated for dogs to urinate and excrete. This can be a designated, signposted patch of grass, a sand pit or a fenced area.",
+    "de": "Eine Hundetoilette ist eine Einrichtung, die für das Urinieren und die Ausscheidung von Hunden vorgesehen ist. Dabei kann es sich um eine ausgewiesene, ausgeschilderte Rasenfläche, eine Sandgrube oder einen eingezäunten Bereich handeln."
   },
   "source": {
     "osmTags": "amenity=dog_toilet"
@@ -12,7 +14,8 @@
   "minzoom": 13,
   "title": {
     "render": {
-      "en": "Dog toilet"
+      "en": "Dog toilet",
+      "de": "Hundetoilette"
     }
   },
   "pointRendering": [
@@ -31,7 +34,8 @@
   "presets": [
     {
       "title": {
-        "en": "a dog toilet"
+        "en": "a dog toilet",
+        "de": "eine Hundetoilette"
       },
       "tags": [
         "amenity=dog_toilet"
@@ -43,7 +47,8 @@
     {
       "id": "barrier",
       "question": {
-        "en": "Is this dog toilet fenced?"
+        "en": "Is this dog toilet fenced?",
+        "de": "Ist diese Hundetoilette eingezäunt?"
       },
       "mappings": [
         {
@@ -52,7 +57,8 @@
             "not:barrier="
           ],
           "then": {
-            "en": "There is a fence around this dog toilet"
+            "en": "There is a fence around this dog toilet",
+            "de": "Diese Hundetoilette ist eingezäunt"
           }
         },
         {
@@ -61,7 +67,8 @@
             "not:barrier="
           ],
           "then": {
-            "en": "There is a hedge around this dog toilet"
+            "en": "There is a hedge around this dog toilet",
+            "de": "Diese Hundetoilette ist von einer Hecke umgeben"
           }
         },
         {
@@ -70,7 +77,8 @@
             "not:barrier="
           ],
           "then": {
-            "en": "There is a barrier around this dog toilet"
+            "en": "There is a barrier around this dog toilet",
+            "de": "Um diese Hundetoilette herum befindet sich eine Barriere"
           }
         },
         {
@@ -79,7 +87,8 @@
             "barrier="
           ],
           "then": {
-            "en": "There is no barrier around this dog toilet"
+            "en": "There is no barrier around this dog toilet",
+            "de": "Es gibt keine Barriere um diese Hundetoilette herum"
           }
         }
       ]

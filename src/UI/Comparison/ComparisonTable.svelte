@@ -137,11 +137,7 @@
       >
         {#each $unknownImages as image (image)}
           <div class="relative flex w-fit items-center bg-gray-200">
-            <AttributedImage
-              {state}
-              imgClass="h-32 shrink-0"
-              image={{ url: image, id: image }}
-            />
+            <AttributedImage {state} imgClass="h-32 shrink-0" image={{ url: image, id: image }} />
           </div>
         {/each}
       </div>

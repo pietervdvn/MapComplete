@@ -34,7 +34,6 @@ export class WithGuiState extends WithSpecialLayers {
         this.initHotkeysGui()
     }
 
-
     private initHotkeysGui() {
         const docs = Translations.t.hotkeyDocumentation
 
@@ -44,7 +43,7 @@ export class WithGuiState extends WithSpecialLayers {
 
         Hotkeys.RegisterHotkey(
             {
-                nomod: "b"
+                nomod: "b",
             },
             docs.openLayersPanel,
             () => {
@@ -55,7 +54,7 @@ export class WithGuiState extends WithSpecialLayers {
         )
         Hotkeys.RegisterHotkey(
             {
-                nomod: "s"
+                nomod: "s",
             },
             Translations.t.hotkeyDocumentation.openFilterPanel,
             () => {
@@ -70,5 +69,4 @@ export class WithGuiState extends WithSpecialLayers {
         this.guistate.closeAll()
         this.selectedElement.setData(this.currentView.features?.data?.[0])
     }
-
 }

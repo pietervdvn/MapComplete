@@ -130,9 +130,9 @@ ${changeset}`
         const changesObj = new Changes(
             {
                 osmConnection,
-                reportError: (err) => console.error(err)
+                reportError: (err) => console.error(err),
             },
-            false,
+            false
         )
 
         const all: ErrorMessage[] = []

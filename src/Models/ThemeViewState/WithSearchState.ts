@@ -30,7 +30,7 @@ export class WithSearchState extends WithVisualFeedbackState {
                 metaTags: this.userRelatedState.preferencesAsTags,
                 onClick: (feature) => {
                     this.searchState.clickedOnMap(feature)
-                }
+                },
             }
             new ShowDataLayer(this.map, options)
         }
@@ -39,17 +39,12 @@ export class WithSearchState extends WithVisualFeedbackState {
     private initHotkeysSearch() {
         const docs = Translations.t.hotkeyDocumentation
 
-        Hotkeys.RegisterHotkey(
-            { ctrl: "F" },
-            docs.selectSearch,
-            () => {
-                this.searchState.feedback.set(undefined)
-                this.searchState.searchIsFocused.set(true)
-            }
-        )
+        Hotkeys.RegisterHotkey({ ctrl: "F" }, docs.selectSearch, () => {
+            this.searchState.feedback.set(undefined)
+            this.searchState.searchIsFocused.set(true)
+        })
 
         Hotkeys.RegisterHotkey({ nomod: "Escape", onUp: true }, docs.closeSidebar, () => {
-
             if (this.guistate.closeAll()) {
                 return
             }
@@ -59,7 +54,5 @@ export class WithSearchState extends WithVisualFeedbackState {
             Zoomcontrol.resetzoom()
             this.focusOnMap()
         })
-
     }
-
 }
