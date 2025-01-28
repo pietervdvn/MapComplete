@@ -327,8 +327,11 @@ class NsiLogos extends Script {
 
     private async patchNsiFile(){
         const files = NsiLogos.downloadedFiles()
-        const path = "./public/assets/data/nsi/nsi.min.json"
-
+        let path = "./public/assets/data/nsi/nsi.min.json"
+        const otherPath = "./assets/data/nsi/nsi.min.json"
+        if (existsSync(otherPath) && !existsSync(path)) {
+            path = otherPath
+        }
         const nsi = JSON.parse(readFileSync(path, "utf8"))
         const types = nsi.nsi
 
@@ -336,12 +339,12 @@ class NsiLogos extends Script {
             const t: NSIItem[] = types[k].items
             for (const nsiItem of t) {
                 const file = files.get(nsiItem.id)
+                delete nsiItem.fromTemplate
                 if(!file){
                     continue
                 }
                 const extension = file.match(/.*\.([a-z]{3})/)[1]
                 nsiItem["ext"] = extension
-                delete nsiItem.fromTemplate
             }
         }
         writeFileSync(path, JSON.stringify(nsi), "utf8")
