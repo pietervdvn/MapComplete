@@ -10908,5 +10908,13 @@
             },
             "render": "windturbine"
         }
+    },
+    "cyclist_waiting_aid": {
+        "title": {
+            "render": "Steuntje voor wachtende fietsers"
+        }
+    },
+    "disaster_response": {
+        "description": "Deze laag bevat organisaties met hoofddoelstelling om burgers te helpen tijdens en na rampen door in de getroffen gebieden te gaan helpen."
     }
 }
