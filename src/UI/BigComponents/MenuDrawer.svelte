@@ -125,17 +125,17 @@
       </svelte:fragment>
 
       <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
-        <SelectedElementView
-          highlightedRendering={state.guistate.highlightedUserSetting}
-          layer={usersettingslayer}
-          selectedElement={{
-            type: "Feature",
-            properties: { id: "settings" },
-            geometry: { type: "Point", coordinates: [0, 0] },
-          }}
-          {state}
-          tags={state.userRelatedState.preferencesAsTags}
-        />
+      <SelectedElementView
+        highlightedRendering={state.guistate.highlightedUserSetting}
+        layer={usersettingslayer}
+        selectedElement={{
+          type: "Feature",
+          properties: { id: "settings" },
+          geometry: { type: "Point", coordinates: [0, 0] },
+        }}
+        {state}
+        tags={state.userRelatedState.preferencesAsTags}
+      />
     </Page>
 
     <LoginToggle {state} silentFail>
@@ -287,7 +287,11 @@
       <Tr t={Translations.t.general.attribution.gotoSourceCode} />
     </a>
 
-    <a class="flex" href="https://source.mapcomplete.org/MapComplete/MapComplete/issues" target="_blank">
+    <a
+      class="flex"
+      href="https://source.mapcomplete.org/MapComplete/MapComplete/issues"
+      target="_blank"
+    >
       <Bug class="h-6 w-6" />
       <Tr t={Translations.t.general.attribution.openIssueTracker} />
     </a>

@@ -145,11 +145,7 @@
 
 <div class="relative w-fit shrink-0" style="scroll-snap-align: start">
   <div class="relative flex max-w-max items-center bg-gray-200">
-    <AttributedImage
-      imgClass="carousel-max-height"
-      {image}
-      {state}
-    >
+    <AttributedImage imgClass="carousel-max-height" {image} {state}>
       <svelte:fragment slot="dot-menu-actions">
         <button on:click={() => ImageProvider.offerImageAsDownload(image)}>
           <DownloadIcon />

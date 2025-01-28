@@ -14,7 +14,6 @@ export type PageType = (typeof MenuState.pageNames)[number]
  * Some convenience methods are provided for this as well
  */
 export class MenuState {
-
     public static readonly pageNames = [
         "copyright",
         "copyright_icons",
@@ -28,14 +27,16 @@ export class MenuState {
         "favourites",
         "usersettings",
         "share",
-        "menu"
+        "menu",
     ] as const
 
     /**
      * Contains the 'providedImage' which is currently displayed on top of the UI
      * This object merely acts as lock or as means to signal the need to close
      */
-    public static readonly previewedImage: UIEventSource<object> = new UIEventSource<object>(undefined)
+    public static readonly previewedImage: UIEventSource<object> = new UIEventSource<object>(
+        undefined
+    )
 
     public readonly pageStates: Record<PageType, UIEventSource<boolean>>
 
@@ -152,6 +153,5 @@ export class MenuState {
             this._selectedElement.setData(undefined)
             return true
         }
-
     }
 }

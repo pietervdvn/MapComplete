@@ -27,7 +27,11 @@ export class WithUserRelatedState {
         {
             // Some weird setups
             Utils.initDomPurify()
-            if (!Utils.runningFromConsole && theme.customCss !== undefined && window.location.pathname.indexOf("theme") >= 0) {
+            if (
+                !Utils.runningFromConsole &&
+                theme.customCss !== undefined &&
+                window.location.pathname.indexOf("theme") >= 0
+            ) {
                 Utils.LoadCustomCss(theme.customCss)
             }
         }
@@ -40,7 +44,7 @@ export class WithUserRelatedState {
                 "oauth_token",
                 undefined,
                 "Used to complete the login"
-            )
+            ),
         })
 
         this.featureSwitchIsTesting = this.featureSwitches.featureSwitchIsTesting
@@ -61,7 +65,7 @@ export class WithUserRelatedState {
                 icon: th.icon,
                 title: th.title.translations,
                 shortDescription: th.shortDescription.translations,
-                layers: th.layers.filter((l) => l.isNormal()).map((l) => l.id)
+                layers: th.layers.filter((l) => l.isNormal()).map((l) => l.id),
             })
         }
 
@@ -103,5 +107,4 @@ export class WithUserRelatedState {
         }
         return this.theme.getMatchingLayer(properties)
     }
-
 }

@@ -1,7 +1,5 @@
 import { Changes } from "../../Logic/Osm/Changes"
-import {
-    NewGeometryFromChangesFeatureSource
-} from "../../Logic/FeatureSource/Sources/NewGeometryFromChangesFeatureSource"
+import { NewGeometryFromChangesFeatureSource } from "../../Logic/FeatureSource/Sources/NewGeometryFromChangesFeatureSource"
 import { WithLayoutSourceState } from "./WithLayoutSourceState"
 import ThemeConfig from "../ThemeConfig/ThemeConfig"
 import { Utils } from "../../Utils"
@@ -20,10 +18,11 @@ import { Map as MlMap } from "maplibre-gl"
 import FilteringFeatureSource from "../../Logic/FeatureSource/Sources/FilteringFeatureSource"
 import ShowDataLayer from "../../UI/Map/ShowDataLayer"
 import SelectedElementTagsUpdater from "../../Logic/Actors/SelectedElementTagsUpdater"
-import NoElementsInViewDetector, { FeatureViewState } from "../../Logic/Actors/NoElementsInViewDetector"
+import NoElementsInViewDetector, {
+    FeatureViewState,
+} from "../../Logic/Actors/NoElementsInViewDetector"
 
 export class WithChangesState extends WithLayoutSourceState {
-
     readonly changes: Changes
     readonly newFeatures: WritableFeatureSource
     readonly osmObjectDownloader: OsmObjectDownloader
@@ -44,7 +43,7 @@ export class WithChangesState extends WithLayoutSourceState {
                 osmConnection: this.osmConnection,
                 featureProperties: this.featureProperties,
                 historicalUserLocations: this.historicalUserLocations,
-                reportError: this.reportError
+                reportError: this.reportError,
             },
             theme?.isLeftRightSensitive() ?? false
         )
@@ -66,8 +65,7 @@ export class WithChangesState extends WithLayoutSourceState {
             ),
             new ChangeGeometryApplicator(this.indexedFeatures, this.changes),
             {
-                constructStore: (features, layer) =>
-                    new GeoIndexedStoreForLayer(features, layer),
+                constructStore: (features, layer) => new GeoIndexedStoreForLayer(features, layer),
                 handleLeftovers: (features) => {
                     console.warn(
                         "Got ",
@@ -75,7 +73,7 @@ export class WithChangesState extends WithLayoutSourceState {
                         "leftover features, such as",
                         features[0].properties
                     )
-                }
+                },
             }
         )
         this.perLayer = perLayer.perLayer
@@ -84,7 +82,6 @@ export class WithChangesState extends WithLayoutSourceState {
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
 
         this.toCacheSavers = theme.enableCache ? this.initSaveToLocalStorage() : undefined
-
 
         ////// ACTORS ////////
 
@@ -97,7 +94,7 @@ export class WithChangesState extends WithLayoutSourceState {
             featureProperties: this.featureProperties,
             indexedFeatures: this.indexedFeatures,
             osmObjectDownloader: this.osmObjectDownloader,
-            perLayer: this.perLayer
+            perLayer: this.perLayer,
         })
     }
 
@@ -154,8 +151,8 @@ export class WithChangesState extends WithLayoutSourceState {
                     userid: this.osmConnection.userDetails.data?.uid,
                     pendingChanges: this.changes.pendingChanges.data,
                     previousChanges: this.changes.allChanges.data,
-                    changeRewrites: Utils.MapToObj(this.changes._changesetHandler._remappings)
-                })
+                    changeRewrites: Utils.MapToObj(this.changes._changesetHandler._remappings),
+                }),
             })
         } catch (e) {
             console.error("Could not upload an error report")
@@ -227,10 +224,9 @@ export class WithChangesState extends WithLayoutSourceState {
                 doShowLayer,
                 metaTags: this.userRelatedState.preferencesAsTags,
                 selectedElement: this.selectedElement,
-                fetchStore: (id) => this.featureProperties.getStore(id)
+                fetchStore: (id) => this.featureProperties.getStore(id),
             })
         })
         return filteringFeatureSource
     }
-
 }

@@ -9,13 +9,15 @@ The theme introduction reads:
 This theme contains the following layers:
 
  - [dogpark](../Layers/dogpark.md)
- - [dogfoodb (defined in this theme)](#dogfoodb)
- - [dogshop (defined in this theme)](#dogshop)
  - [veterinary](../Layers/veterinary.md)
- - [food](../Layers/food.md)
- - [waste_basket](../Layers/waste_basket.md)
- - [shops](../Layers/shops.md)
  - [animal_shelter](../Layers/animal_shelter.md)
+ - [dog_toilet](../Layers/dog_toilet.md)
+ - [food_dog_friendly (defined in this theme)](#food_dog_friendly)
+ - [food](../Layers/food.md)
+ - [shop_dog_friendly (defined in this theme)](#shop_dog_friendly)
+ - [shops](../Layers/shops.md)
+ - [waste_basket_dogs (defined in this theme)](#waste_basket_dogs)
+ - [waste_basket](../Layers/waste_basket.md)
 
 Available languages:
 
@@ -39,7 +41,7 @@ Available languages:
 
   - [Veterinarians, dog parks and other pet-amenities ( pets )](#veterinarians,-dog-parks-and-other-pet-amenities-(-pets-))
 1. [Layers defined in this theme configuration file](#layers-defined-in-this-theme-configuration-file)
-2. [dogfoodb](#dogfoodb)
+2. [food_dog_friendly](#food_dog_friendly)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -89,7 +91,7 @@ Available languages:
     + [delete-button](#delete-button)
     + [lod](#lod)
   - [Filters](#filters)
-3. [dogshop](#dogshop)
+3. [shop_dog_friendly](#shop_dog_friendly)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -133,16 +135,27 @@ Available languages:
     + [sugar_free](#sugar_free)
     + [gluten_free](#gluten_free)
     + [lactose_free](#lactose_free)
+    + [dog-access](#dog-access)
     + [description](#description)
     + [leftover-questions](#leftover-questions)
     + [move-button](#move-button)
     + [delete-button](#delete-button)
     + [lod](#lod)
   - [Filters](#filters)
+4. [waste_basket_dogs](#waste_basket_dogs)
+  - [Basic tags for this layer](#basic-tags-for-this-layer)
+  - [Supported attributes](#supported-attributes)
+    + [images](#images)
+    + [waste-basket-waste-types](#waste-basket-waste-types)
+    + [dispensing_dog_bags](#dispensing_dog_bags)
+    + [leftover-questions](#leftover-questions)
+    + [move-button](#move-button)
+    + [delete-button](#delete-button)
+    + [lod](#lod)
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.
-# dogfoodb
+# food_dog_friendly
 
 This layer is based on [food](../Layers/food.md)
 
@@ -156,10 +169,10 @@ No themes use this layer
 
 Elements must match **all** of the following expressions:
 
-0. <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe' target='_blank'>cafe</a>
+0. <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfast_food' target='_blank'>fast_food</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
 1. <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed' target='_blank'>unleashed</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22dog%22%3D%22unleashed%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22dog%22%3D%22leashed%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22dog%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B%22dog%22%3D%22unleashed%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B%22dog%22%3D%22leashed%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B%22dog%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22fast_food%22%5D%5B%22dog%22%3D%22unleashed%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22fast_food%22%5D%5B%22dog%22%3D%22leashed%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22fast_food%22%5D%5B%22dog%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22dog%22%3D%22unleashed%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22dog%22%3D%22leashed%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22dog%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 ## Supported attributes
 
@@ -694,7 +707,7 @@ This tagrendering has labels
 -----|-----|----- |
 | has_internet.0 | Offers internet | internet_access=wlan | internet_access=yes | internet_access=wired |
 
-# dogshop
+# shop_dog_friendly
 
 This layer is based on [shops](../Layers/shops.md)
 
@@ -708,10 +721,11 @@ No themes use this layer
 
 Elements must match **all** of the following expressions:
 
-0. <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpet' target='_blank'>pet</a>
-1. shop~.+
+0. <a href='https://wiki.openstreetmap.org/wiki/Key:craft' target='_blank'>craft</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:craft%3Dshoe_repair' target='_blank'>shoe_repair</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:craft' target='_blank'>craft</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:craft%3Dkey_cutter' target='_blank'>key_cutter</a> | shop~.+
+1. <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
+2. shop!=mall
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22dog%22%3D%22leashed%22%5D%5B%22shop%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22dog%22%3D%22yes%22%5D%5B%22shop%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%3D%22pet%22%5D%5B%22shop%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22craft%22%3D%22shoe_repair%22%5D%5B%22dog%22%3D%22leashed%22%5D%5B%22shop%22!%3D%22mall%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22craft%22%3D%22shoe_repair%22%5D%5B%22dog%22%3D%22yes%22%5D%5B%22shop%22!%3D%22mall%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22craft%22%3D%22key_cutter%22%5D%5B%22dog%22%3D%22leashed%22%5D%5B%22shop%22!%3D%22mall%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22craft%22%3D%22key_cutter%22%5D%5B%22dog%22%3D%22yes%22%5D%5B%22shop%22!%3D%22mall%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%5D%5B%22dog%22%3D%22leashed%22%5D%5B%22shop%22!%3D%22mall%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22shop%22%5D%5B%22dog%22%3D%22yes%22%5D%5B%22shop%22!%3D%22mall%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 ## Supported attributes
 
@@ -753,6 +767,7 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:sugar_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Asugar_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:sugar_free](https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:gluten_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Agluten_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:gluten_free](https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:lactose_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Alactose_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/dog#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/dog/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [dog](https://wiki.openstreetmap.org/wiki/Key:dog) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno) [leashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed) [unleashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed) [outside](https://wiki.openstreetmap.org/wiki/Tag:dog%3Doutside) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) |  |
 
 ### images
@@ -1317,6 +1332,16 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `diets`
 
+### dog-access
+
+The question is `Are dogs allowed in this business?`
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_allowed.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/no_dogs.svg' style='width: 3rem; height: 3rem'> *Dogs are <b>not</b> allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_leashed.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed, but they have to be leashed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_allowed.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed and can run around freely* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed' target='_blank'>unleashed</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_outside.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed only outside* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Doutside' target='_blank'>outside</a>
+
 ### description
 
 The question is `Is there still some relevant info that the previous questions did not cover? Feel free to add it here.`
@@ -1354,6 +1379,12 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | has_organic.0 | Has organic options | organic=yes | organic=only |
+
+| id | question | osmTags |
+-----|-----|----- |
+| dogs.0 | *No preference towards dogs* (default) |  |
+| dogs.1 | Dogs allowed | dog=unleashed | dog=yes |
+| dogs.2 | No dogs allowed | dog=no |
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -1552,6 +1583,83 @@ This tagrendering has labels
 -----|-----|----- |
 | lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes | diet:lactose_free=only | diet:lactose_free=limited |
 
+# waste_basket_dogs
+
+This layer is based on [waste_basket](../Layers/waste_basket.md)
+
+This is a public waste basket, thrash can, where you can throw away your thrash.
+
+ - This layer is shown at zoomlevel **14** and higher
+
+No themes use this layer
+
+## Basic tags for this layer
+
+Elements must match **all** of the following expressions:
+
+0. <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dexcrement_bags' target='_blank'>excrement_bags</a>
+1. <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_basket' target='_blank'>waste_basket</a>
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22vending%22%3D%22excrement_bags%22%5D%5B%22amenity%22%3D%22waste_basket%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
+## Supported attributes
+
+**Warning:**,this quick overview is incomplete,
+
+| attribute | type | values which are supported by this layer |
+-----|-----|----- |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/waste#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/waste/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [waste](https://wiki.openstreetmap.org/wiki/Key:waste) | Multiple choice | [trash](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash) [dog_excrement](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes) [drugs](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs) [sharps](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps) [plastic](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dplastic) [pmd](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpmd) [paper](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpaper) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/vending#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/vending/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [vending](https://wiki.openstreetmap.org/wiki/Key:vending) | Multiple choice | [excrement_bags](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dexcrement_bags) [](https://wiki.openstreetmap.org/wiki/Tag:vending%3D) |
+
+### images
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
+*{image_carousel()}{image_upload()}*
+
+### waste-basket-waste-types
+
+The question is `What kind of waste basket is this?`
+
+ -  *A waste basket for general waste* is shown if with waste=. _This option cannot be chosen as answer_
+ -  *A waste basket for general waste* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash' target='_blank'>trash</a>
+ -  *A waste basket for dog excrements* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement' target='_blank'>dog_excrement</a>
+ -  *A waste basket for cigarettes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes' target='_blank'>cigarettes</a>
+ -  *A waste basket for drugs* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs' target='_blank'>drugs</a>
+ -  *A waste basket for needles and other sharp objects* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps' target='_blank'>sharps</a>
+ -  *A waste basket for plastic* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dplastic' target='_blank'>plastic</a>
+ -  *A waste basket for plastic packaging, metal packaging and drink cartons (PMD)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpmd' target='_blank'>pmd</a>
+ -  *A waste basket for paper* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpaper' target='_blank'>paper</a>
+
+### dispensing_dog_bags
+
+The question is `Does this waste basket have a dispenser for dog excrement bags?`
+
+ -  *This waste basket has a dispenser for (dog) excrement bags* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dexcrement_bags' target='_blank'>excrement_bags</a> & not:vending=
+ -  *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:vending' target='_blank'>not:vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:vending%3Dexcrement_bags' target='_blank'>excrement_bags</a> & vending=
+ -  *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags* is shown if with vending=. _This option cannot be chosen as answer_
+
+### leftover-questions
+
+_This tagrendering has no question and is thus read-only_
+*{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
+
+### delete-button
+
+_This tagrendering has no question and is thus read-only_
+*{delete_button()}*
+
+### lod
+
+_This tagrendering has no question and is thus read-only_
+*{linked_data_from_website()}*
+
+This tagrendering has labels 
+`added_by_default`
 
 
-This document is autogenerated from [assets/themes/pets/pets.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/pets/pets.json)
+This document is autogenerated from [assets/themes/pets/pets.json](https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/assets/themes/pets/pets.json)

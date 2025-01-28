@@ -15,7 +15,6 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
     }
     private readonly _osmObjectDownloader: OsmObjectDownloader
 
-
     constructor(osmObjectDownloader: OsmObjectDownloader) {
         this._osmObjectDownloader = osmObjectDownloader
     }

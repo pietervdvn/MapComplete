@@ -51,7 +51,7 @@ export interface NSIItem {
     }
     readonly tags: Readonly<Record<string, string>>
     fromTemplate?: boolean
-    ext? : string
+    ext?: string
 }
 
 export default class NameSuggestionIndex {
@@ -272,7 +272,7 @@ export default class NameSuggestionIndex {
             const values = tags[osmKey]
             for (const osmValue of values) {
                 const suggestions = this.getSuggestionsForKV(type, osmKey, osmValue)
-                if(!suggestions){
+                if (!suggestions) {
                     console.warn("No suggestions found for", type, osmKey, osmValue)
                     continue
                 }
@@ -404,7 +404,6 @@ export default class NameSuggestionIndex {
         }
         return "./assets/data/nsi/logos/" + nsiItem.id + "." + nsiItem.ext
     }
-
 
     private static readonly brandPrefix = ["name", "alt_name", "operator", "brand"] as const
 
