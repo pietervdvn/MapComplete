@@ -52,6 +52,7 @@
   import PanoramaxLink from "./PanoramaxLink.svelte"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import MagnifyingGlassCircle from "@babeard/svelte-heroicons/mini/MagnifyingGlassCircle"
+  import Forgejo from "../../assets/svg/Forgejo.svelte"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -206,7 +207,7 @@
     {#if theme.official}
       <a
         class="flex"
-        href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" +
+        href={"https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes" +
           theme.id +
           ".md"}
         target="_blank"
@@ -281,12 +282,12 @@
       <Tr t={Translations.t.inspector.menu} />
     </a>
 
-    <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
-      <Github class="h-6 w-6" />
+    <a class="flex" href="https://source.mapcomplete.org/MapComplete/MapComplete/" target="_blank">
+      <Forgejo class="h-6 w-6" />
       <Tr t={Translations.t.general.attribution.gotoSourceCode} />
     </a>
 
-    <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
+    <a class="flex" href="https://source.mapcomplete.org/MapComplete/MapComplete/issues" target="_blank">
       <Bug class="h-6 w-6" />
       <Tr t={Translations.t.general.attribution.openIssueTracker} />
     </a>
