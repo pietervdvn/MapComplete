@@ -565,10 +565,7 @@
       "mappings": [
         {
           "if": "healthcare=optometrist",
-          "ifnot": "not:healtcare=optometrist",
-          "addExtraTags": [
-            "not:healthcare=optometrist"
-          ],
+          "ifnot": "not:healthcare=optometrist",
           "then": {
             "en": "This shop offers eye exams by certified optometrists",
             "nl": "Hier kan men een oogtest door een erkende optometrist laten uitvoeren",
