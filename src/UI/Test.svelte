@@ -11,6 +11,8 @@
   }
 
   console.log = log
+  console.error = (...items) => log("ERR: ", ...items)
+  console.warn = (...items) => log("WARN: ", ...items)
 
   const st = new GeoLocationState()
   const av = st.gpsAvailable
