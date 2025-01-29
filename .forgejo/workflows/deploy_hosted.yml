@@ -1,4 +1,3 @@
-name: Deploy develop on dev.mapcomplete.org
 on:
   push:
     branches-ignore:

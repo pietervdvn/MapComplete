@@ -1465,8 +1465,7 @@
       "#force-save-button": "yes"
     },
     {
-      "id": "debug-gps-group",
-      "condition": "mapcomplete-show_debug=yes",
+      "id": "gps_accordeon",
       "render": {
         "special": {
           "type": "group",
@@ -1477,39 +1476,46 @@
     },
     {
       "id": "debug-gps-title",
-      "labels": ["hidden"],
+      "labels": [
+        "hidden"
+      ],
       "render": {
-        "en": "GPS info"
+        "en": "GPS and gyroscope data"
       }
     },
     {
       "id": "debug-gps",
-      "labels": ["hidden"],
+      "labels": [
+        "hidden"
+      ],
+      "condition": "mapcomplete-show_debug=yes",
       "render": "{gps_all_tags()}"
     },
-
     {
-      "id": "debug-info-group",
-      "condition": "mapcomplete-show_debug=yes",
-
+      "id": "debug_accordeon",
       "render": {
         "special": {
           "type": "group",
-          "header": "debug-tags-title",
+          "header": "debug_accordeon_title",
           "labels": "debug"
         }
       }
     },
     {
-      "id": "debug-tags-title",
-      "labels": ["hidden"],
+      "id": "debug_accordeon_title",
+      "labels": [
+        "hidden"
+      ],
       "render": {
-        "en": "Debug info"
+        "en": "Debug information"
       }
     },
     {
       "id": "debug",
-      "labels": ["hidden"],
+      "labels": [
+        "hidden"
+      ],
+      "condition": "mapcomplete-show_debug=yes",
       "render": "{all_tags()}"
     }
   ],

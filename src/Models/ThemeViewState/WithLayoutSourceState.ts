@@ -9,7 +9,6 @@ import { FeatureSource, IndexedFeatureSource } from "../../Logic/FeatureSource/F
 import { Tag } from "../../Logic/Tags/Tag"
 
 export class WithLayoutSourceState extends WithSelectedElementState {
-
     readonly layerState: LayerState
     readonly dataIsLoading: Store<boolean>
 
@@ -20,7 +19,6 @@ export class WithLayoutSourceState extends WithSelectedElementState {
      * All 'level'-tags that are available with the current features
      */
     readonly floors: Store<string[]>
-
 
     constructor(theme: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {
         super(theme)
@@ -62,24 +60,23 @@ export class WithLayoutSourceState extends WithSelectedElementState {
         this.layerState.filteredLayers
             .get("favourite")
             ?.isDisplayed?.addCallbackAndRunD((favouritesShown) => {
-            const oldGlobal = this.layerState.globalFilters.data
-            const key = "show-favourite"
-            if (favouritesShown) {
-                this.layerState.globalFilters.set([
-                    ...oldGlobal,
-                    {
-                        forceShowOnMatch: true,
-                        id: key,
-                        osmTags: new Tag("_favourite", "yes"),
-                        state: 0,
-                        onNewPoint: undefined
-                    }
-                ])
-            } else {
-                this.layerState.globalFilters.set(oldGlobal.filter((gl) => gl.id !== key))
-            }
-        })
-
+                const oldGlobal = this.layerState.globalFilters.data
+                const key = "show-favourite"
+                if (favouritesShown) {
+                    this.layerState.globalFilters.set([
+                        ...oldGlobal,
+                        {
+                            forceShowOnMatch: true,
+                            id: key,
+                            osmTags: new Tag("_favourite", "yes"),
+                            state: 0,
+                            onNewPoint: undefined,
+                        },
+                    ])
+                } else {
+                    this.layerState.globalFilters.set(oldGlobal.filter((gl) => gl.id !== key))
+                }
+            })
     }
 
     private static initFloors(features: FeatureSource): Store<string[]> {
@@ -124,6 +121,4 @@ export class WithLayoutSourceState extends WithSelectedElementState {
         this.featureProperties.trackFeature(feature)
         this.selectedElement.setData(feature)
     }
-
-
 }

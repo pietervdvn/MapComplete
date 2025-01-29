@@ -32,7 +32,6 @@ export default class ThemeSource implements IndexedFeatureSource {
     public readonly featuresById: Store<Map<string, Feature>>
     private readonly core: Store<ThemeSourceCore>
 
-
     private readonly addedSources: FeatureSource[] = []
     private readonly addedItems: OsmFeature[] = []
 
@@ -48,14 +47,23 @@ export default class ThemeSource implements IndexedFeatureSource {
         const isLoading = new UIEventSource(true)
         this.isLoading = isLoading
 
-        const features = this.features = new UIEventSource<Feature[]>([])
-        const featuresById = this.featuresById = new UIEventSource(new Map())
-        this.core = mvtAvailableLayers.mapD(mvtAvailableLayers => {
-            const core = new ThemeSourceCore(layers, featureSwitches, mapProperties, backend, isDisplayed, mvtAvailableLayers, isLoading, fullNodeDatabaseSource)
-            this.addedSources.forEach(src => core.addSource(src))
-            this.addedItems.forEach(item => core.addItem(item))
-            core.features.addCallbackAndRun(data => features.set(data))
-            core.featuresById.addCallbackAndRun(data => featuresById.set(data))
+        const features = (this.features = new UIEventSource<Feature[]>([]))
+        const featuresById = (this.featuresById = new UIEventSource(new Map()))
+        this.core = mvtAvailableLayers.mapD((mvtAvailableLayers) => {
+            const core = new ThemeSourceCore(
+                layers,
+                featureSwitches,
+                mapProperties,
+                backend,
+                isDisplayed,
+                mvtAvailableLayers,
+                isLoading,
+                fullNodeDatabaseSource
+            )
+            this.addedSources.forEach((src) => core.addSource(src))
+            this.addedItems.forEach((item) => core.addItem(item))
+            core.features.addCallbackAndRun((data) => features.set(data))
+            core.featuresById.addCallbackAndRun((data) => featuresById.set(data))
             return core
         })
     }
@@ -69,7 +77,6 @@ export default class ThemeSource implements IndexedFeatureSource {
         this.addedSources.push(source)
     }
 
-
     public addItem(obj: OsmFeature) {
         this.core.data?.addItem(obj)
         this.addedItems.push(obj)
@@ -82,7 +89,6 @@ export default class ThemeSource implements IndexedFeatureSource {
  * Note that special layers (with `source=null` will be ignored)
  */
 class ThemeSourceCore extends FeatureSourceMerger {
-
     /**
      * This source is _only_ triggered when the data is downloaded for CSV export
      * @private
@@ -116,7 +122,7 @@ class ThemeSourceCore extends FeatureSourceMerger {
                     mapProperties,
                     {
                         isActive: isDisplayed(layer.id),
-                        maxAge: layer.maxAgeOfCache
+                        maxAge: layer.maxAgeOfCache,
                     }
                 )
                 fromCache.set(layer.id, src)
@@ -169,11 +175,11 @@ class ThemeSourceCore extends FeatureSourceMerger {
                 overpassUrl: featureSwitches.overpassUrl,
                 overpassTimeout: featureSwitches.overpassTimeout,
                 overpassMaxZoom: new ImmutableStore(99),
-                widenFactor: 0
+                widenFactor: 0,
             },
             {
                 ignoreZoom: true,
-                isActive: new ImmutableStore(false)
+                isActive: new ImmutableStore(false),
             }
         )
 
@@ -247,7 +253,7 @@ class ThemeSourceCore extends FeatureSourceMerger {
             backend,
             isActive,
             patchRelations: true,
-            fullNodeDatabase
+            fullNodeDatabase,
         })
     }
 
@@ -279,11 +285,11 @@ class ThemeSourceCore extends FeatureSourceMerger {
                 widenFactor: 1.5,
                 overpassUrl: featureSwitches.overpassUrl,
                 overpassTimeout: featureSwitches.overpassTimeout,
-                overpassMaxZoom: featureSwitches.overpassMaxZoom
+                overpassMaxZoom: featureSwitches.overpassMaxZoom,
             },
             {
                 padToTiles: zoom.map((zoom) => Math.min(15, zoom + 1)),
-                isActive
+                isActive,
             }
         )
     }

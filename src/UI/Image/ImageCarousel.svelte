@@ -3,7 +3,6 @@
   import type { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import DeletableImage from "./DeletableImage.svelte"
-  import Loading from "../Base/Loading.svelte"
   import LoadingPlaceholder from "../Base/LoadingPlaceholder.svelte"
 
   export let images: Store<ProvidedImage[]>
@@ -11,8 +10,8 @@
   export let tags: UIEventSource<Record<string, string>>
 
   export let estimated: Store<number>
-
 </script>
+
 {#if $estimated > 0 && $images.length < 1}
   <LoadingPlaceholder />
 {:else}

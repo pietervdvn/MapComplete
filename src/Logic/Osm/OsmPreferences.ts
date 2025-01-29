@@ -210,7 +210,7 @@ export class OsmPreferences {
      * @private
      */
     private async getPreferencesDictDirectly(): Promise<Record<string, string>> {
-        if(!this.osmConnection.isLoggedIn.data){
+        if (!this.osmConnection.isLoggedIn.data) {
             return {}
         }
         return new Promise<Record<string, string>>((resolve, reject) => {
@@ -260,7 +260,7 @@ export class OsmPreferences {
      *
      */
     private async uploadKvSplit(k: string, v: string) {
-        if(!this.osmConnection.isLoggedIn.data){
+        if (!this.osmConnection.isLoggedIn.data) {
             return
         }
         if (v === null || v === undefined || v === "" || v === "undefined" || v === "null") {

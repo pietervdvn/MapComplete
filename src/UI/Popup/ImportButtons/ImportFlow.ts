@@ -123,7 +123,10 @@ ${Utils.special_visualizations_importRequirementDocs}
         argsRaw: string[]
     ): string[] {
         const deps = ImportFlowUtils.getLayerDependencies(argsRaw, argSpec)
-        const argsParsed: PointImportFlowArguments = Utils.ParseVisArgs <PointImportFlowArguments>(argSpec, argsRaw)
+        const argsParsed: PointImportFlowArguments = Utils.ParseVisArgs<PointImportFlowArguments>(
+            argSpec,
+            argsRaw
+        )
         const snapOntoLayers = argsParsed.snap_onto_layers?.split(";")?.map((l) => l.trim()) ?? []
         deps.push(...snapOntoLayers)
         return deps

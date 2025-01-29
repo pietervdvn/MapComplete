@@ -54,6 +54,7 @@ A shop
   - [organic](#organic)
   - [sugar_free](#sugar_free)
   - [lactose_free](#lactose_free)
+  - [dog-access](#dog-access)
   - [description](#description)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
@@ -116,6 +117,7 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/organic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/organic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [organic](https://wiki.openstreetmap.org/wiki/Key:organic) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly) [no](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:sugar_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Asugar_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:sugar_free](https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:lactose_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Alactose_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/dog#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/dog/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [dog](https://wiki.openstreetmap.org/wiki/Key:dog) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno) [leashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed) [unleashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed) [outside](https://wiki.openstreetmap.org/wiki/Tag:dog%3Doutside) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) |  |
 
 ### images
@@ -679,6 +681,16 @@ This tagrendering is only visible in the popup if the following condition is met
 This tagrendering has labels 
 `diets`
 
+### dog-access
+
+The question is `Are dogs allowed in this business?`
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_allowed.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/no_dogs.svg' style='width: 3rem; height: 3rem'> *Dogs are <b>not</b> allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_leashed.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed, but they have to be leashed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_allowed.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed and can run around freely* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed' target='_blank'>unleashed</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_outside.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed only outside* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Doutside' target='_blank'>outside</a>
+
 ### description
 
 The question is `Is there still some relevant info that the previous questions did not cover? Feel free to add it here.`
@@ -716,6 +728,12 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | has_organic.0 | Has organic options | organic=yes | organic=only |
+
+| id | question | osmTags |
+-----|-----|----- |
+| dogs.0 | *No preference towards dogs* (default) |  |
+| dogs.1 | Dogs allowed | dog=unleashed | dog=yes |
+| dogs.2 | No dogs allowed | dog=no |
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -916,4 +934,4 @@ This tagrendering has labels
 
 
 
-This document is autogenerated from [assets/themes/glutenfree/glutenfree.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/glutenfree/glutenfree.json)
+This document is autogenerated from [assets/themes/glutenfree/glutenfree.json](https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/assets/themes/glutenfree/glutenfree.json)

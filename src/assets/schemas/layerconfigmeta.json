@@ -10921,6 +10921,10 @@
           "then": "doctors - This layer shows doctor offices"
         },
         {
+          "if": "value=dog_toilet",
+          "then": "dog_toilet - A dog toilet is a facility designated for dogs to urinate and excrete. This can be a designated, signposted patch of grass, a sand pit or a fenced area."
+        },
+        {
           "if": "value=dogpark",
           "then": "dogpark - A layer showing dogparks, which are areas where dog are allowed to run without a leash"
         },

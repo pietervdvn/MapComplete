@@ -21,7 +21,6 @@
   import OpenIdEditor from "./OpenIdEditor.svelte"
   import OpenJosm from "../Base/OpenJosm.svelte"
   import MapillaryLink from "./MapillaryLink.svelte"
-  import Github from "../../assets/svg/Github.svelte"
   import Bug from "../../assets/svg/Bug.svelte"
   import CopyrightPanel from "./CopyrightPanel.svelte"
   import CopyrightAllIcons from "./CopyrightAllIcons.svelte"
@@ -53,6 +52,7 @@
   import { UIEventSource } from "../../Logic/UIEventSource"
   import MagnifyingGlassCircle from "@babeard/svelte-heroicons/mini/MagnifyingGlassCircle"
   import { AndroidPolyfill } from "../../Logic/Web/AndroidPolyfill"
+  import Forgejo from "../../assets/svg/Forgejo.svelte"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -126,17 +126,17 @@
       </svelte:fragment>
 
       <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
-        <SelectedElementView
-          highlightedRendering={state.guistate.highlightedUserSetting}
-          layer={usersettingslayer}
-          selectedElement={{
-            type: "Feature",
-            properties: { id: "settings" },
-            geometry: { type: "Point", coordinates: [0, 0] },
-          }}
-          {state}
-          tags={state.userRelatedState.preferencesAsTags}
-        />
+      <SelectedElementView
+        highlightedRendering={state.guistate.highlightedUserSetting}
+        layer={usersettingslayer}
+        selectedElement={{
+          type: "Feature",
+          properties: { id: "settings" },
+          geometry: { type: "Point", coordinates: [0, 0] },
+        }}
+        {state}
+        tags={state.userRelatedState.preferencesAsTags}
+      />
     </Page>
 
     <LoginToggle {state} silentFail>
@@ -208,7 +208,7 @@
     {#if theme.official}
       <a
         class="flex"
-        href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" +
+        href={"https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes" +
           theme.id +
           ".md"}
         target="_blank"
@@ -284,12 +284,16 @@
       <Tr t={Translations.t.inspector.menu} />
     </a>
 
-    <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
-      <Github class="h-6 w-6" />
+    <a class="flex" href="https://source.mapcomplete.org/MapComplete/MapComplete/" target="_blank">
+      <Forgejo class="h-6 w-6" />
       <Tr t={Translations.t.general.attribution.gotoSourceCode} />
     </a>
 
-    <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
+    <a
+      class="flex"
+      href="https://source.mapcomplete.org/MapComplete/MapComplete/issues"
+      target="_blank"
+    >
       <Bug class="h-6 w-6" />
       <Tr t={Translations.t.general.attribution.openIssueTracker} />
     </a>

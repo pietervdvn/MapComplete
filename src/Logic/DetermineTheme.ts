@@ -69,7 +69,7 @@ export default class DetermineTheme {
             tagRenderings: DetermineTheme.getSharedTagRenderings(),
             tagRenderingOrder: DetermineTheme.getSharedTagRenderingOrder(),
             sharedLayers: knownLayersDict,
-            publicLayers: new Set<string>()
+            publicLayers: new Set<string>(),
         }
         return convertState
     }

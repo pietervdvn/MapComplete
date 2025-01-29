@@ -41,7 +41,7 @@ export default class SearchState {
             new OpenLocationCodeSearch(),
             new OpenStreetMapIdSearch(state.osmObjectDownloader),
             new PhotonSearch(true, 2),
-            new PhotonSearch()
+            new PhotonSearch(),
             // new NominatimGeocoding(),
         ]
 

@@ -5760,30 +5760,21 @@
             "target-audience": {
                 "mappings": {
                     "0": {
-                        "then": "C'est un établissement scolaire où les étudiants acquièrent des compétences à un niveau adapté à leur âge. <div>Il y a peu ou pas d'adaptations spéciales pour aider les étudiants ayant des besoins particuliers, ou les installations sont ad-hoc</div> Remark: isn't it contradictory to say there's no special facility + the facilities are ad-hoc?"
-                    },
-                    "1": {
                         "then": "C'est un établissement scolaire pour étudiants sans besoins particuliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>"
                     },
-                    "2": {
-                        "then": "C'est un établissement où des adultes sont formés au niveau mentionné."
-                    },
-                    "3": {
-                        "then": "C'est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)"
-                    },
-                    "4": {
+                    "1": {
                         "then": "C'est un établissement scolaire pour les étudiants ayant des troubles d’apprentissage"
                     },
-                    "5": {
+                    "2": {
                         "then": "C'est un établissement scolaire pour les étudiants aveugles ou malvoyants"
                     },
-                    "6": {
+                    "3": {
                         "then": "C'est un établissement scolaire pour les étudiants sourds ou malentendants"
                     },
-                    "7": {
+                    "4": {
                         "then": "C'est un établissement scolaire pour les étudiants en situation de handicap"
                     },
-                    "8": {
+                    "5": {
                         "then": "C'est un établissement scolaire pour les étudiants ayant des besoins particuliers"
                     }
                 },

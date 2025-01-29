@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.48.5](https://github.com/pietervdvn/mapcomplete/compare/v0.48.4...v0.48.5) (2025-01-28)
+
+
+### Bug Fixes
+
+* remove NSI-renderings which actually don't have a logo, fix https://source.mapcomplete.org/MapComplete/MapComplete/issues/2300 ([3e3b4b9](https://github.com/pietervdvn/mapcomplete/commits/3e3b4b9420d91ee2ab44c45ef2106bd7bd256891))
+
+### [0.48.4](https://github.com/pietervdvn/mapcomplete/compare/v0.48.3...v0.48.4) (2025-01-26)
+
 ### [0.48.3](https://github.com/pietervdvn/mapcomplete/compare/v0.48.0...v0.48.3) (2025-01-24)
 
 

@@ -7,8 +7,8 @@ import { Store, UIEventSource } from "../UIEventSource"
 
 export default class ThemeViewStateHashActor {
     private readonly _state: {
-        indexedFeatures: IndexedFeatureSource,
-        selectedElement: UIEventSource<Feature>,
+        indexedFeatures: IndexedFeatureSource
+        selectedElement: UIEventSource<Feature>
         guistate: MenuState
     }
     private isUpdatingHash = false
@@ -23,7 +23,7 @@ export default class ThemeViewStateHashActor {
         "",
         "The possible hashes are:",
         "",
-        MenuState.pageNames.map((tab) => "`" + tab + "`").join(",")
+        MenuState.pageNames.map((tab) => "`" + tab + "`").join(","),
     ]
 
     /**

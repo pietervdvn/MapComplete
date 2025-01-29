@@ -5,7 +5,10 @@ import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { And } from "../../Logic/Tags/And"
 import { Utils } from "../../Utils"
 import { Tag } from "../../Logic/Tags/Tag"
-import { MappingConfigJson, QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
+import {
+    MappingConfigJson,
+    QuestionableTagRenderingConfigJson,
+} from "./Json/QuestionableTagRenderingConfigJson"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import { RegexTag } from "../../Logic/Tags/RegexTag"

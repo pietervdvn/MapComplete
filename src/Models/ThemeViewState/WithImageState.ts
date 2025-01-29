@@ -12,11 +12,9 @@ import { WithGuiState } from "./WithGuiState"
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
 export class WithImageState extends WithGuiState implements SpecialVisualizationState {
-
     readonly imageUploadManager: ImageUploadManager
     readonly previewedImage = new UIEventSource<ProvidedImage>(undefined)
     readonly nearbyImageSearcher: CombinedFetcher
-
 
     constructor(layout: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {
         super(layout, mvtAvailableLayers)
@@ -40,29 +38,24 @@ export class WithImageState extends WithGuiState implements SpecialVisualization
         longAgo.setTime(new Date().getTime() - 5 * 365 * 24 * 60 * 60 * 1000)
         this.nearbyImageSearcher = new CombinedFetcher(50, longAgo, this.indexedFeatures)
 
-
         this.initActors()
         Hash.hash.addCallbackAndRunD((hash) => {
             if (hash === "current_view" || hash.match(/current_view_[0-9]+/)) {
                 this.selectCurrentView()
             }
         })
-
     }
 
     /**
      * Setup various services for which no reference are needed
      */
     private initActors() {
-
         new ThemeViewStateHashActor({
             featureSwitches: this.featureSwitches,
             selectedElement: this.selectedElement,
             indexedFeatures: this.indexedFeatures,
-            guistate: this.guistate
+            guistate: this.guistate,
         })
         new PendingChangesUploader(this.changes, this.selectedElement, this.imageUploadManager)
-
-
     }
 }

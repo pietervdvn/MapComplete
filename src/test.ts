@@ -1,4 +1,3 @@
-import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import Test from "./UI/Test.svelte"
 import { OsmConnection } from "./Logic/Osm/OsmConnection"
 

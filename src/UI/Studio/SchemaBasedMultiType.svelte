@@ -30,7 +30,6 @@
 
   let lastIsString = false
   {
-
     const types: string | string[] = Array.isArray(schema.type)
       ? schema.type[schema.type.length - 1]["type"]
       : []
@@ -64,7 +63,7 @@
           inline: true,
           type: schema.hints.typehint,
           addExtraTags: ["chosen_type_index="],
-        helperArgs: []
+          helperArgs: [],
         },
   }
   let tags = new UIEventSource<Record<string, string>>({})

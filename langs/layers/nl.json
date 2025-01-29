@@ -2049,6 +2049,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -2814,6 +2817,36 @@
                 }
             },
             "render": "Oplaadpunt"
+        }
+    },
+    "childcare": {
+        "name": "Kinderopvang",
+        "presets": {
+            "0": {
+                "title": "een kinderopvang"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "Hoeveel kinderen kunnen hier terecht?",
+                "render": "Hier kunnen {capacity} kinderen terecht"
+            },
+            "name": {
+                "question": "Wat is de naam van deze faciliteit?",
+                "render": "Deze faciliteit heet <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wanneer is deze kinderopvang geopend?"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kinderopvang {name}"
+                }
+            }
         }
     },
     "cinema": {
@@ -5915,53 +5948,6 @@
             "render": "Stoeprand"
         }
     },
-    "kindergarten_childcare": {
-        "name": "Kleuterscholen en kinderopvang",
-        "presets": {
-            "0": {
-                "title": "een kleuterschool"
-            },
-            "1": {
-                "title": "een kinderopvang"
-            }
-        },
-        "tagRenderings": {
-            "capacity": {
-                "question": "Hoeveel kinderen kunnen hier terecht?",
-                "render": "Hier kunnen {capacity} kinderen terecht"
-            },
-            "childcare-type": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit is een kleuterschool waar kindjes (voorbereidend) onderwijs krijgen."
-                    },
-                    "1": {
-                        "then": "Dit is een kinderopvang (ook een creche of onthaalmoeder genoemd) waar er voor kleine kinderen gezorgd wordt. Onderwijs is niet de hoofdfocus."
-                    }
-                },
-                "question": "Wat voor faciliteit is dit?"
-            },
-            "name": {
-                "question": "Wat is de naam van deze faciliteit?",
-                "render": "Deze faciliteit heet <b>{name}</b>"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Wanneer is deze kinderopvang geopend?"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Kleuterschool {name}"
-                },
-                "1": {
-                    "then": "Kinderopvang {name}"
-                }
-            }
-        }
-    },
     "last_click": {
         "pointRendering": {
             "0": {
@@ -6373,6 +6359,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
             "render": "Natuurgebied"
         }
     },
@@ -6902,6 +6893,21 @@
         },
         "title": {
             "render": "Picknicktafel"
+        }
+    },
+    "play_forest": {
+        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
+        "name": "Speelbossen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "Speelbos {name}"
+                }
+            },
+            "render": "Speelbos"
         }
     },
     "playground": {
@@ -8082,10 +8088,40 @@
         }
     },
     "school": {
+        "filter": {
+            "1": {
+                "options": {
+                    "1": {
+                        "question": "Kleuterafdeling"
+                    },
+                    "2": {
+                        "question": "Lagere school"
+                    },
+                    "3": {
+                        "question": "Secundaire school met alle graden"
+                    },
+                    "4": {
+                        "question": "Heeft eerste graad"
+                    },
+                    "5": {
+                        "question": "Heeft tweede graad"
+                    },
+                    "6": {
+                        "question": "Heeft derde graad"
+                    },
+                    "7": {
+                        "question": "Heeft specialisatiejaar"
+                    }
+                }
+            }
+        },
         "name": "Lagere en middelbare scholen",
         "presets": {
             "0": {
                 "title": "een lagere of middelbare school"
+            },
+            "1": {
+                "title": "een kleuterschool"
             }
         },
         "tagRenderings": {
@@ -8136,6 +8172,20 @@
                 },
                 "question": "Mogen jongens en meisjes les volgen op deze school?"
             },
+            "orientation_belgium": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Doorstroomfinaliteit</b>: een opleiding hier bereidt voor op universitaire studies"
+                    },
+                    "1": {
+                        "then": "<b>Dubbele finaliteit</b>: een opleiding hier bereidt voor op verdere studie (bv. aan een hogeschool of secundair-na-secundair) of op de arbeidsmarkt"
+                    },
+                    "2": {
+                        "then": "<b>Arbeidsfinaliteit</b>: een opleiding hier bereidt voor op de arbeidsmarkt"
+                    }
+                },
+                "question": "Waarop wordt een leerling voorbereid?"
+            },
             "school-language": {
                 "render": {
                     "special": {
@@ -8151,30 +8201,21 @@
             "target-audience": {
                 "mappings": {
                     "0": {
-                        "then": "Deze school richt zich op studenten zonder extra zorgbehoefte. <div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>"
-                    },
-                    "1": {
                         "then": "Deze school richt zich op studenten zonder extra zorgbehoefte<div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>"
                     },
-                    "2": {
-                        "then": "Deze school richt zich op volwassenen"
-                    },
-                    "3": {
-                        "then": "Deze school richt zich op studenten in het autisme-spectrum"
-                    },
-                    "4": {
+                    "1": {
                         "then": "Deze school richt zich op leerlingen met een leerprobleem"
                     },
-                    "5": {
+                    "2": {
                         "then": "Deze school richt zich op blinde en slechtziende studenten"
                     },
-                    "6": {
+                    "3": {
                         "then": "Deze school richt zich op dove en hardhorende studenten"
                     },
-                    "7": {
+                    "4": {
                         "then": "Deze school richt zich op studenten met een beperking"
                     },
-                    "8": {
+                    "5": {
                         "then": "Deze school richt zich op studenten met extra zorgbehoeften"
                     }
                 },
@@ -8470,6 +8511,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -10635,13 +10679,25 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
+        "name": "Speelweide",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Speelweide"
+        }
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
                 "1": {
                     "then": "{name}"
                 }

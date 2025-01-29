@@ -32,21 +32,25 @@ export class PruneFilters extends DesugaringStep<LayerConfigJson> {
         filter: FilterConfigJson,
         context: ConversionContext
     ): FilterConfigJson {
-
         if (filter.options.length === 1) {
             const option = filter.options[0]
             const tags = TagUtils.Tag(option.osmTags)
             const optimized = TagUtils.removeKnownParts(tags, sourceTags, true)
             if (optimized === true) {
-                context.warn("Removing filter as always known: ", new Translation(option.question).textFor("en"))
+                context.warn(
+                    "Removing filter as always known: ",
+                    new Translation(option.question).textFor("en")
+                )
                 return undefined
             }
             if (optimized === false) {
-                context.warn("Removing filter as not possible: ", new Translation(option.question).textFor("en"))
+                context.warn(
+                    "Removing filter as not possible: ",
+                    new Translation(option.question).textFor("en")
+                )
                 return undefined
             }
         }
-
 
         if (!filter.strict) {
             return filter
@@ -85,7 +89,6 @@ export class PruneFilters extends DesugaringStep<LayerConfigJson> {
                 )
         }
 
-
         return { ...filter, options: newOptions, strict: undefined }
     }
 
@@ -99,9 +102,9 @@ export class PruneFilters extends DesugaringStep<LayerConfigJson> {
         const sourceTags = TagUtils.Tag(json.source["osmTags"])
         return {
             ...json,
-            filter: Utils.NoNull(json.filter?.map((obj) =>
-                this.prune(sourceTags, <FilterConfigJson>obj, context)
-            )),
+            filter: Utils.NoNull(
+                json.filter?.map((obj) => this.prune(sourceTags, <FilterConfigJson>obj, context))
+            ),
         }
     }
 }

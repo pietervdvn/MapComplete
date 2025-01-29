@@ -582,7 +582,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/scouting scouting]
 |region= Worldwide
-|lang= {{#language:en|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}
 |descr= A MapComplete theme: A scouting group is a social youth movement with a heavy emphasis on the outdoors
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

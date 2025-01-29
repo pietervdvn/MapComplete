@@ -35,9 +35,7 @@ import ShowDataLayer from "../../UI/Map/ShowDataLayer"
  */
 
 export class UserMapFeatureswitchState extends WithUserRelatedState {
-
     readonly map: UIEventSource<MlMap>
-
 
     readonly mapProperties: MapLibreAdaptor & MapProperties & ExportableMap
     readonly lastClickObject: LastClickFeatureSource
@@ -47,19 +45,22 @@ export class UserMapFeatureswitchState extends WithUserRelatedState {
     readonly geolocationControl: GeolocationControlState
     readonly historicalUserLocations: WritableFeatureSource<Feature<Point>>
 
-
     readonly availableLayers: { store: Store<RasterLayerPolygon[]> }
     readonly currentView: FeatureSource<Feature<Polygon>>
     readonly fullNodeDatabase?: FullNodeDatabaseSource
 
-
     constructor(theme: ThemeConfig, selectedElement: Store<object>) {
-        const rasterLayer: UIEventSource<RasterLayerPolygon> = new UIEventSource<RasterLayerPolygon>(undefined)
+        const rasterLayer: UIEventSource<RasterLayerPolygon> =
+            new UIEventSource<RasterLayerPolygon>(undefined)
         super(theme, rasterLayer)
         this.geolocationState = new GeoLocationState()
         const initial = new InitialMapPositioning(theme, this.geolocationState, this.osmConnection)
         this.map = new UIEventSource<MlMap>(undefined)
-        this.mapProperties = new MapLibreAdaptor(this.map, { rasterLayer, ...initial }, { correctClick: 20 })
+        this.mapProperties = new MapLibreAdaptor(
+            this.map,
+            { rasterLayer, ...initial },
+            { correctClick: 20 }
+        )
 
         this.geolocation = new GeoLocationHandler(
             this.geolocationState,
@@ -69,7 +70,6 @@ export class UserMapFeatureswitchState extends WithUserRelatedState {
         )
         this.geolocationControl = new GeolocationControlState(this.geolocation, this.mapProperties)
         this.historicalUserLocations = this.geolocation.historicalUserLocations
-
 
         this.userRelatedState.fixateNorth.addCallbackAndRunD((fixated) => {
             this.mapProperties.allowRotating.setData(fixated !== "yes")
@@ -100,8 +100,8 @@ export class UserMapFeatureswitchState extends WithUserRelatedState {
                         bbox.asGeoJson({
                             zoom: this.mapProperties.zoom.data,
                             ...this.mapProperties.location.data,
-                            id: "current_view_" + currentViewIndex
-                        })
+                            id: "current_view_" + currentViewIndex,
+                        }),
                     ]
                 })
             )
@@ -111,11 +111,9 @@ export class UserMapFeatureswitchState extends WithUserRelatedState {
             this.fullNodeDatabase = new FullNodeDatabaseSource()
         }
 
-
         ///////// Actors ///////////////
 
         new BackgroundLayerResetter(this.mapProperties.rasterLayer, this.availableLayers)
-
 
         this.userRelatedState.showScale.addCallbackAndRun((showScale) => {
             this.mapProperties.showScale.set(showScale)
@@ -127,13 +125,10 @@ export class UserMapFeatureswitchState extends WithUserRelatedState {
             this.userRelatedState.preferredBackgroundLayer
         )
 
-
         this.initHotkeys()
         this.drawOverlayLayers()
         this.drawLock()
-
     }
-
 
     /**
      * If the map is locked to a certain area _and_ we are in test mode, draw this on the map
@@ -158,7 +153,6 @@ export class UserMapFeatureswitchState extends WithUserRelatedState {
             new ShowOverlayRasterLayer(rasterInfo, this.map, this.mapProperties, state)
         }
     }
-
 
     /* By focussing on the map, the keyboard panning and zoom with '+' and '+' works */
     public focusOnMap() {
@@ -205,55 +199,35 @@ export class UserMapFeatureswitchState extends WithUserRelatedState {
                 })
             }
 
-            Hotkeys.RegisterHotkey(
-                { nomod: "O" },
-                docs.selectOsmbasedmap,
-                () => setLayerCategory("osmbasedmap")
+            Hotkeys.RegisterHotkey({ nomod: "O" }, docs.selectOsmbasedmap, () =>
+                setLayerCategory("osmbasedmap")
             )
 
-            Hotkeys.RegisterHotkey(
-                { nomod: "M" },
-                docs.selectMap,
-                () => setLayerCategory("map")
+            Hotkeys.RegisterHotkey({ nomod: "M" }, docs.selectMap, () => setLayerCategory("map"))
+
+            Hotkeys.RegisterHotkey({ nomod: "P" }, docs.selectAerial, () =>
+                setLayerCategory("photo")
+            )
+            Hotkeys.RegisterHotkey({ shift: "O" }, docs.selectOsmbasedmap, () =>
+                setLayerCategory("osmbasedmap", 2)
             )
 
-            Hotkeys.RegisterHotkey(
-                { nomod: "P" },
-                docs.selectAerial,
-                () => setLayerCategory("photo")
-            )
-            Hotkeys.RegisterHotkey(
-                { shift: "O" },
-                docs.selectOsmbasedmap,
-                () => setLayerCategory("osmbasedmap", 2)
-            )
+            Hotkeys.RegisterHotkey({ shift: "M" }, docs.selectMap, () => setLayerCategory("map", 2))
 
-            Hotkeys.RegisterHotkey(
-                { shift: "M" },
-                docs.selectMap,
-                () => setLayerCategory("map", 2)
-            )
-
-            Hotkeys.RegisterHotkey(
-                { shift: "P" },
-                docs.selectAerial,
-                () => setLayerCategory("photo", 2)
+            Hotkeys.RegisterHotkey({ shift: "P" }, docs.selectAerial, () =>
+                setLayerCategory("photo", 2)
             )
 
             return true
         })
 
-        Hotkeys.RegisterHotkey(
-            { nomod: "L" },
-            Translations.t.hotkeyDocumentation.geolocate,
-            () => {
-                this.geolocationControl.handleClick()
-            }
-        )
+        Hotkeys.RegisterHotkey({ nomod: "L" }, Translations.t.hotkeyDocumentation.geolocate, () => {
+            this.geolocationControl.handleClick()
+        })
 
         Hotkeys.RegisterHotkey(
             {
-                shift: "T"
+                shift: "T",
             },
             docs.translationMode,
             () => {
@@ -286,7 +260,7 @@ export class UserMapFeatureswitchState extends WithUserRelatedState {
         return new ShowDataLayer(map, {
             features,
             layer,
-            metaTags: this.userRelatedState.preferencesAsTags
+            metaTags: this.userRelatedState.preferencesAsTags,
         })
     }
 }

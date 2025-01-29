@@ -414,7 +414,7 @@ export default class UserRelatedState {
                 typeof window === "undefined" ? "no" : window.navigator.share ? "yes" : "no",
             _iframe: Utils.isIframe ? "yes" : "no",
         })
-        if(!Utils.runningFromConsole){
+        if (!Utils.runningFromConsole) {
             amendedPrefs.data["_host"] = window.location.host
             amendedPrefs.data["_path"] = window.location.pathname
             amendedPrefs.data["_userAgent"] = navigator.userAgent
@@ -492,7 +492,7 @@ export default class UserRelatedState {
         })
 
         const usersettingMetaTagging = new ThemeMetaTagging()
-        osmConnection.isLoggedIn.addCallbackAndRun(loggedIn => {
+        osmConnection.isLoggedIn.addCallbackAndRun((loggedIn) => {
             amendedPrefs.data["_loggedIn"] = "" + loggedIn
             amendedPrefs.ping()
         })

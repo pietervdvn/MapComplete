@@ -1719,6 +1719,31 @@
       "value": "no"
     },
     {
+      "key": "dog",
+      "description": "Layer 'Shop' shows dog=yes with a fixed text, namely 'Dogs are allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Postbox and Post Office Map')",
+      "value": "yes"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Shop' shows dog=no with a fixed text, namely 'Dogs are <b>not</b> allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Postbox and Post Office Map')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Shop' shows dog=leashed with a fixed text, namely 'Dogs are allowed, but they have to be leashed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Postbox and Post Office Map')",
+      "value": "leashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Shop' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the mapcomplete.org theme 'Postbox and Post Office Map')",
+      "value": "unleashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Shop' shows dog=outside with a fixed text, namely 'Dogs are allowed only outside' and allows to pick this as a default answer (in the mapcomplete.org theme 'Postbox and Post Office Map')",
+      "value": "outside"
+    },
+    {
       "key": "description",
       "description": "Layer 'Shop' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Postbox and Post Office Map')"
     }

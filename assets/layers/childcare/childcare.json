@@ -1,0 +1,157 @@
+{
+  "id": "childcare",
+  "name": {
+    "en": "Childcare",
+    "nl": "Kinderopvang",
+    "de": "Kinderkrippen",
+    "ca": "Guarderies d'infants"
+  },
+  "description": "Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other",
+  "source": {
+    "osmTags": "amenity=childcare"
+  },
+  "minzoom": 12,
+  "title": {
+    "mappings": [
+      {
+        "if": "amenity=childcare",
+        "then": {
+          "en": "Childcare {name}",
+          "nl": "Kinderopvang {name}",
+          "de": "Kinderkrippe {name}",
+          "pl": "Żłobek {name}",
+          "cs": "Péče o děti {name}",
+          "es": "Guardería {name}"
+        }
+      }
+    ]
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+          }
+        ]
+      },
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": {
+            "mappings": [
+              {
+                "if": "amenity=childcare",
+                "then": "./assets/layers/childcare/childcare.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#62fc6c",
+      "width": 1
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a childcare",
+        "nl": "een kinderopvang",
+        "de": "eine Kinderkrippe",
+        "ca": "una guarderia",
+        "pl": "żłobek",
+        "cs": "péče o děti",
+        "es": "una guardería"
+      },
+      "description": "A childcare (also known as <i>a nursery</i> or <i>daycare</i>) is a facility which looks after small kids, but does not offer them an education program.",
+      "tags": [
+        "amenity=childcare"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of this facility?",
+        "de": "Wie lautet der Name dieser Einrichtung?",
+        "nl": "Wat is de naam van deze faciliteit?",
+        "ca": "Com s'anomena aquesta instal·lació?",
+        "pl": "Jaka jest nazwa tej placówki?",
+        "cs": "Jak se toto zařízení jmenuje?",
+        "es": "¿Cuál es el nombre de este centro?"
+      },
+      "render": {
+        "en": "This facility is named <b>{name}</b>",
+        "de": "Diese Einrichtung hat den Namen <b>{name}</b>",
+        "ca": "Aquesta instal·lació s'anomena <b>{name}</b>",
+        "nl": "Deze faciliteit heet <b>{name}</b>",
+        "pl": "Ta placówka nazywa się <b>{name}</b>",
+        "cs": "Toto zařízení se jmenuje <b>{name}</b>",
+        "es": "Este centro se llama <b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    "website",
+    "email",
+    "phone",
+    {
+      "builtin": "opening_hours",
+      "override": {
+        "question": {
+          "en": "When is this childcare opened?",
+          "nl": "Wanneer is deze kinderopvang geopend?",
+          "de": "Wann ist diese Kinderbetreuung geöffnet?",
+          "pl": "W jakich godzinach ten żłobek jest otwarty?",
+          "cs": "Kdy je tato péče o děti otevřena?",
+          "es": "¿Cuándo abre esta guardería?"
+        },
+        "condition": "amenity=childcare"
+      }
+    },
+    {
+      "id": "capacity",
+      "question": {
+        "en": "How much kids (at most) can be enrolled here?",
+        "nl": "Hoeveel kinderen kunnen hier terecht?",
+        "de": "Wie viele Kinder können hier maximal angemeldet werden?",
+        "ca": "Quants nens (com a màxim) es poden inscriure aquí?",
+        "pl": "Jak wiele dzieci (maksymalnie) może być tutaj zapisanych?",
+        "cs": "Kolik dětí (maximálně) zde může být zapsáno?",
+        "es": "¿Cuántos niños (como máximo) pueden inscribirse aquí?"
+      },
+      "render": {
+        "en": "This facility has room for {capacity} kids",
+        "nl": "Hier kunnen {capacity} kinderen terecht",
+        "de": "Diese Einrichtung bietet Platz für {capacity} Kinder",
+        "ca": "Aquesta instal·lació té espai per a {capacity} nens",
+        "pl": "Ta placówka ma miejsce na {capacity} dzieci",
+        "cs": "Toto zařízení má prostor pro {capacity} dětí",
+        "es": "Este centro tiene capacidad para {capacity} niños"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat"
+      }
+    }
+  ],
+  "deletion": true,
+  "allowMove": {
+    "enableRelocation": true,
+    "enableImproveAccuracy": true
+  }
+}

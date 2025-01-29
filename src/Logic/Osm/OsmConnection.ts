@@ -638,13 +638,14 @@ export class OsmConnection {
             return
         }
         this.fetchCapabilities().then(({ api, gpx }) => {
-            this.apiIsOnline.setData(api)
-            this.gpxServiceIsOnline.setData(gpx)
-        }).catch(err => {
-            console.log("Could not reach the api:", err)
-            this.apiIsOnline.set("unreachable")
-            this.gpxServiceIsOnline.set("unreachable")
-        })
+                this.apiIsOnline.setData(api)
+                this.gpxServiceIsOnline.setData(gpx)
+            })
+            .catch((err) => {
+                console.log("Could not reach the api:", err)
+                this.apiIsOnline.set("unreachable")
+                this.gpxServiceIsOnline.set("unreachable")
+            })
     }
 
     private readonly _userInfoCache: Record<number, OsmUserInfo> = {}

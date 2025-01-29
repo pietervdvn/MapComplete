@@ -13,12 +13,13 @@ import { GeocodeResult } from "../../Logic/Search/GeocodingProvider"
  * No GUI stuff
  */
 export class WithSelectedElementState extends UserMapFeatureswitchState {
-
-
     readonly selectedElement: UIEventSource<Feature>
 
     constructor(theme: ThemeConfig) {
-        const selectedElement = new UIEventSource<Feature | undefined>(undefined, "Selected element")
+        const selectedElement = new UIEventSource<Feature | undefined>(
+            undefined,
+            "Selected element"
+        )
         super(theme, selectedElement)
         this.selectedElement = selectedElement
         this.selectedElement.addCallback((selected) => {
@@ -34,7 +35,6 @@ export class WithSelectedElementState extends UserMapFeatureswitchState {
             this.setSelectedElement(lastClick.nearestFeature)
         })
 
-
         // Add the selected element to the recently visited history
         this.selectedElement.addCallbackD((selected) => {
             const [osm_type, osm_id] = selected.properties.id.split("/")
@@ -47,7 +47,7 @@ export class WithSelectedElementState extends UserMapFeatureswitchState {
                 selected?.properties?.local_name,
                 layer?.title.GetRenderValue(selected?.properties ?? {}).txt,
                 selected.properties.display_name,
-                selected.properties.id
+                selected.properties.id,
             ]
             const r = <GeocodeResult>{
                 feature: selected,
@@ -55,11 +55,10 @@ export class WithSelectedElementState extends UserMapFeatureswitchState {
                 osm_id,
                 osm_type,
                 lon,
-                lat
+                lat,
             }
             this.userRelatedState.recentlyVisitedSearch.add(r)
         })
-
     }
 
     protected setSelectedElement(feature: Feature) {
@@ -73,6 +72,4 @@ export class WithSelectedElementState extends UserMapFeatureswitchState {
         }
         this.selectedElement.setData(feature)
     }
-
-
 }

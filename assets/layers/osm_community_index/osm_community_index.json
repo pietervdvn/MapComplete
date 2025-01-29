@@ -19,7 +19,7 @@
     "es": "Una capa que muestra las comunidades de OpenStreetMap"
   },
   "source": {
-    "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_{z}_{x}_{y}.geojson",
+    "geoJson": "https://data.mapcomplete.org/community-index/tile_{z}_{x}_{y}.geojson",
     "geoJsonZoomLevel": 6,
     "osmTags": "resources~*"
   },

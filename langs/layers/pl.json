@@ -1247,6 +1247,35 @@
             }
         }
     },
+    "childcare": {
+        "presets": {
+            "0": {
+                "title": "żłobek"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "Jak wiele dzieci (maksymalnie) może być tutaj zapisanych?",
+                "render": "Ta placówka ma miejsce na {capacity} dzieci"
+            },
+            "name": {
+                "question": "Jaka jest nazwa tej placówki?",
+                "render": "Ta placówka nazywa się <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "W jakich godzinach ten żłobek jest otwarty?"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Żłobek {name}"
+                }
+            }
+        }
+    },
     "climbing_area": {
         "tagRenderings": {
             "Rock type (crag/rock/cliff only)": {
@@ -2377,50 +2406,6 @@
             "render": "Krawężnik"
         }
     },
-    "kindergarten_childcare": {
-        "name": "Przedszkola i żłobki",
-        "presets": {
-            "0": {
-                "title": "przedszkole"
-            },
-            "1": {
-                "title": "żłobek"
-            }
-        },
-        "tagRenderings": {
-            "capacity": {
-                "question": "Jak wiele dzieci (maksymalnie) może być tutaj zapisanych?",
-                "render": "Ta placówka ma miejsce na {capacity} dzieci"
-            },
-            "childcare-type": {
-                "mappings": {
-                    "0": {
-                        "then": "To jest przedszkole, gdzie małe dzieci otrzymują wczesną edukację."
-                    }
-                },
-                "question": "Jaki to rodzaj placówki?"
-            },
-            "name": {
-                "question": "Jaka jest nazwa tej placówki?",
-                "render": "Ta placówka nazywa się <b>{name}</b>"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "W jakich godzinach ten żłobek jest otwarty?"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Przedszkole {name}"
-                },
-                "1": {
-                    "then": "Żłobek {name}"
-                }
-            }
-        }
-    },
     "last_click": {
         "pointRendering": {
             "0": {
@@ -3482,15 +3467,12 @@
             "target-audience": {
                 "mappings": {
                     "3": {
-                        "then": "To jest szkoła dla uczniów z autyzmem"
-                    },
-                    "6": {
                         "then": "To jest szkoła dla uczniów głuchych i słabosłyszących"
                     },
-                    "7": {
+                    "4": {
                         "then": "To jest szkoła dla uczniów z niepełnosprawnościami"
                     },
-                    "8": {
+                    "5": {
                         "then": "To jest szkoła dla uczniów z specjalnymi potrzebami"
                     }
                 }

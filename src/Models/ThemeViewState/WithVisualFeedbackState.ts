@@ -35,7 +35,6 @@ export class WithVisualFeedbackState extends ThemeViewState {
         })
     }
 
-
     /**
      * Selects the feature that is 'i' closest to the map center
      */
@@ -65,7 +64,7 @@ export class WithVisualFeedbackState extends ThemeViewState {
         Hotkeys.RegisterHotkey(
             {
                 nomod: " ",
-                onUp: true
+                onUp: true,
             },
             docs.selectItem,
             () => {
@@ -97,12 +96,11 @@ export class WithVisualFeedbackState extends ThemeViewState {
             Hotkeys.RegisterHotkey(
                 {
                     nomod: "" + i,
-                    onUp: true
+                    onUp: true,
                 },
                 doc,
                 () => this.selectClosestAtCenter(i - 1)
             )
         }
-
     }
 }

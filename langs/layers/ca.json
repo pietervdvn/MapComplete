@@ -2150,6 +2150,24 @@
             }
         }
     },
+    "childcare": {
+        "name": "Guarderies d'infants",
+        "presets": {
+            "0": {
+                "title": "una guarderia"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "Quants nens (com a màxim) es poden inscriure aquí?",
+                "render": "Aquesta instal·lació té espai per a {capacity} nens"
+            },
+            "name": {
+                "question": "Com s'anomena aquesta instal·lació?",
+                "render": "Aquesta instal·lació s'anomena <b>{name}</b>"
+            }
+        }
+    },
     "climbing": {
         "description": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada",
         "tagRenderings": {
@@ -4865,35 +4883,6 @@
             "render": "Vorada"
         }
     },
-    "kindergarten_childcare": {
-        "name": "Llars d'infants i guarderies",
-        "presets": {
-            "0": {
-                "title": "una llar d'infants"
-            },
-            "1": {
-                "title": "una guarderia"
-            }
-        },
-        "tagRenderings": {
-            "capacity": {
-                "question": "Quants nens (com a màxim) es poden inscriure aquí?",
-                "render": "Aquesta instal·lació té espai per a {capacity} nens"
-            },
-            "childcare-type": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta és una llar d'infants (també coneguda com a <i>preescolar</i>) on els nens petits reben educació primerenca."
-                    }
-                },
-                "question": "Quin tipus d'instal·lació és aquesta?"
-            },
-            "name": {
-                "question": "Com s'anomena aquesta instal·lació?",
-                "render": "Aquesta instal·lació s'anomena <b>{name}</b>"
-            }
-        }
-    },
     "last_click": {
         "pointRendering": {
             "0": {
@@ -7043,30 +7032,21 @@
             "target-audience": {
                 "mappings": {
                     "0": {
-                        "then": "Aquesta és una escola on els estudiants estudien habilitats al nivell adequat per a la seva edat. <div>Hi ha poques o cap instal·lació especial per atendre els estudiants amb necessitats especials o les instal·lacions són ad-hoc</div>"
-                    },
-                    "1": {
                         "then": "Aquesta és una escola per a estudiants sense necessitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites mesures</div>"
                     },
-                    "2": {
-                        "then": "Aquesta és una escola on els adults reben competències al nivell especificat."
-                    },
-                    "3": {
-                        "then": "Aquesta és una escola per a estudiants amb autisme"
-                    },
-                    "4": {
+                    "1": {
                         "then": "Aquesta és una escola per a estudiants amb dificultats de l'aprenentatge"
                     },
-                    "5": {
+                    "2": {
                         "then": "Aquesta és una escola per a estudiants cecs o estudiants amb deficiències visuals"
                     },
-                    "6": {
+                    "3": {
                         "then": "Aquesta és una escola per a estudiants sords o amb dificultats auditives"
                     },
-                    "7": {
+                    "4": {
                         "then": "Aquesta és una escola per a estudiants amb discapacitats"
                     },
-                    "8": {
+                    "5": {
                         "then": "Aquesta és una escola per a estudiants amb necessitats especials"
                     }
                 },

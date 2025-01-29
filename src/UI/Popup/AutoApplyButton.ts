@@ -16,7 +16,6 @@ import { UIElement } from "../UIElement"
 import FilteredLayer from "../../Models/FilteredLayer"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import Lazy from "../Base/Lazy"
-import List from "../Base/List"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 import { IndexedFeatureSource } from "../../Logic/FeatureSource/FeatureSource"
 import { MapLibreAdaptor } from "../Map/MapLibreAdaptor"
@@ -264,19 +263,15 @@ export default class AutoApplyButton implements SpecialVisualization {
         )
     }
 
-    private static generateDocs(supportedActions: string[]) {
-        return new Combine([
-            "A button to run many actions for many features at once.",
-            "To effectively use this button, you'll need some ingredients:",
-            new List([
-                "A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: " +
-                    supportedActions.join(", "),
-                "A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer ",
-                new Link("current_view", "./BuiltinLayers.md#current_view"),
-                "Then, use a calculated tag on the host feature to determine the overlapping object ids",
-                "At last, add this component",
-            ]),
-        ]).AsMarkdown()
+    private static generateDocs(supportedActions: string[]): string {
+        return `
+        A button to run many actions for many features at once.
+        To effectively use this button, you'll need some ingredients:
+
+        1. A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: ${supportedActions.join(", ")}
+        2. A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer [current_view](./BuiltinLayers.md#current_view)
+        3. Then, use a calculated tag on the host feature to determine the overlapping object ids
+        4. At last, add this component`
     }
 
     constr(

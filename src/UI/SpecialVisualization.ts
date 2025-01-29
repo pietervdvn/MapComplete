@@ -1,7 +1,11 @@
 import { Store, UIEventSource } from "../Logic/UIEventSource"
 import BaseUIElement from "./BaseUIElement"
 import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
-import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
+import {
+    FeatureSource,
+    IndexedFeatureSource,
+    WritableFeatureSource,
+} from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { Changes } from "../Logic/Osm/Changes"
 import { ExportableMap, MapProperties } from "../Models/MapProperties"
@@ -21,6 +25,7 @@ import ShowDataLayer from "./Map/ShowDataLayer"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import UserRelatedState from "../Logic/State/UserRelatedState"
 import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore"
+import SvelteUIElement from "./Base/SvelteUIElement"
 
 /**
  * The state needed to render a special Visualisation.
@@ -83,6 +88,7 @@ export interface SpecialVisualizationState {
 export interface SpecialVisualization {
     readonly funcName: string
     readonly docs: string | BaseUIElement
+    readonly group?: string
     readonly example?: string
     readonly needsUrls?: string[] | ((args: string[]) => string | string[])
 
@@ -107,6 +113,40 @@ export interface SpecialVisualization {
         feature: Feature,
         layer: LayerConfig
     ): BaseUIElement
+}
+
+
+export interface SpecialVisualizationSvelte {
+    readonly funcName: string
+    readonly docs: string
+    /**
+     * The 'group' is merely what association it has in the docs
+     */
+    readonly group: string
+    readonly example?: string
+    readonly needsUrls?: string[] | ((args: string[]) => string | string[])
+
+    /**
+     * Indicates that this special visualisation will make requests to the 'alLNodesDatabase' and that it thus should be included
+     */
+    readonly needsNodeDatabase?: boolean
+    readonly args: {
+        name: string
+        defaultValue?: string
+        doc: string
+        required?: false | boolean
+    }[]
+    readonly getLayerDependencies?: (argument: string[]) => string[]
+
+    structuredExamples?(): { feature: Feature<Geometry, Record<string, string>>; args: string[] }[]
+
+    constr(
+        state: SpecialVisualizationState,
+        tagSource: UIEventSource<Record<string, string>>,
+        argument: string[],
+        feature: Feature,
+        layer: LayerConfig
+    ): SvelteUIElement
 }
 
 export type RenderingSpecification =

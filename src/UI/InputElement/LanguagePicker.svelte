@@ -4,7 +4,7 @@
   // Translated languages
   import language_translations from "../../assets/language_translations.json"
 
-  import { Store, UIEventSource } from "../../Logic/UIEventSource"
+  import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
   import Locale from "../i18n/Locale"
   import { LanguageIcon } from "@babeard/svelte-heroicons/solid"
   import Dropdown from "../Base/Dropdown.svelte"
@@ -16,7 +16,13 @@
    * Languages one can choose from
    * Defaults to _all_ languages known by MapComplete
    */
-  export let availableLanguages: string[] = Object.keys(native)
+  export let availableLanguages: string[] | Store<string[]> = Object.keys(native)
+  let languages: Store<string[]>
+  if (Array.isArray(availableLanguages)) {
+    languages = new ImmutableStore(availableLanguages)
+  } else {
+    languages = availableLanguages
+  }
   /**
    * EventStore to assign to, defaults to 'Locale.langauge'
    */
@@ -29,14 +35,14 @@
     if (preferredLanguages?.indexOf(lng) < 0) {
       preferredLanguages?.push(lng)
     }
-    preferredFiltered = preferredLanguages?.filter((l) => availableLanguages.indexOf(l) >= 0)
+    preferredFiltered = preferredLanguages?.filter((l) => $languages.indexOf(l) >= 0)
   })
 
   export let clss: string = undefined
   let current = Locale.language
 </script>
 
-{#if availableLanguages?.length > 1}
+{#if $languages?.length > 1}
   <form class={twMerge("flex max-w-full items-center pr-4", clss)}>
     <label
       for="pick-language"
@@ -59,7 +65,7 @@
         <option disabled />
       {/if}
 
-      {#each availableLanguages.filter((l) => l !== "_context") as language}
+      {#each $languages.filter((l) => l !== "_context") as language}
         <option value={language} class="font-bold">
           {native[language] ?? ""}
           {#if language !== $current}

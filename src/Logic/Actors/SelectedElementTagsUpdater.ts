@@ -34,11 +34,15 @@ export default class SelectedElementTagsUpdater {
         })
     }
 
-    public static applyUpdate(latestTags: OsmTags, id: string, state: {
-        theme: ThemeConfig,
-        changes: Changes,
-        featureProperties: FeaturePropertiesStore
-    }) {
+    public static applyUpdate(
+        latestTags: OsmTags,
+        id: string,
+        state: {
+            theme: ThemeConfig
+            changes: Changes
+            featureProperties: FeaturePropertiesStore
+        }
+    ) {
         try {
             const leftRightSensitive = state.theme.isLeftRightSensitive()
 
