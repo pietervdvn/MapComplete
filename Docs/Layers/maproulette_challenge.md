@@ -17,7 +17,6 @@ This layer is loaded from an external source, namely
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
-  - [details](#details)
   - [status](#status)
   - [leftover-questions](#leftover-questions)
   - [lod](#lod)
@@ -43,11 +42,6 @@ Elements must match the expression **mr_taskId~.+**
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/mr_taskStatus#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/mr_taskStatus/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [mr_taskStatus](https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus) | Multiple choice | [Created](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated) [Fixed](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFixed) [False positive](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFalse positive) [Skipped](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DSkipped) [Deleted](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDeleted) [Already fixed](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DAlready fixed) [Too hard](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DToo hard) [Disabled](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDisabled) |
-
-### details
-
-_This tagrendering has no question and is thus read-only_
-*{maproulette_task()}*
 
 ### status
 
