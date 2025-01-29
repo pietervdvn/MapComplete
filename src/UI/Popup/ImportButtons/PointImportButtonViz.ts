@@ -2,7 +2,6 @@ import { Feature, Point } from "geojson"
 import { UIEventSource } from "../../../Logic/UIEventSource"
 import { SpecialVisualization, SpecialVisualizationState } from "../../SpecialVisualization"
 import BaseUIElement from "../../BaseUIElement"
-import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 import SvelteUIElement from "../../Base/SvelteUIElement"
 import PointImportFlow from "./PointImportFlow.svelte"
 import { PointImportFlowArguments, PointImportFlowState } from "./PointImportFlowState"
@@ -20,9 +19,11 @@ export class PointImportButtonViz implements SpecialVisualization {
     public readonly example?: string
     public readonly args: { name: string; defaultValue?: string; doc: string; split?: boolean }[]
     public needsUrls = []
+    group = "data_import"
 
     constructor() {
         this.funcName = "import_button"
+
         this.docs =
             "This button will copy the point from an external dataset into OpenStreetMap" +
             ImportFlowUtils.documentationGeneral

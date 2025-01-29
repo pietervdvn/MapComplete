@@ -1,4 +1,4 @@
-import { SpecialVisualizationState, SpecialVisualizationSvelte } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState, SpecialVisualizationSvelte } from "../SpecialVisualization"
 import Constants from "../../Models/Constants"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { Feature } from "geojson"
@@ -11,6 +11,9 @@ import Translations from "../i18n/Translations"
 import AddNoteComment from "../Popup/Notes/AddNoteComment.svelte"
 import { Imgur } from "../../Logic/ImageProviders/Imgur"
 import UploadImage from "../Image/UploadImage.svelte"
+import { VariableUiElement } from "../Base/VariableUIElement"
+import Combine from "../Base/Combine"
+import NoteCommentElement from "../Popup/Notes/NoteCommentElement.svelte"
 
 class CloseNoteViz implements SpecialVisualizationSvelte {
     public readonly funcName = "close_note"
@@ -93,8 +96,9 @@ class AddNoteCommentViz implements SpecialVisualizationSvelte {
 
 
 export class NoteVisualisations {
-    public static initList(): SpecialVisualizationSvelte[] {
+    public static initList(): (SpecialVisualization & { group })[] {
         return [new AddNoteCommentViz(),
+            new CloseNoteViz(),
             {
                 funcName: "open_note",
                 args: [],
@@ -133,7 +137,47 @@ export class NoteVisualisations {
                     return new SvelteUIElement(UploadImage, { state, tags, layer, feature })
                 }
             },
-            new CloseNoteViz()
+            {
+                funcName: "visualize_note_comments",
+                group: "notes",
+                docs: "Visualises the comments for notes",
+                args: [
+                    {
+                        name: "commentsKey",
+                        doc: "The property name of the comments, which should be stringified json",
+                        defaultValue: "comments"
+                    },
+                    {
+                        name: "start",
+                        doc: "Drop the first 'start' comments",
+                        defaultValue: "0"
+                    }
+                ],
+                needsUrls: [Constants.osmAuthConfig.url],
+                constr: (state, tags, args) =>
+                    new VariableUiElement(
+                        tags
+                            .map((tags) => tags[args[0]])
+                            .map((commentsStr) => {
+                                const comments: { text: string }[] = JSON.parse(commentsStr)
+                                const startLoc = Number(args[1] ?? 0)
+                                if (!isNaN(startLoc) && startLoc > 0) {
+                                    comments.splice(0, startLoc)
+                                }
+                                return new Combine(
+                                    comments
+                                        .filter((c) => c.text !== "")
+                                        .map(
+                                            (comment) =>
+                                                new SvelteUIElement(NoteCommentElement, {
+                                                    comment,
+                                                    state
+                                                })
+                                        )
+                                ).SetClass("flex flex-col")
+                            })
+                    )
+            }
         ]
     }
 }
