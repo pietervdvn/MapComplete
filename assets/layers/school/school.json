@@ -312,9 +312,20 @@
         "nl": "Waarop wordt een leerling voorbereid?"
       },
       "condition": {
-        "or": [
-          "school~i~(.+;)?upper_secondary(;.+)?",
-          "school~i~(.+;)?secondary(;.+)?"
+        "and": [
+          {
+            "or": [
+              "school~i~(.+;)?upper_secondary(;.+)?",
+              "school~i~(.+;)?secondary(;.+)?"
+            ]
+          },
+          {
+            "or": [
+              "school:special_needs=no",
+              "school:special_needs="
+            ]
+          },
+          "special_needs:.*!~~yes"
         ]
       },
       "multiAnswer": true,
@@ -506,115 +517,139 @@
       }
     },
     {
-      "id": "target-audience",
+      "id": "is_special_needs",
       "question": {
-        "en": "Does this school target students with a special need? Which structural facilities does this school have?",
-        "nl": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?",
-        "de": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?",
-        "fr": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?",
-        "ca": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?",
-        "cs": "Zaměřuje se tato škola na studenty se speciálními potřebami? Jaké stavební vybavení má tato škola?",
-        "es": "¿Está esta escuela dirigida a alumnos con necesidades especiales? ¿Qué instalaciones estructurales tiene esta escuela?"
+        "en": "Does this school target students with a special need?",
+        "nl": "Richt deze school zich op leerlingen met een speciale zorgbehoefte?",
+        "de": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf??",
+        "fr": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers?",
+        "ca": "Aquesta escola es dirigeix a estudiants amb necessitats especials?",
+        "cs": "Zaměřuje se tato škola na studenty se speciálními potřebami?",
+        "es": "¿Está esta escuela dirigida a alumnos con necesidades especiales?"
       },
-      "multiAnswer": true,
-      "render": {
-        "en": "This school has facilities for students with {school:for}",
-        "nl": "Deze school richt zich op studenten met {school:for}",
-        "de": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}",
-        "fr": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}",
-        "ca": "Aquesta escola té instal·lacions per a estudiants amb {school:for}",
-        "cs": "Tato škola má zařízení pro studenty se {school:for}",
-        "es": "Esta escuela cuenta con instalaciones para alumnos con {school:for}"
-      },
-      "freeform": {
-        "key": "school:for",
-        "inline": true
+      "questionHint": {
+        "en": "A special needs school has expertise and supports students with a (severe) diagnosis. In many countries, a certificate is needed to enroll.",
+        "nl": "Een buitengewone school is een school waar leerlingen met een attest op speciale zorg terecht kunnen."
       },
       "mappings": [
         {
-          "if": "school:for=mainstream",
-          "alsoShowIf": "school:for=",
+          "if": "school:special_needs=only",
           "then": {
-            "en": "This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>",
-            "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte<div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>",
-            "de": "Dies ist eine Schule für Schüler ohne besondere Bedürfnisse<div class='subtle'>Dazu gehören auch Schüler, die den Kursen mit kleinen Ad-hoc-Maßnahmen folgen können</div>",
-            "fr": "C'est un établissement scolaire pour étudiants sans besoins particuliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>",
-            "ca": "Aquesta és una escola per a estudiants sense necessitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites mesures</div>",
-            "cs": "Toto je škola pro studenty bez speciálních potřeb<div class='subtle'>To zahrnuje studenty, kteří mohou absolvovat kurzy s malými, ad hoc měřeními</div>",
-            "es": "Esta es una escuela para alumnos sin necesidades especiales<div class='subtle'>Esto incluye alumnos que pueden seguir los cursos con pequeñas medidas improvisadas</div>"
+            "en": "This school is only for special need students; a certificate is needed to enroll",
+            "nl": "Deze school is enkel voor buitengewone leerlingen. Je hebt een attest nodig om hier school te mogen lopen."
           }
         },
         {
-          "if": "school:for=learning_disabilities",
+          "if": "school:special_needs=separated",
           "then": {
-            "en": "This is a school for students with learning disabilities",
-            "nl": "Deze school richt zich op leerlingen met een leerprobleem",
-            "de": "Dies ist eine Schule für Schüler mit Lernschwierigkeiten",
-            "fr": "C'est un établissement scolaire pour les étudiants ayant des troubles d’apprentissage",
-            "ca": "Aquesta és una escola per a estudiants amb dificultats de l'aprenentatge",
-            "cs": "Jedná se o školu pro žáky s poruchami učení",
-            "es": "Esta es una escuela para alumnos con dificultades de aprendizaje"
+            "en": "This school has a separate section for special need students.",
+            "nl": "Deze school heeft een apart deel voor buitengewone leerlingen. "
           }
         },
         {
-          "if": "school:for=blind",
+          "if": "school:special_needs=mixed",
           "then": {
-            "en": "This is a school for blind students or students with sight impairments",
-            "nl": "Deze school richt zich op blinde en slechtziende studenten",
-            "de": "Dies ist eine Schule für blinde oder sehbehinderte Schüler",
-            "fr": "C'est un établissement scolaire pour les étudiants aveugles ou malvoyants",
-            "ca": "Aquesta és una escola per a estudiants cecs o estudiants amb deficiències visuals",
-            "cs": "Jedná se o školu pro nevidomé studenty nebo studenty se zrakovým postižením",
-            "es": "Esta es una escuela para alumnos ciegos o con discapacidad visual"
+            "en": "Students with special needs and non-special need students have classes together.",
+            "nl": "Buitengewone (geattesteerde) leerlingen en leerlingen zonder extra zorgnood zitten samen in de klas."
           }
         },
         {
-          "if": "school:for=deaf",
+          "if": "school:special_needs=limited",
           "then": {
-            "en": "This is a school for deaf students or students with hearing impairments",
-            "nl": "Deze school richt zich op dove en hardhorende studenten",
-            "de": "Dies ist eine Schule für gehörlose oder hörgeschädigte Schüler",
-            "fr": "C'est un établissement scolaire pour les étudiants sourds ou malentendants",
-            "ca": "Aquesta és una escola per a estudiants sords o amb dificultats auditives",
-            "pl": "To jest szkoła dla uczniów głuchych i słabosłyszących",
-            "cs": "Jedná se o školu pro neslyšící studenty nebo studenty se sluchovým postižením",
-            "es": "Esta es una escuela para alumnos sordos o con discapacidad auditiva"
+            "en": "This school offers limited, ad hoc support but has no significant expertise and is not considered a special needs school.",
+            "nl": "Deze school biedt ad hoc, beperkte extra zorg aan maar telt niet als buitengwoon onderwij.s"
           }
         },
         {
-          "if": "school:for=disabilities",
+          "if": "school:special_needs=no",
           "then": {
-            "en": "This is a school for students with disabilities",
-            "nl": "Deze school richt zich op studenten met een beperking",
-            "de": "Dies ist eine Schule für Schüler mit Behinderungen",
-            "fr": "C'est un établissement scolaire pour les étudiants en situation de handicap",
-            "ca": "Aquesta és una escola per a estudiants amb discapacitats",
-            "pl": "To jest szkoła dla uczniów z niepełnosprawnościami",
-            "cs": "Jedná se o školu pro studenty se zdravotním postižením",
-            "es": "Esta es una escuela para alumnos con discapacidad"
-          }
-        },
-        {
-          "if": "school:for=special_needs",
-          "then": {
-            "en": "This is a school for students with special needs",
-            "nl": "Deze school richt zich op studenten met extra zorgbehoeften",
-            "de": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen",
-            "fr": "C'est un établissement scolaire pour les étudiants ayant des besoins particuliers",
-            "ca": "Aquesta és una escola per a estudiants amb necessitats especials",
-            "pl": "To jest szkoła dla uczniów z specjalnymi potrzebami",
-            "cs": "Jedná se o školu pro žáky se speciálními potřebami",
-            "es": "Esta es una escuela para alumnos con necesidades especiales"
+            "en": "This school has no support for special need students.",
+            "nl": "Deze school heeft geen ondersteuning voor buitengewone leerlingen."
           }
         }
-      ],
-      "questionHint": {
-        "en": "Ad-hoc measures are not enough to count as a special-needs school",
-        "nl": "Ad-hoc maatregelen zijn niet voldoende ",
-        "de": "Ad-hoc-Maßnahmen reichen nicht aus, um als Förderschule zu gelten",
-        "cs": "Ad hoc opatření nestačí k tomu, aby se škola považovala za školu pro žáky se speciálními vzdělávacími potřebami",
-        "es": "Las medidas improvisadas no son suficientes para considerarse una escuela de necesidades especiales"
-      }
+      ]
+    },
+    {
+      "id": "special_needs_categories_be",
+      "condition": {
+        "and": [
+          "_country=be",
+          "school:special_needs!~no",
+          "school:special_needs!="
+        ]
+      },
+      "question": {
+        "en": "What type of special needs are given here?",
+        "nl": "Welke soorten zorg voor buitengewone leerlingen is hier beschikbaar?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "special_needs:intellectual_disability=yes",
+          "ifnot": "special_needs:intellectual_disability=no",
+          "then": {
+            "nl": "Voor leerlingen met een verstandelijke beperking (type 2)",
+            "en": "For students with an intellectual disability (type 2)"
+          }
+        },
+        {
+          "if": "special_needs:emotional_behavioural_disorder=yes",
+          "ifnot": "special_needs:emotional_behavioural_disorder=no",
+          "then": {
+            "nl": "Voor leerlingen met een gedragsstoornis (type 3)",
+            "en": "For students with an emotional and behavioural problem (type 3)"
+          }
+        },
+        {
+          "if": "special_needs:physical_disability=yes",
+          "ifnot": "special_needs:physical_disability=no",
+          "then": {
+            "nl": "Voor leerlingen met een motorische of lichamelijke beperking (type 4)",
+            "en": "For students with an physical disability (type 4)"
+          }
+        },
+        {
+          "if": "special_needs:blind=yes",
+          "ifnot": "special_needs:blind=no",
+          "then": {
+            "nl": "Voor blinde en slechtziende leerlingen (type 6)",
+            "en": "For blind and visually impaired students (type 6)"
+          }
+        },
+        {
+          "if": "special_needs:deaf=yes",
+          "ifnot": "special_needs:deaf=no",
+          "then": {
+            "nl": "Voor dove leerlingen and leerlingen met een auditieve beperking (type 7)",
+            "en": "For deaf students and students with hearing loss (type 7)"
+          }
+        },
+        {
+          "if": "special_needs:language_disorder=yes",
+          "ifnot": "special_needs:language_disorder=no",
+          "then": {
+            "nl": "Voor leerlingen met een Spraak- of Taalontwikkelingsstoornis (type 7 - STOS/TOS)",
+            "en": "For students with a Developemental Language Disorder (type 7 - DLD)"
+          }
+        },
+        {
+          "if": "special_needs:autism=yes",
+          "ifnot": "special_needs:autism=no",
+          "then": {
+            "nl": "Voor leerlingen met een autisme spectrum stoornis (type 9)",
+            "en": "For students with an autism spectrum disorder (type 9)"
+          }
+        },
+        {
+          "if": "special_needs:learning_disabilities=yes",
+          "ifnot": "special_needs:learning_disabilities=no",
+          "hideInAnswer": "school!~.*primary.*",
+          "then": {
+            "nl": "Voor leerlingen die omwille van een leerprobleem niet in het gewone onderwijs terecht kunnen (basisaanbod)",
+            "en": "For students with a learning disability (basic offering )"
+          }
+        }
+      ]
     },
     {
       "id": "school-language",
@@ -751,6 +786,23 @@
             "and": [
               "school=",
               "amenity!=kindergarten"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "has_special_needs",
+      "options": [
+        {
+          "question": {
+            "en": "Has special education",
+            "nl": "Buitengewoon onderwijs"
+          },
+          "osmTags": {
+            "and": [
+              "school:special_needs!=",
+              "school:special_needs!=no"
             ]
           }
         }
