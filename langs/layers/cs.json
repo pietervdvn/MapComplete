@@ -7997,6 +7997,9 @@
                 },
                 "question": "Které pohlaví se může na tuto školu přihlásit?"
             },
+            "is_special_needs": {
+                "question": "Zaměřuje se tato škola na studenty se speciálními potřebami?"
+            },
             "pedagogy": {
                 "mappings": {
                     "0": {
@@ -8043,31 +8046,6 @@
             "school-name": {
                 "question": "Jak se jmenuje tato škola?",
                 "render": "Tato škola se jmenuje {name}"
-            },
-            "target-audience": {
-                "mappings": {
-                    "0": {
-                        "then": "Toto je škola pro studenty bez speciálních potřeb<div class='subtle'>To zahrnuje studenty, kteří mohou absolvovat kurzy s malými, ad hoc měřeními</div>"
-                    },
-                    "1": {
-                        "then": "Jedná se o školu pro žáky s poruchami učení"
-                    },
-                    "2": {
-                        "then": "Jedná se o školu pro nevidomé studenty nebo studenty se zrakovým postižením"
-                    },
-                    "3": {
-                        "then": "Jedná se o školu pro neslyšící studenty nebo studenty se sluchovým postižením"
-                    },
-                    "4": {
-                        "then": "Jedná se o školu pro studenty se zdravotním postižením"
-                    },
-                    "5": {
-                        "then": "Jedná se o školu pro žáky se speciálními potřebami"
-                    }
-                },
-                "question": "Zaměřuje se tato škola na studenty se speciálními potřebami? Jaké stavební vybavení má tato škola?",
-                "questionHint": "Ad hoc opatření nestačí k tomu, aby se škola považovala za školu pro žáky se speciálními vzdělávacími potřebami",
-                "render": "Tato škola má zařízení pro studenty se {school:for}"
             }
         },
         "title": {

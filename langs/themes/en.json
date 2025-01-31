@@ -885,10 +885,6 @@
         "shortDescription": "Shows changes made by MapComplete",
         "title": "Changes made with MapComplete"
     },
-    "maproulette": {
-        "description": "Theme showing MapRoulette tasks, allowing you to search, filter and fix them.",
-        "title": "MapRoulette Tasks"
-    },
     "maps": {
         "description": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",
         "shortDescription": "This theme shows all (touristic) maps that OpenStreetMap knows of",

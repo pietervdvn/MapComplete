@@ -3463,19 +3463,6 @@
             "school-name": {
                 "question": "Jaką nazwę ma ta szkoła?",
                 "render": "Ta szkoła nazywa się {name}"
-            },
-            "target-audience": {
-                "mappings": {
-                    "3": {
-                        "then": "To jest szkoła dla uczniów głuchych i słabosłyszących"
-                    },
-                    "4": {
-                        "then": "To jest szkoła dla uczniów z niepełnosprawnościami"
-                    },
-                    "5": {
-                        "then": "To jest szkoła dla uczniów z specjalnymi potrzebami"
-                    }
-                }
             }
         },
         "title": {

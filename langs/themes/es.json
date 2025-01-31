@@ -876,10 +876,6 @@
         "shortDescription": "Muestra los cambios realizados por MapComplete",
         "title": "Cambios realizados con MapComplete"
     },
-    "maproulette": {
-        "description": "Tema que muestra las tareas de MapRoulette, permitiéndote buscarlas, filtrarlas y solucionarlas.",
-        "title": "Tareas de MapRoulette"
-    },
     "maps": {
         "description": "En este mapa puedes encontrar todos los mapas que conoce OpenStreetMap; normalmente un mapa grande en un tablero de información que muestra el área, la ciudad o la región, por ejemplo, un mapa turístico en la parte trasera de una cartelera, un mapa de una reserva natural, un mapa de redes ciclistas en la región, ... <br/><br/>Si falta un mapa, puedes mapear fácilmente este mapa en OpenStreetMap.",
         "shortDescription": "Este tema muestra todos los mapas (turísticos) que OpenStreetMap conoce",

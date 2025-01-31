@@ -885,10 +885,6 @@
         "shortDescription": "Zeigt die von MapComplete vorgenommenen Änderungen an",
         "title": "Änderungen mit MapComplete"
     },
-    "maproulette": {
-        "description": "Thema mit MapRoulette-Aufgaben, die Sie suchen, filtern und beheben können.",
-        "title": "MapRoulette-Aufgaben"
-    },
     "maps": {
         "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
         "shortDescription": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",

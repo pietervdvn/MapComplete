@@ -9301,6 +9301,9 @@
                 },
                 "question": "¿Qué géneros pueden matricularse en esta escuela?"
             },
+            "is_special_needs": {
+                "question": "¿Está esta escuela dirigida a alumnos con necesidades especiales?"
+            },
             "pedagogy": {
                 "mappings": {
                     "0": {
@@ -9347,31 +9350,6 @@
             "school-name": {
                 "question": "¿Cómo se llama esta escuela?",
                 "render": "Esta escuela se llama {name}"
-            },
-            "target-audience": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta es una escuela para alumnos sin necesidades especiales<div class='subtle'>Esto incluye alumnos que pueden seguir los cursos con pequeñas medidas improvisadas</div>"
-                    },
-                    "1": {
-                        "then": "Esta es una escuela para alumnos con dificultades de aprendizaje"
-                    },
-                    "2": {
-                        "then": "Esta es una escuela para alumnos ciegos o con discapacidad visual"
-                    },
-                    "3": {
-                        "then": "Esta es una escuela para alumnos sordos o con discapacidad auditiva"
-                    },
-                    "4": {
-                        "then": "Esta es una escuela para alumnos con discapacidad"
-                    },
-                    "5": {
-                        "then": "Esta es una escuela para alumnos con necesidades especiales"
-                    }
-                },
-                "question": "¿Está esta escuela dirigida a alumnos con necesidades especiales? ¿Qué instalaciones estructurales tiene esta escuela?",
-                "questionHint": "Las medidas improvisadas no son suficientes para considerarse una escuela de necesidades especiales",
-                "render": "Esta escuela cuenta con instalaciones para alumnos con {school:for}"
             }
         },
         "title": {

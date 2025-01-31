@@ -9520,6 +9520,9 @@
                 },
                 "question": "Welche Geschlechter können sich an dieser Schule anmelden?"
             },
+            "is_special_needs": {
+                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf??"
+            },
             "pedagogy": {
                 "mappings": {
                     "0": {
@@ -9566,31 +9569,6 @@
             "school-name": {
                 "question": "Wie lautet der Name dieser Schule?",
                 "render": "Diese Schule heißt {name}"
-            },
-            "target-audience": {
-                "mappings": {
-                    "0": {
-                        "then": "Dies ist eine Schule für Schüler ohne besondere Bedürfnisse<div class='subtle'>Dazu gehören auch Schüler, die den Kursen mit kleinen Ad-hoc-Maßnahmen folgen können</div>"
-                    },
-                    "1": {
-                        "then": "Dies ist eine Schule für Schüler mit Lernschwierigkeiten"
-                    },
-                    "2": {
-                        "then": "Dies ist eine Schule für blinde oder sehbehinderte Schüler"
-                    },
-                    "3": {
-                        "then": "Dies ist eine Schule für gehörlose oder hörgeschädigte Schüler"
-                    },
-                    "4": {
-                        "then": "Dies ist eine Schule für Schüler mit Behinderungen"
-                    },
-                    "5": {
-                        "then": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen"
-                    }
-                },
-                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?",
-                "questionHint": "Ad-hoc-Maßnahmen reichen nicht aus, um als Förderschule zu gelten",
-                "render": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}"
             }
         },
         "title": {

@@ -2049,6 +2049,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -4045,6 +4048,11 @@
             "render": "Weg"
         }
     },
+    "cyclist_waiting_aid": {
+        "title": {
+            "render": "Steuntje voor wachtende fietsers"
+        }
+    },
     "defibrillator": {
         "description": "Een laag die defibrillatoren toont die je kan gebruiken bij noodgevallen. Dit omvat zowel publiek beschikbare toestellen als defibrillatoren waarvoor het toestel enkel door personeel aangeboden kan worden",
         "name": "Defibrillatoren",
@@ -4201,6 +4209,9 @@
     "direction": {
         "description": "Deze laag toont de oriëntatie van een object",
         "name": "Richtingsvisualisatie"
+    },
+    "disaster_response": {
+        "description": "Deze laag bevat organisaties met hoofddoelstelling om burgers te helpen tijdens en na rampen door in de getroffen gebieden te gaan helpen."
     },
     "doctors": {
         "description": "Deze laag toont dokterspraktijken",
@@ -6356,6 +6367,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
             "render": "Natuurgebied"
         }
     },
@@ -6885,6 +6901,21 @@
         },
         "title": {
             "render": "Picknicktafel"
+        }
+    },
+    "play_forest": {
+        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
+        "name": "Speelbossen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "Speelbos {name}"
+                }
+            },
+            "render": "Speelbos"
         }
     },
     "playground": {
@@ -8090,6 +8121,13 @@
                         "question": "Heeft specialisatiejaar"
                     }
                 }
+            },
+            "2": {
+                "options": {
+                    "1": {
+                        "question": "Buitengewoon onderwijs"
+                    }
+                }
             }
         },
         "name": "Lagere en middelbare scholen",
@@ -8149,6 +8187,30 @@
                 },
                 "question": "Mogen jongens en meisjes les volgen op deze school?"
             },
+            "is_special_needs": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze school is enkel voor buitengewone leerlingen. Je hebt een attest nodig om hier school te mogen lopen."
+                    },
+                    "1": {
+                        "then": "Deze school heeft een apart deel voor buitengewone leerlingen. "
+                    },
+                    "2": {
+                        "then": "Buitengewone (geattesteerde) leerlingen en leerlingen zonder extra zorgnood zitten samen in de klas."
+                    },
+                    "3": {
+                        "then": "Deze school biedt ad hoc, beperkte extra zorg aan maar telt niet als buitengwoon onderwij.s"
+                    },
+                    "4": {
+                        "then": "Deze school heeft geen ondersteuning voor buitengewone leerlingen."
+                    },
+                    "5": {
+                        "then": "Deze school is voor buitengewone leerlingen."
+                    }
+                },
+                "question": "Richt deze school zich op leerlingen met een speciale zorgbehoefte?",
+                "questionHint": "Een buitengewone school is een school waar leerlingen met een attest op speciale zorg terecht kunnen."
+            },
             "orientation_belgium": {
                 "mappings": {
                     "0": {
@@ -8175,30 +8237,34 @@
                 "question": "Wat is de naam van deze school?",
                 "render": "Deze school heet <b>{name}</b>"
             },
-            "target-audience": {
+            "special_needs_categories_be": {
                 "mappings": {
                     "0": {
-                        "then": "Deze school richt zich op studenten zonder extra zorgbehoefte<div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>"
+                        "then": "Voor leerlingen met een verstandelijke beperking (type 2)"
                     },
                     "1": {
-                        "then": "Deze school richt zich op leerlingen met een leerprobleem"
+                        "then": "Voor leerlingen met een gedragsstoornis (type 3)"
                     },
                     "2": {
-                        "then": "Deze school richt zich op blinde en slechtziende studenten"
+                        "then": "Voor leerlingen met een motorische of lichamelijke beperking (type 4)"
                     },
                     "3": {
-                        "then": "Deze school richt zich op dove en hardhorende studenten"
+                        "then": "Voor blinde en slechtziende leerlingen (type 6)"
                     },
                     "4": {
-                        "then": "Deze school richt zich op studenten met een beperking"
+                        "then": "Voor dove leerlingen and leerlingen met een auditieve beperking (type 7)"
                     },
                     "5": {
-                        "then": "Deze school richt zich op studenten met extra zorgbehoeften"
+                        "then": "Voor leerlingen met een Spraak- of Taalontwikkelingsstoornis (type 7 - STOS/TOS)"
+                    },
+                    "6": {
+                        "then": "Voor leerlingen met een autisme spectrum stoornis (type 9)"
+                    },
+                    "7": {
+                        "then": "Voor leerlingen die omwille van een leerprobleem niet in het gewone onderwijs terecht kunnen (basisaanbod)"
                     }
                 },
-                "question": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?",
-                "questionHint": "Ad-hoc maatregelen zijn niet voldoende ",
-                "render": "Deze school richt zich op studenten met {school:for}"
+                "question": "Welke soorten zorg voor buitengewone leerlingen is hier beschikbaar?"
             }
         },
         "title": {
@@ -8488,6 +8554,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -10653,13 +10722,25 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
+        "name": "Speelweide",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Speelweide"
+        }
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
                 "1": {
                     "then": "{name}"
                 }
@@ -10888,13 +10969,5 @@
             },
             "render": "windturbine"
         }
-    },
-    "cyclist_waiting_aid": {
-        "title": {
-            "render": "Steuntje voor wachtende fietsers"
-        }
-    },
-    "disaster_response": {
-        "description": "Deze laag bevat organisaties met hoofddoelstelling om burgers te helpen tijdens en na rampen door in de getroffen gebieden te gaan helpen."
     }
 }

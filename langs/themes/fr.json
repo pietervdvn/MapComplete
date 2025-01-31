@@ -755,10 +755,6 @@
         "shortDescription": "Afficher les modifications faites avec MapComplete",
         "title": "Modifications faites avec MapComplete"
     },
-    "maproulette": {
-        "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",
-        "title": "Tâches MapRoulette"
-    },
     "maps": {
         "description": "Sur cette carte sont affichées les cartes (plans) mappées dans OpenStreetMap.<br/><br/>Si une carte est manquante, vous pouvez l'ajouer facilement avec un compte OpenStreetMap.",
         "shortDescription": "Cette carte affiche toutes les cartes (plans) mappés dans OpenStreetMap",
