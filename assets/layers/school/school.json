@@ -159,6 +159,7 @@
       "id": "school-name"
     },
     "contact",
+    "address.address",
     {
       "id": "capacity",
       "question": {
@@ -322,13 +323,14 @@
           {
             "or": [
               "school:special_needs=no",
-              "school:special_needs="
+              "school:special_needs=",
+              "school:special_needs=limited"
             ]
-          },
-          "special_needs:.*!~~yes"
+          }
         ]
       },
       "multiAnswer": true,
+      "filter": true,
       "mappings": [
         {
           "if": "school:orientation=academic",
@@ -555,6 +557,7 @@
         },
         {
           "if": "school:special_needs=limited",
+          "alsoShowIf": "school:special_needs=",
           "then": {
             "en": "This school offers limited, ad hoc support but has no significant expertise and is not considered a special needs school.",
             "nl": "Deze school biedt ad hoc, beperkte extra zorg aan maar telt niet als buitengwoon onderwij.s"
@@ -565,6 +568,14 @@
           "then": {
             "en": "This school has no support for special need students.",
             "nl": "Deze school heeft geen ondersteuning voor buitengewone leerlingen."
+          }
+        },
+        {
+          "if": "school:special_needs=yes",
+          "hideInAnswer": true,
+          "then": {
+            "en": "This school is for special need students.",
+            "nl": "Deze school is voor buitengewone leerlingen."
           }
         }
       ]
@@ -796,6 +807,11 @@
       "options": [
         {
           "question": {
+            "en": "Does this school have special need education?"
+          }
+        },
+        {
+          "question": {
             "en": "Has special education",
             "nl": "Buitengewoon onderwijs"
           },
@@ -803,6 +819,18 @@
             "and": [
               "school:special_needs!=",
               "school:special_needs!=no"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "No or limited special need education"
+          },
+          "osmTags": {
+            "or": [
+              "school:special_needs=",
+              "school:special_needs=no",
+              "school:special_needs=limited"
             ]
           }
         }
