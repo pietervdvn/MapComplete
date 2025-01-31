@@ -188,7 +188,7 @@
     "crypto": "^1.0.1",
     "csv-parse": "^5.1.0",
     "doctest-ts-improved": "^0.8.8",
-    "dompurify": "^3.0.5",
+    "dompurify": "^3.2.4",
     "email-validator": "^2.0.4",
     "escape-html": "^1.0.3",
     "exifreader": "^4.23.5",
