@@ -3,15 +3,16 @@
         "description": "Addresses",
         "name": "Known addresses in OSM",
         "tagRenderings": {
-            "address_joined": {
-                "render": {
-                    "special": {
-                        "render": "{addr:street} {addr:housenumber}"
-                    }
-                }
-            },
             "fixme": {
                 "question": "What should be fixed here? Please explain"
+            },
+            "header": {
+                "mappings": {
+                    "0": {
+                        "then": "No address is known"
+                    }
+                },
+                "render": "{addr:street} <b>{addr:housenumber}</b> {addr:unit}"
             },
             "housenumber": {
                 "mappings": {
@@ -24,7 +25,17 @@
             },
             "street": {
                 "question": "What street is this address located in?",
+                "questionHint": "Do not include the house number",
                 "render": "This address is in street <b>{addr:street}</b>"
+            },
+            "unit": {
+                "mappings": {
+                    "0": {
+                        "then": "No unit number"
+                    }
+                },
+                "question": "What is the unit number or letter?",
+                "render": "The unit number is <b>{addr:unit}</b>"
             }
         },
         "title": {

@@ -6,6 +6,13 @@
             "fixme": {
                 "question": "Wat moet hier gecorrigeerd worden? Leg het uit"
             },
+            "header": {
+                "mappings": {
+                    "0": {
+                        "then": "Geen adresgegevens bekend"
+                    }
+                }
+            },
             "housenumber": {
                 "mappings": {
                     "0": {
@@ -18,6 +25,15 @@
             "street": {
                 "question": "In welke straat bevindt dit adres zich?",
                 "render": "Dit adres bevindt zich in de straat <b>{addr:street}</b>"
+            },
+            "unit": {
+                "mappings": {
+                    "0": {
+                        "then": "Geen apart busnummer of letter"
+                    }
+                },
+                "question": "Wat is het busnummer?",
+                "render": "De bus is <b>{addr:unit}</b>"
             }
         },
         "title": {
