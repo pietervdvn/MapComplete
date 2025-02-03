@@ -89,9 +89,8 @@
   "tagRenderings": [
     "images",
     "opening_hours",
-    "phone",
-    "email",
-    "website",
+    "contact",
+    "address.address",
     {
       "question": {
         "en": "What is the name of this dentist?",
