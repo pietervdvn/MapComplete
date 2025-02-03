@@ -49,6 +49,7 @@ export interface GeocodingOptions {
 }
 
 export default interface GeocodingProvider {
+    readonly name: string
     search(query: string, options?: GeocodingOptions): Promise<GeocodeResult[]>
 
     /**
