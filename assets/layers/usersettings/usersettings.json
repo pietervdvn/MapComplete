@@ -1520,6 +1520,34 @@
       ],
       "condition": "mapcomplete-show_debug=yes",
       "render": "{all_tags()}"
+    },
+    {
+      "id": "debug_storage_accordeon",
+      "render": {
+        "special": {
+          "type": "group",
+          "header": "debug_storage_accordeon_title",
+          "labels": "debug_storage"
+        }
+      }
+    },
+    {
+      "id": "debug_storage_accordeon_title",
+      "labels": [
+        "hidden"
+      ],
+      "render": {
+        "en": "Debug information about local storage"
+      }
+    },
+    {
+      "id": "debug_storage",
+      "labels": [
+        "hidden"
+      ],
+      "render": {
+        "*": "{storage_all_tags()}"
+      }
     }
   ],
   "allowMove": false
