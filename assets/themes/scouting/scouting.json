@@ -39,7 +39,7 @@
     {
       "builtin": "campsite",
       "override": {
-        "minzoom": 18,
+        "minzoom": 16,
         "filter": null,
         "name": null,
         "isCounted": false

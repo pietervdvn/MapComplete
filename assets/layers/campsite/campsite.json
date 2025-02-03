@@ -65,6 +65,37 @@
   "tagRenderings": [
     {
       "question": {
+        "de": "Ist dieser Zeltplatz ausschließlich für Gruppen?",
+        "en": "Is this campsite exclusively for groups?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "group_only=yes"
+            ]
+          },
+          "then": {
+            "en": "This campsite is exclusively for groups",
+            "de": "Dieser Zeltplatz ist ausschließlich für Gruppen"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "group_only=no"
+            ]
+          },
+          "then": {
+            "en": "This campsite is not exclusively for groups",
+            "de": "Dieser Zeltplatz ist nicht ausschließlich für Gruppen"
+          }
+        }
+      ],
+      "id": "group_only"
+    },
+    {
+      "question": {
         "en": "What is the name of this campsite?",
         "de": "Wie heißt dieser Zeltplatz?"
       },
