@@ -11,6 +11,40 @@
   "icon": "./assets/layers/scouting_group/scouting.svg",
   "defaultBackgroundId": "protomaps.dark",
   "layers": [
-    "scouting_group"
+    "scouting_group",
+    {
+      "builtin": "campsite",
+      "override": {
+        "id": "group_campsite",
+        "name": {
+          "en": "Group Campsites"
+        },
+        "=presets": [],
+        "source": {
+          "=osmTags": {
+            "and": [
+              "tourism=camp_site",
+              {
+                "or": [
+                  "scout=yes",
+                  "group_only=yes"
+                ]
+              }
+            ]
+
+          }
+        },
+        "=filter": []
+      }
+    },
+    {
+      "builtin": "campsite",
+      "override": {
+        "minzoom": 18,
+        "filter": null,
+        "name": null,
+        "isCounted": false
+      }
+    }
   ]
 }
