@@ -436,13 +436,26 @@ export interface LayerConfigJson {
     )[]
 
     /**
-     * All the extra questions for filtering.
-     * If a string is given, mapComplete will search in
-     * 1. The tagrenderings for a match on ID and use the mappings as options
-     * 2. search 'filters.json' for the appropriate filter or
-     * 3. will try to parse it as `layername.filterid` and us that one.
+     * Filters are a way to temporarily hide the data from the map (but the data is still loaded from overpass/OSM/the specified source).
+     * This is used to e.g. show "shops open now", "toilets with wheelchair access", "free toilets", ...
      *
-     * Note: adding "#filter":"no-auto" will disable the filters added by tagRenderings
+     * Filters can be added in various ways:
+     *
+     * - You can specify one explicitly here
+     * - You can specify the id (as a string) of a tagRendering. The tagrendering will then automatically be converted to a filter
+     *      If the ID is not found locally, it will be searched in `filters.json`.
+     *      If a dot is present, the ID will be interpreted as "<layername>.<filterId>" instead
+     * - A tagRendering might specify `filter: true`. This will add the tagRendering to the filter list automatically
+     *      This might introduce filters from _imported_ tagRenderings
+     *      Note: adding "#filter":"no-auto" in the layer object will disable this
+     *
+     * A special case is setting `filter: {sameAs: "layerId"}`.
+     * This is only done with twin layers, where one layer is mostly visible (e.g. all shops offering some kind of bicycle service)
+     * and another layer (e.g. "all shops") shows up at high zoom levels (typically 17 or 18). This way, people can mark an already existing shop
+     * as bicycle shop and don't create a duplicate entry.
+     * Of course, if one applies a filter (e.g. "open now") the user will expect the "all shops" layer to also only show shops open now.
+     * As is often the case, the secondary layer will be hidden from the filter view, so they won't be able to enable those filters.
+     * In this case, we let the secondary layer follow the first layer with a `sameAs`.
      *
      * group: filters
      */
