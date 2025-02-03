@@ -90,17 +90,7 @@
       "marker": [
         {
           "icon": {
-            "render": "https://opencampingmap.org/markers/l_standard.svg",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    "scout=yes",
-                    "group_only=yes"
-                  ]
-                },
-                "then": "https://wiki.openstreetmap.org/w/images/6/6b/OCM_l_group_only.svg"
-              }
+            "render": "./assets/layers/group_campsite/group_campsite.svg",
             ]
           }
         }

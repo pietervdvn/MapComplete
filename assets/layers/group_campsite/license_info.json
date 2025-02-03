@@ -1,0 +1,12 @@
+[
+  {
+    "path": "group_campsite.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Sven Geggus"
+    ],
+    "sources": [
+      "https://github.com/giggls/opencampsitemap/blob/master/markers/l_group_only.svg"
+    ]
+  }
+]

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg2"
+   viewBox="0 0 30 30"
+   height="32"
+   width="32"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <circle
+     style="fill:#552200;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:square;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
+     id="path961"
+     cx="15"
+     cy="15"
+     r="15" />
+  <rect
+     style="visibility:hidden;fill:none;stroke:none"
+     id="canvas"
+     y="23.5"
+     x="0"
+     height="14"
+     width="14" />
+  <circle
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
+     id="path1449-5-0-9-2-9"
+     cx="14.999711"
+     cy="15.000001"
+     r="12.65625" />
+  <path
+     style="fill:#552200;fill-opacity:1;stroke-width:1.77489"
+     d="m 6.8428091,9.483844 0.567334,1.70045 -3.4009021,6.23602 h 7.93647 l -3.4009009,-6.23602 0.565783,-1.70045 h -0.565783 l -0.567334,1.133117 -0.567333,-1.133117 z m 1.134667,3.968235 1.700451,3.400901 h -3.400902 z"
+     id="camping-5-6" />
+  <path
+     style="fill:#552200;fill-opacity:1;stroke-width:1.77488"
+     d="m 12.234371,7.741551 0.567334,1.70045 -3.4009019,6.236019 H 17.337274 L 13.936372,9.442001 14.502156,7.741551 H 13.936372 L 13.369039,8.874668 12.801705,7.741551 Z m 1.134668,3.968234 1.70045,3.400902 h -3.400901 z"
+     id="camping-5-6-92" />
+  <path
+     style="fill:#552200;fill-opacity:1;stroke-width:1.77488"
+     d="m 19.531338,5.284174 0.567334,1.700452 -3.400902,6.236019 h 7.936471 L 21.233339,6.984626 21.799123,5.284174 H 21.233339 L 20.666006,6.417292 20.098672,5.284174 Z m 1.134668,3.968236 1.700451,3.400901 h -3.400902 z"
+     id="camping-5-6-02" />
+  <path
+     style="fill:#552200;fill-opacity:1;stroke-width:1.77488"
+     d="m 13.865333,17.73558 0.567334,1.700451 -3.400902,6.23602 h 7.93647 l -3.400901,-6.23602 0.565783,-1.700451 H 15.567334 L 15,18.868698 14.432667,17.73558 Z M 15,21.703816 l 1.700451,3.400901 h -3.400902 z"
+     id="camping-5-6-3" />
+  <path
+     style="fill:#552200;fill-opacity:1;stroke-width:1.77488"
+     d="m 18.360294,14.139291 0.567334,1.700451 -3.400902,6.23602 h 7.93647 l -3.400901,-6.23602 0.565784,-1.700451 h -0.565784 l -0.567334,1.133118 -0.567333,-1.133118 z m 1.134667,3.968236 1.700451,3.400902 h -3.400901 z"
+     id="camping-5-6-7" />
+</svg>
