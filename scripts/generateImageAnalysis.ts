@@ -4,7 +4,7 @@ import { RegexTag } from "../src/Logic/Tags/RegexTag"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
 import { BBox } from "../src/Logic/BBox"
 import * as fs from "fs"
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs"
+import { writeFileSync } from "fs"
 import { Feature } from "geojson"
 import ScriptUtils from "./ScriptUtils"
 import { Imgur } from "../src/Logic/ImageProviders/Imgur"
@@ -192,59 +192,6 @@ export default class GenerateImageAnalysis extends Script {
             }
         }
     }
-
-    async downloadViews(datapath: string): Promise<void> {
-        const { allImages, imageSource } = this.loadImageUrls(datapath)
-        console.log("Detected", allImages.size, "images")
-        const results: [string, number][] = []
-        const today = new Date().toISOString().substring(0, "YYYY-MM-DD".length)
-        const viewDir = datapath + "/views_" + today
-        if (!existsSync(viewDir)) {
-            mkdirSync(viewDir)
-        }
-        const targetpath = datapath + "/views.csv"
-
-        const total = allImages.size
-        let dloaded = 0
-        let skipped = 0
-        let err = 0
-        for (const image of Array.from(allImages)) {
-            const cachedView = viewDir + "/" + image.replace(/\//g, "_")
-            let attribution: LicenseInfo
-            if (existsSync(cachedView)) {
-                attribution = JSON.parse(readFileSync(cachedView, "utf8"))
-                skipped++
-            } else {
-                try {
-                    attribution = await Imgur.singleton.DownloadAttribution({ url: image })
-                    await ScriptUtils.sleep(500)
-                    writeFileSync(cachedView, JSON.stringify(attribution))
-                    dloaded++
-                } catch (e) {
-                    err++
-                    continue
-                }
-            }
-            results.push([image, attribution.views])
-            if (dloaded % 50 === 0) {
-                console.log({
-                    dloaded,
-                    skipped,
-                    total,
-                    err,
-                    progress: Math.round(dloaded + skipped + err),
-                })
-            }
-
-            if ((dloaded + skipped + err) % 100 === 0) {
-                console.log("Writing views to", targetpath)
-                fs.writeFileSync(targetpath, results.map((r) => r.join(",")).join("\n"))
-            }
-        }
-        console.log("Writing views to", targetpath)
-        fs.writeFileSync(targetpath, results.map((r) => r.join(",")).join("\n"))
-    }
-
     async downloadImage(url: string, imagePath: string): Promise<boolean> {
         const filenameLong = url.replace(/[\/:.\-%]/g, "_") + ".jpg"
         const targetPathLong = imagePath + "/" + filenameLong
