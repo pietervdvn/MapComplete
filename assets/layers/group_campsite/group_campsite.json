@@ -110,7 +110,7 @@
       "freeform": {
         "key": "name"
       },
-      "id": "Name"
+      "id": "name"
     },
     {
       "id": "fee",
@@ -169,7 +169,7 @@
         "key": "capacity:persons",
         "type": "pnat"
       },
-      "id": "capacity:persons"
+      "id": "capacity_persons"
     },
     "contact",
     "questions",
@@ -183,7 +183,7 @@
     }
   ],
   "credits:uid": 8770388,
-  "id": "groupcampsites",
+  "id": "group_campsite",
   "name": {
     "en": "Campsites for groups and scouts",
     "de": "Zeltplatz für Gruppen/Pfadfinder:innen"
