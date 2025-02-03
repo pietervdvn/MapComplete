@@ -11,7 +11,6 @@
     "es": "Universidades y colegios"
   },
   "description": "Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)",
-  "minzoom": 14,
   "source": {
     "osmTags": {
       "or": [
@@ -31,6 +30,7 @@
       ]
     }
   },
+  "minzoom": 14,
   "title": {
     "mappings": [
       {

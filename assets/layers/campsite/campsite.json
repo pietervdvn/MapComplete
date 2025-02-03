@@ -1,6 +1,146 @@
 {
-  "credits": "Osmwithspace",
+  "id": "campsite",
+  "name": {
+    "en": "Campsites",
+    "de": "Zeltplätze"
+  },
+  "description": {
+    "en": "Campsites",
+    "de": "Zeltplätze"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "tourism=camp_site"
+      ]
+    }
+  },
   "minzoom": 7,
+  "shownByDefault": true,
+  "title": {
+    "render": {
+      "en": "{name}"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "./assets/layers/campsite/campsite.svg"
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "campsite"
+      },
+      "tags": [
+        "tourism=camp_site"
+      ]
+    },
+    {
+      "title": {
+        "en": "campsite for groups"
+      },
+      "tags": [
+        "tourism=camp_site",
+        "group_only=yes"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "question": {
+        "en": "What is the name of this campsite?",
+        "de": "Wie heißt dieser Zeltplatz?"
+      },
+      "render": {
+        "en": "The name of this campsite is {name}",
+        "de": "Dieser Zeltplatz heißt {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "name"
+    },
+    {
+      "id": "fee",
+      "question": {
+        "en": "Is a fee charged here?",
+        "de": "Wird hier eine Gebühr erhoben?"
+      },
+      "render": {
+        "en": "A fee of {charge} should be paid for here",
+        "de": "Hier wird eine Gebühr von {charge} erhoben"
+      },
+      "freeform": {
+        "key": "charge",
+        "type": "currency",
+        "addExtraTags": [
+          "fee=yes"
+        ],
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "fee=no",
+          "addExtraTags": [
+            "charge="
+          ],
+          "then": {
+            "en": "The campsite is free of charge",
+            "de": "Der Zeltplatz ist kostenlos"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "fee=yes",
+              "charge="
+            ]
+          },
+          "then": {
+            "en": "A fee is charged here.",
+            "de": "Hier wird eine Gebühr erhoben."
+          },
+          "hideInAnswer": "charge~*"
+        }
+      ]
+    },
+    {
+      "question": {
+        "de": "Wie viele Personen können hier übernachten?",
+        "en": "How many people can stay here?"
+      },
+      "render": {
+        "en": "{capacity:persons} people can stay here",
+        "de": "Hier können {capacity:persons} Personen übernachten"
+      },
+      "freeform": {
+        "key": "capacity:persons",
+        "type": "pnat"
+      },
+      "id": "capacity_persons"
+    },
+    "contact",
+    "questions",
+    "mastodon",
+    "images"
+  ],
   "filter": [
     {
       "id": "capacity_persons_filter",
@@ -81,147 +221,7 @@
       ]
     }
   ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": {
-            "render": "./assets/layers/campsite/campsite.svg"
-          }
-        }
-      ]
-    }
-  ],
-  "tagRenderings": [
-    {
-      "question": {
-        "de": "Wie heißt dieser Zeltplatz?",
-        "en": "What is the name of this campsite?"
-      },
-      "render": {
-        "en": "The name of this campsite is {name}",
-        "de": "Dieser Zeltplatz heißt {name}"
-      },
-      "freeform": {
-        "key": "name"
-      },
-      "id": "name"
-    },
-    {
-      "id": "fee",
-      "question": {
-        "en": "Is a fee charged here?",
-        "de": "Wird hier eine Gebühr erhoben?"
-      },
-      "render": {
-        "en": "A fee of {charge} should be paid for here",
-        "de": "Hier wird eine Gebühr von {charge} erhoben"
-      },
-      "freeform": {
-        "key": "charge",
-        "type": "currency",
-        "addExtraTags": [
-          "fee=yes"
-        ],
-        "inline": true
-      },
-      "mappings": [
-        {
-          "if": "fee=no",
-          "addExtraTags": [
-            "charge="
-          ],
-          "then": {
-            "en": "The campsite is free of charge",
-            "de": "Der Zeltplatz ist kostenlos"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "fee=yes",
-              "charge="
-            ]
-          },
-          "then": {
-            "en": "A fee is charged here.",
-            "de": "Hier wird eine Gebühr erhoben."
-          },
-          "hideInAnswer": "charge~*"
-        }
-      ]
-    },
-    {
-      "question": {
-        "de": "Wie viele Personen können hier übernachten?",
-        "en": "How many people can stay here?"
-      },
-      "render": {
-        "en": "{capacity:persons} people can stay here",
-        "de": "Hier können {capacity:persons} Personen übernachten"
-      },
-      "freeform": {
-        "key": "capacity:persons",
-        "type": "pnat"
-      },
-      "id": "capacity_persons"
-    },
-    "contact",
-    "questions",
-    "mastodon",
-    "images"
-  ],
-  "lineRendering": [
-    {
-      "width": 1,
-      "color": "blue"
-    }
-  ],
-  "credits:uid": 8770388,
-  "id": "campsite",
-  "name": {
-    "en": "Campsites",
-    "de": "Zeltplätze"
-  },
-  "description": {
-    "en": "Campsites",
-    "de": "Zeltplätze"
-  },
-  "title": {
-    "render": {
-      "en": "{name}"
-    }
-  },
-  "source": {
-    "osmTags": {
-      "and": [
-        "tourism=camp_site"
-      ]
-    }
-  },
-  "shownByDefault": true,
-  "presets": [
-    {
-      "title": {
-        "en": "campsite"
-      },
-      "tags": [
-        "tourism=camp_site"
-      ]
-    },
-    {
-      "title": {
-        "en": "campsite for groups"
-      },
-      "tags": [
-        "tourism=camp_site",
-        "group_only=yes"
-      ]
-    }
-  ],
-  "allowMove": false
+  "allowMove": false,
+  "credits": "Osmwithspace",
+  "credits:uid": 8770388
 }
