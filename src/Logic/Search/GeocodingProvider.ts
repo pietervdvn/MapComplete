@@ -50,6 +50,12 @@ export interface GeocodingOptions {
 
 export default interface GeocodingProvider {
     readonly name: string
+
+    /**
+     * Performs search.
+     * Note: the result _must_ return an empty list in the case of no results.
+     * Undefined might be interpreted by clients as "still running"
+     */
     search(query: string, options?: GeocodingOptions): Promise<GeocodeResult[]>
 
     /**
