@@ -90,7 +90,7 @@
       "marker": [
         {
           "icon": {
-            "render": "./assets/layers/group_campsite/group_campsite.svg",
+            "render": "./assets/layers/campsite/campsite.svg",
             ]
           }
         }
@@ -183,14 +183,14 @@
     }
   ],
   "credits:uid": 8770388,
-  "id": "group_campsite",
+  "id": "campsite",
   "name": {
-    "en": "Campsites for groups and scouts",
-    "de": "Zeltplatz für Gruppen/Pfadfinder:innen"
+    "en": "Campsites",
+    "de": "Zeltplätze"
   },
   "description": {
-    "en": "Campsites for groups and scouts",
-    "de": "Zeltplatz für Gruppen/Pfadfinder:innen"
+    "en": "Campsites",
+    "de": "Zeltplätze"
   },
   "title": {
     "render": {
@@ -200,18 +200,20 @@
   "source": {
     "osmTags": {
       "and": [
-        "tourism=camp_site",
-        {
-          "or": [
-            "scout=yes",
-            "group_only=yes"
-          ]
-        }
+        "tourism=camp_site"
       ]
     }
   },
   "shownByDefault": true,
   "presets": [
+    {
+      "title": {
+        "en": "campsite"
+      },
+      "tags": [
+        "tourism=camp_site"
+      ]
+    },
     {
       "title": {
         "en": "campsite for groups"
