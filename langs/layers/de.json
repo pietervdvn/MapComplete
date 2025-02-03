@@ -2188,6 +2188,41 @@
             "render": "Kneipe"
         }
     },
+    "campsite": {
+        "description": "Zeltplätze",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Personen"
+                    }
+                }
+            }
+        },
+        "name": "Zeltplätze",
+        "tagRenderings": {
+            "capacity_persons": {
+                "question": "Wie viele Personen können hier übernachten?",
+                "render": "Hier können {capacity:persons} Personen übernachten"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Zeltplatz ist kostenlos"
+                    },
+                    "1": {
+                        "then": "Hier wird eine Gebühr erhoben."
+                    }
+                },
+                "question": "Wird hier eine Gebühr erhoben?",
+                "render": "Hier wird eine Gebühr von {charge} erhoben"
+            },
+            "name": {
+                "question": "Wie heißt dieser Zeltplatz?",
+                "render": "Dieser Zeltplatz heißt {name}"
+            }
+        }
+    },
     "car_rental": {
         "description": "Orte, an denen Sie ein Auto mieten können",
         "name": "Autovermietung",

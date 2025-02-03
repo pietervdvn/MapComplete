@@ -2206,6 +2206,73 @@
             "render": "Pub"
         }
     },
+    "campsite": {
+        "description": "Campsites",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "persons"
+                    },
+                    "1": {
+                        "question": "1-20"
+                    },
+                    "2": {
+                        "question": "21-50"
+                    },
+                    "3": {
+                        "question": "51-100"
+                    },
+                    "4": {
+                        "question": "101-200"
+                    },
+                    "5": {
+                        "question": "201-500"
+                    },
+                    "6": {
+                        "question": "500+"
+                    },
+                    "7": {
+                        "question": "?"
+                    }
+                }
+            }
+        },
+        "name": "Campsites",
+        "presets": {
+            "0": {
+                "title": "campsite"
+            },
+            "1": {
+                "title": "campsite for groups"
+            }
+        },
+        "tagRenderings": {
+            "capacity_persons": {
+                "question": "How many people can stay here?",
+                "render": "{capacity:persons} people can stay here"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "The campsite is free of charge"
+                    },
+                    "1": {
+                        "then": "A fee is charged here."
+                    }
+                },
+                "question": "Is a fee charged here?",
+                "render": "A fee of {charge} should be paid for here"
+            },
+            "name": {
+                "question": "What is the name of this campsite?",
+                "render": "The name of this campsite is {name}"
+            }
+        },
+        "title": {
+            "render": "{name}"
+        }
+    },
     "car_rental": {
         "description": "Places where you can rent a car",
         "name": "Car Rental",

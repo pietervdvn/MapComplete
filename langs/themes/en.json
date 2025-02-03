@@ -1167,6 +1167,13 @@
     },
     "scouting": {
         "description": "A scouting group is a social youth movement with a heavy emphasis on the outdoors. Activities range from camping, hiking, aquatics, backpacking, exploring nature, ...",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Group Campsites"
+                }
+            }
+        },
         "title": "Scouting groups"
     },
     "shops": {

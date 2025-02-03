@@ -90,8 +90,7 @@
       "marker": [
         {
           "icon": {
-            "render": "./assets/layers/campsite/campsite.svg",
-            ]
+            "render": "./assets/layers/campsite/campsite.svg"
           }
         }
       ]
@@ -223,5 +222,6 @@
         "group_only=yes"
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }
