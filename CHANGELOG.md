@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.48.6](https://github.com/pietervdvn/mapcomplete/compare/v0.48.5...v0.48.6) (2025-02-03)
+
+
+### Bug Fixes
+
+* actually don't show grey loading placeholder for wikidata/wikipedia, add tests ([87ab165](https://github.com/pietervdvn/mapcomplete/commits/87ab165e58472c4c88cf44c45f823706f1969c93))
+* don't check if someone is logged in for a taghint ([2f7e35a](https://github.com/pietervdvn/mapcomplete/commits/2f7e35a16e9896216d3fc4fce5d93d4272dc6219))
+* don't save big objects to the cache, see [#1919](https://github.com/pietervdvn/MapComplete/issues/1919) ([3cc7d05](https://github.com/pietervdvn/mapcomplete/commits/3cc7d05e03809616823cdf4f0143ae230e195638))
+* fix crash in movewizard ([a66c9f7](https://github.com/pietervdvn/mapcomplete/commits/a66c9f7cbe83bd80dfa41910eb8372eb0613bd25))
+* fix typo in campsite.json, translation sync ([a552606](https://github.com/pietervdvn/mapcomplete/commits/a552606c5204c57d3e222cb17b3cf6a246bd9400))
+* fix wikimedia attribution, fix [#2332](https://github.com/pietervdvn/MapComplete/issues/2332) ([6c0d54d](https://github.com/pietervdvn/mapcomplete/commits/6c0d54d7694292f3c7038ba336489d6de5231060))
+* GroupedView.svelte now shows the questions directly, so that non-answered questions show up ([3ca0d42](https://github.com/pietervdvn/mapcomplete/commits/3ca0d42eb6f35e66554f379db7820fb135d8c1d4))
+* whitelist data.Mapcomplete.org ([6444452](https://github.com/pietervdvn/mapcomplete/commits/644445248c19ecd051589b1e46feda65b3749e69))
+
+
+### Theme improvements
+
+* **address:** add simple address feature (useable as 'address.address') ([b6a5b96](https://github.com/pietervdvn/mapcomplete/commits/b6a5b963501ce636255bbecf41d020cc6394eaf3))
+* **education:** add minzoom ([57a7d36](https://github.com/pietervdvn/mapcomplete/commits/57a7d36617cdb67fae319ac70386248d440f279b))
+* **education:** move 'kindergarten' into 'school', add 'school:orientation' (only in Belgium), add more differentiated icons ([6d68ca7](https://github.com/pietervdvn/mapcomplete/commits/6d68ca7988bc6db0982ebae35efd90b5c829f435))
+* fix generation of automatic filters with multiAnswer, add test ([2ec369f](https://github.com/pietervdvn/mapcomplete/commits/2ec369f259db20ba8441748d21c17ea575a0c584))
+* **healthcare:** add address info to all layers, fix [#1202](https://github.com/pietervdvn/MapComplete/issues/1202) ([123c50a](https://github.com/pietervdvn/mapcomplete/commits/123c50a5c0f144f4622937be87ba427c87870bbb))
+* **school:** remove `school:for`, replace with school:special_needs ([f26f22a](https://github.com/pietervdvn/mapcomplete/commits/f26f22a95c3fbd6fbe89829c9c448d241dd55225))
+* **school:** small fixes to special need school tagging ([f3aa8e0](https://github.com/pietervdvn/mapcomplete/commits/f3aa8e015b07a6cf7cbc269aa9c07df205dd6ab4))
+* **shops:** fix stupid typos and bugs in healthcare service tagging ([541b8f8](https://github.com/pietervdvn/mapcomplete/commits/541b8f8960fa258223b9ea059301fd02aabb47be))
+
 ### [0.48.5](https://github.com/pietervdvn/mapcomplete/compare/v0.48.4...v0.48.5) (2025-01-28)
 
 
