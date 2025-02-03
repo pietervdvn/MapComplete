@@ -11,22 +11,19 @@ This layer is loaded from an external source, namely
 
 `https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}`
 
+No themes use this layer
+
 ## Table of contents
 
-1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+1. [Basic tags for this layer](#basic-tags-for-this-layer)
+2. [Supported attributes](#supported-attributes)
   - [status](#status)
   - [mark_fixed](#mark_fixed)
   - [mark_duplicate](#mark_duplicate)
   - [mark_too_hard](#mark_too_hard)
   - [leftover-questions](#leftover-questions)
   - [lod](#lod)
-4. [Filters](#filters)
-
-## Themes using this layer
-
- - [maproulette](https://mapcomplete.org/maproulette)
+3. [Filters](#filters)
 
 ## Basic tags for this layer
 

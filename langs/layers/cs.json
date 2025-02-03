@@ -2588,6 +2588,35 @@
             }
         }
     },
+    "childcare": {
+        "presets": {
+            "0": {
+                "title": "péče o děti"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "Kolik dětí (maximálně) zde může být zapsáno?",
+                "render": "Toto zařízení má prostor pro {capacity} dětí"
+            },
+            "name": {
+                "question": "Jak se toto zařízení jmenuje?",
+                "render": "Toto zařízení se jmenuje <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Kdy je tato péče o děti otevřena?"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Péče o děti {name}"
+                }
+            }
+        }
+    },
     "cinema": {
         "name": "Kino",
         "tagRenderings": {
@@ -5750,53 +5779,6 @@
             "render": "Obrubník"
         }
     },
-    "kindergarten_childcare": {
-        "name": "Mateřské školky a péče o děti",
-        "presets": {
-            "0": {
-                "title": "mateřská školka"
-            },
-            "1": {
-                "title": "péče o děti"
-            }
-        },
-        "tagRenderings": {
-            "capacity": {
-                "question": "Kolik dětí (maximálně) zde může být zapsáno?",
-                "render": "Toto zařízení má prostor pro {capacity} dětí"
-            },
-            "childcare-type": {
-                "mappings": {
-                    "0": {
-                        "then": "Jedná se o mateřskou školu (známou také jako <i>předškolní zařízení</i>), kde se malým dětem dostává raného vzdělání."
-                    },
-                    "1": {
-                        "then": "Jedná se o zařízení péče o děti, jako jsou jesle nebo školka, kde se starají o malé děti. Neposkytují vzdělání a jsou často provozovány jako soukromé podniky"
-                    }
-                },
-                "question": "O jaký typ zařízení se jedná?"
-            },
-            "name": {
-                "question": "Jak se toto zařízení jmenuje?",
-                "render": "Toto zařízení se jmenuje <b>{name}</b>"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Kdy je tato péče o děti otevřena?"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Mateřská škola {name}"
-                },
-                "1": {
-                    "then": "Péče o děti {name}"
-                }
-            }
-        }
-    },
     "last_click": {
         "pointRendering": {
             "0": {
@@ -8015,6 +7997,9 @@
                 },
                 "question": "Které pohlaví se může na tuto školu přihlásit?"
             },
+            "is_special_needs": {
+                "question": "Zaměřuje se tato škola na studenty se speciálními potřebami?"
+            },
             "pedagogy": {
                 "mappings": {
                     "0": {
@@ -8061,40 +8046,6 @@
             "school-name": {
                 "question": "Jak se jmenuje tato škola?",
                 "render": "Tato škola se jmenuje {name}"
-            },
-            "target-audience": {
-                "mappings": {
-                    "0": {
-                        "then": "Jedná se o školu, kde studenti studují dovednosti na úrovni odpovídající jejich věku. <div>Existuje málo nebo žádná speciální zařízení pro studenty se speciálními potřebami nebo zařízení jsou ad hoc</div>"
-                    },
-                    "1": {
-                        "then": "Toto je škola pro studenty bez speciálních potřeb<div class='subtle'>To zahrnuje studenty, kteří mohou absolvovat kurzy s malými, ad hoc měřeními</div>"
-                    },
-                    "2": {
-                        "then": "Jedná se o školu, kde se dospělí učí dovednostem na stanovené úrovni."
-                    },
-                    "3": {
-                        "then": "Jedná se o školu pro studenty s autismem"
-                    },
-                    "4": {
-                        "then": "Jedná se o školu pro žáky s poruchami učení"
-                    },
-                    "5": {
-                        "then": "Jedná se o školu pro nevidomé studenty nebo studenty se zrakovým postižením"
-                    },
-                    "6": {
-                        "then": "Jedná se o školu pro neslyšící studenty nebo studenty se sluchovým postižením"
-                    },
-                    "7": {
-                        "then": "Jedná se o školu pro studenty se zdravotním postižením"
-                    },
-                    "8": {
-                        "then": "Jedná se o školu pro žáky se speciálními potřebami"
-                    }
-                },
-                "question": "Zaměřuje se tato škola na studenty se speciálními potřebami? Jaké stavební vybavení má tato škola?",
-                "questionHint": "Ad hoc opatření nestačí k tomu, aby se škola považovala za školu pro žáky se speciálními vzdělávacími potřebami",
-                "render": "Tato škola má zařízení pro studenty se {school:for}"
             }
         },
         "title": {

@@ -134,6 +134,8 @@ export default class Constants {
     public static readonly mapillary_client_token_v4 = Constants.config.api_keys.mapillary_v4
     public static defaultOverpassUrls = Constants.config.default_overpass_urls
     public static countryCoderEndpoint: string = Constants.config.country_coder_host
+    public static communityIndexHost: string = Constants.config.community_index_host
+
     public static osmAuthConfig: AuthConfig = Constants.config.oauth_credentials
     public static nominatimEndpoint: string = Constants.config.nominatimEndpoint
     public static photonEndpoint: string = Constants.config.photonEndpoint

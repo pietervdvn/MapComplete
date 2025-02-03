@@ -1,0 +1,32 @@
+on:
+  schedule:
+    - cron: "0 2 * * *"
+
+jobs:
+  deploy_on_hetzner_single:
+    runs-on: [ ubuntu-latest, hetzner-access ]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: package-lock.json
+
+      - name: install deps
+        run: npm ci
+        shell: bash
+
+      - name: create community index files
+        shell: bash
+        run: npm run download:community-index -- -- community-index/
+
+      - name: upload community index
+        shell: bash
+        run: |
+          zip community-index.zip community-index/*
+          scp community-index.zip hetzner:data/
+          ssh hetzner "cd data && rm -rf community-index/ && unzip community-index.zip && rm community-index.zip"
+          

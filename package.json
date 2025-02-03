@@ -59,6 +59,7 @@
       "https://overpass.openstreetmap.ru/cgi/interpreter": "Broken as of 2024-09-05, might be a glitch"
     },
     "country_coder_host": "https://countrycoder.mapcomplete.org",
+    "community_index_host": "https://data.mapcomplete.org/community-index/",
     "nominatimEndpoint": "https://geocoding.geofabrik.de/b75350b1cfc34962ac49824fe5b582dc/",
     "#photonEndpoint": "`api/` or `reverse/` will be appended by the code",
     "photonEndpoint": "https://photon.komoot.io/",
@@ -119,6 +120,7 @@
     "download:editor-layer-index": "vite-node scripts/downloadEli.ts",
     "download:stats": "vite-node scripts/GenerateSeries.ts",
     "download:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/",
+    "download:community-index": "vite-node scripts/downloadCommunityIndex.ts ",
     "weblate:add-upstream": "git remote add weblate https://translate.mapcomplete.org/git/mapcomplete/core/ ; git remote update weblate",
     "weblate:fix": "npm run weblate:add-upstream && git merge weblate/master && git rebase origin/master && git push origin master",
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:themes",

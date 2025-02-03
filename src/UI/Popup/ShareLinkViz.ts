@@ -1,11 +1,12 @@
 import { UIEventSource } from "../../Logic/UIEventSource"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import { SpecialVisualizationState, SpecialVisualizationSvelte } from "../SpecialVisualization"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import ShareButton from "../Base/ShareButton.svelte"
 
-export class ShareLinkViz implements SpecialVisualization {
+export class ShareLinkViz implements SpecialVisualizationSvelte {
     funcName = "share_link"
+    group = "default"
     docs = "Creates a link that (attempts to) open the native 'share'-screen"
     example =
         "{share_link()} to share the current page, {share_link(<some_url>)} to share the given url"

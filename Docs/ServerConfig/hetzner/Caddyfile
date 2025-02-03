@@ -46,6 +46,13 @@ single.mapcomplete.org {
 	}
 }
 
+app.mapcomplete.org {
+	root * app/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+	}
+}
 
 velopark.mapcomplete.org {
 	root * single_theme_builds/velopark/
@@ -57,6 +64,15 @@ velopark.mapcomplete.org {
 
 countrycoder.mapcomplete.org {
 	root * tiles/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+		+Access-Control-Allow-Origin *
+	}
+}
+
+data.mapcomplete.org {
+	root * data/
 	file_server
 	header {
 		+Permissions-Policy "interest-cohort=()"

@@ -1,7 +1,6 @@
 import { UIEventSource } from "../../Logic/UIEventSource"
 import Translations from "../i18n/Translations"
 import { Translation } from "../i18n/Translation"
-import BaseUIElement from "../BaseUIElement"
 import ChangeLocationAction from "../../Logic/Osm/Actions/ChangeLocationAction"
 import MoveConfig from "../../Models/ThemeConfig/MoveConfig"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
@@ -9,9 +8,6 @@ import { And } from "../../Logic/Tags/And"
 import { Tag } from "../../Logic/Tags/Tag"
 import { SpecialVisualizationState } from "../SpecialVisualization"
 import { Feature, Point } from "geojson"
-import SvelteUIElement from "../Base/SvelteUIElement"
-import Relocation from "../../assets/svg/Relocation.svelte"
-import Location from "../../assets/svg/Location.svelte"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { WayId } from "../../Models/OsmFeature"
 
@@ -104,7 +100,7 @@ export class MoveWizardState {
         for (const layerId of matchingPreset) {
             const snapOntoLayer = this._state.theme.getLayer(layerId)
             const text = <Translation>(
-                t.reasons.reasonSnapTo.PartialSubsTr("name", snapOntoLayer.snapName)
+                t.reasons.reasonSnapTo.PartialSubsTr("name", snapOntoLayer?.snapName)
             )
             reasons.push({
                 text,
@@ -117,7 +113,7 @@ export class MoveWizardState {
                 startZoom: 19,
                 minZoom: 16,
                 eraseAddressFields: false,
-                snapTo: [snapOntoLayer.id],
+                snapTo: [snapOntoLayer?.id],
                 maxSnapDistance: 5,
             })
         }

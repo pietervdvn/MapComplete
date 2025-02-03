@@ -25,7 +25,7 @@ export default class AllImageProviders {
         "Category:",
     ])
 
-    private static ImageAttributionSource: ImageProvider[] = [
+    private static imageAttributionSources: ImageProvider[] = [
         Imgur.singleton,
         Mapillary.singleton,
         WikidataImageProvider.singleton,
@@ -34,10 +34,10 @@ export default class AllImageProviders {
         AllImageProviders.genericImageProvider,
     ]
     public static apiUrls: string[] = [].concat(
-        ...AllImageProviders.ImageAttributionSource.map((src) => src.apiUrls())
+        ...AllImageProviders.imageAttributionSources.map((src) => src.apiUrls())
     )
     public static defaultKeys = [].concat(
-        AllImageProviders.ImageAttributionSource.map((provider) => provider.defaultKeyPrefixes)
+        AllImageProviders.imageAttributionSources.map((provider) => provider.defaultKeyPrefixes)
     )
     private static providersByName = {
         imgur: Imgur.singleton,
@@ -52,7 +52,7 @@ export default class AllImageProviders {
     }
 
     public static async selectBestProvider(key: string, value: string): Promise<ImageProvider> {
-        for (const imageProvider of AllImageProviders.ImageAttributionSource) {
+        for (const imageProvider of AllImageProviders.imageAttributionSources) {
             try {
                 const extracted = await Promise.all(await imageProvider.ExtractUrls(key, value))
                 if (extracted?.length > 0) {
@@ -73,6 +73,8 @@ export default class AllImageProviders {
      * Will simply count all image tags
      *
      * AllImageProviders.estimateNumberOfImages({image:"abc", "mapillary": "123", "panoramax:0": "xyz"}) // => 3
+     * AllImageProviders.estimateNumberOfImages({wikidata:"Q123", "wikipedia": "nl:xyz"}) // => 0
+     *
      *
      */
     public static estimateNumberOfImages(
@@ -81,12 +83,11 @@ export default class AllImageProviders {
     ): number {
         let count = 0
 
-        const allPrefixes = Utils.Dedup(
-            prefixes ??
-                [].concat(
-                    ...AllImageProviders.ImageAttributionSource.map((s) => s.defaultKeyPrefixes)
-                )
-        )
+        const sources = [Imgur.singleton,
+            Mapillary.singleton,
+            Panoramax.singleton,
+            AllImageProviders.genericImageProvider]
+        const allPrefixes = Utils.Dedup(prefixes ?? [].concat(...sources.map(s => s.defaultKeyPrefixes)))
         for (const prefix of allPrefixes) {
             for (const k in tags) {
                 if (k === prefix || k.startsWith(prefix + ":")) {
@@ -116,7 +117,7 @@ export default class AllImageProviders {
 
         const source = new UIEventSource([])
         const allSources: Store<ProvidedImage[]>[] = []
-        for (const imageProvider of AllImageProviders.ImageAttributionSource) {
+        for (const imageProvider of AllImageProviders.imageAttributionSources) {
             /*
                 By default, 'GetRelevantUrls' uses the defaultKeyPrefixes.
                 However, we override them if a custom image tag is set, e.g. 'image:menu'

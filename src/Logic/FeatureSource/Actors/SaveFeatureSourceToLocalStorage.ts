@@ -13,6 +13,7 @@ class SingleTileSaver {
     private readonly _registeredIds = new Set<string>()
     private readonly _featureProperties: FeaturePropertiesStore
     private readonly _isDirty = new UIEventSource(false)
+
     constructor(
         storage: UIEventSource<Feature[]> & { flush: () => void },
         featureProperties: FeaturePropertiesStore
@@ -62,6 +63,7 @@ class SingleTileSaver {
 export default class SaveFeatureSourceToLocalStorage {
     public readonly storage: TileLocalStorage<Feature[]>
     private readonly zoomlevel: number
+
     constructor(
         backend: string,
         layername: string,
@@ -75,8 +77,25 @@ export default class SaveFeatureSourceToLocalStorage {
         this.storage = storage
         const singleTileSavers: Map<number, SingleTileSaver> = new Map<number, SingleTileSaver>()
         features.features.addCallbackAndRunD((features) => {
-            const sliced = GeoOperations.slice(zoomlevel, features)
-
+            if (features.some(f => {
+                let totalPoints = 0
+                if (f.geometry.type === "MultiPolygon") {
+                    totalPoints = f.geometry.coordinates.map(rings => rings.map(ring => ring.length).reduce((a, b) => a + b)).reduce((a, b) => a + b)
+                } else if (f.geometry.type === "Polygon" || f.geometry.type === "MultiLineString") {
+                    totalPoints = f.geometry.coordinates.map(ring => ring.length).reduce((a, b) => a + b)
+                } else if (f.geometry.type === "LineString") {
+                    totalPoints = f.geometry.coordinates.length
+                }
+                if (totalPoints > 1000) {
+                    console.warn(`Not caching tiles, detected a big object (${totalPoints} points for ${f.properties.id})`)
+                    return true
+                }
+                return false
+            })) {
+                // Has big objects
+                return
+            }
+            const sliced = GeoOperations.spreadIntoBboxes(features, zoomlevel)
             sliced.forEach((features, tileIndex) => {
                 let tileSaver = singleTileSavers.get(tileIndex)
                 if (tileSaver === undefined) {

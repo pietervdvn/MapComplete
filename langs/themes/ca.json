@@ -700,10 +700,6 @@
     "lighthouses": {
         "title": "Fars"
     },
-    "maproulette": {
-        "description": "Tema que mostra les tasques de MapRoulette, que us permet cercar-les, filtrar-les i solucionar-les.",
-        "title": "Tasques de MapRoulette"
-    },
     "maps": {
         "description": "En aquest mapa podeu trobar tots els mapes que OpenStreetMap coneix, normalment un mapa gran en un tauler informatiu que mostra la zona, la ciutat o la regió, p. un mapa turístic al dors d'una tanca publicitària, un mapa d'una reserva natural, un mapa de les xarxes ciclistes de la regió, ...) <br/><br/>Si falta un mapa, podeu mapejar aquest mapa fàcilment a OpenStreetMap.",
         "shortDescription": "Aquest tema mostra tots els mapes (turístics) que OpenStreetMap coneix",

@@ -10,10 +10,47 @@
     ]
   },
   {
+    "path": "kindergarten.svg",
+    "license": "CC-BY-4.0",
+    "authors": [
+      "Diego Naive",
+      "VideoPlasty",
+      "Pietervdvn"
+    ],
+    "sources": [
+      "https://thenounproject.com/icon/child-care-332981/",
+      "https://commons.wikimedia.org/wiki/File:Blackboard_Flat_Icon_Vector.svg"
+    ]
+  },
+  {
     "path": "school.svg",
     "license": "CC0-1.0",
     "authors": [
       "Temaki"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki",
+      "https://ideditor.github.io/temaki/docs/"
+    ]
+  },
+  {
+    "path": "school_academic.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Temaki",
+      "Pietervdvn"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki",
+      "https://ideditor.github.io/temaki/docs/"
+    ]
+  },
+  {
+    "path": "school_primary.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Temaki",
+      "Pietervdvn"
     ],
     "sources": [
       "https://github.com/ideditor/temaki",

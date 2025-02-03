@@ -1,4 +1,4 @@
-import GeocodingProvider, { SearchResult, GeocodingOptions } from "./GeocodingProvider"
+import GeocodingProvider, { GeocodingOptions, SearchResult } from "./GeocodingProvider"
 import ThemeViewState from "../../Models/ThemeViewState"
 import { Utils } from "../../Utils"
 import { Feature } from "geojson"
@@ -20,7 +20,7 @@ type IntermediateResult = {
 export default class LocalElementSearch implements GeocodingProvider {
     private readonly _state: ThemeViewState
     private readonly _limit: number
-
+    public readonly name = "LocalElementSearch"
     constructor(state: ThemeViewState, limit: number) {
         this._state = state
         this._limit = limit

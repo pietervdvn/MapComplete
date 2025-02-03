@@ -61,12 +61,6 @@
       ]
     }
   },
-  "calculatedTags": [
-    "_closest_3_street_names=closestn(feat)('named_streets',3, 'name').map(f => f.feat.properties.name)",
-    "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
-    "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
-    "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"
-  ],
   "minzoom": 18,
   "title": {
     "render": {
@@ -156,7 +150,49 @@
   ],
   "tagRenderings": [
     {
+      "id": "address_joined",
+      "labels": [
+        "address"
+      ],
+      "render": {
+        "special": {
+          "type": "group",
+          "header": "header",
+          "labels": "street;housenumber;unit"
+        }
+      }
+    },
+    {
+      "id": "header",
+      "labels": [
+        "address",
+        "hidden"
+      ],
+      "render": {
+        "en": "{addr:street} <b>{addr:housenumber}</b> {addr:unit}"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "addr:street=",
+              "addr:unit=",
+              "addr:housenumber="
+            ]
+          },
+          "then": {
+            "en": "No address is known",
+            "nl": "Geen adresgegevens bekend"
+          }
+        }
+      ]
+    },
+    {
       "id": "housenumber",
+      "labels": [
+        "address",
+        "hidden"
+      ],
       "render": {
         "en": "The house number is <b>{addr:housenumber}</b>",
         "nl": "Het huisnummer is <b>{addr:housenumber}</b>",
@@ -250,6 +286,10 @@
     },
     {
       "id": "street",
+      "labels": [
+        "address",
+        "hidden"
+      ],
       "render": {
         "en": "This address is in street <b>{addr:street}</b>",
         "de": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>",
@@ -293,31 +333,45 @@
         "zh_Hant": "地址所在的道路是？",
         "uk": "На якій вулиці знаходиться ця адреса?"
       },
+      "questionHint": {
+        "en": "Do not include the house number"
+      },
       "freeform": {
+        "inline": false,
         "key": "addr:street"
       },
-      "mappings": [
-        {
-          "if": "addr:street:={_closest_street:0:name}",
-          "then": "Located in <b>{_closest_street:0:name}</b>",
-          "hideInAnswer": "_closest_street:0:name="
-        },
-        {
-          "if": "addr:street:={_closest_street:1:name}",
-          "then": "Located in <b>{_closest_street:1:name}</b>",
-          "hideInAnswer": "_closest_street:1:name="
-        },
-        {
-          "if": "addr:street:={_closest_street:2:name}",
-          "then": "Located in <b>{_closest_street:2:name}</b>",
-          "hideInAnswer": "_closest_street:2:name="
-        }
-      ],
       "condition": {
         "and": [
           "nohousenumber!~yes"
         ]
       }
+    },
+    {
+      "id": "unit",
+      "labels": [
+        "address",
+        "hidden"
+      ],
+      "question": {
+        "en": "What is the unit number or letter?",
+        "nl": "Wat is het busnummer?"
+      },
+      "render": {
+        "en": "The unit number is <b>{addr:unit}</b>",
+        "nl": "De bus is <b>{addr:unit}</b>"
+      },
+      "freeform": {
+        "key": "addr:unit"
+      },
+      "mappings": [
+        {
+          "if": "addr:unit=",
+          "then": {
+            "en": "No unit number",
+            "nl": "Geen apart busnummer of letter"
+          }
+        }
+      ]
     },
     {
       "id": "fixme",

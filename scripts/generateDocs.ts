@@ -136,6 +136,11 @@ export class GenerateDocs extends Script {
     async main(args: string[]) {
         console.log("Starting documentation generation...")
         ScriptUtils.fixUtils()
+
+        this.WriteMarkdownFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), [
+            "src/UI/SpecialVisualizations.ts"
+        ])
+
         if (!existsSync("./Docs/Themes")) {
             mkdirSync("./Docs/Themes")
         }
@@ -166,13 +171,12 @@ export class GenerateDocs extends Script {
             ScriptUtils.erasableLog("Written docs for theme", theme.id)
         })
 
-        this.WriteMarkdownFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), [
-            "src/UI/SpecialVisualizations.ts",
-        ])
+
         this.WriteMarkdownFile(
             "./Docs/CalculatedTags.md",
             ["# Metatags", SimpleMetaTaggers.HelpText(), ExtraFunctions.HelpText()].join("\n"),
-            ["src/Logic/SimpleMetaTagger.ts", "src/Logic/ExtraFunctions.ts"]
+            ["src/Logic/SimpleMetaTagger.ts", "src/Logic/ExtraFunctions.ts"],
+            { noTableOfContents: false }
         )
         this.WriteMarkdownFile("./Docs/SpecialInputElements.md", Validators.HelpText(), [
             "src/UI/InputElement/Validators.ts",
@@ -212,7 +216,7 @@ export class GenerateDocs extends Script {
         markdown: string,
         autogenSource: string[],
         options?: {
-            noTableOfContents: boolean
+            noTableOfContents?: boolean
         }
     ): void {
         for (const source of autogenSource) {

@@ -7,7 +7,7 @@ import OsmObjectDownloader from "../Osm/OsmObjectDownloader"
 export default class OpenStreetMapIdSearch implements GeocodingProvider {
     private static readonly regex =
         /((https?:\/\/)?(www.)?(osm|openstreetmap).org\/)?(n|node|w|way|r|relation)[/ ]?([0-9]+)/
-
+    public readonly name = "OpenStreetMapId"
     private static readonly types: Readonly<Record<string, "node" | "way" | "relation">> = {
         n: "node",
         w: "way",

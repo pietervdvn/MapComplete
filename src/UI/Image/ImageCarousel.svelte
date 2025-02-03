@@ -3,7 +3,6 @@
   import type { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import DeletableImage from "./DeletableImage.svelte"
-  import Loading from "../Base/Loading.svelte"
   import LoadingPlaceholder from "../Base/LoadingPlaceholder.svelte"
 
   export let images: Store<ProvidedImage[]>

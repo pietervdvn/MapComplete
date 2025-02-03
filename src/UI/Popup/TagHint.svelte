@@ -11,19 +11,15 @@
    * Depending on the options, it'll link through to the wiki or might be completely hidden
    */
   export let tags: TagsFilter
-  export let state: SpecialVisualizationState
-
   export let currentProperties: Record<string, string | any> = {}
   /**
    * If given, this function will be called to embed the given tags hint into this translation
    */
   export let embedIn: ((string: string) => Translation) | undefined = undefined
-  const userDetails = state?.osmConnection?.userDetails
   let tagsExplanation = ""
   $: tagsExplanation = tags?.asHumanString(true, false, currentProperties)
 </script>
 
-{#if !userDetails}
   <div class="break-words" style="word-break: break-word">
     {#if tags === undefined}
       <slot name="no-tags"><Tr cls="subtle" t={Translations.t.general.noTagsSelected} /></slot>
@@ -33,4 +29,3 @@
       <Tr t={embedIn(tagsExplanation)} />
     {/if}
   </div>
-{/if}

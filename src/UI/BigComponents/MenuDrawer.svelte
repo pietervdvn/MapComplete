@@ -21,7 +21,6 @@
   import OpenIdEditor from "./OpenIdEditor.svelte"
   import OpenJosm from "../Base/OpenJosm.svelte"
   import MapillaryLink from "./MapillaryLink.svelte"
-  import Github from "../../assets/svg/Github.svelte"
   import Bug from "../../assets/svg/Bug.svelte"
   import CopyrightPanel from "./CopyrightPanel.svelte"
   import CopyrightAllIcons from "./CopyrightAllIcons.svelte"

@@ -2,10 +2,7 @@
   import { Translation } from "../../i18n/Translation"
   import SpecialVisualizations from "../../SpecialVisualizations"
   import Locale from "../../i18n/Locale"
-  import type {
-    RenderingSpecification,
-    SpecialVisualizationState,
-  } from "../../SpecialVisualization"
+  import type { RenderingSpecification, SpecialVisualizationState } from "../../SpecialVisualization"
   import { Utils } from "../../../Utils.js"
   import type { Feature } from "geojson"
   import { UIEventSource } from "../../../Logic/UIEventSource.js"
@@ -49,13 +46,9 @@
   function createVisualisation(specpart: Exclude<RenderingSpecification, string>): BaseUIElement {
     {
       try {
-        const uiEl = specpart.func
+        return specpart.func
           .constr(state, tags, specpart.args, feature, layer)
           ?.SetClass(specpart.style)
-        if (uiEl === undefined) {
-          console.error("Invalid special translation")
-        }
-        return uiEl
       } catch (e) {
         console.error(
           "Could not construct a special visualisation with specification",

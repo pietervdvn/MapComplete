@@ -1,13 +1,12 @@
 import * as fs from "fs"
-import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
 import * as readline from "readline"
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../Utils"
 import Script from "./Script"
-import { BBox } from "../Logic/BBox"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { Tiles } from "../Models/TileRange"
 import { Feature } from "geojson"
+import { features } from "monaco-editor/esm/metadata"
 
 /**
  * This script slices a big newline-delimeted geojson file into tiled geojson
@@ -96,34 +95,15 @@ class Slice extends Script {
         features: Feature[],
         tileIndex: number,
         outputDirectory: string,
-        doSlice: boolean,
+        doClip: boolean,
         handled: number,
         maxNumberOfTiles: number
-    ) {
+    ): boolean {
+        if (doClip) {
+            features = GeoOperations.clipAllInBox(features, tileIndex)
+        }
         const [z, x, y] = Tiles.tile_from_index(tileIndex)
         const path = `${outputDirectory}/tile_${z}_${x}_${y}.geojson`
-        const box = BBox.fromTileIndex(tileIndex)
-        if (doSlice) {
-            features = Utils.NoNull(
-                features.map((f) => {
-                    const bbox = box.asGeoJson({})
-                    const properties = {
-                        ...f.properties,
-                        id: (f.properties?.id ?? "") + "_" + z + "_" + x + "_" + y,
-                    }
-
-                    if (GeoOperations.completelyWithin(bbox, <any>f)) {
-                        bbox.properties = properties
-                        return bbox
-                    }
-                    const intersection = GeoOperations.intersect(f, box.asGeoJson({}))
-                    if (intersection) {
-                        intersection.properties = properties
-                    }
-                    return intersection
-                })
-            )
-        }
         features.forEach((f) => {
             delete f.bbox
         })
@@ -177,7 +157,7 @@ class Slice extends Script {
         }
         console.log("Using directory ", outputDirectory)
 
-        let allFeatures: any[]
+        let allFeatures: Feature[]
         if (inputFile.endsWith(".geojson")) {
             console.log("Detected geojson")
             allFeatures = await this.readFeaturesFromGeoJson(inputFile)
@@ -202,18 +182,16 @@ class Slice extends Script {
         }
         const maxNumberOfTiles = Math.pow(2, zoomlevel) * Math.pow(2, zoomlevel)
         let handled = 0
-        StaticFeatureSource.fromGeojson(allFeatures).features.addCallbackAndRun((feats) => {
-            GeoOperations.slice(zoomlevel, feats).forEach((tileData, tileIndex) => {
-                handled = handled + 1
-                this.handleTileData(
-                    tileData,
-                    tileIndex,
-                    outputDirectory,
-                    doSlice,
-                    handled,
-                    maxNumberOfTiles
-                )
-            })
+        GeoOperations.slice(zoomlevel, features).forEach((tileData, tileIndex) => {
+            handled = handled + 1
+            this.handleTileData(
+                tileData,
+                tileIndex,
+                outputDirectory,
+                doSlice,
+                handled,
+                maxNumberOfTiles
+            )
         })
     }
 }

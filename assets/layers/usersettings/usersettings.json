@@ -1465,12 +1465,56 @@
       "#force-save-button": "yes"
     },
     {
+      "id": "gps_accordeon",
+      "render": {
+        "special": {
+          "type": "group",
+          "header": "debug-gps-title",
+          "labels": "debug-gps"
+        }
+      }
+    },
+    {
+      "id": "debug-gps-title",
+      "labels": [
+        "hidden"
+      ],
+      "render": {
+        "en": "GPS and gyroscope data"
+      }
+    },
+    {
       "id": "debug-gps",
+      "labels": [
+        "hidden"
+      ],
       "condition": "mapcomplete-show_debug=yes",
       "render": "{gps_all_tags()}"
     },
     {
+      "id": "debug_accordeon",
+      "render": {
+        "special": {
+          "type": "group",
+          "header": "debug_accordeon_title",
+          "labels": "debug"
+        }
+      }
+    },
+    {
+      "id": "debug_accordeon_title",
+      "labels": [
+        "hidden"
+      ],
+      "render": {
+        "en": "Debug information"
+      }
+    },
+    {
       "id": "debug",
+      "labels": [
+        "hidden"
+      ],
       "condition": "mapcomplete-show_debug=yes",
       "render": "{all_tags()}"
     }

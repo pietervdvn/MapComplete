@@ -885,10 +885,6 @@
         "shortDescription": "MapComplete를 통해 이루어진 변경 사항을 표시합니다",
         "title": "MapComplete로 이루어진 변경 사항"
     },
-    "maproulette": {
-        "description": "MapRoulette 작업을 표시하는 테마로, 작업을 검색, 필터링 허용될 수 있습니다.",
-        "title": "MapRoulette 작업"
-    },
     "maps": {
         "description": "이 지도에서는 OpenStreetMap에서 확인 가능한 모든 지도를 찾을수 있습니다. 일반적으로 장소, 도시 또는 지역을 보여주는 정보 게시판의 대형 지도(예: 관광지의 안내판 뒷면에 있는 지도, 자연 보호구역 지도, 지역 자전거 네트워크 지도 등)가 포함됩니다. <br/><br/>만약 누락된 지도가 있다면 OpenStreetMap에서 손쉽게 추가할 수 있습니다.",
         "shortDescription": "이 테마는 OpenStreetMap에 등록된 모든 (관광) 지도를 표시합니다",

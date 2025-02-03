@@ -1,6 +1,6 @@
 import { BBox } from "./BBox"
 import * as turf from "@turf/turf"
-import { AllGeoJSON, booleanWithin, Coord } from "@turf/turf"
+import { AllGeoJSON, booleanWithin, Coord, Polygon } from "@turf/turf"
 import {
     Feature,
     FeatureCollection,
@@ -9,13 +9,13 @@ import {
     MultiLineString,
     MultiPolygon,
     Point,
-    Polygon,
-    Position,
+    Position
 } from "geojson"
 import { Tiles } from "../Models/TileRange"
 import { Utils } from "../Utils"
 import { NearestPointOnLine } from "@turf/nearest-point-on-line"
-;("use strict")
+
+("use strict")
 
 export class GeoOperations {
     private static readonly _earthRadius = 6378137
@@ -29,7 +29,7 @@ export class GeoOperations {
         "behind",
         "sharp_left",
         "left",
-        "slight_left",
+        "slight_left"
     ] as const
     private static reverseBearing = {
         N: 0,
@@ -47,7 +47,7 @@ export class GeoOperations {
         W: 270,
         WNW: 292.5,
         NW: 315,
-        NNW: 337.5,
+        NNW: 337.5
     }
 
     /**
@@ -61,8 +61,8 @@ export class GeoOperations {
     }
 
     public static intersect(
-        f0: Feature<Polygon | MultiPolygon>,
-        f1: Feature<Polygon | MultiPolygon>
+        f0: Readonly<Feature<Polygon | MultiPolygon>>,
+        f1: Readonly<Feature<Polygon | MultiPolygon>>
     ): Feature<Polygon | MultiPolygon> | null {
         return turf.intersect(f0, f1)
     }
@@ -309,7 +309,7 @@ export class GeoOperations {
         bufferSizeInMeter: number
     ): Feature<Polygon | MultiPolygon> | FeatureCollection<Polygon | MultiPolygon> {
         return turf.buffer(feature, bufferSizeInMeter / 1000, {
-            units: "kilometers",
+            units: "kilometers"
         })
     }
 
@@ -325,9 +325,9 @@ export class GeoOperations {
                     [lon0, lat],
                     [lon0, lat0],
                     [lon, lat0],
-                    [lon, lat],
-                ],
-            },
+                    [lon, lat]
+                ]
+            }
         }
     }
 
@@ -368,9 +368,9 @@ export class GeoOperations {
                 type: "Feature",
                 geometry: {
                     type: "LineString",
-                    coordinates: way.geometry.coordinates[0],
+                    coordinates: way.geometry.coordinates[0]
                 },
-                properties: way.properties,
+                properties: way.properties
             }
         }
         if (way.geometry.type === "MultiPolygon") {
@@ -378,9 +378,9 @@ export class GeoOperations {
                 type: "Feature",
                 geometry: {
                     type: "MultiLineString",
-                    coordinates: way.geometry.coordinates[0],
+                    coordinates: way.geometry.coordinates[0]
                 },
-                properties: way.properties,
+                properties: way.properties
             }
         }
         if (way.geometry.type === "LineString") {
@@ -512,6 +512,8 @@ export class GeoOperations {
     /**
      * Given a list of features, will construct a map of slippy map tile-indices.
      * Features of which the BBOX overlaps with the corresponding slippy map tile are added to the corresponding array
+     *
+     * Also @see clipAllInBox
      * @param features
      * @param zoomlevel
      */
@@ -533,6 +535,33 @@ export class GeoOperations {
         }
 
         return perBbox
+    }
+
+    /**
+     * Given a list of features, returns a new list of features so that the features are clipped into the given tile-index.
+     * Note: IDs are rewritten
+     * Also @see spreadIntoBBoxes
+     */
+    public static clipAllInBox(features: ReadonlyArray<Readonly<Feature>>, tileIndex: number): Feature[] {
+        const bbox = Tiles.asGeojson(tileIndex)
+        const newFeatures: Feature[] = []
+        for (const f of features) {
+            const intersectionParts = GeoOperations.clipWith(f, bbox)
+            for (let i = 0; i < intersectionParts.length; i++) {
+                const intersectionPart = intersectionParts[i]
+                let id = (f.properties?.id ?? "") + "_" + tileIndex
+                if (i > 0) {
+                    id += "_part_" + i
+                }
+                const properties = {
+                    ...f.properties,
+                    id
+                }
+                intersectionPart.properties = properties
+                newFeatures.push(intersectionPart)
+            }
+        }
+        return Utils.NoNull(newFeatures)
     }
 
     public static toGpx(
@@ -558,8 +587,8 @@ export class GeoOperations {
                         properties: {},
                         geometry: {
                             type: "Point",
-                            coordinates: p,
-                        },
+                            coordinates: p
+                        }
                     }
             )
         }
@@ -575,7 +604,7 @@ export class GeoOperations {
             trackPoints.push(trkpt)
         }
         const header =
-            '<gpx version="1.1" creator="mapcomplete.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
+            "<gpx version=\"1.1\" creator=\"mapcomplete.org\" xmlns=\"http://www.topografix.com/GPX/1/1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">"
         return (
             header +
             "\n<name>" +
@@ -614,7 +643,7 @@ export class GeoOperations {
             trackPoints.push(trkpt)
         }
         const header =
-            '<gpx version="1.1" creator="mapcomplete.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
+            "<gpx version=\"1.1\" creator=\"mapcomplete.org\" xmlns=\"http://www.topografix.com/GPX/1/1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">"
         return (
             header +
             "\n<name>" +
@@ -640,7 +669,7 @@ export class GeoOperations {
 
         const copy = {
             ...feature,
-            geometry: { ...feature.geometry },
+            geometry: { ...feature.geometry }
         }
         let coordinates: [number, number][]
         if (feature.geometry.type === "LineString") {
@@ -698,8 +727,8 @@ export class GeoOperations {
                 type: "Feature",
                 geometry: {
                     type: "LineString",
-                    coordinates: [a, b],
-                },
+                    coordinates: [a, b]
+                }
             },
             distanceMeter,
             { units: "meters" }
@@ -736,17 +765,26 @@ export class GeoOperations {
      * GeoOperations.completelyWithin(park, pond) // => false
      */
     static completelyWithin(
-        feature: Feature,
-        possiblyEnclosingFeature: Feature<Polygon | MultiPolygon>
+        feature: Readonly<Feature>,
+        possiblyEnclosingFeature: Readonly<Feature<Polygon | MultiPolygon>>
     ): boolean {
+        if (feature.geometry.type === "MultiPolygon") {
+            const polygons = feature.geometry.coordinates.map(coordinates =>
+                <Feature<Polygon>>{
+                    type: "Feature", geometry: {
+                        type: "Polygon", coordinates
+                    }
+                })
+            return !polygons.some(polygon => !booleanWithin(polygon, possiblyEnclosingFeature))
+        }
         return booleanWithin(feature, possiblyEnclosingFeature)
     }
 
     /**
      * Create an intersection between two features.
-     * One or multiple new feature is returned based on 'toSplit', which'll have a geometry that is completely withing boundary
+     * One or multiple new feature are returned based on 'toSplit', which'll have a geometry that is completely withing boundary
      */
-    public static clipWith(toSplit: Feature, boundary: Feature<Polygon>): Feature[] {
+    public static clipWith(toSplit: Readonly<Feature>, boundary: Readonly<Feature<Polygon>>): Feature[] {
         if (toSplit.geometry.type === "Point") {
             const p = <Feature<Point>>toSplit
             if (GeoOperations.inside(<[number, number]>p.geometry.coordinates, boundary)) {
@@ -757,9 +795,9 @@ export class GeoOperations {
         }
 
         if (toSplit.geometry.type === "LineString") {
-            const splitup = turf.lineSplit(<Feature<LineString>>toSplit, boundary)
-            const kept = []
-            for (const f of splitup.features) {
+            const splitup: Feature<LineString>[] = turf.lineSplit(<Feature<LineString>>toSplit, boundary).features
+            const kept: Feature[] = []
+            for (const f of splitup) {
                 if (!GeoOperations.inside(GeoOperations.centerpointCoordinates(f), boundary)) {
                     continue
                 }
@@ -787,7 +825,24 @@ export class GeoOperations {
             return kept
         }
         if (toSplit.geometry.type === "Polygon" || toSplit.geometry.type == "MultiPolygon") {
+
             const splitup = turf.intersect(<Feature<Polygon>>toSplit, boundary)
+            if (splitup === null) {
+                // No intersection found.
+                // Either: the boundary is contained fully in 'toSplit', 'toSplit' is contained fully in 'boundary' or they are unrelated at all
+                if (GeoOperations.completelyWithin(toSplit, boundary)) {
+                    return [toSplit]
+                }
+                if (GeoOperations.completelyWithin(boundary, <Feature<Polygon | MultiPolygon>>toSplit)) {
+                    return [{
+                        type: "Feature",
+                        properties: { ...toSplit.properties },
+                        geometry: boundary.geometry,
+                        bbox: boundary.bbox
+                    }]
+                }
+                return []
+            }
             splitup.properties = { ...toSplit.properties }
             return [splitup]
         }
@@ -865,32 +920,6 @@ export class GeoOperations {
     }
 
     /**
-     * Constructs all tiles where features overlap with and puts those features in them.
-     * Long features (e.g. lines or polygons) which overlap with multiple tiles are referenced in each tile they overlap with
-     * @param zoomlevel
-     * @param features
-     */
-    public static slice(zoomlevel: number, features: Feature[]): Map<number, Feature[]> {
-        const tiles = new Map<number, Feature[]>()
-
-        for (const feature of features) {
-            const bbox = BBox.get(feature)
-            Tiles.MapRange(Tiles.tileRangeFrom(bbox, zoomlevel), (x, y) => {
-                const i = Tiles.tile_index(zoomlevel, x, y)
-
-                let tiledata = tiles.get(i)
-                if (tiledata === undefined) {
-                    tiledata = []
-                    tiles.set(i, tiledata)
-                }
-                tiledata.push(feature)
-            })
-        }
-
-        return tiles
-    }
-
-    /**
      * Creates a linestring object based on the outer ring of the given polygon
      *
      * Returns the argument if not a polygon
@@ -905,8 +934,8 @@ export class GeoOperations {
             properties: p.properties,
             geometry: {
                 type: "LineString",
-                coordinates: p.geometry.coordinates[0],
-            },
+                coordinates: p.geometry.coordinates[0]
+            }
         }
     }
 
@@ -934,7 +963,7 @@ export class GeoOperations {
                             console.debug("SPlitting way", feature.properties.id)
                             result.push({
                                 ...feature,
-                                geometry: { ...feature.geometry, coordinates: coors.slice(i + 1) },
+                                geometry: { ...feature.geometry, coordinates: coors.slice(i + 1) }
                             })
                             coors = coors.slice(0, i + 1)
                             break
@@ -943,7 +972,7 @@ export class GeoOperations {
                 }
                 result.push({
                     ...feature,
-                    geometry: { ...feature.geometry, coordinates: coors },
+                    geometry: { ...feature.geometry, coordinates: coors }
                 })
             }
         }
@@ -1117,8 +1146,8 @@ export class GeoOperations {
                 properties: multiLineStringFeature.properties,
                 geometry: {
                     type: "LineString",
-                    coordinates: coors[0],
-                },
+                    coordinates: coors[0]
+                }
             }
         }
         return {
@@ -1126,8 +1155,8 @@ export class GeoOperations {
             properties: multiLineStringFeature.properties,
             geometry: {
                 type: "MultiLineString",
-                coordinates: coors,
-            },
+                coordinates: coors
+            }
         }
     }
 

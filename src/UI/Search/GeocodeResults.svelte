@@ -5,7 +5,6 @@
   import Translations from "../i18n/Translations"
   import { Store } from "../../Logic/UIEventSource"
   import SidebarUnit from "../Base/SidebarUnit.svelte"
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
   import Loading from "../Base/Loading.svelte"
   import { default as GeocodeResultSvelte } from "./GeocodeResult.svelte"
   import Tr from "../Base/Tr.svelte"

@@ -103,10 +103,6 @@
   "lineRendering": [],
   "tagRenderings": [
     {
-      "id": "details",
-      "render": "{maproulette_task()}"
-    },
-    {
       "id": "status",
       "mappings": [
         {

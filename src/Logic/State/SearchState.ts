@@ -60,7 +60,7 @@ export default class SearchState {
                 return new ImmutableStore(true)
             }
             return Stores.concat(suggestions).map((suggestions) =>
-                suggestions.some((list) => list === undefined)
+                suggestions.some((list, i) => list === undefined)
             )
         })
         this.suggestions = suggestionsList.bindD((suggestions) =>
