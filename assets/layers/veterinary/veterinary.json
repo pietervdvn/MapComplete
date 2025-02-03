@@ -10,7 +10,8 @@
     "ca": "Veterinari",
     "cs": "veterinář",
     "pl": "weterynaryjny",
-    "ru": "ветеринария"
+    "ru": "ветеринария",
+    "uk": "ветеринарія"
   },
   "description": "A layer showing veterinarians",
   "source": {

@@ -61,7 +61,8 @@
           "pl": "Restauracje przyjazne psom",
           "it": "Ristoranti che accettano i cani",
           "ru": "Заведения, где можно поесть с собаками",
-          "ko": "반려견 친화적 식당"
+          "ko": "반려견 친화적 식당",
+          "uk": "Заклади харчування, дружні до собак"
         },
         "pointRendering": [
           {
@@ -115,7 +116,8 @@
           "zh_Hant": "寵物友善商家",
           "pl": "Sklepy przyjazne psom",
           "it": "Negozi che accettano i cani",
-          "ko": "반려견 친화적 상점"
+          "ko": "반려견 친화적 상점",
+          "uk": "Магазини, дружні до собак"
         },
         "pointRendering": [
           {
@@ -156,7 +158,8 @@
         "name=": {
           "en": "Waste baskets with excrement bag dispensers",
           "nl": "Vuilnisbakken met verdelers voor hondenpoepzakjes",
-          "de": "Mülleimer mit Spender für Kotbeutel"
+          "de": "Mülleimer mit Spender für Kotbeutel",
+          "uk": "Кошики для сміття з дозаторами для пакетів для екскрементів"
         },
         "presets=": [],
         "filter=": [],

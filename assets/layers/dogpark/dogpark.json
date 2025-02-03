@@ -8,7 +8,8 @@
     "nl": "hondenweides",
     "ca": "parcs de gossos",
     "cs": "psí parky",
-    "ru": "парки для собак"
+    "ru": "парки для собак",
+    "uk": "собачі парки"
   },
   "description": "A layer showing dogparks, which are areas where dog are allowed to run without a leash",
   "source": {

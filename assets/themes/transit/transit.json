@@ -30,7 +30,8 @@
     "cs": "Naplánujte si cestu pomocí systému veřejné dopravy.",
     "zh_Hant": "藉由大眾運輸系統來計畫你的旅程。",
     "pl": "Zaplanuj swoją podróż korzystając z systemu transportu publicznego.",
-    "ko": "대중교통 시스템을 이용한 여행 계획 세우기."
+    "ko": "대중교통 시스템을 이용한 여행 계획 세우기.",
+    "uk": "Сплануйте свою подорож за допомогою системи громадського транспорту."
   },
   "icon": "./assets/layers/transit_stops/bus_stop.svg",
   "startZoom": 20,

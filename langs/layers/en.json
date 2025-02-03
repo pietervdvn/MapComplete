@@ -2264,6 +2264,17 @@
                 "question": "Is a fee charged here?",
                 "render": "A fee of {charge} should be paid for here"
             },
+            "group_only": {
+                "mappings": {
+                    "0": {
+                        "then": "This campsite is exclusively for groups"
+                    },
+                    "1": {
+                        "then": "This campsite is not exclusively for groups"
+                    }
+                },
+                "question": "Is this campsite exclusively for groups?"
+            },
             "name": {
                 "question": "What is the name of this campsite?",
                 "render": "The name of this campsite is {name}"

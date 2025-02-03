@@ -2,7 +2,8 @@
   "id": "dog_toilet",
   "name": {
     "en": "Dog toilets",
-    "de": "Hundetoiletten"
+    "de": "Hundetoiletten",
+    "uk": "Собачі туалети"
   },
   "description": {
     "en": "A dog toilet is a facility designated for dogs to urinate and excrete. This can be a designated, signposted patch of grass, a sand pit or a fenced area.",

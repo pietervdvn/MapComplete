@@ -2217,6 +2217,17 @@
                 "question": "Wird hier eine Gebühr erhoben?",
                 "render": "Hier wird eine Gebühr von {charge} erhoben"
             },
+            "group_only": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Zeltplatz ist ausschließlich für Gruppen"
+                    },
+                    "1": {
+                        "then": "Dieser Zeltplatz ist nicht ausschließlich für Gruppen"
+                    }
+                },
+                "question": "Ist dieser Zeltplatz ausschließlich für Gruppen?"
+            },
             "name": {
                 "question": "Wie heißt dieser Zeltplatz?",
                 "render": "Dieser Zeltplatz heißt {name}"
