@@ -307,6 +307,68 @@
       "multiAnswer": true
     },
     {
+      "id": "is_special_needs",
+      "question": {
+        "en": "Does this school target students with a special need?",
+        "nl": "Richt deze school zich op leerlingen met een speciale zorgbehoefte?",
+        "de": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf??",
+        "fr": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers?",
+        "ca": "Aquesta escola es dirigeix a estudiants amb necessitats especials?",
+        "cs": "Zaměřuje se tato škola na studenty se speciálními potřebami?",
+        "es": "¿Está esta escuela dirigida a alumnos con necesidades especiales?"
+      },
+      "questionHint": {
+        "en": "A special needs school has expertise and supports students with a (severe) diagnosis. In many countries, a certificate is needed to enroll.",
+        "nl": "Een buitengewone school is een school waar leerlingen met een attest op speciale zorg terecht kunnen."
+      },
+      "mappings": [
+        {
+          "if": "school:special_needs=only",
+          "then": {
+            "en": "This school is only for special need students; a certificate is needed to enroll",
+            "nl": "Deze school is enkel voor buitengewone leerlingen. Je hebt een attest nodig om hier school te mogen lopen."
+          }
+        },
+        {
+          "if": "school:special_needs=separated",
+          "then": {
+            "en": "This school has a separate section for special need students.",
+            "nl": "Deze school heeft een apart deel voor buitengewone leerlingen. "
+          }
+        },
+        {
+          "if": "school:special_needs=mixed",
+          "then": {
+            "en": "Students with special needs and non-special need students have classes together.",
+            "nl": "Buitengewone (geattesteerde) leerlingen en leerlingen zonder extra zorgnood zitten samen in de klas."
+          }
+        },
+        {
+          "if": "school:special_needs=limited",
+          "alsoShowIf": "school:special_needs=",
+          "then": {
+            "en": "This school offers limited, ad hoc support but has no significant expertise and is not considered a special needs school.",
+            "nl": "Deze school biedt ad hoc, beperkte extra zorg aan maar telt niet als buitengwoon onderwij.s"
+          }
+        },
+        {
+          "if": "school:special_needs=no",
+          "then": {
+            "en": "This school has no support for special need students.",
+            "nl": "Deze school heeft geen ondersteuning voor buitengewone leerlingen."
+          }
+        },
+        {
+          "if": "school:special_needs=yes",
+          "hideInAnswer": true,
+          "then": {
+            "en": "This school is for special need students.",
+            "nl": "Deze school is voor buitengewone leerlingen."
+          }
+        }
+      ]
+    },
+    {
       "id": "orientation_belgium",
       "question": {
         "en": "What does this school train pupils for?",
@@ -351,6 +413,60 @@
           "then": {
             "en": "Prepares for a job",
             "nl": "<b>Arbeidsfinaliteit</b>: een opleiding hier bereidt voor op de arbeidsmarkt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "orientation_belgium_special_needs",
+      "question": {
+        "en": "What does this school train pupils for?",
+        "nl": "Waar traint deze school de leerlingen voor?"
+      },
+      "condition": {
+        "and": [
+          {
+            "or": [
+              "school~i~(.+;)?upper_secondary(;.+)?",
+              "school~i~(.+;)?secondary(;.+)?"
+            ]
+          },
+          {
+            "or": [
+              "school:special_needs=yes",
+              "school:special_needs=only"
+            ]
+          }
+        ]
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "school:orientation=care_institution",
+          "then": {
+            "en": "<b>Training type 1</b>: trains elementary life skills to live in an institution. There is no intention to do a (paid) job after training",
+            "nl": "<b>Onderwijsvorm type 1</b>: leert elementaire vaardigheden om te functioneren in een zorginstelling"
+          }
+        },
+        {
+          "if": "school:orientation=sheltered_workshop",
+          "then": {
+            "en": "<b>Training type 2</b>: prepares to work in an environment with extra care and facilities such as a sheltered workshop",
+            "nl": "<b>Onderwijsvorm type 2</b>: leert vaardigheden om te werken in een een beschermde arbeidsomgeving zoals een maatwerkbedrijf"
+          }
+        },
+        {
+          "if": "school:orientation=vocational",
+          "then": {
+            "en": "<b>Training type 3</b>: prepares for a job and a (more-or-less) independent life in society",
+            "nl": "<b>Onderwijsvorm type 3</b>: leert vaardigheden voor een een job op de reguliere arbeidsmarkt en zelfstandig wonen"
+          }
+        },
+        {
+          "if": "school:orientation=professional",
+          "then": {
+            "en": "<b>Training type 4</b>: prepares for a job or continued education",
+            "nl": "<b>Onderwijsvorm type 4</b>: leert vaardigheden voor een een job op de reguliere arbeidsmarkt of voor voortgezette studies"
           }
         }
       ]
@@ -517,68 +633,6 @@
       "freeform": {
         "key": "pedagogy"
       }
-    },
-    {
-      "id": "is_special_needs",
-      "question": {
-        "en": "Does this school target students with a special need?",
-        "nl": "Richt deze school zich op leerlingen met een speciale zorgbehoefte?",
-        "de": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf??",
-        "fr": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers?",
-        "ca": "Aquesta escola es dirigeix a estudiants amb necessitats especials?",
-        "cs": "Zaměřuje se tato škola na studenty se speciálními potřebami?",
-        "es": "¿Está esta escuela dirigida a alumnos con necesidades especiales?"
-      },
-      "questionHint": {
-        "en": "A special needs school has expertise and supports students with a (severe) diagnosis. In many countries, a certificate is needed to enroll.",
-        "nl": "Een buitengewone school is een school waar leerlingen met een attest op speciale zorg terecht kunnen."
-      },
-      "mappings": [
-        {
-          "if": "school:special_needs=only",
-          "then": {
-            "en": "This school is only for special need students; a certificate is needed to enroll",
-            "nl": "Deze school is enkel voor buitengewone leerlingen. Je hebt een attest nodig om hier school te mogen lopen."
-          }
-        },
-        {
-          "if": "school:special_needs=separated",
-          "then": {
-            "en": "This school has a separate section for special need students.",
-            "nl": "Deze school heeft een apart deel voor buitengewone leerlingen. "
-          }
-        },
-        {
-          "if": "school:special_needs=mixed",
-          "then": {
-            "en": "Students with special needs and non-special need students have classes together.",
-            "nl": "Buitengewone (geattesteerde) leerlingen en leerlingen zonder extra zorgnood zitten samen in de klas."
-          }
-        },
-        {
-          "if": "school:special_needs=limited",
-          "alsoShowIf": "school:special_needs=",
-          "then": {
-            "en": "This school offers limited, ad hoc support but has no significant expertise and is not considered a special needs school.",
-            "nl": "Deze school biedt ad hoc, beperkte extra zorg aan maar telt niet als buitengwoon onderwij.s"
-          }
-        },
-        {
-          "if": "school:special_needs=no",
-          "then": {
-            "en": "This school has no support for special need students.",
-            "nl": "Deze school heeft geen ondersteuning voor buitengewone leerlingen."
-          }
-        },
-        {
-          "if": "school:special_needs=yes",
-          "hideInAnswer": true,
-          "then": {
-            "en": "This school is for special need students.",
-            "nl": "Deze school is voor buitengewone leerlingen."
-          }
-        }
-      ]
     },
     {
       "id": "special_needs_categories_be",
