@@ -6,7 +6,7 @@ builds.mapcomplete.org {
 	}
 }
 
-mapcomplete.org {
+mapcomplete.org, www.mapcomplete.org {
     root * public/master/
     	try_files {path}.html
     	file_server
