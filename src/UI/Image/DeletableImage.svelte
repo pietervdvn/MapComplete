@@ -18,6 +18,7 @@
   import { DownloadIcon } from "@rgossiaux/svelte-heroicons/solid"
   import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
   import { Tag } from "../../Logic/Tags/Tag"
+  import { MenuState } from "../../Models/MenuState"
 
   export let image: ProvidedImage
   export let state: SpecialVisualizationState
@@ -26,7 +27,7 @@
   onDestroy(
     showDeleteDialog.addCallbackAndRunD((shown) => {
       if (shown) {
-        state.previewedImage.set(undefined)
+        MenuState.previewedImage.set(undefined)
       }
     })
   )
@@ -53,18 +54,31 @@
       issue: reportReason.data,
       sequence_id: imageInfo.collection,
       reporter_comments: (reportFreeText.data ?? "") + "\n\n" + "Reported from " + url,
-      reporter_email,
+      reporter_email
     })
     reported.set(true)
   }
 
   async function unlink() {
-    await state?.changes?.applyAction(
-      new ChangeTagAction(tags.data.id, new Tag(image.key, ""), tags.data, {
-        changeType: "delete-image",
-        theme: state.theme.id,
-      })
-    )
+    console.log("Unlinking image", image.key, image.id)
+    if (image.id.length < 10) {
+      console.error("Suspicious value, not deleting ", image.id)
+      return
+    }
+    // The "key" is the provider key, but not necessarely the actual key that should be reset
+    // We iterate over all tags. *Every* tag for which the value contains the id will be deleted
+    const tgs = tags.data
+    for (const key in tgs) {
+      if (typeof tgs[key] !== "string" || tgs[key].indexOf(image.id) < 0) {
+        continue
+      }
+
+      await state?.changes?.applyAction(
+        new ChangeTagAction(tgs.id, new Tag(key, ""), tgs, {
+          changeType: "delete-image",
+          theme: state.theme.id
+        }))
+    }
   }
 
   const t = Translations.t.image.panoramax
@@ -161,7 +175,7 @@
 </div>
 
 <style>
-  :global(.carousel-max-height) {
-    max-height: var(--image-carousel-height);
-  }
+    :global(.carousel-max-height) {
+        max-height: var(--image-carousel-height);
+    }
 </style>

@@ -90,6 +90,9 @@ export default class AllImageProviders {
         const allPrefixes = Utils.Dedup(prefixes ?? [].concat(...sources.map(s => s.defaultKeyPrefixes)))
         for (const prefix of allPrefixes) {
             for (const k in tags) {
+                if (!tags[k]) {
+                    continue
+                }
                 if (k === prefix || k.startsWith(prefix + ":")) {
                     count++
                     continue
