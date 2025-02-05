@@ -10,6 +10,26 @@
     ]
   },
   {
+    "path": "no_backrest.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:ISO_7010_P018.svg"
+    ]
+  },
+  {
+    "path": "one_sided.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:ISO_7010_P018.svg"
+    ]
+  },
+  {
     "path": "two_sided.svg",
     "license": "CC0-1.0",
     "authors": [
