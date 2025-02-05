@@ -90,7 +90,7 @@ To test theme changes you locally make, the easiest way is:
 - After making changes to some layers and/or themes, run `npm run generate:layeroverview`. This will recompile the relevant themes.
 - You might need to refresh (F5) your browser window
 
-Note that `npm run strt` is equivalent to `npm run generate:layeroverview && npm run strt`
+Note that `npm run start` is equivalent to `npm run generate:layeroverview && npm run strt`
 
 Automatic deployment
 --------------------
