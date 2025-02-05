@@ -583,9 +583,14 @@ export class OsmConnection {
     }
 
     private async loginAndroidPolyfill() {
+        const key = "https://www.openstreetmap.orgoauth2_access_token"
+        if(localStorage.getItem(key)){
+            // We are probably already logged in
+            return
+        }
         const token = await AndroidPolyfill.requestLoginCodes()
         console.log("Got login token!", token)
-        localStorage.setItem("https://www.openstreetmap.orgoauth2_access_token", token)
+        localStorage.setItem(key, token)
         if (this.auth.authenticated()) {
             console.log("Logged in!")
         }
