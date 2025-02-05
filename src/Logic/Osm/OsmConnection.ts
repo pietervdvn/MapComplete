@@ -17,10 +17,14 @@ interface OsmUserInfo {
     changesets: { count: number }
     traces: { count: number }
     blocks: { received: { count: number; active: number } }
+    img?: { href: string }
+    home: { lat: number, lon: number }
+    languages?: string[]
+    messages: { received: { count: number, unread: number }, sent: { count: number } }
 }
 
 export default class UserDetails {
-    public name = "Not logged in"
+    public name
     public uid: number
     public csCount = 0
     public img?: string
@@ -91,7 +95,6 @@ export class OsmConnection {
     public readonly _oauth_config: AuthConfig
     private readonly _dryRun: Store<boolean>
     private readonly fakeUser: boolean
-    private _onLoggedIn: ((userDetails: UserDetails) => void)[] = []
     private readonly _iframeMode: boolean
     private readonly _singlePage: boolean
     private isChecking = false
@@ -128,7 +131,7 @@ export class OsmConnection {
         }
 
         this.userDetails = new UIEventSource<UserDetails>(
-            new UserDetails(this._oauth_config.url),
+            undefined,
             "userDetails"
         )
         if (options.fakeUser) {
@@ -197,15 +200,9 @@ export class OsmConnection {
         return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
     }
 
-    public OnLoggedIn(action: (userDetails: UserDetails) => void) {
-        this._onLoggedIn.push(action)
-    }
-
     public LogOut() {
         this.auth.logout()
-        this.userDetails.data.csCount = 0
-        this.userDetails.data.name = ""
-        this.userDetails.ping()
+        this.userDetails.setData(undefined)
         console.log("Logged out")
         this.loadingStatus.setData("not-attempted")
     }
@@ -219,7 +216,7 @@ export class OsmConnection {
         return this._oauth_config.url
     }
 
-    public AttemptLogin() {
+    public async AttemptLogin() {
         this.UpdateCapabilities()
         if (this.loadingStatus.data !== "logged-in") {
             // Stay 'logged-in' if we are already logged in; this simply means we are checking for messages
@@ -235,81 +232,46 @@ export class OsmConnection {
         LocalStorageSource.get("location_before_login").setData(
             Utils.runningFromConsole ? undefined : window.location.href
         )
-        this.auth.xhr(
-            {
-                method: "GET",
-                path: "/api/0.6/user/details",
-            },
-            (err, details: XMLDocument) => {
-                if (err != null) {
-                    console.log("Could not login due to:", err)
-                    this.loadingStatus.setData("error")
-                    if (err.status == 401) {
-                        console.log("Clearing tokens...")
-                        // Not authorized - our token probably got revoked
-                        this.auth.logout()
-                        this.LogOut()
-                    } else {
-                        console.log("Other error. Status:", err.status)
-                        this.apiIsOnline.setData("unreachable")
-                    }
-                    return
-                }
+        try {
 
-                if (details == null) {
-                    this.loadingStatus.setData("error")
-                    return
-                }
+            const u = <OsmUserInfo>JSON.parse(await this.interact("user/details.json", "GET", {
+                "accept-encoding": "application/json"
+            })).user
 
-                // details is an XML DOM of user details
-                const userInfo = details.getElementsByTagName("user")[0]
-
-                const data = this.userDetails.data
-                console.log("Login completed, userinfo is ", userInfo)
-                data.name = userInfo.getAttribute("display_name")
-                data.account_created = userInfo.getAttribute("account_created")
-                data.uid = Number(userInfo.getAttribute("id"))
-                data.languages = Array.from(
-                    userInfo.getElementsByTagName("languages")[0].getElementsByTagName("lang")
-                ).map((l) => l.textContent)
-                data.csCount = Number.parseInt(
-                    userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? "0"
-                )
-                data.tracesCount = Number.parseInt(
-                    userInfo.getElementsByTagName("traces")[0].getAttribute("count") ?? "0"
-                )
-
-                data.img = undefined
-                const imgEl = userInfo.getElementsByTagName("img")
-                if (imgEl !== undefined && imgEl[0] !== undefined) {
-                    data.img = imgEl[0].getAttribute("href")
-                }
-
-                const description = userInfo.getElementsByTagName("description")
-                if (description !== undefined && description[0] !== undefined) {
-                    data.description = description[0]?.innerHTML
-                }
-                const homeEl = userInfo.getElementsByTagName("home")
-                if (homeEl !== undefined && homeEl[0] !== undefined) {
-                    const lat = parseFloat(homeEl[0].getAttribute("lat"))
-                    const lon = parseFloat(homeEl[0].getAttribute("lon"))
-                    data.home = { lat: lat, lon: lon }
-                }
-
-                this.loadingStatus.setData("logged-in")
-                const messages = userInfo
-                    .getElementsByTagName("messages")[0]
-                    .getElementsByTagName("received")[0]
-                data.unreadMessages = parseInt(messages.getAttribute("unread"))
-                data.totalMessages = parseInt(messages.getAttribute("count"))
-
-                this.userDetails.ping()
-                for (const action of this._onLoggedIn) {
-                    action(this.userDetails.data)
-                }
-                this._onLoggedIn = []
+            if (!u) {
+                this.loadingStatus.setData("error")
+                return
             }
-        )
+
+            this.userDetails.set({
+                name: u.display_name,
+                img: u.img?.href,
+                unreadMessages: u.messages.received.unread,
+                tracesCount: u.traces.count,
+                uid: u.id,
+                account_created: u.account_created,
+                totalMessages: u.messages.received.count,
+                languages: u.languages,
+                home: u.home,
+                backend: this.Backend(),
+                description: u.description,
+                csCount: u.changesets.count
+            })
+            this.loadingStatus.setData("logged-in")
+        } catch (err) {
+            console.log("Could not login due to:", err)
+            this.loadingStatus.setData("error")
+            if (err.status == 401) {
+                console.log("Clearing tokens...")
+                // Not authorized - our token probably got revoked
+                this.auth.logout()
+                this.LogOut()
+            } else {
+                console.log("Other error. Status:", err.status)
+                this.apiIsOnline.setData("unreachable")
+            }
+        }
+
     }
 
     /**
@@ -349,9 +311,9 @@ export class OsmConnection {
                     method,
                     headers: header,
                     content,
-                    path: `/api/0.6/${path}`,
+                    path: `/api/0.6/${path}`
                 },
-                function (err, response) {
+                function(err, response) {
                     if (err !== null) {
                         error(err)
                     } else {
@@ -431,7 +393,7 @@ export class OsmConnection {
             "notes.json",
             content,
             {
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
             },
             true
         )
@@ -476,7 +438,7 @@ export class OsmConnection {
             file: gpx,
             description: options.description,
             tags: options.labels?.join(",") ?? "",
-            visibility: options.visibility,
+            visibility: options.visibility
         }
 
         if (!contents.description) {
@@ -484,9 +446,9 @@ export class OsmConnection {
         }
         const extras = {
             file:
-                '; filename="' +
+                "; filename=\"" +
                 (options.filename ?? "gpx_track_mapcomplete_" + new Date().toISOString()) +
-                '"\r\nContent-Type: application/gpx+xml',
+                "\"\r\nContent-Type: application/gpx+xml"
         }
 
         const boundary = "987654"
@@ -494,7 +456,7 @@ export class OsmConnection {
         let body = ""
         for (const key in contents) {
             body += "--" + boundary + "\r\n"
-            body += 'Content-Disposition: form-data; name="' + key + '"'
+            body += "Content-Disposition: form-data; name=\"" + key + "\""
             if (extras[key] !== undefined) {
                 body += extras[key]
             }
@@ -505,7 +467,7 @@ export class OsmConnection {
 
         const response = await this.post("gpx/create", body, {
             "Content-Type": "multipart/form-data; boundary=" + boundary,
-            "Content-Length": "" + body.length,
+            "Content-Length": "" + body.length
         })
         const parsed = JSON.parse(response)
         console.log("Uploaded GPX track", parsed)
@@ -526,9 +488,9 @@ export class OsmConnection {
                 {
                     method: "POST",
 
-                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`,
+                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
                 },
-                function (err) {
+                function(err) {
                     if (err !== null) {
                         error(err)
                     } else {
@@ -543,7 +505,7 @@ export class OsmConnection {
      * To be called by land.html
      */
     public finishLogin(callback: (previousURL: string) => void) {
-        this.auth.authenticate(function () {
+        this.auth.authenticate(function() {
             // Fully authed at this point
             console.log("Authentication successful!")
             const previousLocation = LocalStorageSource.get("location_before_login")
@@ -564,7 +526,7 @@ export class OsmConnection {
              */
             singlepage: !this._iframeMode,
             auto: autoLogin,
-            apiUrl: this._oauth_config.api_url ?? this._oauth_config.url,
+            apiUrl: this._oauth_config.api_url ?? this._oauth_config.url
         })
     }
 
