@@ -179,6 +179,10 @@
             "he": "יש משענת גב",
             "uk": "Ця лавка має спинку"
           },
+          "icon": {
+            "path": "./assets/layers/bench/one_sided.svg",
+            "class": "large"
+          },
           "addExtraTags": [
             "two_sided=no"
           ]
@@ -209,6 +213,10 @@
             "da": "Har <b>ikke</b> et ryglæn",
             "cs": "Tato lavice <b>nemá opěradlo</b>",
             "uk": "Ця лавка <b>не має</b> спинки"
+          },
+          "icon": {
+            "path": "./assets/layers/bench/no_backrest.svg",
+            "class": "large"
           }
         }
       ],
