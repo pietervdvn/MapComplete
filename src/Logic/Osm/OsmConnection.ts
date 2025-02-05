@@ -278,7 +278,7 @@ export class OsmConnection {
             Utils.runningFromConsole ? undefined : window.location.href,
         )
 
-        this.auth.authenticate((err, result) => {
+        this.auth.authenticate((err) => {
             if (!err) {
                 this.loadUserInfo()
             }
@@ -564,14 +564,22 @@ export class OsmConnection {
     /**
      * To be called by land.html
      */
-    public finishLogin(callback: (previousURL: string, oauth_token: string) => void) {
+    public finishLogin(callback: (previousURL: string) => void) {
         this.auth.authenticate(() => {
             // Fully authed at this point
             console.log("Authentication successful!")
-            const oauth_token = QueryParameters.GetQueryParameter("oauth_token", undefined).data ?? window.localStorage.getItem(this._oauth_config.url + "oauth2_access_token")
             const previousLocation = LocalStorageSource.get("location_before_login")
-            callback(previousLocation.data, oauth_token)
+            callback(previousLocation.data)
         })
+    }
+
+    public getToken(): string {
+        // https://www.openstreetmap.orgoauth2_access_token
+        let prefix = this.Backend()
+        while(prefix.endsWith("/")){
+            prefix = prefix.substring(0, prefix.length-2)
+        }
+        return QueryParameters.GetQueryParameter(prefix+ "oauth_token", undefined).data ?? window.localStorage.getItem(this._oauth_config.url + "oauth2_access_token")
     }
 
     private async loginAndroidPolyfill() {
