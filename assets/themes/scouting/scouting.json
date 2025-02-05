@@ -2,15 +2,50 @@
   "id": "scouting",
   "title": {
     "en": "Scouting groups",
-    "de": "Pfadfindergruppen"
+    "de": "Pfadfindergruppen",
+    "uk": "Скаутські групи"
   },
   "description": {
     "en": "A scouting group is a social youth movement with a heavy emphasis on the outdoors. Activities range from camping, hiking, aquatics, backpacking, exploring nature, ...",
-    "de": "Eine Pfadfindergruppe ist eine soziale Jugendbewegung mit einem starken Fokus auf Aktivitäten im Freien. Die Aktivitäten reichen von Camping, Wandern, Wassersport, Rucksacktouren, Erkundung der Natur, ..."
+    "de": "Eine Pfadfindergruppe ist eine soziale Jugendbewegung mit einem starken Fokus auf Aktivitäten im Freien. Die Aktivitäten reichen von Camping, Wandern, Wassersport, Rucksacktouren, Erkundung der Natur, ...",
+    "uk": "Скаутський загін - це громадський молодіжний рух, що робить акцент на активному відпочинку на природі. Заходи варіюються від таборування, піших прогулянок, водних видів спорту, рюкзаків, дослідження природи, ..."
   },
   "icon": "./assets/layers/scouting_group/scouting.svg",
   "defaultBackgroundId": "protomaps.dark",
   "layers": [
-    "scouting_group"
+    "scouting_group",
+    {
+      "builtin": "campsite",
+      "override": {
+        "id": "group_campsite",
+        "name": {
+          "en": "Group Campsites"
+        },
+        "=presets": [],
+        "source": {
+          "=osmTags": {
+            "and": [
+              "tourism=camp_site",
+              {
+                "or": [
+                  "scout=yes",
+                  "group_only=yes"
+                ]
+              }
+            ]
+          }
+        },
+        "=filter": []
+      }
+    },
+    {
+      "builtin": "campsite",
+      "override": {
+        "minzoom": 16,
+        "filter": null,
+        "name": null,
+        "isCounted": false
+      }
+    }
   ]
 }

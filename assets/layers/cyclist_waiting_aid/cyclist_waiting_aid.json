@@ -17,7 +17,8 @@
     "render": {
       "en": "Cyclist Waiting Aid",
       "de": "Radfahrer-Wartehilfe",
-      "es": "Ayuda para ciclistas en espera"
+      "es": "Ayuda para ciclistas en espera",
+      "nl": "Steuntje voor wachtende fietsers"
     }
   },
   "pointRendering": [

@@ -679,10 +679,6 @@
             }
         }
     },
-    "maproulette": {
-        "description": "Temat pokazujący zadania MapRoulette, umożliwiający ich wyszukiwanie, filtrowanie i naprawianie.",
-        "title": "Zadania MapRoulette"
-    },
     "maps": {
         "description": "Na tej mapie możesz znaleźć wszystkie mapy, jakie zna OpenStreetMap - zazwyczaj duże mapy na tablicy informacyjnej pokazująca obszar, miasto lub region, np. mapy turystyczne na odwrocie billboardu, mapy rezerwatu przyrody, mapy sieci rowerowych w regionie, ...) <br/><br/>Jeśli brakuje mapy, możesz łatwo zmapować ją na OpenStreetMap.",
         "shortDescription": "Ten motyw pokazuje wszystkie mapy (turystyczne), które zna OpenStreetMap",

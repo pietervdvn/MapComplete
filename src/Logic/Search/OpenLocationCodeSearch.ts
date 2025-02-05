@@ -8,7 +8,7 @@ export default class OpenLocationCodeSearch implements GeocodingProvider {
      */
     public static readonly _isPlusCode =
         /^([2-9CFGHJMPQRVWX]{2}|00){2,4}\+([2-9CFGHJMPQRVWX]{2,3})?$/
-
+    public readonly name = "OpenLocationCodeSearch"
     /**
      *
      * OpenLocationCodeSearch.isPlusCode("9FFW84J9+XG") // => true
@@ -26,7 +26,7 @@ export default class OpenLocationCodeSearch implements GeocodingProvider {
 
     async search(query: string, options?: GeocodingOptions): Promise<GeocodeResult[]> {
         if (!OpenLocationCodeSearch.isPlusCode(query)) {
-            return undefined
+            return [] // Must be an empty list and not "undefined", the latter is interpreted as 'still searching'
         }
         const { latitude, longitude } = pluscode_decode(query)
 

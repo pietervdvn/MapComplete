@@ -7,6 +7,8 @@
   import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
   import SelectedElementView from "../BigComponents/SelectedElementView.svelte"
   import TagRenderingAnswer from "./TagRendering/TagRenderingAnswer.svelte"
+  import TagRenderingEditableDynamic from "./TagRendering/TagRenderingEditableDynamic.svelte"
+  import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 
   export let state: SpecialVisualizationState
   export let selectedElement: Feature
@@ -16,11 +18,32 @@
   export let layer: LayerConfig
 
   let headerTr = layer.tagRenderings.find((tr) => tr.id === header)
+  let trgs: TagRenderingConfig[] = []
+  let seenIds = new Set<string>()
+  for (const label of labels) {
+    for (const tr of layer.tagRenderings) {
+      if (seenIds.has(tr.id)) {
+        continue
+      }
+      if (label === tr.id || tr.labels.some(l => l === label)) {
+        trgs.push(tr)
+        seenIds.add(tr.id)
+      }
+    }
+  }
 </script>
 
 <AccordionSingle>
   <div slot="header">
     <TagRenderingAnswer {tags} {layer} config={headerTr} {state} {selectedElement} />
   </div>
-  <SelectedElementView mustMatchLabels={new Set(labels)} {state} {layer} {tags} {selectedElement} />
+  {#each trgs as config (config.id)}
+    <TagRenderingEditableDynamic
+      {tags}
+      {config}
+      {state}
+      {selectedElement}
+      {layer}
+    />
+  {/each}
 </AccordionSingle>

@@ -132,6 +132,16 @@ export class ExpandFilter extends DesugaringStep<LayerConfigJson> {
         return filters
     }
 
+    /**
+     *
+     * import FilterConfig from "../FilterConfig"
+     *
+     * // A multi-answer tagRendering should match any subkey
+     * const tr = {id: "test", multiAnswer: true, mappings:[{if: "x=a", then: "A"}, {if: "x=b", then:"B"}]}
+     * const filter = ExpandFilter.buildFilterFromTagRendering(tr,  ConversionContext.test("ExpandFilter"))
+     * const f = new FilterConfig(filter, "test")
+     * f.options[1].osmTags.matchesProperties({x:"a;b"}) // => true
+     */
     public static buildFilterFromTagRendering(
         tr: TagRenderingConfigJson,
         context: ConversionContext
@@ -153,7 +163,7 @@ export class ExpandFilter extends DesugaringStep<LayerConfigJson> {
             if (qtr.multiAnswer && osmTags instanceof Tag) {
                 osmTags = new RegexTag(
                     osmTags.key,
-                    new RegExp("^(.+;)?" + osmTags.value + "(;.+)$", "is")
+                    new RegExp("^(.+;)?" + osmTags.value + "(;.+)?$", "is")
                 )
             }
             if (mapping.alsoShowIf) {

@@ -350,10 +350,10 @@ export default class UserRelatedState {
      * List of all hidden themes that have been seen before
      * @param osmConnection
      */
-    public static initDiscoveredHiddenThemes(osmConnection: OsmConnection): Store<string[]> {
+    public static initDiscoveredHiddenThemes(osmConnection: OsmConnection): Store<undefined | string[]> {
         const prefix = "mapcomplete-hidden-theme-"
         const userPreferences = osmConnection.preferencesHandler.allPreferences
-        return userPreferences.map((preferences) =>
+        return userPreferences.mapD((preferences) =>
             Object.keys(preferences)
                 .filter((key) => key.startsWith(prefix))
                 .map((key) => key.substring(prefix.length, key.length - "-enabled".length))
@@ -497,7 +497,7 @@ export default class UserRelatedState {
             amendedPrefs.ping()
         })
 
-        osmConnection.userDetails.addCallback((userDetails) => {
+        osmConnection.userDetails.addCallbackD((userDetails) => {
             for (const k in userDetails) {
                 amendedPrefs.data["_" + k] = "" + userDetails[k]
             }

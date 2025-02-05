@@ -6,6 +6,14 @@
             "fixme": {
                 "question": "What should be fixed here? Please explain"
             },
+            "header": {
+                "mappings": {
+                    "0": {
+                        "then": "No address is known"
+                    }
+                },
+                "render": "{addr:street} <b>{addr:housenumber}</b> {addr:unit}"
+            },
             "housenumber": {
                 "mappings": {
                     "0": {
@@ -17,7 +25,17 @@
             },
             "street": {
                 "question": "What street is this address located in?",
+                "questionHint": "Do not include the house number",
                 "render": "This address is in street <b>{addr:street}</b>"
+            },
+            "unit": {
+                "mappings": {
+                    "0": {
+                        "then": "No unit number"
+                    }
+                },
+                "question": "What is the unit number or letter?",
+                "render": "The unit number is <b>{addr:unit}</b>"
             }
         },
         "title": {
@@ -2186,6 +2204,84 @@
                 }
             },
             "render": "Pub"
+        }
+    },
+    "campsite": {
+        "description": "Campsites",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "persons"
+                    },
+                    "1": {
+                        "question": "1-20"
+                    },
+                    "2": {
+                        "question": "21-50"
+                    },
+                    "3": {
+                        "question": "51-100"
+                    },
+                    "4": {
+                        "question": "101-200"
+                    },
+                    "5": {
+                        "question": "201-500"
+                    },
+                    "6": {
+                        "question": "500+"
+                    },
+                    "7": {
+                        "question": "?"
+                    }
+                }
+            }
+        },
+        "name": "Campsites",
+        "presets": {
+            "0": {
+                "title": "campsite"
+            },
+            "1": {
+                "title": "campsite for groups"
+            }
+        },
+        "tagRenderings": {
+            "capacity_persons": {
+                "question": "How many people can stay here?",
+                "render": "{capacity:persons} people can stay here"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "The campsite is free of charge"
+                    },
+                    "1": {
+                        "then": "A fee is charged here."
+                    }
+                },
+                "question": "Is a fee charged here?",
+                "render": "A fee of {charge} should be paid for here"
+            },
+            "group_only": {
+                "mappings": {
+                    "0": {
+                        "then": "This campsite is exclusively for groups"
+                    },
+                    "1": {
+                        "then": "This campsite is not exclusively for groups"
+                    }
+                },
+                "question": "Is this campsite exclusively for groups?"
+            },
+            "name": {
+                "question": "What is the name of this campsite?",
+                "render": "The name of this campsite is {name}"
+            }
+        },
+        "title": {
+            "render": "{name}"
         }
     },
     "car_rental": {
@@ -9497,6 +9593,19 @@
                         "question": "Unknown school level"
                     }
                 }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Does this school have special need education?"
+                    },
+                    "1": {
+                        "question": "Has special education"
+                    },
+                    "2": {
+                        "question": "No or limited special need education"
+                    }
+                }
             }
         },
         "name": "Primary and secondary schools",
@@ -9555,6 +9664,30 @@
                     }
                 },
                 "question": "Which genders can enroll at this school?"
+            },
+            "is_special_needs": {
+                "mappings": {
+                    "0": {
+                        "then": "This school is only for special need students; a certificate is needed to enroll"
+                    },
+                    "1": {
+                        "then": "This school has a separate section for special need students."
+                    },
+                    "2": {
+                        "then": "Students with special needs and non-special need students have classes together."
+                    },
+                    "3": {
+                        "then": "This school offers limited, ad hoc support but has no significant expertise and is not considered a special needs school."
+                    },
+                    "4": {
+                        "then": "This school has no support for special need students."
+                    },
+                    "5": {
+                        "then": "This school is for special need students."
+                    }
+                },
+                "question": "Does this school target students with a special need?",
+                "questionHint": "A special needs school has expertise and supports students with a (severe) diagnosis. In many countries, a certificate is needed to enroll."
             },
             "orientation_belgium": {
                 "mappings": {
@@ -9617,30 +9750,34 @@
                 "question": "What is the name of this school?",
                 "render": "This school is named {name}"
             },
-            "target-audience": {
+            "special_needs_categories_be": {
                 "mappings": {
                     "0": {
-                        "then": "This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>"
+                        "then": "For students with an intellectual disability (type 2)"
                     },
                     "1": {
-                        "then": "This is a school for students with learning disabilities"
+                        "then": "For students with an emotional and behavioural problem (type 3)"
                     },
                     "2": {
-                        "then": "This is a school for blind students or students with sight impairments"
+                        "then": "For students with an physical disability (type 4)"
                     },
                     "3": {
-                        "then": "This is a school for deaf students or students with hearing impairments"
+                        "then": "For blind and visually impaired students (type 6)"
                     },
                     "4": {
-                        "then": "This is a school for students with disabilities"
+                        "then": "For deaf students and students with hearing loss (type 7)"
                     },
                     "5": {
-                        "then": "This is a school for students with special needs"
+                        "then": "For students with a Developemental Language Disorder (type 7 - DLD)"
+                    },
+                    "6": {
+                        "then": "For students with an autism spectrum disorder (type 9)"
+                    },
+                    "7": {
+                        "then": "For students with a learning disability (basic offering )"
                     }
                 },
-                "question": "Does this school target students with a special need? Which structural facilities does this school have?",
-                "questionHint": "Ad-hoc measures are not enough to count as a special-needs school",
-                "render": "This school has facilities for students with {school:for}"
+                "question": "What type of special needs are given here?"
             }
         },
         "title": {
@@ -12646,8 +12783,14 @@
                     }
                 }
             },
+            "debug-gps-title": {
+                "render": "GPS and gyroscope data"
+            },
             "debug-title": {
                 "render": "<h3>Debugging options</h3>"
+            },
+            "debug_accordeon_title": {
+                "render": "Debug information"
             },
             "edit-profile": {
                 "render": {

@@ -95,9 +95,8 @@
       "id": "name"
     },
     "opening_hours_by_appointment",
-    "phone",
-    "email",
-    "website"
+    "contact",
+    "address.address"
   ],
   "filter": [
     "open_now"

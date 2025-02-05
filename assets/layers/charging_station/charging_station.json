@@ -6,7 +6,8 @@
     "ca": "Estacions de càrrega",
     "cs": "Nabíjecí stanice",
     "de": "Ladestationen",
-    "es": "Puntos de carga"
+    "es": "Puntos de carga",
+    "uk": "Зарядні станції"
   },
   "minzoom": 10,
   "source": {
@@ -28,7 +29,8 @@
       "en": "Charging station",
       "nl": "Oplaadpunt",
       "de": "Ladestation",
-      "es": "Punto de carga"
+      "es": "Punto de carga",
+      "uk": "Зарядна станція"
     },
     "mappings": [
       {
@@ -47,7 +49,8 @@
           "en": "Charging station for electrical bicycles",
           "nl": "Oplaadpunt voor elektrische fietsen",
           "de": "Ladestation für Elektrofahrräder",
-          "es": "Punto de carga para bicicletas eléctricas"
+          "es": "Punto de carga para bicicletas eléctricas",
+          "uk": "Зарядна станція для електровелосипедів"
         }
       },
       {
@@ -66,7 +69,8 @@
           "en": "Charging station for cars",
           "nl": "Oplaadpunt voor elektrische auto's",
           "de": "Ladestation für Autos",
-          "es": "Punto de carga para coches"
+          "es": "Punto de carga para coches",
+          "uk": "Зарядна станція для автомобілів"
         }
       }
     ]
@@ -93,7 +97,8 @@
         "cs": "Která vozidla zde smí nabíjet?",
         "de": "Welche Fahrzeuge können hier laden?",
         "es": "¿Qué vehículos pueden cargar aquí?",
-        "pl": "Jakie pojazdy mogą być tutaj ładowane?"
+        "pl": "Jakie pojazdy mogą być tutaj ładowane?",
+        "uk": "Які транспортні засоби можуть тут заряджатися?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -107,7 +112,8 @@
             "cs": "<b>Jízdní kola</b> lze nabíjet zde",
             "de": "Hier können <b>Fahrräder</b> laden",
             "es": "Aquí se pueden cargar <b>bicicletas</b>",
-            "pl": "Mogą tutaj być ładowane <b>rowery</b>"
+            "pl": "Mogą tutaj być ładowane <b>rowery</b>",
+            "uk": "Тут можна заряджати <b>велосипеди</b>"
           }
         },
         {
@@ -120,7 +126,8 @@
             "cs": "<b>Auta</b> lze nabíjet zde",
             "de": "Hier können <b>Autos</b> laden",
             "es": "Aquí se pueden cargar <b>coches</b>",
-            "pl": "Mogą tutaj być ładowane <b>samochody</b>"
+            "pl": "Mogą tutaj być ładowane <b>samochody</b>",
+            "uk": "<b>Автомобілі</b> можна зарядити тут"
           }
         },
         {
@@ -133,7 +140,8 @@
             "cs": "<b>Skútry</b> lze nabíjet zde",
             "de": "Hier können <b>Roller</b> laden",
             "es": "Aquí se pueden cargar <b>patinetes</b>",
-            "pl": "Mogą być tutaj ładowane <b>hulajnogi<b>"
+            "pl": "Mogą być tutaj ładowane <b>hulajnogi<b>",
+            "uk": "<b>Самокати</b> можна зарядити тут"
           }
         },
         {
@@ -145,7 +153,8 @@
             "ca": "Aquí es poden carregar <b>camions o trailers</b>",
             "cs": "<b>Těžká nákladní vozidla</b> (například nákladní automobily) lze nabíjet zde",
             "de": "Hier können <b>LKW</b> laden",
-            "es": "Aquí se pueden cargar <b>vehículos de mercancías pesadas</b> (como camiones)"
+            "es": "Aquí se pueden cargar <b>vehículos de mercancías pesadas</b> (como camiones)",
+            "uk": "Тут можна заряджати <b>вантажні транспортні засоби</b> (наприклад, вантажівки)"
           }
         },
         {
@@ -158,7 +167,8 @@
             "cs": "<b>Autobusy</b> lze nabíjet zde",
             "de": "Hier können <b>Busse</b> laden",
             "es": "Aquí se pueden cargar <b>autobuses</b>",
-            "pl": "Mogą być tutaj ładowane <b>autobusy</b>"
+            "pl": "Mogą być tutaj ładowane <b>autobusy</b>",
+            "uk": "<b>Автобуси</b> можна зарядити тут"
           }
         }
       ]
@@ -171,7 +181,8 @@
         "ca": "Qui pot utilitzar aquesta estació de càrrega?",
         "de": "Wer darf diese Ladestation benutzen?",
         "es": "¿Quién puede usar este punto de carga?",
-        "pl": "Kto może używać tej stacji ładowania?"
+        "pl": "Kto może używać tej stacji ładowania?",
+        "uk": "Хто може користуватися цією зарядною станцією?"
       },
       "render": {
         "en": "Access is {access}",
@@ -197,7 +208,8 @@
             "cs": "Tuto nabíjecí stanici může používat kdokoli (může být vyžadována platba)",
             "de": "Jeder kann die Station nutzen (eventuell gegen Bezahlung)",
             "es": "Cualquiera puede usar este punto de carga (puede ser necesario el pago)",
-            "pl": "Każdy może używać tej stacji ładowania (opłata może być wymagana)"
+            "pl": "Każdy może używać tej stacji ładowania (opłata może być wymagana)",
+            "uk": "Будь-хто може скористатися цією зарядною станцією (може знадобитися оплата)"
           }
         },
         {
@@ -221,7 +233,8 @@
             "ca": "Sols cliente del lloc al que pertany aquest punt de càrrega poden utilitzar-lo <br/><span class='subtle'>p.e. un punt de càrrega d'un hotel que sols poden utilizar-los els hostes</span>",
             "cs": "Tuto nabíjecí stanici mohou používat pouze zákazníci místa, kam tato stanice patří<br/><span class='subtle'>Např. nabíjecí stanice provozovaná hotelem, kterou mohou používat pouze jeho hosté</span>",
             "de": "Nur Kunden des Ortes, zu dem diese Station gehört, können diese Ladestation nutzen<br/><span class='subtle'>Z.B. eine von einem Hotel betriebene Ladestation, die nur von dessen Gästen genutzt werden kann</span>",
-            "es": "Solo los clientes del lugar al que pertenece esta estación pueden usar este punto de carga<br/><span class='subtle'>Por ejemplo, un punto de carga operado por un hotel que solo pueden usar sus huéspedes</span>"
+            "es": "Solo los clientes del lugar al que pertenece esta estación pueden usar este punto de carga<br/><span class='subtle'>Por ejemplo, un punto de carga operado por un hotel que solo pueden usar sus huéspedes</span>",
+            "uk": "Лише клієнти місця, до якого належить ця станція, можуть використовувати цю зарядну станцію<br/><span class='subtle'>Напр. зарядна станція готелю, якою можуть користуватися лише його гості</span>"
           }
         },
         {
@@ -231,7 +244,8 @@
             "nl": "Een <b>sleutel</b> is nodig om dit oplaadpunt te gebruiken<br/><span class='subtle'>Bv. voor klanten van een hotel of een bar, die de sleutel aan de receptie kunnen krijgen</span>",
             "ca": "S'ha de sol·licitar una <b>clau</b> per a utilitzar aquest punt de càrrega<br/><span class='subtle'>p.e un punt de càrrega operat per un hotel nomes utilitzable pel seus hostes, els quals reben una clau des de recepció per a desbloquejar el punt de càrrega</span>",
             "de": "Für den Zugang zur Station muss ein <b>Schlüssel</b> angefordert werden<br/><span class='subtle'>z.B. eine von einem Hotel betriebene Ladestation, die nur von dessen Gästen genutzt werden kann, die an der Rezeption einen Schlüssel erhalten, um die Ladestation aufzuschließen</span>",
-            "es": "Se debe solicitar una <b>llave</b> para acceder a este punto de carga<br/><span class='subtle'>Por ejemplo, un punto de carga operado por un hotel que solo pueden usar sus huéspedes, que reciben una llave de la recepción para desbloquear el punto de carga</span>"
+            "es": "Se debe solicitar una <b>llave</b> para acceder a este punto de carga<br/><span class='subtle'>Por ejemplo, un punto de carga operado por un hotel que solo pueden usar sus huéspedes, que reciben una llave de la recepción para desbloquear el punto de carga</span>",
+            "uk": "Щоб отримати доступ до цієї зарядної станції, необхідно отримати <b>ключ</b><br/><span class='subtle'>Напр. зарядна станція, якою керує готель, якою можуть користуватися лише його гості, які отримують ключ від стійки реєстрації, щоб розблокувати зарядну станцію</span>"
           }
         },
         {
@@ -241,7 +255,8 @@
             "nl": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers ,...</span> ",
             "ca": "No accessible per al públic general (p.e. només accessible pels propietaris, empleats, ...)",
             "de": "Die Station ist nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, ...)",
-            "es": "No accesible al público en general (por ejemplo, solo accesible para los propietarios, empleados, ...)"
+            "es": "No accesible al público en general (por ejemplo, solo accesible para los propietarios, empleados, ...)",
+            "uk": "Не доступні для широкої громадськості (наприклад, доступні лише для власників, працівників, ...)"
           }
         },
         {
@@ -251,7 +266,8 @@
             "nl": "Dit oplaadstation is publiek toegankelijk onder voorwaarden (bv. enkel tijdens bepaalde uren). ",
             "ca": "Aquesta estació de càrrega és accessible al públic durant certes hores o condicions. Es poden aplicar restriccions, però es permet l'ús general.",
             "de": "Diese Ladestation ist zu gewissen Öffnungszeiten oder Bedingungen öffentlich zugänglich. Einschränkungen sind möglich, aber generelle Nutzung ist erlaubt.",
-            "es": "Este punto de carga es accesible al público durante ciertas horas o condiciones Pueden aplicarse restricciones, pero se permite el uso general"
+            "es": "Este punto de carga es accesible al público durante ciertas horas o condiciones Pueden aplicarse restricciones, pero se permite el uso general",
+            "uk": "Ця зарядна станція доступна для громадськості в певні години або за певних умов. Можуть застосовуватися обмеження, але загальне використання дозволено."
           }
         }
       ]
@@ -264,7 +280,8 @@
         "ca": "Aquí poden carregar {capacity} vehicles a l'hora",
         "de": "Hier können {capacity} Fahrzeuge gleichzeitig laden",
         "es": "{capacity} vehículos se pueden cargar aquí al mismo tiempo",
-        "pl": "{capacity} pojazdów może być tutaj ładowanych jednocześnie"
+        "pl": "{capacity} pojazdów może być tutaj ładowanych jednocześnie",
+        "uk": "Тут можуть заряджатися одночасно {capacity} транспортних засобів"
       },
       "question": {
         "en": "How much vehicles can be charged here at the same time?",
@@ -272,7 +289,8 @@
         "ca": "Quants vehicles poden carregar a la vegada?",
         "de": "Wie viele Fahrzeuge können hier gleichzeitig laden?",
         "es": "¿Cuántos vehículos se pueden cargar aquí al mismo tiempo?",
-        "pl": "Ile pojazdów może być tutaj ładowanych jednocześnie?"
+        "pl": "Ile pojazdów może być tutaj ładowanych jednocześnie?",
+        "uk": "Скільки транспортних засобів можна зарядити тут одночасно?"
       },
       "freeform": {
         "key": "capacity",
@@ -2317,7 +2335,8 @@
         "nl": "Moet men betalen om dit oplaadpunt te gebruiken?",
         "ca": "Hi ha que pagar per utilitzar aquest punt de càrrega?",
         "de": "Muss man für die Nutzung dieser Ladestation bezahlen?",
-        "es": "¿Hay que pagar para usar este punto de carga?"
+        "es": "¿Hay que pagar para usar este punto de carga?",
+        "uk": "Чи потрібно платити за користування цією зарядною станцією?"
       },
       "mappings": [
         {
@@ -2334,7 +2353,8 @@
             "en": "Free to use (without authenticating)",
             "ca": "Ús gratuït (sense autentificació)",
             "de": "Die Nutzung ist kostenlos, keine Authentifizierung erforderlich",
-            "es": "De uso gratuito (sin autenticación)"
+            "es": "De uso gratuito (sin autenticación)",
+            "uk": "Безкоштовне використання (без автентифікації)"
           }
         },
         {
@@ -2351,7 +2371,8 @@
             "en": "Free to use, but one has to authenticate",
             "ca": "Ús gratuït, però un s'ha d'autentificar",
             "de": "Die Nutzung ist kostenlos, Authentifizierung erforderlich",
-            "es": "De uso gratuito, pero hay que autenticarse"
+            "es": "De uso gratuito, pero hay que autenticarse",
+            "uk": "Безкоштовне використання, але потрібно пройти аутентифікацію"
           }
         },
         {
@@ -2382,7 +2403,8 @@
             "en": "Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station",
             "ca": "De pagament, però gratuït per als clients de l'hotel/bar/hospital/... que gestiona l'estació de càrrega",
             "de": "Die Nutzung ist kostenpflichtig, aber für Kunden des Betreibers der Einrichtung, wie Hotel, Krankenhaus, ... kostenlos",
-            "es": "De pago, pero gratuito para clientes del hotel/pub/hospital/... que opera el punto de carga"
+            "es": "De pago, pero gratuito para clientes del hotel/pub/hospital/... que opera el punto de carga",
+            "uk": "Платне користування, але безкоштовне для клієнтів готелю/пабу/лікарні/..., який експлуатує зарядну станцію"
           }
         },
         {
@@ -2397,7 +2419,8 @@
             "en": "Paid use",
             "ca": "Ús de pagament",
             "de": "Die Nutzung ist kostenpflichtig",
-            "es": "De pago"
+            "es": "De pago",
+            "uk": "Платне користування"
           }
         }
       ]
@@ -2444,7 +2467,8 @@
         "ca": "Quin tipus d'autenticació hi ha disponible a l'estació de càrrega?",
         "cs": "Jaký druh autentizace je na nabíjecí stanici k dispozici?",
         "de": "Welche Art der Authentifizierung ist an der Ladestation möglich?",
-        "es": "¿Qué tipo de autenticación está disponible en el punto de carga?"
+        "es": "¿Qué tipo de autenticación está disponible en el punto de carga?",
+        "uk": "Яка автентифікація доступна на зарядній станції?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -2458,7 +2482,8 @@
             "cs": "Autentizace členskou kartou",
             "de": "Authentifizierung durch eine Mitgliedskarte",
             "es": "Autenticación mediante tarjeta de socio",
-            "fr": "Authentification par carte de membre"
+            "fr": "Authentification par carte de membre",
+            "uk": "Аутентифікація за допомогою членської картки"
           }
         },
         {
@@ -2471,7 +2496,8 @@
             "cs": "Autentizace pomocí aplikace",
             "de": "Authentifizierung per App",
             "es": "Autenticación mediante una aplicación",
-            "fr": "Authentification par une application"
+            "fr": "Authentification par une application",
+            "uk": "Автентифікація за допомогою програми"
           }
         },
         {
@@ -2496,7 +2522,8 @@
             "cs": "K dispozici je autentizace pomocí SMS",
             "de": "Authentifizierung per SMS ist möglich",
             "es": "Hay disponible autenticación por SMS",
-            "fr": "Authentification possible par SMS"
+            "fr": "Authentification possible par SMS",
+            "uk": "Доступна автентифікація за допомогою SMS"
           }
         },
         {
@@ -2508,7 +2535,8 @@
             "ca": "L'autenticació mitjançant NFC està disponible",
             "cs": "K dispozici je autentizace přes NFC",
             "de": "Authentifizierung per NFC ist möglich",
-            "es": "Hay disponible autenticación por NFC"
+            "es": "Hay disponible autenticación por NFC",
+            "uk": "Доступна автентифікація за допомогою NFC"
           }
         },
         {
@@ -2520,7 +2548,8 @@
             "ca": "L'autenticació mitjançant targeta de pagament està disponible",
             "cs": "K dispozici je autentizace prostřednictvím Money Card",
             "de": "Authentifizierung per Geldkarte ist möglich",
-            "es": "Hay disponible autenticación por tarjeta de crédito"
+            "es": "Hay disponible autenticación por tarjeta de crédito",
+            "uk": "Доступна автентифікація за допомогою грошової картки"
           }
         },
         {
@@ -2532,7 +2561,8 @@
             "ca": "L'autenticació mitjançant targeta de debit està disponible",
             "cs": "K dispozici je autentizace prostřednictvím debetní karty",
             "de": "Authentifizierung per Kreditkarte ist möglich",
-            "es": "Hay disponible autenticación por tarjeta de débito"
+            "es": "Hay disponible autenticación por tarjeta de débito",
+            "uk": "Доступна автентифікація за допомогою дебетової картки"
           }
         },
         {
@@ -2544,7 +2574,8 @@
             "ca": "Carregar aquí (també) és possible sense autenticació",
             "cs": "Nabíjení je zde (také) možné bez autentizace",
             "de": "Das Laden ist hier (auch) ohne Authentifizierung möglich",
-            "es": "La carga aquí también es posible sin autenticación"
+            "es": "La carga aquí también es posible sin autenticación",
+            "uk": "Зарядка тут (також) можлива без автентифікації"
           }
         }
       ],
@@ -2831,7 +2862,8 @@
         "ca": "Està en ús aquest punt de càrrega?",
         "cs": "Používá se tento nabíjecí bod?",
         "de": "Ist die Station in Betrieb?",
-        "es": "¿Este punto de carga está en uso?"
+        "es": "¿Este punto de carga está en uso?",
+        "uk": "Чи використовується ця точка зарядки?"
       },
       "mappings": [
         {
@@ -2852,7 +2884,8 @@
             "de": "Die Station ist in Betrieb",
             "es": "Este punto de carga funciona",
             "fr": "Cette station de recharge fonctionne",
-            "pl": "Ta stacja ładowania działa"
+            "pl": "Ta stacja ładowania działa",
+            "uk": "Ця зарядна станція працює"
           }
         },
         {
@@ -2872,7 +2905,8 @@
             "cs": "Tato nabíjecí stanice je rozbitá",
             "de": "Die Station ist defekt",
             "es": "Este punto de carga está roto",
-            "pl": "Ta stacja ładowania jest zepsuta"
+            "pl": "Ta stacja ładowania jest zepsuta",
+            "uk": "Ця зарядна станція несправна"
           }
         },
         {
@@ -2892,7 +2926,8 @@
             "cs": "Plánuje se zde nabíjecí stanice",
             "de": "Die Station ist erst in Planung",
             "es": "Aquí se planea un punto de carga",
-            "pl": "Planowana jest tutaj stacja ładowania"
+            "pl": "Planowana jest tutaj stacja ładowania",
+            "uk": "Тут планується встановити зарядну станцію"
           }
         },
         {
@@ -2911,7 +2946,8 @@
             "cs": "Zde je budována dobíjecí stanice",
             "de": "Die Station ist aktuell im Bau",
             "es": "Aquí se está construyendo un punto de carga",
-            "pl": "Budowana jest tutaj stacja ładowania"
+            "pl": "Budowana jest tutaj stacja ładowania",
+            "uk": "Тут побудовано зарядну станцію"
           }
         },
         {
@@ -2930,7 +2966,8 @@
             "ca": "Aquesta estació de recàrrega s'ha desactivat permanentment i ja no s'utilitza, però encara és visible",
             "cs": "Tato nabíjecí stanice byla trvale deaktivována a již se nepoužívá, ale je stále viditelná",
             "de": "Die Station ist dauerhaft geschlossen und nicht mehr in Nutzung, aber noch sichtbar",
-            "es": "Este punto de carga ha sido deshabilitado permanentemente y ya no está en uso, pero sigue siendo visible"
+            "es": "Este punto de carga ha sido deshabilitado permanentemente y ya no está en uso, pero sigue siendo visible",
+            "uk": "Цю зарядну станцію було назавжди вимкнено, вона більше не використовується, але її все ще можна побачити"
           }
         }
       ]
@@ -3161,7 +3198,8 @@
             "de": "Nur Ladestationen in Betrieb",
             "es": "Solo puntos de carga en funcionamiento",
             "fr": "Seulement les stations de recharge qui fonctionnent",
-            "it": "Solo stazioni di ricarica funzionanti"
+            "it": "Solo stazioni di ricarica funzionanti",
+            "uk": "Тільки робочі зарядні станції"
           },
           "osmTags": {
             "and": [

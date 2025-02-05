@@ -13,7 +13,8 @@
     "ca": "Botiga/reparació de bicicletes",
     "es": "Reparación/tienda de bicicletas",
     "da": "Cykelreparation/butik",
-    "cs": "Opravna/obchod s jízdními koly"
+    "cs": "Opravna/obchod s jízdními koly",
+    "uk": "Ремонт/магазин велосипедів"
   },
   "description": {
     "en": "A shop specifically selling bicycles or related items",

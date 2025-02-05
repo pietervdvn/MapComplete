@@ -6,12 +6,16 @@ async function main() {
     const target = document.getElementById("maindiv")
     const childs = Array.from(target.children)
     try {
+        childs.forEach((ch) => target.removeChild(ch))
+    } catch (e) {
+        console.error("Huh? Couldn't remove child!")
+    }
+    try {
         const theme = await DetermineTheme.getTheme()
         new SingleThemeGui({
             target,
             props: { theme },
         })
-        childs.forEach((ch) => target.removeChild(ch))
         Array.from(document.getElementsByClassName("delete-on-load")).forEach((el) => {
             el.parentElement.removeChild(el)
         })

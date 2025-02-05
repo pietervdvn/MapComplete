@@ -1,12 +1,9 @@
-import GeocodingProvider, {
-    SearchResult,
-    GeocodingOptions,
-    GeocodeResult,
-} from "./GeocodingProvider"
+import GeocodingProvider, { GeocodeResult, GeocodingOptions, SearchResult } from "./GeocodingProvider"
 import { Utils } from "../../Utils"
 import { Store, Stores } from "../UIEventSource"
 
 export default class CombinedSearcher implements GeocodingProvider {
+    public readonly name = "CombinedSearcher"
     private _providers: ReadonlyArray<GeocodingProvider>
     private _providersWithSuggest: ReadonlyArray<GeocodingProvider>
 

@@ -8,6 +8,7 @@ import GeocodingProvider, { GeocodingOptions, SearchResult } from "./GeocodingPr
 export class NominatimGeocoding implements GeocodingProvider {
     private readonly _host
     private readonly limit: number
+    public readonly name = "Nominatim"
 
     constructor(limit: number = 3, host: string = Constants.nominatimEndpoint) {
         this.limit = limit

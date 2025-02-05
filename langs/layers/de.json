@@ -2188,6 +2188,52 @@
             "render": "Kneipe"
         }
     },
+    "campsite": {
+        "description": "Zeltplätze",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Personen"
+                    }
+                }
+            }
+        },
+        "name": "Zeltplätze",
+        "tagRenderings": {
+            "capacity_persons": {
+                "question": "Wie viele Personen können hier übernachten?",
+                "render": "Hier können {capacity:persons} Personen übernachten"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Zeltplatz ist kostenlos"
+                    },
+                    "1": {
+                        "then": "Hier wird eine Gebühr erhoben."
+                    }
+                },
+                "question": "Wird hier eine Gebühr erhoben?",
+                "render": "Hier wird eine Gebühr von {charge} erhoben"
+            },
+            "group_only": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Zeltplatz ist ausschließlich für Gruppen"
+                    },
+                    "1": {
+                        "then": "Dieser Zeltplatz ist nicht ausschließlich für Gruppen"
+                    }
+                },
+                "question": "Ist dieser Zeltplatz ausschließlich für Gruppen?"
+            },
+            "name": {
+                "question": "Wie heißt dieser Zeltplatz?",
+                "render": "Dieser Zeltplatz heißt {name}"
+            }
+        }
+    },
     "car_rental": {
         "description": "Orte, an denen Sie ein Auto mieten können",
         "name": "Autovermietung",
@@ -9520,6 +9566,9 @@
                 },
                 "question": "Welche Geschlechter können sich an dieser Schule anmelden?"
             },
+            "is_special_needs": {
+                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf??"
+            },
             "pedagogy": {
                 "mappings": {
                     "0": {
@@ -9566,31 +9615,6 @@
             "school-name": {
                 "question": "Wie lautet der Name dieser Schule?",
                 "render": "Diese Schule heißt {name}"
-            },
-            "target-audience": {
-                "mappings": {
-                    "0": {
-                        "then": "Dies ist eine Schule für Schüler ohne besondere Bedürfnisse<div class='subtle'>Dazu gehören auch Schüler, die den Kursen mit kleinen Ad-hoc-Maßnahmen folgen können</div>"
-                    },
-                    "1": {
-                        "then": "Dies ist eine Schule für Schüler mit Lernschwierigkeiten"
-                    },
-                    "2": {
-                        "then": "Dies ist eine Schule für blinde oder sehbehinderte Schüler"
-                    },
-                    "3": {
-                        "then": "Dies ist eine Schule für gehörlose oder hörgeschädigte Schüler"
-                    },
-                    "4": {
-                        "then": "Dies ist eine Schule für Schüler mit Behinderungen"
-                    },
-                    "5": {
-                        "then": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen"
-                    }
-                },
-                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?",
-                "questionHint": "Ad-hoc-Maßnahmen reichen nicht aus, um als Förderschule zu gelten",
-                "render": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}"
             }
         },
         "title": {

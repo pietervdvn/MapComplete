@@ -2,7 +2,8 @@
   "id": "scouting_group",
   "name": {
     "en": "Scouting groups",
-    "de": "Pfadfinder:innenstämme"
+    "de": "Pfadfinder:innenstämme",
+    "uk": "Скаутські групи"
   },
   "description": {
     "en": "A map showing scouting groups.",
@@ -61,7 +62,8 @@
       },
       "render": {
         "en": "The name of this group is {name}",
-        "de": "Dieser Stamm heißt {name}"
+        "de": "Dieser Stamm heißt {name}",
+        "uk": "Назва цієї групи: {name}"
       },
       "freeform": {
         "key": "name"
@@ -71,11 +73,13 @@
     {
       "question": {
         "de": "Zu welchem Verband/Bund gehört {name}",
-        "en": "To which scout association does {name} belong?"
+        "en": "To which scout association does {name} belong?",
+        "uk": "До якої скаутської асоціації належить {name}?"
       },
       "render": {
         "en": "The scout association of this group is {brand}",
-        "de": "Dieser Stamm ist im Verband {brand}"
+        "de": "Dieser Stamm ist im Verband {brand}",
+        "uk": "Скаутська асоціація цієї групи: {brand}"
       },
       "freeform": {
         "key": "brand"

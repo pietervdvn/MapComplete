@@ -5,7 +5,7 @@ import GeocodingProvider, {
     GeocodingOptions,
     GeocodingUtils,
     ReverseGeocodingProvider,
-    ReverseGeocodingResult,
+    ReverseGeocodingResult
 } from "./GeocodingProvider"
 import { Utils } from "../../Utils"
 import { Feature, FeatureCollection } from "geojson"
@@ -15,6 +15,7 @@ import { Store, Stores } from "../UIEventSource"
 
 export default class PhotonSearch implements GeocodingProvider, ReverseGeocodingProvider {
     private readonly _endpoint: string
+    public readonly name = "photon"
     private supportedLanguages = ["en", "de", "fr"]
     private static readonly types = {
         R: "relation",

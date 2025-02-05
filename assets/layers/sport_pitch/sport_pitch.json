@@ -214,7 +214,8 @@
         "de": "Welche Sportarten können hier gespielt werden?",
         "es": "¿Qué deporte se puede practicar aquí?",
         "ca": "Quin esport es pot practicar aquí?",
-        "cs": "Jaký sport se zde dá provozovat?"
+        "cs": "Jaký sport se zde dá provozovat?",
+        "uk": "Яким видом спорту тут можна займатися?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -233,7 +234,8 @@
             "de": "Hier wird Basketball gespielt",
             "es": "Aquí se juega al baloncesto",
             "ca": "Aquí es juga bàsquet",
-            "cs": "Zde se hraje basketbal"
+            "cs": "Zde se hraje basketbal",
+            "uk": "Тут грають у баскетбол"
           }
         },
         {
@@ -251,7 +253,8 @@
             "de": "Hier wird Fußball gespielt",
             "es": "Aquí se juega al fútbol",
             "ca": "Aquí es juga futbol",
-            "cs": "Zde se hraje fotbal"
+            "cs": "Zde se hraje fotbal",
+            "uk": "Тут грають у футбол"
           }
         },
         {
@@ -269,7 +272,8 @@
             "de": "Dies ist eine Tischtennisplatte",
             "es": "Esta es una mesa de ping-pong",
             "ca": "Aquí es juga ping pong",
-            "cs": "Toto je pingpongový stůl"
+            "cs": "Toto je pingpongový stůl",
+            "uk": "Це стіл для пінг-понгу"
           }
         },
         {
@@ -287,7 +291,8 @@
             "de": "Hier wird Tennis gespielt",
             "es": "Aquí se juega al tenis",
             "ca": "Aquí es juga al tenis",
-            "cs": "Zde se hraje tenis"
+            "cs": "Zde se hraje tenis",
+            "uk": "Тут грають у теніс"
           }
         },
         {
@@ -305,7 +310,8 @@
             "de": "Hier wird Korfball gespielt",
             "ca": "Aquí es juga al corfbol",
             "cs": "Zde se hraje korfbal",
-            "es": "Aquí se juega al Korfbal"
+            "es": "Aquí se juega al Korfbal",
+            "uk": "Тут грають у корфбол"
           }
         },
         {
@@ -339,7 +345,8 @@
             "de": "Dies ist ein Skatepark",
             "ca": "Açò és un skatepark",
             "cs": "Toto je skatepark",
-            "es": "Este es un skatepark"
+            "es": "Este es un skatepark",
+            "uk": "Це скейт-парк"
           }
         },
         {
@@ -351,7 +358,8 @@
           "then": {
             "en": "This is a horse riding arena",
             "de": "Dies ist ein Reitplatz",
-            "es": "Esta es una pista ecuestre"
+            "es": "Esta es una pista ecuestre",
+            "uk": "Це манеж для верхової їзди"
           }
         }
       ],
@@ -421,7 +429,8 @@
         "de": "Welchen Belag hat der Sportplatz?",
         "es": "¿Cuál es la superficie de esta cancha deportiva?",
         "ca": "Quina és la superfície d'aquest camp esportiu?",
-        "cs": "Jaký je povrch tohoto sportovního hřiště?"
+        "cs": "Jaký je povrch tohoto sportovního hřiště?",
+        "uk": "Яка поверхня цього спортивного майданчика?"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",

@@ -593,14 +593,16 @@
           "if": "mapcomplete-show_crosshair=yes",
           "then": {
             "en": "Show a crosshair in the center of the map when zoomed in above level 17",
-            "de": "Zeige ein Fadenkreuz in der Mitte der Karte, wenn über Stufe 17 hinaus gezoomt wird"
+            "de": "Zeige ein Fadenkreuz in der Mitte der Karte, wenn über Stufe 17 hinaus gezoomt wird",
+            "uk": "Показувати перехрестя в центрі мапи при збільшенні масштабу вище 17 рівня"
           }
         },
         {
           "if": "mapcomplete-show_crosshair=no",
           "then": {
             "en": "Do not show a crosshair in the center of the map",
-            "de": "Zeige kein Fadenkreuz in der Mitte der Karte an"
+            "de": "Zeige kein Fadenkreuz in der Mitte der Karte an",
+            "uk": "Не показуйте перехрестя в центрі карти"
           }
         },
         {
@@ -615,7 +617,8 @@
           "if": "mapcomplete-show_crosshair=always",
           "then": {
             "en": "Always show a crosshair in the center of the map",
-            "de": "Zeige immer ein Fadenkreuz in der Mitte der Karte an"
+            "de": "Zeige immer ein Fadenkreuz in der Mitte der Karte an",
+            "uk": "Завжди показуйте перехрестя в центрі мапи"
           }
         }
       ],
@@ -1257,7 +1260,7 @@
             "cs": "Vždy zobrazovat tlačítka překladu, a to i na mobilu",
             "nl": "Toon een knopje om snel vertalingen te maken op mobiel en op grote schermen",
             "hu": "Mindig jelenítse meg a fordítási gombokat, mobilon is",
-            "uk": "Завжди показуйте кнопки перекладу, в тому числі на мобільних пристроях",
+            "uk": "Завжди показувати кнопки перекладу, в тому числі на мобільних пристроях",
             "es": "Mostrar siempre los botones de traducción, incluso en dispositivos móviles"
           }
         }
@@ -1466,6 +1469,7 @@
     },
     {
       "id": "gps_accordeon",
+      "condition": "mapcomplete-show_debug=yes",
       "render": {
         "special": {
           "type": "group",
@@ -1493,6 +1497,7 @@
     },
     {
       "id": "debug_accordeon",
+      "condition": "mapcomplete-show_debug=yes",
       "render": {
         "special": {
           "type": "group",
@@ -1506,6 +1511,7 @@
       "labels": [
         "hidden"
       ],
+      "condition": "mapcomplete-show_debug=yes",
       "render": {
         "en": "Debug information"
       }
@@ -1517,6 +1523,35 @@
       ],
       "condition": "mapcomplete-show_debug=yes",
       "render": "{all_tags()}"
+    },
+    {
+      "id": "debug_storage_accordeon",
+      "condition": "mapcomplete-show_debug=yes",
+      "render": {
+        "special": {
+          "type": "group",
+          "header": "debug_storage_accordeon_title",
+          "labels": "debug_storage"
+        }
+      }
+    },
+    {
+      "id": "debug_storage_accordeon_title",
+      "labels": [
+        "hidden"
+      ],
+      "render": {
+        "en": "Debug information about local storage"
+      }
+    },
+    {
+      "id": "debug_storage",
+      "labels": [
+        "hidden"
+      ],
+      "render": {
+        "*": "{storage_all_tags()}"
+      }
     }
   ],
   "allowMove": false

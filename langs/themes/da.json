@@ -521,10 +521,6 @@
     "lighthouses": {
         "title": "Fyrtårne"
     },
-    "maproulette": {
-        "description": "Tema, der viser MapRoulette-opgaver, så du kan søge, filtrere og rette dem.",
-        "title": "KortRoulette-opgaver"
-    },
     "maps": {
         "description": "På dette kort kan du finde alle kort, OpenStreetMap kender - typisk et stort kort på en informationstavle, der viser området, byen eller regionen, f.eks. et turistkort på bagsiden af en tavle, et kort over et naturreservat, et kort over cykelnetværk i regionen, ...) <br/><br/>Hvis der mangler et kort, kan du nemt kortlægge dette kort på OpenStreetMap.",
         "shortDescription": "Dette tema viser alle (turisme) kort, som OpenStreetMap kender til"

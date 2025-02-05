@@ -936,10 +936,6 @@
         "shortDescription": "Toont wijzigingen gemaakt met MapComplete",
         "title": "Wijzigingen gemaakt met MapComplete"
     },
-    "maproulette": {
-        "description": "Thema met MapRoulette taken, waar je ze kunt zoeken, filteren en oplossen.",
-        "title": "MapRoulette taken"
-    },
     "maps": {
         "description": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",
         "shortDescription": "Dit thema toont alle (toeristische) kaarten die OpenStreetMap kent",

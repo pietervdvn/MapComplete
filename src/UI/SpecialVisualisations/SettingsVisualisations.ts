@@ -7,7 +7,7 @@ import LoginButton from "../Base/LoginButton.svelte"
 import ThemeViewState from "../../Models/ThemeViewState"
 import OrientationDebugPanel from "../Debug/OrientationDebugPanel.svelte"
 import AllTagsPanel from "../Popup/AllTagsPanel.svelte"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
 import ClearCaches from "../Popup/ClearCaches.svelte"
 import Locale from "../i18n/Locale"
 import LanguageUtils from "../../Utils/LanguageUtils"
@@ -76,6 +76,22 @@ export class SettingsVisualisations {
                 }
             },
             {
+                funcName: "storage_all_tags",
+                group: "settings",
+                docs: "Shows the current state of storage",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState
+                ): SvelteUIElement {
+                    const data = {}
+                    for (const key in localStorage) {
+                        data[key] = localStorage[key]
+                    }
+                    const tags = new ImmutableStore(data)
+                    return new SvelteUIElement(AllTagsPanel, { state, tags })
+                }
+            },
+            {
                 funcName: "clear_caches",
                 docs: "A button which clears the locally downloaded data and the service worker. Login status etc will be kept",
                 args: [
@@ -89,7 +105,7 @@ export class SettingsVisualisations {
                 constr(
                     _: SpecialVisualizationState,
                     __: UIEventSource<Record<string, string>>,
-                    argument: string[],
+                    argument: string[]
                 ): SvelteUIElement {
                     return new SvelteUIElement(ClearCaches, {
                         msg: argument[0] ?? "Clear local caches"

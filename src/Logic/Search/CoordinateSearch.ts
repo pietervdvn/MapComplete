@@ -2,10 +2,12 @@ import GeocodingProvider, { GeocodeResult } from "./GeocodingProvider"
 import { Utils } from "../../Utils"
 import { ImmutableStore, Store } from "../UIEventSource"
 import CoordinateParser from "coordinate-parser"
+
 /**
  * A simple search-class which interprets possible locations
  */
 export default class CoordinateSearch implements GeocodingProvider {
+    public readonly name = "CoordinateSearch"
     private static readonly latLonRegexes: ReadonlyArray<RegExp> = [
         /^ *(-?[0-9]+\.[0-9]+)[ ,;/\\]+(-?[0-9]+\.[0-9]+)/,
         /^ *(-?[0-9]+,[0-9]+)[ ;/\\]+(-?[0-9]+,[0-9]+)/,

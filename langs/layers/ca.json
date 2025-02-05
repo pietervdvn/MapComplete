@@ -7015,6 +7015,9 @@
                 },
                 "question": "Quins gèneres poden inscriure's a aquesta escola?"
             },
+            "is_special_needs": {
+                "question": "Aquesta escola es dirigeix a estudiants amb necessitats especials?"
+            },
             "school-language": {
                 "render": {
                     "special": {
@@ -7028,30 +7031,6 @@
             "school-name": {
                 "question": "Quin és el nom d'aquesta escola?",
                 "render": "L'escola s'anomena {name}"
-            },
-            "target-audience": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta és una escola per a estudiants sense necessitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites mesures</div>"
-                    },
-                    "1": {
-                        "then": "Aquesta és una escola per a estudiants amb dificultats de l'aprenentatge"
-                    },
-                    "2": {
-                        "then": "Aquesta és una escola per a estudiants cecs o estudiants amb deficiències visuals"
-                    },
-                    "3": {
-                        "then": "Aquesta és una escola per a estudiants sords o amb dificultats auditives"
-                    },
-                    "4": {
-                        "then": "Aquesta és una escola per a estudiants amb discapacitats"
-                    },
-                    "5": {
-                        "then": "Aquesta és una escola per a estudiants amb necessitats especials"
-                    }
-                },
-                "question": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?",
-                "render": "Aquesta escola té instal·lacions per a estudiants amb {school:for}"
             }
         },
         "title": {

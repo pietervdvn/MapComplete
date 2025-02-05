@@ -2,7 +2,8 @@
   "id": "charge_point",
   "name": {
     "en": "Charge points",
-    "de": "Ladesäulen"
+    "de": "Ladesäulen",
+    "uk": "Пункти зарядки"
   },
   "description": {
     "en": "Layer showing individual charge points within a charging station",

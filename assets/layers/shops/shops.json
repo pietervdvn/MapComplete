@@ -565,10 +565,7 @@
       "mappings": [
         {
           "if": "healthcare=optometrist",
-          "ifnot": "not:healtcare=optometrist",
-          "addExtraTags": [
-            "not:healthcare=optometrist"
-          ],
+          "ifnot": "not:healthcare=optometrist",
           "then": {
             "en": "This shop offers eye exams by certified optometrists",
             "nl": "Hier kan men een oogtest door een erkende optometrist laten uitvoeren",
@@ -814,7 +811,8 @@
         "es": "¿Esta tienda repara bicicletas?",
         "da": "Reparerer denne butik cykler?",
         "ca": "Aquesta botiga repara bicicletes?",
-        "cs": "Opravuje tento obchod jízdní kola?"
+        "cs": "Opravuje tento obchod jízdní kola?",
+        "uk": "Чи ремонтує ця майстерня велосипеди?"
       },
       "mappings": [
         {
@@ -832,7 +830,8 @@
             "es": "Esta tienda repara bicicletas",
             "da": "Denne butik reparerer cykler",
             "ca": "Aquesta botiga repara bicis",
-            "cs": "Tento obchod opravuje jízdní kola"
+            "cs": "Tento obchod opravuje jízdní kola",
+            "uk": "У цій майстерні ремонтують велосипеди"
           }
         },
         {
@@ -850,7 +849,8 @@
             "es": "Esta tienda no repara bicicletas",
             "da": "Denne butik reparerer ikke cykler",
             "ca": "Aquesta botiga no repara bicis",
-            "cs": "Tento obchod neopravuje jízdní kola"
+            "cs": "Tento obchod neopravuje jízdní kola",
+            "uk": "Ця майстерня не ремонтує велосипеди"
           }
         },
         {
@@ -868,7 +868,8 @@
             "es": "Esta tienda solo repara bicicletas compradas aquí",
             "da": "Denne butik reparerer kun cykler købt her",
             "ca": "Aquesta botiga sols repara bicis comprades aquí",
-            "cs": "Tento obchod opravuje pouze zde zakoupená kola"
+            "cs": "Tento obchod opravuje pouze zde zakoupená kola",
+            "uk": "Ця майстерня ремонтує тільки куплені тут велосипеди"
           }
         },
         {
@@ -886,7 +887,8 @@
             "es": "Esta tienda solo repara bicicletas de una determinada marca",
             "da": "Dette værksted reparerer kun cykler af et bestemt mærke",
             "ca": "Aquesta tenda sols repara bicis d’una marca concreta",
-            "cs": "Tento obchod opravuje pouze kola určité značky"
+            "cs": "Tento obchod opravuje pouze kola určité značky",
+            "uk": "Ця майстерня ремонтує велосипеди лише певної марки"
           }
         }
       ]

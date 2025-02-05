@@ -885,10 +885,6 @@
         "shortDescription": "Zobrazuje změny provedené nástrojem MapComplete",
         "title": "Změny provedené pomocí MapComplete"
     },
-    "maproulette": {
-        "description": "Téma zobrazující úkoly MapRoulette, které umožňuje vyhledávat, filtrovat a opravovat je.",
-        "title": "Úkoly MapRoulette"
-    },
     "maps": {
         "description": "Na této mapě najdete všechny mapy, které OpenStreetMap zná - typicky je zde velká mapa na informační tabuli zobrazující oblast, město nebo region, (např. turistická mapa na zadní straně billboardu, mapa přírodní rezervace, mapa cyklistických sítí v regionu, ...). <br/><br/>Pokud mapa chybí, můžete ji snadno zmapovat na OpenStreetMap.",
         "shortDescription": "Toto téma zobrazuje všechny (turistické) mapy, které zná OpenStreetMap",

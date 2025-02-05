@@ -148,6 +148,7 @@
     },
     "opening_hours",
     "contact",
+    "address.address",
     "payment-options",
     "wheelchair"
   ],

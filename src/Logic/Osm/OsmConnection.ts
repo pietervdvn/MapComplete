@@ -18,29 +18,29 @@ interface OsmUserInfo {
     "contributor_terms": {
         "agreed": boolean,
         "pd": boolean
-    },
-    "img": {
+    }
+    "img"?: {
         "href": string,
-    },
-    "roles": string[],
+    }
+    "roles": string[]
     "changesets": {
         "count": number
-    },
-    "traces": {
-        "count": number
-    },
+    }
+    traces: {
+        count: number
+    }
     "blocks": {
         "received": {
             "count": number,
             "active": number
         }
-    },
-    "home": {
-        "lat": number,
-        "lon": number,
-        "zoom": number
-    },
-    "languages": string[],
+    }
+    home?: {
+        lat: number,
+        lon: number,
+        zoom: number
+    }
+    "languages": string[]
     "messages": {
         "received": {
             "count": number,
@@ -49,7 +49,22 @@ interface OsmUserInfo {
         "sent": {
             "count": number
         }
-    }
+
+        id: number
+        display_name: string
+        account_created: string
+        description: string
+        contributor_terms: { agreed: boolean }
+        roles: []
+        changesets: { count: number }
+        traces: { count: number }
+        blocks: { received: { count: number; active: number } }
+        img?: { href: string }
+        home: { lat: number, lon: number }
+        languages?: string[]
+        messages: { received: { count: number, unread: number }, sent: { count: number } }
+
+}
 
 }
 
@@ -231,12 +246,9 @@ export class OsmConnection {
         return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
     }
 
-
     public LogOut() {
         this.auth.logout()
-        this.userDetails.data.csCount = 0
-        this.userDetails.data.name = ""
-        this.userDetails.ping()
+        this.userDetails.setData(undefined)
         console.log("Logged out")
         this.loadingStatus.setData("not-attempted")
     }
@@ -250,7 +262,7 @@ export class OsmConnection {
         return this._oauth_config.url
     }
 
-    public AttemptLogin() {
+    public async AttemptLogin() {
         this.updateCapabilities()
         if (this.loadingStatus.data !== "logged-in") {
             // Stay 'logged-in' if we are already logged in; this simply means we are checking for messages
@@ -271,7 +283,6 @@ export class OsmConnection {
                 this.loadUserInfo()
             }
         })
-
     }
 
     private async loadUserInfo() {
@@ -294,17 +305,15 @@ export class OsmConnection {
                 description: user.description,
                 backend: this.Backend(),
                 home: user.home,
-                languages: user.languages,
+                languages: user.languages ?? [],
                 totalMessages: user.messages.received?.count ?? 0,
                 img: user.img?.href,
                 account_created: user.account_created,
-                tracesCount: user.traces.count,
+                tracesCount: user.traces?.count ?? 0,
                 unreadMessages: user.messages.received?.unread ?? 0,
             }
-            console.log("Login completed, userinfo is ", userdetails)
             this.userDetails.set(userdetails)
             this.loadingStatus.setData("logged-in")
-
         } catch (err) {
             console.log("Could not login due to:", err)
             this.loadingStatus.setData("error")
@@ -314,7 +323,7 @@ export class OsmConnection {
                 this.auth.logout()
                 this.LogOut()
             } else {
-                console.log("Other error. Status:", err.status)
+                console.log("Other error. Status:", err["status"])
                 this.apiIsOnline.setData("unreachable")
             }
         }
@@ -362,7 +371,7 @@ export class OsmConnection {
                     method,
                     headers: header,
                     content,
-                    path: `/api/0.6/${path}`,
+                    path: `/api/0.6/${path}`
                 },
                 function(err, response) {
                     if (err !== null) {
@@ -444,7 +453,7 @@ export class OsmConnection {
             "notes.json",
             content,
             {
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
             },
             true,
         )
@@ -489,7 +498,7 @@ export class OsmConnection {
             file: gpx,
             description: options.description,
             tags: options.labels?.join(",") ?? "",
-            visibility: options.visibility,
+            visibility: options.visibility
         }
 
         if (!contents.description) {
@@ -499,7 +508,7 @@ export class OsmConnection {
             file:
                 "; filename=\"" +
                 (options.filename ?? "gpx_track_mapcomplete_" + new Date().toISOString()) +
-                "\"\r\nContent-Type: application/gpx+xml",
+                "\"\r\nContent-Type: application/gpx+xml"
         }
 
         const boundary = "987654"
@@ -518,7 +527,7 @@ export class OsmConnection {
 
         const response = await this.post("gpx/create", body, {
             "Content-Type": "multipart/form-data; boundary=" + boundary,
-            "Content-Length": "" + body.length,
+            "Content-Length": "" + body.length
         })
         const parsed = JSON.parse(response)
         console.log("Uploaded GPX track", parsed)
@@ -539,7 +548,7 @@ export class OsmConnection {
                 {
                     method: "POST",
 
-                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`,
+                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
                 },
                 function(err) {
                     if (err !== null) {
@@ -556,7 +565,6 @@ export class OsmConnection {
      * To be called by land.html
      */
     public finishLogin(callback: (previousURL: string, oauth_token: string) => void) {
-        console.log(">>> authenticating")
         this.auth.authenticate(() => {
             // Fully authed at this point
             console.log("Authentication successful!")
@@ -593,7 +601,7 @@ export class OsmConnection {
              */
             singlepage: !this._iframeMode && !AndroidPolyfill.inAndroid.data,
             auto: autoLogin,
-            apiUrl: this._oauth_config.api_url ?? this._oauth_config.url,
+            apiUrl: this._oauth_config.api_url ?? this._oauth_config.url
         })
         if (AndroidPolyfill.inAndroid.data) {
             this.loginAndroidPolyfill() // NO AWAIT!

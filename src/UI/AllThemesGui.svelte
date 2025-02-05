@@ -41,7 +41,7 @@
   const tu = Translations.t.general
   const tr = Translations.t.general.morescreen
 
-  let userLanguages = osmConnection.userDetails.mapD((ud) => ud.languages)
+  let userLanguages = osmConnection.userDetails.map((ud) => ud?.languages ?? [])
   let search: UIEventSource<string | undefined> = new UIEventSource<string>("")
   let searchStable = search.stabilized(100)
 
@@ -53,8 +53,8 @@
   const hiddenThemes: MinimalThemeInformation[] = ThemeSearch.officialThemes.themes.filter(
     (th) => th.hideFromOverview === true
   )
-  let visitedHiddenThemes: Store<MinimalThemeInformation[]> =
-    UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection).map((knownIds) =>
+  let visitedHiddenThemes: Store<undefined | MinimalThemeInformation[]> =
+    UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection).mapD((knownIds) =>
       hiddenThemes.filter(
         (theme) =>
           knownIds.indexOf(theme.id) >= 0 ||
@@ -68,6 +68,9 @@
   function filtered(themes: Store<MinimalThemeInformation[]>): Store<MinimalThemeInformation[]> {
     return searchStable.map(
       (search) => {
+        if (!themes.data) {
+          return []
+        }
         if (!search) {
           return themes.data
         }

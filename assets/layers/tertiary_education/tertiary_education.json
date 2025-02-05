@@ -30,6 +30,7 @@
       ]
     }
   },
+  "minzoom": 14,
   "title": {
     "mappings": [
       {
