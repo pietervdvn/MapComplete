@@ -497,7 +497,7 @@ export default class UserRelatedState {
             amendedPrefs.ping()
         })
 
-        osmConnection.userDetails.addCallback((userDetails) => {
+        osmConnection.userDetails.addCallbackD((userDetails) => {
             for (const k in userDetails) {
                 amendedPrefs.data["_" + k] = "" + userDetails[k]
             }
