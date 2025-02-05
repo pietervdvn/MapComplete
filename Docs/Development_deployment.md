@@ -80,10 +80,22 @@ To use the WSL in Visual Studio Code:
    or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
    e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
 
+
+Developing a local theme
+------------------------
+
+To test theme changes you locally make, the easiest way is:
+
+- `npm run strt` which will run the server
+- After making changes to some layers and/or themes, run `npm run generate:layeroverview`. This will recompile the relevant themes.
+- You might need to refresh (F5) your browser window
+
+Note that `npm run start` is equivalent to `npm run generate:layeroverview && npm run strt`
+
 Automatic deployment
 --------------------
 
-Currently, the master branch is automatically deployed to https://mapcomplete.org/ by a GitHub action.
+Currently, the master branch is automatically deployed to https://mapcomplete.org/ by a Forgejo action.
 
 Every branch is automatically built (upon push) to `https://pietervdvn.github.io/mc/<branchname>` by a GitHub action.
 

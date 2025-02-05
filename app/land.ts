@@ -33,6 +33,9 @@ connection.finishLogin(async () => {
         })
         debug.set(dbg)
 
+        if(attempt > 10){
+            window.location.reload()
+        }
     } while (!token)
     console.log("Login finished, redirecting to passthrough; token is " + token)
     tokenSrc.set(token)
