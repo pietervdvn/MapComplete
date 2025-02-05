@@ -176,6 +176,7 @@
 </script>
 
 <main>
+  <div class="absolute top-0 left-0 h-screen w-screen" style="background-color: #cccccc"></div>
   <!-- Main map -->
   <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
     <MaplibreMap map={maplibremap} mapProperties={mapproperties} autorecovery={true} />

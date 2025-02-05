@@ -1,10 +1,5 @@
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import maplibregl, {
-    Map as MLMap,
-    Map as MlMap,
-    ScaleControl,
-    SourceSpecification,
-} from "maplibre-gl"
+import maplibregl, { Map as MLMap, Map as MlMap, ScaleControl, SourceSpecification } from "maplibre-gl"
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
@@ -179,6 +174,10 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
         maplibreMap.addCallbackAndRunD((map) => {
             map.on("load", () => {
+                console.log("Setting projection")
+                map.setProjection({
+                    type: "globe" // Set projection to globe
+                })
                 self.MoveMapToCurrentLoc(self.location.data)
                 self.SetZoom(self.zoom.data)
                 self.setMaxBounds(self.maxbounds.data)
