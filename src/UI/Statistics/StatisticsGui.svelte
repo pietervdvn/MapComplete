@@ -5,7 +5,7 @@
   import AllStats from "./AllStats.svelte"
 
   let homeUrl =
-    "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/changeset-metadata/"
+    "https://data.mapcomplete.org/changeset-metadata/"
   let stats_files = "file-overview.json"
 
   let indexFile = UIEventSource.FromPromise(Utils.downloadJson<string[]>(homeUrl + stats_files))
