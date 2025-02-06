@@ -41,6 +41,9 @@
       "builtin": "campsite",
       "override": {
         "minzoom": 16,
+        "filter": {
+          "sameAs": "group_campsite"
+        },
         "name": null,
         "isCounted": false
       }
