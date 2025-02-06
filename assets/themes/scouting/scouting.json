@@ -34,15 +34,16 @@
               }
             ]
           }
-        },
-        "=filter": []
+        }
       }
     },
     {
       "builtin": "campsite",
       "override": {
         "minzoom": 16,
-        "filter": null,
+        "filter": {
+          "sameAs": "group_campsite"
+        },
         "name": null,
         "isCounted": false
       }
