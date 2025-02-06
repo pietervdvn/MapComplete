@@ -35,6 +35,6 @@ jobs:
         shell: bash
         run: |
           scp -r hetzner:~/data/changeset-metadata/ .
-          npm run download:stats -- -- ./changeset-metadata/
+          npm run download:stats -- -- ./
           scp -r ./changeset-metadata/* hetzner:~/data/changeset-metadata/
           
