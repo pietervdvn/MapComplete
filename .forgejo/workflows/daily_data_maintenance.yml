@@ -3,7 +3,7 @@ on:
     - cron: "0 2 * * *"
 
 jobs:
-  deploy_on_hetzner_single:
+  daily_data_maintenance:
     runs-on: [ ubuntu-latest, hetzner-access ]
     steps:
       - uses: actions/checkout@v3

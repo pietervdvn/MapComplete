@@ -4,7 +4,7 @@ on:
       - build/*
 
 jobs:
-  deploy_on_hetzner_single:
+  deploy_single_theme:
     runs-on: [ ubuntu-latest, hetzner-access ]
     steps:
       - uses: actions/checkout@v3
