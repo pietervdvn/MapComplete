@@ -4,8 +4,8 @@ import { BBox } from "../../Logic/BBox"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { Utils } from "../../Utils"
 import SimpleMetaTagger from "../../Logic/SimpleMetaTagger"
-import geojson2svg from "geojson2svg"
 import { GeoOperations } from "../../Logic/GeoOperations"
+import { GeoJSON2SVG } from "geojson2svg"
 
 /**
  * Exposes the download-functionality
@@ -112,8 +112,7 @@ export default class DownloadHelper {
 
             const layerDef = options?.layers?.find((l) => l.id === layer)
             const rendering = layerDef?.lineRendering[0]
-
-            const converter = geojson2svg({
+            const converter = new GeoJSON2SVG({
                 viewportSize: { width, height },
                 mapExtent,
                 output: "svg",
@@ -155,14 +154,14 @@ export default class DownloadHelper {
 
     private getCleanGeoJsonPerLayer(includeMetaData: boolean): Map<string, Feature[]> {
         const state = this._state
-        const featuresPerLayer = new Map<string, any[]>()
+        const featuresPerLayer = new Map<string, Feature[]>()
         const neededLayers = state.theme.layers.filter((l) => l.source !== null).map((l) => l.id)
         const bbox = state.mapProperties.bounds.data
 
         for (const neededLayer of neededLayers) {
             const indexedFeatureSource = state.perLayer.get(neededLayer)
 
-            let features = indexedFeatureSource.GetFeaturesWithin(bbox)
+            let features: Feature[] = indexedFeatureSource.GetFeaturesWithin(bbox)
             // The 'indexedFeatureSources' contains _all_ features, they are not filtered yet
             const filter = state.layerState.filteredLayers.get(neededLayer)
             features = features.filter((f) =>
