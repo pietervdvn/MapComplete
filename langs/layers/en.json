@@ -9703,6 +9703,23 @@
                 },
                 "question": "What does this school train pupils for?"
             },
+            "orientation_belgium_special_needs": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Training type 1</b>: trains elementary life skills to live in an institution. There is no intention to do a (paid) job after training"
+                    },
+                    "1": {
+                        "then": "<b>Training type 2</b>: prepares to work in an environment with extra care and facilities such as a sheltered workshop"
+                    },
+                    "2": {
+                        "then": "<b>Training type 3</b>: prepares for a job and a (more-or-less) independent life in society"
+                    },
+                    "3": {
+                        "then": "<b>Training type 4</b>: prepares for a job or continued education"
+                    }
+                },
+                "question": "What does this school train pupils for?"
+            },
             "pedagogy": {
                 "mappings": {
                     "0": {
@@ -12791,6 +12808,9 @@
             },
             "debug_accordeon_title": {
                 "render": "Debug information"
+            },
+            "debug_storage_accordeon_title": {
+                "render": "Debug information about local storage"
             },
             "edit-profile": {
                 "render": {

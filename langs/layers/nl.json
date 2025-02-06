@@ -8241,6 +8241,23 @@
                 },
                 "question": "Waarop wordt een leerling voorbereid?"
             },
+            "orientation_belgium_special_needs": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Onderwijsvorm type 1</b>: leert elementaire vaardigheden om te functioneren in een zorginstelling"
+                    },
+                    "1": {
+                        "then": "<b>Onderwijsvorm type 2</b>: leert vaardigheden om te werken in een een beschermde arbeidsomgeving zoals een maatwerkbedrijf"
+                    },
+                    "2": {
+                        "then": "<b>Onderwijsvorm type 3</b>: leert vaardigheden voor een een job op de reguliere arbeidsmarkt en zelfstandig wonen"
+                    },
+                    "3": {
+                        "then": "<b>Onderwijsvorm type 4</b>: leert vaardigheden voor een een job op de reguliere arbeidsmarkt of voor voortgezette studies"
+                    }
+                },
+                "question": "Waar traint deze school de leerlingen voor?"
+            },
             "school-language": {
                 "render": {
                     "special": {
