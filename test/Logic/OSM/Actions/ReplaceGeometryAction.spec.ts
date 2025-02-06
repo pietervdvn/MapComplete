@@ -620,14 +620,14 @@ describe("ReplaceGeometryAction", () => {
         expect(closestIds.reprojectedNodes.size).toEqual(1)
         const reproj = closestIds.reprojectedNodes.get(1728823549)
         expect(reproj.projectAfterIndex).toEqual(1)
-        expect(reproj.newLon).toEqual(3.2168880864669203)
-        expect(reproj.newLat).toEqual(51.214739524104694)
+        expect(reproj.newLon).toEqual(3.2168880865355054)
+        expect(reproj.newLat).toEqual(51.21473952424369)
         expect(closestIds.detachedNodes.size).toEqual(0)
         const changed = await action.Perform(changes)
         expect(changed[11].changes["coordinates"]).toEqual([
             [3.216690793633461, 51.21474084112525],
             [3.2167256623506546, 51.214696737309964],
-            [3.2168880864669203, 51.214739524104694],
+            [3.2168880865355054, 51.21473952424369],
             [3.2169999182224274, 51.214768983537674],
             [3.2169650495052338, 51.21480720678671],
             [3.2169368863105774, 51.21480090625335],

@@ -1,4 +1,5 @@
-import * as turf from "@turf/turf"
+import { bbox } from "@turf/bbox"
+import { AllGeoJSON } from "@turf/turf"
 import { TileRange, Tiles } from "../Models/TileRange"
 import { GeoOperations } from "./GeoOperations"
 import { Feature, Polygon } from "geojson"
@@ -61,7 +62,7 @@ export class BBox {
      * Gets the bbox from a feature and caches it (by monkeypatching) the relevant feature
      *
      *
-     * const f = {type:"Feature",properties: {}, geometry: {type: "Point", coordinates: [-100,45]}}
+     * const f = <Feature> {type:"Feature",properties: {}, geometry: {type: "Point", coordinates: [-100,45]}}
      * const bb = BBox.get(f)
      * bb.minLat // => 45
      * bb.minLon // => -100
@@ -70,12 +71,22 @@ export class BBox {
     static get(feature: Feature): BBox {
         const f = <any>feature
         if (f.bbox?.overlapsWith === undefined) {
-            const [minX, minY, maxX, maxY]: number[] = turf.bbox(feature)
-            // Note: x is longitude
-            f["bbox"] = new BBox([
-                [minX, minY],
-                [maxX, maxY],
-            ])
+            const bb = bbox(<AllGeoJSON>feature)
+            console.log(">>> ", bb)
+            if (Array.isArray(bb)) {
+                const [minX, minY, maxX, maxY]: number[] = bb
+                f["bbox"] = new BBox([
+                    [minX, minY],
+                    [maxX, maxY]
+                ])
+            } else {
+                const { minLon, minLat, maxLon, maxLat } = bb
+                // Note: x is longitude
+                f["bbox"] = new BBox([
+                    [minLon, minLat],
+                    [maxLon, maxLat]
+                ])
+            }
         }
         return f["bbox"]
     }
@@ -260,7 +271,7 @@ export class BBox {
         return this["geojsonCache"]
     }
 
-    public asGeoJson<T = {}>(properties?: T): Feature<Polygon, T> {
+    public asGeoJson<T = Record<string, string>>(properties?: T): Feature<Polygon, T> {
         return {
             type: "Feature",
             properties: properties,

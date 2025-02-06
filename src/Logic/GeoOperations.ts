@@ -1,6 +1,6 @@
 import { BBox } from "./BBox"
 import * as turf from "@turf/turf"
-import { AllGeoJSON, booleanWithin, Coord, Polygon } from "@turf/turf"
+import { AllGeoJSON, booleanWithin, Coord } from "@turf/turf"
 import {
     Feature,
     FeatureCollection,
@@ -9,11 +9,11 @@ import {
     MultiLineString,
     MultiPolygon,
     Point,
+    Polygon,
     Position
 } from "geojson"
 import { Tiles } from "../Models/TileRange"
 import { Utils } from "../Utils"
-import { NearestPointOnLine } from "@turf/nearest-point-on-line"
 
 ("use strict")
 
@@ -57,14 +57,14 @@ export class GeoOperations {
         f0: Feature<Polygon | MultiPolygon>,
         f1: Feature<Polygon | MultiPolygon>
     ): Feature<Polygon | MultiPolygon> | null {
-        return turf.union(f0, f1)
+        return turf.union(turf.featureCollection([f0, f1]))
     }
 
     public static intersect(
         f0: Readonly<Feature<Polygon | MultiPolygon>>,
         f1: Readonly<Feature<Polygon | MultiPolygon>>
     ): Feature<Polygon | MultiPolygon> | null {
-        return turf.intersect(f0, f1)
+        return turf.intersect(turf.featureCollection([f0, f1]))
     }
 
     static surfaceAreaInSqMeters(feature: Feature<Polygon | MultiPolygon>): number {
@@ -145,7 +145,7 @@ export class GeoOperations {
      * const line = {"type": "Feature","properties": {},"geometry": {"type": "LineString","coordinates": [[3.779296875,48.777912755501845],[1.23046875,47.60616304386874]]}};
      * const lineOverlap = GeoOperations.calculateOverlap(line, [polygon]);
      * lineOverlap.length // => 1
-     * lineOverlap[0].overlap // => 156745.3293320278
+     * lineOverlap[0].overlap // => 158835.70531134616
      * lineOverlap[0].feat == polygon // => true
      * const line0 = {"type": "Feature","properties": {},"geometry": {"type": "LineString","coordinates": [[0.0439453125,47.31648293428332],[0.6591796875,46.77749276376827]]}};
      * const overlap0 = GeoOperations.calculateOverlap(line0, [polygon]);
@@ -158,7 +158,7 @@ export class GeoOperations {
         const featureBBox = BBox.get(feature)
         const result: { feat: Feature; overlap: number }[] = []
         if (feature.geometry.type === "Point") {
-            const coor = <[number, number]>feature.geometry.coordinates
+            const coor = <[number, number]>(<Feature<Point>>feature).geometry.coordinates
             for (const otherFeature of otherFeatures) {
                 if (
                     feature.properties.id !== undefined &&
@@ -278,7 +278,7 @@ export class GeoOperations {
 
         if (feature.geometry.type === "MultiPolygon") {
             const coordinatess: [number, number][][][] = <[number, number][][][]>(
-                feature.geometry.coordinates
+                (<Feature<MultiPolygon>>feature).geometry.coordinates
             )
             for (const coordinates of coordinatess) {
                 const inThisPolygon = GeoOperations.pointInPolygonCoordinates(x, y, coordinates)
@@ -293,7 +293,7 @@ export class GeoOperations {
             return GeoOperations.pointInPolygonCoordinates(
                 x,
                 y,
-                <[number, number][][]>feature.geometry.coordinates
+                <[number, number][][]>(<Feature<Polygon>>feature).geometry.coordinates
             )
         }
 
@@ -313,7 +313,7 @@ export class GeoOperations {
         })
     }
 
-    static bbox(feature: Feature | FeatureCollection): Feature<LineString> {
+    static bbox(feature: AllGeoJSON): Feature<LineString> {
         const [lon, lat, lon0, lat0] = turf.bbox(feature)
         return {
             type: "Feature",
@@ -345,7 +345,7 @@ export class GeoOperations {
     public static nearestPoint(
         way: Feature<LineString>,
         point: [number, number]
-    ): NearestPointOnLine {
+    ): Feature<Point, { dist: number; index: number; multiFeatureIndex: number; location: number }> {
         return turf.nearestPointOnLine(<Feature<LineString>>way, point, { units: "kilometers" })
     }
 
@@ -576,7 +576,7 @@ export class GeoOperations {
         }
         title = Utils.EncodeXmlValue(title)
         const trackPoints: string[] = []
-        let locationsWithMeta: Feature<Point, { date?: string; altitude?: number | string }>[]
+        let locationsWithMeta: Feature<Point>[]
         if (Array.isArray(locations)) {
             locationsWithMeta = locations
         } else {
@@ -826,7 +826,7 @@ export class GeoOperations {
         }
         if (toSplit.geometry.type === "Polygon" || toSplit.geometry.type == "MultiPolygon") {
 
-            const splitup = turf.intersect(<Feature<Polygon>>toSplit, boundary)
+            const splitup = turf.intersect(turf.featureCollection([<Feature<Polygon | MultiPolygon>>toSplit, boundary]))
             if (splitup === null) {
                 // No intersection found.
                 // Either: the boundary is contained fully in 'toSplit', 'toSplit' is contained fully in 'boundary' or they are unrelated at all
@@ -859,7 +859,7 @@ export class GeoOperations {
      * f("start", g({type:"Point", coordinates:[1,2]})) // => undefined
      * f("centroid", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [2,3]
      * f("centroid", g({type:"Polygon", coordinates:[[[1,2], [3,4], [1,2]]]})) // => [2,3]
-     * f("projected_centerpoint", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [1.9993137596003214,2.999313759600321]
+     * f("projected_centerpoint", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [ 1.9993134785863844, 3.000684536363483]
      * f("start", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [1,2]
      * f("end", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [3,4]
      *
@@ -878,7 +878,7 @@ export class GeoOperations {
         switch (location) {
             case "point":
                 if (feature.geometry.type === "Point") {
-                    return <[number, number]>feature.geometry.coordinates
+                    return <[number, number]>(<Feature<Point>>feature).geometry.coordinates
                 }
                 return undefined
             case "centroid":
@@ -906,12 +906,12 @@ export class GeoOperations {
                 return undefined
             case "start":
                 if (feature.geometry.type === "LineString") {
-                    return <[number, number]>feature.geometry.coordinates[0]
+                    return <[number, number]>(<Feature<LineString>>feature).geometry.coordinates[0]
                 }
                 return undefined
             case "end":
                 if (feature.geometry.type === "LineString") {
-                    return <[number, number]>feature.geometry.coordinates.at(-1)
+                    return <[number, number]>(<Feature<LineString>>feature).geometry.coordinates.at(-1)
                 }
                 return undefined
             default:
@@ -949,7 +949,7 @@ export class GeoOperations {
 
         for (const feature of features) {
             if (feature.geometry.type === "LineString") {
-                let coors = feature.geometry.coordinates
+                let coors = (<Feature<LineString>>feature).geometry.coordinates
                 for (let i = coors.length - 1; i >= 0; i--) {
                     // Go back, to nick of the back when needed
                     const ci = coors[i]
@@ -960,8 +960,8 @@ export class GeoOperations {
                             Math.abs(ci[1] - cj[1]) <= 0.0000001
                         ) {
                             // Found a self-intersecting way!
-                            console.debug("SPlitting way", feature.properties.id)
-                            result.push({
+                            console.debug("Splitting way", feature.properties.id)
+                            result.push(<Feature>{
                                 ...feature,
                                 geometry: { ...feature.geometry, coordinates: coors.slice(i + 1) }
                             })
@@ -970,7 +970,7 @@ export class GeoOperations {
                         }
                     }
                 }
-                result.push({
+                result.push(<Feature>{
                     ...feature,
                     geometry: { ...feature.geometry, coordinates: coors }
                 })
@@ -1293,7 +1293,7 @@ export class GeoOperations {
             }
 
             try {
-                const intersection = turf.intersect(feature, otherFeature)
+                const intersection = turf.intersect(turf.featureCollection([feature, otherFeature]))
                 if (intersection == null) {
                     return null
                 }
@@ -1306,9 +1306,10 @@ export class GeoOperations {
                 }
                 if (e.message.indexOf("SweepLine tree") >= 0) {
                     console.log("Applying fallback intersection...")
-                    const intersection = turf.intersect(
-                        turf.truncate(feature),
-                        turf.truncate(otherFeature)
+                    const intersection = turf.intersect(turf.featureCollection([
+                            turf.truncate(feature),
+                            turf.truncate(otherFeature)
+                        ])
                     )
                     if (intersection == null) {
                         return null
