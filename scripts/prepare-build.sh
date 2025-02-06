@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
 
 echo "Starting prepare-build"
+nvm use
 # The build script; we build the application step by step as building everything at once takes too much RAM
 # Should be run from the repository root
 # This is the main deployment script
