@@ -99,7 +99,7 @@ export class GeoOperations {
         if (feature === undefined || feature === null) {
             return undefined
         }
-        return <[number, number]>turf.center(<turf.Feature>feature).geometry.coordinates
+        return <[number, number]>turf.center(feature).geometry.coordinates
     }
 
     /**
