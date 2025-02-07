@@ -26,13 +26,14 @@ export default class PanoramaxImageProvider extends ImageProvider {
     private static knownMeta: Record<string, { data: ImageData; time: Date }> = {}
 
     public SourceIcon(
-        img?: { id: string; url: string; host?: string },
+        img?: { id: string; url: string },
         location?: {
             lon: number
             lat: number
         }
     ): BaseUIElement {
-        const p = new Panoramax(img.host)
+        const host = ("https://" + new URL(img.url).host)
+        const p = new Panoramax(host)
         return new Link(
             new SvelteUIElement(Panoramax_bw),
             p.createViewLink({
