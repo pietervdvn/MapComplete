@@ -178,13 +178,13 @@
       "options": [
         {
           "question": {
-            "en": "persons",
+            "en": "All capacities",
             "de": "Personen"
           }
         },
         {
           "question": {
-            "en": "1-20"
+            "en": "Capacity between 1 and 20 persons"
           },
           "osmTags": {
             "and": [
@@ -195,8 +195,9 @@
         },
         {
           "question": {
-            "en": "21-50"
+            "en": "Capacity between 21 and 50 persons"
           },
+
           "osmTags": {
             "and": [
               "capacity:persons>=21",
@@ -206,7 +207,7 @@
         },
         {
           "question": {
-            "en": "51-100"
+            "en": "Capacity between 51 and 100 persons"
           },
           "osmTags": {
             "and": [
@@ -217,7 +218,7 @@
         },
         {
           "question": {
-            "en": "101-200"
+            "en": "Capacity between 101 and 200 persons"
           },
           "osmTags": {
             "and": [
@@ -228,7 +229,7 @@
         },
         {
           "question": {
-            "en": "201-500"
+            "en": "Capacity between 201 and 500 persons"
           },
           "osmTags": {
             "and": [
@@ -239,7 +240,7 @@
         },
         {
           "question": {
-            "en": "500+"
+            "en": "Capacity over 500 persons"
           },
           "osmTags": "capacity:persons>=501"
         },

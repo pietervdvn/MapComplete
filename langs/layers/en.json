@@ -2212,25 +2212,25 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "persons"
+                        "question": "All capacities"
                     },
                     "1": {
-                        "question": "1-20"
+                        "question": "Capacity between 1 and 20 persons"
                     },
                     "2": {
-                        "question": "21-50"
+                        "question": "Capacity between 21 and 50 persons"
                     },
                     "3": {
-                        "question": "51-100"
+                        "question": "Capacity between 51 and 100 persons"
                     },
                     "4": {
-                        "question": "101-200"
+                        "question": "Capacity between 101 and 200 persons"
                     },
                     "5": {
-                        "question": "201-500"
+                        "question": "Capacity between 201 and 500 persons"
                     },
                     "6": {
-                        "question": "500+"
+                        "question": "Capacity over 500 persons"
                     },
                     "7": {
                         "question": "?"
