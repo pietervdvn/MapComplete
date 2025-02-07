@@ -76,7 +76,7 @@ export class GeoOperations {
      * @param feature
      */
     static centerpoint(feature: Feature): Feature<Point> {
-        const newFeature: Feature<Point> = turf.center(<turf.Feature>feature)
+        const newFeature: Feature<Point> = turf.center(feature)
         newFeature.properties = feature.properties
         newFeature.id = feature.id
         return newFeature
