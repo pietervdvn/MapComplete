@@ -3,29 +3,27 @@
   import ActiveFilters from "./ActiveFilters.svelte"
   import Constants from "../../Models/Constants"
   import type { ActiveFilter } from "../../Logic/State/LayerState"
-  import ThemeViewState from "../../Models/ThemeViewState"
   import ThemeResults from "./ThemeResults.svelte"
   import GeocodeResults from "./GeocodeResults.svelte"
   import FilterResults from "./FilterResults.svelte"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
   import type { FilterSearchResult } from "../../Logic/Search/FilterSearch"
+  import { WithSearchState } from "../../Models/ThemeViewState/WithSearchState"
 
-  export let state: ThemeViewState
+  export let state: WithSearchState
   let activeFilters: Store<(ActiveFilter & FilterSearchResult)[]> =
     state.layerState.activeFilters.map((fs) =>
       fs
         .filter(
-          (f) =>
-            f.filter.options[0].fields.length === 0 &&
-            Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0
+          (f) => f.filter.options[0].fields.length === 0 && !Constants.isPriviliged(f.layer)
         )
         .map((af) => {
           const index = <number>af.control.data
           const r: FilterSearchResult & ActiveFilter = {
             ...af,
             index,
-            option: af.filter.options[index],
+            option: af.filter.options[index]
           }
           return r
         })

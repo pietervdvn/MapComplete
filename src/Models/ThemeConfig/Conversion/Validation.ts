@@ -1128,7 +1128,7 @@ export class ValidateThemeEnsemble extends Conversion<
                 if (typeof layer.source === "string") {
                     continue
                 }
-                if (Constants.priviliged_layers.indexOf(<any>layer.id) >= 0) {
+                if (Constants.isPriviliged(layer)) {
                     continue
                 }
                 if (!layer.source) {

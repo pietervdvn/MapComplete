@@ -136,7 +136,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
         }
 
         if (json.source === "special") {
-            if (!Constants.priviliged_layers.find((x) => x == json.id)) {
+            if (!Constants.isPriviliged(json)) {
                 context.err(
                     "Layer " +
                         json.id +
@@ -150,7 +150,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             json.allowMove === undefined &&
             json.source["geoJson"] === undefined
         ) {
-            if (!Constants.priviliged_layers.find((x) => x == json.id)) {
+            if (!Constants.isPriviliged(json)) {
                 context.err("Layer " + json.id + " does not have an explicit 'allowMove'")
             }
         }

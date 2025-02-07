@@ -62,7 +62,7 @@ export default class StudioServer {
             }
             const category = <"layers" | "themes">parts[0]
             const id = file.substring(file.lastIndexOf("/") + 1, file.length - ".json".length)
-            if (Constants.priviliged_layers.indexOf(<any>id) > 0) {
+            if (Constants.isPriviliged(id)) {
                 continue
             }
             layerOverview.push({ id, owner, category })

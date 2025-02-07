@@ -18,7 +18,7 @@ import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import NearbyFeatureSource from "../../Logic/FeatureSource/Sources/NearbyFeatureSource"
 import {
     SummaryTileSource,
-    SummaryTileSourceRewriter,
+    SummaryTileSourceRewriter
 } from "../../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
 import { ShowDataLayerOptions } from "../../UI/Map/ShowDataLayerOptions"
 
@@ -95,7 +95,7 @@ export class WithSpecialLayers extends WithChangesState {
 
         const layers = this.theme.layers.filter(
             (l) =>
-                (<string[]>(<unknown>Constants.priviliged_layers)).indexOf(l.id) < 0 &&
+                !Constants.isPriviliged(l) &&
                 l.source.geojsonSource === undefined &&
                 l.doCount
         )

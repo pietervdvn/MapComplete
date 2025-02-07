@@ -13,7 +13,6 @@ import PointRenderingConfig from "./PointRenderingConfig"
 import WithContextLoader from "./WithContextLoader"
 import LineRenderingConfig from "./LineRenderingConfig"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
-import BaseUIElement from "../../UI/BaseUIElement"
 import Link from "../../UI/Base/Link"
 import { Utils } from "../../Utils"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
@@ -23,10 +22,6 @@ import Constants from "../Constants"
 import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
 import { And } from "../../Logic/Tags/And"
-import Combine from "../../UI/Base/Combine"
-import SvelteUIElement from "../../UI/Base/SvelteUIElement"
-import DynamicMarker from "../../UI/Map/DynamicMarker.svelte"
-import { ImmutableStore } from "../../Logic/UIEventSource"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
@@ -257,7 +252,7 @@ export default class LayerConfig extends WithContextLoader {
             } else if (
                 !hasCenterRendering &&
                 this.lineRendering.length === 0 &&
-                Constants.priviliged_layers.indexOf(<any>this.id) < 0 &&
+                !Constants.isPriviliged(this) &&
                 this.source !== null /*library layer*/ &&
                 !this.source?.geojsonSource?.startsWith(
                     "https://api.openstreetmap.org/api/0.6/notes.json"

@@ -99,7 +99,7 @@ export default class FilterSearch {
             if (!Array.isArray(filteredLayer.layerDef.filters)) {
                 continue
             }
-            if (Constants.priviliged_layers.indexOf(<any>id) >= 0) {
+            if (Constants.isPriviliged(id)) {
                 continue
             }
             for (const filter of filteredLayer.layerDef.filters) {

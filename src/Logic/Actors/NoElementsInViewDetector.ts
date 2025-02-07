@@ -15,7 +15,7 @@ export default class NoElementsInViewDetector {
         const state = themeViewState
         const minZoom = Math.min(
             ...themeViewState.theme.layers
-                .filter((l) => Constants.priviliged_layers.indexOf(<any>l.id) < 0)
+                .filter((l) => !Constants.isPriviliged(l))
                 .map((l) => l.minzoom)
         )
         const mapProperties = themeViewState.mapProperties

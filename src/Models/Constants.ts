@@ -242,4 +242,16 @@ export default class Constants {
             (window.devicePixelRatio && window.devicePixelRatio >= 2)
         )
     }
+
+    private static priviligedLayerSet = new Set<string>(Constants.priviliged_layers)
+
+    public static isPriviliged(layer: string | { id: string }) {
+        let id: string
+        if (typeof layer === "string") {
+            id = layer
+        } else {
+            id = layer.id
+        }
+        return this.priviligedLayerSet.has(id)
+    }
 }
