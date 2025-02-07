@@ -25,13 +25,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         "dragRotate",
         "dragPan",
         "keyboard",
-        "touchZoomRotate",
+        "touchZoomRotate"
     ]
     private static maplibre_zoom_handlers = [
         "scrollZoom",
         "boxZoom",
         "doubleClickZoom",
-        "touchZoomRotate",
+        "touchZoomRotate"
     ]
     readonly location: UIEventSource<{ lon: number; lat: number }>
     private readonly isFlying = new UIEventSource(false)
@@ -45,14 +45,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly lastClickLocation: Store<
         | undefined
         | {
-              lon: number
-              lat: number
-              mode: "left" | "right" | "middle"
-              /**
-               * The nearest feature from a MapComplete layer
-               */
-              nearestFeature?: Feature
-          }
+        lon: number
+        lat: number
+        mode: "left" | "right" | "middle"
+        /**
+         * The nearest feature from a MapComplete layer
+         */
+        nearestFeature?: Feature
+    }
     >
     readonly minzoom: UIEventSource<number>
     readonly maxzoom: UIEventSource<number>
@@ -143,7 +143,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 const features = map
                     .queryRenderedFeatures([
                         [point.x - buffer, point.y - buffer],
-                        [point.x + buffer, point.y + buffer],
+                        [point.x + buffer, point.y + buffer]
                     ])
                     .filter((f) => f.source.startsWith("mapcomplete_"))
                 if (features.length === 1) {
@@ -172,38 +172,28 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             lastClickLocation.setData({ lon, lat, mode, nearestFeature })
         }
 
+        const syncStores = () => {
+            this.MoveMapToCurrentLoc(this.location.data)
+            this.SetZoom(this.zoom.data)
+            this.setMaxBounds(this.maxbounds.data)
+            this.setAllowMoving(this.allowMoving.data)
+            this.setAllowRotating(this.allowRotating.data)
+            this.setAllowZooming(this.allowZooming.data)
+            this.setMinzoom(this.minzoom.data)
+            this.setMaxzoom(this.maxzoom.data)
+            this.setBounds(this.bounds.data)
+            this.SetRotation(this.rotation.data)
+            this.setScale(this.showScale.data)
+            this.setTerrain(this.useTerrain.data)
+            this.updateStores(true)
+        }
+
         maplibreMap.addCallbackAndRunD((map) => {
             map.on("load", () => {
-                console.log("Setting projection")
-                map.setProjection({
-                    type: "globe" // Set projection to globe
-                })
-                self.MoveMapToCurrentLoc(self.location.data)
-                self.SetZoom(self.zoom.data)
-                self.setMaxBounds(self.maxbounds.data)
-                self.setAllowMoving(self.allowMoving.data)
-                self.setAllowRotating(self.allowRotating.data)
-                self.setAllowZooming(self.allowZooming.data)
-                self.setMinzoom(self.minzoom.data)
-                self.setMaxzoom(self.maxzoom.data)
-                self.setBounds(self.bounds.data)
-                self.setTerrain(self.useTerrain.data)
-                self.setScale(self.showScale.data)
-                this.updateStores(true)
+                syncStores()
             })
-            self.MoveMapToCurrentLoc(self.location.data)
-            self.SetZoom(self.zoom.data)
-            self.setMaxBounds(self.maxbounds.data)
-            self.setAllowMoving(self.allowMoving.data)
-            self.setAllowRotating(self.allowRotating.data)
-            self.setAllowZooming(self.allowZooming.data)
-            self.setMinzoom(self.minzoom.data)
-            self.setMaxzoom(self.maxzoom.data)
-            self.setBounds(self.bounds.data)
-            self.SetRotation(self.rotation.data)
-            self.setTerrain(self.useTerrain.data)
-            self.setScale(self.showScale.data)
-            this.updateStores(true)
+            syncStores()
+
             map.on("movestart", () => {
                 this.isFlying.setData(true)
             })
@@ -224,9 +214,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             map.on("dblclick", (e) => {
                 handleClick(e, "left")
             })
-            map.on("touchend", (e) => {
-                const touchEvent = e.originalEvent
-            })
+
             map.on("rotateend", (_) => {
                 this.updateStores()
             })
@@ -265,22 +253,22 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         })
 
         this.location.addCallbackAndRunD((loc) => {
-            self.MoveMapToCurrentLoc(loc)
+            this.MoveMapToCurrentLoc(loc)
         })
-        this.zoom.addCallbackAndRunD((z) => self.SetZoom(z))
-        this.maxbounds.addCallbackAndRun((bbox) => self.setMaxBounds(bbox))
-        this.rotation.addCallbackAndRunD((bearing) => self.SetRotation(bearing))
+        this.zoom.addCallbackAndRunD((z) => this.SetZoom(z))
+        this.maxbounds.addCallbackAndRun((bbox) => this.setMaxBounds(bbox))
+        this.rotation.addCallbackAndRunD((bearing) => this.SetRotation(bearing))
         this.allowMoving.addCallbackAndRun((allowMoving) => {
-            self.setAllowMoving(allowMoving)
-            self.pingKeycodeEvent(allowMoving ? "unlocked" : "locked")
+            this.setAllowMoving(allowMoving)
+            this.pingKeycodeEvent(allowMoving ? "unlocked" : "locked")
         })
         this.allowRotating.addCallbackAndRunD((allowRotating) =>
-            self.setAllowRotating(allowRotating)
+            this.setAllowRotating(allowRotating)
         )
-        this.allowZooming.addCallbackAndRun((allowZooming) => self.setAllowZooming(allowZooming))
-        this.bounds.addCallbackAndRunD((bounds) => self.setBounds(bounds))
-        this.useTerrain?.addCallbackAndRun((useTerrain) => self.setTerrain(useTerrain))
-        this.showScale?.addCallbackAndRun((showScale) => self.setScale(showScale))
+        this.allowZooming.addCallbackAndRun((allowZooming) => this.setAllowZooming(allowZooming))
+        this.bounds.addCallbackAndRunD((bounds) => this.setBounds(bounds))
+        this.useTerrain?.addCallbackAndRun((useTerrain) => this.setTerrain(useTerrain))
+        this.showScale?.addCallbackAndRun((showScale) => this.setScale(showScale))
     }
 
     /**
@@ -295,9 +283,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return {
             map: mlmap,
             ui: new SvelteUIElement(MaplibreMap, {
-                map: mlmap,
+                map: mlmap
             }),
-            mapproperties: new MapLibreAdaptor(mlmap),
+            mapproperties: new MapLibreAdaptor(mlmap)
         }
     }
 
@@ -365,7 +353,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     ) {
         const event = {
             date: new Date(),
-            key: key,
+            key: key
         }
 
         for (let i = 0; i < this._onKeyNavigation.length; i++) {
@@ -434,7 +422,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         element.style.transform = ""
         const offset = style.match(/translate\(([-0-9]+)%, ?([-0-9]+)%\)/)
 
-        let labels = <HTMLElement[]>Array.from(element.getElementsByClassName("marker-label"))
+        const labels = <HTMLElement[]>Array.from(element.getElementsByClassName("marker-label"))
         const origLabelTransforms = labels.map((l) => l.style.transform)
         // We save the original width (`w`) and height (`h`) in order to restore them later on
         const w = element.style.width
@@ -554,7 +542,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const bounds = map.getBounds()
         const bbox = new BBox([
             [bounds.getEast(), bounds.getNorth()],
-            [bounds.getWest(), bounds.getSouth()],
+            [bounds.getWest(), bounds.getSouth()]
         ])
         if (this.bounds.data === undefined || !isSetup) {
             this.bounds.setData(bbox)
@@ -748,14 +736,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 type: "raster-dem",
                 url:
                     "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=" +
-                    Constants.maptilerApiKey,
+                    Constants.maptilerApiKey
             })
             try {
                 while (!map?.isStyleLoaded()) {
                     await Utils.waitFor(250)
                 }
                 map.setTerrain({
-                    source: id,
+                    source: id
                 })
             } catch (e) {
                 console.error(e)
@@ -780,7 +768,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (this.scaleControl === undefined) {
             this.scaleControl = new ScaleControl({
                 maxWidth: 100,
-                unit: "metric",
+                unit: "metric"
             })
         }
         if (!map.hasControl(this.scaleControl)) {
@@ -793,7 +781,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         window.requestAnimationFrame(() => {
             this._maplibreMap.data?.flyTo({
                 zoom,
-                center: [lon, lat],
+                center: [lon, lat]
             })
         })
     }

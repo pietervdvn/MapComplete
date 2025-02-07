@@ -1,5 +1,5 @@
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import type { AddLayerObject, Map as MlMap } from "maplibre-gl"
+import type { AddLayerObject, Alignment, Map as MlMap } from "maplibre-gl"
 import { GeoJSONSource, Marker } from "maplibre-gl"
 import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
 import { GeoOperations } from "../../Logic/GeoOperations"
@@ -16,6 +16,7 @@ import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFea
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
+import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
@@ -47,19 +48,18 @@ class PointRenderingLayer {
         this._fetchStore = fetchStore
         this._onClick = onClick
         this._selectedElement = selectedElement
-        const self = this
         if (!features?.features) {
             throw (
                 "Could not setup a PointRenderingLayer; features?.features is undefined/null. The layer is " +
                 layer.id
             )
         }
-        features.features?.addCallbackAndRunD((features) => self.updateFeatures(features))
+        features.features?.addCallbackAndRunD((features) => this.updateFeatures(features))
         visibility?.addCallbackAndRunD((visible) => {
-            if (visible === true && self._dirty) {
-                self.updateFeatures(features.features.data)
+            if (visible === true && this._dirty) {
+                this.updateFeatures(features.features.data)
             }
-            self.setVisibility(visible)
+            this.setVisibility(visible)
         })
         selectedElement?.addCallbackAndRun((selected) => {
             this._markedAsSelected.forEach((el) => el.classList.remove("selected"))
@@ -123,7 +123,7 @@ class PointRenderingLayer {
                 }
 
                 const loc = GeoOperations.featureToCoordinateWithRenderingType(
-                    <any>feature,
+                    feature,
                     location
                 )
                 if (loc === undefined) {
@@ -199,10 +199,10 @@ class PointRenderingLayer {
             .addTo(this._map)
         store
             .map((tags) => this._config.pitchAlignment.GetRenderValue(tags).Subs(tags).txt)
-            .addCallbackAndRun((pitchAligment) => marker.setPitchAlignment(<any>pitchAligment))
+            .addCallbackAndRun((pitchAligment) => marker.setPitchAlignment(<Alignment>pitchAligment))
         store
             .map((tags) => this._config.rotationAlignment.GetRenderValue(tags).Subs(tags).txt)
-            .addCallbackAndRun((pitchAligment) => marker.setRotationAlignment(<any>pitchAligment))
+            .addCallbackAndRun((pitchAligment) => marker.setRotationAlignment(<Alignment>pitchAligment))
 
         if (feature.geometry.type === "Point") {
             // When the tags get 'pinged', check that the location didn't change
@@ -261,10 +261,9 @@ class LineRenderingLayer {
         this._visibility = visibility
         this._fetchStore = fetchStore
         this._onClick = onClick
-        const self = this
-        features.features.addCallbackAndRunD(() => self.update(features.features))
+        features.features.addCallbackAndRunD(() => this.update(features.features))
 
-        map.on("styledata", () => self.update(features.features))
+        map.on("styledata", () => this.update(features.features))
     }
 
     public destruct(): void {
@@ -324,7 +323,7 @@ class LineRenderingLayer {
         calculatedProps.fillColor = calculatedProps.fillColor ?? calculatedProps.color
 
         for (const key of LineRenderingLayer.lineConfigKeysColor) {
-            let v = <string>calculatedProps[key]
+            const v = <string>calculatedProps[key]
             if (v === undefined) {
                 continue
             }
@@ -353,14 +352,6 @@ class LineRenderingLayer {
         // As such, we only now read the features from the featureSource and compare with the previously set data
         const features = featureSource.data
         const src = <GeoJSONSource>map.getSource(this._layername)
-        if (
-            src !== undefined &&
-            this.currentSourceData === features &&
-            src._data === <any>features
-        ) {
-            // Already up to date
-            return
-        }
         {
             // Add source to the map or update the feature source
             if (src === undefined) {
@@ -516,7 +507,7 @@ class LineRenderingLayer {
 }
 
 export default class ShowDataLayer {
-    public static rangeLayer = new LayerConfig(<any>range_layer, "ShowDataLayer.ts:range.json")
+    public static rangeLayer = new LayerConfig(<LayerConfigJson>range_layer, "ShowDataLayer.ts:range.json")
     private readonly _options: ShowDataLayerOptions & {
         layer: LayerConfig
         drawMarkers?: true | boolean
