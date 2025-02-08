@@ -197,7 +197,7 @@
     "country-to-currency": "^1.1.5",
     "crypto": "^1.0.1",
     "csv-parse": "^5.6.0",
-    "doctest-ts-improved": "^0.9.2",
+    "doctest-ts-improved": "^1.0.0",
     "dompurify": "^3.2.4",
     "email-validator": "^2.0.4",
     "escape-html": "^1.0.3",
