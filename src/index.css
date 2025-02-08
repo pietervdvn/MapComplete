@@ -33,10 +33,13 @@
     --low-interaction-background-50: #eeeeee90;
     --low-interaction-foreground: black;
     --low-interaction-contrast: #ff00ff;
+    --low-interaction-border: #dcdcdc;
 
     --interactive-background: #dddddd;
     --interactive-foreground: black;
     --interactive-contrast: #ff00ff;
+    --interaction-border: #bfbfbf;
+
 
     --button-background: #282828;
     --button-background-hover: #484848;
@@ -46,14 +49,6 @@
     --button-border-color: #F7F7F7;
     --disabled: #B8B8B8;
     --disabled-font: #B8B8B8;
-
-    /**
-       * Base colour of interactive elements, mainly the 'subtle button'
-       * @deprecated
-       */
-    --subtle-detail-color: #dbeafe;
-    --subtle-detail-color-contrast: black;
-    --subtle-detail-color-light-contrast: lightgrey;
 
     --catch-detail-color: black; /*#3a3aeb;*/
     --catch-detail-foregroundcolor: white;
@@ -149,10 +144,6 @@ input[type="text"] {
  * and some interactive elements
  */
 
-.subtle-background {
-    background: var(--subtle-detail-color);
-    color: var(--subtle-detail-color-contrast);
-}
 
 .normal-background {
     background: var(--background-color);
@@ -309,9 +300,15 @@ button.unstyled, .button-unstyled button {
 }
 
 select {
-    border: 2px solid #00000000;
+    border: 2px solid var(--low-interaction-border);
     color: var(--foreground-color) !important;
     background-color: var(--low-interaction-background) !important;
+}
+
+.low-interaction select {
+    border: 2px solid var(--interaction-border);
+    color: var(--foreground-color) !important;
+    background-color: var(--interactive-background) !important;
 }
 
 select:hover {
@@ -385,17 +382,6 @@ h2.group {
     padding-right: 0.5rem;
     border: 3px dotted #58cd27;
     background-color: #58cd2722;
-}
-
-.badge {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    border-radius: 999rem;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-    border: 1px solid var(--subtle-detail-color-light-contrast);
-    background-color: var(--low-interaction-background);
 }
 
 .alert {
@@ -555,7 +541,7 @@ a.link-underline {
 .disable-links a {
     pointer-events: none;
     text-decoration: none !important;
-    color: var(--subtle-detail-color-contrast) !important;
+    color: var(--foreground-color) !important;
 }
 
 .enable-links a {

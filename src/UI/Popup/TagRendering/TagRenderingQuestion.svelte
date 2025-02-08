@@ -283,7 +283,7 @@
     }
     dispatch("saved", { config, applied: selectedTags })
     const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
-      theme: tags.data["_orig_theme"] ?? state.theme.id,
+      theme: tags.data["_orig_theme"] ?? state.theme?.id,
       changeType: "answer",
     })
     freeformInput.set(undefined)
@@ -340,7 +340,7 @@
   }
 
   let disabledInTheme =
-    state.userRelatedState?.getThemeDisabled(state.theme.id, layer?.id) ??
+    state.userRelatedState?.getThemeDisabled(state.theme?.id, layer?.id) ??
     new UIEventSource<string[]>([])
   let menuIsOpened = new UIEventSource(false)
 

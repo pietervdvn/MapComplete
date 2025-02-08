@@ -25,6 +25,13 @@
     <div class="thanks">Thank you! Operation successful</div>
     <Login class="h-12 w-12" />
     <Loading>Loading...</Loading>
+    Dropdown:
+    <Dropdown cls="m-2" value={new UIEventSource(undefined)}>
+      <option value="a">Option A</option>
+      <option value="b">Option B</option>
+
+    </Dropdown>
+
 
     <div class="low-interaction flex flex-col">
       <h2>Low interaction</h2>
@@ -37,6 +44,13 @@
         Highly interactive area (mostly: active question)
       </div>
       <div class="subtle">Subtle</div>
+
+      Dropdown:
+      <Dropdown cls="m-2" value={new UIEventSource(undefined)}>
+        <option value="a">Option A</option>
+        <option value="b">Option B</option>
+
+      </Dropdown>
 
       <div class="flex">
         <button class="primary">
