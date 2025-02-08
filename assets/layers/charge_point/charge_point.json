@@ -64,7 +64,8 @@
         "key": "ref",
         "placeholder": {
           "en": "Reference number of the charge point, e.g. 2126",
-          "de": "Referenznummer der Ladesäule, z. B. 2126"
+          "de": "Referenznummer der Ladesäule, z. B. 2126",
+          "uk": "Реєстраційний номер точки заряду, наприклад, 2126"
         }
       },
       "render": {

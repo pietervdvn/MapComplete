@@ -45,7 +45,8 @@
       "es": "Árbol",
       "da": "Træ",
       "pt": "Árvore",
-      "cs": "Strom"
+      "cs": "Strom",
+      "uk": "Дерево"
     },
     "mappings": [
       {
@@ -237,7 +238,8 @@
         "pt": "Que espécie é esta árvore?",
         "pt_BR": "Que espécie é esta árvore?",
         "ca": "De quina espècie és aquest arbre?",
-        "cs": "Jaký druh je tento strom?"
+        "cs": "Jaký druh je tento strom?",
+        "uk": "Якого виду це дерево?"
       },
       "render": {
         "*": "{wikipedia(species:wikidata):max-height: 25rem}"

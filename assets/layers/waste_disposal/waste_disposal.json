@@ -10,7 +10,8 @@
     "ca": "Contenidor de brossa",
     "fr": "Réceptacles destinés à recevoir des déchets",
     "cs": "Odpadkové koše",
-    "es": "Contenedores de residuos"
+    "es": "Contenedores de residuos",
+    "uk": "Сміттєві баки"
   },
   "description": {
     "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste",
@@ -312,7 +313,8 @@
             "da": "Kun offentlig adgang",
             "ca": "Només amb accés públic",
             "cs": "Pouze veřejný přístup",
-            "es": "Solo acceso público"
+            "es": "Solo acceso público",
+            "uk": "Тільки публічний доступ"
           },
           "osmTags": "access=yes"
         }

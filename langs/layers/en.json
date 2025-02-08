@@ -12792,6 +12792,9 @@
             "debug_accordeon_title": {
                 "render": "Debug information"
             },
+            "debug_storage_accordeon_title": {
+                "render": "Debug information about local storage"
+            },
             "edit-profile": {
                 "render": {
                     "special": {

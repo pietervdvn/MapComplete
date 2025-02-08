@@ -205,7 +205,8 @@
         "de": "Wie lautet die Kennziffer der Zählstelle?",
         "cs": "Jaké je referenční číslo tohoto počítadla?",
         "es": "¿Cuál es el número de referencia de este contador?",
-        "nl": "Wat is het referentienummer van deze teller?"
+        "nl": "Wat is het referentienummer van deze teller?",
+        "uk": "Який ідентифікаційний номер цієї стійки?"
       },
       "freeform": {
         "key": "ref",
@@ -215,7 +216,8 @@
           "de": "Kennziffer der Zählstelle",
           "cs": "Referenční číslo počítadla",
           "es": "Número de referencia del contador",
-          "nl": "Referentienummer van de teller"
+          "nl": "Referentienummer van de teller",
+          "uk": "Реєстраційний номер стійки"
         },
         "addExtraTags": [
           "noref="
@@ -226,7 +228,8 @@
         "de": "Kennziffer der Zählstelle: {ref}",
         "cs": "Referenční číslo počítadla: {ref}",
         "es": "Número de referencia del contador: {ref}",
-        "nl": "Referentienummer van de teller: {ref}"
+        "nl": "Referentienummer van de teller: {ref}",
+        "uk": "Реєстраційний номер стійки: {ref}"
       },
       "mappings": [
         {
@@ -236,7 +239,8 @@
             "de": "Die Zählstelle hat keine Kennziffer",
             "cs": "Toto počítadlo nemá referenční číslo",
             "es": "Este contador no tiene número de referencia",
-            "nl": "Deze teller heeft geen referentienummer"
+            "nl": "Deze teller heeft geen referentienummer",
+            "uk": "Ця стійка не має ідентифікаційного номера"
           }
         }
       ]
