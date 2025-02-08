@@ -183,6 +183,26 @@
           ]
         },
         {
+          "id": "platform",
+          "question": {
+            "en": "With what platform was the change made?"
+          },
+          "mappings": [
+            {
+              "if": "android=",
+              "then": {
+                "en": "Made on the web"
+              }
+            },
+            {
+              "if": "android=yes",
+              "then": {
+                "en": "Made with the android app"
+              }
+            }
+          ]
+        },
+        {
           "id": "version",
           "question": {
             "en": "What version of MapComplete was used to make this change?",
@@ -400,6 +420,28 @@
                 "nl": "Gemaakt met {search}",
                 "ko": "호스트 {search}에 의해 만들어졌습니다"
               }
+            }
+          ]
+        },
+        {
+          "id": "platform",
+          "options": [
+            {
+              "question": {
+                "en": "All platforms"
+              }
+            },
+            {
+              "question": {
+                "en": "Made with Android"
+              },
+              "osmTags": "android=yes"
+            },
+            {
+              "question": {
+                "en": "Made on the web"
+              },
+              "osmTags": "android="
             }
           ]
         },
