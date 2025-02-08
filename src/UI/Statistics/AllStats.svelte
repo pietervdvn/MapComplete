@@ -49,7 +49,6 @@
       ),
     [filteredLayer.currentFilter]
   )
-  overview.addCallbackAndRunD(d => console.log(d))
 
   const trs = layer.tagRenderings
     .filter((tr) => tr.mappings?.length > 0 || tr.freeform?.key !== undefined)
