@@ -14,6 +14,7 @@
   import Generic_map from "../../assets/svg/Generic_map.svelte"
   import { UserGroupIcon } from "@babeard/svelte-heroicons/solid"
   import Marker from "../Map/Marker.svelte"
+  import Forgejo from "../../assets/svg/Forgejo.svelte"
 
   export let state: SpecialVisualizationState
 
@@ -135,7 +136,7 @@
   {/if}
 
   <div class="flex items-center gap-x-2">
-    <Github class="h-8 w-8 shrink-0" />
+    <Forgejo class="h-8 w-8 shrink-0" />
     <Tr t={codeContributors(contributors, t.codeContributionsBy)} />
   </div>
 
