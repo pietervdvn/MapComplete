@@ -26,6 +26,7 @@
   import SearchUtils from "../Logic/Search/SearchUtils"
   import ChevronDoubleRight from "@babeard/svelte-heroicons/mini/ChevronDoubleRight"
   import { AndroidPolyfill } from "../Logic/Web/AndroidPolyfill"
+  import Forgejo from "../assets/svg/Forgejo.svelte"
   AndroidPolyfill.init().then(() => console.log("Android polyfill setup completed"))
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -44,8 +45,6 @@
   let userLanguages = osmConnection.userDetails.map((ud) => ud?.languages ?? [])
   let search: UIEventSource<string | undefined> = new UIEventSource<string>("")
   let searchStable = search.stabilized(100)
-
-  let searchIsFocused = new UIEventSource(true)
 
   const officialThemes: MinimalThemeInformation[] = ThemeSearch.officialThemes.themes.filter(
     (th) => th.hideFromOverview === false
@@ -229,11 +228,11 @@
     <Tr cls="link-underline" t={Translations.t.general.aboutMapComplete.intro} />
 
     <span class="link-underline flex flex-col gap-y-1">
-      <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
-        <Github class="mr-2 h-6 w-6" />
+      <a class="flex" href="https://source.mapcomplete.org/MapComplete/MapComplete/" target="_blank">
+        <Forgejo class="mr-2 h-6 w-6" />
         <Tr t={Translations.t.general.attribution.gotoSourceCode} />
       </a>
-      <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
+      <a class="flex" href="https://source.mapcomplete.org/MapComplete/MapComplete/issues" target="_blank">
         <Bug class="mr-2 h-6 w-6" />
         <Tr t={Translations.t.general.attribution.openIssueTracker} />
       </a>
