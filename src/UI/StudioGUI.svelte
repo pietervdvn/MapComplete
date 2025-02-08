@@ -63,12 +63,12 @@
     })
   )
   expertMode.addCallbackAndRunD((expert) => console.log("Expert mode is", expert))
-  const createdBy = osmConnection.userDetails.data.name
-  const uid = osmConnection.userDetails.map(
+  const createdBy = osmConnection.userDetails.data?.name
+  const uid = osmConnection.userDetails.mapD(
     (ud) => (directEntry.data ? null : ud?.uid),
     [directEntry]
   )
-  const studio = new StudioServer(studioUrl, uid, directEntry.data)
+  const studio = new StudioServer(studioUrl, uid)
 
   let layersWithErr = studio.fetchOverview()
   let layerFilterTerm: string = ""
