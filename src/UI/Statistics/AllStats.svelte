@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import { Utils } from "../../Utils"
   import Loading from "../Base/Loading.svelte"
   import type { FeatureCollection } from "geojson"
@@ -17,6 +17,7 @@
   import SingleStat from "./SingleStat.svelte"
   import { DownloadIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { GeoOperations } from "../../Logic/GeoOperations"
+  import Filter from "../../assets/svg/Filter.svelte"
 
   export let paths: string[]
 
@@ -24,23 +25,31 @@
   const layer = new ThemeConfig(<ThemeConfigJson>mcChanges, true).layers[0]
   const filteredLayer = new FilteredLayer(layer)
 
-  let allData = <UIEventSource<(ChangeSetData & OsmFeature)[]>>UIEventSource.FromPromise(
-    Promise.all(
-      paths.map(async (p) => {
-        const r = await Utils.downloadJson<FeatureCollection>(p)
-        downloaded++
-        return r
-      })
-    )
-  ).mapD((list) => [].concat(...list.map((f) => f.features)))
+  const downloadData: () => Promise<(ChangeSetData & OsmFeature)[]> = async () => {
+    const results = []
+    for (const p of paths) {
+      const r = await Utils.downloadJson<FeatureCollection>(p)
+      console.log("Downloaded", p)
+      downloaded++
+      if (Array.isArray(r)) {
+        results.push(...r)
+      } else {
+        results.push(...r.features ?? [])
+      }
+    }
+    return results
+  }
 
-  let overview = allData.mapD(
+  let allData = <UIEventSource<(ChangeSetData & OsmFeature)[]>>UIEventSource.FromPromise(downloadData())
+
+  let overview: Store<ChangesetsOverview | undefined> = allData.mapD(
     (data) =>
       ChangesetsOverview.fromDirtyData(data).filter((cs) =>
         filteredLayer.isShown(<any>cs.properties)
       ),
     [filteredLayer.currentFilter]
   )
+  overview.addCallbackAndRunD(d => console.log(d))
 
   const trs = layer.tagRenderings
     .filter((tr) => tr.mappings?.length > 0 || tr.freeform?.key !== undefined)
@@ -56,10 +65,10 @@
 
   function offerAsDownload() {
     const data = GeoOperations.toCSV($overview._meta, {
-      ignoreTags: /^((deletion:node)|(import:node)|(move:node)|(soft-delete:))/,
+      ignoreTags: /^((deletion:node)|(import:node)|(move:node)|(soft-delete:))/
     })
     Utils.offerContentsAsDownloadableFile(data, "statistics.csv", {
-      mimetype: "text/csv",
+      mimetype: "text/csv"
     })
   }
 </script>
@@ -68,21 +77,28 @@
   <Loading>Loaded {downloaded} out of {paths.length}</Loading>
 {:else}
   <AccordionSingle>
-    <span slot="header">Filters</span>
+    <div slot="header" class="flex items-center">
+      <Filter class="h-6 w-6 pr-2" />
+      Filters
+    </div>
     <Filterview {filteredLayer} state={undefined} showLayerTitle={false} />
   </AccordionSingle>
-  <Accordion>
-    {#each trs as tr}
-      <AccordionItem paddingDefault="p-0" inactiveClass="text-black">
+  {#if !$overview || $overview._meta.length === 0}
+    <div class="alert">Filter matches no items</div>
+  {:else}
+    <Accordion>
+      {#each trs as tr}
+        <AccordionItem paddingDefault="p-0" inactiveClass="text-black">
         <span slot="header" class={"w-full p-2 text-base"}>
           {tr.question ?? tr.id}
         </span>
-        <SingleStat {tr} overview={$overview} diffInDays={$diffInDays} />
-      </AccordionItem>
-    {/each}
-  </Accordion>
-  <button on:click={() => offerAsDownload()}>
-    <DownloadIcon class="h-6 w-6" />
-    Download as CSV
-  </button>
+          <SingleStat {tr} overview={$overview} diffInDays={$diffInDays} />
+        </AccordionItem>
+      {/each}
+    </Accordion>
+    <button on:click={() => offerAsDownload()}>
+      <DownloadIcon class="h-6 w-6" />
+      Download as CSV
+    </button>
+  {/if}
 {/if}

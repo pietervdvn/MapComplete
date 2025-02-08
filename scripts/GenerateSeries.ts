@@ -105,8 +105,8 @@ class StatsDownloader {
     ): Promise<ChangeSetData[]> {
         let page = 1
         let allFeatures: ChangeSetData[] = []
-        let endDay = new Date(year, month - 1 /* Zero-indexed: 0 = january*/, day + 1)
-        let endDate = `${endDay.getFullYear()}-${Utils.TwoDigits(
+        const endDay = new Date(year, month - 1 /* Zero-indexed: 0 = january*/, day + 1)
+        const endDate = `${endDay.getFullYear()}-${Utils.TwoDigits(
             endDay.getMonth() + 1
         )}-${Utils.TwoDigits(endDay.getDate())}`
         let url = this.urlTemplate
@@ -117,7 +117,7 @@ class StatsDownloader {
             .replace("{end_date}", endDate)
             .replace("{page}", "" + page)
 
-        let headers = {
+        const headers = {
             "User-Agent":
                 "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0",
             "Accept-Language": "en-US,en;q=0.5",
@@ -148,6 +148,9 @@ class StatsDownloader {
         allFeatures = Utils.NoNull(allFeatures)
         allFeatures.forEach((f) => {
             f.properties = { ...f.properties, ...f.properties.metadata }
+            if (f.properties.editor.toLowerCase().indexOf("android") >= 0) {
+                f.properties["android"] = "yes"
+            }
             delete f.properties.metadata
             f.properties["id"] = f.id
         })
@@ -212,8 +215,8 @@ class GenerateSeries extends Script {
     }
 
     private async downloadStatistics(targetDir: string) {
-        let year = 2020
-        let month = 5
+        let year = 2025
+        let month = 1
         let day = 1
         if (!isNaN(Number(process.argv[2]))) {
             year = Number(process.argv[2])

@@ -1,6 +1,7 @@
 import { Utils } from "../../Utils"
 import { Feature, Polygon } from "geojson"
 import { OsmFeature } from "../../Models/OsmFeature"
+
 export interface ChangeSetData extends Feature<Polygon> {
     id: number
     type: "Feature"
@@ -92,8 +93,12 @@ export class ChangesetsOverview {
         if (cs === undefined) {
             return undefined
         }
+        if (cs.properties.android) {
+            console.log("Found an ANDROID:", cs.properties)
+        }
         if (cs.properties.editor?.startsWith("iD")) {
             // We also fetch based on hashtag, so some edits with iD show up as well
+            // Sometimes, iD reuses a previous changeset, mimicking (!) mapcomplete accidentally
             return undefined
         }
         if (cs.properties.theme === undefined) {
