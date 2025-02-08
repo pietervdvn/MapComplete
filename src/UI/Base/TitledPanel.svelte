@@ -1,7 +1,7 @@
 <div class="flex h-full flex-col">
   <div class="low-interaction flex items-center justify-between p-4 drop-shadow-md">
 
-    <div class="flex gap-x-2">
+    <div class="flex gap-x-2 items-center">
       <slot name="title-start" />
       <h2 class="m-0">
         <slot name="title" />

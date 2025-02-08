@@ -32,14 +32,6 @@
 
     <LanguagePicker slot="title-end" availableLanguages={Translations.t.privacy.intro.SupportedLanguages()} />
     <PrivacyPolicy {state} />
-
-    <div class="flex h-screen flex-col overflow-hidden px-4">
-
-      <a class="button flex" href={Utils.HomepageLink()}>
-        <Add class="h-6 w-6" />
-        <Tr t={Translations.t.general.backToIndex} />
-      </a>
-    </div>
   </TitledPanel>
 
 </main>

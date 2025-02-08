@@ -2,7 +2,7 @@
   import { OsmConnectionFeatureSwitches } from "../Logic/State/FeatureSwitchState"
   import { OsmConnection } from "../Logic/Osm/OsmConnection"
   import { QueryParameters } from "../Logic/Web/QueryParameters"
-  import UserRelatedState from "../Logic/State/UserRelatedState"
+  import type UserRelatedState from "../Logic/State/UserRelatedState"
   import LanguagePicker from "./InputElement/LanguagePicker.svelte"
   import Translations from "./i18n/Translations"
   import Logo from "../assets/svg/Logo.svelte"
