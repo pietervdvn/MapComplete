@@ -17,7 +17,25 @@
             },
             "street": {
                 "question": "In welcher Straße befindet sich diese Adresse?",
-                "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
+                "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>",
+                "questionHint": "Gib die Hausnummer nicht an"
+            },
+            "header": {
+                "mappings": {
+                    "0": {
+                        "then": "Adresse unbekannt"
+                    }
+                },
+                "render": "{addr:street} <b>{addr:housenumber}</b> {addr:unit}"
+            },
+            "unit": {
+                "mappings": {
+                    "0": {
+                        "then": "Keine Einheitennummer"
+                    }
+                },
+                "question": "Wie lautet die Nummer oder der Buchstabe der Einheit?",
+                "render": "Die Nummer der Einheit lautet <b>{addr:unit}</b>"
             }
         },
         "title": {
@@ -2195,6 +2213,27 @@
                 "options": {
                     "0": {
                         "question": "Personen"
+                    },
+                    "1": {
+                        "question": "1-20"
+                    },
+                    "2": {
+                        "question": "21-50"
+                    },
+                    "3": {
+                        "question": "51-100"
+                    },
+                    "4": {
+                        "question": "101-200"
+                    },
+                    "5": {
+                        "question": "201-500"
+                    },
+                    "6": {
+                        "question": "500+"
+                    },
+                    "7": {
+                        "question": "?"
                     }
                 }
             }
@@ -2232,6 +2271,17 @@
                 "question": "Wie heißt dieser Zeltplatz?",
                 "render": "Dieser Zeltplatz heißt {name}"
             }
+        },
+        "presets": {
+            "0": {
+                "title": "Campingplatz"
+            },
+            "1": {
+                "title": "Campingplatz für Gruppen"
+            }
+        },
+        "title": {
+            "render": "{name}"
         }
     },
     "car_rental": {
@@ -9516,6 +9566,9 @@
         "presets": {
             "0": {
                 "title": "eine Grundschule oder weiterführende Schule"
+            },
+            "1": {
+                "title": "ein Kindergarten"
             }
         },
         "tagRenderings": {
@@ -9567,7 +9620,28 @@
                 "question": "Welche Geschlechter können sich an dieser Schule anmelden?"
             },
             "is_special_needs": {
-                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf??"
+                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf??",
+                "mappings": {
+                    "5": {
+                        "then": "Diese Schule ist für Schüler mit besonderen Bedürfnissen."
+                    },
+                    "0": {
+                        "then": "Diese Schule ist nur für Schüler mit besonderem Förderbedarf; für die Einschreibung ist ein Zertifikat erforderlich."
+                    },
+                    "3": {
+                        "then": "Diese Schule bietet begrenzte, ad hoc Unterstützung, verfügt jedoch nicht über nennenswertes Fachwissen und gilt nicht als Sonderschule."
+                    },
+                    "1": {
+                        "then": "Diese Schule hat einen separaten Bereich für Schüler mit besonderen Bedürfnissen."
+                    },
+                    "2": {
+                        "then": "Schüler mit und ohne besonderen Förderbedarf haben gemeinsamen Unterricht."
+                    },
+                    "4": {
+                        "then": "Diese Schule bietet keine Unterstützung für Schüler mit besonderen Bedürfnissen."
+                    }
+                },
+                "questionHint": "Eine Sonderschule verfügt über Fachwissen und unterstützt Schüler mit einer (schweren) Diagnose. In vielen Ländern ist für die Anmeldung eine Bescheinigung erforderlich."
             },
             "pedagogy": {
                 "mappings": {
@@ -9615,10 +9689,99 @@
             "school-name": {
                 "question": "Wie lautet der Name dieser Schule?",
                 "render": "Diese Schule heißt {name}"
+            },
+            "special_needs_categories_be": {
+                "mappings": {
+                    "5": {
+                        "then": "Für Schüler mit einer Entwicklungsbedingten Sprachstörung (Typ 7 – DLD)"
+                    },
+                    "0": {
+                        "then": "Für Schüler mit einer geistigen Behinderung (Typ 2)"
+                    },
+                    "1": {
+                        "then": "Für Schüler mit emotionalen und Verhaltensproblemen (Typ 3)"
+                    },
+                    "2": {
+                        "then": "Für Studierende mit einer körperlichen Behinderung (Typ 4)"
+                    },
+                    "3": {
+                        "then": "Für blinde und sehbehinderte Schüler (Typ 6)"
+                    },
+                    "4": {
+                        "then": "Für gehörlose Schüler und Schüler mit Hörverlust (Typ 7)"
+                    },
+                    "6": {
+                        "then": "Für Schüler mit einer Autismus-Spektrum-Störung (Typ 9)"
+                    },
+                    "7": {
+                        "then": "Für Schüler mit Lernschwierigkeiten (Grundangebot)"
+                    }
+                },
+                "question": "Welche Art von besonderen Bedürfnissen wird hier behandelt?"
+            },
+            "orientation_belgium": {
+                "mappings": {
+                    "0": {
+                        "then": "Bereitet sich auf ein akademisches Studium an der Universität vor"
+                    },
+                    "1": {
+                        "then": "Bereitet sich auf ein Fachstudium an einer Hochschule vor"
+                    },
+                    "2": {
+                        "then": "Bereitet sich auf einen Arbeitsplatz vor"
+                    }
+                },
+                "question": "Was lernt man an dieser Schule?"
             }
         },
         "title": {
             "render": "Schule <i>{name}</i>"
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Alle Bildungsstufen"
+                    },
+                    "7": {
+                        "question": "Diese Schule bietet eine postsekundäre Ausbildung (z. B. ein siebtes oder achtes Spezialisierungsjahr)"
+                    },
+                    "1": {
+                        "question": "Hat einen Kindergarten"
+                    },
+                    "2": {
+                        "question": "Grundschule"
+                    },
+                    "3": {
+                        "question": "Sekundarstufe I und II"
+                    },
+                    "4": {
+                        "question": "Hat die erste Klasse"
+                    },
+                    "5": {
+                        "question": "Hat die zweite Klasse"
+                    },
+                    "6": {
+                        "question": "Hat die dritte Klasse"
+                    },
+                    "8": {
+                        "question": "Unbekanntes Schulniveau"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Bietet diese Schule sonderpädagogische Förderung an?"
+                    },
+                    "1": {
+                        "question": "Hat eine Sonderausbildung"
+                    },
+                    "2": {
+                        "question": "Keine oder nur eingeschränkte sonderpädagogische Förderung"
+                    }
+                }
+            }
         }
     },
     "scouting_group": {
@@ -12870,6 +13033,15 @@
                         "then": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
+            },
+            "debug-gps-title": {
+                "render": "GPS- und Gyroskopdaten"
+            },
+            "debug_accordeon_title": {
+                "render": "Fehlerbehebungsinformationen"
+            },
+            "debug_storage_accordeon_title": {
+                "render": "Fehlerbehebungsinformationen über den lokalen Speicher"
             }
         },
         "title": {
