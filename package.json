@@ -272,7 +272,6 @@
     "@vitejs/plugin-basic-ssl": "^1.2.0",
     "assert": "^2.0.0",
     "chai": "^5.1.2",
-    "dependency-cruiser": "^16.3.0",
     "eslint": "^8.45.0",
     "eslint-plugin-svelte": "^2.32.2",
     "fs": "0.0.1-security",
