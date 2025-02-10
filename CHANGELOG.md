@@ -2,6 +2,53 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.48.7](https://github.com/pietervdvn/mapcomplete/compare/v0.48.6...v0.48.7) (2025-02-10)
+
+
+### Bug Fixes
+
+* attempt to fix build ([e61149b](https://github.com/pietervdvn/mapcomplete/commits/e61149b49fdd41a0d9572751d12674c32093ad16))
+* attempt to fix daily data maintenance ([191391e](https://github.com/pietervdvn/mapcomplete/commits/191391e1a7a83e1ec4de588e435dfd18fab68f83))
+* clean up minzoomVisible in some themes (gh[#2279](https://github.com/pietervdvn/MapComplete/issues/2279)) ([8f318b3](https://github.com/pietervdvn/mapcomplete/commits/8f318b3a1969d261bf45322eb24e3a22f55b029b))
+* deduplicate .gitignore and reorder ([b3207b8](https://github.com/pietervdvn/mapcomplete/commits/b3207b82cbde357dd7239fd6a500b593c8459a92))
+* don't use deprecated bbox format anymore ([a59e4ab](https://github.com/pietervdvn/mapcomplete/commits/a59e4ab2ab5083799534b928575fe91f18d5d4e9))
+* fix android polyfill loading ([a76617c](https://github.com/pietervdvn/mapcomplete/commits/a76617cc0ca47c3b417e7a2b20ed831cbd2a6d8c))
+* fix broken index page for anonymous users ([6260bc2](https://github.com/pietervdvn/mapcomplete/commits/6260bc2897d3ddd77ea6194bb530a9bffabbe76b))
+* fix build ([eeb5a43](https://github.com/pietervdvn/mapcomplete/commits/eeb5a433291f9a2d1d48425a93e7d19ad60fb4b9))
+* fix classes argument ([f6ed163](https://github.com/pietervdvn/mapcomplete/commits/f6ed16355401f20f0782fac9467c291bb4985cea))
+* fix https://github.com/pietervdvn/MapComplete/issues/2331 ([4e73d9b](https://github.com/pietervdvn/mapcomplete/commits/4e73d9b5f9221a2481980965d0fb4d97b03acfa3))
+* fix https://source.mapcomplete.org/MapComplete/MapComplete/issues/2307 ([52d4ade](https://github.com/pietervdvn/mapcomplete/commits/52d4adee84b23464c29064616410230c48fbb5e3))
+* fix inspector ([c367f8f](https://github.com/pietervdvn/mapcomplete/commits/c367f8f190765b73a95168c7651df87fe6230ac9))
+* fix inspector ([071d3a0](https://github.com/pietervdvn/mapcomplete/commits/071d3a0f89beb2efbd93da98d7e5590c975c416f))
+* fix link in attributed images, as reported by Luna ([aead4c4](https://github.com/pietervdvn/mapcomplete/commits/aead4c480990f4928c9ff5ffc02ed8c5c7a6af96))
+* fix missing param ([6fa4323](https://github.com/pietervdvn/mapcomplete/commits/6fa4323495978324f05a6e4a7f8fa93b42729de8))
+* fix some fallout from updating turf to 7.2.0, make 'bbox'-attribute in line with the actual spec ([1286932](https://github.com/pietervdvn/mapcomplete/commits/12869321fda64d5eb60de7862a765659d8b3d935))
+* fix special visualisations ([289ff9c](https://github.com/pietervdvn/mapcomplete/commits/289ff9cd04346f07567e2a893b037773f18cf1ed))
+* index page ([42c634a](https://github.com/pietervdvn/mapcomplete/commits/42c634a8b72e9a134043bc71bbd1857a17b9672d))
+* make popups dismissable again ([7dc0483](https://github.com/pietervdvn/mapcomplete/commits/7dc0483805181101777921521d1e3927a20289eb))
+* merge weblate ([ea91e28](https://github.com/pietervdvn/mapcomplete/commits/ea91e28bc1e48dabd8ddd253459e511f7100f862))
+* NSI now explicitly has extensions ([a052797](https://github.com/pietervdvn/mapcomplete/commits/a052797074705e5bbbfe1f783ac157aecaaf5fa5))
+* order of commands in npm run init ([231aea8](https://github.com/pietervdvn/mapcomplete/commits/231aea878df509330a7f6c9279132ffa7a15e9a1))
+* remove checked-in file that is covered by .gitignore ([fc79a8a](https://github.com/pietervdvn/mapcomplete/commits/fc79a8a9c506cce0d8f9c7a5a329d9005d6d4e32))
+* remove obsolete "SetClass"-calls which don't work anyway ([f476e61](https://github.com/pietervdvn/mapcomplete/commits/f476e61a8f13976eed5e850d2d34045e1aa237f4))
+* revert some dependencies to a lower number to fix the build, update turf to 7.2.0 ([c83b7c1](https://github.com/pietervdvn/mapcomplete/commits/c83b7c1d953b085abea1e2d580287c6982a815d9))
+* revive missing 'login' button ([d9c8785](https://github.com/pietervdvn/mapcomplete/commits/d9c8785d9b4ac437aa4442cc259d752478772c5d))
+* studio works again ([014282d](https://github.com/pietervdvn/mapcomplete/commits/014282db94939f2faba3f89492e7a6b6f10354bc))
+* tests ([a1730a3](https://github.com/pietervdvn/mapcomplete/commits/a1730a3ad71e3992d287c74cfba32995fafb81a2))
+* various small fixes ([648f00f](https://github.com/pietervdvn/mapcomplete/commits/648f00f9c927776bf928c6871f38acf464d2e93c))
+
+
+### Theme improvements
+
+* **bicycle_parking:** add more nuance to ([d126808](https://github.com/pietervdvn/mapcomplete/commits/d12680839c6ee52c908b3dc928b8a1ab69c2211b))
+* **cycleways_and_roads:** use 'width' instead of 'width:carriageway', fix [#2318](https://github.com/pietervdvn/MapComplete/issues/2318) ([37c09f1](https://github.com/pietervdvn/mapcomplete/commits/37c09f12bee7df2e67f839947fae88ac1e16032a))
+* **school:** add school:orientation for special needs schools ([7aa0772](https://github.com/pietervdvn/mapcomplete/commits/7aa07724a3d69b36ba12836c3ab11c17b1ac13ec))
+* **school:** show wikipedia box ([b953ce5](https://github.com/pietervdvn/mapcomplete/commits/b953ce545795edd810b57cac31e5237e3669e778))
+* **scouting:** rephrase capacity filter ([6ca055c](https://github.com/pietervdvn/mapcomplete/commits/6ca055cf28564293cf7ae5d703cfee50a5df8502))
+* **shops:** add optometrist service ([6b0dc72](https://github.com/pietervdvn/mapcomplete/commits/6b0dc72ec639644a02252ca55cdfa2fffb76835f))
+* **shops:** change 'optomotetrist'-service into multiple other services ([c8b0751](https://github.com/pietervdvn/mapcomplete/commits/c8b07518ed0a4e8a08e7f792e06184318c097cb3))
+* **shops:** change 'optomotetrist'-service into multiple other services ([db7ae0c](https://github.com/pietervdvn/mapcomplete/commits/db7ae0c6e49231a052ec5f066883491b015cf15e))
+
 ### [0.48.6](https://github.com/pietervdvn/mapcomplete/compare/v0.48.5...v0.48.6) (2025-02-03)
 
 
