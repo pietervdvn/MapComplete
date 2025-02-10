@@ -788,7 +788,13 @@
                     "11": {
                         "options": {
                             "0": {
-                                "question": "Exclude etymology theme"
+                                "quesiton": "All platforms"
+                            },
+                            "1": {
+                                "question": "Made with Android"
+                            },
+                            "2": {
+                                "question": "Made on the web"
                             }
                         }
                     },
@@ -838,12 +844,6 @@
                         "options": {
                             "0": {
                                 "question": "Changeset added at least one image"
-                            },
-                            "1": {
-                                "question": "Made with Android"
-                            },
-                            "2": {
-                                "question": "Made on the web"
                             }
                         }
                     },
