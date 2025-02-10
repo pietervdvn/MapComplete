@@ -225,6 +225,14 @@ export class UserMapFeatureswitchState extends WithUserRelatedState {
             this.geolocationControl.handleClick()
         })
 
+        Hotkeys.RegisterHotkey({ nomod: "H" }, Translations.t.hotkeyDocumentation.homeLocation, () => {
+            const home = this.userRelatedState.osmConnection.userDetails.data?.home
+            if (!home) {
+                console.log("No home location set")
+            }
+            this.mapProperties.location.set(home)
+        })
+
         Hotkeys.RegisterHotkey(
             {
                 shift: "T",
