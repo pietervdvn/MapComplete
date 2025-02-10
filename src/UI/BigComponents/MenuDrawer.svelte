@@ -53,6 +53,9 @@
   import MagnifyingGlassCircle from "@babeard/svelte-heroicons/mini/MagnifyingGlassCircle"
   import { AndroidPolyfill } from "../../Logic/Web/AndroidPolyfill"
   import Forgejo from "../../assets/svg/Forgejo.svelte"
+  import DocumentArrowUp from "@babeard/svelte-heroicons/mini/DocumentArrowUp"
+  import ChartBar from "@babeard/svelte-heroicons/solid/ChartBar"
+  import QueueList from "@babeard/svelte-heroicons/solid/QueueList"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -222,8 +225,13 @@
       </a>
 
       <a class="flex" href={Utils.OsmChaLinkFor(31, theme.id)} target="_blank">
-        <DocumentChartBar class="h-6 w-6" />
+        <QueueList class="h-6 w-6" />
         <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: theme.title })} />
+      </a>
+      <a class="flex" href={`./statistics.html?filter-mapcomplete-changes-theme-search={"search"%3A"${theme.id}"}`}
+         target="_blank">
+        <ChartBar class="h-6 w-6" />
+        <Tr t={Translations.t.general.attribution.openStatistics.Subs({theme: theme.title})} />
       </a>
     {/if}
   </SidebarUnit>
