@@ -78,6 +78,9 @@ export class BBox {
      */
     static get(feature: Feature): BBox {
         const f = feature
+        if (f.bbox?.["minLat"] !== undefined) {
+            delete f.bbox
+        }
         if (!f.bbox) {
             f.bbox = <[number, number, number, number]>bbox(f)
         }
@@ -288,8 +291,11 @@ export class BBox {
     }
 
     /**
-     * Expands the BBOx so that it contains complete tiles for the given zoomlevel
+     * Expands the BBox until it contains complete tiles for the given zoomlevel
      * @param zoomlevel
+     * const bbox = new BBox([3.7140459, 51.071849, 3.7140459, 51.071849])
+     * const expanded = bbox.expandToTileBounds(15)
+     * !isNaN(expanded.minLat) // => true
      */
     expandToTileBounds(zoomlevel: number): BBox {
         if (zoomlevel === undefined) {
