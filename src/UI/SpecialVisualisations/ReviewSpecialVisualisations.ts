@@ -24,16 +24,16 @@ export class ReviewSpecialVisualisations {
                 {
                     name: "subjectKey",
                     defaultValue: "name",
-                    doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>"
+                    doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
                 },
                 {
                     name: "fallback",
-                    doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
+                    doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
                 },
                 {
                     name: "question",
-                    doc: "The question to ask during the review"
-                }
+                    doc: "The question to ask during the review",
+                },
             ],
             constr: (state, tags, args, feature, layer) => {
                 const nameKey = args[0] ?? "name"
@@ -45,7 +45,7 @@ export class ReviewSpecialVisualisations {
                     state.userRelatedState?.mangroveIdentity,
                     {
                         nameKey: nameKey,
-                        fallbackName
+                        fallbackName,
                     },
                     state.featureSwitchIsTesting
                 )
@@ -55,9 +55,9 @@ export class ReviewSpecialVisualisations {
                     tags,
                     feature,
                     layer,
-                    question
+                    question,
                 })
-            }
+            },
         }
         const listReviews: SpecialVisualization & { group } = {
             funcName: "list_reviews",
@@ -69,12 +69,12 @@ export class ReviewSpecialVisualisations {
                 {
                     name: "subjectKey",
                     defaultValue: "name",
-                    doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>"
+                    doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
                 },
                 {
                     name: "fallback",
-                    doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
-                }
+                    doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                },
             ],
             constr: (state, tags, args, feature, layer) => {
                 const nameKey = args[0] ?? "name"
@@ -85,12 +85,12 @@ export class ReviewSpecialVisualisations {
                     state.userRelatedState?.mangroveIdentity,
                     {
                         nameKey: nameKey,
-                        fallbackName
+                        fallbackName,
                     },
                     state.featureSwitchIsTesting
                 )
                 return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
-            }
+            },
         }
         return [
             {
@@ -102,12 +102,12 @@ export class ReviewSpecialVisualisations {
                     {
                         name: "subjectKey",
                         defaultValue: "name",
-                        doc: "The key to use to determine the subject. If the value is specified, the subject will be <b>tags[subjectKey]</b> and will use this to filter the reviews."
+                        doc: "The key to use to determine the subject. If the value is specified, the subject will be <b>tags[subjectKey]</b> and will use this to filter the reviews.",
                     },
                     {
                         name: "fallback",
-                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
-                    }
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
+                    },
                 ],
                 constr: (state, tags, args, feature) => {
                     const nameKey = args[0] ?? "name"
@@ -118,14 +118,14 @@ export class ReviewSpecialVisualisations {
                         state.userRelatedState.mangroveIdentity,
                         {
                             nameKey: nameKey,
-                            fallbackName
+                            fallbackName,
                         },
                         state.featureSwitchIsTesting
                     )
                     return new SvelteUIElement(StarsBarIcon, {
-                        score: reviews.average
+                        score: reviews.average,
                     })
-                }
+                },
             },
             createReview,
             listReviews,
@@ -137,8 +137,8 @@ export class ReviewSpecialVisualisations {
                 args: [
                     {
                         name: "text",
-                        doc: "The text that is shown on the button"
-                    }
+                        doc: "The text that is shown on the button",
+                    },
                 ],
                 needsUrls: [],
                 constr(
@@ -148,7 +148,7 @@ export class ReviewSpecialVisualisations {
                 ): SvelteUIElement {
                     const [text] = argument
                     return new SvelteUIElement(ImportReviewIdentity, { state, text })
-                }
+                },
             },
             {
                 funcName: "reviews",
@@ -161,16 +161,16 @@ export class ReviewSpecialVisualisations {
                     {
                         name: "subjectKey",
                         defaultValue: "name",
-                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>"
+                        doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>",
                     },
                     {
                         name: "fallback",
-                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
+                        doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
                     },
                     {
                         name: "question",
-                        doc: "The question to ask in the review form. Optional"
-                    }
+                        doc: "The question to ask in the review form. Optional",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -182,10 +182,10 @@ export class ReviewSpecialVisualisations {
                     return new Combine([
                         createReview.constr(state, tagSource, args, feature, layer),
 
-                        listReviews.constr(state, tagSource, args, feature, layer)
+                        listReviews.constr(state, tagSource, args, feature, layer),
                     ])
-                }
-            }
+                },
+            },
         ]
     }
 }

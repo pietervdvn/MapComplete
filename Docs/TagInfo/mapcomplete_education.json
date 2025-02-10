@@ -131,6 +131,43 @@
       "description": "Layer 'Primary and secondary schools' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Education')"
     },
     {
+      "key": "addr:street",
+      "description": "Layer 'Primary and secondary schools' shows addr:street= & addr:unit= & addr:housenumber= with a fixed text, namely 'No address is known' (in the mapcomplete.org theme 'Education')",
+      "value": ""
+    },
+    {
+      "key": "addr:unit",
+      "description": "Layer 'Primary and secondary schools' shows addr:street= & addr:unit= & addr:housenumber= with a fixed text, namely 'No address is known' (in the mapcomplete.org theme 'Education')",
+      "value": ""
+    },
+    {
+      "key": "addr:housenumber",
+      "description": "Layer 'Primary and secondary schools' shows addr:street= & addr:unit= & addr:housenumber= with a fixed text, namely 'No address is known' (in the mapcomplete.org theme 'Education')",
+      "value": ""
+    },
+    {
+      "key": "addr:housenumber",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'addr:housenumber' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "nohousenumber",
+      "description": "Layer 'Primary and secondary schools' shows nohousenumber=yes with a fixed text, namely 'This building has no house number' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "yes"
+    },
+    {
+      "key": "addr:street",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'addr:street' (in the mapcomplete.org theme 'Education') (This is only shown if nohousenumber!~^(yes)$)"
+    },
+    {
+      "key": "addr:unit",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'addr:unit' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "addr:unit",
+      "description": "Layer 'Primary and secondary schools' shows addr:unit= with a fixed text, namely 'No unit number' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') Picking this answer will delete the key addr:unit.",
+      "value": ""
+    },
+    {
       "key": "capacity",
       "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Education')"
     },
@@ -170,19 +207,69 @@
       "value": "post_secondary"
     },
     {
+      "key": "school:special_needs",
+      "description": "Layer 'Primary and secondary schools' shows school:special_needs=only with a fixed text, namely 'This school is only for special need students; a certificate is needed to enroll' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "only"
+    },
+    {
+      "key": "school:special_needs",
+      "description": "Layer 'Primary and secondary schools' shows school:special_needs=separated with a fixed text, namely 'This school has a separate section for special need students.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "separated"
+    },
+    {
+      "key": "school:special_needs",
+      "description": "Layer 'Primary and secondary schools' shows school:special_needs=mixed with a fixed text, namely 'Students with special needs and non-special need students have classes together.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "mixed"
+    },
+    {
+      "key": "school:special_needs",
+      "description": "Layer 'Primary and secondary schools' shows school:special_needs=limited with a fixed text, namely 'This school offers limited, ad hoc support but has no significant expertise and is not considered a special needs school.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "limited"
+    },
+    {
+      "key": "school:special_needs",
+      "description": "Layer 'Primary and secondary schools' shows school:special_needs=no with a fixed text, namely 'This school has no support for special need students.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
+      "value": "no"
+    },
+    {
+      "key": "school:special_needs",
+      "description": "Layer 'Primary and secondary schools' shows school:special_needs=yes with a fixed text, namely 'This school is for special need students.' (in the mapcomplete.org theme 'Education')",
+      "value": "yes"
+    },
+    {
       "key": "school:orientation",
-      "description": "Layer 'Primary and secondary schools' shows school:orientation=academic with a fixed text, namely 'Prepares for an academic study at university' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$)",
+      "description": "Layer 'Primary and secondary schools' shows school:orientation=academic with a fixed text, namely 'Prepares for an academic study at university' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if (school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$) & (school:special_needs=no | school:special_needs= | school:special_needs=limited))",
       "value": "academic"
     },
     {
       "key": "school:orientation",
-      "description": "Layer 'Primary and secondary schools' shows school:orientation=professional with a fixed text, namely 'Prepares for a professional study at a college' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$)",
+      "description": "Layer 'Primary and secondary schools' shows school:orientation=professional with a fixed text, namely 'Prepares for a professional study at a college' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if (school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$) & (school:special_needs=no | school:special_needs= | school:special_needs=limited))",
       "value": "professional"
     },
     {
       "key": "school:orientation",
-      "description": "Layer 'Primary and secondary schools' shows school:orientation=vocational with a fixed text, namely 'Prepares for a job' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$)",
+      "description": "Layer 'Primary and secondary schools' shows school:orientation=vocational with a fixed text, namely 'Prepares for a job' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if (school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$) & (school:special_needs=no | school:special_needs= | school:special_needs=limited))",
       "value": "vocational"
+    },
+    {
+      "key": "school:orientation",
+      "description": "Layer 'Primary and secondary schools' shows school:orientation=care_institution with a fixed text, namely '<b>Training type 1</b>: trains elementary life skills to live in an institution. There is no intention to do a (paid) job after training' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if (school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$) & (school:special_needs=yes | school:special_needs=only))",
+      "value": "care_institution"
+    },
+    {
+      "key": "school:orientation",
+      "description": "Layer 'Primary and secondary schools' shows school:orientation=sheltered_workshop with a fixed text, namely '<b>Training type 2</b>: prepares to work in an environment with extra care and facilities such as a sheltered workshop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if (school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$) & (school:special_needs=yes | school:special_needs=only))",
+      "value": "sheltered_workshop"
+    },
+    {
+      "key": "school:orientation",
+      "description": "Layer 'Primary and secondary schools' shows school:orientation=vocational with a fixed text, namely '<b>Training type 3</b>: prepares for a job and a (more-or-less) independent life in society' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if (school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$) & (school:special_needs=yes | school:special_needs=only))",
+      "value": "vocational"
+    },
+    {
+      "key": "school:orientation",
+      "description": "Layer 'Primary and secondary schools' shows school:orientation=professional with a fixed text, namely '<b>Training type 4</b>: prepares for a job or continued education' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if (school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$) & (school:special_needs=yes | school:special_needs=only))",
+      "value": "professional"
     },
     {
       "key": "school:gender",
@@ -254,38 +341,57 @@
       "value": "sudbury"
     },
     {
-      "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'school:for' (in the mapcomplete.org theme 'Education')"
+      "key": "special_needs:intellectual_disability",
+      "description": "Layer 'Primary and secondary schools' shows special_needs:intellectual_disability=yes with a fixed text, namely 'For students with an intellectual disability (type 2)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if _country=be & school:special_needs!~^(no)$ & school:special_needs~.+)",
+      "value": "yes"
     },
     {
-      "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=mainstream with a fixed text, namely 'This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "mainstream"
+      "key": "special_needs:emotional_behavioural_disorder",
+      "description": "Layer 'Primary and secondary schools' shows special_needs:emotional_behavioural_disorder=yes with a fixed text, namely 'For students with an emotional and behavioural problem (type 3)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if _country=be & school:special_needs!~^(no)$ & school:special_needs~.+)",
+      "value": "yes"
     },
     {
-      "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=learning_disabilities with a fixed text, namely 'This is a school for students with learning disabilities' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "learning_disabilities"
+      "key": "special_needs:physical_disability",
+      "description": "Layer 'Primary and secondary schools' shows special_needs:physical_disability=yes with a fixed text, namely 'For students with an physical disability (type 4)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if _country=be & school:special_needs!~^(no)$ & school:special_needs~.+)",
+      "value": "yes"
     },
     {
-      "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=blind with a fixed text, namely 'This is a school for blind students or students with sight impairments' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "blind"
+      "key": "special_needs:blind",
+      "description": "Layer 'Primary and secondary schools' shows special_needs:blind=yes with a fixed text, namely 'For blind and visually impaired students (type 6)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if _country=be & school:special_needs!~^(no)$ & school:special_needs~.+)",
+      "value": "yes"
     },
     {
-      "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=deaf with a fixed text, namely 'This is a school for deaf students or students with hearing impairments' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "deaf"
+      "key": "special_needs:deaf",
+      "description": "Layer 'Primary and secondary schools' shows special_needs:deaf=yes with a fixed text, namely 'For deaf students and students with hearing loss (type 7)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if _country=be & school:special_needs!~^(no)$ & school:special_needs~.+)",
+      "value": "yes"
     },
     {
-      "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=disabilities with a fixed text, namely 'This is a school for students with disabilities' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "disabilities"
+      "key": "special_needs:language_disorder",
+      "description": "Layer 'Primary and secondary schools' shows special_needs:language_disorder=yes with a fixed text, namely 'For students with a Developemental Language Disorder (type 7 - DLD)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if _country=be & school:special_needs!~^(no)$ & school:special_needs~.+)",
+      "value": "yes"
     },
     {
-      "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=special_needs with a fixed text, namely 'This is a school for students with special needs' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education')",
-      "value": "special_needs"
+      "key": "special_needs:autism",
+      "description": "Layer 'Primary and secondary schools' shows special_needs:autism=yes with a fixed text, namely 'For students with an autism spectrum disorder (type 9)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if _country=be & school:special_needs!~^(no)$ & school:special_needs~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "special_needs:learning_disabilities",
+      "description": "Layer 'Primary and secondary schools' shows special_needs:learning_disabilities=yes with a fixed text, namely 'For students with a learning disability (basic offering )' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if _country=be & school:special_needs!~^(no)$ & school:special_needs~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'wikidata' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "wikipedia",
+      "description": "Layer 'Primary and secondary schools' shows wikipedia~.+ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'Primary and secondary schools' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the mapcomplete.org theme 'Education') Picking this answer will delete the key wikidata.",
+      "value": ""
     },
     {
       "key": "amenity",

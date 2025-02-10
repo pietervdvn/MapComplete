@@ -66,7 +66,7 @@
 </script>
 
 <div>
-  <div class:interactive={!readonly} class="flex flex-col items-end py-1 px-2">
+  <div class:interactive={!readonly} class="flex flex-col items-end px-2 py-1">
     <div class="flex w-full flex-col">
       {#if renderingExternal}
         <TagRenderingAnswer

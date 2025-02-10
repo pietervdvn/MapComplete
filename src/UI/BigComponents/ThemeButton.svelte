@@ -45,10 +45,10 @@
 
     let linkPrefix = `${path}/${layout.id.toLowerCase()}.html?`
     if (
-      !isAndroid && (
-      location.hostname === "localhost" ||
-      location.hostname === "127.0.0.1" ||
-      location.port === "1234")
+      !isAndroid &&
+      (location.hostname === "localhost" ||
+        location.hostname === "127.0.0.1" ||
+        location.port === "1234")
     ) {
       // Redirect to 'theme.html?layout=* instead of 'layout.html'. This is probably a debug run, where the routing does not work
       linkPrefix = `${path}/theme.html?layout=${layout.id}&`
@@ -66,7 +66,9 @@
     return `${linkPrefix}${hash}`
   }
 
-  let href = AndroidPolyfill.inAndroid.map(isAndroid => createUrlDirect(theme, isCustom, isAndroid, state))
+  let href = AndroidPolyfill.inAndroid.map((isAndroid) =>
+    createUrlDirect(theme, isCustom, isAndroid, state)
+  )
 </script>
 
 <a class="low-interaction my-1 flex w-full items-center text-ellipsis rounded p-1" href={$href}>

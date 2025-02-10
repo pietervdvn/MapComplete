@@ -36,14 +36,14 @@ export default class ThemeViewStateHashActor {
      *
      */
     constructor(state: {
-        featureSwitches: {featureSwitchBackToThemeOverview: Store<boolean>}
-        indexedFeatures: IndexedFeatureSource,
-        selectedElement: UIEventSource<Feature>,
-        guistate: MenuState,
+        featureSwitches: { featureSwitchBackToThemeOverview: Store<boolean> }
+        indexedFeatures: IndexedFeatureSource
+        selectedElement: UIEventSource<Feature>
+        guistate: MenuState
     }) {
         this._state = state
         AndroidPolyfill.onBackButton(() => this.back(), {
-            returnToIndex: state.featureSwitches.featureSwitchBackToThemeOverview
+            returnToIndex: state.featureSwitches.featureSwitchBackToThemeOverview,
         })
 
         const hashOnLoad = Hash.hash.data
@@ -81,7 +81,6 @@ export default class ThemeViewStateHashActor {
 
         // When all is done, set the hash. This must happen last to give the code above correct info
         this.setHash()
-
     }
 
     /**

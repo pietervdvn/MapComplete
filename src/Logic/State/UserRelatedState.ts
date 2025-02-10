@@ -350,7 +350,9 @@ export default class UserRelatedState {
      * List of all hidden themes that have been seen before
      * @param osmConnection
      */
-    public static initDiscoveredHiddenThemes(osmConnection: OsmConnection): Store<undefined | string[]> {
+    public static initDiscoveredHiddenThemes(
+        osmConnection: OsmConnection
+    ): Store<undefined | string[]> {
         const prefix = "mapcomplete-hidden-theme-"
         const userPreferences = osmConnection.preferencesHandler.allPreferences
         return userPreferences.mapD((preferences) =>

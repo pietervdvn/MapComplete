@@ -77,21 +77,34 @@ export default class SaveFeatureSourceToLocalStorage {
         this.storage = storage
         const singleTileSavers: Map<number, SingleTileSaver> = new Map<number, SingleTileSaver>()
         features.features.addCallbackAndRunD((features) => {
-            if (features.some(f => {
-                let totalPoints = 0
-                if (f.geometry.type === "MultiPolygon") {
-                    totalPoints = f.geometry.coordinates.map(rings => rings.map(ring => ring.length).reduce((a, b) => a + b)).reduce((a, b) => a + b)
-                } else if (f.geometry.type === "Polygon" || f.geometry.type === "MultiLineString") {
-                    totalPoints = f.geometry.coordinates.map(ring => ring.length).reduce((a, b) => a + b)
-                } else if (f.geometry.type === "LineString") {
-                    totalPoints = f.geometry.coordinates.length
-                }
-                if (totalPoints > 1000) {
-                    console.warn(`Not caching tiles, detected a big object (${totalPoints} points for ${f.properties.id})`)
-                    return true
-                }
-                return false
-            })) {
+            if (
+                features.some((f) => {
+                    let totalPoints = 0
+                    if (f.geometry.type === "MultiPolygon") {
+                        totalPoints = f.geometry.coordinates
+                            .map((rings) =>
+                                rings.map((ring) => ring.length).reduce((a, b) => a + b)
+                            )
+                            .reduce((a, b) => a + b)
+                    } else if (
+                        f.geometry.type === "Polygon" ||
+                        f.geometry.type === "MultiLineString"
+                    ) {
+                        totalPoints = f.geometry.coordinates
+                            .map((ring) => ring.length)
+                            .reduce((a, b) => a + b)
+                    } else if (f.geometry.type === "LineString") {
+                        totalPoints = f.geometry.coordinates.length
+                    }
+                    if (totalPoints > 1000) {
+                        console.warn(
+                            `Not caching tiles, detected a big object (${totalPoints} points for ${f.properties.id})`
+                        )
+                        return true
+                    }
+                    return false
+                })
+            ) {
                 // Has big objects
                 return
             }

@@ -15,7 +15,6 @@ import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.sve
 import Combine from "../Base/Combine"
 
 class StealViz implements SpecialVisualization {
-
     funcName = "steal"
     group = "tagrendering_manipulation"
 
@@ -24,13 +23,13 @@ class StealViz implements SpecialVisualization {
         {
             name: "featureId",
             doc: "The key of the attribute which contains the id of the feature from which to use the tags",
-            required: true
+            required: true,
         },
         {
             name: "tagRenderingId",
             doc: "The layer-id and tagRenderingId to render. Can be multiple value if ';'-separated (in which case every value must also contain the layerId, e.g. `layerId.tagRendering0; layerId.tagRendering1`). Note: this can cause layer injection",
-            required: true
-        }
+            required: true,
+        },
     ]
     needsUrls = []
     svelteBased = true
@@ -64,7 +63,7 @@ class StealViz implements SpecialVisualization {
                                 tags: otherTags,
                                 selectedElement: otherFeature,
                                 state,
-                                layer
+                                layer,
                             })
                         )
                     }
@@ -89,7 +88,6 @@ class StealViz implements SpecialVisualization {
 }
 
 export default class TagrenderingManipulationSpecialVisualisations {
-
     public static initList(): (SpecialVisualization & { group })[] {
         return [
             new StealViz(),
@@ -106,10 +104,10 @@ export default class TagrenderingManipulationSpecialVisualisations {
                                     type: "multi",
                                     key: "_doors_from_building_properties",
                                     tagrendering: {
-                                        en: "The building containing this feature has a <a href='#{id}'>door</a> of width {entrance:width}"
-                                    }
-                                }
-                            }
+                                        en: "The building containing this feature has a <a href='#{id}'>door</a> of width {entrance:width}",
+                                    },
+                                },
+                            },
                         },
                         null,
                         "  "
@@ -119,17 +117,17 @@ export default class TagrenderingManipulationSpecialVisualisations {
                     {
                         name: "key",
                         doc: "The property to read and to interpret as a list of properties",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "tagrendering",
                         doc: "An entire tagRenderingConfig",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "classes",
-                        doc: "CSS-classes to apply on every individual item. Seperated by `space`"
-                    }
+                        doc: "CSS-classes to apply on every individual item. Seperated by `space`",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -147,7 +145,7 @@ export default class TagrenderingManipulationSpecialVisualisations {
                             if (typeof tags[key] === "string") {
                                 properties = JSON.parse(tags[key])
                             } else {
-                                properties = <object[]><unknown>tags[key]
+                                properties = <object[]>(<unknown>tags[key])
                             }
                             if (!properties) {
                                 console.debug(
@@ -165,7 +163,7 @@ export default class TagrenderingManipulationSpecialVisualisations {
                                     tags: new ImmutableStore(property),
                                     state,
                                     feature,
-                                    layer
+                                    layer,
                                     // clss: classes ?? "",
                                 }).SetClass(classes)
                                 elements.push(subsTr)
@@ -173,7 +171,7 @@ export default class TagrenderingManipulationSpecialVisualisations {
                             return elements
                         })
                     )
-                }
+                },
             },
             {
                 funcName: "group",
@@ -182,12 +180,12 @@ export default class TagrenderingManipulationSpecialVisualisations {
                 args: [
                     {
                         name: "header",
-                        doc: "The _identifier_ of a single tagRendering. This will be used as header"
+                        doc: "The _identifier_ of a single tagRendering. This will be used as header",
                     },
                     {
                         name: "labels",
-                        doc: "A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion"
-                    }
+                        doc: "A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -204,9 +202,9 @@ export default class TagrenderingManipulationSpecialVisualisations {
                         selectedElement,
                         layer,
                         header,
-                        labels
+                        labels,
                     })
-                }
+                },
             },
             {
                 funcName: "open_in_iD",
@@ -216,9 +214,9 @@ export default class TagrenderingManipulationSpecialVisualisations {
                 constr: (state, feature): SvelteUIElement => {
                     return new SvelteUIElement(OpenIdEditor, {
                         mapProperties: state.mapProperties,
-                        objectId: feature.data.id
+                        objectId: feature.data.id,
                     })
-                }
+                },
             },
             {
                 funcName: "open_in_josm",
@@ -229,9 +227,8 @@ export default class TagrenderingManipulationSpecialVisualisations {
 
                 constr: (state): SvelteUIElement => {
                     return new SvelteUIElement(OpenJosm, { state })
-                }
-            }
+                },
+            },
         ]
     }
-
 }

@@ -18,7 +18,7 @@ import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import NearbyFeatureSource from "../../Logic/FeatureSource/Sources/NearbyFeatureSource"
 import {
     SummaryTileSource,
-    SummaryTileSourceRewriter
+    SummaryTileSourceRewriter,
 } from "../../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
 import { ShowDataLayerOptions } from "../../UI/Map/ShowDataLayerOptions"
 
@@ -94,10 +94,7 @@ export class WithSpecialLayers extends WithChangesState {
         const maxzoom = Math.min(...normalLayers.map((l) => l.minzoom))
 
         const layers = this.theme.layers.filter(
-            (l) =>
-                !Constants.isPriviliged(l) &&
-                l.source.geojsonSource === undefined &&
-                l.doCount
+            (l) => !Constants.isPriviliged(l) && l.source.geojsonSource === undefined && l.doCount
         )
         if (!Constants.SummaryServer || layers.length === 0) {
             return undefined

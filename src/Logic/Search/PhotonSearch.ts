@@ -5,7 +5,7 @@ import GeocodingProvider, {
     GeocodingOptions,
     GeocodingUtils,
     ReverseGeocodingProvider,
-    ReverseGeocodingResult
+    ReverseGeocodingResult,
 } from "./GeocodingProvider"
 import { Utils } from "../../Utils"
 import { Feature, FeatureCollection } from "geojson"

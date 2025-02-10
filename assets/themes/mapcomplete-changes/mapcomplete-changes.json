@@ -183,6 +183,26 @@
           ]
         },
         {
+          "id": "platform",
+          "question": {
+            "en": "With what platform was the change made?"
+          },
+          "mappings": [
+            {
+              "if": "android=",
+              "then": {
+                "en": "Made on the web"
+              }
+            },
+            {
+              "if": "android=yes",
+              "then": {
+                "en": "Made with the android app"
+              }
+            }
+          ]
+        },
+        {
           "id": "version",
           "question": {
             "en": "What version of MapComplete was used to make this change?",
@@ -770,17 +790,44 @@
           ]
         },
         {
+          "id": "platform",
+          "options": [
+            {
+              "question": {
+                "en": "Changeset added at least one image",
+                "cs": "Sada změn přidala alespoň jeden obrázek",
+                "de": "Changeset hat mindestens ein Bild hinzugefügt",
+                "es": "El conjunto de cambios agregó al menos una imagen",
+                "ko": "주요 변경사항에 최소 하나의 이미지가 추가 되었습니다",
+                "nl": "Changeset voegde minstens één afbeelding toe"
+              }
+            },
+            {
+              "question": {
+                "en": "Made with Android"
+              },
+              "osmTags": "android=yes"
+            },
+            {
+              "question": {
+                "en": "Made on the web"
+              },
+              "osmTags": "android="
+            }
+          ]
+        },
+        {
           "id": "added-image",
           "options": [
             {
               "osmTags": "add-image>0",
               "question": {
-                "en": "Changeset added at least one image",
-                "de": "Changeset hat mindestens ein Bild hinzugefügt",
-                "cs": "Sada změn přidala alespoň jeden obrázek",
-                "es": "El conjunto de cambios agregó al menos una imagen",
-                "nl": "Changeset voegde minstens één afbeelding toe",
-                "ko": "주요 변경사항에 최소 하나의 이미지가 추가 되었습니다"
+                "en": "Exclude GRB theme",
+                "de": "GRB-Thema ausschließen",
+                "cs": "Vyloučit motiv GRB",
+                "es": "Excluir el tema GRB",
+                "nl": "GRB-thema uitsluiten",
+                "ko": "GRB 테마 제외"
               }
             }
           ]
@@ -791,12 +838,12 @@
             {
               "osmTags": "theme!=grb",
               "question": {
-                "en": "Exclude GRB theme",
-                "de": "GRB-Thema ausschließen",
-                "cs": "Vyloučit motiv GRB",
-                "es": "Excluir el tema GRB",
-                "nl": "GRB-thema uitsluiten",
-                "ko": "GRB 테마 제외"
+                "en": "Exclude etymology theme",
+                "de": "Etymologie-Thema ausschließen",
+                "cs": "Vyloučit etymologii tématu",
+                "es": "Excluir el tema de etimología",
+                "nl": "Thema etymologie uitsluiten",
+                "ko": "어원 테마 제외"
               }
             }
           ]

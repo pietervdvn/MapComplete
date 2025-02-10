@@ -18,13 +18,13 @@ class NearbyImageVis implements SpecialVisualizationSvelte {
         {
             name: "mode",
             defaultValue: "closed",
-            doc: "Either `open` or `closed`. If `open`, then the image carousel will always be shown"
+            doc: "Either `open` or `closed`. If `open`, then the image carousel will always be shown",
         },
         {
             name: "readonly",
             required: false,
-            doc: "If 'readonly' or 'yes', will not show the 'link'-button"
-        }
+            doc: "If 'readonly' or 'yes', will not show the 'link'-button",
+        },
     ]
     group: "images"
     docs =
@@ -49,13 +49,12 @@ class NearbyImageVis implements SpecialVisualizationSvelte {
             lat,
             feature,
             layer,
-            linkable: !readonly
+            linkable: !readonly,
         })
     }
 }
 
 export class ImageVisualisations {
-
     static initList(): SpecialVisualizationSvelte[] {
         return [
             new NearbyImageVis(),
@@ -67,8 +66,8 @@ export class ImageVisualisations {
                     {
                         name: "image_key",
                         defaultValue: AllImageProviders.defaultKeys.join(","),
-                        doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated "
-                    }
+                        doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated ",
+                    },
                 ],
                 needsUrls: AllImageProviders.apiUrls,
                 constr: (state, tags, args) => {
@@ -77,9 +76,11 @@ export class ImageVisualisations {
                         imagePrefixes = [].concat(...args.map((a) => a.split(",")))
                     }
                     const images = AllImageProviders.loadImagesFor(tags, imagePrefixes)
-                    const estimated = tags.mapD(tags => AllImageProviders.estimateNumberOfImages(tags, imagePrefixes))
+                    const estimated = tags.mapD((tags) =>
+                        AllImageProviders.estimateNumberOfImages(tags, imagePrefixes)
+                    )
                     return new SvelteUIElement(ImageCarousel, { state, tags, images, estimated })
-                }
+                },
             },
             {
                 funcName: "image_upload",
@@ -90,18 +91,18 @@ export class ImageVisualisations {
                     {
                         name: "image-key",
                         doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
-                        required: false
+                        required: false,
                     },
                     {
                         name: "label",
                         doc: "The text to show on the button",
-                        required: false
+                        required: false,
                     },
                     {
                         name: "disable_blur",
                         doc: "If set to 'true' or 'yes', then face blurring will be disabled. To be used sparingly",
-                        required: false
-                    }
+                        required: false,
+                    },
                 ],
                 constr: (state, tags, args, feature) => {
                     const targetKey = args[0] === "" ? undefined : args[0]
@@ -113,10 +114,10 @@ export class ImageVisualisations {
                         feature,
                         labelText: args[1],
                         image: args[2],
-                        noBlur: noBlur === "true" || noBlur === "yes"
+                        noBlur: noBlur === "true" || noBlur === "yes",
                     })
-                }
-            }]
+                },
+            },
+        ]
     }
-
 }

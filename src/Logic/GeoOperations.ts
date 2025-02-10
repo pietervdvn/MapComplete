@@ -10,12 +10,12 @@ import {
     MultiPolygon,
     Point,
     Polygon,
-    Position
+    Position,
 } from "geojson"
 import { Tiles } from "../Models/TileRange"
 import { Utils } from "../Utils"
 
-("use strict")
+;("use strict")
 
 export class GeoOperations {
     private static readonly _earthRadius = 6378137
@@ -29,7 +29,7 @@ export class GeoOperations {
         "behind",
         "sharp_left",
         "left",
-        "slight_left"
+        "slight_left",
     ] as const
     private static reverseBearing = {
         N: 0,
@@ -47,7 +47,7 @@ export class GeoOperations {
         W: 270,
         WNW: 292.5,
         NW: 315,
-        NNW: 337.5
+        NNW: 337.5,
     }
 
     /**
@@ -309,7 +309,7 @@ export class GeoOperations {
         bufferSizeInMeter: number
     ): Feature<Polygon | MultiPolygon> | FeatureCollection<Polygon | MultiPolygon> {
         return turf.buffer(feature, bufferSizeInMeter / 1000, {
-            units: "kilometers"
+            units: "kilometers",
         })
     }
 
@@ -325,9 +325,9 @@ export class GeoOperations {
                     [lon0, lat],
                     [lon0, lat0],
                     [lon, lat0],
-                    [lon, lat]
-                ]
-            }
+                    [lon, lat],
+                ],
+            },
         }
     }
 
@@ -345,7 +345,10 @@ export class GeoOperations {
     public static nearestPoint(
         way: Feature<LineString>,
         point: [number, number]
-    ): Feature<Point, { dist: number; index: number; multiFeatureIndex: number; location: number }> {
+    ): Feature<
+        Point,
+        { dist: number; index: number; multiFeatureIndex: number; location: number }
+    > {
         return turf.nearestPointOnLine(<Feature<LineString>>way, point, { units: "kilometers" })
     }
 
@@ -368,9 +371,9 @@ export class GeoOperations {
                 type: "Feature",
                 geometry: {
                     type: "LineString",
-                    coordinates: way.geometry.coordinates[0]
+                    coordinates: way.geometry.coordinates[0],
                 },
-                properties: way.properties
+                properties: way.properties,
             }
         }
         if (way.geometry.type === "MultiPolygon") {
@@ -378,9 +381,9 @@ export class GeoOperations {
                 type: "Feature",
                 geometry: {
                     type: "MultiLineString",
-                    coordinates: way.geometry.coordinates[0]
+                    coordinates: way.geometry.coordinates[0],
                 },
-                properties: way.properties
+                properties: way.properties,
             }
         }
         if (way.geometry.type === "LineString") {
@@ -542,7 +545,10 @@ export class GeoOperations {
      * Note: IDs are rewritten
      * Also @see spreadIntoBBoxes
      */
-    public static clipAllInBox(features: ReadonlyArray<Readonly<Feature>>, tileIndex: number): Feature[] {
+    public static clipAllInBox(
+        features: ReadonlyArray<Readonly<Feature>>,
+        tileIndex: number
+    ): Feature[] {
         const bbox = Tiles.asGeojson(tileIndex)
         const newFeatures: Feature[] = []
         for (const f of features) {
@@ -555,7 +561,7 @@ export class GeoOperations {
                 }
                 const properties = {
                     ...f.properties,
-                    id
+                    id,
                 }
                 intersectionPart.properties = properties
                 newFeatures.push(intersectionPart)
@@ -587,8 +593,8 @@ export class GeoOperations {
                         properties: {},
                         geometry: {
                             type: "Point",
-                            coordinates: p
-                        }
+                            coordinates: p,
+                        },
                     }
             )
         }
@@ -604,7 +610,7 @@ export class GeoOperations {
             trackPoints.push(trkpt)
         }
         const header =
-            "<gpx version=\"1.1\" creator=\"mapcomplete.org\" xmlns=\"http://www.topografix.com/GPX/1/1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">"
+            '<gpx version="1.1" creator="mapcomplete.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
         return (
             header +
             "\n<name>" +
@@ -643,7 +649,7 @@ export class GeoOperations {
             trackPoints.push(trkpt)
         }
         const header =
-            "<gpx version=\"1.1\" creator=\"mapcomplete.org\" xmlns=\"http://www.topografix.com/GPX/1/1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">"
+            '<gpx version="1.1" creator="mapcomplete.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
         return (
             header +
             "\n<name>" +
@@ -669,7 +675,7 @@ export class GeoOperations {
 
         const copy = {
             ...feature,
-            geometry: { ...feature.geometry }
+            geometry: { ...feature.geometry },
         }
         let coordinates: [number, number][]
         if (feature.geometry.type === "LineString") {
@@ -727,8 +733,8 @@ export class GeoOperations {
                 type: "Feature",
                 geometry: {
                     type: "LineString",
-                    coordinates: [a, b]
-                }
+                    coordinates: [a, b],
+                },
             },
             distanceMeter,
             { units: "meters" }
@@ -769,13 +775,17 @@ export class GeoOperations {
         possiblyEnclosingFeature: Readonly<Feature<Polygon | MultiPolygon>>
     ): boolean {
         if (feature.geometry.type === "MultiPolygon") {
-            const polygons = feature.geometry.coordinates.map(coordinates =>
-                <Feature<Polygon>>{
-                    type: "Feature", geometry: {
-                        type: "Polygon", coordinates
+            const polygons = feature.geometry.coordinates.map(
+                (coordinates) =>
+                    <Feature<Polygon>>{
+                        type: "Feature",
+                        geometry: {
+                            type: "Polygon",
+                            coordinates,
+                        },
                     }
-                })
-            return !polygons.some(polygon => !booleanWithin(polygon, possiblyEnclosingFeature))
+            )
+            return !polygons.some((polygon) => !booleanWithin(polygon, possiblyEnclosingFeature))
         }
         return booleanWithin(feature, possiblyEnclosingFeature)
     }
@@ -784,7 +794,10 @@ export class GeoOperations {
      * Create an intersection between two features.
      * One or multiple new feature are returned based on 'toSplit', which'll have a geometry that is completely withing boundary
      */
-    public static clipWith(toSplit: Readonly<Feature>, boundary: Readonly<Feature<Polygon>>): Feature[] {
+    public static clipWith(
+        toSplit: Readonly<Feature>,
+        boundary: Readonly<Feature<Polygon>>
+    ): Feature[] {
         if (toSplit.geometry.type === "Point") {
             const p = <Feature<Point>>toSplit
             if (GeoOperations.inside(<[number, number]>p.geometry.coordinates, boundary)) {
@@ -795,7 +808,10 @@ export class GeoOperations {
         }
 
         if (toSplit.geometry.type === "LineString") {
-            const splitup: Feature<LineString>[] = turf.lineSplit(<Feature<LineString>>toSplit, boundary).features
+            const splitup: Feature<LineString>[] = turf.lineSplit(
+                <Feature<LineString>>toSplit,
+                boundary
+            ).features
             const kept: Feature[] = []
             for (const f of splitup) {
                 if (!GeoOperations.inside(GeoOperations.centerpointCoordinates(f), boundary)) {
@@ -825,21 +841,29 @@ export class GeoOperations {
             return kept
         }
         if (toSplit.geometry.type === "Polygon" || toSplit.geometry.type == "MultiPolygon") {
-
-            const splitup = turf.intersect(turf.featureCollection([<Feature<Polygon | MultiPolygon>>toSplit, boundary]))
+            const splitup = turf.intersect(
+                turf.featureCollection([<Feature<Polygon | MultiPolygon>>toSplit, boundary])
+            )
             if (splitup === null) {
                 // No intersection found.
                 // Either: the boundary is contained fully in 'toSplit', 'toSplit' is contained fully in 'boundary' or they are unrelated at all
                 if (GeoOperations.completelyWithin(toSplit, boundary)) {
                     return [toSplit]
                 }
-                if (GeoOperations.completelyWithin(boundary, <Feature<Polygon | MultiPolygon>>toSplit)) {
-                    return [{
-                        type: "Feature",
-                        properties: { ...toSplit.properties },
-                        geometry: boundary.geometry,
-                        bbox: boundary.bbox
-                    }]
+                if (
+                    GeoOperations.completelyWithin(
+                        boundary,
+                        <Feature<Polygon | MultiPolygon>>toSplit
+                    )
+                ) {
+                    return [
+                        {
+                            type: "Feature",
+                            properties: { ...toSplit.properties },
+                            geometry: boundary.geometry,
+                            bbox: boundary.bbox,
+                        },
+                    ]
                 }
                 return []
             }
@@ -911,7 +935,9 @@ export class GeoOperations {
                 return undefined
             case "end":
                 if (feature.geometry.type === "LineString") {
-                    return <[number, number]>(<Feature<LineString>>feature).geometry.coordinates.at(-1)
+                    return <[number, number]>(
+                        (<Feature<LineString>>feature).geometry.coordinates.at(-1)
+                    )
                 }
                 return undefined
             default:
@@ -934,8 +960,8 @@ export class GeoOperations {
             properties: p.properties,
             geometry: {
                 type: "LineString",
-                coordinates: p.geometry.coordinates[0]
-            }
+                coordinates: p.geometry.coordinates[0],
+            },
         }
     }
 
@@ -963,7 +989,7 @@ export class GeoOperations {
                             console.debug("Splitting way", feature.properties.id)
                             result.push(<Feature>{
                                 ...feature,
-                                geometry: { ...feature.geometry, coordinates: coors.slice(i + 1) }
+                                geometry: { ...feature.geometry, coordinates: coors.slice(i + 1) },
                             })
                             coors = coors.slice(0, i + 1)
                             break
@@ -972,7 +998,7 @@ export class GeoOperations {
                 }
                 result.push(<Feature>{
                     ...feature,
-                    geometry: { ...feature.geometry, coordinates: coors }
+                    geometry: { ...feature.geometry, coordinates: coors },
                 })
             }
         }
@@ -1146,8 +1172,8 @@ export class GeoOperations {
                 properties: multiLineStringFeature.properties,
                 geometry: {
                     type: "LineString",
-                    coordinates: coors[0]
-                }
+                    coordinates: coors[0],
+                },
             }
         }
         return {
@@ -1155,8 +1181,8 @@ export class GeoOperations {
             properties: multiLineStringFeature.properties,
             geometry: {
                 type: "MultiLineString",
-                coordinates: coors
-            }
+                coordinates: coors,
+            },
         }
     }
 
@@ -1306,9 +1332,10 @@ export class GeoOperations {
                 }
                 if (e.message.indexOf("SweepLine tree") >= 0) {
                     console.log("Applying fallback intersection...")
-                    const intersection = turf.intersect(turf.featureCollection([
+                    const intersection = turf.intersect(
+                        turf.featureCollection([
                             turf.truncate(feature),
-                            turf.truncate(otherFeature)
+                            turf.truncate(otherFeature),
                         ])
                     )
                     if (intersection == null) {

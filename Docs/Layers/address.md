@@ -5,15 +5,17 @@
 Addresses
 
  - This layer is shown at zoomlevel **18** and higher
- - This layer will automatically load  [named_streets](./named_streets.md)  into the layout as it depends on it:  a calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _closest_3_street_names)
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
 2. [Basic tags for this layer](#basic-tags-for-this-layer)
 3. [Supported attributes](#supported-attributes)
+  - [address_joined](#address_joined)
+  - [header](#header)
   - [housenumber](#housenumber)
   - [street](#street)
+  - [unit](#unit)
   - [fixme](#fixme)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
@@ -39,9 +41,30 @@ Elements must match **any** of the following expressions:
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:street#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Astreet/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:housenumber#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Ahousenumber/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber) | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:street#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Astreet/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D) [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D) [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:street#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Astreet/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:unit#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Aunit/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:unit](https://wiki.openstreetmap.org/wiki/Key:addr:unit) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:addr:unit%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fixme#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fixme/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:fixme%3D) |
+
+### address_joined
+
+_This tagrendering has no question and is thus read-only_
+*{group(header,street;housenumber;unit)}*
+
+This tagrendering has labels 
+`address`
+
+### header
+
+_This tagrendering has no question and is thus read-only_
+*{addr:street} <b>{addr:housenumber}</b> {addr:unit}*
+
+ -  *No address is known* is shown if with addr:street= & addr:unit= & addr:housenumber=
+
+This tagrendering has labels 
+`address`
+`hidden`
 
 ### housenumber
 
@@ -50,14 +73,29 @@ The question is `What is the number of this house?`
 
  -  *This building has no house number* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nohousenumber' target='_blank'>nohousenumber</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousenumber%3Dyes' target='_blank'>yes</a>
 
+This tagrendering has labels 
+`address`
+`hidden`
+
 ### street
 
 The question is `What street is this address located in?`
 *This address is in street <b>{addr:street}</b>* is shown if `addr:street` is set
 
- -  *Located in <b>{_closest_street:0:name}</b>* is shown if with addr:street=
- -  *Located in <b>{_closest_street:1:name}</b>* is shown if with addr:street=
- -  *Located in <b>{_closest_street:2:name}</b>* is shown if with addr:street=
+This tagrendering has labels 
+`address`
+`hidden`
+
+### unit
+
+The question is `What is the unit number or letter?`
+*The unit number is <b>{addr:unit}</b>* is shown if `addr:unit` is set
+
+ -  *No unit number* is shown if with addr:unit=
+
+This tagrendering has labels 
+`address`
+`hidden`
 
 ### fixme
 

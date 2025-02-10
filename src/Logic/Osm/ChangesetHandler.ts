@@ -53,7 +53,7 @@ export class ChangesetHandler {
             | { addAlias: (id0: string, id1: string) => void }
             | undefined,
         changes: Changes,
-        reportError: (e: string | Error, extramessage: string) => void,
+        reportError: (e: string | Error, extramessage: string) => void
     ) {
         this.osmConnection = osmConnection
         this._reportError = reportError
@@ -114,7 +114,7 @@ export class ChangesetHandler {
     private async UploadWithNew(
         generateChangeXML: (csid: number, remappings: Map<string, string>) => string,
         openChangeset: UIEventSource<number>,
-        extraMetaTags: ChangesetTag[],
+        extraMetaTags: ChangesetTag[]
     ) {
         const csId = await this.OpenChangeset(extraMetaTags)
         openChangeset.setData(csId)
@@ -122,7 +122,7 @@ export class ChangesetHandler {
         console.log(
             "Opened a new changeset (openChangeset.data is undefined):",
             changeset,
-            extraMetaTags,
+            extraMetaTags
         )
         const changes = await this.UploadChange(csId, changeset)
         const hasSpecialMotivationChanges = ChangesetHandler.rewriteMetaTags(extraMetaTags, changes)
@@ -145,7 +145,7 @@ export class ChangesetHandler {
     public async UploadChangeset(
         generateChangeXML: (csid: number, remappings: Map<string, string>) => string,
         extraMetaTags: ChangesetTag[],
-        openChangeset: UIEventSource<number>,
+        openChangeset: UIEventSource<number>
     ): Promise<void> {
         if (
             !extraMetaTags.some((tag) => tag.key === "comment") ||
@@ -180,13 +180,13 @@ export class ChangesetHandler {
                     try {
                         const rewritings = await this.UploadChange(
                             csId,
-                            generateChangeXML(csId, this._remappings),
+                            generateChangeXML(csId, this._remappings)
                         )
 
                         const rewrittenTags = this.RewriteTagsOf(
                             extraMetaTags,
                             rewritings,
-                            oldChangesetMeta,
+                            oldChangesetMeta
                         )
                         await this.UpdateTags(csId, rewrittenTags)
                         return // We are done!
@@ -197,7 +197,7 @@ export class ChangesetHandler {
             } catch (e) {
                 this._reportError(
                     e,
-                    "While getting metadata from a changeset " + openChangeset.data,
+                    "While getting metadata from a changeset " + openChangeset.data
                 )
             }
         }
@@ -225,7 +225,7 @@ export class ChangesetHandler {
             console.warn(
                 "Could not open/upload changeset due to ",
                 e,
-                "trying again with a another fresh changeset ",
+                "trying again with a another fresh changeset "
             )
             openChangeset.setData(undefined)
 
@@ -251,7 +251,7 @@ export class ChangesetHandler {
             uid: number // User ID
             changes_count: number
             tags: any
-        },
+        }
     ): ChangesetTag[] {
         // Note: extraMetaTags is where all the tags are collected into
 
@@ -388,7 +388,7 @@ export class ChangesetHandler {
                 tag.key !== undefined &&
                 tag.value !== undefined &&
                 tag.key !== "" &&
-                tag.value !== "",
+                tag.value !== ""
         )
         const metadata = tags.map((kv) => `<tag k="${kv.key}" v="${escapeHtml(kv.value)}"/>`)
         const content = [`<osm><changeset>`, metadata, `</changeset></osm>`].join("")
@@ -434,7 +434,7 @@ export class ChangesetHandler {
         const csId = await this.osmConnection.put(
             "changeset/create",
             [`<osm><changeset>`, metadata, `</changeset></osm>`].join(""),
-            { "Content-Type": "text/xml" },
+            { "Content-Type": "text/xml" }
         )
         return Number(csId)
     }
@@ -444,12 +444,12 @@ export class ChangesetHandler {
      */
     private async UploadChange(
         changesetId: number,
-        changesetXML: string,
+        changesetXML: string
     ): Promise<Map<string, string>> {
         const response = await this.osmConnection.post<XMLDocument>(
             "changeset/" + changesetId + "/upload",
             changesetXML,
-            { "Content-Type": "text/xml" },
+            { "Content-Type": "text/xml" }
         )
         const changes = this.parseUploadChangesetResponse(response)
         console.log("Uploaded changeset ", changesetId)

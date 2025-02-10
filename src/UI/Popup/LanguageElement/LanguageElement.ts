@@ -17,7 +17,7 @@ export class LanguageElement implements SpecialVisualization {
         {
             name: "key",
             required: true,
-            doc: "What key to use, e.g. `language`, `tactile_writing:braille:language`, ... If a language is supported, the language code will be appended to this key, resulting in `<key>:nl=yes` if _nl_ is picked "
+            doc: "What key to use, e.g. `language`, `tactile_writing:braille:language`, ... If a language is supported, the language code will be appended to this key, resulting in `<key>:nl=yes` if _nl_ is picked ",
         },
         {
             name: "question",

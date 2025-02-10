@@ -4,7 +4,7 @@
 
 Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)
 
- - This layer is shown at zoomlevel **0** and higher
+ - This layer is shown at zoomlevel **14** and higher
 
 ## Table of contents
 

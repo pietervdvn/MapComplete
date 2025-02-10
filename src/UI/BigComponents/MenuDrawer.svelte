@@ -208,7 +208,7 @@
     {#if theme.official}
       <a
         class="flex"
-        href={"https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes" +
+        href={"https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes/" +
           theme.id +
           ".md"}
         target="_blank"

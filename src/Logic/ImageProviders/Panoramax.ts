@@ -32,7 +32,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
             lat: number
         }
     ): BaseUIElement {
-        const host = ("https://" + new URL(img.url).host)
+        const host = "https://" + new URL(img.url).host
         const p = new Panoramax(host)
         return new Link(
             new SvelteUIElement(Panoramax_bw),

@@ -47,7 +47,7 @@
     {#if !hiddenFail}
       <slot name="error">
         <div class="alert flex flex-col items-center">
-          <div class="max-w-64 flex items-center">
+          <div class="flex max-w-64 items-center">
             <Invalid class="m-2 h-8 w-8 shrink-0" />
             <Tr t={offlineModes[$apiState] ?? t.loginFailedUnreachableMode} />
           </div>

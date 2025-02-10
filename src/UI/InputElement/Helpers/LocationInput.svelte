@@ -88,8 +88,8 @@
   }
 </script>
 
-<div class="min-h-32 relative h-full cursor-pointer overflow-hidden">
-  <div class="absolute top-0 left-0 h-full w-full cursor-pointer">
+<div class="relative h-full min-h-32 cursor-pointer overflow-hidden">
+  <div class="absolute left-0 top-0 h-full w-full cursor-pointer">
     <MaplibreMap
       center={{ lng: initialCoordinate.lon, lat: initialCoordinate.lat }}
       {map}
@@ -98,7 +98,7 @@
   </div>
 
   <div
-    class="pointer-events-none absolute top-0 left-0 flex h-full w-full items-center p-8 opacity-50"
+    class="pointer-events-none absolute left-0 top-0 flex h-full w-full items-center p-8 opacity-50"
   >
     <slot name="image">
       <Move_arrows class="h-full max-h-24" />

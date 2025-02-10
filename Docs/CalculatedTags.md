@@ -95,6 +95,10 @@ Adds the currency valid for the object, based on country or explicit tagging. Ca
 
 This is a lazy metatag and is only calculated when needed
 
+### panoramax
+
+Converts a `panoramax=hash1;hash2;hash3;...` into `panoramax=hash1`,`panoramax:0=hash1`...
+
  Calculating tags with Javascript 
 ----------------------------------
 

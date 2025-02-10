@@ -37,8 +37,11 @@ export default class DynamicGeoJsonTileSource extends UpdatableDynamicTileSource
             if (DynamicGeoJsonTileSource.whitelistCache.has(whitelistUrl)) {
                 whitelist = DynamicGeoJsonTileSource.whitelistCache.get(whitelistUrl)
             } else {
-                Utils.downloadJsonCached<Record<string | number, number[]>>(whitelistUrl, 1000 * 60 * 60)
-                    .then(json => {
+                Utils.downloadJsonCached<Record<string | number, number[]>>(
+                    whitelistUrl,
+                    1000 * 60 * 60
+                )
+                    .then((json) => {
                         const data = new Map<number, Set<number>>()
                         for (const x in json) {
                             if (x === "zoom") {

@@ -9,12 +9,16 @@ import {
     DoesImageExist,
     PrevalidateTheme,
     ValidateLayer,
-    ValidateThemeEnsemble
+    ValidateThemeEnsemble,
 } from "../src/Models/ThemeConfig/Conversion/Validation"
 import { Translation } from "../src/UI/i18n/Translation"
 import { PrepareLayer } from "../src/Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../src/Models/ThemeConfig/Conversion/PrepareTheme"
-import { Conversion, DesugaringContext, DesugaringStep } from "../src/Models/ThemeConfig/Conversion/Conversion"
+import {
+    Conversion,
+    DesugaringContext,
+    DesugaringStep,
+} from "../src/Models/ThemeConfig/Conversion/Conversion"
 import { Utils } from "../src/Utils"
 import Script from "./Script"
 import { AllSharedLayers } from "../src/Customizations/AllSharedLayers"
@@ -620,10 +624,7 @@ class LayerOverviewUtils extends Script {
         for (const sharedLayerPath of ScriptUtils.getLayerPaths()) {
             if (whitelist.size > 0) {
                 const idByPath = sharedLayerPath.split("/").at(-1).split(".")[0]
-                if (
-                    !Constants.isPriviliged(idByPath) &&
-                    !whitelist.has(idByPath)
-                ) {
+                if (!Constants.isPriviliged(idByPath) && !whitelist.has(idByPath)) {
                     continue
                 }
             }

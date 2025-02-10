@@ -31,7 +31,7 @@
           inputElement?.select()
         }
       })
-    }else if(document.activeElement === inputElement){
+    } else if (document.activeElement === inputElement) {
       inputElement?.blur()
     }
   })

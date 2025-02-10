@@ -47,8 +47,10 @@ Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/node/556
 Utils.injectJsonDownloadForTests("./assets/data/editor-layer-index.json", '{"features": [] }')
 
 it("should download the latest version", async () => {
-    const state = new ThemeViewState(new ThemeConfig(<any>bookcaseJson, true),
-        new ImmutableStore<Set<string>>(new Set()))
+    const state = new ThemeViewState(
+        new ThemeConfig(<any>bookcaseJson, true),
+        new ImmutableStore<Set<string>>(new Set())
+    )
     const feature: Feature<Geometry, OsmTags> = {
         type: "Feature",
         id: "node/5568693115",

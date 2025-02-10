@@ -785,6 +785,13 @@
                             }
                         }
                     },
+                    "11": {
+                        "options": {
+                            "0": {
+                                "question": "Exclude etymology theme"
+                            }
+                        }
+                    },
                     "2": {
                         "options": {
                             "0": {
@@ -831,6 +838,12 @@
                         "options": {
                             "0": {
                                 "question": "Changeset added at least one image"
+                            },
+                            "1": {
+                                "question": "Made with Android"
+                            },
+                            "2": {
+                                "question": "Made on the web"
                             }
                         }
                     },
@@ -855,6 +868,17 @@
                     "locale": {
                         "question": "What locale (language) was this change made in?",
                         "render": "User locale is {locale}"
+                    },
+                    "platform": {
+                        "mappings": {
+                            "0": {
+                                "then": "Made on the web"
+                            },
+                            "1": {
+                                "then": "Made with the android app"
+                            }
+                        },
+                        "question": "With what platform was the change made?"
                     },
                     "show_changeset_id": {
                         "render": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"

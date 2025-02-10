@@ -704,6 +704,10 @@
           "then": "<b>cafe_pub</b> (builtin) - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
         },
         {
+          "if": "value=campsite",
+          "then": "<b>campsite</b> (builtin) - Campsites"
+        },
+        {
           "if": "value=car_rental",
           "then": "<b>car_rental</b> (builtin) - Places where you can rent a car"
         },
@@ -718,6 +722,10 @@
         {
           "if": "value=charging_station",
           "then": "<b>charging_station</b> (builtin) - A charging station"
+        },
+        {
+          "if": "value=childcare",
+          "then": "<b>childcare</b> (builtin) - Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other"
         },
         {
           "if": "value=cinema",
@@ -954,10 +962,6 @@
         {
           "if": "value=kerbs",
           "then": "<b>kerbs</b> (builtin) - A layer showing kerbs."
-        },
-        {
-          "if": "value=kindergarten_childcare",
-          "then": "<b>kindergarten_childcare</b> (builtin) - Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other"
         },
         {
           "if": "value=last_click",
@@ -13440,6 +13444,10 @@
           "then": "cafe_pub - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
         },
         {
+          "if": "value=campsite",
+          "then": "campsite - Campsites"
+        },
+        {
           "if": "value=car_rental",
           "then": "car_rental - Places where you can rent a car"
         },
@@ -13454,6 +13462,10 @@
         {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
+        },
+        {
+          "if": "value=childcare",
+          "then": "childcare - Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other"
         },
         {
           "if": "value=cinema",
@@ -13690,10 +13702,6 @@
         {
           "if": "value=kerbs",
           "then": "kerbs - A layer showing kerbs."
-        },
-        {
-          "if": "value=kindergarten_childcare",
-          "then": "kindergarten_childcare - Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other"
         },
         {
           "if": "value=last_click",
@@ -35212,6 +35220,10 @@
           "then": "cafe_pub - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
         },
         {
+          "if": "value=campsite",
+          "then": "campsite - Campsites"
+        },
+        {
           "if": "value=car_rental",
           "then": "car_rental - Places where you can rent a car"
         },
@@ -35226,6 +35238,10 @@
         {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
+        },
+        {
+          "if": "value=childcare",
+          "then": "childcare - Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other"
         },
         {
           "if": "value=cinema",
@@ -35462,10 +35478,6 @@
         {
           "if": "value=kerbs",
           "then": "kerbs - A layer showing kerbs."
-        },
-        {
-          "if": "value=kindergarten_childcare",
-          "then": "kindergarten_childcare - Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other"
         },
         {
           "if": "value=last_click",

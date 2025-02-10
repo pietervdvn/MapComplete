@@ -20,6 +20,11 @@ A layer showing pharmacies, which (probably) dispense prescription drugs
   - [phone](#phone)
   - [email](#email)
   - [website](#website)
+  - [address_joined](#address_joined)
+  - [header](#header)
+  - [housenumber](#housenumber)
+  - [street](#street)
+  - [unit](#unit)
   - [payment-options](#payment-options)
   - [wheelchair](#wheelchair)
   - [leftover-questions](#leftover-questions)
@@ -59,6 +64,10 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:street#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Astreet/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:housenumber#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Ahousenumber/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:street#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Astreet/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:unit#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Aunit/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:unit](https://wiki.openstreetmap.org/wiki/Key:addr:unit) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:addr:unit%3D) |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
@@ -112,6 +121,56 @@ The question is `What is the website of {title()}?`
 
 This tagrendering has labels 
 `contact`
+
+### address_joined
+
+_This tagrendering has no question and is thus read-only_
+*{group(header,street;housenumber;unit)}*
+
+This tagrendering has labels 
+`address`
+
+### header
+
+_This tagrendering has no question and is thus read-only_
+*{addr:street} <b>{addr:housenumber}</b> {addr:unit}*
+
+ -  *No address is known* is shown if with addr:street= & addr:unit= & addr:housenumber=
+
+This tagrendering has labels 
+`address`
+`hidden`
+
+### housenumber
+
+The question is `What is the number of this house?`
+*The house number is <b>{addr:housenumber}</b>* is shown if `addr:housenumber` is set
+
+ -  *This building has no house number* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nohousenumber' target='_blank'>nohousenumber</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousenumber%3Dyes' target='_blank'>yes</a>
+
+This tagrendering has labels 
+`address`
+`hidden`
+
+### street
+
+The question is `What street is this address located in?`
+*This address is in street <b>{addr:street}</b>* is shown if `addr:street` is set
+
+This tagrendering has labels 
+`address`
+`hidden`
+
+### unit
+
+The question is `What is the unit number or letter?`
+*The unit number is <b>{addr:unit}</b>* is shown if `addr:unit` is set
+
+ -  *No unit number* is shown if with addr:unit=
+
+This tagrendering has labels 
+`address`
+`hidden`
 
 ### payment-options
 

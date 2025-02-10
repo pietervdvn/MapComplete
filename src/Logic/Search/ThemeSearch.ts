@@ -83,7 +83,10 @@ export default class ThemeSearch {
         }
 
         let linkPrefix = `${path}/${layout.id.toLowerCase()}.html?`
-        if ((location.hostname === "localhost" && !AndroidPolyfill.inAndroid.data) || location.hostname === "127.0.0.1") {
+        if (
+            (location.hostname === "localhost" && !AndroidPolyfill.inAndroid.data) ||
+            location.hostname === "127.0.0.1"
+        ) {
             linkPrefix = `${path}/theme.html?layout=${layout.id}&`
         }
 

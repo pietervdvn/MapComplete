@@ -149,7 +149,7 @@
   >
     <div
       class={twMerge(
-        "absolute top-0 left-0 flex cursor-pointer items-center justify-center break-words text-xs",
+        "absolute left-0 top-0 flex cursor-pointer items-center justify-center break-words text-xs",
         size
       )}
     >
@@ -161,7 +161,7 @@
       </div>
     </div>
     {#if $bearingFromGps !== undefined}
-      <div class={twMerge("absolute top-0 left-0 rounded-full", size)}>
+      <div class={twMerge("absolute left-0 top-0 rounded-full", size)}>
         <Compass_arrow
           class={size}
           style={`transform: rotate( calc( 45deg + ${$bearingFromGps - ($compass ?? 0)}deg) );`}

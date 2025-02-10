@@ -80,7 +80,7 @@ export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
         super({
             keys: ["_referencing_ways"],
             isLazy: true,
-            doc: "_referencing_ways contains - for a node - which ways use this node as point in their geometry. "
+            doc: "_referencing_ways contains - for a node - which ways use this node as point in their geometry. ",
         })
     }
 
@@ -116,7 +116,7 @@ class CountryTagger extends SimpleMetaTagger {
         super({
             keys: ["_country"],
             doc: "The country codes of the of the country/countries that the feature is located in (with latlon2country). Might contain _multiple_ countries, separated by a `;`",
-            includesDates: false
+            includesDates: false,
         })
     }
 
@@ -213,9 +213,9 @@ class RewriteMetaInfoTags extends SimpleMetaTagger {
                 "_last_edit:changeset",
                 "_last_edit:timestamp",
                 "_version_number",
-                "_backend"
+                "_backend",
             ],
-            doc: "Information about the last edit of this object. This object will actually _rewrite_ some tags for features coming from overpass"
+            doc: "Information about the last edit of this object. This object will actually _rewrite_ some tags for features coming from overpass",
         })
     }
 
@@ -246,16 +246,20 @@ class RewriteMetaInfoTags extends SimpleMetaTagger {
 
 class NormalizePanoramax extends SimpleMetaTagger {
     constructor() {
-        super(
-            {
-                keys: ["panoramax"],
-                doc: "Converts a `panoramax=hash1;hash2;hash3;...` into `panoramax=hash1`,`panoramax:0=hash1`...",
-                isLazy: false,
-                cleanupRetagger: true
-            })
+        super({
+            keys: ["panoramax"],
+            doc: "Converts a `panoramax=hash1;hash2;hash3;...` into `panoramax=hash1`,`panoramax:0=hash1`...",
+            isLazy: false,
+            cleanupRetagger: true,
+        })
     }
 
-    private addValue(comesFromKey: string, tags: Record<string, string>, hashesToAdd: string[], postfix?: string) {
+    private addValue(
+        comesFromKey: string,
+        tags: Record<string, string>,
+        hashesToAdd: string[],
+        postfix?: string
+    ) {
         let basekey = "panoramax"
         if (postfix) {
             basekey = "panoramax:" + postfix
@@ -279,7 +283,11 @@ class NormalizePanoramax extends SimpleMetaTagger {
      * new NormalizePanoramax().applyMetaTagsOnFeature(_, _, tags, _)
      * tags.data // => {"panoramax": "abc", "panoramax:0" : "def", "panoramax:1": "ghi", "panoramax:2":"xyz", "panoramax:3":"uvw", "panoramax:streetsign":"a", "panoramax:streetsign:0":"b","panoramax:streetsign:1": "c"}
      */
-    applyMetaTagsOnFeature(feature: Feature, layer: LayerConfig, tags: UIEventSource<Record<string, string>>): boolean {
+    applyMetaTagsOnFeature(
+        feature: Feature,
+        layer: LayerConfig,
+        tags: UIEventSource<Record<string, string>>
+    ): boolean {
         const tgs = tags.data
         let somethingChanged = false
         for (const key in tgs) {
@@ -295,7 +303,6 @@ class NormalizePanoramax extends SimpleMetaTagger {
                 this.addValue(key, tgs, parts)
                 somethingChanged = true
             } else {
-
                 const postfix = key.match(/panoramax:([^:]+)(:[0-9]+)?/)?.[1]
                 if (postfix) {
                     this.addValue(key, tgs, parts, postfix)
@@ -316,7 +323,7 @@ export default class SimpleMetaTaggers {
     public static geometryType = new InlineMetaTagger(
         {
             keys: ["_geometry:type"],
-            doc: "Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`"
+            doc: "Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`",
         },
         (feature) => {
             const changed = feature.properties["_geometry:type"] === feature.geometry.type
@@ -342,12 +349,12 @@ export default class SimpleMetaTaggers {
         W: 270,
         WNW: 292.5,
         NW: 315,
-        NNW: 337.5
+        NNW: 337.5,
     }
     private static latlon = new InlineMetaTagger(
         {
             keys: ["_lat", "_lon"],
-            doc: "The latitude and longitude of the point (or centerpoint in the case of a way/area)"
+            doc: "The latitude and longitude of the point (or centerpoint in the case of a way/area)",
         },
         (feature) => {
             const centerPoint = GeoOperations.centerpoint(feature)
@@ -362,7 +369,7 @@ export default class SimpleMetaTaggers {
         {
             doc: "The layer-id to which this feature belongs. Note that this might be return any applicable if `passAllFeatures` is defined.",
             keys: ["_layer"],
-            includesDates: false
+            includesDates: false,
         },
         (feature, layer) => {
             if (feature.properties._layer === layer.id) {
@@ -378,11 +385,11 @@ export default class SimpleMetaTaggers {
                 "sidewalk:left",
                 "sidewalk:right",
                 "generic_key:left:property",
-                "generic_key:right:property"
+                "generic_key:right:property",
             ],
             doc: "Rewrites tags from 'generic_key:both:property' as 'generic_key:left:property' and 'generic_key:right:property' (and similar for sidewalk tagging). Note that this rewritten tags _will be reuploaded on a change_. To prevent to much unrelated retagging, this is only enabled if the layer has at least some lineRenderings with offset defined",
             includesDates: false,
-            cleanupRetagger: true
+            cleanupRetagger: true,
         },
         (feature, layer) => {
             if (!layer.lineRendering.some((lr) => lr.leftRightSensitive)) {
@@ -396,7 +403,7 @@ export default class SimpleMetaTaggers {
         {
             keys: ["_surface"],
             doc: "The surface area of the feature in square meters. Not set on points and ways",
-            isLazy: true
+            isLazy: true,
         },
         (feature) => {
             if (feature.geometry.type !== "Polygon" && feature.geometry.type !== "MultiPolygon") {
@@ -414,7 +421,7 @@ export default class SimpleMetaTaggers {
         {
             keys: ["_surface:ha"],
             doc: "The surface area of the feature in hectare. Not set on points and ways",
-            isLazy: true
+            isLazy: true,
         },
         (feature) => {
             if (feature.geometry.type !== "Polygon" && feature.geometry.type !== "MultiPolygon") {
@@ -432,7 +439,7 @@ export default class SimpleMetaTaggers {
     private static levels = new InlineMetaTagger(
         {
             doc: "Extract the 'level'-tag into a normalized, ';'-separated value called '_level' (which also includes 'repeat_on'). The `level` tag (without underscore) will be normalized with only the value of `level`.",
-            keys: ["_level"]
+            keys: ["_level"],
         },
         (feature) => {
             let somethingChanged = false
@@ -467,7 +474,7 @@ export default class SimpleMetaTaggers {
     private static canonicalize = new InlineMetaTagger(
         {
             doc: "If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`; `1` will be rewritten to `1m` as well)",
-            keys: ["Theme-defined keys"]
+            keys: ["Theme-defined keys"],
         },
         (feature, _, __, state) => {
             const units = Utils.NoNull(
@@ -524,7 +531,7 @@ export default class SimpleMetaTaggers {
     private static lngth = new InlineMetaTagger(
         {
             keys: ["_length", "_length:km"],
-            doc: "The total length of a feature in meters (and in kilometers, rounded to one decimal for '_length:km'). For a surface, the length of the perimeter"
+            doc: "The total length of a feature in meters (and in kilometers, rounded to one decimal for '_length:km'). For a surface, the length of the perimeter",
         },
         (feature) => {
             const l = GeoOperations.lengthInMeters(feature)
@@ -540,7 +547,7 @@ export default class SimpleMetaTaggers {
             keys: ["_isOpen"],
             doc: "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
             includesDates: true,
-            isLazy: true
+            isLazy: true,
         },
         (feature) => {
             if (Utils.runningFromConsole) {
@@ -579,8 +586,8 @@ export default class SimpleMetaTaggers {
                                 lon: lon,
                                 address: {
                                     country_code: tags._country.toLowerCase(),
-                                    state: undefined
-                                }
+                                    state: undefined,
+                                },
                             },
                             <any>{ tag_key: "opening_hours" }
                         )
@@ -592,14 +599,14 @@ export default class SimpleMetaTaggers {
                         delete tags._isOpen
                         tags["_isOpen"] = "parse_error"
                     }
-                }
+                },
             })
         }
     )
     private static directionSimplified = new InlineMetaTagger(
         {
             keys: ["_direction:numerical", "_direction:leftright"],
-            doc: "_direction:numerical is a normalized, numerical direction based on 'camera:direction' or on 'direction'; it is only present if a valid direction is found (e.g. 38.5 or NE). _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map"
+            doc: "_direction:numerical is a normalized, numerical direction based on 'camera:direction' or on 'direction'; it is only present if a valid direction is found (e.g. 38.5 or NE). _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map",
         },
         (feature) => {
             const tags = feature.properties
@@ -624,7 +631,7 @@ export default class SimpleMetaTaggers {
         {
             keys: ["_direction:centerpoint"],
             isLazy: true,
-            doc: "_direction:centerpoint is the direction of the linestring (in degrees) if one were standing at the projected centerpoint."
+            doc: "_direction:centerpoint is the direction of the linestring (in degrees) if one were standing at the projected centerpoint.",
         },
         (feature: Feature) => {
             if (feature.geometry.type !== "LineString") {
@@ -647,7 +654,7 @@ export default class SimpleMetaTaggers {
                     delete feature.properties["_direction:centerpoint"]
                     feature.properties["_direction:centerpoint"] = bearing
                     return bearing
-                }
+                },
             })
 
             return true
@@ -657,7 +664,7 @@ export default class SimpleMetaTaggers {
         {
             keys: ["_now:date", "_now:datetime"],
             doc: "Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely",
-            includesDates: true
+            includesDates: true,
         },
         (feature) => {
             const now = new Date()
@@ -681,7 +688,7 @@ export default class SimpleMetaTaggers {
             keys: ["_last_edit:passed_time"],
             doc: "Gives the number of seconds since the last edit. Note that this will _not_ update, but rather be the number of seconds elapsed at the moment this tag is read first",
             isLazy: true,
-            includesDates: true
+            includesDates: true,
         },
         (feature) => {
             Utils.AddLazyProperty(feature.properties, "_last_edit:passed_time", () => {
@@ -700,7 +707,7 @@ export default class SimpleMetaTaggers {
         {
             keys: ["_currency"],
             doc: "Adds the currency valid for the object, based on country or explicit tagging. Can be a single currency or a semicolon-separated list of currencies. Empty if no currency is found.",
-            isLazy: true
+            isLazy: true,
         },
         (feature: Feature, layer: LayerConfig, tagsStore: UIEventSource<OsmTags>) => {
             if (tagsStore === undefined) {
@@ -742,7 +749,6 @@ export default class SimpleMetaTaggers {
         }
     )
 
-
     public static metatags: SimpleMetaTagger[] = [
         SimpleMetaTaggers.latlon,
         SimpleMetaTaggers.layerInfo,
@@ -762,7 +768,7 @@ export default class SimpleMetaTaggers {
         SimpleMetaTaggers.referencingWays,
         SimpleMetaTaggers.timeSinceLastEdit,
         SimpleMetaTaggers.currency,
-        SimpleMetaTaggers.normalizePanoramax
+        SimpleMetaTaggers.normalizePanoramax,
     ]
 
     /**
@@ -844,8 +850,8 @@ export default class SimpleMetaTaggers {
             [
                 "Metatags are extra tags available, in order to display more data or to give better questions.",
                 "They are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.",
-                "**Hint:** when using metatags, add the [query parameter](URL_Parameters.md) `debug=true` to the URL. This will include a box in the popup for features which shows all the properties of the object"
-            ].join("\n")
+                "**Hint:** when using metatags, add the [query parameter](URL_Parameters.md) `debug=true` to the URL. This will include a box in the popup for features which shows all the properties of the object",
+            ].join("\n"),
         ]
 
         subElements.push("## Metatags calculated by MapComplete")

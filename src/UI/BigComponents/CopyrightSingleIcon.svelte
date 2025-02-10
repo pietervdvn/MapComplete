@@ -26,7 +26,7 @@
   <div class="border-box m-2 flex flex-wrap border-b border-gray-300">
     <img
       class={twJoin(
-        "min-h-12 mr-2 mb-2 w-12",
+        "mb-2 mr-2 min-h-12 w-12",
         license["mostly_white"] && "h-12 rounded-full bg-slate-400"
       )}
       src={iconPath}

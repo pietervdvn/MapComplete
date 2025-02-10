@@ -54,7 +54,7 @@
       issue: reportReason.data,
       sequence_id: imageInfo.collection,
       reporter_comments: (reportFreeText.data ?? "") + "\n\n" + "Reported from " + url,
-      reporter_email
+      reporter_email,
     })
     reported.set(true)
   }
@@ -76,8 +76,9 @@
       await state?.changes?.applyAction(
         new ChangeTagAction(tgs.id, new Tag(key, ""), tgs, {
           changeType: "delete-image",
-          theme: state.theme.id
-        }))
+          theme: state.theme.id,
+        })
+      )
     }
   }
 
@@ -175,7 +176,7 @@
 </div>
 
 <style>
-    :global(.carousel-max-height) {
-        max-height: var(--image-carousel-height);
-    }
+  :global(.carousel-max-height) {
+    max-height: var(--image-carousel-height);
+  }
 </style>

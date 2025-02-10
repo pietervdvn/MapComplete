@@ -8,27 +8,28 @@ import MarkAsFavouriteMini from "../Popup/MarkAsFavouriteMini.svelte"
 
 export class FavouriteVisualisations {
     public static initList(): SpecialVisualizationSvelte[] {
-        return [{
-            funcName: "favourite_status",
+        return [
+            {
+                funcName: "favourite_status",
 
-            docs: "A button that allows a (logged in) contributor to mark a location as a favourite location",
-            args: [],
-            group: "favourites",
-            constr(
-                state: SpecialVisualizationState,
-                tagSource: UIEventSource<Record<string, string>>,
-                argument: string[],
-                feature: Feature,
-                layer: LayerConfig
-            ): SvelteUIElement {
-                return new SvelteUIElement(MarkAsFavourite, {
-                    tags: tagSource,
-                    state,
-                    layer,
-                    feature
-                })
-            }
-        },
+                docs: "A button that allows a (logged in) contributor to mark a location as a favourite location",
+                args: [],
+                group: "favourites",
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): SvelteUIElement {
+                    return new SvelteUIElement(MarkAsFavourite, {
+                        tags: tagSource,
+                        state,
+                        layer,
+                        feature,
+                    })
+                },
+            },
             {
                 funcName: "favourite_icon",
                 group: "favourites",
@@ -45,9 +46,10 @@ export class FavouriteVisualisations {
                         tags: tagSource,
                         state,
                         layer,
-                        feature
+                        feature,
                     })
-                }
-            }]
+                },
+            },
+        ]
     }
 }

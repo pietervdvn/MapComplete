@@ -23,10 +23,15 @@
   >([])
 
   tileToFetch.addCallbackAndRun(async (url) => {
-    const data = await Utils.downloadJsonCached<FeatureCollection<Polygon, {
-      nameEn: string,
-      resources: Record<string, CommunityResource>
-    }>>(url, 24 * 60 * 60)
+    const data = await Utils.downloadJsonCached<
+      FeatureCollection<
+        Polygon,
+        {
+          nameEn: string
+          resources: Record<string, CommunityResource>
+        }
+      >
+    >(url, 24 * 60 * 60)
     if (data === undefined) {
       return
     }
@@ -39,9 +44,13 @@
     [location]
   )
 
-  const globalResources: UIEventSource<Record<string, CommunityResource>> = UIEventSource.FromPromise(Utils.downloadJsonCached<Record<string, CommunityResource>>(
-    Constants.communityIndexHost + "/global.json", 24 * 60 * 60 * 1000
-  ))
+  const globalResources: UIEventSource<Record<string, CommunityResource>> =
+    UIEventSource.FromPromise(
+      Utils.downloadJsonCached<Record<string, CommunityResource>>(
+        Constants.communityIndexHost + "/global.json",
+        24 * 60 * 60 * 1000
+      )
+    )
 </script>
 
 <div>

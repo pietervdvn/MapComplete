@@ -10,44 +10,43 @@ import { AndroidPolyfill } from "../Web/AndroidPolyfill"
 import { QueryParameters } from "../Web/QueryParameters"
 
 interface OsmUserInfo {
-
-    "id": number,
-    "display_name": string,
-    "account_created": string,
-    "description": string,
-    "contributor_terms": {
-        "agreed": boolean,
-        "pd": boolean
+    id: number
+    display_name: string
+    account_created: string
+    description: string
+    contributor_terms: {
+        agreed: boolean
+        pd: boolean
     }
-    "img"?: {
-        "href": string,
+    img?: {
+        href: string
     }
-    "roles": string[]
-    "changesets": {
-        "count": number
+    roles: string[]
+    changesets: {
+        count: number
     }
     traces: {
         count: number
     }
-    "blocks": {
-        "received": {
-            "count": number,
-            "active": number
+    blocks: {
+        received: {
+            count: number
+            active: number
         }
     }
     home?: {
-        lat: number,
-        lon: number,
+        lat: number
+        lon: number
         zoom: number
     }
-    "languages": string[]
-    "messages": {
-        "received": {
-            "count": number,
-            "unread": number
-        },
-        "sent": {
-            "count": number
+    languages: string[]
+    messages: {
+        received: {
+            count: number
+            unread: number
+        }
+        sent: {
+            count: number
         }
 
         id: number
@@ -60,12 +59,10 @@ interface OsmUserInfo {
         traces: { count: number }
         blocks: { received: { count: number; active: number } }
         img?: { href: string }
-        home: { lat: number, lon: number }
+        home: { lat: number; lon: number }
         languages?: string[]
-        messages: { received: { count: number, unread: number }, sent: { count: number } }
-
-}
-
+        messages: { received: { count: number; unread: number }; sent: { count: number } }
+    }
 }
 
 export default interface UserDetails {
@@ -81,7 +78,6 @@ export default interface UserDetails {
     tracesCount: number
     description?: string
     languages: string[]
-
 }
 export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
 
@@ -126,14 +122,14 @@ export class OsmConnection {
     public userDetails: UIEventSource<UserDetails | undefined>
     public isLoggedIn: Store<boolean>
     public gpxServiceIsOnline: UIEventSource<OsmServiceState> = new UIEventSource<OsmServiceState>(
-        "unknown",
+        "unknown"
     )
     public apiIsOnline: UIEventSource<OsmServiceState> = new UIEventSource<OsmServiceState>(
-        "unknown",
+        "unknown"
     )
 
     public loadingStatus = new UIEventSource<"not-attempted" | "loading" | "error" | "logged-in">(
-        "not-attempted",
+        "not-attempted"
     )
     public preferencesHandler: OsmPreferences
     public readonly _oauth_config: AuthConfig
@@ -193,7 +189,7 @@ export class OsmConnection {
             (user) =>
                 !!user &&
                 (this.apiIsOnline.data === "unknown" || this.apiIsOnline.data === "online"),
-            [this.apiIsOnline],
+            [this.apiIsOnline]
         )
 
         this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false)
@@ -232,7 +228,7 @@ export class OsmConnection {
         defaultValue: string = undefined,
         options?: {
             prefix?: string
-        },
+        }
     ): UIEventSource<T | undefined> {
         const prefix = options?.prefix ?? "mapcomplete-"
         return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
@@ -241,7 +237,7 @@ export class OsmConnection {
     public getPreference<T extends string = string>(
         key: string,
         defaultValue: string = undefined,
-        prefix: string = "mapcomplete-",
+        prefix: string = "mapcomplete-"
     ): UIEventSource<T | undefined> {
         return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
     }
@@ -275,7 +271,7 @@ export class OsmConnection {
         }
         this.updateAuthObject(true)
         LocalStorageSource.get("location_before_login").setData(
-            Utils.runningFromConsole ? undefined : window.location.href,
+            Utils.runningFromConsole ? undefined : window.location.href
         )
 
         this.auth.authenticate((err) => {
@@ -292,11 +288,13 @@ export class OsmConnection {
                 this.loadingStatus.setData("error")
                 return
             }
-            const data = <{
-                "version": "0.6",
-                "license": "http://opendatacommons.org/licenses/odbl/1-0/",
-                "user": OsmUserInfo
-            }>JSON.parse(result)
+            const data = <
+                {
+                    version: "0.6"
+                    license: "http://opendatacommons.org/licenses/odbl/1-0/"
+                    user: OsmUserInfo
+                }
+            >JSON.parse(result)
             const user = data.user
             const userdetails: UserDetails = {
                 uid: user.id,
@@ -343,7 +341,7 @@ export class OsmConnection {
         method: "GET" | "POST" | "PUT" | "DELETE" = "GET",
         header?: Record<string, string>,
         content?: string,
-        allowAnonymous: boolean = false,
+        allowAnonymous: boolean = false
     ): Promise<string> {
         const connection: osmAuth = this.auth
         if (allowAnonymous && !this.auth.authenticated()) {
@@ -351,7 +349,7 @@ export class OsmConnection {
                 `${this.Backend()}/api/0.6/${path}`,
                 header,
                 method,
-                content,
+                content
             )
             if (possibleResult["content"]) {
                 return possibleResult["content"]
@@ -371,15 +369,15 @@ export class OsmConnection {
                     method,
                     headers: header,
                     content,
-                    path: `/api/0.6/${path}`
+                    path: `/api/0.6/${path}`,
                 },
-                function(err, response) {
+                function (err, response) {
                     if (err !== null) {
                         error(err)
                     } else {
                         ok(response)
                     }
-                },
+                }
             )
         })
     }
@@ -388,7 +386,7 @@ export class OsmConnection {
         path: string,
         content?: string,
         header?: Record<string, string>,
-        allowAnonymous: boolean = false,
+        allowAnonymous: boolean = false
     ): Promise<T> {
         return <T>await this.interact(path, "POST", header, content, allowAnonymous)
     }
@@ -396,7 +394,7 @@ export class OsmConnection {
     public async put<T extends string>(
         path: string,
         content?: string,
-        header?: Record<string, string>,
+        header?: Record<string, string>
     ): Promise<T> {
         return <T>await this.interact(path, "PUT", header, content)
     }
@@ -404,7 +402,7 @@ export class OsmConnection {
     public async get(
         path: string,
         header?: Record<string, string>,
-        allowAnonymous: boolean = false,
+        allowAnonymous: boolean = false
     ): Promise<string> {
         return await this.interact(path, "GET", header, undefined, allowAnonymous)
     }
@@ -443,7 +441,7 @@ export class OsmConnection {
             return new Promise<{ id: number }>((ok) => {
                 window.setTimeout(
                     () => ok({ id: Math.floor(Math.random() * 1000) }),
-                    Math.random() * 5000,
+                    Math.random() * 5000
                 )
             })
         }
@@ -453,9 +451,9 @@ export class OsmConnection {
             "notes.json",
             content,
             {
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
             },
-            true,
+            true
         )
         const parsed = JSON.parse(response)
         console.log("Got result:", parsed)
@@ -482,14 +480,14 @@ export class OsmConnection {
              * Note: these are called 'tags' on the wiki, but I opted to name them 'labels' instead as they aren't "key=value" tags, but just words.
              */
             labels: string[]
-        },
+        }
     ): Promise<{ id: number }> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually uploading GPX ", gpx)
             return new Promise<{ id: number }>((ok) => {
                 window.setTimeout(
                     () => ok({ id: Math.floor(Math.random() * 1000) }),
-                    Math.random() * 5000,
+                    Math.random() * 5000
                 )
             })
         }
@@ -498,7 +496,7 @@ export class OsmConnection {
             file: gpx,
             description: options.description,
             tags: options.labels?.join(",") ?? "",
-            visibility: options.visibility
+            visibility: options.visibility,
         }
 
         if (!contents.description) {
@@ -506,9 +504,9 @@ export class OsmConnection {
         }
         const extras = {
             file:
-                "; filename=\"" +
+                '; filename="' +
                 (options.filename ?? "gpx_track_mapcomplete_" + new Date().toISOString()) +
-                "\"\r\nContent-Type: application/gpx+xml"
+                '"\r\nContent-Type: application/gpx+xml',
         }
 
         const boundary = "987654"
@@ -516,7 +514,7 @@ export class OsmConnection {
         let body = ""
         for (const key in contents) {
             body += "--" + boundary + "\r\n"
-            body += "Content-Disposition: form-data; name=\"" + key + "\""
+            body += 'Content-Disposition: form-data; name="' + key + '"'
             if (extras[key] !== undefined) {
                 body += extras[key]
             }
@@ -527,7 +525,7 @@ export class OsmConnection {
 
         const response = await this.post("gpx/create", body, {
             "Content-Type": "multipart/form-data; boundary=" + boundary,
-            "Content-Length": "" + body.length
+            "Content-Length": "" + body.length,
         })
         const parsed = JSON.parse(response)
         console.log("Uploaded GPX track", parsed)
@@ -548,15 +546,15 @@ export class OsmConnection {
                 {
                     method: "POST",
 
-                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
+                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`,
                 },
-                function(err) {
+                function (err) {
                     if (err !== null) {
                         error(err)
                     } else {
                         ok()
                     }
-                },
+                }
             )
         })
     }
@@ -576,15 +574,18 @@ export class OsmConnection {
     public getToken(): string {
         // https://www.openstreetmap.orgoauth2_access_token
         let prefix = this.Backend()
-        while(prefix.endsWith("/")){
-            prefix = prefix.substring(0, prefix.length-2)
+        while (prefix.endsWith("/")) {
+            prefix = prefix.substring(0, prefix.length - 2)
         }
-        return QueryParameters.GetQueryParameter(prefix+ "oauth_token", undefined).data ?? window.localStorage.getItem(this._oauth_config.url + "oauth2_access_token")
+        return (
+            QueryParameters.GetQueryParameter(prefix + "oauth_token", undefined).data ??
+            window.localStorage.getItem(this._oauth_config.url + "oauth2_access_token")
+        )
     }
 
     private async loginAndroidPolyfill() {
         const key = "https://www.openstreetmap.orgoauth2_access_token"
-        if(localStorage.getItem(key)){
+        if (localStorage.getItem(key)) {
             // We are probably already logged in
             return
         }
@@ -595,7 +596,6 @@ export class OsmConnection {
             console.log("Logged in!")
         }
         await this.loadUserInfo()
-
     }
     private updateAuthObject(autoLogin: boolean) {
         let redirect_uri = Utils.runningFromConsole
@@ -614,7 +614,7 @@ export class OsmConnection {
              */
             singlepage: !this._iframeMode && !AndroidPolyfill.inAndroid.data,
             auto: autoLogin,
-            apiUrl: this._oauth_config.api_url ?? this._oauth_config.url
+            apiUrl: this._oauth_config.api_url ?? this._oauth_config.url,
         })
         if (AndroidPolyfill.inAndroid.data) {
             this.loginAndroidPolyfill() // NO AWAIT!
@@ -658,7 +658,8 @@ export class OsmConnection {
         if (this.fakeUser) {
             return
         }
-        this.fetchCapabilities().then(({ api, gpx }) => {
+        this.fetchCapabilities()
+            .then(({ api, gpx }) => {
                 this.apiIsOnline.setData(api)
                 this.gpxServiceIsOnline.setData(gpx)
             })
@@ -695,7 +696,7 @@ export class OsmConnection {
         }
         try {
             const result = await Utils.downloadJson<CapabilityResult>(
-                this.Backend() + "/api/0.6/capabilities.json",
+                this.Backend() + "/api/0.6/capabilities.json"
             )
             if (result?.api?.status === undefined) {
                 console.log("Something went wrong:", result)

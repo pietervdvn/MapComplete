@@ -161,7 +161,7 @@
     {/if}
   {/if}
   {#if externalProperties["_last_edit_timestamp"] !== undefined}
-    <span class="subtle flex-end mt-2 mr-4 flex justify-end text-sm">
+    <span class="subtle flex-end mr-4 mt-2 flex justify-end text-sm">
       <Tr
         t={t.lastModified.Subs({
           date: new Date(externalProperties["_last_edit_timestamp"]).toLocaleString(),

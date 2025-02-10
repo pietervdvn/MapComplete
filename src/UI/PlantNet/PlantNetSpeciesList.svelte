@@ -21,7 +21,7 @@
   </Loading>
 {:else}
   <div class="low-interaction border-interactive relative flex flex-col p-2">
-    <div class="absolute top-0 right-0">
+    <div class="absolute right-0 top-0">
       <slot name="upper-right" />
     </div>
     <h3>

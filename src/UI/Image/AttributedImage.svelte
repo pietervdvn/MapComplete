@@ -83,7 +83,7 @@
       <slot name="dot-menu-actions" slot="dot-menu-actions" />
     </ImageOperations>
   </div>
-  <div class="absolute top-4 right-4">
+  <div class="absolute right-4 top-4">
     <CloseButton
       class="normal-background"
       on:click={() => {
@@ -136,7 +136,7 @@
           class="bg-black-transparent absolute right-0 top-0 rounded-bl-full"
           on:click={() => previewedImage?.set(image)}
         >
-          <MagnifyingGlassPlusIcon class="h-8 w-8 cursor-zoom-in pl-3 pb-3" color="white" />
+          <MagnifyingGlassPlusIcon class="h-8 w-8 cursor-zoom-in pb-3 pl-3" color="white" />
         </div>
       {/if}
     </div>

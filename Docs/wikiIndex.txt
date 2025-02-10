@@ -582,7 +582,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/scouting scouting]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: A scouting group is a social youth movement with a heavy emphasis on the outdoors
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -618,7 +618,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/transit transit]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:ko|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:ko|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: Plan your trip with the help of the public transport system
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

@@ -387,7 +387,7 @@
     >
       <fieldset>
         <legend>
-          <div class="sticky top-0 justify-between pt-4 pb-2 font-bold" style="z-index: 11">
+          <div class="sticky top-0 justify-between pb-2 pt-4 font-bold" style="z-index: 11">
             <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
           </div>
 
@@ -608,7 +608,7 @@
             {/if}
 
             <div
-              class="mt-4 mb-2 flex flex-grow flex-wrap-reverse items-stretch justify-end self-end sm:flex-nowrap"
+              class="mb-2 mt-4 flex flex-grow flex-wrap-reverse items-stretch justify-end self-end sm:flex-nowrap"
             >
               <!-- TagRenderingQuestion-buttons -->
               <slot name="cancel" />

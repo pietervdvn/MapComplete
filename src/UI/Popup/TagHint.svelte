@@ -20,12 +20,12 @@
   $: tagsExplanation = tags?.asHumanString(true, false, currentProperties)
 </script>
 
-  <div class="break-words" style="word-break: break-word">
-    {#if tags === undefined}
-      <slot name="no-tags"><Tr cls="subtle" t={Translations.t.general.noTagsSelected} /></slot>
-    {:else if embedIn === undefined}
-      <FromHtml src={tagsExplanation} />
-    {:else}
-      <Tr t={embedIn(tagsExplanation)} />
-    {/if}
-  </div>
+<div class="break-words" style="word-break: break-word">
+  {#if tags === undefined}
+    <slot name="no-tags"><Tr cls="subtle" t={Translations.t.general.noTagsSelected} /></slot>
+  {:else if embedIn === undefined}
+    <FromHtml src={tagsExplanation} />
+  {:else}
+    <Tr t={embedIn(tagsExplanation)} />
+  {/if}
+</div>

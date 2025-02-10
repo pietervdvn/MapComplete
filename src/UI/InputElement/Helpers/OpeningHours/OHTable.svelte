@@ -189,7 +189,7 @@
       <!-- Top-left cell -->
       <slot name="top-left">
         <button
-          class="absolute top-0 left-0 rounded-full p-1"
+          class="absolute left-0 top-0 rounded-full p-1"
           on:click={() => value.set([])}
           style="z-index: 10"
         >

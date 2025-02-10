@@ -16,22 +16,24 @@
   const osmConnection = new OsmConnection()
   let state: SpecialVisualizationState = {
     osmConnection,
-    userRelatedState: new UserRelatedState(osmConnection)
+    userRelatedState: new UserRelatedState(osmConnection),
   }
 </script>
 
 <main class="h-screen">
   <TitledPanel>
     <a slot="title-start" class="button p-0" style="padding:0" href="..">
-      <Back class="w-6 h-6 m-2" />
+      <Back class="m-2 h-6 w-6" />
     </a>
     <div slot="title" class="flex items-center">
       <EyeIcon class="w-6 pr-2" />
       <Tr t={Translations.t.privacy.title} />
     </div>
 
-    <LanguagePicker slot="title-end" availableLanguages={Translations.t.privacy.intro.SupportedLanguages()} />
+    <LanguagePicker
+      slot="title-end"
+      availableLanguages={Translations.t.privacy.intro.SupportedLanguages()}
+    />
     <PrivacyPolicy {state} />
   </TitledPanel>
-
 </main>

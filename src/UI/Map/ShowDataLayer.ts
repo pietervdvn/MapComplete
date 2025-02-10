@@ -122,10 +122,7 @@ class PointRenderingLayer {
                     continue
                 }
 
-                const loc = GeoOperations.featureToCoordinateWithRenderingType(
-                    feature,
-                    location
-                )
+                const loc = GeoOperations.featureToCoordinateWithRenderingType(feature, location)
                 if (loc === undefined) {
                     continue
                 }
@@ -199,10 +196,14 @@ class PointRenderingLayer {
             .addTo(this._map)
         store
             .map((tags) => this._config.pitchAlignment.GetRenderValue(tags).Subs(tags).txt)
-            .addCallbackAndRun((pitchAligment) => marker.setPitchAlignment(<Alignment>pitchAligment))
+            .addCallbackAndRun((pitchAligment) =>
+                marker.setPitchAlignment(<Alignment>pitchAligment)
+            )
         store
             .map((tags) => this._config.rotationAlignment.GetRenderValue(tags).Subs(tags).txt)
-            .addCallbackAndRun((pitchAligment) => marker.setRotationAlignment(<Alignment>pitchAligment))
+            .addCallbackAndRun((pitchAligment) =>
+                marker.setRotationAlignment(<Alignment>pitchAligment)
+            )
 
         if (feature.geometry.type === "Point") {
             // When the tags get 'pinged', check that the location didn't change
@@ -507,7 +508,10 @@ class LineRenderingLayer {
 }
 
 export default class ShowDataLayer {
-    public static rangeLayer = new LayerConfig(<LayerConfigJson>range_layer, "ShowDataLayer.ts:range.json")
+    public static rangeLayer = new LayerConfig(
+        <LayerConfigJson>range_layer,
+        "ShowDataLayer.ts:range.json"
+    )
     private readonly _options: ShowDataLayerOptions & {
         layer: LayerConfig
         drawMarkers?: true | boolean

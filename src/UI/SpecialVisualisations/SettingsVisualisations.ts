@@ -24,17 +24,16 @@ export class SettingsVisualisations {
                 docs: "A component to set the language of the user interface",
                 constr(state: SpecialVisualizationState): SvelteUIElement {
                     const availableLanguages = Locale.showLinkToWeblate.map((showTranslations) =>
-                        showTranslations
-                            ? LanguageUtils.usedLanguagesSorted
-                            : state.theme.language)
+                        showTranslations ? LanguageUtils.usedLanguagesSorted : state.theme.language
+                    )
                     return new SvelteUIElement(LanguagePicker, {
                         assignTo: state.userRelatedState.language,
                         availableLanguages,
                         preferredLanguages: state.osmConnection.userDetails.map(
                             (ud) => ud?.languages ?? []
-                        )
+                        ),
                     })
-                }
+                },
             },
 
             {
@@ -45,7 +44,7 @@ export class SettingsVisualisations {
                 args: [],
                 constr(state) {
                     return new SvelteUIElement(DisabledQuestions, { state })
-                }
+                },
             },
             {
                 funcName: "gyroscope_all_tags",
@@ -54,16 +53,14 @@ export class SettingsVisualisations {
                 args: [],
                 constr(): SvelteUIElement {
                     return new SvelteUIElement(OrientationDebugPanel, {})
-                }
+                },
             },
             {
                 funcName: "gps_all_tags",
                 group: "settings",
                 docs: "Shows the current tags of the GPS-representing object, used for debugging",
                 args: [],
-                constr(
-                    state: SpecialVisualizationState
-                ): SvelteUIElement {
+                constr(state: SpecialVisualizationState): SvelteUIElement {
                     const tags = (<ThemeViewState>(
                         state
                     )).geolocation.currentUserLocation.features.map(
@@ -71,25 +68,23 @@ export class SettingsVisualisations {
                     )
                     return new SvelteUIElement(AllTagsPanel, {
                         state,
-                        tags
+                        tags,
                     })
-                }
+                },
             },
             {
                 funcName: "storage_all_tags",
                 group: "settings",
                 docs: "Shows the current state of storage",
                 args: [],
-                constr(
-                    state: SpecialVisualizationState
-                ): SvelteUIElement {
+                constr(state: SpecialVisualizationState): SvelteUIElement {
                     const data = {}
                     for (const key in localStorage) {
                         data[key] = localStorage[key]
                     }
                     const tags = new ImmutableStore(data)
                     return new SvelteUIElement(AllTagsPanel, { state, tags })
-                }
+                },
             },
             {
                 funcName: "clear_caches",
@@ -98,8 +93,8 @@ export class SettingsVisualisations {
                     {
                         name: "text",
                         required: true,
-                        doc: "The text to show on the button"
-                    }
+                        doc: "The text to show on the button",
+                    },
                 ],
                 group: "settings",
                 constr(
@@ -108,9 +103,9 @@ export class SettingsVisualisations {
                     argument: string[]
                 ): SvelteUIElement {
                     return new SvelteUIElement(ClearCaches, {
-                        msg: argument[0] ?? "Clear local caches"
+                        msg: argument[0] ?? "Clear local caches",
                     })
-                }
+                },
             },
             {
                 funcName: "login_button",
@@ -120,7 +115,7 @@ export class SettingsVisualisations {
                 group: "settings",
                 constr(state: SpecialVisualizationState): SvelteUIElement {
                     return new SvelteUIElement(LoginButton, { osmConnection: state.osmConnection })
-                }
+                },
             },
 
             {
@@ -131,7 +126,7 @@ export class SettingsVisualisations {
                 group: "settings",
                 constr(state: SpecialVisualizationState): SvelteUIElement {
                     return new SvelteUIElement(LogoutButton, { osmConnection: state.osmConnection })
-                }
+                },
             },
             {
                 funcName: "pending_changes",
@@ -140,8 +135,8 @@ export class SettingsVisualisations {
                 args: [],
                 constr(state: SpecialVisualizationState): SvelteUIElement {
                     return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
-                }
-            }
+                },
+            },
         ]
     }
 }

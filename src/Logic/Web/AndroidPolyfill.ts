@@ -7,7 +7,9 @@ import { Store, UIEventSource } from "../UIEventSource"
 import { OsmConnection } from "../Osm/OsmConnection"
 
 export interface DatabridgePlugin {
-    request<T extends (string | object) = string | object>(options: { key: string }): Promise<{ value: T }>;
+    request<T extends string | object = string | object>(options: {
+        key: string
+    }): Promise<{ value: T }>
 }
 
 const DatabridgePluginSingleton = registerPlugin<DatabridgePlugin>("Databridge", {
@@ -28,17 +30,25 @@ export class AndroidPolyfill {
     private static readonly databridgePlugin: DatabridgePlugin = DatabridgePluginSingleton
     private static readonly _inAndroid: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public static readonly inAndroid: Store<boolean> = AndroidPolyfill._inAndroid
-    private static readonly _geolocationPermission: UIEventSource<"granted" | "denied" | "prompt"> = new UIEventSource("prompt")
-    public static readonly geolocationPermission: Store<"granted" | "denied" | "prompt"> = this._geolocationPermission
+    private static readonly _geolocationPermission: UIEventSource<"granted" | "denied" | "prompt"> =
+        new UIEventSource("prompt")
+    public static readonly geolocationPermission: Store<"granted" | "denied" | "prompt"> =
+        this._geolocationPermission
 
     /**
      * Registers 'navigator.'
      * @private
      */
     private static backfillGeolocation(databridgePlugin: DatabridgePlugin) {
-        const src = UIEventSource.FromPromise(databridgePlugin.request({ key: "location:has-permission" }))
-        src.addCallbackAndRunD(permission => {
-            console.log("> Checking geopermission gave: ", JSON.stringify(permission), permission.value)
+        const src = UIEventSource.FromPromise(
+            databridgePlugin.request({ key: "location:has-permission" })
+        )
+        src.addCallbackAndRunD((permission) => {
+            console.log(
+                "> Checking geopermission gave: ",
+                JSON.stringify(permission),
+                permission.value
+            )
             const granted = permission.value === "true"
             AndroidPolyfill._geolocationPermission.set(granted ? "granted" : "denied")
         })
@@ -61,17 +71,25 @@ export class AndroidPolyfill {
     }
 
     public static async requestLoginCodes() {
-        const result = await DatabridgePluginSingleton.request<{ oauth_token: string }>({ key: "request:login" })
+        const result = await DatabridgePluginSingleton.request<{ oauth_token: string }>({
+            key: "request:login",
+        })
         const token: string = result.value.oauth_token
-        console.log("AndroidPolyfill: received oauth_token; trying to pass them to the oauth lib", token)
+        console.log(
+            "AndroidPolyfill: received oauth_token; trying to pass them to the oauth lib",
+            token
+        )
         return token
     }
 
-    public static onBackButton(callback: () => boolean, options: {
-        returnToIndex: Store<boolean>
-    }) {
+    public static onBackButton(
+        callback: () => boolean,
+        options: {
+            returnToIndex: Store<boolean>
+        }
+    ) {
         console.log("Registering back button callback", callback)
-        DatabridgePluginSingleton.request({ key: "backbutton" }).then(ev => {
+        DatabridgePluginSingleton.request({ key: "backbutton" }).then((ev) => {
             console.log("AndroidPolyfill: received backbutton: ", ev)
             if (ev === null) {
                 // Probably in web environment
@@ -88,28 +106,38 @@ export class AndroidPolyfill {
                 window.location.href = "/"
             }
         })
-
     }
 
-    public static watchLocation(writeInto: UIEventSource<GeolocationCoordinates>, callback: (location) => void) {
+    public static watchLocation(
+        writeInto: UIEventSource<GeolocationCoordinates>,
+        callback: (location) => void
+    ) {
         DatabridgePluginSingleton.request({
             key: "location:watch",
-        }).then((l: {
-            value: { latitude: number, longitude: number, accuraccy: number, altidude: number, heading: number, speed:number }
-        }) => {
-            // example l: {"value":{"latitude":51.0618627,"longitude":3.730468566666667,"accuracy":2.0393495559692383,"altitude":46.408,"heading":168.2969970703125}}
-            console.log("Received location from Android:", JSON.stringify(l))
-            const loc = l.value
-            writeInto.set({
-                latitude: loc.latitude,
-                longitude: loc.longitude,
-                heading: loc.heading,
-                accuracy: loc.accuraccy,
-                altitude: loc.altidude,
-                altitudeAccuracy: undefined,
-                speed: loc.speed,
-            })
-        })
+        }).then(
+            (l: {
+                value: {
+                    latitude: number
+                    longitude: number
+                    accuraccy: number
+                    altidude: number
+                    heading: number
+                    speed: number
+                }
+            }) => {
+                // example l: {"value":{"latitude":51.0618627,"longitude":3.730468566666667,"accuracy":2.0393495559692383,"altitude":46.408,"heading":168.2969970703125}}
+                console.log("Received location from Android:", JSON.stringify(l))
+                const loc = l.value
+                writeInto.set({
+                    latitude: loc.latitude,
+                    longitude: loc.longitude,
+                    heading: loc.heading,
+                    accuracy: loc.accuraccy,
+                    altitude: loc.altidude,
+                    altitudeAccuracy: undefined,
+                    speed: loc.speed,
+                })
+            }
+        )
     }
 }
-

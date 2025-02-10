@@ -22,7 +22,7 @@
 </script>
 
 <div class={twMerge("relative h-full w-full", clss)}>
-  <div class="panzoom-container focusable absolute top-0 left-0 h-full w-full overflow-hidden">
+  <div class="panzoom-container focusable absolute left-0 top-0 h-full w-full overflow-hidden">
     {#if !$isLoaded}
       <div class="flex h-full w-full items-center justify-center">
         <Loading />

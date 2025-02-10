@@ -1476,6 +1476,43 @@
       "description": "Layer 'Pharmacies' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Shops')"
     },
     {
+      "key": "addr:street",
+      "description": "Layer 'Pharmacies' shows addr:street= & addr:unit= & addr:housenumber= with a fixed text, namely 'No address is known' (in the mapcomplete.org theme 'Shops')",
+      "value": ""
+    },
+    {
+      "key": "addr:unit",
+      "description": "Layer 'Pharmacies' shows addr:street= & addr:unit= & addr:housenumber= with a fixed text, namely 'No address is known' (in the mapcomplete.org theme 'Shops')",
+      "value": ""
+    },
+    {
+      "key": "addr:housenumber",
+      "description": "Layer 'Pharmacies' shows addr:street= & addr:unit= & addr:housenumber= with a fixed text, namely 'No address is known' (in the mapcomplete.org theme 'Shops')",
+      "value": ""
+    },
+    {
+      "key": "addr:housenumber",
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'addr:housenumber' (in the mapcomplete.org theme 'Shops')"
+    },
+    {
+      "key": "nohousenumber",
+      "description": "Layer 'Pharmacies' shows nohousenumber=yes with a fixed text, namely 'This building has no house number' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
+    },
+    {
+      "key": "addr:street",
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'addr:street' (in the mapcomplete.org theme 'Shops') (This is only shown if nohousenumber!~^(yes)$)"
+    },
+    {
+      "key": "addr:unit",
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'addr:unit' (in the mapcomplete.org theme 'Shops')"
+    },
+    {
+      "key": "addr:unit",
+      "description": "Layer 'Pharmacies' shows addr:unit= with a fixed text, namely 'No unit number' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops') Picking this answer will delete the key addr:unit.",
+      "value": ""
+    },
+    {
       "key": "payment:cash",
       "description": "Layer 'Pharmacies' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
       "value": "yes"

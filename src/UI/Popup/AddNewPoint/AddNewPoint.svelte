@@ -331,7 +331,7 @@
       </SubtleButton>
     {:else if !creating}
       <div class="flex h-full flex-col">
-        <div class="min-h-20 relative h-full w-full p-1">
+        <div class="relative h-full min-h-20 w-full p-1">
           <div class="h-full w-full overflow-hidden rounded-xl">
             <NewPointLocationInput
               on:click={() => {

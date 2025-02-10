@@ -34,6 +34,7 @@ This theme contains the following layers:
  - [binocular](../Layers/binocular.md)
  - [birdhide](../Layers/birdhide.md)
  - [cafe_pub](../Layers/cafe_pub.md)
+ - [campsite](../Layers/campsite.md)
  - [caravansites](../Layers/caravansites.md)
  - [charge_point](../Layers/charge_point.md)
  - [charging_station](../Layers/charging_station.md)

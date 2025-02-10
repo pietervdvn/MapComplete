@@ -17,7 +17,7 @@
       "contributor": "Anonymous"
     },
     {
-      "commits": 119,
+      "commits": 122,
       "contributor": "mcliquid"
     },
     {
@@ -26,31 +26,31 @@
     },
     {
       "commits": 89,
+      "contributor": "mike140"
+    },
+    {
+      "commits": 89,
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 82,
-      "contributor": "mike140"
+      "commits": 72,
+      "contributor": "Midgard"
     },
     {
       "commits": 70,
       "contributor": "danieldegroot2"
     },
     {
-      "commits": 59,
-      "contributor": "Midgard"
-    },
-    {
-      "commits": 56,
+      "commits": 58,
       "contributor": "Jiří Podhorecký"
     },
     {
       "commits": 53,
-      "contributor": "Harry Bond"
+      "contributor": "Supaplex"
     },
     {
-      "commits": 51,
-      "contributor": "Supaplex"
+      "commits": 53,
+      "contributor": "Harry Bond"
     },
     {
       "commits": 51,
@@ -91,6 +91,10 @@
     {
       "commits": 22,
       "contributor": "Patchanka64"
+    },
+    {
+      "commits": 20,
+      "contributor": "JiwonShin"
     },
     {
       "commits": 18,
@@ -158,10 +162,6 @@
     },
     {
       "commits": 10,
-      "contributor": "JiwonShin"
-    },
-    {
-      "commits": 10,
       "contributor": "Jeff Huang"
     },
     {
@@ -190,6 +190,10 @@
     },
     {
       "commits": 9,
+      "contributor": "Weblate Admin"
+    },
+    {
+      "commits": 9,
       "contributor": "Krzysztof Chorzempa"
     },
     {
@@ -215,10 +219,6 @@
     {
       "commits": 9,
       "contributor": "Jacque Fresco"
-    },
-    {
-      "commits": 8,
-      "contributor": "Weblate Admin"
     },
     {
       "commits": 8,
@@ -458,6 +458,10 @@
     },
     {
       "commits": 2,
+      "contributor": "Moimoi Ty"
+    },
+    {
+      "commits": 2,
       "contributor": "Héctor Ochoa Ortiz"
     },
     {
@@ -599,10 +603,6 @@
     {
       "commits": 1,
       "contributor": "Túllio Morais Franca"
-    },
-    {
-      "commits": 1,
-      "contributor": "Moimoi Ty"
     },
     {
       "commits": 1,

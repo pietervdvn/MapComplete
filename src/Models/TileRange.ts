@@ -81,12 +81,12 @@ export class Tiles {
         return [z, x, index % factor]
     }
 
-    static asGeojson(index: number): Feature<Polygon>;
-    static asGeojson(x: number, y: number, z: number): Feature<Polygon>;
+    static asGeojson(index: number): Feature<Polygon>
+    static asGeojson(x: number, y: number, z: number): Feature<Polygon>
     static asGeojson(zIndex: number, x?: number, y?: number): Feature<Polygon> {
         let z = zIndex
         if (x === undefined) {
-            [z, x, y] = Tiles.tile_from_index(zIndex)
+            ;[z, x, y] = Tiles.tile_from_index(zIndex)
         }
         const bounds = Tiles.tile_bounds_lon_lat(z, x, y)
         return new BBox(bounds).asGeoJson()

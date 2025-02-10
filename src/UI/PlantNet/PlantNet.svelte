@@ -71,7 +71,7 @@
     <!-- No urls are available, show the explanation instead-->
     <div class=" border-region relative mb-1 p-2">
       <XCircleIcon
-        class="absolute top-0 right-0 m-4 h-8 w-8 cursor-pointer"
+        class="absolute right-0 top-0 m-4 h-8 w-8 cursor-pointer"
         on:click={() => {
           collapsedMode = true
         }}

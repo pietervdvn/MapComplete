@@ -34,13 +34,15 @@
       if (Array.isArray(r)) {
         results.push(...r)
       } else {
-        results.push(...r.features ?? [])
+        results.push(...(r.features ?? []))
       }
     }
     return results
   }
 
-  let allData = <UIEventSource<(ChangeSetData & OsmFeature)[]>>UIEventSource.FromPromise(downloadData())
+  let allData = <UIEventSource<(ChangeSetData & OsmFeature)[]>>(
+    UIEventSource.FromPromise(downloadData())
+  )
 
   let overview: Store<ChangesetsOverview | undefined> = allData.mapD(
     (data) =>
@@ -64,10 +66,10 @@
 
   function offerAsDownload() {
     const data = GeoOperations.toCSV($overview._meta, {
-      ignoreTags: /^((deletion:node)|(import:node)|(move:node)|(soft-delete:))/
+      ignoreTags: /^((deletion:node)|(import:node)|(move:node)|(soft-delete:))/,
     })
     Utils.offerContentsAsDownloadableFile(data, "statistics.csv", {
-      mimetype: "text/csv"
+      mimetype: "text/csv",
     })
   }
 </script>
@@ -88,9 +90,9 @@
     <Accordion>
       {#each trs as tr}
         <AccordionItem paddingDefault="p-0" inactiveClass="text-black">
-        <span slot="header" class={"w-full p-2 text-base"}>
-          {tr.question ?? tr.id}
-        </span>
+          <span slot="header" class={"w-full p-2 text-base"}>
+            {tr.question ?? tr.id}
+          </span>
           <SingleStat {tr} overview={$overview} diffInDays={$diffInDays} />
         </AccordionItem>
       {/each}

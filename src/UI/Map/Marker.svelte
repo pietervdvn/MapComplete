@@ -41,7 +41,7 @@
 {#if iconsParsed !== undefined && iconsParsed.length > 0}
   <div class={twMerge("relative", size)}>
     {#each iconsParsed as icon}
-      <div class="absolute top-0 left-0 flex h-full w-full items-center">
+      <div class="absolute left-0 top-0 flex h-full w-full items-center">
         <Icon icon={icon.icon} color={icon.color} {clss} {emojiHeight} />
       </div>
     {/each}

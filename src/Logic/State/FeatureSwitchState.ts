@@ -182,7 +182,9 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
 
         let testingDefaultValue = false
         if (
-            !Constants.osmAuthConfig.url.startsWith("https://master.apis.dev.openstreetmap.org") &&  !Utils.runningFromConsole && location.hostname === "127.0.0.1"
+            !Constants.osmAuthConfig.url.startsWith("https://master.apis.dev.openstreetmap.org") &&
+            !Utils.runningFromConsole &&
+            location.hostname === "127.0.0.1"
         ) {
             testingDefaultValue = true
         }

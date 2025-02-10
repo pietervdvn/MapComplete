@@ -25,12 +25,12 @@ class QuestionViz implements SpecialVisualizationSvelte {
     args = [
         {
             name: "labels",
-            doc: "One or more ';'-separated labels. If these are given, only questions with these labels will be given. Use `unlabeled` for all questions that don't have an explicit label. If none given, all questions will be shown"
+            doc: "One or more ';'-separated labels. If these are given, only questions with these labels will be given. Use `unlabeled` for all questions that don't have an explicit label. If none given, all questions will be shown",
         },
         {
             name: "blacklisted-labels",
-            doc: "One or more ';'-separated labels of questions which should _not_ be included"
-        }
+            doc: "One or more ';'-separated labels of questions which should _not_ be included",
+        },
     ]
     svelteBased = true
     group: "default"
@@ -42,7 +42,6 @@ class QuestionViz implements SpecialVisualizationSvelte {
         feature: Feature,
         layer: LayerConfig
     ): SvelteUIElement {
-
         const labels = args[0]
             ?.split(";")
             ?.map((s) => s.trim())
@@ -57,14 +56,15 @@ class QuestionViz implements SpecialVisualizationSvelte {
             selectedElement: feature,
             state,
             onlyForLabels: labels,
-            notForLabels: blacklist
+            notForLabels: blacklist,
         })
     }
 }
 
 export class UISpecialVisualisations {
-    public static initList(): SpecialVisualizationSvelte [] {
-        return [new QuestionViz(),
+    public static initList(): SpecialVisualizationSvelte[] {
+        return [
+            new QuestionViz(),
             {
                 funcName: "minimap",
                 docs: "A small map showing the selected feature.",
@@ -75,13 +75,13 @@ export class UISpecialVisualisations {
                     {
                         doc: "The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close",
                         name: "zoomlevel",
-                        defaultValue: "18"
+                        defaultValue: "18",
                     },
                     {
                         doc: "(Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap. (Note: if the key is 'id', list interpration is disabled)",
                         name: "idKey",
-                        defaultValue: "id"
-                    }
+                        defaultValue: "id",
+                    },
                 ],
                 example:
                     "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
@@ -93,7 +93,7 @@ export class UISpecialVisualisations {
                     feature: Feature
                 ): SvelteUIElement {
                     return new SvelteUIElement(MinimapViz, { state, args, feature, tagSource })
-                }
+                },
             },
             {
                 funcName: "split_button",
@@ -105,8 +105,11 @@ export class UISpecialVisualisations {
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>
                 ): SvelteUIElement {
-                    return new SvelteUIElement(SplitRoadWizard, { id: tagSource.map(pr => pr.id), state })
-                }
+                    return new SvelteUIElement(SplitRoadWizard, {
+                        id: tagSource.map((pr) => pr.id),
+                        state,
+                    })
+                },
             },
             {
                 funcName: "move_button",
@@ -127,9 +130,9 @@ export class UISpecialVisualisations {
                     return new SvelteUIElement(MoveWizard, {
                         state,
                         featureToMove: feature,
-                        layer
+                        layer,
                     })
-                }
+                },
             },
             {
                 funcName: "delete_button",
@@ -152,9 +155,9 @@ export class UISpecialVisualisations {
                         deleteConfig: layer.deletion,
                         state,
                         feature,
-                        layer
+                        layer,
                     })
-                }
+                },
             },
             {
                 funcName: "qr_code",
@@ -168,7 +171,7 @@ export class UISpecialVisualisations {
                     feature: Feature
                 ): SvelteUIElement {
                     return new SvelteUIElement(QrCode, { state, tags, feature })
-                }
+                },
             },
             {
                 funcName: "if_nothing_known",
@@ -176,9 +179,9 @@ export class UISpecialVisualisations {
                     {
                         name: "text",
                         doc: "Text to show",
-                        required: true
+                        required: true,
                     },
-                    { name: "cssClasses", doc: "Classes to apply onto the text" }
+                    { name: "cssClasses", doc: "Classes to apply onto the text" },
                 ],
                 group: "default",
                 docs: "Shows a 'nothing is currently known-message if there is at least one unanswered question and no known (answerable) question",
@@ -196,9 +199,9 @@ export class UISpecialVisualisations {
                         tags: tagSource,
                         layer,
                         text,
-                        cssClasses
+                        cssClasses,
                     })
-                }
+                },
             },
             new ShareLinkViz(),
             {
@@ -210,10 +213,10 @@ export class UISpecialVisualisations {
                     const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
                     return new SvelteUIElement(AddNewPoint, {
                         state,
-                        coordinate: { lon, lat }
+                        coordinate: { lon, lat },
                     })
-                }
-            }
+                },
+            },
         ]
     }
 }

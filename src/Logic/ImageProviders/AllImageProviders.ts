@@ -83,11 +83,15 @@ export default class AllImageProviders {
     ): number {
         let count = 0
 
-        const sources = [Imgur.singleton,
+        const sources = [
+            Imgur.singleton,
             Mapillary.singleton,
             Panoramax.singleton,
-            AllImageProviders.genericImageProvider]
-        const allPrefixes = Utils.Dedup(prefixes ?? [].concat(...sources.map(s => s.defaultKeyPrefixes)))
+            AllImageProviders.genericImageProvider,
+        ]
+        const allPrefixes = Utils.Dedup(
+            prefixes ?? [].concat(...sources.map((s) => s.defaultKeyPrefixes))
+        )
         for (const prefix of allPrefixes) {
             for (const k in tags) {
                 if (!tags[k]) {

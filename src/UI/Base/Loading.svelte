@@ -6,7 +6,7 @@
 </script>
 
 <div class={cls}>
-  <div class="min-w-6 h-6 w-6 shrink-0 animate-spin self-center">
+  <div class="h-6 w-6 min-w-6 shrink-0 animate-spin self-center">
     <Loading />
   </div>
   <div class="ml-2">

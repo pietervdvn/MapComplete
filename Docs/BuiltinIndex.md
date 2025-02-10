@@ -31,6 +31,7 @@
  - birdhide
  - brothel
  - cafe_pub
+ - campsite
  - car_rental
  - caravansites
  - charge_point
@@ -203,9 +204,7 @@
  - climbing_club
  - climbing_gym
  - cycle_highways
- - dentist
  - disaster_response
- - doctors
  - dogpark
  - elongated_coin
  - fitness_centre
@@ -216,7 +215,6 @@
  - nature_reserve
  - observation_tower
  - outdoor_seating
- - physiotherapist
  - playground
  - recycling
  - shops
@@ -241,14 +239,11 @@
  - childcare
  - climbing_club
  - climbing_gym
- - dentist
- - doctors
  - fitness_centre
  - food
  - food_courts
  - governments
  - hackerspace
- - physiotherapist
  - recycling
  - shops
  - sports_centre
@@ -268,13 +263,10 @@
  - childcare
  - climbing_club
  - climbing_gym
- - dentist
- - doctors
  - fitness_centre
  - food
  - governments
  - hackerspace
- - physiotherapist
  - recycling
  - shops
  - sports_centre
@@ -301,6 +293,7 @@
  - lighthouse
  - nature_reserve
  - observation_tower
+ - school
             
             ### memorial.memorial-questions
 
@@ -320,11 +313,15 @@
 
              - assisted_repair
  - brothel
+ - campsite
  - cinema
+ - dentist
+ - doctors
  - hospital
  - ice_cream
  - love_hotel
  - pharmacy
+ - physiotherapist
  - police
  - postoffices
  - school
@@ -336,6 +333,7 @@
             ### mastodon
 
              - assisted_repair
+ - campsite
  - hackerspace
  - scouting_group
             
@@ -493,7 +491,8 @@
             
             ### questions
 
-             - caravansites
+             - campsite
+ - caravansites
  - charge_point
  - charging_station
  - etymology
@@ -581,6 +580,15 @@
  - fixme
  - search
  - summary
+            
+            ### address.address
+
+             - dentist
+ - doctors
+ - hospital
+ - pharmacy
+ - physiotherapist
+ - school
             
             ### seasonal
 

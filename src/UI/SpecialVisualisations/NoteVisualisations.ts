@@ -1,4 +1,8 @@
-import { SpecialVisualization, SpecialVisualizationState, SpecialVisualizationSvelte } from "../SpecialVisualization"
+import {
+    SpecialVisualization,
+    SpecialVisualizationState,
+    SpecialVisualizationSvelte,
+} from "../SpecialVisualization"
 import Constants from "../../Models/Constants"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { Feature } from "geojson"
@@ -24,30 +28,30 @@ class CloseNoteViz implements SpecialVisualizationSvelte {
         {
             name: "text",
             doc: "Text to show on this button",
-            required: true
+            required: true,
         },
         {
             name: "icon",
             doc: "Icon to show",
-            defaultValue: "checkmark.svg"
+            defaultValue: "checkmark.svg",
         },
         {
             name: "idkey",
             doc: "The property name where the ID of the note to close can be found",
-            defaultValue: "id"
+            defaultValue: "id",
         },
         {
             name: "comment",
-            doc: "Text to add onto the note when closing"
+            doc: "Text to add onto the note when closing",
         },
         {
             name: "minZoom",
-            doc: "If set, only show the closenote button if zoomed in enough"
+            doc: "If set, only show the closenote button if zoomed in enough",
         },
         {
             name: "zoomButton",
-            doc: "Text to show if not zoomed in enough"
-        }
+            doc: "Text to show if not zoomed in enough",
+        },
     ]
     public readonly group: "notes"
 
@@ -69,11 +73,10 @@ class CloseNoteViz implements SpecialVisualizationSvelte {
             message: comment,
             text: Translations.T(text),
             minzoom: minZoom,
-            zoomMoreMessage: zoomButton
+            zoomMoreMessage: zoomButton,
         })
     }
 }
-
 
 class AddNoteCommentViz implements SpecialVisualizationSvelte {
     funcName = "add_note_comment"
@@ -83,21 +86,23 @@ class AddNoteCommentViz implements SpecialVisualizationSvelte {
         {
             name: "Id-key",
             doc: "The property name where the ID of the note to close can be found",
-            defaultValue: "id"
-        }
+            defaultValue: "id",
+        },
     ]
     public readonly group: "notes"
 
-
-    public constr(state: SpecialVisualizationState, tags: UIEventSource<Record<string, string>>): SvelteUIElement {
+    public constr(
+        state: SpecialVisualizationState,
+        tags: UIEventSource<Record<string, string>>
+    ): SvelteUIElement {
         return new SvelteUIElement(AddNoteComment, { state, tags })
     }
 }
 
-
 export class NoteVisualisations {
     public static initList(): (SpecialVisualization & { group })[] {
-        return [new AddNoteCommentViz(),
+        return [
+            new AddNoteCommentViz(),
             new CloseNoteViz(),
             {
                 funcName: "open_note",
@@ -114,9 +119,9 @@ export class NoteVisualisations {
                     const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
                     return new SvelteUIElement(CreateNewNote, {
                         state,
-                        coordinate: new UIEventSource({ lon, lat })
+                        coordinate: new UIEventSource({ lon, lat }),
                     })
-                }
+                },
             },
             {
                 funcName: "add_image_to_note",
@@ -125,8 +130,8 @@ export class NoteVisualisations {
                     {
                         name: "Id-key",
                         doc: "The property name where the ID of the note to close can be found",
-                        defaultValue: "id"
-                    }
+                        defaultValue: "id",
+                    },
                 ],
                 group: "notes",
                 needsUrls: [Imgur.apiUrl, ...Imgur.supportingUrls],
@@ -135,7 +140,7 @@ export class NoteVisualisations {
                     const id = tags.data[args[0] ?? "id"]
                     tags = state.featureProperties.getStore(id)
                     return new SvelteUIElement(UploadImage, { state, tags, layer, feature })
-                }
+                },
             },
             {
                 funcName: "visualize_note_comments",
@@ -145,13 +150,13 @@ export class NoteVisualisations {
                     {
                         name: "commentsKey",
                         doc: "The property name of the comments, which should be stringified json",
-                        defaultValue: "comments"
+                        defaultValue: "comments",
                     },
                     {
                         name: "start",
                         doc: "Drop the first 'start' comments",
-                        defaultValue: "0"
-                    }
+                        defaultValue: "0",
+                    },
                 ],
                 needsUrls: [Constants.osmAuthConfig.url],
                 constr: (state, tags, args) =>
@@ -171,13 +176,13 @@ export class NoteVisualisations {
                                             (comment) =>
                                                 new SvelteUIElement(NoteCommentElement, {
                                                     comment,
-                                                    state
+                                                    state,
                                                 })
                                         )
                                 ).SetClass("flex flex-col")
                             })
-                    )
-            }
+                    ),
+            },
         ]
     }
 }

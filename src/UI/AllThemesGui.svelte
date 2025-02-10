@@ -107,13 +107,16 @@
     }
   })
 
-  AndroidPolyfill.onBackButton((() => {
-    if(searchIsFocussed.data){
-      searchIsFocussed.set(false)
-      return true
-    }
-    return false
-  }), {returnToIndex: new ImmutableStore(false)})
+  AndroidPolyfill.onBackButton(
+    () => {
+      if (searchIsFocussed.data) {
+        searchIsFocussed.set(false)
+        return true
+      }
+      return false
+    },
+    { returnToIndex: new ImmutableStore(false) }
+  )
 
   /**
    * Opens the first search candidate
@@ -228,11 +231,19 @@
     <Tr cls="link-underline" t={Translations.t.general.aboutMapComplete.intro} />
 
     <span class="link-underline flex flex-col gap-y-1">
-      <a class="flex" href="https://source.mapcomplete.org/MapComplete/MapComplete/" target="_blank">
+      <a
+        class="flex"
+        href="https://source.mapcomplete.org/MapComplete/MapComplete/"
+        target="_blank"
+      >
         <Forgejo class="mr-2 h-6 w-6" />
         <Tr t={Translations.t.general.attribution.gotoSourceCode} />
       </a>
-      <a class="flex" href="https://source.mapcomplete.org/MapComplete/MapComplete/issues" target="_blank">
+      <a
+        class="flex"
+        href="https://source.mapcomplete.org/MapComplete/MapComplete/issues"
+        target="_blank"
+      >
         <Bug class="mr-2 h-6 w-6" />
         <Tr t={Translations.t.general.attribution.openIssueTracker} />
       </a>

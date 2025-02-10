@@ -35,7 +35,7 @@
   <OHTable value={state.normalOhs} />
   <button
     on:click={() => expanded.set(false)}
-    class="primary pointer-events-auto absolute left-0 bottom-0 h-8 w-10 rounded-full"
+    class="primary pointer-events-auto absolute bottom-0 left-0 h-8 w-10 rounded-full"
   >
     <Check class="m-0 h-6 w-6 shrink-0 p-0" color="white" />
   </button>

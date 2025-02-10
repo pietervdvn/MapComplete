@@ -10,7 +10,6 @@ Hidden layer with all streets which have a name. Useful to detect addresses
  - This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true
  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
- - This layer is needed as dependency for layer [address](#address)
 
 ## Table of contents
 
@@ -20,7 +19,6 @@ Hidden layer with all streets which have a name. Useful to detect addresses
 
 ## Themes using this layer
 
- - [grb](https://mapcomplete.org/grb)
  - [uk_addresses](https://mapcomplete.org/uk_addresses)
 
 ## Basic tags for this layer

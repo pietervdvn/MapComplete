@@ -2,7 +2,11 @@ import Combine from "./Base/Combine"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import { default as FeatureTitle } from "./Popup/Title.svelte"
-import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
+import {
+    RenderingSpecification,
+    SpecialVisualization,
+    SpecialVisualizationState,
+} from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
 import { MultiApplyViz } from "./Popup/MultiApplyViz"
@@ -41,12 +45,8 @@ import { UISpecialVisualisations } from "./SpecialVisualisations/UISpecialVisual
 import { SettingsVisualisations } from "./SpecialVisualisations/SettingsVisualisations"
 import { ReviewSpecialVisualisations } from "./SpecialVisualisations/ReviewSpecialVisualisations"
 import { DataImportSpecialVisualisations } from "./SpecialVisualisations/DataImportSpecialVisualisations"
-import TagrenderingManipulationSpecialVisualisations
-    from "./SpecialVisualisations/TagrenderingManipulationSpecialVisualisations"
-import {
-    WebAndCommunicationSpecialVisualisations
-} from "./SpecialVisualisations/WebAndCommunicationSpecialVisualisations"
-
+import TagrenderingManipulationSpecialVisualisations from "./SpecialVisualisations/TagrenderingManipulationSpecialVisualisations"
+import { WebAndCommunicationSpecialVisualisations } from "./SpecialVisualisations/WebAndCommunicationSpecialVisualisations"
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
@@ -79,18 +79,18 @@ export default class SpecialVisualizations {
             viz.docs,
             viz.args.length > 0
                 ? MarkdownUtils.table(
-                    ["name", "default", "description"],
-                    viz.args.map((arg) => {
-                        let defaultArg = arg.defaultValue ?? "_undefined_"
-                        if (defaultArg == "") {
-                            defaultArg = "_empty string_"
-                        }
-                        return [arg.name, defaultArg, arg.doc]
-                    })
-                )
+                      ["name", "default", "description"],
+                      viz.args.map((arg) => {
+                          let defaultArg = arg.defaultValue ?? "_undefined_"
+                          if (defaultArg == "") {
+                              defaultArg = "_empty string_"
+                          }
+                          return [arg.name, defaultArg, arg.doc]
+                      })
+                  )
                 : undefined,
             "#### Example usage of " + viz.funcName,
-            example
+            example,
         ].join("\n\n")
     }
 
@@ -106,7 +106,6 @@ export default class SpecialVisualizations {
     }
 
     public static HelpMessage(): string {
-
         const vis = [...SpecialVisualizations.specialVisualizations]
         vis.sort((a, b) => {
             return a.funcName < b.funcName ? -1 : 1
@@ -119,15 +118,21 @@ export default class SpecialVisualizations {
         })
 
         const groupExplanations: Record<string, string> = {
-            "default": "These special visualisations are (mostly) interactive components that most elements get by default. You'll normally won't need them in custom layers. There are also a few miscellaneous elements supporting the map UI.",
-            "favourites": "Elements relating to marking an object as favourite (giving it a heart). Default element",
-            "settings": "Elements part of the usersettings-ui",
-            "images": "Elements related to adding or manipulating images. Normally also added by default, but in some cases a tweaked version is needed",
-            "notes": "Elements relating to OpenStreetMap-notes, e.g. the component to close and/or add a comment",
-            "reviews": "Elements relating to seeing and adding ratings and reviews with Mangrove.reviews",
-            "data_import": "Elements to help with importing data to OSM. For example: buttons to import a feature, apply tags on an element, apply multiple tags on an element or to work with maproulette",
-            "tagrendering_manipulation": "Special visualisations which reuse other tagRenderings to show data, but with a twist.",
-            "web_and_communication": "Tools to show data from external websites, which link to external websites or which link to external profiles"
+            default:
+                "These special visualisations are (mostly) interactive components that most elements get by default. You'll normally won't need them in custom layers. There are also a few miscellaneous elements supporting the map UI.",
+            favourites:
+                "Elements relating to marking an object as favourite (giving it a heart). Default element",
+            settings: "Elements part of the usersettings-ui",
+            images: "Elements related to adding or manipulating images. Normally also added by default, but in some cases a tweaked version is needed",
+            notes: "Elements relating to OpenStreetMap-notes, e.g. the component to close and/or add a comment",
+            reviews:
+                "Elements relating to seeing and adding ratings and reviews with Mangrove.reviews",
+            data_import:
+                "Elements to help with importing data to OSM. For example: buttons to import a feature, apply tags on an element, apply multiple tags on an element or to work with maproulette",
+            tagrendering_manipulation:
+                "Special visualisations which reuse other tagRenderings to show data, but with a twist.",
+            web_and_communication:
+                "Tools to show data from external websites, which link to external websites or which link to external profiles",
         }
 
         const helpTexts: string[] = []
@@ -138,10 +143,13 @@ export default class SpecialVisualizations {
                 if (viz.group === undefined) {
                     helpTexts.push("## Unclassified elements\n\nVarious elements")
                 } else {
-
                     helpTexts.push("## " + viz.group)
                     if (!groupExplanations[viz.group]) {
-                        throw "\n\n >>>> ERROR <<<<  Unknown visualisation group type: " + viz.group + "\n\n\n"
+                        throw (
+                            "\n\n >>>> ERROR <<<<  Unknown visualisation group type: " +
+                            viz.group +
+                            "\n\n\n"
+                        )
                     }
                     helpTexts.push(groupExplanations[viz.group])
                 }
@@ -157,18 +165,18 @@ export default class SpecialVisualizations {
                         argname: "some_arg",
                         message: {
                             en: "some other really long message",
-                            nl: "een boodschap in een andere taal"
+                            nl: "een boodschap in een andere taal",
                         },
-                        other_arg_name: "more args"
+                        other_arg_name: "more args",
                     },
                     before: {
                         en: "Some text to prefix before the special element (e.g. a title)",
-                        nl: "Een tekst om voor het element te zetten (bv. een titel)"
+                        nl: "Een tekst om voor het element te zetten (bv. een titel)",
                     },
                     after: {
-                        en: "Some text to put after the element, e.g. a footer"
-                    }
-                }
+                        en: "Some text to put after the element, e.g. a footer",
+                    },
+                },
             },
             null,
             "  "
@@ -181,8 +189,8 @@ export default class SpecialVisualizations {
             "# Using expanded syntax",
             `Instead of using \`{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}\`, one can also write`,
             "```\n" + example + "\n```\n",
-            "In other words: use `{ \"before\": ..., \"after\": ..., \"special\": {\"type\": ..., \"argname\": ...argvalue...}`. The args are in the `special` block; an argvalue can be a string, a translation or another value. (Refer to class `RewriteSpecial` in case of problems)",
-            "# Overview of all special components"
+            'In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "argname": ...argvalue...}`. The args are in the `special` block; an argvalue can be a string, a translation or another value. (Refer to class `RewriteSpecial` in case of problems)',
+            "# Overview of all special components",
         ].join("\n\n")
         return firstPart + "\n\n" + helpTexts.join("\n\n")
     }
@@ -226,9 +234,9 @@ export default class SpecialVisualizations {
                         construct: (feature: Feature<LineString>, title: string) =>
                             GeoOperations.toGpx(feature, title),
                         helpertext: t.downloadGpxHelper,
-                        maintext: t.downloadFeatureAsGpx
+                        maintext: t.downloadFeatureAsGpx,
                     })
-                }
+                },
             },
             new UploadToOsmViz(),
             new MultiApplyViz(),
@@ -244,7 +252,7 @@ export default class SpecialVisualizations {
                     _,
                     __,
                     layer: LayerConfig
-                ) => new SvelteUIElement(AllTagsPanel, { tags, layer })
+                ) => new SvelteUIElement(AllTagsPanel, { tags, layer }),
             },
             {
                 funcName: "opening_hours_table",
@@ -253,18 +261,18 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         defaultValue: "opening_hours",
-                        doc: "The tagkey from which the table is constructed."
+                        doc: "The tagkey from which the table is constructed.",
                     },
                     {
                         name: "prefix",
                         defaultValue: "",
-                        doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__"
+                        doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__",
                     },
                     {
                         name: "postfix",
                         defaultValue: "",
-                        doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__"
-                    }
+                        doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__",
+                    },
                 ],
                 needsUrls: [Constants.countryCoderEndpoint],
                 example:
@@ -272,7 +280,7 @@ export default class SpecialVisualizations {
                 constr: (state, tagSource: UIEventSource<any>, args) => {
                     const [key, prefix, postfix] = args
                     return new OpeningHoursVisualization(tagSource, key, prefix, postfix)
-                }
+                },
             },
             {
                 funcName: "opening_hours_state",
@@ -281,18 +289,18 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         defaultValue: "opening_hours",
-                        doc: "The tagkey from which the opening hours are read."
+                        doc: "The tagkey from which the opening hours are read.",
                     },
                     {
                         name: "prefix",
                         defaultValue: "",
-                        doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__"
+                        doc: "Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__",
                     },
                     {
                         name: "postfix",
                         defaultValue: "",
-                        doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__"
-                    }
+                        doc: "Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -307,9 +315,9 @@ export default class SpecialVisualizations {
                         keyToUse,
                         tags,
                         prefix,
-                        postfix
+                        postfix,
                     })
-                }
+                },
             },
             {
                 funcName: "canonical",
@@ -321,8 +329,8 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         doc: "The key of the tag to give the canonical text for",
-                        required: true
-                    }
+                        required: true,
+                    },
                 ],
                 constr: (state, tagSource, args) => {
                     const key = args[0]
@@ -346,7 +354,7 @@ export default class SpecialVisualizations {
                                 return unit.asHumanLongValue(value, getCountry)
                             })
                     )
-                }
+                },
             },
             {
                 funcName: "export_as_geojson",
@@ -364,9 +372,9 @@ export default class SpecialVisualizations {
                         construct: (feature: Feature<LineString>) =>
                             JSON.stringify(feature, null, "  "),
                         maintext: t.downloadFeatureAsGeojson,
-                        helpertext: t.downloadGeoJsonHelper
+                        helpertext: t.downloadGeoJsonHelper,
                     })
-                }
+                },
             },
 
             {
@@ -382,7 +390,7 @@ export default class SpecialVisualizations {
                         state.historicalUserLocations.features.setData([])
                         state.selectedElement.setData(undefined)
                     })
-                }
+                },
             },
 
             {
@@ -400,7 +408,7 @@ export default class SpecialVisualizations {
                     layer: LayerConfig
                 ) => {
                     return new SvelteUIElement(FeatureTitle, { state, tags, feature, layer })
-                }
+                },
             },
             {
                 funcName: "statistics",
@@ -427,9 +435,8 @@ export default class SpecialVisualizations {
                                 [state.mapProperties.bounds]
                             )
                     )
-                }
+                },
             },
-
 
             {
                 funcName: "translated",
@@ -439,13 +446,13 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         doc: "The attribute to interpret as json",
-                        defaultValue: "value"
-                    }
+                        defaultValue: "value",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
+                    argument: string[]
                 ): BaseUIElement {
                     return new VariableUiElement(
                         tagSource.map((tags) => {
@@ -459,7 +466,7 @@ export default class SpecialVisualizations {
                             }
                         })
                     )
-                }
+                },
             },
             {
                 funcName: "braced",
@@ -469,8 +476,8 @@ export default class SpecialVisualizations {
                     {
                         name: "text",
                         required: true,
-                        doc: "The value to show"
-                    }
+                        doc: "The value to show",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -480,7 +487,7 @@ export default class SpecialVisualizations {
                     layer: LayerConfig
                 ): BaseUIElement {
                     return new FixedUiElement("{" + args[0] + "}")
-                }
+                },
             },
             {
                 funcName: "tags",
@@ -490,8 +497,8 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         defaultValue: "value",
-                        doc: "The key to look for the tags"
-                    }
+                        doc: "The key to look for the tags",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -516,14 +523,14 @@ export default class SpecialVisualizations {
                             } catch (e) {
                                 return new FixedUiElement(
                                     "Could not parse this tag: " +
-                                    JSON.stringify(value) +
-                                    " due to " +
-                                    e
+                                        JSON.stringify(value) +
+                                        " due to " +
+                                        e
                                 ).SetClass("alert")
                             }
                         })
                     )
-                }
+                },
             },
 
             {
@@ -539,7 +546,7 @@ export default class SpecialVisualizations {
                     layer: LayerConfig
                 ): BaseUIElement {
                     return new SvelteUIElement(DirectionIndicator, { state, feature })
-                }
+                },
             },
 
             {
@@ -549,8 +556,8 @@ export default class SpecialVisualizations {
                     {
                         name: "key",
                         doc: "The attribute containing the degrees",
-                        defaultValue: "_direction:centerpoint"
-                    }
+                        defaultValue: "_direction:centerpoint",
+                    },
                 ],
 
                 constr(
@@ -573,7 +580,7 @@ export default class SpecialVisualizations {
                                 return Translations.t.general.visualFeedback.directionsAbsolute[dir]
                             })
                     )
-                }
+                },
             },
 
             {
@@ -582,16 +589,15 @@ export default class SpecialVisualizations {
                 args: [],
                 constr(
                     state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
+                    tagSource: UIEventSource<Record<string, string>>
                 ): BaseUIElement {
                     const translation = tagSource.map((tags) => {
                         const layer = state.theme.getMatchingLayer(tags)
                         return layer?.getMostMatchingPreset(tags)?.description
                     })
                     return new VariableUiElement(translation)
-                }
+                },
             },
-
 
             {
                 funcName: "preset_type_select",
@@ -613,9 +619,9 @@ export default class SpecialVisualizations {
                             icon: "auto",
                             then: (pr.description ? t.typeDescription : t.typeTitle).Subs({
                                 title: pr.title,
-                                description: pr.description
-                            }).translations
-                        }))
+                                description: pr.description,
+                            }).translations,
+                        })),
                     }
                     const config = new TagRenderingConfig(question)
                     return new SvelteUIElement(TagRenderingEditable, {
@@ -623,11 +629,10 @@ export default class SpecialVisualizations {
                         tags,
                         selectedElement,
                         state,
-                        layer
+                        layer,
                     })
-                }
-            }
-
+                },
+            },
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
@@ -642,7 +647,7 @@ export default class SpecialVisualizations {
                 "Invalid special visualisation found: funcName is undefined or doesn't match " +
                 regex +
                 invalid.map((sp) => sp.i).join(", ") +
-                ". Did you perhaps type \n  funcName: \"funcname\" // type declaration uses COLON\ninstead of:\n  funcName = \"funcName\" // value definition uses EQUAL"
+                '. Did you perhaps type \n  funcName: "funcname" // type declaration uses COLON\ninstead of:\n  funcName = "funcName" // value definition uses EQUAL'
             )
         }
 

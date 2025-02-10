@@ -665,6 +665,14 @@ A module showing the pending changes, with the option to clear the pending chang
 
 `{pending_changes()}`
 
+### storage_all_tags
+
+Shows the current state of storage
+
+#### Example usage of storage_all_tags
+
+`{storage_all_tags()}`
+
 ## tagrendering_manipulation
 
 Special visualisations which reuse other tagRenderings to show data, but with a twist.
@@ -973,7 +981,7 @@ The language element allows to show and pick all known (modern) languages. The k
 
 | name | default | description |
 -----|-----|----- |
-| key | _undefined_ | What key to use, e.g. `language`, `tactile_writing:braille:language`, ... If a language is supported, the language code will be appended to this key, resulting in `language:nl=yes` if nl is picked  |
+| key | _undefined_ | What key to use, e.g. `language`, `tactile_writing:braille:language`, ... If a language is supported, the language code will be appended to this key, resulting in `<key>:nl=yes` if _nl_ is picked  |
 | question | _undefined_ | What to ask if no questions are known |
 | render_list_item | {language()} | How a single language will be shown in the list of languages. Use `{language}` to indicate the language (which it must contain). |
 | render_single_language | _undefined_ | What will be shown if the feature only supports a single language |

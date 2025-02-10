@@ -67,11 +67,11 @@
   }}
   on:touchstart={(e) => onPosChange(e.touches[0].clientX, e.touches[0].clientY)}
 >
-  <div class="absolute top-0 left-0 h-full w-full cursor-pointer">
+  <div class="absolute left-0 top-0 h-full w-full cursor-pointer">
     <MaplibreMap mapProperties={mla} {map} />
   </div>
 
-  <div bind:this={directionElem} class="absolute top-0 left-0 h-full w-full">
+  <div bind:this={directionElem} class="absolute left-0 top-0 h-full w-full">
     <Direction_stroke />
   </div>
 </div>

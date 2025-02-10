@@ -15,15 +15,13 @@
   let activeFilters: Store<(ActiveFilter & FilterSearchResult)[]> =
     state.layerState.activeFilters.map((fs) =>
       fs
-        .filter(
-          (f) => f.filter.options[0].fields.length === 0 && !Constants.isPriviliged(f.layer)
-        )
+        .filter((f) => f.filter.options[0].fields.length === 0 && !Constants.isPriviliged(f.layer))
         .map((af) => {
           const index = <number>af.control.data
           const r: FilterSearchResult & ActiveFilter = {
             ...af,
             index,
-            option: af.filter.options[index]
+            option: af.filter.options[index],
           }
           return r
         })

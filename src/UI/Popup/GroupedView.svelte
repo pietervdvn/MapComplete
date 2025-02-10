@@ -25,7 +25,7 @@
       if (seenIds.has(tr.id)) {
         continue
       }
-      if (label === tr.id || tr.labels.some(l => l === label)) {
+      if (label === tr.id || tr.labels.some((l) => l === label)) {
         trgs.push(tr)
         seenIds.add(tr.id)
       }
@@ -38,12 +38,6 @@
     <TagRenderingAnswer {tags} {layer} config={headerTr} {state} {selectedElement} />
   </div>
   {#each trgs as config (config.id)}
-    <TagRenderingEditableDynamic
-      {tags}
-      {config}
-      {state}
-      {selectedElement}
-      {layer}
-    />
+    <TagRenderingEditableDynamic {tags} {config} {state} {selectedElement} {layer} />
   {/each}
 </AccordionSingle>

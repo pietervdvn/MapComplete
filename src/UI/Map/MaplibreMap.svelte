@@ -112,4 +112,4 @@
   <link href="./maplibre-gl.css" rel="stylesheet" />
 </svelte:head>
 
-<div bind:this={container} class="map relative top-0 left-0 h-full w-full" id="map" />
+<div bind:this={container} class="map relative left-0 top-0 h-full w-full" id="map" />

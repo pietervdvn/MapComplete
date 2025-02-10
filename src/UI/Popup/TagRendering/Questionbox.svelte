@@ -164,7 +164,7 @@
         </div>
       {/if}
 
-      <div class="mt-4 mb-8">
+      <div class="mb-8 mt-4">
         {#if skipped + answered > 0}
           <div class="flex justify-center">
             {#if answered === 0}

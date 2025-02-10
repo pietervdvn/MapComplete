@@ -25,7 +25,7 @@ export class GeoLocationState {
      * 'denied' means that we don't have access
      */
     public readonly permission: UIEventSource<GeolocationPermissionState> = new UIEventSource(
-        "prompt",
+        "prompt"
     )
 
     /**
@@ -130,7 +130,7 @@ export class GeoLocationState {
                 }
                 return Translations.t.general.waitingForLocation
             },
-            [this.allowMoving, this.permission, this.currentGPSLocation],
+            [this.allowMoving, this.permission, this.currentGPSLocation]
         )
     }
 
@@ -165,15 +165,15 @@ export class GeoLocationState {
             return
         }
 
-        if(AndroidPolyfill.inAndroid.data){
+        if (AndroidPolyfill.inAndroid.data) {
             this.permission.setData("requested")
-            this.permission.addCallbackAndRunD(p => {
-                if(p === "granted"){
+            this.permission.addCallbackAndRunD((p) => {
+                if (p === "granted") {
                     this.startWatching()
                     return true
                 }
             })
-            AndroidPolyfill.requestGeoPermission().then(state => {
+            AndroidPolyfill.requestGeoPermission().then((state) => {
                 const granted = state.value === "true"
                 this.permission.set(granted ? "granted" : "denied")
             })
@@ -218,15 +218,14 @@ export class GeoLocationState {
      * @private
      */
     private async startWatching() {
-
-        if(AndroidPolyfill.inAndroid.data){
-            AndroidPolyfill.watchLocation( this.currentGPSLocation, location => {
+        if (AndroidPolyfill.inAndroid.data) {
+            AndroidPolyfill.watchLocation(this.currentGPSLocation, (location) => {
                 console.log(JSON.stringify(location))
             })
         }
 
         navigator.geolocation.watchPosition(
-             (position: GeolocationPosition) => {
+            (position: GeolocationPosition) => {
                 this._gpsAvailable.set(true)
                 this.currentGPSLocation.setData(position.coords)
                 this._previousLocationGrant.setData(true)
@@ -249,5 +248,4 @@ export class GeoLocationState {
             }
         )
     }
-
 }

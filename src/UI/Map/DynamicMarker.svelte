@@ -27,7 +27,7 @@
 {#if marker}
   <div class="relative h-full w-full" style={`transform: rotate(${$_rotation})`}>
     {#each marker as icon}
-      <div class="absolute top-0 left-0 h-full w-full">
+      <div class="absolute left-0 top-0 h-full w-full">
         <DynamicIcon {icon} {tags} {emojiHeight} />
       </div>
     {/each}

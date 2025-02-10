@@ -268,7 +268,9 @@ export default class AutoApplyButton implements SpecialVisualization {
         A button to run many actions for many features at once.
         To effectively use this button, you'll need some ingredients:
 
-        1. A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: ${supportedActions.join(", ")}
+        1. A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: ${supportedActions.join(
+            ", "
+        )}
         2. A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer [current_view](./BuiltinLayers.md#current_view)
         3. Then, use a calculated tag on the host feature to determine the overlapping object ids
         4. At last, add this component`

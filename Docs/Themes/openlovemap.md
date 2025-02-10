@@ -502,7 +502,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `Are medical services available here?`
 
- -  *This shop offers eye exams by certified optometrists* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare' target='_blank'>healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Doptometrist' target='_blank'>optometrist</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:not:healtcare' target='_blank'>not:healtcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:healtcare%3Doptometrist' target='_blank'>optometrist</a>
+ -  *This shop offers eye exams by certified optometrists* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare' target='_blank'>healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Doptometrist' target='_blank'>optometrist</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:not:healthcare' target='_blank'>not:healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:healthcare%3Doptometrist' target='_blank'>optometrist</a>
  -  *This shop offers hearing tests by a certified audiologist* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare' target='_blank'>healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Daudiologist' target='_blank'>audiologist</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:not:healthcare' target='_blank'>not:healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:healthcare%3Daudiologist' target='_blank'>audiologist</a>
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doptician' target='_blank'>optician</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhearing_aid' target='_blank'>hearing_aid</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmedical_supply' target='_blank'>medical_supply</a>
@@ -828,11 +828,11 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | fetish.0 | *Does this shop offer fetish gear?* (default) |  |
-| fetish.1 | This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ... | fetish:bdsm:soft~^(.+;)?yes(;.+)$ |
-| fetish.2 | This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ... | fetish:bdsm:specialized~^(.+;)?yes(;.+)$ |
-| fetish.3 | This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ... | fetish:pet_play~^(.+;)?yes(;.+)$ |
-| fetish.4 | This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses | fetish:leather~^(.+;)?yes(;.+)$ |
-| fetish.5 | This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ... | fetish:uniform~^(.+;)?yes(;.+)$ |
+| fetish.1 | This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ... | fetish:bdsm:soft~^(^(.+;)?yes(;.+)?$)$ |
+| fetish.2 | This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ... | fetish:bdsm:specialized~^(^(.+;)?yes(;.+)?$)$ |
+| fetish.3 | This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ... | fetish:pet_play~^(^(.+;)?yes(;.+)?$)$ |
+| fetish.4 | This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses | fetish:leather~^(^(.+;)?yes(;.+)?$)$ |
+| fetish.5 | This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ... | fetish:uniform~^(^(.+;)?yes(;.+)?$)$ |
 
 | id | question | osmTags |
 -----|-----|----- |

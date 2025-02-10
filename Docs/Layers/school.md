@@ -19,13 +19,21 @@ Schools giving primary and secondary education and post-secondary, non-tertiary 
   - [phone](#phone)
   - [email](#email)
   - [website](#website)
+  - [address_joined](#address_joined)
+  - [header](#header)
+  - [housenumber](#housenumber)
+  - [street](#street)
+  - [unit](#unit)
   - [capacity](#capacity)
   - [education-level-belgium](#education-level-belgium)
+  - [is_special_needs](#is_special_needs)
   - [orientation_belgium](#orientation_belgium)
+  - [orientation_belgium_special_needs](#orientation_belgium_special_needs)
   - [gender](#gender)
   - [pedagogy](#pedagogy)
-  - [target-audience](#target-audience)
+  - [special_needs_categories_be](#special_needs_categories_be)
   - [school-language](#school-language)
+  - [wikipedia](#wikipedia)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
   - [lod](#lod)
@@ -62,12 +70,18 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:street#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Astreet/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:housenumber#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Ahousenumber/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr:housenumber) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:street#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Astreet/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:unit#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Aunit/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:unit](https://wiki.openstreetmap.org/wiki/Key:addr:unit) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:addr:unit%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/school#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/school/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [school](https://wiki.openstreetmap.org/wiki/Key:school) | Multiple choice | [kindergarten](https://wiki.openstreetmap.org/wiki/Tag:school%3Dkindergarten) [primary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dprimary) [secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dsecondary) [lower_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dlower_secondary) [middle_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dmiddle_secondary) [upper_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dupper_secondary) [post_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dpost_secondary) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/school:special_needs#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/school%3Aspecial_needs/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [school:special_needs](https://wiki.openstreetmap.org/wiki/Key:school:special_needs) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Donly) [separated](https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dseparated) [mixed](https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dmixed) [limited](https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/school:orientation#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/school%3Aorientation/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [school:orientation](https://wiki.openstreetmap.org/wiki/Key:school:orientation) | Multiple choice | [academic](https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dacademic) [professional](https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dprofessional) [vocational](https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dvocational) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/school:orientation#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/school%3Aorientation/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [school:orientation](https://wiki.openstreetmap.org/wiki/Key:school:orientation) | Multiple choice | [care_institution](https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dcare_institution) [sheltered_workshop](https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dsheltered_workshop) [vocational](https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dvocational) [professional](https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dprofessional) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/school:gender#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/school%3Agender/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [school:gender](https://wiki.openstreetmap.org/wiki/Key:school:gender) | Multiple choice | [mixed](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed) [separated](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated) [male](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale) [female](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/pedagogy#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/pedagogy/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [pedagogy](https://wiki.openstreetmap.org/wiki/Key:pedagogy) | [string](../SpecialInputElements.md#string) | [mainstream](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dmainstream) [montessori](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dmontessori) [freinet](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dfreinet) [jenaplan](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Djenaplan) [waldorf](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dwaldorf) [dalton](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Ddalton) [outdoor](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Doutdoor) [reggio_emilia](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dreggio_emilia) [sudbury](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dsudbury) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/school:for#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/school%3Afor/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [school:for](https://wiki.openstreetmap.org/wiki/Key:school:for) | [string](../SpecialInputElements.md#string) | [mainstream](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dmainstream) [learning_disabilities](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dlearning_disabilities) [blind](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dblind) [deaf](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddeaf) [disabilities](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddisabilities) [special_needs](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dspecial_needs) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
@@ -110,6 +124,56 @@ The question is `What is the website of {title()}?`
 This tagrendering has labels 
 `contact`
 
+### address_joined
+
+_This tagrendering has no question and is thus read-only_
+*{group(header,street;housenumber;unit)}*
+
+This tagrendering has labels 
+`address`
+
+### header
+
+_This tagrendering has no question and is thus read-only_
+*{addr:street} <b>{addr:housenumber}</b> {addr:unit}*
+
+ -  *No address is known* is shown if with addr:street= & addr:unit= & addr:housenumber=
+
+This tagrendering has labels 
+`address`
+`hidden`
+
+### housenumber
+
+The question is `What is the number of this house?`
+*The house number is <b>{addr:housenumber}</b>* is shown if `addr:housenumber` is set
+
+ -  *This building has no house number* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nohousenumber' target='_blank'>nohousenumber</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousenumber%3Dyes' target='_blank'>yes</a>
+
+This tagrendering has labels 
+`address`
+`hidden`
+
+### street
+
+The question is `What street is this address located in?`
+*This address is in street <b>{addr:street}</b>* is shown if `addr:street` is set
+
+This tagrendering has labels 
+`address`
+`hidden`
+
+### unit
+
+The question is `What is the unit number or letter?`
+*The unit number is <b>{addr:unit}</b>* is shown if `addr:unit` is set
+
+ -  *No unit number* is shown if with addr:unit=
+
+This tagrendering has labels 
+`address`
+`hidden`
+
 ### capacity
 
 The question is `How much students can at most enroll in this school?`
@@ -129,6 +193,17 @@ The question is `What level of education is given on this school?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a>
 
+### is_special_needs
+
+The question is `Does this school target students with a special need?`
+
+ -  *This school is only for special need students; a certificate is needed to enroll* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:special_needs' target='_blank'>school:special_needs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Donly' target='_blank'>only</a>
+ -  *This school has a separate section for special need students.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:special_needs' target='_blank'>school:special_needs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dseparated' target='_blank'>separated</a>
+ -  *Students with special needs and non-special need students have classes together.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:special_needs' target='_blank'>school:special_needs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dmixed' target='_blank'>mixed</a>
+ -  *This school offers limited, ad hoc support but has no significant expertise and is not considered a special needs school.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:special_needs' target='_blank'>school:special_needs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dlimited' target='_blank'>limited</a>
+ -  *This school has no support for special need students.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:special_needs' target='_blank'>school:special_needs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dno' target='_blank'>no</a>
+ -  *This school is for special need students.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:special_needs' target='_blank'>school:special_needs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
+
 ### orientation_belgium
 
 The question is `What does this school train pupils for?`
@@ -137,7 +212,18 @@ The question is `What does this school train pupils for?`
  -  *Prepares for a professional study at a college* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:orientation' target='_blank'>school:orientation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dprofessional' target='_blank'>professional</a>
  -  *Prepares for a job* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:orientation' target='_blank'>school:orientation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dvocational' target='_blank'>vocational</a>
 
-This tagrendering is only visible in the popup if the following condition is met: school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$
+This tagrendering is only visible in the popup if the following condition is met: (school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$) & (<a href='https://wiki.openstreetmap.org/wiki/Key:school:special_needs' target='_blank'>school:special_needs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dno' target='_blank'>no</a> | school:special_needs= | <a href='https://wiki.openstreetmap.org/wiki/Key:school:special_needs' target='_blank'>school:special_needs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dlimited' target='_blank'>limited</a>)
+
+### orientation_belgium_special_needs
+
+The question is `What does this school train pupils for?`
+
+ -  *<b>Training type 1</b>: trains elementary life skills to live in an institution. There is no intention to do a (paid) job after training* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:orientation' target='_blank'>school:orientation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dcare_institution' target='_blank'>care_institution</a>
+ -  *<b>Training type 2</b>: prepares to work in an environment with extra care and facilities such as a sheltered workshop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:orientation' target='_blank'>school:orientation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dsheltered_workshop' target='_blank'>sheltered_workshop</a>
+ -  *<b>Training type 3</b>: prepares for a job and a (more-or-less) independent life in society* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:orientation' target='_blank'>school:orientation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dvocational' target='_blank'>vocational</a>
+ -  *<b>Training type 4</b>: prepares for a job or continued education* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:orientation' target='_blank'>school:orientation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:orientation%3Dprofessional' target='_blank'>professional</a>
+
+This tagrendering is only visible in the popup if the following condition is met: (school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$) & (<a href='https://wiki.openstreetmap.org/wiki/Key:school:special_needs' target='_blank'>school:special_needs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:school:special_needs' target='_blank'>school:special_needs</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:special_needs%3Donly' target='_blank'>only</a>)
 
 ### gender
 
@@ -163,22 +249,33 @@ The question is `What educational theory is applied on this school?`
  -  *This school uses the Reggio Emilia approach* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:pedagogy' target='_blank'>pedagogy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dreggio_emilia' target='_blank'>reggio_emilia</a>
  -  *This school uses the Sudbury system* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:pedagogy' target='_blank'>pedagogy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dsudbury' target='_blank'>sudbury</a>
 
-### target-audience
+### special_needs_categories_be
 
-The question is `Does this school target students with a special need? Which structural facilities does this school have?`
-*This school has facilities for students with {school:for}* is shown if `school:for` is set
+The question is `What type of special needs are given here?`
 
- -  *This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dmainstream' target='_blank'>mainstream</a>
- -  *This is a school for students with learning disabilities* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dlearning_disabilities' target='_blank'>learning_disabilities</a>
- -  *This is a school for blind students or students with sight impairments* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dblind' target='_blank'>blind</a>
- -  *This is a school for deaf students or students with hearing impairments* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddeaf' target='_blank'>deaf</a>
- -  *This is a school for students with disabilities* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddisabilities' target='_blank'>disabilities</a>
- -  *This is a school for students with special needs* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dspecial_needs' target='_blank'>special_needs</a>
+ -  *For students with an intellectual disability (type 2)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:intellectual_disability' target='_blank'>special_needs:intellectual_disability</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:intellectual_disability%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:intellectual_disability' target='_blank'>special_needs:intellectual_disability</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:intellectual_disability%3Dno' target='_blank'>no</a>
+ -  *For students with an emotional and behavioural problem (type 3)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:emotional_behavioural_disorder' target='_blank'>special_needs:emotional_behavioural_disorder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:emotional_behavioural_disorder%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:emotional_behavioural_disorder' target='_blank'>special_needs:emotional_behavioural_disorder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:emotional_behavioural_disorder%3Dno' target='_blank'>no</a>
+ -  *For students with an physical disability (type 4)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:physical_disability' target='_blank'>special_needs:physical_disability</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:physical_disability%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:physical_disability' target='_blank'>special_needs:physical_disability</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:physical_disability%3Dno' target='_blank'>no</a>
+ -  *For blind and visually impaired students (type 6)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:blind' target='_blank'>special_needs:blind</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:blind%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:blind' target='_blank'>special_needs:blind</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:blind%3Dno' target='_blank'>no</a>
+ -  *For deaf students and students with hearing loss (type 7)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:deaf' target='_blank'>special_needs:deaf</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:deaf%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:deaf' target='_blank'>special_needs:deaf</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:deaf%3Dno' target='_blank'>no</a>
+ -  *For students with a Developemental Language Disorder (type 7 - DLD)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:language_disorder' target='_blank'>special_needs:language_disorder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:language_disorder%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:language_disorder' target='_blank'>special_needs:language_disorder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:language_disorder%3Dno' target='_blank'>no</a>
+ -  *For students with an autism spectrum disorder (type 9)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:autism' target='_blank'>special_needs:autism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:autism%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:autism' target='_blank'>special_needs:autism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:autism%3Dno' target='_blank'>no</a>
+ -  *For students with a learning disability (basic offering )* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:learning_disabilities' target='_blank'>special_needs:learning_disabilities</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:learning_disabilities%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:special_needs:learning_disabilities' target='_blank'>special_needs:learning_disabilities</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:special_needs:learning_disabilities%3Dno' target='_blank'>no</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a> & school:special_needs!~^(no)$ & school:special_needs~.+
 
 ### school-language
 
 _This tagrendering has no question and is thus read-only_
 *{language_chooser(language,What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>,,&LBRACElanguage&LPARENS&RPARENS&RBRACE is the main language of this school,The following languages are used in this school:&LBRACElist&LPARENS&RPARENS&RBRACE,The main language of this school is unknown)}*
+
+### wikipedia
+Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor
+The question is `What is the corresponding Wikidata entity?`
+*{wikipedia():max-height:25rem}* is shown if `wikidata` is set
+
+ -  *{wikipedia():max-height:25rem}* is shown if with wikipedia~.+. _This option cannot be chosen as answer_
+ -  *No Wikipedia page has been linked yet* is shown if with wikidata=. _This option cannot be chosen as answer_
 
 ### leftover-questions
 
@@ -224,6 +321,19 @@ This tagrendering has labels
 | level.6 | Has third grade | school~^((.+;)?upper_secondary(;.+)?)$ | school~^((.+;)?secondary(;.+)?)$ |
 | level.7 | This school offers post-secondary education (e.g. a seventh or eight specialisation year) | school~^(.+;)?post_secondary(;.+)$ |
 | level.8 | Unknown school level | school= & amenity!=kindergarten |
+
+| id | question | osmTags |
+-----|-----|----- |
+| has_special_needs.0 | *Does this school have special need education?* (default) |  |
+| has_special_needs.1 | Has special education | school:special_needs~.+ & school:special_needs!=no |
+| has_special_needs.2 | No or limited special need education | school:special_needs= | school:special_needs=no | school:special_needs=limited |
+
+| id | question | osmTags |
+-----|-----|----- |
+| orientation_belgium.0 | *What does this school train pupils for?* (default) |  |
+| orientation_belgium.1 | Prepares for an academic study at university | school:orientation~^(^(.+;)?academic(;.+)?$)$ |
+| orientation_belgium.2 | Prepares for a professional study at a college | school:orientation~^(^(.+;)?professional(;.+)?$)$ |
+| orientation_belgium.3 | Prepares for a job | school:orientation~^(^(.+;)?vocational(;.+)?$)$ |
 
 
 

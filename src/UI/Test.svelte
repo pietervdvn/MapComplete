@@ -21,9 +21,12 @@
 </script>
 
 <button on:click={() => st.requestPermission()}>Get geolocation</button>
-Permission: <code>{$permission}</code>
-Available: <code>{$av}</code>
-Location: <code>{JSON.stringify($loc)}</code>
+Permission:
+<code>{$permission}</code>
+Available:
+<code>{$av}</code>
+Location:
+<code>{JSON.stringify($loc)}</code>
 <ol>
   {#each logs as log}
     <li>{log}</li>

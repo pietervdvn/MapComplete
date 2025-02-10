@@ -14,9 +14,8 @@ import SendEmail from "../Popup/SendEmail.svelte"
 import DynLink from "../Base/DynLink.svelte"
 
 export class WebAndCommunicationSpecialVisualisations {
-    public static initList(): (SpecialVisualization & { group }) [] {
+    public static initList(): (SpecialVisualization & { group })[] {
         return [
-
             {
                 funcName: "fediverse_link",
                 group: "web_and_communication",
@@ -25,8 +24,8 @@ export class WebAndCommunicationSpecialVisualisations {
                     {
                         name: "key",
                         doc: "The attribute-name containing the link",
-                        required: true
-                    }
+                        required: true,
+                    },
                 ],
 
                 constr(
@@ -36,7 +35,7 @@ export class WebAndCommunicationSpecialVisualisations {
                 ): BaseUIElement {
                     const key = argument[0]
                     return new SvelteUIElement(FediverseLink, { key, tags, state })
-                }
+                },
             },
             {
                 funcName: "wikipedia",
@@ -46,8 +45,8 @@ export class WebAndCommunicationSpecialVisualisations {
                     {
                         name: "keyToShowWikipediaFor",
                         doc: "Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used",
-                        defaultValue: "wikidata;wikipedia"
-                    }
+                        defaultValue: "wikidata;wikipedia",
+                    },
                 ],
                 needsUrls: [...Wikidata.neededUrls, ...Wikipedia.neededUrls],
 
@@ -60,9 +59,9 @@ export class WebAndCommunicationSpecialVisualisations {
                         return tags[key]?.split(";")?.map((id) => id.trim()) ?? []
                     })
                     return new SvelteUIElement(WikipediaPanel, {
-                        wikiIds
+                        wikiIds,
                     })
-                }
+                },
             },
             {
                 funcName: "wikidata_label",
@@ -73,8 +72,8 @@ export class WebAndCommunicationSpecialVisualisations {
                     {
                         name: "keyToShowWikidataFor",
                         doc: "Use the wikidata entry from this key to show the label",
-                        defaultValue: "wikidata"
-                    }
+                        defaultValue: "wikidata",
+                    },
                 ],
                 needsUrls: Wikidata.neededUrls,
                 example:
@@ -98,7 +97,7 @@ export class WebAndCommunicationSpecialVisualisations {
                                     })
                                 )
                             })
-                    )
+                    ),
             },
             new MapillaryLinkVis(),
             {
@@ -109,29 +108,29 @@ export class WebAndCommunicationSpecialVisualisations {
                     {
                         name: "to",
                         doc: "Who to send the email to?",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "subject",
                         doc: "The subject of the email",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "body",
                         doc: "The text in the email",
-                        required: true
+                        required: true,
                     },
 
                     {
                         name: "button_text",
                         doc: "The text shown on the button in the UI",
-                        required: true
-                    }
+                        required: true,
+                    },
                 ],
 
                 constr(__, tags, args) {
                     return new SvelteUIElement(SendEmail, { args, tags })
-                }
+                },
             },
             {
                 funcName: "link",
@@ -141,29 +140,29 @@ export class WebAndCommunicationSpecialVisualisations {
                     {
                         name: "text",
                         doc: "Text to be shown",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "href",
                         doc: "The URL to link to. Note that this will be URI-encoded before ",
-                        required: true
+                        required: true,
                     },
                     {
                         name: "class",
-                        doc: "CSS-classes to add to the element"
+                        doc: "CSS-classes to add to the element",
                     },
                     {
                         name: "download",
-                        doc: "Expects a string which denotes the filename to download the contents of `href` into. If set, this link will act as a download-button."
+                        doc: "Expects a string which denotes the filename to download the contents of `href` into. If set, this link will act as a download-button.",
                     },
                     {
                         name: "arialabel",
-                        doc: "If set, this text will be used as aria-label"
+                        doc: "If set, this text will be used as aria-label",
                     },
                     {
                         name: "icon",
-                        doc: "If set, show this icon next to the link. You might want to combine this with `class: button`"
-                    }
+                        doc: "If set, show this icon next to the link. You might want to combine this with `class: button`",
+                    },
                 ],
 
                 constr(
@@ -185,10 +184,10 @@ export class WebAndCommunicationSpecialVisualisations {
                         download: tagSource.map((tags) => Utils.SubstituteKeys(download, tags)),
                         ariaLabel: tagSource.map((tags) => Utils.SubstituteKeys(ariaLabel, tags)),
                         newTab: new ImmutableStore(newTab),
-                        icon: tagSource.map((tags) => Utils.SubstituteKeys(icon, tags))
+                        icon: tagSource.map((tags) => Utils.SubstituteKeys(icon, tags)),
                     }).setSpan()
-                }
-            }
+                },
+            },
         ]
     }
 }

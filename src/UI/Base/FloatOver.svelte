@@ -13,7 +13,7 @@
 
 <!-- Draw the background over the total screen -->
 <div
-  class="absolute top-0 left-0 h-screen w-screen"
+  class="absolute left-0 top-0 h-screen w-screen"
   on:click={() => {
     console.log("OnClose")
     dispatch("close")
@@ -38,8 +38,8 @@
     </div>
     <slot name="close-button">
       <!-- The close button is placed _after_ the default slot in order to always paint it on top -->
-      <div class="absolute top-0 right-0">
-        <CloseButton class="normal-background mt-2 mr-2" on:click={() => dispatch("close")} />
+      <div class="absolute right-0 top-0">
+        <CloseButton class="normal-background mr-2 mt-2" on:click={() => dispatch("close")} />
       </div>
     </slot>
   </div>

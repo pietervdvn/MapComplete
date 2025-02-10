@@ -15,7 +15,6 @@ This theme contains the following layers:
  - [address](../Layers/address.md)
  - [crab_address](../Layers/crab_address.md)
  - [current_view](../Layers/current_view.md)
- - [named_streets](../Layers/named_streets.md)
 
 Available languages:
 

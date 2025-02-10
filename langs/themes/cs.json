@@ -785,6 +785,13 @@
                             }
                         }
                     },
+                    "11": {
+                        "options": {
+                            "0": {
+                                "question": "Vyloučit etymologii tématu"
+                            }
+                        }
+                    },
                     "2": {
                         "options": {
                             "0": {

@@ -13,9 +13,11 @@ const tokenSrc = new UIEventSource("")
 const debug = new UIEventSource<string[]>([])
 
 new Combine([
-    new VariableUiElement(debug.map(debug => "<ul><li>"+debug.join("</li><li>")+"</li></ul>")),
-    new VariableUiElement(tokenSrc)]).AttachTo("token")
-
+    new VariableUiElement(
+        debug.map((debug) => "<ul><li>" + debug.join("</li><li>") + "</li></ul>")
+    ),
+    new VariableUiElement(tokenSrc),
+]).AttachTo("token")
 
 const connection = new OsmConnection()
 connection.finishLogin(async () => {
@@ -24,16 +26,16 @@ connection.finishLogin(async () => {
     do {
         await Utils.waitFor(500)
         token = connection.getToken()
-        tokenSrc.set("Trying to get token ("+attempt+")")
+        tokenSrc.set("Trying to get token (" + attempt + ")")
         attempt++
 
         const dbg = []
-        Object.keys(localStorage).forEach(key => {
-            dbg.push(`${key} - ${localStorage.getItem(key)}`);
+        Object.keys(localStorage).forEach((key) => {
+            dbg.push(`${key} - ${localStorage.getItem(key)}`)
         })
         debug.set(dbg)
 
-        if(attempt > 10){
+        if (attempt > 10) {
             window.location.reload()
         }
     } while (!token)

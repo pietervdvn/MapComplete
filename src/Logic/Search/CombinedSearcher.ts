@@ -1,4 +1,8 @@
-import GeocodingProvider, { GeocodeResult, GeocodingOptions, SearchResult } from "./GeocodingProvider"
+import GeocodingProvider, {
+    GeocodeResult,
+    GeocodingOptions,
+    SearchResult,
+} from "./GeocodingProvider"
 import { Utils } from "../../Utils"
 import { Store, Stores } from "../UIEventSource"
 

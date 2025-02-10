@@ -115,7 +115,6 @@ export interface SpecialVisualization {
     ): BaseUIElement
 }
 
-
 export interface SpecialVisualizationSvelte {
     readonly funcName: string
     readonly docs: string

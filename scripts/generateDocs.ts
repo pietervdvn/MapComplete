@@ -138,7 +138,7 @@ export class GenerateDocs extends Script {
         ScriptUtils.fixUtils()
 
         this.WriteMarkdownFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), [
-            "src/UI/SpecialVisualizations.ts"
+            "src/UI/SpecialVisualizations.ts",
         ])
 
         if (!existsSync("./Docs/Themes")) {
@@ -170,7 +170,6 @@ export class GenerateDocs extends Script {
             this.generateForTheme(theme)
             ScriptUtils.erasableLog("Written docs for theme", theme.id)
         })
-
 
         this.WriteMarkdownFile(
             "./Docs/CalculatedTags.md",

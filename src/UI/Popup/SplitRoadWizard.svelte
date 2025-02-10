@@ -59,7 +59,7 @@
       id.data,
       splitPoints.data.map((ff) => <[number, number]>(<Point>ff.geometry).coordinates),
       {
-        theme: state?.theme?.id
+        theme: state?.theme?.id,
       },
       snapTolerance
     )
@@ -72,6 +72,7 @@
     step = "has_been_split"
   }
 </script>
+
 {#if $id.startsWith("way/")}
   <LoginToggle ignoreLoading={true} {state}>
     <Tr slot="not-logged-in" t={t.loginToSplit} />
@@ -100,9 +101,9 @@
           <BackButton
             clss="w-full"
             on:click={() => {
-            splitPoints.set([])
-            step = "initial"
-          }}
+              splitPoints.set([])
+              step = "initial"
+            }}
           >
             <Tr t={Translations.t.general.cancel} />
           </BackButton>

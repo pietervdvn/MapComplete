@@ -58,6 +58,114 @@
     {
       "key": "contact:mastodon",
       "description": "Layer 'Scouting groups' shows and asks freeform values for key 'contact:mastodon' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme Scouting groups has a layer Group Campsites showing features with this tag",
+      "value": "camp_site"
+    },
+    {
+      "key": "scout",
+      "description": "The MapComplete theme Scouting groups has a layer Group Campsites showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "group_only",
+      "description": "The MapComplete theme Scouting groups has a layer Group Campsites showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Group Campsites' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Scouting groups') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "group_only",
+      "description": "Layer 'Group Campsites' shows group_only=yes with a fixed text, namely 'This campsite is exclusively for groups' and allows to pick this as a default answer (in the mapcomplete.org theme 'Scouting groups')",
+      "value": "yes"
+    },
+    {
+      "key": "group_only",
+      "description": "Layer 'Group Campsites' shows group_only=no with a fixed text, namely 'This campsite is not exclusively for groups' and allows to pick this as a default answer (in the mapcomplete.org theme 'Scouting groups')",
+      "value": "no"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Group Campsites' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Group Campsites' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Group Campsites' shows fee=no with a fixed text, namely 'The campsite is free of charge' and allows to pick this as a default answer (in the mapcomplete.org theme 'Scouting groups')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Group Campsites' shows fee=yes & charge= with a fixed text, namely 'A fee is charged here.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Scouting groups')",
+      "value": "yes"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Group Campsites' shows fee=yes & charge= with a fixed text, namely 'A fee is charged here.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Scouting groups') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "capacity:persons",
+      "description": "Layer 'Group Campsites' shows and asks freeform values for key 'capacity:persons' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Group Campsites' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Group Campsites' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Group Campsites' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Group Campsites' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Group Campsites' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Group Campsites' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Group Campsites' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "contact:mastodon",
+      "description": "Layer 'Group Campsites' shows and asks freeform values for key 'contact:mastodon' (in the mapcomplete.org theme 'Scouting groups')"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Group Campsites allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Group Campsites allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Group Campsites allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Group Campsites allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Group Campsites allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     }
   ]
 }

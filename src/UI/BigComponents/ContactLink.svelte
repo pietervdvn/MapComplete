@@ -26,10 +26,7 @@
   {/if}
   {#each resources as resource}
     <div class="link-underline my-4 flex items-center">
-      <img
-        class="m-2 h-8 w-8"
-        src={`${Constants.communityIndexHost}${resource.type}.svg`}
-      />
+      <img class="m-2 h-8 w-8" src={`${Constants.communityIndexHost}${resource.type}.svg`} />
       <div class="flex flex-col">
         <a
           href={resource.resolved?.url}

@@ -176,9 +176,9 @@
 </script>
 
 <main>
-  <div class="absolute top-0 left-0 h-screen w-screen" style="background-color: #f0efdd"></div>
+  <div class="absolute left-0 top-0 h-screen w-screen" style="background-color: #f0efdd" />
   <!-- Main map -->
-  <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
+  <div class="absolute left-0 top-0 h-screen w-screen overflow-hidden">
     <MaplibreMap map={maplibremap} mapProperties={mapproperties} autorecovery={true} />
   </div>
 
@@ -186,7 +186,7 @@
     {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
       <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
       <div
-        class="pointer-events-none absolute top-0 left-0 flex w-full items-center justify-center"
+        class="pointer-events-none absolute left-0 top-0 flex w-full items-center justify-center"
         style="height: 100vh"
       >
         <Cross class="h-4 w-4" />
@@ -198,7 +198,7 @@
 
   {#if $visualFeedback}
     <div
-      class="pointer-events-none absolute top-0 left-0 flex h-screen w-screen items-center justify-center overflow-hidden"
+      class="pointer-events-none absolute left-0 top-0 flex h-screen w-screen items-center justify-center overflow-hidden"
     >
       <div
         bind:this={$viewport}
@@ -302,7 +302,7 @@
               <!-- h-8 w-8 + p-0.5 sm:p-1 + 2px border => 9 sm: 10 in total-->
             </MapControlButton>
             {#if $compassLoaded}
-              <div class="absolute top-0 left-0 m-0.5 h-0 w-0 sm:m-1">
+              <div class="absolute left-0 top-0 m-0.5 h-0 w-0 sm:m-1">
                 <Compass_arrow
                   class="compass_arrow"
                   style={`rotate: calc(${-$compass}deg + 45deg); transform-origin: 50% 50%;`}
@@ -325,7 +325,7 @@
   </DrawerRight>
 
   <!-- Top components -->
-  <div class="z-4 pointer-events-none absolute top-0 left-0 w-full">
+  <div class="z-4 pointer-events-none absolute left-0 top-0 w-full">
     <div
       id="top-bar"
       class="bg-black-light-transparent pointer-events-auto flex flex-wrap items-center justify-between px-4 py-1"
