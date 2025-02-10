@@ -81,7 +81,7 @@ export default class FilteredLayer {
     public static initLinkedState(
         layer: LayerConfig,
         context: string,
-        osmConnection: OsmConnection,
+        osmConnection?: OsmConnection,
         enabledByDefault?: Store<boolean>
     ) {
         let isDisplayed: UIEventSource<boolean>
@@ -90,13 +90,13 @@ export default class FilteredLayer {
                 context + "-layer-" + layer.id + "-enabled",
                 layer.shownByDefault
             )
-        } else if (layer.syncSelection === "theme-only") {
+        } else if (layer.syncSelection === "theme-only" && osmConnection) {
             isDisplayed = FilteredLayer.getPref(
                 osmConnection,
                 context + "-layer-" + layer.id + "-enabled",
                 layer
             )
-        } else if (layer.syncSelection === "global") {
+        } else if (layer.syncSelection === "global" && osmConnection) {
             isDisplayed = FilteredLayer.getPref(
                 osmConnection,
                 "layer-" + layer.id + "-enabled",

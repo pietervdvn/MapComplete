@@ -23,7 +23,7 @@
 
   let downloaded = 0
   const layer = new ThemeConfig(<ThemeConfigJson>mcChanges, true).layers[0]
-  const filteredLayer = new FilteredLayer(layer)
+  const filteredLayer = FilteredLayer.initLinkedState(layer, "mapcomplete_changes")
 
   const downloadData: () => Promise<(ChangeSetData & OsmFeature)[]> = async () => {
     const results = []
