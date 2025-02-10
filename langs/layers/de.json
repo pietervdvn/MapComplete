@@ -2212,25 +2212,25 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Personen"
+                        "question": "Alle Kapazitäten"
                     },
                     "1": {
-                        "question": "1-20"
+                        "question": "Kapazität zwischen 1 und 20 Personen"
                     },
                     "2": {
-                        "question": "21-50"
+                        "question": "Kapazität zwischen 21 und 50 Personen"
                     },
                     "3": {
-                        "question": "51-100"
+                        "question": "Kapazität zwischen 51 und 100 Personen"
                     },
                     "4": {
-                        "question": "101-200"
+                        "question": "Kapazität zwischen 101 und 200 Personen"
                     },
                     "5": {
-                        "question": "201-500"
+                        "question": "Kapazität zwischen 201 und 500 Personen"
                     },
                     "6": {
-                        "question": "500+"
+                        "question": "Kapazität über 500 Personen"
                     },
                     "7": {
                         "question": "?"
@@ -9732,6 +9732,23 @@
                     }
                 },
                 "question": "Was lernt man an dieser Schule?"
+            },
+            "orientation_belgium_special_needs": {
+                "mappings": {
+                    "2": {
+                        "then": "<b>Ausbildungstyp 3</b>: bereitet auf einen Arbeitsplatz und ein (mehr oder weniger) unabhängiges Leben in der Gesellschaft vor"
+                    },
+                    "0": {
+                        "then": "<b>Ausbildungstyp 1</b>: vermittelt elementare Lebenskompetenzen für das Leben in einer Einrichtung. Es besteht nicht die Absicht, nach der Ausbildung eine (bezahlte) Arbeit aufzunehmen."
+                    },
+                    "1": {
+                        "then": "<b>Ausbildungstyp 2</b>: bereitet auf die Arbeit in einem Umfeld mit zusätzlicher Betreuung und Einrichtungen wie z.B. einer Behindertenwerkstatt vor"
+                    },
+                    "3": {
+                        "then": "<b>Ausbildungstyp 4</b>: bereitet auf einen Arbeitsplatz oder eine weiterführende Ausbildung vor"
+                    }
+                },
+                "question": "Wozu bildet diese Schule Schüler aus?"
             }
         },
         "title": {
