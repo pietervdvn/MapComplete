@@ -160,11 +160,20 @@
           <ReviewsOverview {state} />
         </div>
       </Page>
+      <div class="hidden-on-mobile w-full">
+        <Page {onlyLink} shown={pg.hotkeys}>
+          <svelte:fragment slot="header">
+            <BoltIcon />
+            <Tr t={Translations.t.hotkeyDocumentation.title} />
+          </svelte:fragment>
+          <HotkeyTable />
+        </Page>
+      </div>
+
       <div class="self-end">
         <LogoutButton osmConnection={state.osmConnection} />
       </div>
     </LoginToggle>
-
     <LanguagePicker />
   </SidebarUnit>
 
@@ -261,6 +270,15 @@
       <ShareIcon />
       <Tr t={t.openHereDifferentApp} />
     </a>
+
+    <a
+      class="flex"
+      href={window.location.protocol + "//" + window.location.host + "/inspector.html"}
+    >
+      <MagnifyingGlassCircle class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.inspector.menu} />
+    </a>
+
   </SidebarUnit>
 
   <!-- About MC: various outward links, legal info, ... -->
@@ -274,45 +292,12 @@
       <Tr t={Translations.t.general.morescreen.createYourOwnTheme} />
     </a>
 
-    <div class="hidden-on-mobile w-full">
-      <Page {onlyLink} shown={pg.hotkeys}>
-        <svelte:fragment slot="header">
-          <BoltIcon />
-          <Tr t={Translations.t.hotkeyDocumentation.title} />
-        </svelte:fragment>
-        <HotkeyTable />
-      </Page>
-    </div>
 
-    <a
-      class="flex"
-      href={window.location.protocol + "//" + window.location.host + "/inspector.html"}
-    >
-      <MagnifyingGlassCircle class="mr-2 h-6 w-6" />
-      <Tr t={Translations.t.inspector.menu} />
-    </a>
 
-    <a class="flex" href="https://source.mapcomplete.org/MapComplete/MapComplete/" target="_blank">
-      <Forgejo class="h-6 w-6" />
-      <Tr t={Translations.t.general.attribution.gotoSourceCode} />
-    </a>
-
-    <a
-      class="flex"
-      href="https://source.mapcomplete.org/MapComplete/MapComplete/issues"
-      target="_blank"
-    >
-      <Bug class="h-6 w-6" />
-      <Tr t={Translations.t.general.attribution.openIssueTracker} />
-    </a>
 
     <a class="flex" href="mailto:info@mapcomplete.org">
       <EnvelopeOpen class="h-6 w-6" />
       <Tr t={Translations.t.general.attribution.emailCreators} />
-    </a>
-    <a class="flex" href={`${Constants.weblate}projects/mapcomplete/`} target="_blank">
-      <TranslateIcon class="h-6 w-6" />
-      <Tr t={Translations.t.translations.activateButton} />
     </a>
 
     <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
@@ -325,6 +310,30 @@
       <Tr t={Translations.t.general.attribution.donate} />
     </a>
 
+
+    <a
+      class="flex"
+      href="https://source.mapcomplete.org/MapComplete/MapComplete/issues"
+      target="_blank"
+    >
+      <Bug class="h-6 w-6" />
+      <Tr t={Translations.t.general.attribution.openIssueTracker} />
+    </a>
+
+    <a class="flex" href="https://source.mapcomplete.org/MapComplete/MapComplete/" target="_blank">
+      <Forgejo class="h-6 w-6" />
+      <Tr t={Translations.t.general.attribution.gotoSourceCode} />
+    </a>
+    <a class="flex" href={`${Constants.weblate}projects/mapcomplete/`} target="_blank">
+      <TranslateIcon class="h-6 w-6" />
+      <Tr t={Translations.t.translations.activateButton} />
+    </a>
+
+  </SidebarUnit>
+  <SidebarUnit>
+    <h3>
+      <Tr t={Translations.t.general.menu.legal} />
+    </h3>
     <Page {onlyLink} shown={pg.copyright}>
       <svelte:fragment slot="header">
         <Copyright />
@@ -332,7 +341,6 @@
       </svelte:fragment>
       <CopyrightPanel {state} />
     </Page>
-
     <Page {onlyLink} shown={pg.copyright_icons}>
       <svelte:fragment slot="header">
         <Copyright />
@@ -349,11 +357,12 @@
       <PrivacyPolicy {state} />
     </Page>
 
-    <div class="subtle self-end">
-      {Constants.vNumber}
-      {#if $isAndroid}
-        Android
-      {/if}
-    </div>
   </SidebarUnit>
+
+  <div class="subtle self-end">
+    {Constants.vNumber}
+    {#if $isAndroid}
+      Android
+    {/if}
+  </div>
 </div>
