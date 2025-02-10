@@ -790,7 +790,7 @@
           ]
         },
         {
-          "id": "platform",
+          "id": "added-image",
           "options": [
             {
               "question": {
@@ -800,6 +800,49 @@
                 "es": "El conjunto de cambios agregó al menos una imagen",
                 "ko": "주요 변경사항에 최소 하나의 이미지가 추가 되었습니다",
                 "nl": "Changeset voegde minstens één afbeelding toe"
+              },
+              "osmTags": "add-image>0"
+            }
+          ]
+        },
+        {
+          "id": "exclude_grb",
+          "options": [
+            {
+              "osmTags": "theme!=grb",
+              "question": {
+                "en": "Exclude GRB theme",
+                "de": "GRB-Thema ausschließen",
+                "cs": "Vyloučit motiv GRB",
+                "es": "Excluir el tema GRB",
+                "nl": "GRB-thema uitsluiten",
+                "ko": "GRB 테마 제외"
+              }
+            }
+          ]
+        },
+        {
+          "id": "exclude_etymology",
+          "options": [
+            {
+              "osmTags": "theme!=etymology",
+              "question": {
+                "en": "Exclude etymology theme",
+                "de": "Etymologie-Thema ausschließen",
+                "cs": "Vyloučit etymologii tématu",
+                "es": "Excluir el tema de etimología",
+                "nl": "Thema etymologie uitsluiten",
+                "ko": "어원 테마 제외"
+              }
+            }
+          ]
+        },
+        {
+          "id": "platform",
+          "options": [
+            {
+              "question": {
+                "en": "All platforms"
               }
             },
             {
@@ -813,54 +856,6 @@
                 "en": "Made on the web"
               },
               "osmTags": "android="
-            }
-          ]
-        },
-        {
-          "id": "added-image",
-          "options": [
-            {
-              "osmTags": "add-image>0",
-              "question": {
-                "en": "Exclude GRB theme",
-                "de": "GRB-Thema ausschließen",
-                "cs": "Vyloučit motiv GRB",
-                "es": "Excluir el tema GRB",
-                "nl": "GRB-thema uitsluiten",
-                "ko": "GRB 테마 제외"
-              }
-            }
-          ]
-        },
-        {
-          "id": "exclude_grb",
-          "options": [
-            {
-              "osmTags": "theme!=grb",
-              "question": {
-                "en": "Exclude etymology theme",
-                "de": "Etymologie-Thema ausschließen",
-                "cs": "Vyloučit etymologii tématu",
-                "es": "Excluir el tema de etimología",
-                "nl": "Thema etymologie uitsluiten",
-                "ko": "어원 테마 제외"
-              }
-            }
-          ]
-        },
-        {
-          "id": "exclude_etymology",
-          "options": [
-            {
-              "osmTags": "theme!=etymology",
-              "question": {
-                "en": "Exclude etymology theme",
-                "de": "Etymologie-Thema ausschließen",
-                "es": "Excluir el tema de etimología",
-                "cs": "Vyloučit etymologii tématu",
-                "nl": "Thema etymologie uitsluiten",
-                "ko": "어원 테마 제외"
-              }
             }
           ]
         }
