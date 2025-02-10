@@ -69,7 +69,7 @@ The question is `Is the firepit available all around the year?`
 
  -  *Available all around the year* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seasonal' target='_blank'>seasonal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dno' target='_blank'>no</a>
  -  *Only available in summer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seasonal' target='_blank'>seasonal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dsummer' target='_blank'>summer</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/drinking_water/no_winter.svg' style='width: 3rem; height: 3rem'> *Closed during the winter* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seasonal' target='_blank'>seasonal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dspring;summer;autumn' target='_blank'>spring;summer;autumn</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/drinking_water/no_winter.svg'> *Closed during the winter* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seasonal' target='_blank'>seasonal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dspring;summer;autumn' target='_blank'>spring;summer;autumn</a>
 
 ### leftover-questions
 

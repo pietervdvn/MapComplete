@@ -78,16 +78,16 @@ _This tagrendering has no question and is thus read-only_
 The question is `Can this camera automatically detect license plates?`
 
  -  *This is a camera without number plate recognition.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera' target='_blank'>camera</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/surveillance_camera/ALPR.svg' style='width: 3rem; height: 3rem'> *This is an ALPR (Automatic License Plate Reader)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR' target='_blank'>ALPR</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/surveillance_camera/ALPR.svg'> *This is an ALPR (Automatic License Plate Reader)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR' target='_blank'>ALPR</a>
 
 ### Camera type: fixed; panning; dome
 
 The question is `What kind of camera is this?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/surveillance/cam_right.svg' style='width: 3rem; height: 3rem'> *A fixed (non-moving) camera* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dfixed' target='_blank'>fixed</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/surveillance/dome.svg' style='width: 3rem; height: 3rem'> *A dome camera (which can turn)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Ddome' target='_blank'>dome</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/themes/surveillance/cam_right.svg'> *A fixed (non-moving) camera* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dfixed' target='_blank'>fixed</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/themes/surveillance/dome.svg'> *A dome camera (which can turn)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Ddome' target='_blank'>dome</a>
  -  *A panning camera* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dpanning' target='_blank'>panning</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/surveillance_camera/doorbell.svg' style='width: 3rem; height: 3rem'> *A doorbell which might be turned on remotely at any time or by motion detection. These are typically <i>Smart</i>, internet-connected doorbells. Typical brands are Ring, Google Nest, Eufy, ...* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Ddoorbell' target='_blank'>doorbell</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/surveillance_camera/doorbell.svg'> *A doorbell which might be turned on remotely at any time or by motion detection. These are typically <i>Smart</i>, internet-connected doorbells. Typical brands are Ring, Google Nest, Eufy, ...* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Ddoorbell' target='_blank'>doorbell</a>
 
 ### camera_direction
 

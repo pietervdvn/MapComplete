@@ -90,9 +90,9 @@ The question is `Is this nature reserve accessible to the public?`
 The question is `Who operates this area?`
 *Operated by {operator}* is shown if `operator` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/nature_reserve/Natuurpunt.jpg' style='width: 3rem; height: 3rem'> *Operated by Natuurpunt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/nature_reserve/Natuurpunt.jpg' style='width: 3rem; height: 3rem'> *Operated by {operator}* is shown if with operator~^((n|N)atuurpunt.*)$. _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/nature_reserve/ANB.jpg' style='width: 3rem; height: 3rem'> *Operated by <i>Agentschap Natuur en Bos</i>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgentschap Natuur en Bos' target='_blank'>Agentschap Natuur en Bos</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/nature_reserve/Natuurpunt.jpg'> *Operated by Natuurpunt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/nature_reserve/Natuurpunt.jpg'> *Operated by {operator}* is shown if with operator~^((n|N)atuurpunt.*)$. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/nature_reserve/ANB.jpg'> *Operated by <i>Agentschap Natuur en Bos</i>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgentschap Natuur en Bos' target='_blank'>Agentschap Natuur en Bos</a>
 
 ### Name tag
 
@@ -116,7 +116,7 @@ This tagrendering is only visible in the popup if the following condition is met
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/icons/website.svg'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`

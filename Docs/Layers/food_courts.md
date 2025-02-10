@@ -86,7 +86,7 @@ The question is `Is this place accessible with a wheelchair?`
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/icons/website.svg'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -96,7 +96,7 @@ This tagrendering has labels
 The question is `What is the phone number of {title()}?`
 *{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/phone.svg'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -105,8 +105,8 @@ This tagrendering has labels
 
 The question is `Is smoking allowed at {title()}?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/smoking.svg' style='width: 3rem; height: 3rem'> *Smoking is <b>allowed</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes' target='_blank'>yes</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/no_smoking.svg' style='width: 3rem; height: 3rem'> *Smoking is <b>not allowed</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno' target='_blank'>no</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/smoking.svg'> *Smoking is <b>allowed</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/no_smoking.svg'> *Smoking is <b>not allowed</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno' target='_blank'>no</a>
  -  *Smoking is <b>allowed outside</b>.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:smoking' target='_blank'>smoking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:smoking%3Doutside' target='_blank'>outside</a>
 
 ### leftover-questions

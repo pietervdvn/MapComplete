@@ -104,7 +104,7 @@ This tagrendering is only visible in the popup if the following condition is met
 The question is `When is this bicycle repair point open?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/open24_7.svg'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
 
 ### access
@@ -114,8 +114,8 @@ The question is `Who is allowed to use this repair station?`
  -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
  -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>. _This option cannot be chosen as answer_
  -  *Only for customers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/invalid.svg' style='width: 3rem; height: 3rem'> *Not accessible to the general public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/invalid.svg' style='width: 3rem; height: 3rem'> *Not accessible to the general public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/svg/invalid.svg'> *Not accessible to the general public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/svg/invalid.svg'> *Not accessible to the general public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>. _This option cannot be chosen as answer_
 
 ### bike_repair_station-operator
 

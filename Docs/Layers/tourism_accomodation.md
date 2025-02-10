@@ -114,7 +114,7 @@ The question is `Is {title()} part of a bigger brand?`
 The question is `What is the phone number of {title()}?`
 *{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/phone.svg'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -124,8 +124,8 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/svg/envelope.svg'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/svg/envelope.svg'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -135,7 +135,7 @@ This tagrendering has labels
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/icons/website.svg'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -153,10 +153,10 @@ The question is `Is this place accessible with a wheelchair?`
 
 The question is `Does this place offer internet access?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/wifi' style='width: 3rem; height: 3rem'> *This place offers wireless internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/wifi'> *This place offers wireless internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
  -  *This place <b>does not</b> offer internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
  -  *This place offers internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/computer' style='width: 3rem; height: 3rem'> *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/computer'> *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
  -  *This place offers wired internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
  -  *This place offers both wireless internet and internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal;wifi' target='_blank'>terminal;wifi</a>
 
@@ -190,11 +190,11 @@ This tagrendering has labels
 
 The question is `Are dogs allowed in this business?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_allowed.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/no_dogs.svg' style='width: 3rem; height: 3rem'> *Dogs are <b>not</b> allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno' target='_blank'>no</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_leashed.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed, but they have to be leashed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_allowed.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed and can run around freely* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed' target='_blank'>unleashed</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/dogs_outside.svg' style='width: 3rem; height: 3rem'> *Dogs are allowed only outside* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Doutside' target='_blank'>outside</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/dogs_allowed.svg'> *Dogs are allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/no_dogs.svg'> *Dogs are <b>not</b> allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno' target='_blank'>no</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/dogs_leashed.svg'> *Dogs are allowed, but they have to be leashed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/dogs_allowed.svg'> *Dogs are allowed and can run around freely* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed' target='_blank'>unleashed</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/dogs_outside.svg'> *Dogs are allowed only outside* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Doutside' target='_blank'>outside</a>
 
 ### leftover-questions
 

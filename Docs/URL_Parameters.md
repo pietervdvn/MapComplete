@@ -224,7 +224,7 @@ The default value is _true_
 
 If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L190)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L192)
 
 The default value is _false_
 
@@ -232,7 +232,7 @@ The default value is _false_
 
 If true, shows some extra debugging help such as all the available tags on every object
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L196)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L198)
 
 The default value is _false_
 
@@ -240,7 +240,7 @@ The default value is _false_
 
 If true, the location distance indication will not be written to the changeset and other privacy enhancing measures might be taken.
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L202)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L204)
 
 The default value is _false_
 
@@ -248,7 +248,7 @@ The default value is _false_
 
 Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L208)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L210)
 
 The default value is _https://overpass-api.de/api/interpreter,https://overpass.private.coffee/api/interpreter,https://overpass.osm.jp/api/interpreter_
 
@@ -256,7 +256,7 @@ The default value is _https://overpass-api.de/api/interpreter,https://overpass.p
 
 Set a different timeout (in seconds) for queries in overpass
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L219)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L221)
 
 The default value is _30_
 
@@ -264,7 +264,7 @@ The default value is _30_
 
  point to switch between OSM-api and overpass
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L227)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L229)
 
 The default value is _16_
 
@@ -272,7 +272,7 @@ The default value is _16_
 
 Tilesize when the OSM-API is used to fetch data within a BBOX
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L235)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L237)
 
 The default value is _17_
 
@@ -330,7 +330,7 @@ One can use the [ID of an ELI-layer](./ELI-overview.md) or use one of the global
  - HDM_HOT
  - osmfr-occitan
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L242)
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L244)
 
 No default value set
 
@@ -410,7 +410,7 @@ The default value is _0_
 
 The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
 
-This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L444)
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L443)
 
 The default value is _map_
 

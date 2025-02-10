@@ -44,7 +44,7 @@ Elements must match **all** of the following expressions:
 The question is `What is the legal maximum speed one is allowed to drive on this road?`
 *The maximum allowed speed on this road is {canonical(maxspeed)}* is shown if `maxspeed` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/maxspeed/living_street_be.svg' style='width: 3rem; height: 3rem'> *This is a living street, which has a maxspeed of 20km/h* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/maxspeed/living_street_be.svg'> *This is a living street, which has a maxspeed of 20km/h* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a>
 
 ### leftover-questions
 

@@ -161,7 +161,7 @@ This tagrendering has labels
 
 The question is `Is a changing table (to change diapers) available?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/toilet/baby.svg' style='width: 3rem; height: 3rem'> *A changing table is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/toilet/baby.svg'> *A changing table is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes' target='_blank'>yes</a>
  -  *No changing table is available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:changing_table' target='_blank'>changing_table</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dno' target='_blank'>no</a>
 
 This tagrendering has labels 

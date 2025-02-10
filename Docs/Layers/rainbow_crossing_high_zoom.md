@@ -41,9 +41,9 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `Does this crossing has rainbow paintings?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/logo.svg' style='width: 3rem; height: 3rem'> *This crossing has rainbow paintings* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface:colour' target='_blank'>surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface:colour%3Drainbow' target='_blank'>rainbow</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/crossing.svg' style='width: 3rem; height: 3rem'> *No rainbow paintings here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:surface:colour' target='_blank'>not:surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:surface:colour%3Drainbow' target='_blank'>rainbow</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/crossing.svg' style='width: 3rem; height: 3rem'> *No rainbow paintings here* is shown if with surface:colour!=rainbow. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/themes/rainbow_crossings/logo.svg'> *This crossing has rainbow paintings* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface:colour' target='_blank'>surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface:colour%3Drainbow' target='_blank'>rainbow</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/themes/rainbow_crossings/crossing.svg'> *No rainbow paintings here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:surface:colour' target='_blank'>not:surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:surface:colour%3Drainbow' target='_blank'>rainbow</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/themes/rainbow_crossings/crossing.svg'> *No rainbow paintings here* is shown if with surface:colour!=rainbow. _This option cannot be chosen as answer_
 
 ### leftover-questions
 

@@ -86,8 +86,8 @@ The question is `What levels does this elevator go to?`
 
 The question is `Does this elevator work?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/close:red' style='width: 3rem; height: 3rem'> *This elevator is broken* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/invalid:red' style='width: 3rem; height: 3rem'> *This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/close:red'> *This elevator is broken* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/invalid:red'> *This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
  -  *This elevator works* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dok' target='_blank'>ok</a>
  -  *This elevator works* is shown if with operational_status=. _This option cannot be chosen as answer_
 
@@ -100,8 +100,8 @@ The question is `What is the width of this elevator's entrance?`
 
 The question is `What shape does this elevator have?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/square.svg' style='width: 3rem; height: 3rem'> *This elevator has a rectangular shape* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Drectangular' target='_blank'>rectangular</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/circle.svg' style='width: 3rem; height: 3rem'> *This elevator has a circular shape* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Dcircular' target='_blank'>circular</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/svg/square.svg'> *This elevator has a rectangular shape* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Drectangular' target='_blank'>rectangular</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/svg/circle.svg'> *This elevator has a circular shape* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shape' target='_blank'>shape</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shape%3Dcircular' target='_blank'>circular</a>
 
 ### elevator-width
 
@@ -124,8 +124,8 @@ This tagrendering is only visible in the popup if the following condition is met
 An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.
 The question is `Does this place have an audio induction loop for people with reduced hearing?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/audio_induction_loop.svg' style='width: 3rem; height: 3rem'> *This place has an audio induction loop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/audio_induction_loop_missing.svg' style='width: 3rem; height: 3rem'> *This place <b>does not</b> have an audio induction loop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/audio_induction_loop.svg'> *This place has an audio induction loop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/audio_induction_loop_missing.svg'> *This place <b>does not</b> have an audio induction loop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>
 
 ### tactile_writing_available
 

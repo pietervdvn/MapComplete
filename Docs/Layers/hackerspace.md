@@ -144,7 +144,7 @@ This tagrendering has labels
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/icons/website.svg'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -154,8 +154,8 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/svg/envelope.svg'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/svg/envelope.svg'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -165,7 +165,7 @@ This tagrendering has labels
 The question is `What is the phone number of {title()}?`
 *{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/phone.svg'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -180,14 +180,14 @@ The question is `What is the Mastodon-handle of {title()}?`
 The question is `When is this hackerspace opened?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/open24_7.svg'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
 
 ### hackerspaces-service-3dprinter
 
 The question is `Is a 3D-printer available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/3d_printer.svg' style='width: 3rem; height: 3rem'> *There is a 3D-printer available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/hackerspace/3d_printer.svg'> *There is a 3D-printer available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes' target='_blank'>yes</a>
  -  *There is no 3D-printer available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dno' target='_blank'>no</a>
  -  *There is a limited 3D-printer available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dlimited' target='_blank'>limited</a>. _This option cannot be chosen as answer_
 
@@ -195,7 +195,7 @@ The question is `Is a 3D-printer available at this hackerspace?`
 
 The question is `Is a laser cutter available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/lasercutter.svg' style='width: 3rem; height: 3rem'> *There is a laser cutter available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/hackerspace/lasercutter.svg'> *There is a laser cutter available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes' target='_blank'>yes</a>
  -  *There is no laser cutter available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dno' target='_blank'>no</a>
  -  *There is a limited laser cutter available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dlimited' target='_blank'>limited</a>. _This option cannot be chosen as answer_
 
@@ -203,7 +203,7 @@ The question is `Is a laser cutter available at this hackerspace?`
 
 The question is `Is a CNC drill available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/cnc.svg' style='width: 3rem; height: 3rem'> *There is a CNC drill available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/hackerspace/cnc.svg'> *There is a CNC drill available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dyes' target='_blank'>yes</a>
  -  *There is no CNC drill available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dno' target='_blank'>no</a>
  -  *There is a limited CNC drill available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dlimited' target='_blank'>limited</a>. _This option cannot be chosen as answer_
 
@@ -211,7 +211,7 @@ The question is `Is a CNC drill available at this hackerspace?`
 
 The question is `Is a multimedia studio available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/media_studio.svg' style='width: 3rem; height: 3rem'> *There is a multimedia studio available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/hackerspace/media_studio.svg'> *There is a multimedia studio available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dyes' target='_blank'>yes</a>
  -  *There is no multimedia studio available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dno' target='_blank'>no</a>
  -  *There is a limited multimedia studio available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:media_studio' target='_blank'>service:media_studio</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:media_studio%3Dlimited' target='_blank'>limited</a>
 
@@ -219,7 +219,7 @@ The question is `Is a multimedia studio available at this hackerspace?`
 
 The question is `Is a sewing machine available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/sewing_machine.svg' style='width: 3rem; height: 3rem'> *There is a sewing machine available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/hackerspace/sewing_machine.svg'> *There is a sewing machine available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dyes' target='_blank'>yes</a>
  -  *There is no sewing machine available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dno' target='_blank'>no</a>
  -  *There is a limited sewing machine available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:sewing_machine' target='_blank'>service:sewing_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:sewing_machine%3Dlimited' target='_blank'>limited</a>. _This option cannot be chosen as answer_
 
@@ -227,7 +227,7 @@ The question is `Is a sewing machine available at this hackerspace?`
 
 The question is `Is a woodworking workshop available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/woodworking.svg' style='width: 3rem; height: 3rem'> *There is a woodworking workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/hackerspace/woodworking.svg'> *There is a woodworking workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dyes' target='_blank'>yes</a>
  -  *There is no woodworking workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dno' target='_blank'>no</a>
  -  *There is a limited woodworking workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:wood' target='_blank'>service:workshop:wood</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:wood%3Dlimited' target='_blank'>limited</a>
 
@@ -235,7 +235,7 @@ The question is `Is a woodworking workshop available at this hackerspace?`
 
 The question is `Is a ceramics workshop available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/ceramics.svg' style='width: 3rem; height: 3rem'> *There is a ceramics workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/hackerspace/ceramics.svg'> *There is a ceramics workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dyes' target='_blank'>yes</a>
  -  *There is no ceramics workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dno' target='_blank'>no</a>
  -  *There is a limited ceramics workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:ceramics' target='_blank'>service:workshop:ceramics</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:ceramics%3Dlimited' target='_blank'>limited</a>
 
@@ -243,7 +243,7 @@ The question is `Is a ceramics workshop available at this hackerspace?`
 
 The question is `Is a metal workshop available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/metal.svg' style='width: 3rem; height: 3rem'> *There is a metal workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/hackerspace/metal.svg'> *There is a metal workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dyes' target='_blank'>yes</a>
  -  *There is no metal workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dno' target='_blank'>no</a>
  -  *There is a limited metal workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:workshop:metal' target='_blank'>service:workshop:metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:workshop:metal%3Dlimited' target='_blank'>limited</a>
 
@@ -251,7 +251,7 @@ The question is `Is a metal workshop available at this hackerspace?`
 
 The question is `Is a bicycle repair workshop available at this hackerspace?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hackerspace/bicycle.svg' style='width: 3rem; height: 3rem'> *There is a bicycle repair workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/hackerspace/bicycle.svg'> *There is a bicycle repair workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
  -  *There is no bicycle repair workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
  -  *There is a limited bicycle repair workshop available at this hackerspace* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dlimited' target='_blank'>limited</a>
 
@@ -280,10 +280,10 @@ The question is `When was this hackerspace founded?`
 
 The question is `Does this place offer internet access?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/wifi' style='width: 3rem; height: 3rem'> *This place offers wireless internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/wifi'> *This place offers wireless internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
  -  *This place <b>does not</b> offer internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
  -  *This place offers internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/computer' style='width: 3rem; height: 3rem'> *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/computer'> *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
  -  *This place offers wired internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
  -  *This place offers both wireless internet and internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal;wifi' target='_blank'>terminal;wifi</a>
 

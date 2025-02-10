@@ -106,9 +106,9 @@ The question is `Is this drinking water point free to use?`
 
 The question is `What type of drinking water point is this?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/drinking_water/bubbler.svg' style='width: 3rem; height: 3rem'> *This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fountain' target='_blank'>fountain</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fountain%3Dbubbler' target='_blank'>bubbler</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/drinking_water/bottle.svg' style='width: 3rem; height: 3rem'> *This is a bottle refill point where the water is sent downwards, typically controlled by a push button or a motion sensor. Drinking directly from the stream might be very hard or impossible.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fountain' target='_blank'>fountain</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fountain%3Dbottle_refill' target='_blank'>bottle_refill</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/drinking_water/tap.svg' style='width: 3rem; height: 3rem'> *This is a water tap. The water flows downward and the stream is controlled by a valve or push-button.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dwater_tap' target='_blank'>water_tap</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/drinking_water/bubbler.svg'> *This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fountain' target='_blank'>fountain</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fountain%3Dbubbler' target='_blank'>bubbler</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/drinking_water/bottle.svg'> *This is a bottle refill point where the water is sent downwards, typically controlled by a push button or a motion sensor. Drinking directly from the stream might be very hard or impossible.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fountain' target='_blank'>fountain</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fountain%3Dbottle_refill' target='_blank'>bottle_refill</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/drinking_water/tap.svg'> *This is a water tap. The water flows downward and the stream is controlled by a valve or push-button.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dwater_tap' target='_blank'>water_tap</a>
 
 ### Bottle refill
 
@@ -133,7 +133,7 @@ The question is `Is this drinking water point available all year round?`
 
  -  *Available all around the year* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seasonal' target='_blank'>seasonal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dno' target='_blank'>no</a>
  -  *Only available in summer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seasonal' target='_blank'>seasonal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dsummer' target='_blank'>summer</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/drinking_water/no_winter.svg' style='width: 3rem; height: 3rem'> *Closed during the winter* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seasonal' target='_blank'>seasonal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dspring;summer;autumn' target='_blank'>spring;summer;autumn</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/drinking_water/no_winter.svg'> *Closed during the winter* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seasonal' target='_blank'>seasonal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dspring;summer;autumn' target='_blank'>spring;summer;autumn</a>
 
 ### opening_hours_24_7
 
@@ -141,7 +141,7 @@ The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
  -  *This drinking water fountain is closed this season. As such, the opening hours are not shown.* is shown if with seasonal!=no & seasonal~.+ & ((seasonal!~^(.*winter.*)$ & _now:date~^(....-(12|01|02)-..)$) | (seasonal!~^(.*spring.*)$ & _now:date~^(....-(03|04|05)-..)$) | (seasonal!~^(.*summer.*)$ & _now:date~^(....-(06|07|08)-..)$) | (seasonal!~^(.*autumn.*)$ & _now:date~^(....-(09|10|11)-..)$)). _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/open24_7.svg'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
 
 ### bench-artwork

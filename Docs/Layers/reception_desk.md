@@ -85,8 +85,8 @@ The question is `What is the height of the reception desk? `
 An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.
 The question is `Does this place have an audio induction loop for people with reduced hearing?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/audio_induction_loop.svg' style='width: 3rem; height: 3rem'> *This place has an audio induction loop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/audio_induction_loop_missing.svg' style='width: 3rem; height: 3rem'> *This place <b>does not</b> have an audio induction loop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/audio_induction_loop.svg'> *This place has an audio induction loop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/audio_induction_loop_missing.svg'> *This place <b>does not</b> have an audio induction loop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>
 
 ### leftover-questions
 

@@ -65,8 +65,8 @@ The question is `What is the name of this trail?`
 The question is `Who maintains this trail?`
 *This trail is maintained by {operator}* is shown if `operator` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/buurtnatuur/Natuurpunt.jpg' style='width: 3rem; height: 3rem'> *This trail is maintained by Natuurpunt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/buurtnatuur/Natuurpunt.jpg' style='width: 3rem; height: 3rem'> *This trail is maintained by {operator}* is shown if with operator~^((n|N)atuurpunt.*)$. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/themes/buurtnatuur/Natuurpunt.jpg'> *This trail is maintained by Natuurpunt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/themes/buurtnatuur/Natuurpunt.jpg'> *This trail is maintained by {operator}* is shown if with operator~^((n|N)atuurpunt.*)$. _This option cannot be chosen as answer_
 
 ### Color
 

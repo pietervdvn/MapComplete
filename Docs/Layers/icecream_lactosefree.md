@@ -77,8 +77,8 @@ _This tagrendering has no question and is thus read-only_
 
 The question is `Does {title()} have a lactose-free offering?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *<b>Only sells lactose free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *Big lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/lactose_free.svg'> *<b>Only sells lactose free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/lactose_free.svg'> *Big lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
  -  *<b>Limited lactose free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited' target='_blank'>limited</a>
  -  *No lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno' target='_blank'>no</a>
 
@@ -102,7 +102,7 @@ The question is `What are the opening hours of {title()}?`
 The question is `What is the phone number of {title()}?`
 *{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/phone.svg'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -112,8 +112,8 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/svg/envelope.svg'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/svg/envelope.svg'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -123,7 +123,7 @@ This tagrendering has labels
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/icons/website.svg'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -144,8 +144,8 @@ This tagrendering has labels
 
 The question is `Does this shop have a gluten free offering?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/glutenfree.svg' style='width: 3rem; height: 3rem'> *This shop <b>only sells gluten free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly' target='_blank'>only</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/glutenfree.svg' style='width: 3rem; height: 3rem'> *This shop has a big gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes' target='_blank'>yes</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/glutenfree.svg'> *This shop <b>only sells gluten free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly' target='_blank'>only</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/glutenfree.svg'> *This shop has a big gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes' target='_blank'>yes</a>
  -  *This shop has a <b>limited gluten free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited' target='_blank'>limited</a>
  -  *This shop has no gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno' target='_blank'>no</a>
 
@@ -168,9 +168,9 @@ This tagrendering has labels
 
 The question is `Which methods of payment are accepted here?`
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/cash.svg' style='width: 3rem; height: 3rem'> *Cash is accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Payment cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/qrcode.svg' style='width: 3rem; height: 3rem'> *Payment by QR-code is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/cash.svg'> *Cash is accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/payment_card.svg'> *Payment cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+ - <img width='38px' height='38px' src='https://dev.mapcomplete.org/./assets/layers/questions/qrcode.svg'> *Payment by QR-code is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
 ### wheelchair-access
 
