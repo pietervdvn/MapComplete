@@ -269,7 +269,7 @@
     "@types/xml2js": "^0.4.9",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
-    "@vitejs/plugin-basic-ssl": "^1.0.2",
+    "@vitejs/plugin-basic-ssl": "^1.2.0",
     "assert": "^2.0.0",
     "chai": "^5.1.2",
     "dependency-cruiser": "^16.3.0",
@@ -290,7 +290,7 @@
     "tslib": "^2.5.0",
     "typescript": "^4.7.4",
     "vite": "^4.5.9",
-    "vite-node": "^1.6.1",
+    "vite-node": "^2.1.9",
     "vitest": "^3.0.5"
   }
 }
