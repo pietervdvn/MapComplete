@@ -10,7 +10,8 @@
     "pa_PK": "ریسائیکلنگ",
     "fr": "Recyclage",
     "cs": "Recyklování",
-    "pl": "Recykling"
+    "pl": "Recykling",
+    "uk": "Переробка"
   },
   "description": {
     "en": "A layer with recycling containers and centres",
@@ -1443,7 +1444,8 @@
           "osmTags": "recycling_type=centre",
           "question": {
             "en": "Only recycling centres",
-            "de": "Nur Recyclingzentren"
+            "de": "Nur Recyclingzentren",
+            "uk": "Тільки пункти прийому вторсировини"
           }
         }
       ]
@@ -1769,7 +1771,8 @@
             "ca": "Només amb accés públic",
             "fr": "Accès public uniquement",
             "cs": "Pouze veřejný přístup",
-            "es": "Solo acceso público"
+            "es": "Solo acceso público",
+            "uk": "Тільки публічний доступ"
           },
           "osmTags": {
             "or": [

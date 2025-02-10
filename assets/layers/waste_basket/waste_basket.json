@@ -12,7 +12,8 @@
     "da": "Affaldskurv",
     "fr": "Poubelle",
     "cs": "Odpadkový koš",
-    "es": "Contenedor de basura"
+    "es": "Contenedor de basura",
+    "uk": "Контейнер для сміття"
   },
   "description": {
     "en": "This is a public waste basket, thrash can, where you can throw away your thrash.",

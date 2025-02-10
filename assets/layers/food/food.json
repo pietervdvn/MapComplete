@@ -9,7 +9,8 @@
     "fr": "Restaurants et nourriture rapide",
     "ca": "Restaurants i menjar ràpid",
     "pl": "Restauracje i fast-foody",
-    "cs": "Restaurace a rychlé občerstvení"
+    "cs": "Restaurace a rychlé občerstvení",
+    "uk": "Ресторани та фаст-фуд"
   },
   "description": {
     "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
@@ -619,7 +620,8 @@
             "en": "Add an image from the menu",
             "nl": "Voeg een foto van het menu toe",
             "de": "Ein Bild aus dem Menü hinzufügen",
-            "es": "Añadir una imagen del menú"
+            "es": "Añadir una imagen del menú",
+            "uk": "Додати зображення з меню"
           }
         }
       }
@@ -1421,7 +1423,8 @@
             "pl": "Rezerwacja nie jest wymagana",
             "ca": "No cal reservar",
             "cs": "Rezervace není nutná",
-            "es": "No se necesita reserva"
+            "es": "No se necesita reserva",
+            "uk": "Бронювання не потрібно"
           },
           "osmTags": {
             "or": [
@@ -1485,7 +1488,8 @@
             "cs": "Má vegetariánské menu",
             "pl": "Ma menu wegetariańskie",
             "es": "Tiene menú vegetariano",
-            "fr": "A un menu végétarien"
+            "fr": "A un menu végétarien",
+            "uk": "Має вегетаріанське меню"
           },
           "icon": "./assets/layers/food/Vegetarian-mark.svg",
           "osmTags": {

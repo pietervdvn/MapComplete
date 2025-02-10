@@ -20,7 +20,7 @@ export default class StudioServer {
     >
     public isDirect: boolean
 
-    constructor(url: string, userId: Store<number | undefined>, isDirect: boolean) {
+    constructor(url: string, userId: Store<number | undefined>) {
         this.url = url
         this._userId = userId
         this.overview = UIEventSource.FromPromiseWithErr(this.fetchOverviewRaw())
