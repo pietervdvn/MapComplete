@@ -363,7 +363,7 @@ export class GenerateDocs extends Script {
         }
 
         allLayers.forEach((layer) => {
-            const element = layer.GenerateDocumentation(
+            const element = layer.generateDocumentation(
                 themesPerLayer.get(layer.id),
                 layerIsNeededBy,
                 DependencyCalculator.getLayerDependencies(layer)
@@ -457,7 +457,7 @@ export class GenerateDocs extends Script {
         const qLayer = new LayerConfig(<LayerConfigJson>questions, "questions.json", true)
         this.WriteMarkdownFile(
             "./Docs/BuiltinQuestions.md",
-            qLayer.GenerateDocumentation([], new Map(), []),
+            qLayer.generateDocumentation([], new Map(), []),
             ["assets/layers/questions/questions.json"]
         )
     }
@@ -494,7 +494,7 @@ export class GenerateDocs extends Script {
             MarkdownUtils.list(theme.language.filter((ln) => ln !== "_context")),
             "# Layers defined in this theme configuration file",
             "These layers can not be reused in different themes.",
-            ...layersToInline.map((l) => l.GenerateDocumentation(null)),
+            ...layersToInline.map((l) => l.generateDocumentation(null))
         ].join("\n")
         this.WriteMarkdownFile(
             "./Docs/Themes/" + theme.id + ".md",
@@ -560,7 +560,7 @@ export class GenerateDocs extends Script {
             ...Utils.NoNull(
                 Constants.priviliged_layers.map((id) => AllSharedLayers.sharedLayers.get(id))
             ).map((l) =>
-                l.GenerateDocumentation(
+                l.generateDocumentation(
                     themesPerLayer.get(l.id),
                     layerIsNeededBy,
                     DependencyCalculator.getLayerDependencies(l),

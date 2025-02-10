@@ -376,7 +376,7 @@ export default class LayerConfig extends WithContextLoader {
         return this.mapRendering.some((r) => r.location.has("point"))
     }
 
-    public GenerateDocumentation(
+    public generateDocumentation(
         usedInThemes: string[],
         layerIsNeededBy?: Map<string, string[]>,
         dependencies: {

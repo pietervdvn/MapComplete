@@ -5,10 +5,7 @@ import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { And } from "../../Logic/Tags/And"
 import { Utils } from "../../Utils"
 import { Tag } from "../../Logic/Tags/Tag"
-import {
-    MappingConfigJson,
-    QuestionableTagRenderingConfigJson,
-} from "./Json/QuestionableTagRenderingConfigJson"
+import { MappingConfigJson, QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
@@ -866,9 +863,9 @@ export default class TagRenderingConfig {
                     let icon = ""
                     if (m.icon?.indexOf(";") < 0) {
                         icon =
-                            "<img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/" +
+                            "<img width='38px' height='38px' src='https://dev.mapcomplete.org/" +
                             m.icon +
-                            "' style='width: 3rem; height: 3rem'>"
+                            "'>"
                     }
                     const msgs: string[] = [
                         icon +
