@@ -58,7 +58,10 @@
             "intro": "OpenStreetMap no té informació sobre els següents atributs",
             "title": "Elements que falten"
         },
-        "noDataLoaded": "El lloc web extern no té dades vinculades que es puguen carregar"
+        "noDataLoaded": "El lloc web extern no té dades vinculades que es puguen carregar",
+        "loadedFrom": "Les següents dades es carreguen des de <a href={url}>{source}</a> fent servir JSON-LD incrustat",
+        "overwrite": "Sobreescriu a OpenStreetMap",
+        "title": "Dades estructurades carregades des del lloc web extern"
     },
     "favourite": {
         "reload": "Recarregar dades"
@@ -67,7 +70,11 @@
         "button": {
             "isMarkedShort": "Marcat com a ubicació favorita",
             "isNotMarkedShort": "No marcat com a favorit",
-            "markAsFavouriteTitle": "Marca aquesta ubicació com a preferida"
+            "markAsFavouriteTitle": "Marca aquesta ubicació com a preferida",
+            "isFavourite": "Aquesta ubicació està actualment marcada com a favorita i apareixerà en tots els mapes temàtics de MapComplete que visitis.",
+            "markDescription": "Afegeix aquesta ubicació a una llista personal dels teus favorits",
+            "unmark": "Elimina de la teva llista personal de favorits",
+            "unmarkNotDeleted": "Aquest punt no s'eliminarà i encara serà visible en el mapa adequat per a tu i altres"
         },
         "introPrivacy": "Aquesta llista nomes és visible per a tu",
         "loginToSeeList": "Inicia sessió per a veure la llista d'ubicacions marcades com a favorites",
