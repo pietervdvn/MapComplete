@@ -2512,8 +2512,7 @@
                         "mappings": {
                             "then": "{{description}} sortides {{commonVoltages}} volt"
                         },
-                        "question": "Quin voltatge ofereixen els endolls amb {{description}}?",
-                        "render": ""
+                        "question": "Quin voltatge ofereixen els endolls amb {{description}}?"
                     },
                     "2": {
                         "mappings": {
