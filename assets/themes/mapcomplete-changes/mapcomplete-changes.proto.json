@@ -475,7 +475,7 @@
           "id": "platform",
           "options": [
             {
-              "quesiton": {
+              "question": {
                 "en": "All platforms"
               }
             },
