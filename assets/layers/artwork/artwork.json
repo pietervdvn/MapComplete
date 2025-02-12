@@ -22,7 +22,8 @@
     "he": "יצירות אמנות",
     "eu": "Artelanak",
     "pt_BR": "Obras de arte",
-    "zh_Hans": "艺术品"
+    "zh_Hans": "艺术品",
+    "uk": "Витвори мистецтва"
   },
   "description": {
     "en": "An open map of statues, busts, graffitis and other artwork all over the world",
@@ -213,7 +214,8 @@
         "cs": "Toto je {artwork_type}",
         "ca": "Aquesta és un {artwork_type}",
         "he": "זהו {artwork_type}",
-        "pt_BR": "Isso é um(a) {artwork_type}"
+        "pt_BR": "Isso é um(a) {artwork_type}",
+        "uk": "Це {artwork_type}"
       },
       "question": {
         "en": "What is the type of this artwork?",
@@ -234,7 +236,8 @@
         "cs": "Jaký je typ tohoto uměleckého díla?",
         "ca": "Quin tipus d'obra és aquesta peça?",
         "he": "מהו סוג היצירה הזו?",
-        "pt_BR": "Qual é o tipo dessa obra de arte?"
+        "pt_BR": "Qual é o tipo dessa obra de arte?",
+        "uk": "Якого типу ця робота?"
       },
       "freeform": {
         "key": "artwork_type",
@@ -650,7 +653,8 @@
         "ca": "Quin artista va crear açò?",
         "pt_BR": "Que artista criou isto?",
         "he": "איזה אמן יצר את זה?",
-        "zh_Hans": "这是哪位艺术家创作的？"
+        "zh_Hans": "这是哪位艺术家创作的？",
+        "uk": "Який художник створив це?"
       },
       "render": {
         "en": "Created by {artist_name}",
@@ -672,7 +676,8 @@
         "ca": "Creat per {artist_name}",
         "he": "נוצר על ידי {artist_name}",
         "pt_BR": "Criado por {artist_name}",
-        "zh_Hans": "由{artist_name}创建"
+        "zh_Hans": "由{artist_name}创建",
+        "uk": "Створено {artist_name}"
       },
       "freeform": {
         "key": "artist_name"
@@ -816,7 +821,8 @@
         "cs": "Slouží toto dílo jako památník?",
         "es": "¿Esta obra de arte sirve como monumento?",
         "uk": "Чи слугує ця робота меморіалом?",
-        "nl": "Dient dit kunstwerk als gedenkteken?"
+        "nl": "Dient dit kunstwerk als gedenkteken?",
+        "ca": "Aquesta obra d'art serveix com a memorial?"
       },
       "mappings": [
         {
@@ -841,7 +847,8 @@
             "uk": "Ця робота не є меморіалом",
             "cs": "Toto umělecké dílo neslouží jako památník",
             "es": "Esta obra de arte no sirve como monumento",
-            "nl": "Dit kunstwerk fungeert niet als gedenkteken"
+            "nl": "Dit kunstwerk fungeert niet als gedenkteken",
+            "ca": "Aquesta obra no serveix com a memorial"
           }
         }
       ]

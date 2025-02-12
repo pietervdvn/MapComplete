@@ -3,12 +3,14 @@
   "name": {
     "en": "Love hotels",
     "de": "Love Hotels",
-    "es": "Hoteles del amor"
+    "es": "Hoteles del amor",
+    "ca": "Hotels Love"
   },
   "description": {
     "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities",
     "de": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten",
-    "es": "Un hotel del amor es un tipo de hotel de corta estancia que se encuentra en todo el mundo y que funciona principalmente con el fin de ofrecer a los huéspedes privacidad para las actividades sexuales"
+    "es": "Un hotel del amor es un tipo de hotel de corta estancia que se encuentra en todo el mundo y que funciona principalmente con el fin de ofrecer a los huéspedes privacidad para las actividades sexuales",
+    "ca": "Un hotel d'amor és un tipus d'hotel de curta estada que es troba a tot el món operat principalment amb el propòsit de permetre als hostes privacitat per a les activitats sexuals"
   },
   "source": {
     "osmTags": "amenity=love_hotel"
@@ -18,7 +20,8 @@
     "render": {
       "en": "Love Hotel <i>{name}</i>",
       "de": "Love Hotel <i>{name}</i>",
-      "es": "Hotel del amor <i>{name}</i>"
+      "es": "Hotel del amor <i>{name}</i>",
+      "ca": "Hotel de l'amor <i>{name}</i>"
     }
   },
   "pointRendering": [
@@ -57,12 +60,14 @@
       "title": {
         "en": "a love hotel",
         "de": "ein Love Hotel",
-        "es": "un hotel del amor"
+        "es": "un hotel del amor",
+        "ca": "Un hotel d'amor"
       },
       "description": {
         "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities.",
         "de": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten.",
-        "es": "Un hotel del amor es un tipo de hotel de corta estancia que se encuentra en todo el mundo y que funciona principalmente con el fin de ofrecer a los huéspedes privacidad para las actividades sexuales."
+        "es": "Un hotel del amor es un tipo de hotel de corta estancia que se encuentra en todo el mundo y que funciona principalmente con el fin de ofrecer a los huéspedes privacidad para las actividades sexuales.",
+        "ca": "Un hotel d'amor és un tipus d'hotel de curta estada que es troba a tot el món operat principalment amb el propòsit de permetre als hostes la privacitat per a les activitats sexuals."
       },
       "tags": [
         "amenity=love_hotel"
@@ -77,12 +82,14 @@
       "question": {
         "en": "What is the name of this love hotel?",
         "de": "Wie lautet der Name des Love Hotels?",
-        "es": "¿Cuál es el nombre de este hotel del amor?"
+        "es": "¿Cuál es el nombre de este hotel del amor?",
+        "ca": "Quin és el nom d'aquest hotel d'amor?"
       },
       "render": {
         "en": "This love hotel is named <b>{name}</b>",
         "de": "Der Name des Love Hotels lautet <b>{name}</b>",
-        "es": "Este hotel del amor se llama <b>{name}</b>"
+        "es": "Este hotel del amor se llama <b>{name}</b>",
+        "ca": "Aquest hotel d'amor es diu <b>{name}</b>"
       },
       "freeform": {
         "key": "name"

@@ -14,7 +14,8 @@
     "da": "Cykelrengøring",
     "cs": "Služba mytí jízdních kol",
     "ca": "Servei de neteja de bicicletes",
-    "pl": "Usługa czyszczenia rowerów"
+    "pl": "Usługa czyszczenia rowerów",
+    "uk": "Послуга з чищення велосипедів"
   },
   "description": {
     "en": "A layer showing facilities where one can clean their bike",
@@ -288,7 +289,8 @@
         "nl": "Is dit fietsschoonmaakpunt geautomatiseerd?",
         "de": "Ist dieser Fahrradreinigungsdienst automatisiert?",
         "cs": "Je tato služba čištění kol bez obsluhy?",
-        "es": "¿Está este servicio de limpieza de bicicletas automatizado?"
+        "es": "¿Está este servicio de limpieza de bicicletas automatizado?",
+        "ca": "Aquest servei de neteja de bicicletes està automatitzat?"
       },
       "id": "automated",
       "mappings": [
@@ -299,7 +301,9 @@
             "nl": "Dit is een handmatig fietsschoonmaakpunt",
             "de": "Dies ist eine manuelle Fahrradwaschanlage",
             "cs": "Jedná se o ruční mycí stanici kol",
-            "es": "Esta es una estación manual de lavado de bicicletas"
+            "es": "Esta es una estación manual de lavado de bicicletas",
+            "ca": "Es tracta d'una estació manual de rentat de bicicletes",
+            "uk": "Це ручна мийка для велосипедів"
           }
         },
         {
@@ -309,7 +313,9 @@
             "nl": "Dit is een automatisch fietsschoonmaakpunt",
             "de": "Dies ist eine automatische Fahrradwaschanlage",
             "cs": "Jedná se o mytí kol bez obsluhy",
-            "es": "Esta es una estación automática de lavado de bicicletas"
+            "es": "Esta es una estación automática de lavado de bicicletas",
+            "ca": "Es tracta d'un rentat automàtic de bicicletes",
+            "uk": "Це автоматизована мийка для велосипедів"
           }
         }
       ],
@@ -321,7 +327,8 @@
         "en": "Is this cleaning service self-service?",
         "de": "Muss die Reinigung selbständig erfolgen?",
         "cs": "Je tato mycí služba samoobslužná?",
-        "es": "¿Es este servicio de limpieza de autoservicio?"
+        "es": "¿Es este servicio de limpieza de autoservicio?",
+        "ca": "Aquest servei de neteja és autoservei?"
       },
       "id": "self_service",
       "mappings": [
@@ -332,7 +339,8 @@
             "en": "This cleaning service is self-service",
             "de": "Die Reinigung erfolgt selbständig",
             "cs": "Tato mycí služba je samoobslužná",
-            "es": "Este servicio de limpieza es de autoservicio"
+            "es": "Este servicio de limpieza es de autoservicio",
+            "ca": "Aquest servei de neteja és d'autoservei"
           }
         },
         {
@@ -342,7 +350,8 @@
             "en": "This cleaning service is operated by an employee",
             "de": "Dieser Reinigungsdienst wird von einem Angestellten betrieben",
             "cs": "Tuto mycí službu provozuje zaměstnanec",
-            "es": "Este servicio de limpieza está operado por un empleado"
+            "es": "Este servicio de limpieza está operado por un empleado",
+            "ca": "Aquest servei de neteja és operat per un empleat"
           }
         }
       ],

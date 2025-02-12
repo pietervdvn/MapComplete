@@ -94,7 +94,8 @@
           "then": {
             "en": "Nine-pin bowling",
             "es": "Bolos de nueve bolos",
-            "de": "Kegeln"
+            "de": "Kegeln",
+            "ca": "Bola de nou pins"
           }
         },
         {
@@ -102,63 +103,72 @@
           "then": {
             "en": "Ten-pin bowling",
             "es": "Bolos de diez bolos",
-            "de": "Bowling"
+            "de": "Bowling",
+            "ca": "Bola de deu pins"
           }
         },
         {
           "if": "sport=aerobics",
           "then": {
             "en": "Aerobics",
-            "de": "Aerobic"
+            "de": "Aerobic",
+            "ca": "Aeròbic"
           }
         },
         {
           "if": "sport=american_football",
           "then": {
             "en": "American football",
-            "de": "American Football"
+            "de": "American Football",
+            "ca": "Futbol americà"
           }
         },
         {
           "if": "sport=aikido",
           "then": {
             "en": "Aikido",
-            "de": "Aikido"
+            "de": "Aikido",
+            "ca": "Aikido"
           }
         },
         {
           "if": "sport=archery",
           "then": {
             "en": "Archery",
-            "de": "Bogenschießen"
+            "de": "Bogenschießen",
+            "ca": "Arc"
           }
         },
         {
           "if": "sport=athletics",
           "then": {
             "en": "Athletics",
-            "de": "Leichtathletik"
+            "de": "Leichtathletik",
+            "ca": "Atletisme"
           }
         },
         {
           "if": "sport=australian_football",
           "then": {
             "en": "Australian rules football",
-            "de": "Australian-Football"
+            "de": "Australian-Football",
+            "ca": "Futbol australià"
           }
         },
         {
           "if": "sport=badminton",
           "then": {
             "en": "Badminton",
-            "de": "Federball"
+            "de": "Federball",
+            "ca": "Bàdminton"
           }
         },
         {
           "if": "sport=bandy",
           "then": {
             "en": "Bandy",
-            "de": "Bandy"
+            "de": "Bandy",
+            "ca": "Bandy"
           }
         },
         {
@@ -166,112 +176,128 @@
           "then": {
             "en": "BASE jumping",
             "es": "Salto BASE",
-            "de": "Basejumping"
+            "de": "Basejumping",
+            "ca": "salt base"
           }
         },
         {
           "if": "sport=baseball",
           "then": {
             "en": "Baseball",
-            "de": "Baseball"
+            "de": "Baseball",
+            "ca": "Baseball"
           }
         },
         {
           "if": "sport=basketball",
           "then": {
             "en": "Basketball",
-            "de": "Basketball"
+            "de": "Basketball",
+            "ca": "Bàsquet"
           }
         },
         {
           "if": "sport=beachvolleyball",
           "then": {
             "en": "Beachvolleyball",
-            "de": "Beachvolleyball"
+            "de": "Beachvolleyball",
+            "ca": "Voleibol platja"
           }
         },
         {
           "if": "sport=biathlon",
           "then": {
             "en": "Biathlon",
-            "de": "Biathlon"
+            "de": "Biathlon",
+            "ca": "Biatló"
           }
         },
         {
           "if": "sport=billiards",
           "then": {
             "en": "Cue sports",
-            "de": "Cuesport"
+            "de": "Cuesport",
+            "ca": "Esports Cue"
           }
         },
         {
           "if": "sport=bmx",
           "then": {
             "en": "BMX",
-            "de": "BMX"
+            "de": "BMX",
+            "ca": "BMX"
           }
         },
         {
           "if": "sport=bobsleigh",
           "then": {
             "en": "Bobsleigh",
-            "de": "Bobfahren"
+            "de": "Bobfahren",
+            "ca": "Bob"
           }
         },
         {
           "if": "sport=boules",
           "then": {
             "en": "Boules",
-            "de": "Boule"
+            "de": "Boule",
+            "ca": "Joc de boles"
           }
         },
         {
           "if": "sport=bowls",
           "then": {
             "en": "Bowls",
-            "de": "Bowls"
+            "de": "Bowls",
+            "ca": "Bols"
           }
         },
         {
           "if": "sport=boxing",
           "then": {
             "en": "Boxing",
-            "de": "Boxen"
+            "de": "Boxen",
+            "ca": "Boxa"
           }
         },
         {
           "if": "sport=bullfighting",
           "then": {
             "en": "Bullfighting",
-            "de": "Stierkampf"
+            "de": "Stierkampf",
+            "ca": "Tauromàquia"
           }
         },
         {
           "if": "sport=canadian_football",
           "then": {
             "en": "Canadian football",
-            "de": "Kanadischer Fußball"
+            "de": "Kanadischer Fußball",
+            "ca": "Futbol canadenc"
           }
         },
         {
           "if": "sport=canoe",
           "then": {
             "en": "Canoe",
-            "de": "Kanu"
+            "de": "Kanu",
+            "ca": "Canoa"
           }
         },
         {
           "if": "sport=chess",
           "then": {
             "en": "Chess",
-            "de": "Schach"
+            "de": "Schach",
+            "ca": "Escac"
           }
         },
         {
           "if": "sport=cliff_diving",
           "then": {
             "en": "Non-competitive diving",
-            "de": "Wettkampffreies Tauchen"
+            "de": "Wettkampffreies Tauchen",
+            "ca": "Submarinisme no competitiu"
           }
         },
         {
@@ -279,7 +305,8 @@
           "then": {
             "en": "Climbing",
             "nl": "Klimmen",
-            "de": "Klettern"
+            "de": "Klettern",
+            "ca": "Escalada"
           }
         },
         {
@@ -287,511 +314,584 @@
           "then": {
             "en": "Climbing Adventure",
             "nl": "Hoogteparcours",
-            "de": "Seilgarten"
+            "de": "Seilgarten",
+            "ca": "Aventura de l'escalada"
           }
         },
         {
           "if": "sport=cockfighting",
           "then": {
             "en": "Cockfighting",
-            "de": "Hahnenkampf"
+            "de": "Hahnenkampf",
+            "ca": "Baralla de galls"
           }
         },
         {
           "if": "sport=cricket",
           "then": {
             "en": "Cricket",
-            "de": "Kricket"
+            "de": "Kricket",
+            "ca": "Criquet"
           }
         },
         {
           "if": "sport=crossfit",
           "then": {
             "en": "CrossFit",
-            "de": "CrossFit"
+            "de": "CrossFit",
+            "ca": "CrossFit"
           }
         },
         {
           "if": "sport=croquet",
           "then": {
             "en": "Croquet",
-            "de": "Krocket"
+            "de": "Krocket",
+            "ca": "Croquet"
           }
         },
         {
           "if": "sport=curling",
           "then": {
             "en": "Curling",
-            "de": "Eisstockschießen"
+            "de": "Eisstockschießen",
+            "ca": "Cúrling"
           }
         },
         {
           "if": "sport=cycle_polo",
           "then": {
             "en": "Cycle Polo",
-            "de": "Radpolo"
+            "de": "Radpolo",
+            "ca": "Polo de cicle"
           }
         },
         {
           "if": "sport=cycling",
           "then": {
             "en": "Cycling",
-            "de": "Radfahren"
+            "de": "Radfahren",
+            "ca": "Ciclisme"
           }
         },
         {
           "if": "sport=dance",
           "then": {
             "en": "Dance",
-            "de": "Tanz"
+            "de": "Tanz",
+            "ca": "Dansa"
           }
         },
         {
           "if": "sport=darts",
           "then": {
             "en": "Darts",
-            "de": "Dart"
+            "de": "Dart",
+            "ca": "Dards"
           }
         },
         {
           "if": "sport=dog_agility",
           "then": {
             "en": "Dog agility",
-            "de": "Hundetraining"
+            "de": "Hundetraining",
+            "ca": "Agilitat del gos"
           }
         },
         {
           "if": "sport=dog_racing",
           "then": {
             "en": "Greyhound racing",
-            "de": "Windhundrennen"
+            "de": "Windhundrennen",
+            "ca": "Curses de Greyhound"
           }
         },
         {
           "if": "sport=dragon_boat",
           "then": {
             "en": "Dragon Boat",
-            "de": "Drachenboot"
+            "de": "Drachenboot",
+            "ca": "Boca de drac"
           }
         },
         {
           "if": "sport=equestrian",
           "then": {
             "en": "Equestrianism",
-            "de": "Reitsport"
+            "de": "Reitsport",
+            "ca": "Hípica"
           }
         },
         {
           "if": "sport=fencing",
           "then": {
             "en": "Fencing",
-            "de": "Fechten"
+            "de": "Fechten",
+            "ca": "Fenc"
           }
         },
         {
           "if": "sport=field_hockey",
           "then": {
             "en": "Field hockey",
-            "de": "Feldhockey"
+            "de": "Feldhockey",
+            "ca": "Hoquei de camp"
           }
         },
         {
           "if": "sport=fitness",
           "then": {
             "en": "Fitness",
-            "de": "Fitnesstraining"
+            "de": "Fitnesstraining",
+            "ca": "Ajusta"
           }
         },
         {
           "if": "sport=five-a-side",
           "then": {
             "en": "5 person soccer",
-            "de": "Fußball mit 5 Personen"
+            "de": "Fußball mit 5 Personen",
+            "ca": "futbol 5 persones"
           }
         },
         {
           "if": "sport=floorball",
           "then": {
             "en": "Floorball",
-            "de": "Unihockey"
+            "de": "Unihockey",
+            "ca": "Bola de terra"
           }
         },
         {
           "if": "sport=four_square",
           "then": {
             "en": "Four square",
-            "de": "Four Square"
+            "de": "Four Square",
+            "ca": "Quatre quadrats"
           }
         },
         {
           "if": "sport=free_flying",
           "then": {
             "en": "Paragliding",
-            "de": "Gleitschirmfliegen"
+            "de": "Gleitschirmfliegen",
+            "ca": "Parapent"
           }
         },
         {
           "if": "sport=futsal",
           "then": {
             "en": "Futsal",
-            "de": "Hallenfußball"
+            "de": "Hallenfußball",
+            "ca": "Futbol sala"
           }
         },
         {
           "if": "sport=gaelic_games",
           "then": {
             "en": "Gaelic games",
-            "de": "Gälische Spiele"
+            "de": "Gälische Spiele",
+            "ca": "Jocs gaèlics"
           }
         },
         {
           "if": "sport=gaga",
           "then": {
             "en": "Gaga ball",
-            "de": "Gaga-Ball"
+            "de": "Gaga-Ball",
+            "ca": "Gaga"
           }
         },
         {
           "if": "sport=golf",
           "then": {
             "en": "Golf",
-            "de": "Golf"
+            "de": "Golf",
+            "ca": "Golf"
           }
         },
         {
           "if": "sport=gymnastics",
           "then": {
             "en": "Gymnastics",
-            "de": "Turnen"
+            "de": "Turnen",
+            "ca": "Gimnàstica"
           }
         },
         {
           "if": "sport=handball",
           "then": {
             "en": "Handball",
-            "de": "Handball"
+            "de": "Handball",
+            "ca": "Handbol"
           }
         },
         {
           "if": "sport=hapkido",
           "then": {
             "en": "Hapkido",
-            "de": "Hapkido"
+            "de": "Hapkido",
+            "ca": "Hapkido"
           }
         },
         {
           "if": "sport=hiking",
           "then": {
             "en": "Hiking",
-            "de": "Wandern"
+            "de": "Wandern",
+            "ca": "Senderisme"
           }
         },
         {
           "if": "sport=horseshoes",
           "then": {
             "en": "Horseshoes",
-            "de": "Hufeisenwerfen"
+            "de": "Hufeisenwerfen",
+            "ca": "Raquetes de cavalls"
           }
         },
         {
           "if": "sport=horse_racing",
           "then": {
             "en": "Horse racing",
-            "de": "Pferderennen"
+            "de": "Pferderennen",
+            "ca": "Curses de cavalls"
           }
         },
         {
           "if": "sport=ice_hockey",
           "then": {
             "en": "Ice Hockey",
-            "de": "Eishockey"
+            "de": "Eishockey",
+            "ca": "Hoquei de gel"
           }
         },
         {
           "if": "sport=ice_skating",
           "then": {
             "en": "Ice skating",
-            "de": "Eislaufen"
+            "de": "Eislaufen",
+            "ca": "Patinatge sobre gel"
           }
         },
         {
           "if": "sport=ice_stock",
           "then": {
             "en": "Ice stock sport",
-            "de": "Eisstockschießen"
+            "de": "Eisstockschießen",
+            "ca": "Esport d'estoc de gel"
           }
         },
         {
           "if": "sport=judo",
           "then": {
             "en": "Judo",
-            "de": "Judo"
+            "de": "Judo",
+            "ca": "Judo"
           }
         },
         {
           "if": "sport=karate",
           "then": {
             "en": "Karate",
-            "de": "Karate"
+            "de": "Karate",
+            "ca": "karate"
           }
         },
         {
           "if": "sport=karting",
           "then": {
             "en": "Kart racing",
-            "de": "Go-Kart-Rennen"
+            "de": "Go-Kart-Rennen",
+            "ca": "Curses de Kart"
           }
         },
         {
           "if": "sport=kickboxing",
           "then": {
             "en": "Kickboxing",
-            "de": "Kickboxen"
+            "de": "Kickboxen",
+            "ca": "Kickbox"
           }
         },
         {
           "if": "sport=kitesurfing",
           "then": {
             "en": "Kitesurfing",
-            "de": "Kitesurfen"
+            "de": "Kitesurfen",
+            "ca": "Kitesurf"
           }
         },
         {
           "if": "sport=korfball",
           "then": {
             "en": "Korfball",
-            "de": "Korfball"
+            "de": "Korfball",
+            "ca": "Corfbol"
           }
         },
         {
           "if": "sport=krachtball",
           "then": {
             "en": "Krachtball",
-            "de": "Krachtball"
+            "de": "Krachtball",
+            "ca": "Krachtball"
           }
         },
         {
           "if": "sport=lacrosse",
           "then": {
             "en": "Lacrosse",
-            "de": "Lacrosse"
+            "de": "Lacrosse",
+            "ca": "Lacrosse"
           }
         },
         {
           "if": "sport=laser_tag",
           "then": {
             "en": "Laser tag",
-            "de": "Laser Tag"
+            "de": "Laser Tag",
+            "ca": "Etiqueta làser"
           }
         },
         {
           "if": "sport=martial_arts",
           "then": {
             "en": "Martial arts",
-            "de": "Kampfsport"
+            "de": "Kampfsport",
+            "ca": "Arts marcials"
           }
         },
         {
           "if": "sport=miniature_golf",
           "then": {
             "en": "Miniature golf",
-            "de": "Minigolf"
+            "de": "Minigolf",
+            "ca": "Golf en miniatura"
           }
         },
         {
           "if": "sport=model_aerodrome",
           "then": {
             "en": "Radio-controlled aircraft",
-            "de": "Modellflug"
+            "de": "Modellflug",
+            "ca": "Avions controlats per ràdio"
           }
         },
         {
           "if": "sport=motocross",
           "then": {
             "en": "Motocross",
-            "de": "Motocross"
+            "de": "Motocross",
+            "ca": "Motocròs"
           }
         },
         {
           "if": "sport=motor",
           "then": {
             "en": "Motorsport",
-            "de": "Motorsport"
+            "de": "Motorsport",
+            "ca": "Esport de motor"
           }
         },
         {
           "if": "sport=multi",
           "then": {
             "en": "Multiple kind of sports",
-            "de": "Viele verschiedene Sportarten"
+            "de": "Viele verschiedene Sportarten",
+            "ca": "Múltiples tipus d'esport"
           }
         },
         {
           "if": "sport=netball",
           "then": {
             "en": "Netball",
-            "de": "Netzball"
+            "de": "Netzball",
+            "ca": "Netbol"
           }
         },
         {
           "if": "sport=obstacle_course",
           "then": {
             "en": "Obstacle course",
-            "de": "Hindernislauf"
+            "de": "Hindernislauf",
+            "ca": "Curs d'obstacle"
           }
         },
         {
           "if": "sport=orienteering",
           "then": {
             "en": "Orienteering",
-            "de": "Orientierungslauf"
+            "de": "Orientierungslauf",
+            "ca": "Orientació"
           }
         },
         {
           "if": "sport=paddle_tennis",
           "then": {
             "en": "Paddle tennis",
-            "de": "Paddle-Tennis"
+            "de": "Paddle-Tennis",
+            "ca": "Pàdel"
           }
         },
         {
           "if": "sport=padel",
           "then": {
             "en": "Padel",
-            "de": "Padel-Tennis"
+            "de": "Padel-Tennis",
+            "ca": "Pàdel"
           }
         },
         {
           "if": "sport=paintball",
           "then": {
             "en": "Paintball",
-            "de": "Paintball"
+            "de": "Paintball",
+            "ca": "Paintball"
           }
         },
         {
           "if": "sport=parachuting",
           "then": {
             "en": "Parachuting",
-            "de": "Fallschirmspringen"
+            "de": "Fallschirmspringen",
+            "ca": "Paracaigudisme"
           }
         },
         {
           "if": "sport=parkour",
           "then": {
             "en": "Parkour",
-            "de": "Parkour"
+            "de": "Parkour",
+            "ca": "Parkour"
           }
         },
         {
           "if": "sport=pelota",
           "then": {
             "en": "Palota",
-            "de": "Palota"
+            "de": "Palota",
+            "ca": "Pilota"
           }
         },
         {
           "if": "sport=pesäpallo",
           "then": {
             "en": "Pesäpallo",
-            "de": "Pesäpallo"
+            "de": "Pesäpallo",
+            "ca": "Pespalpallo"
           }
         },
         {
           "if": "sport=pickleball",
           "then": {
             "en": "Pickleball",
-            "de": "Pickleball"
+            "de": "Pickleball",
+            "ca": "Pickleball"
           }
         },
         {
           "if": "sport=pilates",
           "then": {
             "en": "Pilates",
-            "de": "Pilates"
+            "de": "Pilates",
+            "ca": "Pilates"
           }
         },
         {
           "if": "sport=pole_dance",
           "then": {
             "en": "Pole dance",
-            "de": "Pole-Dance"
+            "de": "Pole-Dance",
+            "ca": "Pole dance"
           }
         },
         {
           "if": "sport=racquet",
           "then": {
             "en": "Racquetball",
-            "de": "Racquetball"
+            "de": "Racquetball",
+            "ca": "Raquetbol"
           }
         },
         {
           "if": "sport=rc_car",
           "then": {
             "en": "Radio-controlled car",
-            "de": "Modellauto"
+            "de": "Modellauto",
+            "ca": "Cotxe controlat per ràdio"
           }
         },
         {
           "if": "sport=roller_skating",
           "then": {
             "en": "Roller skating",
-            "de": "Rollschuhlaufen"
+            "de": "Rollschuhlaufen",
+            "ca": "Patinatge enrotllat"
           }
         },
         {
           "if": "sport=rowing",
           "then": {
             "en": "Rowing",
-            "de": "Rudern"
+            "de": "Rudern",
+            "ca": "Rem"
           }
         },
         {
           "if": "sport=rugby_league",
           "then": {
             "en": "Rugby league",
-            "de": "Rugbyliga"
+            "de": "Rugbyliga",
+            "ca": "Lliga de rugbi"
           }
         },
         {
           "if": "sport=rugby_union",
           "then": {
             "en": "Rugby union",
-            "de": "Rugby Union"
+            "de": "Rugby Union",
+            "ca": "Unió de rugbi"
           }
         },
         {
           "if": "sport=running",
           "then": {
             "en": "Running",
-            "de": "Laufsport"
+            "de": "Laufsport",
+            "ca": "En execució"
           }
         },
         {
           "if": "sport=sailing",
           "then": {
             "en": "Sailing",
-            "de": "Segeln"
+            "de": "Segeln",
+            "ca": "Vela"
           }
         },
         {
           "if": "sport=scuba_diving",
           "then": {
             "en": "Scuba diving",
-            "de": "Tauchen"
+            "de": "Tauchen",
+            "ca": "Submarinisme"
           }
         },
         {
           "if": "sport=shooting",
           "then": {
             "en": "Shooting",
-            "de": "Schießen"
+            "de": "Schießen",
+            "ca": "Tir"
           }
         },
         {
           "if": "sport=shot-put",
           "then": {
             "en": "Shot-put",
-            "de": "Kugelstoßen"
+            "de": "Kugelstoßen",
+            "ca": "Llançament de pes"
           }
         },
         {
@@ -799,7 +899,8 @@
           "then": {
             "en": "Skateboard",
             "es": "Monopatín",
-            "de": "Skateboard"
+            "de": "Skateboard",
+            "ca": "Monopatí"
           }
         },
         {
@@ -807,7 +908,8 @@
           "then": {
             "en": "Ski jumping",
             "es": "Salto de esquí",
-            "de": "Skispringen"
+            "de": "Skispringen",
+            "ca": "Salt d'esquí"
           }
         },
         {
@@ -815,7 +917,8 @@
           "then": {
             "en": "Snooker",
             "es": "Snooker",
-            "de": "Snooker"
+            "de": "Snooker",
+            "ca": "Llibreta"
           }
         },
         {
@@ -823,7 +926,8 @@
           "then": {
             "en": "Soccer",
             "es": "Fútbol",
-            "de": "Fußball"
+            "de": "Fußball",
+            "ca": "Futbol"
           }
         },
         {
@@ -831,7 +935,8 @@
           "then": {
             "en": "Softball",
             "es": "Softball",
-            "de": "Softball"
+            "de": "Softball",
+            "ca": "Softbol"
           }
         },
         {
@@ -839,174 +944,199 @@
           "then": {
             "en": "Motorcycle speedway",
             "es": "Circuito de motos",
-            "de": "Motorrad-Speedway"
+            "de": "Motorrad-Speedway",
+            "ca": "Velocitat de la moto"
           }
         },
         {
           "if": "sport=squash",
           "then": {
             "en": "Squash",
-            "de": "Squash"
+            "de": "Squash",
+            "ca": "Esquaix"
           }
         },
         {
           "if": "sport=sumo",
           "then": {
             "en": "Sumo",
-            "de": "Sumoringen"
+            "de": "Sumoringen",
+            "ca": "Sumo"
           }
         },
         {
           "if": "sport=surfing",
           "then": {
             "en": "Surfing",
-            "de": "Surfen"
+            "de": "Surfen",
+            "ca": "Surfing"
           }
         },
         {
           "if": "sport=swimming",
           "then": {
             "en": "Swimming",
-            "de": "Schwimmen"
+            "de": "Schwimmen",
+            "ca": "Natació"
           }
         },
         {
           "if": "sport=table_tennis",
           "then": {
             "en": "Table tennis",
-            "de": "Tischtennis"
+            "de": "Tischtennis",
+            "ca": "Tennis taula"
           }
         },
         {
           "if": "sport=table_soccer",
           "then": {
             "en": "Table soccer",
-            "de": "Tischfußball"
+            "de": "Tischfußball",
+            "ca": "Futbol taula"
           }
         },
         {
           "if": "sport=taekwondo",
           "then": {
             "en": "Taekwondo",
-            "de": "Taekwondo"
+            "de": "Taekwondo",
+            "ca": "Taekwondo"
           }
         },
         {
           "if": "sport=tennis",
           "then": {
             "en": "Tennis",
-            "de": "Tennis"
+            "de": "Tennis",
+            "ca": "Tenis"
           }
         },
         {
           "if": "sport=teqball",
           "then": {
             "en": "Teqball",
-            "de": "Teqball"
+            "de": "Teqball",
+            "ca": "Teqball"
           }
         },
         {
           "if": "sport=toboggan",
           "then": {
             "en": "Toboggan",
-            "de": "Rodeln"
+            "de": "Rodeln",
+            "ca": "Tobogan"
           }
         },
         {
           "if": "sport=trampoline",
           "then": {
             "en": "Trampoline",
-            "de": "Trampolin"
+            "de": "Trampolin",
+            "ca": "Trampolí"
           }
         },
         {
           "if": "sport=ultimate",
           "then": {
             "en": "Ultimate frisbee",
-            "de": "Ultimate Frisbee"
+            "de": "Ultimate Frisbee",
+            "ca": "Ultima l'abella"
           }
         },
         {
           "if": "sport=ultralight_aviation",
           "then": {
             "en": "Ultralight aviation",
-            "de": "Ultraleichtflug"
+            "de": "Ultraleichtflug",
+            "ca": "Aviació ultralleuger"
           }
         },
         {
           "if": "sport=volleyball",
           "then": {
             "en": "Volleyball",
-            "de": "Volleyball"
+            "de": "Volleyball",
+            "ca": "Voleibol"
           }
         },
         {
           "if": "sport=wakeboarding",
           "then": {
             "en": "Wakeboarding",
-            "de": "Wakeboarden"
+            "de": "Wakeboarden",
+            "ca": "Esquí-surf"
           }
         },
         {
           "if": "sport=water_polo",
           "then": {
             "en": "Water polo",
-            "de": "Wasserball"
+            "de": "Wasserball",
+            "ca": "Waterpolo"
           }
         },
         {
           "if": "sport=water_ski",
           "then": {
             "en": "Waterskiing",
-            "de": "Wasserski"
+            "de": "Wasserski",
+            "ca": "Esquí aquàtic"
           }
         },
         {
           "if": "sport=weightlifting",
           "then": {
             "en": "Olympic weightlifting",
-            "de": "Olympisches Gewichtheben"
+            "de": "Olympisches Gewichtheben",
+            "ca": "Elevador de pesos olímpic"
           }
         },
         {
           "if": "sport=windsurfing",
           "then": {
             "en": "Windsurfing",
-            "de": "Windsurfen"
+            "de": "Windsurfen",
+            "ca": "Windsurf"
           }
         },
         {
           "if": "sport=wrestling",
           "then": {
             "en": "Wrestling",
-            "de": "Wrestling"
+            "de": "Wrestling",
+            "ca": "Lluita"
           }
         },
         {
           "if": "sport=yoga",
           "then": {
             "en": "Yoga",
-            "de": "Yoga"
+            "de": "Yoga",
+            "ca": "ioga"
           }
         },
         {
           "if": "sport=zurkhaneh_sport",
           "then": {
             "en": "Zurkhaneh sport",
-            "de": "Zurkhaneh-Sport"
+            "de": "Zurkhaneh-Sport",
+            "ca": "Esport de Zurkhaneh"
           }
         }
       ],
       "render": {
         "en": "Sports played here: {sport}",
-        "de": "Hier werden folgende Sportarten ausgeübt: {sport}"
+        "de": "Hier werden folgende Sportarten ausgeübt: {sport}",
+        "ca": "Esports jugats aquí: {sport}"
       },
       "freeform": {
         "key": "sport"
       },
       "question": {
         "en": "What sports are played at this venue?",
-        "de": "Welche Sportarten werden hier ausgeübt?"
+        "de": "Welche Sportarten werden hier ausgeübt?",
+        "ca": "Quins esports es practiquen en aquest recinte?"
       }
     }
   ],

@@ -300,13 +300,15 @@
         "en": "This elevator has a diameter of {canonical(diameter)}",
         "de": "Dieser Aufzug hat einen Durchmesser von {canonical(diameter)}",
         "es": "Este ascensor tiene un diámetro de {canonical(diameter)}",
-        "nl": "Deze lift heeft een diameter van {canonical(diameter)}"
+        "nl": "Deze lift heeft een diameter van {canonical(diameter)}",
+        "ca": "Aquest ascensor té un diàmetre de {canonical(diameter)}"
       },
       "question": {
         "en": "What is the diameter of this elevator?",
         "de": "Was ist der Durchmesser dieses Aufzugs?",
         "es": "¿Cuál es el diámetro de este ascensor?",
-        "nl": "Wat is de diameter van deze lift?"
+        "nl": "Wat is de diameter van deze lift?",
+        "ca": "Quin és el diàmetre d'aquest ascensor?"
       },
       "freeform": {
         "key": "diameter",
@@ -387,7 +389,8 @@
         "de": "Verfügt der Aufzug über eine Sprachausgabe?",
         "cs": "Má tento výtah hlasový výstup?",
         "es": "¿Tiene este ascensor salida de voz?",
-        "nl": "Heeft deze lift spraakuitvoer?"
+        "nl": "Heeft deze lift spraakuitvoer?",
+        "ca": "Té aquesta sortida de veu d'ascensor?"
       },
       "questionHint": {
         "en": "E.g. it announces the current floor",
@@ -406,7 +409,8 @@
             "de": "Der Aufzug verfügt über eine Sprachausgabe",
             "cs": "Tento výtah má hlasový výstup",
             "es": "Este ascensor tiene salida de voz",
-            "nl": "Deze lift heeft spraakuitvoer"
+            "nl": "Deze lift heeft spraakuitvoer",
+            "ca": "Aquest ascensor té sortida de veu"
           }
         },
         {
@@ -416,7 +420,8 @@
             "de": "Der Aufzug verfügt über keine Sprachausgabe",
             "cs": "Tento výtah nemá hlasový výstup",
             "es": "Este ascensor no tiene salida de voz",
-            "nl": "Deze lift heeft geen spraakuitvoer"
+            "nl": "Deze lift heeft geen spraakuitvoer",
+            "ca": "Aquest ascensor no té sortida de veu"
           }
         }
       ]

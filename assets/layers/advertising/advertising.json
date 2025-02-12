@@ -1189,7 +1189,8 @@
             "cs": "Jedná se o dlaždice - reklama je namalovaná na dlaždicích",
             "es": "Se trata de un trabajo en azulejo: el anuncio está pintado en azulejos",
             "uk": "Це кахельна плитка - реклама намальована на плитці",
-            "nl": "Dit is betegeling - de reclame is op tegels geschilderd"
+            "nl": "Dit is betegeling - de reclame is op tegels geschilderd",
+            "ca": "És un mosaic: l'anunci està pintat als taulells"
           }
         },
         {
@@ -1199,7 +1200,8 @@
             "de": "Dies ist ein Relief",
             "cs": "Toto je reliéf",
             "es": "Se trata de un relieve",
-            "nl": "Dit is een reliëf"
+            "nl": "Dit is een reliëf",
+            "ca": "Això és un relleu"
           }
         }
       ]
@@ -1763,7 +1765,8 @@
         "cs": "Je tato značka určena pro již neexistující nebo neudržovaný podnik?",
         "uk": "Це знак для бізнесу, який більше не існує або більше не підтримується?",
         "fr": "Est-ce l'enseigne d'un commerce qui n'existe plus ou n'est plus en activité ?",
-        "nl": "Is dit bord voor een bedrijf dat niet meer bestaat of niet meer wordt onderhouden?"
+        "nl": "Is dit bord voor een bedrijf dat niet meer bestaat of niet meer wordt onderhouden?",
+        "ca": "Aquest rètol és d'un negoci que ja no existeix o que ja no es manté?"
       },
       "mappings": [
         {
@@ -1776,7 +1779,8 @@
             "es": "Se trata de un anuncio histórico (un anuncio de un negocio que ya no existe o un cartel muy antiguo con valor patrimonial)",
             "uk": "Це історична рекламна вивіска (реклама підприємства, яке більше не існує, або дуже стара вивіска, що має історичну цінність)",
             "fr": "C'est une publicité historique (publicité pour un commerce qui n'existe plus ou une très vielle publicité avec un intérêt patrimonial)",
-            "nl": "Dit is een historisch reclamebord (een advertentie voor een bedrijf dat niet meer bestaat of een heel oud bord met erfgoedwaarde)"
+            "nl": "Dit is een historisch reclamebord (een advertentie voor een bedrijf dat niet meer bestaat of een heel oud bord met erfgoedwaarde)",
+            "ca": "Es tracta d'un rètol històric (un anunci d'un negoci que ja no existeix o un cartell molt antic amb valor patrimonial)"
           }
         },
         {
@@ -1788,7 +1792,8 @@
             "es": "Este anuncio no tiene valor histórico (el negocio sigue existiendo y no tiene valor patrimonial)",
             "uk": "Ця рекламна вивіска не має історичної цінності (бізнес все ще існує і не має історичної цінності)",
             "fr": "Cette publicité n'a pas de valeur historique (le commerce existe toujours, mais n'a pas de valeur patrimoniale particulière)",
-            "nl": "Dit reclamebord heeft geen historische waarde (het bedrijf bestaat nog steeds en heeft geen erfgoedwaarde)"
+            "nl": "Dit reclamebord heeft geen historische waarde (het bedrijf bestaat nog steeds en heeft geen erfgoedwaarde)",
+            "ca": "Aquest rètol no té valor històric (el negoci encara existeix i no té valor patrimonial)"
           }
         }
       ]

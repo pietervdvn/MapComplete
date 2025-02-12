@@ -327,7 +327,8 @@
         "before": {
           "en": "<h3>Wikipedia page about the deceased person</h3>",
           "de": "<h3>Wikipedia-Seite über die verstorbene Person</h3>",
-          "es": "<h3>Página de Wikipedia sobre la persona fallecida</h3>"
+          "es": "<h3>Página de Wikipedia sobre la persona fallecida</h3>",
+          "ca": "<h3>Pàgina de la Viquipèdia sobre la persona morta</h3>"
         }
       },
       "condition": "subject:wikidata~*"

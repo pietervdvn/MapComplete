@@ -5,14 +5,17 @@
     "cs": "Počítadla jízdních kol",
     "de": "Fahrradzählstellen",
     "es": "Contadores de bicicletas",
-    "nl": "Fietstellers"
+    "nl": "Fietstellers",
+    "ca": "Comptadors de bicicletes",
+    "uk": "Стійки для велосипедів"
   },
   "description": {
     "en": "Layer showing monitoring stations for bicycle traffic",
     "nl": "Automatische fietstelpunten",
     "cs": "Vrstva zobrazující monitorovací stanice pro cyklistickou dopravu",
     "de": "Ebene mit Messstationen für den Fahrradverkehr",
-    "es": "Capa que muestra las estaciones de monitoreo del tráfico de bicicletas"
+    "es": "Capa que muestra las estaciones de monitoreo del tráfico de bicicletas",
+    "ca": "Capa que mostra les estacions de seguiment del trànsit de bicicletes"
   },
   "source": {
     "osmTags": {
@@ -29,7 +32,8 @@
       "de": "Fahrradzählstelle",
       "cs": "Počítadlo jízdních kol",
       "es": "Contador de bicicletas",
-      "nl": "Fietsteller"
+      "nl": "Fietsteller",
+      "ca": "Comptador de bicicletes"
     }
   },
   "pointRendering": [
@@ -58,7 +62,8 @@
         "de": "eine Fahrradzählstelle",
         "es": "un contador de bicicletas",
         "nl": "een fietsteller",
-        "uk": "стійка для велосипедів"
+        "uk": "стійка для велосипедів",
+        "ca": "un comptador de bicicletes"
       },
       "tags": [
         "man_made=monitoring_station",
@@ -75,7 +80,8 @@
         "cs": "Má tento počítač jízdních kol displej zobrazující počet projíždějících jízdních kol?",
         "de": "Zeigt die Fahrradzählstelle die Anzahl gezählter Fahrräder an?",
         "es": "¿Este contador de bicicletas tiene una pantalla que muestra el número de bicicletas que pasan?",
-        "nl": "Heeft deze fietsteller een display dat het aantal passerende fietsen toont?"
+        "nl": "Heeft deze fietsteller een display dat het aantal passerende fietsen toont?",
+        "ca": "Aquest comptador de bicicletes té una pantalla que mostra el nombre de bicicletes que passen?"
       },
       "mappings": [
         {
@@ -85,7 +91,8 @@
             "cs": "Toto počítadlo má digitální displej",
             "de": "Die Zählstelle hat eine digitale Anzeige",
             "es": "Este contador tiene una pantalla digital",
-            "nl": "Deze teller heeft een digitaal display"
+            "nl": "Deze teller heeft een digitaal display",
+            "ca": "Aquest comptador té una pantalla digital"
           }
         },
         {
@@ -95,7 +102,8 @@
             "cs": "Toto počítadlo má analogový displej",
             "de": "Die Zählstelle hat eine analoge Anzeige",
             "es": "Este contador tiene una pantalla analógica",
-            "nl": "Deze teller heeft een analoog display"
+            "nl": "Deze teller heeft een analoog display",
+            "ca": "Aquest comptador té una pantalla analògica"
           }
         },
         {
@@ -105,7 +113,8 @@
             "cs": "Toto počítadlo nemá žádný displej",
             "de": "Die Zählstelle hat keine Anzeige",
             "es": "Este contador no tiene pantalla",
-            "nl": "Deze teller heeft geen display"
+            "nl": "Deze teller heeft geen display",
+            "ca": "Aquest comptador no té cap pantalla"
           }
         }
       ]
@@ -117,7 +126,8 @@
         "cs": "Jak se jmenuje započítávaná lokalita?",
         "de": "Wie lautet der Name des Zählorts?",
         "es": "¿Cuál es el nombre del lugar contado?",
-        "nl": "Wat is de naam van de getelde locatie?"
+        "nl": "Wat is de naam van de getelde locatie?",
+        "ca": "Quin és el nom de la ubicació comptada?"
       },
       "freeform": {
         "key": "name",
@@ -127,7 +137,8 @@
           "cs": "Název započítávané lokality",
           "de": "Name des Zählorts",
           "es": "Nombre del lugar contado",
-          "nl": "Naam van de getelde locatie"
+          "nl": "Naam van de getelde locatie",
+          "ca": "Nom de la ubicació comptada"
         }
       },
       "render": {
@@ -135,7 +146,8 @@
         "de": "Name des Zählorts: {name}",
         "cs": "Název započítávaného místa: {name}",
         "es": "Nombre del lugar contado: {name}",
-        "nl": "Naam van de getelde locatie: {name}"
+        "nl": "Naam van de getelde locatie: {name}",
+        "ca": "Nom de la ubicació comptada: {name}"
       }
     },
     {
@@ -145,7 +157,8 @@
         "de": "Wann wurde die Zählstelle aufgestellt?",
         "cs": "Kdy toto počítadlo začalo počítat?",
         "es": "¿Cuándo comenzó a contar este contador?",
-        "nl": "Wanneer is deze teller begonnen met tellen?"
+        "nl": "Wanneer is deze teller begonnen met tellen?",
+        "ca": "Quan va començar a comptar aquest comptador?"
       },
       "freeform": {
         "key": "start_date",
@@ -155,7 +168,8 @@
           "de": "Aufstelldatum der Zählstelle",
           "cs": "Datum spuštění počítadla",
           "es": "Fecha de inicio del contador",
-          "nl": "Startdatum van de teller"
+          "nl": "Startdatum van de teller",
+          "ca": "Data d'inici del comptador"
         }
       },
       "render": {
@@ -163,7 +177,8 @@
         "de": "Die Zählstelle wurde am {start_date} aufgestellt",
         "cs": "Toto počítadlo se začalo počítat dne {start_date}",
         "es": "Este contador comenzó a contar el {start_date}",
-        "nl": "Deze teller is begonnen met teller op {start_date}"
+        "nl": "Deze teller is begonnen met teller op {start_date}",
+        "ca": "Aquest comptador va començar a comptar amb {start_date}"
       }
     },
     {
@@ -173,7 +188,8 @@
         "cs": "Má toto počítadlo kol hodiny?",
         "de": "Zeigt die Fahrradzählstelle die Uhrzeit an?",
         "es": "¿Este contador de bicicletas tiene un reloj?",
-        "nl": "Heeft deze fietsteller een klok?"
+        "nl": "Heeft deze fietsteller een klok?",
+        "ca": "Aquest comptador de bicicletes té un rellotge?"
       },
       "mappings": [
         {
@@ -183,7 +199,8 @@
             "cs": "Toto počítadlo je vybaveno hodinami",
             "de": "Die Zählstelle zeigt die Uhrzeit an",
             "es": "Este contador tiene un reloj",
-            "nl": "Deze teller heeft een klok"
+            "nl": "Deze teller heeft een klok",
+            "ca": "Aquest comptador té un rellotge"
           }
         },
         {
@@ -193,7 +210,8 @@
             "cs": "Toto počítadlo nemá žádné hodiny",
             "de": "Die Zählstelle zeigt keine Uhrzeit an",
             "es": "Este contador no tiene reloj",
-            "nl": "Deze teller heeft geen klok"
+            "nl": "Deze teller heeft geen klok",
+            "ca": "Aquest comptador no té rellotge"
           }
         }
       ]
@@ -206,7 +224,8 @@
         "cs": "Jaké je referenční číslo tohoto počítadla?",
         "es": "¿Cuál es el número de referencia de este contador?",
         "nl": "Wat is het referentienummer van deze teller?",
-        "uk": "Який ідентифікаційний номер цієї стійки?"
+        "uk": "Який ідентифікаційний номер цієї стійки?",
+        "ca": "Quin és el número de referència d'aquest comptador?"
       },
       "freeform": {
         "key": "ref",
@@ -217,7 +236,8 @@
           "cs": "Referenční číslo počítadla",
           "es": "Número de referencia del contador",
           "nl": "Referentienummer van de teller",
-          "uk": "Реєстраційний номер стійки"
+          "uk": "Реєстраційний номер стійки",
+          "ca": "Número de referència del comptador"
         },
         "addExtraTags": [
           "noref="
@@ -229,7 +249,8 @@
         "cs": "Referenční číslo počítadla: {ref}",
         "es": "Número de referencia del contador: {ref}",
         "nl": "Referentienummer van de teller: {ref}",
-        "uk": "Реєстраційний номер стійки: {ref}"
+        "uk": "Реєстраційний номер стійки: {ref}",
+        "ca": "Número de referència del comptador: {ref}"
       },
       "mappings": [
         {
@@ -240,7 +261,8 @@
             "cs": "Toto počítadlo nemá referenční číslo",
             "es": "Este contador no tiene número de referencia",
             "nl": "Deze teller heeft geen referentienummer",
-            "uk": "Ця стійка не має ідентифікаційного номера"
+            "uk": "Ця стійка не має ідентифікаційного номера",
+            "ca": "Aquest comptador no té cap número de referència"
           }
         }
       ]
@@ -253,7 +275,8 @@
         "cs": "Existuje webová stránka tohoto počítadla jízdních kol?",
         "es": "¿Hay un sitio web para este contador de bicicletas?",
         "uk": "Є веб-сайт для цього велосипедного прилавка?",
-        "nl": "Is er een website voor deze fietsteller?"
+        "nl": "Is er een website voor deze fietsteller?",
+        "ca": "Hi ha una pàgina web per a aquest taulell de bicicletes?"
       },
       "freeform": {
         "key": "website",
@@ -264,7 +287,8 @@
           "cs": "Webové stránky počítadla",
           "es": "Sitio web del contador",
           "uk": "Сайт лічильника",
-          "nl": "Website van de teller"
+          "nl": "Website van de teller",
+          "ca": "Lloc web del comptador"
         }
       },
       "render": {
@@ -272,7 +296,8 @@
         "de": "Website der Zählstelle: <a href='{website}'>{website}</a>",
         "cs": "Webové stránky počítadla: <a href='{website}'>{website}</a>",
         "es": "Sitio web del contador: <a href='{website}'>{website}</a>",
-        "nl": "Website van de teller <a href='{website}'>{website}</a>"
+        "nl": "Website van de teller <a href='{website}'>{website}</a>",
+        "ca": "Lloc web del comptador: <a href='{website}'>{website}</a>"
       }
     }
   ],

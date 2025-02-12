@@ -26,7 +26,8 @@
       "de": "Geschwindigkeitsanzeige",
       "nl": "Snelheidsdisplay",
       "cs": "Ukazatel rychlosti",
-      "es": "Pantalla de Velocidad"
+      "es": "Pantalla de Velocidad",
+      "ca": "Visualització de velocitat"
     }
   },
   "pointRendering": [
@@ -67,7 +68,8 @@
         "nl": "Wat is de maximum toegestane snelheid bij dit snelheidsdisplay?",
         "fr": "Quelle est la vitesse maximale autorisée au niveau de ce radar pédagogique ?",
         "cs": "Jaká je maximální povolená rychlost na tomto ukazateli rychlosti?",
-        "es": "¿Cuál es la velocidad máxima permitida en esta pantalla de velocidad?"
+        "es": "¿Cuál es la velocidad máxima permitida en esta pantalla de velocidad?",
+        "ca": "Quina és la velocitat màxima permesa a aquesta pantalla de velocitat?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -78,7 +80,8 @@
           "nl": "Maximum toegestane snelheid bij snelheidsdisplay",
           "fr": "Vitesse autorisée au niveau de ce radar pédagogique",
           "cs": "Povolená rychlost na ukazateli rychlosti",
-          "es": "Velocidad permitida en la pantalla de velocidad"
+          "es": "Velocidad permitida en la pantalla de velocidad",
+          "ca": "Velocitat permesa a la visualització de velocitat"
         }
       },
       "render": {

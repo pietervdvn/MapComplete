@@ -3,12 +3,14 @@
   "name": {
     "en": "Trolley Bays",
     "de": "Einkaufswagenbuchten",
-    "es": "Aparcaderos de carros"
+    "es": "Aparcaderos de carros",
+    "ca": "Aparcament de carros"
   },
   "description": {
     "en": "Find trolley bays for shopping trolleys.",
     "de": "Finde Einkaufswagenbuchten für Einkaufswagen.",
-    "es": "Encuentra aparcaderos para carros de compra."
+    "es": "Encuentra aparcaderos para carros de compra.",
+    "ca": "Troba els molls de carros per comprar carrets."
   },
   "source": {
     "osmTags": "amenity=trolley_bay"
@@ -17,7 +19,8 @@
   "title": {
     "en": "Trolley Bay",
     "de": "Einkaufswagenbucht",
-    "es": "Aparcadero de carros"
+    "es": "Aparcadero de carros",
+    "ca": "Aparcament de carros"
   },
   "pointRendering": [
     {
@@ -37,7 +40,8 @@
       "title": {
         "en": "a trolley bay",
         "de": "eine Einkaufswagenbucht",
-        "es": "un aparcadero de carros"
+        "es": "un aparcadero de carros",
+        "ca": "una badia de carros"
       },
       "tags": [
         "amenity=trolley_bay"
@@ -45,7 +49,8 @@
       "description": {
         "en": "A trolley bay for parking shopping carts.",
         "de": "Ein Platz zum Abstellen von Einkaufswagen.",
-        "es": "Un aparcadero para carros de compra."
+        "es": "Un aparcadero para carros de compra.",
+        "ca": "Una badia de carrets per aparcar carrets de compra."
       }
     }
   ],
@@ -55,7 +60,8 @@
       "question": {
         "en": "Is this trolley bay covered?",
         "de": "Ist dieser Einkaufswagenplatz überdacht?",
-        "es": "¿Está cubierto este aparcadero de carros?"
+        "es": "¿Está cubierto este aparcadero de carros?",
+        "ca": "Està cobert aquest tramvia?"
       },
       "mappings": [
         {
@@ -63,7 +69,8 @@
           "then": {
             "en": "This trolley bay is covered",
             "de": "Dieser Einkaufswagenplatz ist überdacht",
-            "es": "Este aparcadero de carros está cubierto"
+            "es": "Este aparcadero de carros está cubierto",
+            "ca": "Aquesta badia de carros està coberta"
           }
         },
         {
@@ -71,7 +78,8 @@
           "then": {
             "en": "This trolley bay is not covered",
             "de": "Dieser Einkaufswagenplatz ist nicht überdacht",
-            "es": "Este aparcadero de carros no está cubierto"
+            "es": "Este aparcadero de carros no está cubierto",
+            "ca": "Aquesta badia de carros no està coberta"
           }
         }
       ]
@@ -81,7 +89,8 @@
       "question": {
         "en": "Is a deposit (e.g. a coin) required for the trolleys?",
         "de": "Ist für die Einkaufswagen ein Pfand (z.B. eine Münze) erforderlich?",
-        "es": "¿Se requiere un depósito (ej. una moneda) para los carros?"
+        "es": "¿Se requiere un depósito (ej. una moneda) para los carros?",
+        "ca": "Es requereix un dipòsit (per exemple, una moneda) per als carrets?"
       },
       "mappings": [
         {
@@ -89,7 +98,8 @@
           "then": {
             "en": "A deposit is required for the trolleys",
             "de": "Für die Einkaufswagen ist ein Pfand zu hinterlegen",
-            "es": "Se requiere un depósito para los carros"
+            "es": "Se requiere un depósito para los carros",
+            "ca": "Es requereix un dipòsit per als carrets"
           }
         },
         {
@@ -97,7 +107,8 @@
           "then": {
             "en": "No deposit is required for the trolleys",
             "de": "Für die Einkaufswagen ist kein Pfand erforderlich",
-            "es": "No se requiere un depósito para los carros"
+            "es": "No se requiere un depósito para los carros",
+            "ca": "No es requereix dipòsit per als carrets"
           }
         }
       ]
@@ -113,7 +124,8 @@
       "question": {
         "en": "What coins are accepted for the deposit?",
         "de": "Welche Münzen werden für die Pfandgebühr akzeptiert?",
-        "es": "¿Qué monedas se aceptan para el depósito?"
+        "es": "¿Qué monedas se aceptan para el depósito?",
+        "ca": "Quines monedes s'accepten per al dipòsit?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -172,7 +184,8 @@
       "question": {
         "en": "What kind of special trolleys are available?",
         "de": "Welche Art von speziellen Einkaufswagen gibt es?",
-        "es": "¿Qué tipo de carros especiales hay disponibles?"
+        "es": "¿Qué tipo de carros especiales hay disponibles?",
+        "ca": "Quin tipus de carros especials hi ha disponibles?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -182,7 +195,8 @@
           "then": {
             "en": "Trolleys with a magnifier are available",
             "de": "Einkaufswagen mit Lupe sind erhältlich",
-            "es": "Hay carros con lupa disponibles"
+            "es": "Hay carros con lupa disponibles",
+            "ca": "Hi ha disponibles troleys amb magnificador"
           }
         },
         {
@@ -191,7 +205,8 @@
           "then": {
             "en": "Trolleys for wheelchair users are available",
             "de": "Einkaufswagen für Rollstuhlfahrer sind verfügbar",
-            "es": "Hay carros para usuarios de sillas de ruedas disponibles"
+            "es": "Hay carros para usuarios de sillas de ruedas disponibles",
+            "ca": "Hi ha disponibles troleys per a usuaris de cadira de rodes"
           }
         },
         {
@@ -200,7 +215,8 @@
           "then": {
             "en": "Trolleys for children are available",
             "de": "Einkaufswagen für Kinder sind verfügbar",
-            "es": "Hay carros para niños disponibles"
+            "es": "Hay carros para niños disponibles",
+            "ca": "Hi ha disponibles troleys per a nens"
           }
         },
         {
@@ -209,7 +225,8 @@
           "then": {
             "en": "Trolleys with seats for children are available",
             "de": "Einkaufswagen mit Sitzen für Kinder sind verfügbar",
-            "es": "Hay carros con asientos para niños disponibles"
+            "es": "Hay carros con asientos para niños disponibles",
+            "ca": "Hi ha disponibles troleys amb seients per a nens"
           }
         },
         {
@@ -218,7 +235,8 @@
           "then": {
             "en": "Trolleys with a flatbed are available",
             "de": "Einkaufswagen mit Flachbett sind verfügbar",
-            "es": "Hay carros con plataforma disponibles"
+            "es": "Hay carros con plataforma disponibles",
+            "ca": "Hi ha disponibles troleys amb llit pla"
           }
         },
         {
@@ -227,7 +245,8 @@
           "then": {
             "en": "Vertical trolleys for sheet-like goods are available",
             "de": "Vertikale Einkaufswagen für plattenförmige Güter sind verfügbar",
-            "es": "Hay carros verticales para mercancías laminares disponibles"
+            "es": "Hay carros verticales para mercancías laminares disponibles",
+            "ca": "Hi ha disponibles carrets verticals per a articles de xapa"
           }
         }
       ]

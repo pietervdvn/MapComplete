@@ -2,11 +2,13 @@
   "id": "campsite",
   "name": {
     "en": "Campsites",
-    "de": "Zeltplätze"
+    "de": "Zeltplätze",
+    "ca": "Càmpings"
   },
   "description": {
     "en": "Campsites",
-    "de": "Zeltplätze"
+    "de": "Zeltplätze",
+    "ca": "Càmpings"
   },
   "source": {
     "osmTags": {
@@ -19,7 +21,9 @@
   "shownByDefault": true,
   "title": {
     "render": {
-      "en": "{name}"
+      "en": "{name}",
+      "ca": "{name}",
+      "de": "{name}"
     }
   },
   "pointRendering": [
@@ -46,7 +50,9 @@
   "presets": [
     {
       "title": {
-        "en": "campsite"
+        "en": "campsite",
+        "ca": "càmping",
+        "de": "Campingplatz"
       },
       "tags": [
         "tourism=camp_site"
@@ -54,7 +60,9 @@
     },
     {
       "title": {
-        "en": "campsite for groups"
+        "en": "campsite for groups",
+        "ca": "càmping per a grups",
+        "de": "Campingplatz für Gruppen"
       },
       "tags": [
         "tourism=camp_site",
@@ -66,7 +74,8 @@
     {
       "question": {
         "de": "Ist dieser Zeltplatz ausschließlich für Gruppen?",
-        "en": "Is this campsite exclusively for groups?"
+        "en": "Is this campsite exclusively for groups?",
+        "ca": "Aquest càmping és exclusiu per a grups?"
       },
       "mappings": [
         {
@@ -77,7 +86,8 @@
           },
           "then": {
             "en": "This campsite is exclusively for groups",
-            "de": "Dieser Zeltplatz ist ausschließlich für Gruppen"
+            "de": "Dieser Zeltplatz ist ausschließlich für Gruppen",
+            "ca": "Aquest càmping és exclusiu per a grups"
           }
         },
         {
@@ -88,7 +98,8 @@
           },
           "then": {
             "en": "This campsite is not exclusively for groups",
-            "de": "Dieser Zeltplatz ist nicht ausschließlich für Gruppen"
+            "de": "Dieser Zeltplatz ist nicht ausschließlich für Gruppen",
+            "ca": "Aquest càmping no és exclusiu per a grups"
           }
         }
       ],
@@ -97,11 +108,13 @@
     {
       "question": {
         "en": "What is the name of this campsite?",
-        "de": "Wie heißt dieser Zeltplatz?"
+        "de": "Wie heißt dieser Zeltplatz?",
+        "ca": "Quin és el nom d'aquest càmping?"
       },
       "render": {
         "en": "The name of this campsite is {name}",
-        "de": "Dieser Zeltplatz heißt {name}"
+        "de": "Dieser Zeltplatz heißt {name}",
+        "ca": "El nom d'aquest càmping és {name}"
       },
       "freeform": {
         "key": "name"
@@ -112,11 +125,13 @@
       "id": "fee",
       "question": {
         "en": "Is a fee charged here?",
-        "de": "Wird hier eine Gebühr erhoben?"
+        "de": "Wird hier eine Gebühr erhoben?",
+        "ca": "Hi ha una comissió aquí?"
       },
       "render": {
         "en": "A fee of {charge} should be paid for here",
-        "de": "Hier wird eine Gebühr von {charge} erhoben"
+        "de": "Hier wird eine Gebühr von {charge} erhoben",
+        "ca": "S'ha de pagar una comissió de {charge} aquí"
       },
       "freeform": {
         "key": "charge",
@@ -134,7 +149,8 @@
           ],
           "then": {
             "en": "The campsite is free of charge",
-            "de": "Der Zeltplatz ist kostenlos"
+            "de": "Der Zeltplatz ist kostenlos",
+            "ca": "El càmping és gratuït"
           }
         },
         {
@@ -146,7 +162,8 @@
           },
           "then": {
             "en": "A fee is charged here.",
-            "de": "Hier wird eine Gebühr erhoben."
+            "de": "Hier wird eine Gebühr erhoben.",
+            "ca": "Aquí es cobra una tarifa."
           },
           "hideInAnswer": "charge~*"
         }
@@ -155,11 +172,13 @@
     {
       "question": {
         "de": "Wie viele Personen können hier übernachten?",
-        "en": "How many people can stay here?"
+        "en": "How many people can stay here?",
+        "ca": "Quantes persones poden quedar-se aquí?"
       },
       "render": {
         "en": "{capacity:persons} people can stay here",
-        "de": "Hier können {capacity:persons} Personen übernachten"
+        "de": "Hier können {capacity:persons} Personen übernachten",
+        "ca": "{capacity:persons} les persones poden quedar-se aquí"
       },
       "freeform": {
         "key": "capacity:persons",
@@ -179,12 +198,15 @@
         {
           "question": {
             "en": "All capacities",
-            "de": "Personen"
+            "de": "Alle Kapazitäten",
+            "ca": "Totes les capacitats"
           }
         },
         {
           "question": {
-            "en": "Capacity between 1 and 20 persons"
+            "en": "Capacity between 1 and 20 persons",
+            "ca": "Capacitat entre 1 i 20 persones",
+            "de": "Kapazität zwischen 1 und 20 Personen"
           },
           "osmTags": {
             "and": [
@@ -195,7 +217,9 @@
         },
         {
           "question": {
-            "en": "Capacity between 21 and 50 persons"
+            "en": "Capacity between 21 and 50 persons",
+            "ca": "Capacitat entre 21 i 50 persones",
+            "de": "Kapazität zwischen 21 und 50 Personen"
           },
           "osmTags": {
             "and": [
@@ -206,7 +230,9 @@
         },
         {
           "question": {
-            "en": "Capacity between 51 and 100 persons"
+            "en": "Capacity between 51 and 100 persons",
+            "ca": "Capacitat entre 51 i 100 persones",
+            "de": "Kapazität zwischen 51 und 100 Personen"
           },
           "osmTags": {
             "and": [
@@ -217,7 +243,9 @@
         },
         {
           "question": {
-            "en": "Capacity between 101 and 200 persons"
+            "en": "Capacity between 101 and 200 persons",
+            "ca": "Capacitat entre 101 i 200 persones",
+            "de": "Kapazität zwischen 101 und 200 Personen"
           },
           "osmTags": {
             "and": [
@@ -228,7 +256,9 @@
         },
         {
           "question": {
-            "en": "Capacity between 201 and 500 persons"
+            "en": "Capacity between 201 and 500 persons",
+            "ca": "Capacitat entre 201 i 500 persones",
+            "de": "Kapazität zwischen 201 und 500 Personen"
           },
           "osmTags": {
             "and": [
@@ -239,13 +269,17 @@
         },
         {
           "question": {
-            "en": "Capacity over 500 persons"
+            "en": "Capacity over 500 persons",
+            "ca": "Capacitat per a més de 500 persones",
+            "de": "Kapazität über 500 Personen"
           },
           "osmTags": "capacity:persons>=501"
         },
         {
           "question": {
-            "en": "?"
+            "en": "?",
+            "ca": "?",
+            "de": "?"
           },
           "osmTags": "capacity:persons="
         }

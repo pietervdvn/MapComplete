@@ -6,6 +6,14 @@
             "fixme": {
                 "question": "Was sollte hier korrigiert werden? Bitte erläutern"
             },
+            "header": {
+                "mappings": {
+                    "0": {
+                        "then": "Adresse unbekannt"
+                    }
+                },
+                "render": "{addr:street} <b>{addr:housenumber}</b> {addr:unit}"
+            },
             "housenumber": {
                 "mappings": {
                     "0": {
@@ -17,16 +25,8 @@
             },
             "street": {
                 "question": "In welcher Straße befindet sich diese Adresse?",
-                "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>",
-                "questionHint": "Gib die Hausnummer nicht an"
-            },
-            "header": {
-                "mappings": {
-                    "0": {
-                        "then": "Adresse unbekannt"
-                    }
-                },
-                "render": "{addr:street} <b>{addr:housenumber}</b> {addr:unit}"
+                "questionHint": "Gib die Hausnummer nicht an",
+                "render": "Diese Adresse befindet sich in der Straße <b>{addr:street}</b>"
             },
             "unit": {
                 "mappings": {
@@ -2239,6 +2239,14 @@
             }
         },
         "name": "Zeltplätze",
+        "presets": {
+            "0": {
+                "title": "Campingplatz"
+            },
+            "1": {
+                "title": "Campingplatz für Gruppen"
+            }
+        },
         "tagRenderings": {
             "capacity_persons": {
                 "question": "Wie viele Personen können hier übernachten?",
@@ -2270,14 +2278,6 @@
             "name": {
                 "question": "Wie heißt dieser Zeltplatz?",
                 "render": "Dieser Zeltplatz heißt {name}"
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "Campingplatz"
-            },
-            "1": {
-                "title": "Campingplatz für Gruppen"
             }
         },
         "title": {
@@ -9562,6 +9562,52 @@
         }
     },
     "school": {
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Alle Bildungsstufen"
+                    },
+                    "1": {
+                        "question": "Hat einen Kindergarten"
+                    },
+                    "2": {
+                        "question": "Grundschule"
+                    },
+                    "3": {
+                        "question": "Sekundarstufe I und II"
+                    },
+                    "4": {
+                        "question": "Hat die erste Klasse"
+                    },
+                    "5": {
+                        "question": "Hat die zweite Klasse"
+                    },
+                    "6": {
+                        "question": "Hat die dritte Klasse"
+                    },
+                    "7": {
+                        "question": "Diese Schule bietet eine postsekundäre Ausbildung (z. B. ein siebtes oder achtes Spezialisierungsjahr)"
+                    },
+                    "8": {
+                        "question": "Unbekanntes Schulniveau"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Bietet diese Schule sonderpädagogische Förderung an?"
+                    },
+                    "1": {
+                        "question": "Hat eine Sonderausbildung"
+                    },
+                    "2": {
+                        "question": "Keine oder nur eingeschränkte sonderpädagogische Förderung"
+                    }
+                }
+            }
+        },
         "name": "Grund- und weiterführende Schulen",
         "presets": {
             "0": {
@@ -9620,16 +9666,9 @@
                 "question": "Welche Geschlechter können sich an dieser Schule anmelden?"
             },
             "is_special_needs": {
-                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf??",
                 "mappings": {
-                    "5": {
-                        "then": "Diese Schule ist für Schüler mit besonderen Bedürfnissen."
-                    },
                     "0": {
                         "then": "Diese Schule ist nur für Schüler mit besonderem Förderbedarf; für die Einschreibung ist ein Zertifikat erforderlich."
-                    },
-                    "3": {
-                        "then": "Diese Schule bietet begrenzte, ad hoc Unterstützung, verfügt jedoch nicht über nennenswertes Fachwissen und gilt nicht als Sonderschule."
                     },
                     "1": {
                         "then": "Diese Schule hat einen separaten Bereich für Schüler mit besonderen Bedürfnissen."
@@ -9637,11 +9676,49 @@
                     "2": {
                         "then": "Schüler mit und ohne besonderen Förderbedarf haben gemeinsamen Unterricht."
                     },
+                    "3": {
+                        "then": "Diese Schule bietet begrenzte, ad hoc Unterstützung, verfügt jedoch nicht über nennenswertes Fachwissen und gilt nicht als Sonderschule."
+                    },
                     "4": {
                         "then": "Diese Schule bietet keine Unterstützung für Schüler mit besonderen Bedürfnissen."
+                    },
+                    "5": {
+                        "then": "Diese Schule ist für Schüler mit besonderen Bedürfnissen."
                     }
                 },
+                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf??",
                 "questionHint": "Eine Sonderschule verfügt über Fachwissen und unterstützt Schüler mit einer (schweren) Diagnose. In vielen Ländern ist für die Anmeldung eine Bescheinigung erforderlich."
+            },
+            "orientation_belgium": {
+                "mappings": {
+                    "0": {
+                        "then": "Bereitet sich auf ein akademisches Studium an der Universität vor"
+                    },
+                    "1": {
+                        "then": "Bereitet sich auf ein Fachstudium an einer Hochschule vor"
+                    },
+                    "2": {
+                        "then": "Bereitet sich auf einen Arbeitsplatz vor"
+                    }
+                },
+                "question": "Was lernt man an dieser Schule?"
+            },
+            "orientation_belgium_special_needs": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Ausbildungstyp 1</b>: vermittelt elementare Lebenskompetenzen für das Leben in einer Einrichtung. Es besteht nicht die Absicht, nach der Ausbildung eine (bezahlte) Arbeit aufzunehmen."
+                    },
+                    "1": {
+                        "then": "<b>Ausbildungstyp 2</b>: bereitet auf die Arbeit in einem Umfeld mit zusätzlicher Betreuung und Einrichtungen wie z.B. einer Behindertenwerkstatt vor"
+                    },
+                    "2": {
+                        "then": "<b>Ausbildungstyp 3</b>: bereitet auf einen Arbeitsplatz und ein (mehr oder weniger) unabhängiges Leben in der Gesellschaft vor"
+                    },
+                    "3": {
+                        "then": "<b>Ausbildungstyp 4</b>: bereitet auf einen Arbeitsplatz oder eine weiterführende Ausbildung vor"
+                    }
+                },
+                "question": "Wozu bildet diese Schule Schüler aus?"
             },
             "pedagogy": {
                 "mappings": {
@@ -9692,9 +9769,6 @@
             },
             "special_needs_categories_be": {
                 "mappings": {
-                    "5": {
-                        "then": "Für Schüler mit einer Entwicklungsbedingten Sprachstörung (Typ 7 – DLD)"
-                    },
                     "0": {
                         "then": "Für Schüler mit einer geistigen Behinderung (Typ 2)"
                     },
@@ -9710,6 +9784,9 @@
                     "4": {
                         "then": "Für gehörlose Schüler und Schüler mit Hörverlust (Typ 7)"
                     },
+                    "5": {
+                        "then": "Für Schüler mit einer Entwicklungsbedingten Sprachstörung (Typ 7 – DLD)"
+                    },
                     "6": {
                         "then": "Für Schüler mit einer Autismus-Spektrum-Störung (Typ 9)"
                     },
@@ -9718,87 +9795,10 @@
                     }
                 },
                 "question": "Welche Art von besonderen Bedürfnissen wird hier behandelt?"
-            },
-            "orientation_belgium": {
-                "mappings": {
-                    "0": {
-                        "then": "Bereitet sich auf ein akademisches Studium an der Universität vor"
-                    },
-                    "1": {
-                        "then": "Bereitet sich auf ein Fachstudium an einer Hochschule vor"
-                    },
-                    "2": {
-                        "then": "Bereitet sich auf einen Arbeitsplatz vor"
-                    }
-                },
-                "question": "Was lernt man an dieser Schule?"
-            },
-            "orientation_belgium_special_needs": {
-                "mappings": {
-                    "2": {
-                        "then": "<b>Ausbildungstyp 3</b>: bereitet auf einen Arbeitsplatz und ein (mehr oder weniger) unabhängiges Leben in der Gesellschaft vor"
-                    },
-                    "0": {
-                        "then": "<b>Ausbildungstyp 1</b>: vermittelt elementare Lebenskompetenzen für das Leben in einer Einrichtung. Es besteht nicht die Absicht, nach der Ausbildung eine (bezahlte) Arbeit aufzunehmen."
-                    },
-                    "1": {
-                        "then": "<b>Ausbildungstyp 2</b>: bereitet auf die Arbeit in einem Umfeld mit zusätzlicher Betreuung und Einrichtungen wie z.B. einer Behindertenwerkstatt vor"
-                    },
-                    "3": {
-                        "then": "<b>Ausbildungstyp 4</b>: bereitet auf einen Arbeitsplatz oder eine weiterführende Ausbildung vor"
-                    }
-                },
-                "question": "Wozu bildet diese Schule Schüler aus?"
             }
         },
         "title": {
             "render": "Schule <i>{name}</i>"
-        },
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Alle Bildungsstufen"
-                    },
-                    "7": {
-                        "question": "Diese Schule bietet eine postsekundäre Ausbildung (z. B. ein siebtes oder achtes Spezialisierungsjahr)"
-                    },
-                    "1": {
-                        "question": "Hat einen Kindergarten"
-                    },
-                    "2": {
-                        "question": "Grundschule"
-                    },
-                    "3": {
-                        "question": "Sekundarstufe I und II"
-                    },
-                    "4": {
-                        "question": "Hat die erste Klasse"
-                    },
-                    "5": {
-                        "question": "Hat die zweite Klasse"
-                    },
-                    "6": {
-                        "question": "Hat die dritte Klasse"
-                    },
-                    "8": {
-                        "question": "Unbekanntes Schulniveau"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Bietet diese Schule sonderpädagogische Förderung an?"
-                    },
-                    "1": {
-                        "question": "Hat eine Sonderausbildung"
-                    },
-                    "2": {
-                        "question": "Keine oder nur eingeschränkte sonderpädagogische Förderung"
-                    }
-                }
-            }
         }
     },
     "scouting_group": {
@@ -12800,8 +12800,17 @@
                     }
                 }
             },
+            "debug-gps-title": {
+                "render": "GPS- und Gyroskopdaten"
+            },
             "debug-title": {
                 "render": "<h3>Debugging-Optionen</h3>"
+            },
+            "debug_accordeon_title": {
+                "render": "Fehlerbehebungsinformationen"
+            },
+            "debug_storage_accordeon_title": {
+                "render": "Fehlerbehebungsinformationen über den lokalen Speicher"
             },
             "edit-profile": {
                 "render": {
@@ -13050,15 +13059,6 @@
                         "then": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
-            },
-            "debug-gps-title": {
-                "render": "GPS- und Gyroskopdaten"
-            },
-            "debug_accordeon_title": {
-                "render": "Fehlerbehebungsinformationen"
-            },
-            "debug_storage_accordeon_title": {
-                "render": "Fehlerbehebungsinformationen über den lokalen Speicher"
             }
         },
         "title": {

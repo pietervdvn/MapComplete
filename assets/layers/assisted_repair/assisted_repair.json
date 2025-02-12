@@ -5,14 +5,16 @@
     "de": "Repair-Cafés und unterstützte Reparaturwerkstätten",
     "cs": "Opravárenské kavárny a asistované opravárenské dílny",
     "es": "Cafés de reparación y talleres de reparación asistida",
-    "nl": "Repair cafés en reparatiewerkplaatsen met ondersteuning"
+    "nl": "Repair cafés en reparatiewerkplaatsen met ondersteuning",
+    "ca": "Cafeteria de reparació i tallers de reparació assistida"
   },
   "description": {
     "en": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location. A repair café is a type of event organized regularly along the same principles.",
     "de": "Eine Selbsthilfewerkstatt ist ein Ort, an dem Menschen ihre Gegenstände mit Hilfe von Freiwilligen und den vor Ort verfügbaren Werkzeugen reparieren können. Ein Repair-Café ist eine Art von Veranstaltung, die regelmäßig nach denselben Prinzipien organisiert wird.",
     "cs": "Svépomocná dílna je místo, kam mohou lidé přijít a opravit si své zboží s pomocí dobrovolníků a nástrojů, které jsou na daném místě k dispozici.  Opravárenská kavárna je typ akce, která se pravidelně pořádá na stejných principech.",
     "es": "Un taller de reparación asistida es un lugar donde la gente puede venir y reparar sus bienes con la ayuda de voluntarios y con las herramientas disponibles en el lugar. Un café de reparación es un tipo de evento organizado regularmente con los mismos principios.",
-    "nl": "Een zelfondersteunde werkplaats is een locatie waar mensen hun spullen kunnen komen repareren met hulp van vrijwilligers en met het gereedschap dat op de locatie beschikbaar is. Een repair café is een soort evenement dat regelmatig wordt georganiseerd volgens dezelfde principes."
+    "nl": "Een zelfondersteunde werkplaats is een locatie waar mensen hun spullen kunnen komen repareren met hulp van vrijwilligers en met het gereedschap dat op de locatie beschikbaar is. Een repair café is een soort evenement dat regelmatig wordt georganiseerd volgens dezelfde principes.",
+    "ca": "Un taller autoassistit és un lloc on les persones poden venir i reparar els seus béns amb l'ajuda de voluntaris i amb les eines disponibles en el lloc donat. Un cafè de reparació és un tipus d'esdeveniment organitzat regularment seguint els mateixos principis."
   },
   "source": {
     "osmTags": "repair=assisted_self_service"
@@ -24,7 +26,8 @@
       "de": "Werkstatt für unterstützte Reparaturen",
       "cs": "Dílna pro asistované opravy",
       "es": "Taller de reparación asistida",
-      "nl": "Werkplaats voor reparatie met ondersteuning"
+      "nl": "Werkplaats voor reparatie met ondersteuning",
+      "ca": "Taller de reparació assistida"
     },
     "mappings": [
       {
@@ -34,7 +37,8 @@
           "de": "{name}",
           "cs": "{name}",
           "es": "{name}",
-          "nl": "{name}"
+          "nl": "{name}",
+          "ca": "{name}"
         }
       }
     ]
@@ -82,7 +86,8 @@
         "de": "Eine unterstützte Reparaturwerkstatt",
         "cs": "asistovaná opravárenská dílna",
         "es": "un taller de reparación asistida",
-        "nl": "een reparatiewerkplaats met ondersteuning"
+        "nl": "een reparatiewerkplaats met ondersteuning",
+        "ca": "Taller de reparació assistida"
       },
       "tags": [
         "amenity=workshop",
@@ -93,7 +98,8 @@
         "de": "Ein Ort mit einer festen Werkstatt, in der Menschen mit Hilfe von Freiwilligen Gegenstände reparieren können.",
         "cs": "Místo se stálou dílnou, kam mohou lidé přijít a s pomocí dobrovolníků opravovat předměty.",
         "es": "Un lugar con un taller permanente donde la gente puede venir a reparar artículos con la ayuda de voluntarios.",
-        "nl": "Een locatie met een permanente werkplaats waar mensen naartoe kunnen komen om spullen te repareren met hulp van vrijwilligers."
+        "nl": "Een locatie met een permanente werkplaats waar mensen naartoe kunnen komen om spullen te repareren met hulp van vrijwilligers.",
+        "ca": "Un lloc amb un taller permanent on la gent pot venir a reparar articles amb l'ajuda de voluntaris."
       }
     }
   ],
@@ -106,7 +112,8 @@
         "de": "Wie heißt diese Reparaturwerkstatt?",
         "cs": "Jak se tato opravna jmenuje?",
         "es": "¿Cuál es el nombre de este taller de reparación?",
-        "nl": "Wat is de naam van deze reparatiewerkplaats?"
+        "nl": "Wat is de naam van deze reparatiewerkplaats?",
+        "ca": "Quin és el nom d'aquest taller de reparació?"
       },
       "id": "name",
       "render": {
@@ -114,7 +121,8 @@
         "de": "Diese Werkstatt heißt <b>{name}</b>",
         "cs": "Tato dílna se nazývá <b>{name}</b>",
         "es": "Este taller se llama <b>{name}</b>",
-        "nl": "Deze werkplaats heet <b>{name}</b>"
+        "nl": "Deze werkplaats heet <b>{name}</b>",
+        "ca": "Aquest taller es diu <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -130,7 +138,8 @@
         "de": "Welche Art von Gegenständen wird hier repariert?",
         "cs": "Jaké předměty se zde opravují?",
         "es": "¿Qué tipo de artículos se reparan aquí?",
-        "nl": "Wat voor items worden hier gerepareerd?"
+        "nl": "Wat voor items worden hier gerepareerd?",
+        "ca": "Quin tipus d'articles es reparen aquí?"
       },
       "id": "item:repair",
       "mappings": [
@@ -146,7 +155,8 @@
             "cs": "Zde se opravují mobilní telefony",
             "es": "Aquí se reparan teléfonos móviles",
             "uk": "Тут ремонтують мобільні телефони",
-            "nl": "Mobiele telefoons worden hier gerepareerd"
+            "nl": "Mobiele telefoons worden hier gerepareerd",
+            "ca": "Els telèfons mòbils es reparen aquí"
           },
           "ifnot": "service:mobile_phone:repair=no"
         },
@@ -161,7 +171,8 @@
             "de": "Computer werden hier repariert",
             "cs": "Počítače se opravují zde",
             "es": "Aquí se reparan ordenadores",
-            "nl": "Computers worden hier gerepareerd"
+            "nl": "Computers worden hier gerepareerd",
+            "ca": "Els ordinadors es reparen aquí"
           },
           "ifnot": "service:computer:repair=no"
         },
@@ -176,7 +187,8 @@
             "de": "Fahrräder werden hier repariert",
             "cs": "Zde se opravují jízdní kola",
             "es": "Aquí se reparan bicicletas",
-            "nl": "Fietsen worden hier gerepareerd"
+            "nl": "Fietsen worden hier gerepareerd",
+            "ca": "Les bicicletes es reparen aquí"
           },
           "ifnot": "service:bicycle:repair=no"
         },
@@ -191,7 +203,8 @@
             "de": "Elektronische Geräte werden hier repariert",
             "cs": "Zde se opravují elektronická zařízení",
             "es": "Aquí se reparan dispositivos electrónicos",
-            "nl": "Elektronische apparaten worden hier gerepareerd"
+            "nl": "Elektronische apparaten worden hier gerepareerd",
+            "ca": "Els dispositius electrònics es reparen aquí"
           },
           "ifnot": "service:electronics:repair=no",
           "icon": "./assets/layers/recycling/small_electrical_appliances.svg"
@@ -207,7 +220,8 @@
             "de": "Möbel werden hier repariert",
             "cs": "Zde se opravuje nábytek",
             "es": "Aquí se reparan muebles",
-            "nl": "Meubels worden hier gerepareerd"
+            "nl": "Meubels worden hier gerepareerd",
+            "ca": "Aquí es reparen els mobles"
           },
           "ifnot": "service:furniture:repair=no",
           "icon": "./assets/layers/recycling/furniture.svg"
@@ -223,7 +237,8 @@
             "de": "Kleidung wird hier repariert",
             "cs": "Zde se opravují oděvy",
             "es": "Aquí se repara ropa",
-            "nl": "Kleding wordt hier gerepareerd"
+            "nl": "Kleding wordt hier gerepareerd",
+            "ca": "Aquí es reparen roba"
           },
           "ifnot": "service:clothes:repair=no",
           "icon": "./assets/layers/recycling/clothes.svg"

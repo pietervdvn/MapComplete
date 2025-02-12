@@ -228,7 +228,8 @@
             "nl": "Een vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)",
             "de": "Ein Papierkorb für Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak)",
             "ru": "Корзина для пластиковой упаковки, металлической упаковки и картонной упаковки из-под напитков (PMD)",
-            "es": "Un contenedor para envases de plástico, envases metálicos y cartones de bebidas (PMD)"
+            "es": "Un contenedor para envases de plástico, envases metálicos y cartones de bebidas (PMD)",
+            "ca": "Una cistella de residus per a envasos de plàstic, envasos metàl·lics i cartons de begudes (PMD)"
           }
         },
         {
@@ -437,7 +438,8 @@
             "en": "Waste basket for plastic packaging, metal packaging and drink cartons (PMD)",
             "nl": "Vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)",
             "de": "Papierkorb für Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak)",
-            "es": "Contenedor para envases de plástico, envases metálicos y cartones de bebidas (PMD)"
+            "es": "Contenedor para envases de plástico, envases metálicos y cartones de bebidas (PMD)",
+            "ca": "Cistella de residus per a envasos de plàstic, envasos metàl·lics i cartons de begudes (PMD)"
           },
           "osmTags": "waste~i~.*pmd.*"
         },
@@ -446,7 +448,8 @@
             "en": "Waste basket for paper",
             "nl": "Vuilnisbak voor papier",
             "de": "Papierkorb für Papier",
-            "es": "Contenedor para papel"
+            "es": "Contenedor para papel",
+            "ca": "Cistella de residus per a paper"
           },
           "osmTags": "waste~i~.*paper.*"
         }

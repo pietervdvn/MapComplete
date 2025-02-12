@@ -5,13 +5,15 @@
     "de": "Kino",
     "es": "Cine",
     "cs": "Kino",
-    "nl": "Bioscoop"
+    "nl": "Bioscoop",
+    "ca": "Cinema"
   },
   "description": {
     "en": "A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US.",
     "de": "Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind.",
     "es": "Un lugar donde se proyectan películas (cine), generalmente abierto al público por una tarifa Comúnmente conocido como cine en Estados Unidos.",
-    "nl": "Een plaats die films toont, meestal open voor het publiek tegen een vergoeding."
+    "nl": "Een plaats die films toont, meestal open voor het publiek tegen een vergoeding.",
+    "ca": "Un lloc que mostra pel·lícules (pel·lícules), generalment obert al públic per un preu. Conegut comunament com una sala de cinema als EUA."
   },
   "source": {
     "osmTags": "amenity=cinema"
@@ -31,7 +33,8 @@
       "de": "Kino",
       "es": "Cine",
       "cs": "Kino",
-      "nl": "Bioscoop"
+      "nl": "Bioscoop",
+      "ca": "Cinema"
     }
   },
   "pointRendering": [
@@ -64,7 +67,8 @@
         "de": "Um welche Art von Kino handelt es sich?",
         "es": "¿Qué tipo de cine es este?",
         "cs": "O jaký typ kina se jedná?",
-        "nl": "Wat voor type bioscoop is dit?"
+        "nl": "Wat voor type bioscoop is dit?",
+        "ca": "Quin tipus de cinema és aquest?"
       },
       "mappings": [
         {
@@ -74,7 +78,8 @@
             "de": "Dies ist ein normales Kino, das Filme für alle Altersgruppen zeigt",
             "es": "Este es un cine normal que proyecta películas para todas las edades",
             "cs": "Toto je normální kino promítající filmy pro všechny věkové kategorie",
-            "nl": "Dit is een normale bioscoop met films voor alle leeftijden"
+            "nl": "Dit is een normale bioscoop met films voor alle leeftijden",
+            "ca": "Aquest és un cinema normal que mostra pel·lícules per a totes les edats"
           }
         },
         {
@@ -84,7 +89,8 @@
             "de": "Dies ist ein Sex-Kino, das Erwachsenenfilme zeigt",
             "es": "Este es un cine erótico que proyecta películas para adultos",
             "cs": "Toto je erotické kino promítající filmy pro dospělé",
-            "nl": "Dit is een erotische bioscoop met films voor volwassenen"
+            "nl": "Dit is een erotische bioscoop met films voor volwassenen",
+            "ca": "Aquest és un cinema eròtic que mostra pel·lícules per a adults"
           }
         }
       ]

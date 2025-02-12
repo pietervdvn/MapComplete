@@ -2,11 +2,14 @@
   "id": "beehive",
   "name": {
     "en": "Beehives",
-    "de": "Bienenstöcke"
+    "de": "Bienenstöcke",
+    "ca": "ruscs",
+    "uk": "Бджолині вулики"
   },
   "description": {
     "en": "Layer showing beehives",
-    "de": "Ebene mit Bienenstöcken"
+    "de": "Ebene mit Bienenstöcken",
+    "ca": "Capa que mostra els ruscs"
   },
   "source": {
     "osmTags": "man_made=beehive"
@@ -14,7 +17,8 @@
   "minzoom": 11,
   "title": {
     "en": "Beehive",
-    "de": "Bienenstock"
+    "de": "Bienenstock",
+    "ca": "rusc"
   },
   "pointRendering": [
     {
@@ -37,7 +41,8 @@
     {
       "title": {
         "en": "a beehive",
-        "de": "ein Bienenstock"
+        "de": "ein Bienenstock",
+        "ca": "un rusc"
       },
       "tags": [
         "man_made=beehive"
@@ -50,26 +55,30 @@
       "id": "capacity",
       "question": {
         "en": "How many beehives are there?",
-        "de": "Wie viele Bienenstöcke gibt es?"
+        "de": "Wie viele Bienenstöcke gibt es?",
+        "ca": "Quants ruscs hi ha?"
       },
       "freeform": {
         "key": "capacity",
         "type": "pnat",
         "placeholder": {
           "en": "Number of beehives",
-          "de": "Anzahl der Bienenstöcke"
+          "de": "Anzahl der Bienenstöcke",
+          "ca": "Nombre de ruscs"
         }
       },
       "render": {
         "en": "There are {capacity} beehives",
-        "de": "Es gibt {capacity} Bienenstöcke"
+        "de": "Es gibt {capacity} Bienenstöcke",
+        "ca": "Hi ha {capacity} ruscs"
       },
       "mappings": [
         {
           "if": "capacity=1",
           "then": {
             "en": "There is 1 beehive",
-            "de": "Es gibt 1 Bienenstock"
+            "de": "Es gibt 1 Bienenstock",
+            "ca": "Hi ha 1 rusc"
           }
         }
       ]

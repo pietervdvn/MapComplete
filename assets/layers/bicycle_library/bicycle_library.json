@@ -13,7 +13,8 @@
     "ca": "Biblioteca per a bicicletes",
     "es": "Biblioteca de bicicletas",
     "da": "Cykel bibliotek",
-    "cs": "Půjčovna kol"
+    "cs": "Půjčovna kol",
+    "uk": "Велосипедна бібліотека"
   },
   "description": {
     "en": "A facility where bicycles can be lent for longer period of times",

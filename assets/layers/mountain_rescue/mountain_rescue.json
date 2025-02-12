@@ -5,13 +5,15 @@
     "de": "Bergrettungsstationen",
     "fr": "Postes de secours en montagne",
     "pl": "Stacje ratownictwa górskiego",
-    "es": "Refugios de montaña"
+    "es": "Refugios de montaña",
+    "ca": "Estacions de rescat de muntanya"
   },
   "description": {
     "en": "A building where first aid responders store material and might be on watch",
     "de": "Ein Gebäude, in dem die Ersthelfer Material lagern und möglicherweise Wache halten",
     "fr": "Un bâtiment où les organismes de secours stockent du matériel ou assurent la garde",
-    "es": "Un edificio donde los socorristas guardan material y pueden estar de guardia"
+    "es": "Un edificio donde los socorristas guardan material y pueden estar de guardia",
+    "ca": "Un edifici on els primers auxilis emmagatzemen material i podria estar en vigilància"
   },
   "source": {
     "osmTags": "emergency=mountain_rescue"
@@ -23,7 +25,8 @@
       "de": "Bergrettungsstation",
       "fr": "Poste de secours en montagne",
       "pl": "Stacja ratownictwa górskiego",
-      "es": "Refugio de montaña"
+      "es": "Refugio de montaña",
+      "ca": "Estació de rescat de muntanya"
     }
   },
   "pointRendering": [
@@ -57,7 +60,8 @@
         "de": "eine Bergrettungsstation",
         "fr": "un poste de secours en montagne",
         "pl": "stacja ratownictwa górskiego",
-        "es": "un refugio de montaña"
+        "es": "un refugio de montaña",
+        "ca": "una estació de rescat de muntanya"
       },
       "tags": [
         "emergency=mountain_rescue"

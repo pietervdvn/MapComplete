@@ -21,7 +21,8 @@
           "de": "Kinderkrippe {name}",
           "pl": "Żłobek {name}",
           "cs": "Péče o děti {name}",
-          "es": "Guardería {name}"
+          "es": "Guardería {name}",
+          "ca": "Atenció infantil {name}"
         }
       }
     ]
@@ -118,7 +119,8 @@
           "de": "Wann ist diese Kinderbetreuung geöffnet?",
           "pl": "W jakich godzinach ten żłobek jest otwarty?",
           "cs": "Kdy je tato péče o děti otevřena?",
-          "es": "¿Cuándo abre esta guardería?"
+          "es": "¿Cuándo abre esta guardería?",
+          "ca": "Quan s'obre aquesta guarderia?"
         },
         "condition": "amenity=childcare"
       }

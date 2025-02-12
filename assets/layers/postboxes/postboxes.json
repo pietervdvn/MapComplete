@@ -120,7 +120,8 @@
         "en": "a postbox on a wall",
         "nl": "een brievenbus tegen een muur",
         "de": "ein Briefkasten an einer Wand",
-        "es": "un buzón en una pared"
+        "es": "un buzón en una pared",
+        "ca": "una bústia en un mur"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -138,12 +139,14 @@
       "question": {
         "en": "Who operates this postbox?",
         "de": "Wer betreibt diesen Briefkasten?",
-        "es": "¿Quién gestiona este buzón?"
+        "es": "¿Quién gestiona este buzón?",
+        "ca": "Qui opera aquesta bústia?"
       },
       "render": {
         "en": "This postbox is operated by <b>{operator}</b>",
         "de": "Dieser Briefkasten wird von <b>{operator}</b> betrieben",
-        "es": "Este buzón es operado por <b>{operator}</b>."
+        "es": "Este buzón es operado por <b>{operator}</b>.",
+        "ca": "Aquesta bústia està operada per <b>{operator}</b>"
       },
       "freeform": {
         "key": "operator"

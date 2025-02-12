@@ -17,7 +17,8 @@
     "eu": "Barrerak",
     "pl": "Barierki",
     "pt_BR": "Barreiras",
-    "pt": "Barreiras"
+    "pt": "Barreiras",
+    "uk": "Перешкоди"
   },
   "description": {
     "en": "Obstacles while cycling, such as bollards and cycle barriers",
@@ -259,7 +260,8 @@
             "cs": "Jedná se o jeden sloupek na silnici",
             "ca": "Aquest és un únic piló a la carretera",
             "pt_BR": "Esse é um único pilar na estrada",
-            "pt": "Esse é um único pilar na estrada"
+            "pt": "Esse é um único pilar na estrada",
+            "uk": "Це один стовпчик на дорозі"
           }
         },
         {
@@ -275,7 +277,8 @@
             "cs": "Jedná se o cyklistickou bariéru, která zpomaluje cyklisty",
             "ca": "Açò és una barrera ciclista que relantitza als ciclistes",
             "pt_BR": "Isso é uma barreira para ciclistas que reduz a velocidade dos ciclistas",
-            "pt": "Isto é uma barreira para ciclistas que reduz a velocidade dos ciclistas"
+            "pt": "Isto é uma barreira para ciclistas que reduz a velocidade dos ciclistas",
+            "uk": "Це велосипедний бар'єр, що сповільнює велосипедистів"
           }
         }
       ]

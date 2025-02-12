@@ -199,7 +199,8 @@
             "en": "This is a <b>hacklab</b> which is mostly focussed on basic computer skills, using recycled devices and/or providing internet to the community. This is typically located in autonomous spaces, squats or social facilities",
             "de": "Dies ist ein <b>Hackerspace/Hack-Lab</b>, das sich hauptsächlich auf grundlegende Computerkenntnisse konzentriert, recycelte Geräte verwendet und/oder der Gemeinschaft Internet bereitstellt. Es befindet sich typischerweise in autonomen Räumen, besetzten Häusern oder sozialen Einrichtungen",
             "uk": "Це <b>хак-лабораторія</b>, яка здебільшого зосереджена на базових комп'ютерних навичках, використовує перероблені пристрої та/або надає доступ до Інтернету громаді. Зазвичай вони розташовані в автономних приміщеннях, сквотах або соціальних об'єктах",
-            "es": "Este es un <b>hacklab</b> que se centra principalmente en habilidades informáticas básicas, utilizando dispositivos reciclados y/o proporcionando internet a la comunidad. Por lo general, se encuentra en espacios autónomos, okupas o instalaciones sociales"
+            "es": "Este es un <b>hacklab</b> que se centra principalmente en habilidades informáticas básicas, utilizando dispositivos reciclados y/o proporcionando internet a la comunidad. Por lo general, se encuentra en espacios autónomos, okupas o instalaciones sociales",
+            "ca": "Aquest és un <b>hacklab</b> que es centra principalment en les habilitats informàtiques bàsiques, utilitzant dispositius reciclats i/o proporcionant internet a la comunitat. Normalment es troba en espais autònoms, places o instal·lacions socials"
           }
         }
       ]
@@ -327,13 +328,15 @@
               "en": "a multimedia studio",
               "nl": "een multimedia-studio",
               "de": "ein Multimediastudio",
-              "es": "un estudio multimedia"
+              "es": "un estudio multimedia",
+              "ca": "un estudi multimèdia"
             },
             {
               "en": "multimedia studio",
               "nl": "multimedia-studio",
               "de": "Multimediastudio",
-              "es": "estudio multimedia"
+              "es": "estudio multimedia",
+              "ca": "estudi multimèdia"
             },
             "./assets/layers/hackerspace/media_studio.svg",
             false
@@ -344,13 +347,15 @@
               "en": "a sewing machine",
               "de": "eine Nähmaschine",
               "nl": "een naaimachine",
-              "es": "una máquina de coser"
+              "es": "una máquina de coser",
+              "ca": "una màquina de cosir"
             },
             {
               "en": "sewing machine",
               "de": "Nähmaschine",
               "nl": "naaimachine",
-              "es": "máquina de coser"
+              "es": "máquina de coser",
+              "ca": "màquina de cosir"
             },
             "./assets/layers/hackerspace/sewing_machine.svg",
             true
@@ -361,13 +366,15 @@
               "en": "a woodworking workshop",
               "nl": "een houtbewerkingsatelier",
               "de": "eine Holzwerkstatt",
-              "es": "un taller de carpintería"
+              "es": "un taller de carpintería",
+              "ca": "Un taller de fusteria"
             },
             {
               "en": "woodworking workshop",
               "nl": "houtbewerkingsatelier",
               "de": "Holzwerkstatt",
-              "es": "taller de carpintería"
+              "es": "taller de carpintería",
+              "ca": "Taller de treball en fusta"
             },
             "./assets/layers/hackerspace/woodworking.svg",
             false
@@ -378,13 +385,15 @@
               "en": "a ceramics workshop",
               "nl": "een keramiekatelier",
               "de": "eine Keramikwerkstatt",
-              "es": "un taller de cerámica"
+              "es": "un taller de cerámica",
+              "ca": "un taller de ceràmica"
             },
             {
               "en": "ceramics workshop",
               "nl": "keramiekatelier",
               "de": "Keramikwerkstatt",
-              "es": "taller de cerámica"
+              "es": "taller de cerámica",
+              "ca": "Taller de ceràmica"
             },
             "./assets/layers/hackerspace/ceramics.svg",
             false
@@ -395,13 +404,15 @@
               "en": "a metal workshop",
               "nl": "een metaalatelier",
               "de": "eine Metallwerkstatt",
-              "es": "un taller de metal"
+              "es": "un taller de metal",
+              "ca": "Un taller de metall"
             },
             {
               "en": "metal workshop",
               "nl": "metaalatelier",
               "de": "Metallwerkstatt",
-              "es": "taller de metal"
+              "es": "taller de metal",
+              "ca": "Taller de metall"
             },
             "./assets/layers/hackerspace/metal.svg",
             false
@@ -412,13 +423,15 @@
               "en": "a bicycle repair workshop",
               "nl": "een fietsherstelplaats",
               "de": "eine Fahrradwerkstatt",
-              "es": "un taller de reparación de bicicletas"
+              "es": "un taller de reparación de bicicletas",
+              "ca": "Un taller de reparació de bicicletes"
             },
             {
               "en": "bicycle repair workshop",
               "nl": "fietsherstelplaats",
               "de": "Fahrradwerkstatt",
-              "es": "taller de reparación de bicicletas"
+              "es": "taller de reparación de bicicletas",
+              "ca": "Taller de reparació de bicicletes"
             },
             "./assets/layers/hackerspace/bicycle.svg",
             false
@@ -466,7 +479,8 @@
                 "en": "There is a limited {negative-name} available at this hackerspace",
                 "nl": "Er is een beperkte {negative-name} beschikbaar in deze hackerspace",
                 "de": "Es gibt einen limitierten {negative-name} in diesem Hackerspace",
-                "es": "Hay {negative-name} limitado disponible en este hackerspace"
+                "es": "Hay {negative-name} limitado disponible en este hackerspace",
+                "ca": "Hi ha un nombre limitat de {negative-name} disponible en aquest espai hacker"
               },
               "hideInAnswer": "{hide_limited}"
             }
@@ -484,7 +498,8 @@
         "zh_Hant": "這個駭客空間是否服務俱樂部伙伴？",
         "nl": "Biedt deze hackerspace Club-Mate aan?",
         "cs": "Slouží tento hackerský prostor Club-Mate?",
-        "es": "¿Este hackerspace sirve Club-Mate?"
+        "es": "¿Este hackerspace sirve Club-Mate?",
+        "ca": "Aquest hackerspace serveix Club-Mate?"
       },
       "mappings": [
         {
@@ -499,7 +514,8 @@
             "zh_Hant": "這個駭客空間服務俱樂部伙伴",
             "nl": "Deze hackerspace biedt Club-Mate aan",
             "cs": "Tento hackerský prostor slouží Club-Mate",
-            "es": "Este hackerspace sirve Club-Mate"
+            "es": "Este hackerspace sirve Club-Mate",
+            "ca": "Aquest hackerspace serveix Club-Mate"
           }
         },
         {
@@ -514,7 +530,8 @@
             "zh_Hant": "這個駭客空間沒有服務俱樂部伙伴",
             "nl": "Deze hackerspace biedt geen Club-Mate aan",
             "cs": "Tento hackerský prostor neslouží Club-Mate",
-            "es": "Este hackerspace no sirve Club-Mate"
+            "es": "Este hackerspace no sirve Club-Mate",
+            "ca": "Aquest hackerspace no serveix a Club-Mate"
           }
         }
       ]
@@ -561,7 +578,8 @@
         "then": {
           "en": "This is an workshop for assisted self service, such as a repair café",
           "de": "Dies ist eine Werkstatt für unterstützten Selbstservice, wie ein Repair-Café",
-          "es": "Este es un taller de autoservicio asistido, como un repair café"
+          "es": "Este es un taller de autoservicio asistido, como un repair café",
+          "ca": "Es tracta d'un taller d'autoservei assistit, com un cafè de reparació"
         }
       },
       {
@@ -575,7 +593,8 @@
         "then": {
           "en": "This is a coworking office",
           "de": "Dies ist ein Coworking-Büro",
-          "es": "Esta es una oficina de coworking"
+          "es": "Esta es una oficina de coworking",
+          "ca": "Aquesta és una oficina de coworking"
         }
       }
     ]

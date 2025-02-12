@@ -288,7 +288,8 @@
             "nl": "Geen voorkeur voor honden",
             "de": "Keine Bevorzugung von Hunden",
             "cs": "Bez preference psů",
-            "es": "Sin preferencia por los perros"
+            "es": "Sin preferencia por los perros",
+            "ca": "No hi ha preferència cap als gossos"
           }
         },
         {
@@ -297,7 +298,8 @@
             "nl": "Honden toegelaten",
             "de": "Hunde erlaubt",
             "cs": "Psi povoleny",
-            "es": "Se permiten perros"
+            "es": "Se permiten perros",
+            "ca": "Permesos"
           },
           "emoji": "🐕",
           "osmTags": {
@@ -330,7 +332,8 @@
             "en": "Offers internet",
             "de": "Internetzugang vorhanden",
             "cs": "Nabízí internet",
-            "es": "Ofrece internet"
+            "es": "Ofrece internet",
+            "ca": "Ofertes d'internet"
           },
           "icon": "wifi",
           "osmTags": {
@@ -351,7 +354,8 @@
             "en": "Offers electricity",
             "de": "Stromanschluss vorhanden",
             "cs": "Nabízí elektřinu",
-            "es": "Ofrece electricidad"
+            "es": "Ofrece electricidad",
+            "ca": "Ofertes d'electricitat"
           },
           "osmTags": "service:electricity=yes"
         }
@@ -365,7 +369,8 @@
             "en": "Has a sugar-free offering",
             "cs": "Má nabídku bez cukru",
             "de": "Hat zuckerfreie Angebote",
-            "es": "Tiene una oferta sin azúcar"
+            "es": "Tiene una oferta sin azúcar",
+            "ca": "Té una oferta sense sucre"
           },
           "osmTags": {
             "or": [
@@ -385,7 +390,8 @@
             "en": "Has a gluten free offering",
             "cs": "Má bezlepkovou nabídku",
             "de": "Hat glutenfreie Angebote",
-            "es": "Tiene una oferta sin gluten"
+            "es": "Tiene una oferta sin gluten",
+            "ca": "Disposa d'oferta sense gluten"
           },
           "icon": "./assets/layers/questions/glutenfree.svg",
           "osmTags": {
@@ -406,7 +412,8 @@
             "en": "Has a lactose free offering",
             "cs": "Má nabídku bez laktózy",
             "de": "Hat laktosefreie Angebote",
-            "es": "Tiene una oferta sin lactosa"
+            "es": "Tiene una oferta sin lactosa",
+            "ca": "Té una oferta lliure de lactosa"
           },
           "icon": "./assets/layers/questions/lactose_free.svg",
           "osmTags": {
@@ -425,7 +432,8 @@
         {
           "question": {
             "en": "Has outdoor seating",
-            "de": "Hat Sitzgelegenheiten im Freien"
+            "de": "Hat Sitzgelegenheiten im Freien",
+            "ca": "Té seients exteriors"
           },
           "icon": "./assets/layers/outdoor_seating.svg",
           "osmTags": "outdoor_seating=yes"
@@ -438,7 +446,8 @@
         {
           "question": {
             "en": "Has indoor seating",
-            "de": "Hat Sitzplätze im Innenbereich"
+            "de": "Hat Sitzplätze im Innenbereich",
+            "ca": "Té seients interiors"
           },
           "osmTags": "indoor_seating=yes"
         }

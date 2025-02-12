@@ -39,7 +39,8 @@
           "nl": "Parkeerplek voor gehandicapten",
           "de": "Behindertenparkplatz",
           "cs": "Parkovací místo pro osoby se zdravotním postižením",
-          "es": "Plaza de Aparcamiento para Discapacitados"
+          "es": "Plaza de Aparcamiento para Discapacitados",
+          "ca": "Espai d'aparcament desactivat"
         }
       },
       {
@@ -48,7 +49,8 @@
           "en": "Electric Vehicle Charging Parking Space",
           "nl": "Parkeerplek voor opladen van elektrische voertuigen",
           "de": "Parkplatz zum Laden von Elektrofahrzeugen",
-          "es": "Plaza de Aparcamiento para Vehículos Eléctricos"
+          "es": "Plaza de Aparcamiento para Vehículos Eléctricos",
+          "ca": "Aparcament de càrrega de vehicles elèctrics"
         }
       }
     ]
@@ -175,7 +177,8 @@
             "de": "Dies ist ein Stellplatz, der für Lastkraftwagen reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor vrachtwagens.",
             "cs": "Jedná se o parkovací místo vyhrazené pro těžká nákladní vozidla.",
-            "es": "Esta es una plaza de aparcamiento reservada para vehículos pesados."
+            "es": "Esta es una plaza de aparcamiento reservada para vehículos pesados.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a vehicles pesants de mercaderies."
           }
         },
         {
@@ -185,7 +188,8 @@
             "de": "Dieser Stellplatz ist für Wohnwagen oder Wohnmobile reserviert.",
             "nl": "Deze parkeerplek is gereserveerd voor caravans of campers.",
             "cs": "Jedná se o parkovací místo vyhrazené pro karavany nebo obytná vozidla.",
-            "es": "Esta es una plaza de aparcamiento reservada para caravanas o autocaravanas."
+            "es": "Esta es una plaza de aparcamiento reservada para caravanas o autocaravanas.",
+            "ca": "Es tracta de plaça d'aparcament reservada per a caravanes o RVs."
           }
         },
         {
@@ -255,7 +259,8 @@
             "de": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor voertuigen met een aanhanger.",
             "cs": "Jedná se o parkovací místo vyhrazené pro vozidla táhnoucí přívěs.",
-            "es": "Esta es una plaza de aparcamiento reservada para vehículos que remolcan un remolque."
+            "es": "Esta es una plaza de aparcamiento reservada para vehículos que remolcan un remolque.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a vehicles que remolquen un remolc."
           }
         },
         {
@@ -265,7 +270,8 @@
             "de": "Dies ist ein Stellplatz, der für Carsharing reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor autodelen.",
             "cs": "Jedná se o parkovací místo vyhrazené pro sdílení automobilů.",
-            "es": "Esta es una plaza de aparcamiento reservada para coches compartidos."
+            "es": "Esta es una plaza de aparcamiento reservada para coches compartidos.",
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a compartir cotxe."
           }
         }
       ]

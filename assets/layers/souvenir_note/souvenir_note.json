@@ -4,13 +4,15 @@
     "en": "Souvenir Banknote Machines",
     "de": "Souvenir Banknotenmaschinen",
     "es": "Máquinas de Billetes de Recuerdo",
-    "nl": "Souvenirbiljetmachines"
+    "nl": "Souvenirbiljetmachines",
+    "ca": "Màquines de bitllets de souvenir"
   },
   "description": {
     "en": "Layer showing machines selling souvenir banknotes",
     "de": "Ebene zeigt Maschinen, die Souvenir-Banknoten verkaufen",
     "es": "Capa que muestra máquinas expendedoras de billetes de recuerdo",
-    "nl": "Laag die machines toont die souvenirbiljetten verkopen"
+    "nl": "Laag die machines toont die souvenirbiljetten verkopen",
+    "ca": "Capa que mostra màquines que venen bitllets de souvenir"
   },
   "source": {
     "osmTags": {
@@ -25,7 +27,8 @@
       "en": "Souvenir Banknote Machine",
       "de": "Souvenir-Banknotenautomat",
       "es": "Máquina de Billetes de Recuerdo",
-      "nl": "Souvenirbiljetmachine"
+      "nl": "Souvenirbiljetmachine",
+      "ca": "Màquina de bitllets de souvenir"
     }
   },
   "pointRendering": [
@@ -63,13 +66,15 @@
         "en": "a souvenir banknote machine",
         "de": "eine Souvenir-Banknotenmaschine",
         "es": "una máquina de billetes de recuerdo",
-        "nl": "een souvenirbiljetmachine"
+        "nl": "een souvenirbiljetmachine",
+        "ca": "una màquina de bitllets de souvenir"
       },
       "description": {
         "en": "Add a machine selling souvenir banknotes",
         "de": "Hinzufügen eines Automaten, der Souvenir-Banknoten verkauft",
         "es": "Añadir una máquina expendedora de billetes de recuerdo",
-        "nl": "Voeg een machine toe die souvenirbiljetten verkoopt"
+        "nl": "Voeg een machine toe die souvenirbiljetten verkoopt",
+        "ca": "Afegeix una màquina venent bitllets de souvenir"
       },
       "tags": [
         "amenity=vending_machine",
@@ -86,7 +91,8 @@
         "en": "How many designs are available?",
         "de": "Wie viele Designs sind verfügbar?",
         "es": "¿Cuántos diseños están disponibles?",
-        "nl": "Hoeveel ontwerpen heeft deze machine beschikbaar?"
+        "nl": "Hoeveel ontwerpen heeft deze machine beschikbaar?",
+        "ca": "Quants dissenys hi ha disponibles?"
       },
       "freeform": {
         "key": "note:design_count",
@@ -104,7 +110,8 @@
         "en": "This machine has {note:design_count} designs available.",
         "de": "Diese Maschine verfügt über {note:design_count} Designs.",
         "es": "Esta máquina tiene {note:design_count} diseños disponibles.",
-        "nl": "Deze machine heeft {note:design_count} ontwerpen beschikbaar."
+        "nl": "Deze machine heeft {note:design_count} ontwerpen beschikbaar.",
+        "ca": "Aquesta màquina té disponibles {note:design_count}."
       },
       "mappings": [
         {
@@ -113,7 +120,8 @@
             "en": "This machine has one design available.",
             "de": "Diese Maschine hat ein Design zur Verfügung.",
             "es": "Esta máquina tiene un diseño disponible.",
-            "nl": "Deze machine heeft één ontwerp beschikbaar."
+            "nl": "Deze machine heeft één ontwerp beschikbaar.",
+            "ca": "Aquesta màquina té un disseny disponible."
           }
         },
         {
@@ -122,7 +130,8 @@
             "en": "This machine has two designs available.",
             "de": "Diese Maschine hat zwei Designs verfügbar.",
             "es": "Esta máquina tiene dos diseños disponibles.",
-            "nl": "Deze machine heeft twee ontwerpen beschikbaar."
+            "nl": "Deze machine heeft twee ontwerpen beschikbaar.",
+            "ca": "Aquesta màquina té dos dissenys disponibles."
           }
         },
         {
@@ -131,7 +140,8 @@
             "en": "This machine has three designs available.",
             "de": "Diese Maschine hat drei Designs verfügbar.",
             "es": "Esta máquina tiene tres diseños disponibles.",
-            "nl": "Deze machine heeft drie ontwerpen beschikbaar."
+            "nl": "Deze machine heeft drie ontwerpen beschikbaar.",
+            "ca": "Aquesta màquina té tres dissenys disponibles."
           }
         },
         {
@@ -140,7 +150,8 @@
             "en": "This machine has four designs available.",
             "de": "Diese Maschine hat vier Designs verfügbar.",
             "es": "Esta máquina tiene cuatro diseños disponibles.",
-            "nl": "Deze machine heeft vier ontwerpen beschikbaar."
+            "nl": "Deze machine heeft vier ontwerpen beschikbaar.",
+            "ca": "Aquesta màquina té quatre dissenys disponibles."
           }
         }
       ]
@@ -152,14 +163,16 @@
         "en": "How much does a souvenir note cost?",
         "de": "Wie viel kostet eine Souvenirnote?",
         "es": "¿Cuánto cuesta un billete de recuerdo?",
-        "nl": "Hoeveel kost een souvenirbiljet?"
+        "nl": "Hoeveel kost een souvenirbiljet?",
+        "ca": "Quant costa una nota de record?"
       },
       "id": "charge",
       "render": {
         "en": "A souvenir note costs {charge}",
         "de": "Eine Souvenirnote kostet {charge}",
         "es": "Un billete de recuerdo cuesta {charge}",
-        "nl": "Een souvenirbiljet kost {charge}"
+        "nl": "Een souvenirbiljet kost {charge}",
+        "ca": "Una nota de record costa {charge}"
       },
       "freeform": {
         "key": "charge",
@@ -167,7 +180,8 @@
           "en": "Cost (e.g. 2 EUR)",
           "de": "Kosten (z.B. 2 EUR)",
           "es": "Coste (ej. 2 EUR)",
-          "nl": "Kosten (bijv. 2 EUR)"
+          "nl": "Kosten (bijv. 2 EUR)",
+          "ca": "Cost (p. ex. 2 EUR)"
         }
       },
       "mappings": [
@@ -177,7 +191,8 @@
             "en": "A souvenir note costs 2 euro",
             "de": "Eine Souvenirnote kostet 2 Euro",
             "es": "Un billete de recuerdo cuesta 2 euros",
-            "nl": "Een souvenirbiljet kost 2 euro"
+            "nl": "Een souvenirbiljet kost 2 euro",
+            "ca": "Un bitllet de record costa 2 euros"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         },
@@ -187,7 +202,8 @@
             "en": "A souvenir note costs 3 euro",
             "de": "Eine Souvenirnote kostet 3 Euro",
             "es": "Un billete de recuerdo cuesta 3 euros",
-            "nl": "Een souvenirbiljet kost 3 euro"
+            "nl": "Een souvenirbiljet kost 3 euro",
+            "ca": "Un bitllet de record costa 3 euros"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         }
@@ -199,7 +215,8 @@
         "en": "Is this machine located indoors?",
         "de": "Ist diese Maschine im Innenbereich?",
         "es": "¿Está esta máquina ubicada en interiores?",
-        "nl": "Bevindt deze machine zich binnen?"
+        "nl": "Bevindt deze machine zich binnen?",
+        "ca": "Aquesta màquina està situada a l'interior?"
       },
       "id": "indoor",
       "mappings": [
@@ -209,7 +226,8 @@
             "en": "This machine is located indoors.",
             "de": "Diese Maschine befindet sich im Innenbereich.",
             "es": "Esta máquina está ubicada en interiores.",
-            "nl": "Deze machine bevindt zich binnen."
+            "nl": "Deze machine bevindt zich binnen.",
+            "ca": "Aquesta màquina es troba a l'interior."
           }
         },
         {
@@ -218,7 +236,8 @@
             "en": "This machine is located outdoors.",
             "de": "Diese Maschine befindet sich im Freien.",
             "es": "Esta máquina está ubicada en exteriores.",
-            "nl": "Deze machine bevindt zich buiten."
+            "nl": "Deze machine bevindt zich buiten.",
+            "ca": "Aquesta màquina es troba a l'aire lliure."
           }
         }
       ]

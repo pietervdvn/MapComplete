@@ -195,7 +195,8 @@
           "question": {
             "en": "How would you rate this toilet?",
             "nl": "Hoe goed is deze toilet?",
-            "de": "Wie würdest du diese Toilette bewerten?"
+            "de": "Wie würdest du diese Toilette bewerten?",
+            "ca": "Com valores aquest vàter?"
           }
         }
       }
@@ -649,7 +650,8 @@
         "nl": "Is er een aparte ruimte voor mannen en vrouwen en zijn deze ruimtes ook expliciet aangegeven?",
         "de": "Gibt es getrennte Kabinen oder getrennte Bereiche für Männer und Frauen, und sind sie als solche ausgeschildert?",
         "cs": "Existují samostatné stánky nebo oddělené prostory pro muže a ženy a jsou jako takové označeny?",
-        "es": "¿Hay cabinas o áreas separadas para hombres y mujeres, y están señalizadas como tales?"
+        "es": "¿Hay cabinas o áreas separadas para hombres y mujeres, y están señalizadas como tales?",
+        "ca": "Hi ha parades separades o zones separades per a homes i dones i estan senyalitzades com a tals?"
       },
       "mappings": [
         {
@@ -670,7 +672,8 @@
             "nl": "Mannen en vrouwen gebruiken dezelfde ruimtes en toiletten",
             "de": "Es gibt keinen getrennten, ausgeschilderten Bereich für Männer und Frauen",
             "cs": "Neexistuje žádný oddělený, označený prostor pro muže a ženy",
-            "es": "No hay un área separada e indicada para hombres y mujeres"
+            "es": "No hay un área separada e indicada para hombres y mujeres",
+            "ca": "No hi ha una zona separada i senyalitzada per a homes i dones"
           }
         }
       ]
@@ -682,14 +685,16 @@
         "nl": "Zijn er gratis menstruatieproducten beschikbaar?",
         "de": "Werden hier kostenlose Menstruationsprodukte verteilt?",
         "es": "¿Se distribuyen productos menstruales gratuitos aquí?",
-        "uk": "Чи розповсюджуються тут безкоштовні менструальні засоби?"
+        "uk": "Чи розповсюджуються тут безкоштовні менструальні засоби?",
+        "ca": "Els productes menstruals gratuïts es distribueixen aquí?"
       },
       "questionHint": {
         "en": "This is only about menstrual products that are free of charge. If e.g. a vending machine is available which charges for menstrual products, ignore it for this question.",
         "nl": "Dit gaat enkel over menstruatieproducten die gratis geschikbaar zijn. Indien er bv. een verkoopautomaat met menstruatieproducten is, negeer deze dan",
         "de": "Hier geht es nur um Menstruationsprodukte, die kostenlos sind. Wenn es z. B. einen Automaten gibt, an dem Menstruationsprodukte kostenpflichtig sind, wird er bei dieser Frage nicht berücksichtigt.",
         "es": "Esto solo se refiere a productos menstruales gratuitos. Si, por ejemplo, hay una máquina expendedora que cobra por productos menstruales, ignórala para esta pregunta.",
-        "uk": "Йдеться лише про ті менструальні засоби, які є безкоштовними. Якщо, наприклад, поруч є торговий автомат, який бере плату за менструальні засоби, ігноруйте це питання."
+        "uk": "Йдеться лише про ті менструальні засоби, які є безкоштовними. Якщо, наприклад, поруч є торговий автомат, який бере плату за менструальні засоби, ігноруйте це питання.",
+        "ca": "Això només es tracta de productes menstruals que són gratuïts. Si per exemple una màquina expenedora està disponible que cobra per productes menstruals, ignora-ho per a aquesta pregunta."
       },
       "mappings": [
         {
@@ -700,7 +705,8 @@
             "de": "Für alle Besucher dieser Toiletten stehen kostenlose Menstruationsprodukte zur Verfügung",
             "fr": "Protections menstruelles gratuites disponibles dans ces toilettes, pour tout le monde",
             "es": "Hay productos menstruales gratuitos disponibles para todos los visitantes de estos baños",
-            "uk": "Безкоштовні менструальні засоби доступні для всіх відвідувачів цих туалетів"
+            "uk": "Безкоштовні менструальні засоби доступні для всіх відвідувачів цих туалетів",
+            "ca": "Els productes menstruals gratuïts estan disponibles per a tots els visitants d'aquests lavabos"
           }
         },
         {
@@ -711,7 +717,8 @@
             "de": "Für einige Besucher dieser Toiletten gibt es kostenlose Menstruationsprodukte",
             "fr": "Protections menstruelles gratuites disponibles dans ces toilettes, réservées à certains visiteurs",
             "es": "Hay productos menstruales gratuitos disponibles para algunos visitantes de estos baños",
-            "uk": "Деяким відвідувачам цих туалетів доступні безкоштовні менструальні засоби"
+            "uk": "Деяким відвідувачам цих туалетів доступні безкоштовні менструальні засоби",
+            "ca": "Els productes menstruals gratuïts estan disponibles per a alguns visitants d'aquests lavabos"
           },
           "hideInAnswer": "gender_segregated=yes"
         },
@@ -724,7 +731,8 @@
             "de": "Hier gibt es keine kostenlosen Menstruationsprodukte",
             "fr": "Pas protection menstruelle disponible ici",
             "es": "No hay productos menstruales gratuitos disponibles aquí",
-            "uk": "Тут немає безкоштовних менструальних засобів"
+            "uk": "Тут немає безкоштовних менструальних засобів",
+            "ca": "No hi ha productes menstruals gratuïts aquí"
           }
         }
       ]
@@ -736,7 +744,8 @@
         "nl": "Waar bevinden de gratis menstruatieproducten zich?",
         "de": "Wo befinden sich die kostenlosen Menstruationsprodukte?",
         "uk": "Де знаходяться безкоштовні менструальні засоби?",
-        "es": "¿Dónde se encuentran los productos menstruales gratuitos?"
+        "es": "¿Dónde se encuentran los productos menstruales gratuitos?",
+        "ca": "On estan ubicats els productes menstruals gratuïts?"
       },
       "condition": {
         "or": [
@@ -748,7 +757,8 @@
         "en": "The menstrual products are located in {toilets:menstrual_products:location}",
         "nl": "De menstruatieproducten bevinden zich in {toilets:menstrual_products:location}",
         "de": "Die Menstruationsprodukte befinden sich in {toilets:menstrual_products:location}",
-        "es": "Los productos menstruales se encuentran en {toilets:menstrual_products:location}"
+        "es": "Los productos menstruales se encuentran en {toilets:menstrual_products:location}",
+        "ca": "Els productes menstruals es troben a {toilets:menstrual_products:location}"
       },
       "freeform": {
         "key": "toilets:menstrual_products:location",
@@ -761,7 +771,8 @@
             "nl": "De gratis menstruatieproducten bevinden zich in het vrouwentoilet",
             "de": "Die kostenlosen Menstruationsprodukte befinden sich in der Toilette für Frauen",
             "uk": "Безкоштовні менструальні засоби знаходяться в туалеті для жінок",
-            "es": "Los productos menstruales gratuitos se encuentran en el baño de mujeres"
+            "es": "Los productos menstruales gratuitos se encuentran en el baño de mujeres",
+            "ca": "Els productes menstruals gratuïts es troben al vàter per a dones"
           },
           "if": "toilets:menstrual_products:location=female_toilet",
           "alsoShowIf": "toilets:menstrual_products:location="
@@ -772,7 +783,8 @@
             "nl": "De gratis menstruatieproducten bevinden zich in het mannentoilet",
             "de": "Die kostenlosen Menstruationsprodukte befinden sich in der Toilette für Männer",
             "uk": "Безкоштовні менструальні засоби знаходяться в туалеті для чоловіків",
-            "es": "Los productos menstruales gratuitos se encuentran en el baño de hombres"
+            "es": "Los productos menstruales gratuitos se encuentran en el baño de hombres",
+            "ca": "Els productes menstruals gratuïts es troben al vàter per a homes"
           },
           "if": "toilets:menstrual_products:location=male_toilet"
         },
@@ -783,7 +795,8 @@
             "nl": "De gratis menstruatieproducten bevinden zich in het rolstoeltoegankelijke toilet",
             "de": "Die kostenlosen Menstruationsprodukte befinden sich auf der Toilette für Rollstuhlfahrende",
             "uk": "Безкоштовні менструальні засоби знаходяться в туалеті для людей на візках",
-            "es": "Los productos menstruales gratuitos se encuentran en el baño para usuarios de sillas de ruedas"
+            "es": "Los productos menstruales gratuitos se encuentran en el baño para usuarios de sillas de ruedas",
+            "ca": "Els productes menstruals gratuïts es troben al vàter per a usuaris de cadira de rodes"
           }
         }
       ]

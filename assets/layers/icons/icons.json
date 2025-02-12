@@ -131,7 +131,8 @@
             "pl": "telefon",
             "cs": "telefon",
             "es": "teléfono",
-            "uk": "телефон"
+            "uk": "телефон",
+            "ca": "telèfon"
           }
         }
       },
@@ -151,7 +152,8 @@
                 "pl": "telefon",
                 "cs": "telefon",
                 "es": "teléfono",
-                "uk": "телефон"
+                "uk": "телефон",
+                "ca": "telèfon"
               }
             }
           }
@@ -338,7 +340,8 @@
             "pl": "Otwórz na openstreetmap.org",
             "da": "Åbn på openstreetmap.org",
             "cs": "Otevřít na openstreetmap.org",
-            "es": "Abrir en openstreetmap.org"
+            "es": "Abrir en openstreetmap.org",
+            "ca": "Obre a openstreetmap.org"
           }
         }
       },
@@ -363,7 +366,8 @@
                 "pl": "Otwórz na openstreetmap.org",
                 "da": "Åbn på openstreetmap.org",
                 "cs": "Otevřít na openstreetmap.org",
-                "es": "Abrir en openstreetmap.org"
+                "es": "Abrir en openstreetmap.org",
+                "ca": "Obre a openstreetmap.org"
               }
             }
           }
@@ -383,7 +387,8 @@
                 "pl": "Otwórz na openstreetmap.org",
                 "da": "Åbn på openstreetmap.org",
                 "cs": "Otevřít na openstreetmap.org",
-                "es": "Abrir en openstreetmap.org"
+                "es": "Abrir en openstreetmap.org",
+                "ca": "Obre a openstreetmap.org"
               }
             }
           }

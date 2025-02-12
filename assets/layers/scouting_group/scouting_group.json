@@ -3,11 +3,13 @@
   "name": {
     "en": "Scouting groups",
     "de": "Pfadfinder:innenstämme",
-    "uk": "Скаутські групи"
+    "uk": "Скаутські групи",
+    "ca": "Grups d'escoltes"
   },
   "description": {
     "en": "A map showing scouting groups.",
-    "de": "Eine Karte mit Pfadfindergruppen."
+    "de": "Eine Karte mit Pfadfindergruppen.",
+    "ca": "Un mapa que mostra els grups d'exploració."
   },
   "source": {
     "osmTags": "club=scout"
@@ -16,7 +18,8 @@
   "title": {
     "render": {
       "en": "{name}",
-      "de": "{name}"
+      "de": "{name}",
+      "ca": "{name}"
     }
   },
   "pointRendering": [
@@ -47,7 +50,8 @@
     {
       "title": {
         "en": "scouting group",
-        "de": "Pfadfinder:innenstamm"
+        "de": "Pfadfinder:innenstamm",
+        "ca": "grup d'exploració"
       },
       "tags": [
         "club=scout"
@@ -58,12 +62,14 @@
     {
       "question": {
         "de": "Was ist der Stammesname?",
-        "en": "What is the name of this group?"
+        "en": "What is the name of this group?",
+        "ca": "Quin és el nom d'aquest grup?"
       },
       "render": {
         "en": "The name of this group is {name}",
         "de": "Dieser Stamm heißt {name}",
-        "uk": "Назва цієї групи: {name}"
+        "uk": "Назва цієї групи: {name}",
+        "ca": "El nom d'aquest grup és {name}"
       },
       "freeform": {
         "key": "name"
@@ -74,12 +80,14 @@
       "question": {
         "de": "Zu welchem Verband/Bund gehört {name}",
         "en": "To which scout association does {name} belong?",
-        "uk": "До якої скаутської асоціації належить {name}?"
+        "uk": "До якої скаутської асоціації належить {name}?",
+        "ca": "A quina associació d'escoltes pertany {name}?"
       },
       "render": {
         "en": "The scout association of this group is {brand}",
         "de": "Dieser Stamm ist im Verband {brand}",
-        "uk": "Скаутська асоціація цієї групи: {brand}"
+        "uk": "Скаутська асоціація цієї групи: {brand}",
+        "ca": "L'associació scout d'aquest grup és {brand}"
       },
       "freeform": {
         "key": "brand"

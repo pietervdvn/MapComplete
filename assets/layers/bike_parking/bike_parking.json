@@ -16,7 +16,8 @@
     "ca": "Aparcament per a bicicletes",
     "es": "Aparcamiento de bicicletas",
     "da": "Cykelparkering",
-    "cs": "Parkování kol"
+    "cs": "Parkování kol",
+    "uk": "Парковка для велосипедів"
   },
   "description": {
     "en": "A layer showing where you can park your bike",
@@ -137,7 +138,9 @@
       "questionHint": {
         "en": "This is about the physical device one places their bicycle in and uses to lock",
         "nl": "Dit gaat over het voorwerp waarin je je fiets plaats en mee op slot zet",
-        "de": "Hier geht es um das physische Gerät, in das man sein Fahrrad stellt und mit dem man es abschließt"
+        "de": "Hier geht es um das physische Gerät, in das man sein Fahrrad stellt und mit dem man es abschließt",
+        "ca": "Es tracta del dispositiu físic que es col·loca la bicicleta i s'utilitza per bloquejar",
+        "uk": "Йдеться про фізичний пристрій, в який поміщають велосипед і який використовують для блокування"
       },
       "render": {
         "en": "This is a bicycle parking of the type: {bicycle_parking}",
@@ -198,7 +201,8 @@
             "de": "Radständer mit Seitenbügel",
             "cs": "Stojan s bočními smyčkami",
             "es": "Racks con lazos laterales",
-            "uk": "Стійка з бічними петлями"
+            "uk": "Стійка з бічними петлями",
+            "ca": "Rack amb bucles laterals"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/safe_loops.svg",
@@ -379,7 +383,8 @@
             "de": "Ein Schließfach - Fahrräder werden einzeln oder mit mehreren Fahrrädern zusammen eingeschlossen. Der Schrank ist zu klein für eine stehende Person.",
             "cs": "Skříňka - kola jsou uzavřena zcela samostatně nebo s několika koly dohromady. Skříňka je příliš malá na to, aby se do ní vešla stojící osoba..",
             "es": "Un casillero: las bicicletas están completamente encerradas individualmente o con unas pocas bicicletas juntas. El casillero es demasiado pequeño para que quepa una persona de pie.",
-            "uk": "Шафка - велосипеди зачиняються повністю індивідуально або разом з кількома велосипедами. Шафка замала, щоб у ній могла поміститися людина стоячи."
+            "uk": "Шафка - велосипеди зачиняються повністю індивідуально або разом з кількома велосипедами. Шафка замала, щоб у ній могла поміститися людина стоячи.",
+            "ca": "Un armari - les bicicletes estan tancades completament individualment o amb unes quantes bicicletes juntes. La taquilla és massa petita per adaptar-se a una persona dempeus."
           }
         },
         {
@@ -390,7 +395,8 @@
             "cs": "Skloněný držák s možností použití zámku přes očko. Sedlovou trubku lze za stojan uchytit pomocí kotvy",
             "de": "Ein Anlehnbügel mit der Möglichkeit, ein Schloss durch eine Öse zu verwenden. Das Sitzrohr kann durch den Ständer durch einen Anker gehalten werden",
             "es": "Un soporte inclinado con posibilidad de usar un candado a través de un ojal. El tubo del sillín puede ser sujetado por el soporte mediante un ancla",
-            "uk": "Кронштейн з можливістю використання замка через вушко. Підсідельна труба може утримуватися на стійці за допомогою анкера"
+            "uk": "Кронштейн з можливістю використання замка через вушко. Підсідельна труба може утримуватися на стійці за допомогою анкера",
+            "ca": "Un suport inclinat amb possibilitat d'utilitzar un pany a través de l'ullet. El tub de seient es pot sostenir al peu d'una àncora"
           }
         }
       ],
@@ -528,7 +534,8 @@
           "then": {
             "en": "This is a bicycle shed (with walls on at least three sides)",
             "nl": "Dit is een fietsschuurtje (met minstens 3 muren)",
-            "de": "Dies ist ein Fahrradschuppen (mit Wänden an mindestens drei Seiten)"
+            "de": "Dies ist ein Fahrradschuppen (mit Wänden an mindestens drei Seiten)",
+            "ca": "Es tracta d'un cobert de bicicletes (amb parets en almenys tres costats)"
           }
         },
         {
@@ -539,7 +546,8 @@
           "then": {
             "en": "This is a bicycle parking under a roof; the roof only serves the bicycle parking",
             "nl": "Dit is een fietsenstalling met enkel een dak (het dak dient enkel voor de fietsenstalling)",
-            "de": "Dies ist ein überdachter Fahrradabstellplatz; das Dach dient nur dem Fahrradabstellplatz"
+            "de": "Dies ist ein überdachter Fahrradabstellplatz; das Dach dient nur dem Fahrradabstellplatz",
+            "ca": "Aquest és un aparcament de bicicletes sota un sostre; el sostre només serveix el pàrquing de bicicletes"
           }
         },
         {
@@ -550,7 +558,8 @@
           "then": {
             "en": "This bicycle parking is located in a building behind a door or gate",
             "nl": "Deze fietsenstalling bevindt zich in een gebouw achter een deur of een poort",
-            "de": "Dieser Fahrradabstellplatz befindet sich in einem Gebäude hinter einer Tür oder einem Tor"
+            "de": "Dieser Fahrradabstellplatz befindet sich in einem Gebäude hinter einer Tür oder einem Tor",
+            "ca": "Aquest aparcament de bicicletes està situat en un edifici darrere d'una porta o porta"
           }
         },
         {
@@ -563,7 +572,8 @@
           "then": {
             "en": "This bicycle parking is under (a part of) a building",
             "nl": "Deze fietsenstalling bevindt onder (een deel van) een gebouw",
-            "de": "Dieser Fahrradabstellplatz befindet sich unter (einem Teil) eines Gebäudes"
+            "de": "Dieser Fahrradabstellplatz befindet sich unter (einem Teil) eines Gebäudes",
+            "ca": "Aquest aparcament de bicicletes és sota (una part de) un edifici"
           }
         },
         {
@@ -632,7 +642,8 @@
         "de": "Dazu gehören reguläre Fahrräder, Lasträder, Ebikes,...",
         "pl": "To obejmuje zwykłe rowery, do transportu dóbr, elektryczne, ...",
         "es": "Esto incluye bicicletas normales, bicicletas de carga, bicicletas eléctricas,…",
-        "cs": "Patří sem běžná jízdní kola, nákladní kola, elektrokola, ..."
+        "cs": "Patří sem běžná jízdní kola, nákladní kola, elektrokola, ...",
+        "ca": "Això inclou bicicletes regulars, bicicletes de càrrega, ebikes, ..."
       },
       "render": {
         "en": "Place for {capacity} bikes",
@@ -762,7 +773,8 @@
             "nl": "Private fietsenstalling die niet voor het grote publiek toegankelijk is (dus ook niet met bv. een abonnement)",
             "de": "Private Fahrradabstellplätze, die nie der Öffentlichkeit zur Verfügung stehen, auch nicht über einen Mitgliedsbeitrag",
             "cs": "Soukromé parkoviště pro kola, které není nikdy přístupné veřejnosti, a to ani za členský poplatek",
-            "es": "Aparcamiento privado de bicicletas que nunca está disponible para el público, ni siquiera mediante una cuota de socio"
+            "es": "Aparcamiento privado de bicicletas que nunca está disponible para el público, ni siquiera mediante una cuota de socio",
+            "ca": "Pàrquing privat de bicicletes que mai està disponible per al públic, tampoc a través d'una quota de soci"
           }
         }
       ],
@@ -789,7 +801,8 @@
             "fr": "L'utilisation de ce parking à vélo est <b>payant</b>",
             "es": "Hay que <b>pagar</b> para usar este aparcamiento de bicicletas",
             "cs": "Za použití tohoto parkoviště pro kola se musí <b>platit</b>",
-            "uk": "За користування цією велопарковкою потрібно <b>платити</b>"
+            "uk": "За користування цією велопарковкою потрібно <b>платити</b>",
+            "ca": "Cal pagar <b>pay</b> per utilitzar aquest aparcament de bicicletes"
           }
         },
         {
@@ -801,7 +814,8 @@
             "de": "Die Nutzung ist kostenlos",
             "fr": "L'utilisation de ce parking à vélo est <b>gratuit</b>",
             "es": "Gratuito",
-            "cs": "Bezplatné použití"
+            "cs": "Bezplatné použití",
+            "ca": "Lliure d'utilitzar"
           }
         }
       ]
@@ -814,21 +828,24 @@
         "nl": "Hoeveel kost het om een fiets te stallen?",
         "de": "Wie viel kostet es, Ihr Fahrrad hier zu parken?",
         "es": "¿Cuánto cuesta aparcar tu bicicleta aquí?",
-        "cs": "Kolik stojí zaparkování kola na tomto místě?"
+        "cs": "Kolik stojí zaparkování kola na tomto místě?",
+        "ca": "Quant costa aparcar la teva bicicleta aquí?"
       },
       "questionHint": {
         "en": "This is the amount which is charged for a single bike",
         "nl": "Dit is de kostprijs voor een enkele fiets",
         "de": "Das ist der Betrag, der für ein einzelnes Fahrrad berechnet wird",
         "es": "Esta es la cantidad que se cobra por una sola bicicleta",
-        "cs": "To je částka, která se účtuje za jedno jízdní kolo"
+        "cs": "To je částka, která se účtuje za jedno jízdní kolo",
+        "ca": "Aquesta és la quantitat que es cobra per una sola bicicleta"
       },
       "render": {
         "en": "Parking your bike costs {charge}",
         "nl": "Je fiets hier parkeren kost {charge}",
         "de": "Das Parken Ihres Fahrrads kostet {charge}",
         "es": "Aparcar tu bicicleta cuesta {charge}",
-        "cs": "Parkování kola stojí {charge}"
+        "cs": "Parkování kola stojí {charge}",
+        "ca": "Pàrquing de les despeses de la bicicleta {charge}"
       },
       "freeform": {
         "key": "charge",
@@ -916,7 +933,8 @@
         "de": "Wie lautet die Nummer auf der Website des Betreibers dieses Fahrradparkplatzes?",
         "es": "¿Cuál es el número de sitio web del operador de este aparcamiento de bicicletas?",
         "uk": "Яка адреса веб-сайту оператора цієї велопарковки?",
-        "cs": "Jaké je číslo internetové stránky provozovatele tohoto parkoviště pro jízdní kola?"
+        "cs": "Jaké je číslo internetové stránky provozovatele tohoto parkoviště pro jízdní kola?",
+        "ca": "Quin és el número de pàgina web de l'operador d'aquest aparcament de bicicletes?"
       },
       "icon": "./assets/layers/icons/website.svg",
       "freeform": {
@@ -1085,7 +1103,8 @@
             "nl": "Hier zijn geen plaatsen voor bakfietsen voorzien of bakfietsen stallen is niet toegestaan ",
             "de": "Es gibt hier keine speziellen Stellplätze für Lastenfahrräder oder das Abstellen von Lastenfahrrädern ist hier nicht erlaubt",
             "cs": "Nejsou zde žádná vyhrazená místa pro nákladní kola nebo zde není parkování nákladních kol povoleno",
-            "es": "No hay espacios dedicados para bicicletas de carga aquí o no se permite aparcar bicicletas de carga aquí"
+            "es": "No hay espacios dedicados para bicicletas de carga aquí o no se permite aparcar bicicletas de carga aquí",
+            "ca": "No hi ha places dedicades per a bicicletes de càrrega aquí o aparcament de bicicletes de càrrega aquí no està permès"
           },
           "hideInAnswer": "capacity:cargo_bike=",
           "addExtraTags": [
@@ -1110,7 +1129,8 @@
         "nl": "Indien een fiets langer geparkeerd staat, kan deze verwijderd worden door de beheerder",
         "de": "Wenn das Fahrrad für längere Zeit abgestellt wird, kann es vom Betreiber entfernt werden",
         "cs": "Pokud je kolo zaparkované delší dobu, může ho provozovatel odstranit",
-        "es": "Si la bicicleta está aparcada durante más tiempo, el operador podría retirarla"
+        "es": "Si la bicicleta está aparcada durante más tiempo, el operador podría retirarla",
+        "ca": "Si la bicicleta està aparcada per una quantitat més llarga, podria ser retirada per l'operador"
       },
       "freeform": {
         "key": "maxstay",
