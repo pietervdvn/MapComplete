@@ -339,7 +339,7 @@
                 "question": "Quin tipus de via aèria és aquest?"
             },
             "length": {
-                "render": "Aquest telefèric té {length:km} quilòmetres de longitud"
+                "render": "Aquest telefèric té {_length:km} quilòmetres de longitud"
             },
             "oneway": {
                 "mappings": {
@@ -451,7 +451,7 @@
                         "then": "Els animals salvatges es mantenen aquí"
                     }
                 },
-                "render": "{animalshelter} es manté aquí"
+                "render": "{animal_shelter} es manté aquí"
             }
         },
         "title": {
@@ -2513,7 +2513,7 @@
                             "then": "{{description}} sortides {{commonVoltages}} volt"
                         },
                         "question": "Quin voltatge ofereixen els endolls amb {{description}}?",
-                        "render": "{canonical({{key}}:voltage)}"
+                        "render": ""
                     },
                     "2": {
                         "mappings": {
@@ -3039,7 +3039,7 @@
                 }
             },
             "Rock type via embedded feature": {
-                "render": "El tipus de roca és {embeddingfeatureswithrock:rock} tal com s'indica <a href='#{embeddingfeatureswithrock:id}'>al cranc circumdant</a>"
+                "render": "El tipus de roca és {_embedding_features_with_rock:rock} tal com s'indica <a href='#{_embedding_features_with_rock:id}'>al cranc circumdant</a>"
             },
             "bolts": {
                 "mappings": {
@@ -4413,7 +4413,7 @@
             },
             "elevator-diameter": {
                 "question": "Quin és el diàmetre d'aquest ascensor?",
-                "render": "Aquest ascensor té un diàmetre de {canonical(diàmetre)"
+                "render": "Aquest ascensor té un diàmetre de {canonical(diameter)}"
             }
         },
         "title": {
@@ -5446,7 +5446,7 @@
                     }
                 },
                 "question": "Quin és l'horari d'obertura de l'autovia?",
-                "render": "<h3>Horaris d'obertura de la unitat</h3>{openinghourstable(openinghours:drivethrough)}"
+                "render": "<h3>Horaris d'obertura de la unitat</h3>{opening_hours_table(openinghours:drivethrough)}"
             },
             "add-menu-image": {
                 "render": {
@@ -7562,7 +7562,7 @@
                     }
                 },
                 "question": "Per a quina marca ofereix serveis aquesta localització?",
-                "render": "Aquesta ubicació ofereix serveis per a {postoffice:brand}"
+                "render": "Aquesta ubicació ofereix serveis per a {post_office:brand}"
             },
             "post_partner": {
                 "mappings": {
@@ -7585,7 +7585,7 @@
                     }
                 },
                 "question": "Pots comprar segells aquí?",
-                "render": "Podeu comprar segells a empreses: {postoffice:stamps}"
+                "render": "Podeu comprar segells a empreses: {post_office:stamps}"
             },
             "post_offic_brand": {
                 "freeform": {
@@ -8257,7 +8257,7 @@
                 }
             },
             "repeated": {
-                "render": "Es poden trobar múltiples objectes idèntics a les plantes {repeaton}."
+                "render": "Es poden trobar múltiples objectes idèntics a les plantes {repeat_on}."
             },
             "seasonal": {
                 "mappings": {
@@ -8958,7 +8958,7 @@
                     }
                 },
                 "question": "Quin tipus de refugi és aquest?",
-                "render": "Tipus de refugi: {sheltertype}"
+                "render": "Tipus de refugi: {shelter_type}"
             }
         },
         "title": {
@@ -9382,7 +9382,7 @@
                     }
                 },
                 "question": "Quants dissenys hi ha disponibles?",
-                "render": "Aquesta màquina té disponibles {note:designcount}."
+                "render": "Aquesta màquina té disponibles {note:design_count}."
             },
             "charge": {
                 "freeform": {
@@ -10760,7 +10760,7 @@
                     }
                 },
                 "question": "On estan ubicats els productes menstruals gratuïts?",
-                "render": "Els productes menstruals es troben a {toilets:menstrualproducts:location}"
+                "render": "Els productes menstruals es troben a {toilets:menstrual_products:location}"
             },
             "toilet-reviews": {
                 "render": {
@@ -12658,7 +12658,7 @@
                     "placeholder": "Data d'inici del comptador"
                 },
                 "question": "Quan va començar a comptar aquest comptador?",
-                "render": "Aquest comptador va començar a comptar amb {startdate}"
+                "render": "Aquest comptador va començar a comptar amb {start_date}"
             },
             "website": {
                 "freeform": {
@@ -13330,7 +13330,7 @@
         "name": "pistes d'esquí i snowboard",
         "tagRenderings": {
             "length": {
-                "render": "Aquesta part de la pista d'esquí és de {length:km} quilòmetre"
+                "render": "Aquesta part de la pista d'esquí és de {_length:km} quilòmetre"
             },
             "piste_difficulty": {
                 "mappings": {
@@ -13398,7 +13398,7 @@
                             "then": "Aquesta màquina té quatre dissenys disponibles"
                         }
                     },
-                    "render": "Aquesta màquina té {coin:designcount} dissenys disponibles"
+                    "render": "Aquesta màquina té {coin:design_count} dissenys disponibles"
                 }
             },
             "indoor": {
