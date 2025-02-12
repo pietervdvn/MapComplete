@@ -2,11 +2,7 @@ import Combine from "./Base/Combine"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import { default as FeatureTitle } from "./Popup/Title.svelte"
-import {
-    RenderingSpecification,
-    SpecialVisualization,
-    SpecialVisualizationState,
-} from "./SpecialVisualization"
+import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
 import { MultiApplyViz } from "./Popup/MultiApplyViz"
@@ -16,7 +12,6 @@ import { VariableUiElement } from "./Base/VariableUIElement"
 import { Translation } from "./i18n/Translation"
 import Translations from "./i18n/Translations"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
-import { SubtleButton } from "./Base/SubtleButton"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
 import { LanguageElement } from "./Popup/LanguageElement/LanguageElement"
@@ -35,7 +30,6 @@ import { Unit } from "../Models/Unit"
 import DirectionIndicator from "./Base/DirectionIndicator.svelte"
 import SpecialVisualisationUtils from "./SpecialVisualisationUtils"
 import MarkdownUtils from "../Utils/MarkdownUtils"
-import Trash from "@babeard/svelte-heroicons/mini/Trash"
 import { And } from "../Logic/Tags/And"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import { ImageVisualisations } from "./SpecialVisualisations/ImageVisualisations"
@@ -45,8 +39,12 @@ import { UISpecialVisualisations } from "./SpecialVisualisations/UISpecialVisual
 import { SettingsVisualisations } from "./SpecialVisualisations/SettingsVisualisations"
 import { ReviewSpecialVisualisations } from "./SpecialVisualisations/ReviewSpecialVisualisations"
 import { DataImportSpecialVisualisations } from "./SpecialVisualisations/DataImportSpecialVisualisations"
-import TagrenderingManipulationSpecialVisualisations from "./SpecialVisualisations/TagrenderingManipulationSpecialVisualisations"
-import { WebAndCommunicationSpecialVisualisations } from "./SpecialVisualisations/WebAndCommunicationSpecialVisualisations"
+import TagrenderingManipulationSpecialVisualisations
+    from "./SpecialVisualisations/TagrenderingManipulationSpecialVisualisations"
+import {
+    WebAndCommunicationSpecialVisualisations
+} from "./SpecialVisualisations/WebAndCommunicationSpecialVisualisations"
+import ClearGPSHistory from "./BigComponents/ClearGPSHistory.svelte"
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
@@ -383,13 +381,7 @@ export default class SpecialVisualizations {
                 args: [],
 
                 constr: (state) => {
-                    return new SubtleButton(
-                        new SvelteUIElement(Trash),
-                        Translations.t.general.removeLocationHistory
-                    ).onClick(() => {
-                        state.historicalUserLocations.features.setData([])
-                        state.selectedElement.setData(undefined)
-                    })
+                    return new SvelteUIElement(ClearGPSHistory, { state })
                 },
             },
 
