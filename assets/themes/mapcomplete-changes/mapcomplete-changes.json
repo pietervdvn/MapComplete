@@ -790,7 +790,7 @@
           ]
         },
         {
-          "id": "platform",
+          "id": "added-image",
           "options": [
             {
               "question": {
@@ -800,27 +800,16 @@
                 "es": "El conjunto de cambios agregó al menos una imagen",
                 "ko": "주요 변경사항에 최소 하나의 이미지가 추가 되었습니다",
                 "nl": "Changeset voegde minstens één afbeelding toe"
-              }
-            },
-            {
-              "question": {
-                "en": "Made with Android"
               },
-              "osmTags": "android=yes"
-            },
-            {
-              "question": {
-                "en": "Made on the web"
-              },
-              "osmTags": "android="
+              "osmTags": "add-image>0"
             }
           ]
         },
         {
-          "id": "added-image",
+          "id": "exclude_grb",
           "options": [
             {
-              "osmTags": "add-image>0",
+              "osmTags": "theme!=grb",
               "question": {
                 "en": "Exclude GRB theme",
                 "de": "GRB-Thema ausschließen",
@@ -833,10 +822,10 @@
           ]
         },
         {
-          "id": "exclude_grb",
+          "id": "exclude_etymology",
           "options": [
             {
-              "osmTags": "theme!=grb",
+              "osmTags": "theme!=etymology",
               "question": {
                 "en": "Exclude etymology theme",
                 "de": "Etymologie-Thema ausschließen",
@@ -849,18 +838,25 @@
           ]
         },
         {
-          "id": "exclude_etymology",
+          "id": "platform",
           "options": [
             {
-              "osmTags": "theme!=etymology",
               "question": {
-                "en": "Exclude etymology theme",
-                "de": "Etymologie-Thema ausschließen",
-                "es": "Excluir el tema de etimología",
-                "cs": "Vyloučit etymologii tématu",
-                "nl": "Thema etymologie uitsluiten",
-                "ko": "어원 테마 제외"
-              }
+                "en": "All platforms"
+              },
+              "quesiton": "All platforms"
+            },
+            {
+              "question": {
+                "en": "Made with Android"
+              },
+              "osmTags": "android=yes"
+            },
+            {
+              "question": {
+                "en": "Made on the web"
+              },
+              "osmTags": "android="
             }
           ]
         }
