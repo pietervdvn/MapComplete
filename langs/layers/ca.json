@@ -303,10 +303,10 @@
             "type": {
                 "mappings": {
                     "6": {
-                        "then": "Un ascensor d'arrossegament amb barres en forma de L per a un sol passatger alhora"
+                        "then": "Un remuntador amb barres en forma de L per a un sol passatger alhora"
                     },
                     "7": {
-                        "then": "Un ascensor d'arrossegament amb plat per arrossegar un sol passatger alhora"
+                        "then": "Un remuntador amb una plataforma per arrossegar un sol passatger alhora"
                     },
                     "5": {
                         "then": "Un remuntador amb transportadors en forma de T per a dos passatgers alhora"
@@ -330,13 +330,13 @@
                         "then": "Un remuntador"
                     },
                     "8": {
-                        "then": "Una línia de remolc que els esquiadors mantenen o s'adhereixen a"
+                        "then": "Una línia de remolc a la qual els esquiadors s'agafen o s'enganxen"
                     },
                     "9": {
-                        "then": "Una catifa màgica (un cinturó transportador a terra)"
+                        "then": "Una catifa màgica (un cinta transportador a terra)"
                     }
                 },
-                "question": "Quin tipus de via aèria és aquest?"
+                "question": "Quin tipus de telefèric és aquest?"
             },
             "length": {
                 "render": "Aquest telefèric té {_length:km} quilòmetres de longitud"
@@ -354,7 +354,7 @@
             }
         },
         "title": {
-            "render": "Via aèria {name}"
+            "render": "Telefèric {name}"
         }
     },
     "ambulancestation": {
@@ -436,19 +436,19 @@
                 "question": "Quins animals s'accepten aquí?",
                 "mappings": {
                     "0": {
-                        "then": "Els gossos es guarden aquí"
+                        "then": "Aquí es mantenen gossos"
                     },
                     "1": {
-                        "then": "Els gats es mantenen aquí"
+                        "then": "Aquí es mantenen gats"
                     },
                     "2": {
-                        "then": "Els cavalls es guarden aquí"
+                        "then": "Aquí es mantenen cavalls"
                     },
                     "3": {
-                        "then": "Els ocells es mantenen aquí"
+                        "then": "Aquí es mantenen ocells"
                     },
                     "4": {
-                        "then": "Els animals salvatges es mantenen aquí"
+                        "then": "Aquí es mantenen animals salvatges"
                     }
                 },
                 "render": "{animal_shelter} es manté aquí"
@@ -462,7 +462,7 @@
             },
             "render": "Refugi d'animals"
         },
-        "description": "Un refugi d'animals és una instal·lació on es porten animals en problemes i el personal de la instal·lació (voluntaris o no) els alimenta i cuida, rehabilitant-los i curant-los si cal. Aquesta definició inclou kennels per a gossos abandonats, catteries per a gats abandonats, refugis per a altres mascotes abandonades i centres de recuperació de fauna salvatge."
+        "description": "Un refugi d'animals és una instal·lació on es porten animals en problemes i el personal de la instal·lació (voluntaris o no) els alimenta i cuida, rehabilitant-los i curant-los si cal. Aquesta definició inclou caneres per a gossos abandonats, gateres per a gats abandonats, refugis per a altres mascotes abandonades i centres de recuperació de fauna salvatge."
     },
     "artwork": {
         "description": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
@@ -988,13 +988,13 @@
             "bench-armrest": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest banc té un o més suports"
+                        "then": "Aquest banc té un o més reposabraços"
                     },
                     "1": {
-                        "then": "Aquest banc <b>no</b> té respatller"
+                        "then": "Aquest banc <b>no</b> té reposabraços"
                     }
                 },
-                "question": "Aquest banc té un o més suports?"
+                "question": "Aquest banc té un o més reposabraços?"
             }
         },
         "title": {
@@ -1144,7 +1144,7 @@
                         "then": "Aquí es poden llogar cascos de bicicleta"
                     },
                     "8": {
-                        "then": "Les bicicletes de càrrega es poden llogar aquí"
+                        "then": "Aquí es poden llogar bicicletes de càrrega"
                     }
                 },
                 "question": "Quin tipus de bicicletes i accessoris es lloguen aquí?",
@@ -1330,7 +1330,7 @@
                         "then": "Aquest servei de neteja és operat per un empleat"
                     }
                 },
-                "question": "Aquest servei de neteja és autoservei?"
+                "question": "Aquest servei de neteja és d'autoservei?"
             }
         },
         "title": {
@@ -1396,30 +1396,30 @@
                         "then": "Una zona al terra que està senyalitzada per a l'aparcament de bicicletes"
                     },
                     "1": {
-                        "then": "Rack amb bucles laterals"
+                        "then": "Rack amb llaços laterals"
                     },
                     "10": {
-                        "then": "Un suport inclinat amb possibilitat d'utilitzar un pany a través de l'ullet. El tub de seient es pot sostenir al peu d'una àncora"
+                        "then": "Un suport inclinat amb possibilitat d'utilitzar un cadenat a través de l'ullet. El tub del seient es pot sostenir al suport amb un anclatge"
                     },
                     "9": {
-                        "then": "Un armari - les bicicletes estan tancades completament individualment o amb unes quantes bicicletes juntes. La taquilla és massa petita per adaptar-se a una persona dempeus."
+                        "then": "Un casiller: les bicicletes estan tancades completament individualment o amb unes quantes bicicletes juntes. La taquilla és massa petita per adaptar-se a una persona dempeus."
                     }
                 },
                 "question": "Quin és el tipus d'aquest aparcament de bicicletes?",
                 "render": "Aquest és un aparcament de bicicletes del tipus: {bicycle_parking}",
-                "questionHint": "Es tracta del dispositiu físic que es col·loca la bicicleta i s'utilitza per bloquejar"
+                "questionHint": "Es tracta del dispositiu físic que es col·loca a la bicicleta i s'utilitza per bloquejar"
             },
             "Capacity": {
                 "question": "Quantes bicicletes caben en aquest aparcament de bicicletes?",
                 "render": "Espai per a {capacity} bicis",
-                "questionHint": "Això inclou bicicletes regulars, bicicletes de càrrega, ebikes, ..."
+                "questionHint": "Això inclou bicicletes regulars, bicicletes de càrrega, bicicletes elèctriques, ..."
             },
             "Cargo bike capacity?": {
                 "question": "Quantes bicicletes de càrrega caben en aquest aparcament de bicicletes?",
                 "render": "A aquest aparcament caben {capacity:cargo_bike} bicicletes de càrrega",
                 "mappings": {
                     "0": {
-                        "then": "No hi ha places dedicades per a bicicletes de càrrega aquí o aparcament de bicicletes de càrrega aquí no està permès"
+                        "then": "No hi ha places dedicades per a bicicletes de càrrega aquí o l'aparcament de bicicletes de càrrega aquí no està permès"
                     }
                 }
             },
@@ -1452,10 +1452,10 @@
                         "then": "Aquest és un aparcament de bicicletes sota un sostre; el sostre només serveix el pàrquing de bicicletes"
                     },
                     "2": {
-                        "then": "Aquest aparcament de bicicletes està situat en un edifici darrere d'una porta o porta"
+                        "then": "Aquest aparcament de bicicletes està situat en un edifici darrere d'una porta o barrera"
                     },
                     "3": {
-                        "then": "Aquest aparcament de bicicletes és sota (una part de) un edifici"
+                        "then": "Aquest aparcament de bicicletes està sota (una part d') un edifici"
                     }
                 },
                 "question": "Aquest aparcament està cobert?"
@@ -1464,7 +1464,7 @@
                 "question": "Aquests aparcaments de bicicletes són gratuïts?",
                 "mappings": {
                     "1": {
-                        "then": "Lliure d'utilitzar"
+                        "then": "Gratuït"
                     },
                     "0": {
                         "then": "Cal pagar <b>pay</b> per utilitzar aquest aparcament de bicicletes"
@@ -1491,7 +1491,7 @@
             "maxstay": {
                 "question": "Quina és la durada màxima permesa d'estacionament?",
                 "render": "Una bici pot aparcar aquí com a màxim {canonical(maxstay)}",
-                "questionHint": "Si la bicicleta està aparcada per una quantitat més llarga, podria ser retirada per l'operador"
+                "questionHint": "Si la bicicleta està aparcada per més temps, l'operador podria ser retirada per l'operador"
             },
             "operator": {
                 "question": "Qui manté aquest aparcament per a bicis?",
@@ -1505,7 +1505,7 @@
                 "questionHint": "És possible que es pugui trucar a aquest número en cas de problemes, p. per retirar les bicicletes abandonades"
             },
             "charge": {
-                "render": "Pàrquing de les despeses de la bicicleta {charge}",
+                "render": "Aparcar la teva bicicleta costa {charge}",
                 "question": "Quant costa aparcar la teva bicicleta aquí?",
                 "questionHint": "Aquesta és la quantitat que es cobra per una sola bicicleta"
             },
@@ -1809,10 +1809,10 @@
             "bird-hide-shelter-or-wall": {
                 "mappings": {
                     "0": {
-                        "then": "Observatori d'ocells"
+                        "then": "Amagatall d'ocells"
                     },
                     "1": {
-                        "then": "Observatori d'ocells"
+                        "then": "Aguait d'ocells"
                     },
                     "2": {
                         "then": "Torre d'observació d'ocells"
@@ -1821,7 +1821,7 @@
                         "then": "Refugi d'aus"
                     }
                 },
-                "question": "És un ocell cec o un refugi d'observació d'ocells?"
+                "question": "És un amagatall o aguait d'observació d'ocells?"
             },
             "bird-hide-wheelchair": {
                 "mappings": {
@@ -1846,7 +1846,7 @@
                         "then": "Operat per Natuurpunt"
                     },
                     "1": {
-                        "then": "Operat per l'Agència de Natura i Boscos"
+                        "then": "Operat per l'Agència per a la Natura i Boscos"
                     }
                 },
                 "question": "Qui gestiona aquest observatori d'ocells?",
@@ -2138,55 +2138,55 @@
                         "question": "Té un connector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
                     },
                     "11": {
-                        "question": "Té un <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (un tipus de marca2css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/Type2CCS.svg'/></div> connector"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (un tipus2_css de la marca Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
                     },
                     "12": {
-                        "question": "Té un <div style='display: inline-block'><b><b>Tesla Supercharger (destinació)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/Tesla-hpwc-model-s.svg'/></div> connector"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (destinació)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
                     },
                     "13": {
-                        "question": "Té un sobrecarregador <div style='display: inline-block'><b><b>Tesla (destinació)</b> (Un tipus 2 amb cable marcat com a tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/Type2tethered.svg'/></div> connector"
+                        "question": "Té un connector<div style='display: inline-block'><b><b>Supercarregador Tesla (destinació)</b> (Un tipus 2 amb cable de la marca Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     },
                     "14": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>USB</b> per carregar telèfons i electrònica petita</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/usbport.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>USB</b> per carregar telèfons i dispositius electrònics petits</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
                     },
                     "15": {
-                        "question": "Té un connector Bosch Active Connect <div style='display: inline-block'><b><b>amb 3 pins</b> i cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/bosch-3pin.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Bosch Active Connect amb 3 pins</b> i cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
                     },
                     "16": {
-                        "question": "Té un connector Bosch Active Connect <div style='display: inline-block'><b><b>amb 5 pins</b> i cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/bosch-5pin.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b> Bosch Active Connect amb 5 pins</b> i cable</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
                     },
                     "17": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>BS1363</b> (tipus G)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/bs1363.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>BS1363</b> (Tipus G)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bs1363.svg'/></div>"
                     },
                     "18": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>NEMA 5-15</b> (tipus B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/nema-5-15.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>NEMA 5-15</b> (Tipus B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-15.svg'/></div>"
                     },
                     "19": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>SEV 1011 T23</b> (tipus J)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/typej.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Tipus J)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div>"
                     },
                     "20": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>AS3112</b> (tipus I)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/as3112.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>AS3112</b> (Tipus I)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div>"
                     },
                     "21": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>NEMA 5-20</b> (tipus B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/nema-5-20.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>NEMA 5-20</b> (Tipus B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div>"
                     },
                     "4": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 1 amb cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/Type1J1772.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 1 amb cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "5": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 1 <i>sense el cable</i></b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/Type1J1772.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 1 <i>sense</i> el cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "6": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 1 CCS</b> (àlies Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/Type1-ccs.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 1 CCS</b> (també conegut com a Tipus 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
                     },
                     "7": {
-                        "question": "Té un <div style='display: inline-block'><b><b>Tesla Supercharger</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/Tesla-hpwc-model-s.svg'/></div> connector"
+                        "question": "Té un connector<div style='display: inline-block'><b><b>Tesla Supercharger</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
                     },
                     "8": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/Type2socket.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
                     },
                     "9": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/chargingstation/Type2CCS.svg'/></div>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
                     }
                 }
             }
@@ -2297,10 +2297,10 @@
                         "then": "<b>Tipus 2 amb cable</b> (mennekes)"
                     },
                     "20": {
-                        "then": "<b>Tesla Supercharger CCS</b> (un tipus de marca2css)"
+                        "then": "<b>Tesla Supercharger CCS</b> (un tipus2_css de la marca Tesla)"
                     },
                     "21": {
-                        "then": "<b>Tesla Supercharger CCS</b> (un tipus de marca2css)"
+                        "then": "<b>Tesla Supercharger CCS</b> (un tipus2_css de la marca Tesla)"
                     },
                     "22": {
                         "then": "<b>Tesla Supercharger (destinació)</b>"
@@ -2309,16 +2309,16 @@
                         "then": "<b>Tesla Supercharger (destinació)</b>"
                     },
                     "24": {
-                        "then": "<b>Tesla supercharger (destinació)</b> (Un tipus 2 amb cable marcat com a tesla)"
+                        "then": "<b>Tesla supercharger (destinació)</b> (Un tipus 2 amb cable de la marca Tesla)"
                     },
                     "25": {
-                        "then": "<b>Tesla supercharger (destinació)</b> (Un tipus 2 amb cable marcat com a tesla)"
+                        "then": "<b>Tesla supercharger (destinació)</b> (Un tipus 2 amb cable de la marca tesla)"
                     },
                     "26": {
-                        "then": "<b>USB</b> per carregar telèfons i electrònica petita"
+                        "then": "<b>USB</b> per carregar telèfons i dispositius electrònics petits"
                     },
                     "27": {
-                        "then": "<b>USB</b> per carregar telèfons i electrònica petita"
+                        "then": "<b>USB</b> per carregar telèfons i dispositius electrònics petits"
                     },
                     "28": {
                         "then": "<b>Bosch Active Connect amb 3 pins</b> i cable"
@@ -2397,7 +2397,7 @@
                         "then": "Aquesta estació de recàrrega s'ha desactivat permanentment i ja no s'utilitza, però encara és visible"
                     },
                     "3": {
-                        "then": "Aquí es construeix una estació de càrrega"
+                        "then": "Aquí està construint-se una estació de càrrega"
                     }
                 },
                 "question": "Està en ús aquest punt de càrrega?"
@@ -2506,48 +2506,49 @@
                 "renderings": {
                     "0": {
                         "question": "Quants connectors del tipus {{description}} hi han disponibles aquí?",
-                        "render": "Hi ha <b class='text-xl'>{{{key}}}</b> plugs del tipus {{description}} disponibles aquí"
+                        "render": "Hi ha <b class='text-xl'>{{{key}}}</b> endolls del tipus {{description}} disponibles aquí"
                     },
                     "1": {
                         "mappings": {
-                            "then": "{{description}} sortides {{commonVoltages}} volt"
+                            "then": "{{description}} sortides {{commonVoltages}} volts"
                         },
-                        "question": "Quin voltatge ofereixen els endolls amb {{description}}?"
+                        "question": "Quin voltatge ofereixen els endolls amb {{description}}?",
+                        "render": "{{description}} entrega {canonical({{key}}:voltage)}"
                     },
                     "2": {
                         "mappings": {
-                            "then": "{{description}} sortides com a màxim {{commonCurrent}} A"
+                            "then": "{{description}} entrega com a màxim {{commonCurrent}} A"
                         },
                         "question": "Quin corrent ofereixen els endolls amb {{description}}?",
-                        "render": "{{description}} sortides com a màxim {canonical({{key}}:current)}"
+                        "render": "{{description}} entrega com a màxim {canonical({{key}}:current)}"
                     },
                     "3": {
                         "mappings": {
-                            "then": "{{description}} sortides com a màxim {{commonOutput}}"
+                            "then": "{{description}} entrega com a màxim {{commonOutput}}"
                         },
-                        "question": "Quina sortida d'energia ofereix un únic connector del tipus {{description}}?",
-                        "render": "{{description}} sortides com a màxim {canonical({{key}}:output)}"
+                        "question": "Quina potència de sortida ofereix un únic connector del tipus {{description}}?",
+                        "render": "{{description}} entrega com a màxim {canonical({{key}}:output)}"
                     }
                 },
                 "rewrite": {
                     "into": {
                         "0": {
-                            "2": "<b>Endollat de paret Schuko</b> sense pin de terra (CEE7/4 tipus F)"
+                            "2": "<b>Endoll de paret Schuko</b> sense pin de terra (CEE7/4 tipus F)"
                         },
                         "1": {
-                            "2": "<b>endollat de paret europeu</b> amb pin de terra (CEE7/4 tipus E)"
+                            "2": "<b>Endoll de paret europeu</b> amb pin de terra (CEE7/4 tipus E)"
                         },
                         "10": {
-                            "2": "<b>Tesla Supercharger CCS</b> (un tipus de marca2css)"
+                            "2": "<b>Tesla Supercharger CCS</b> (un tipus2_css de la marca Tesla)"
                         },
                         "11": {
                             "2": "<b>Tesla Supercharger (destinació)</b>"
                         },
                         "12": {
-                            "2": "<b>Tesla supercharger (destinació)</b> (Un tipus 2 amb cable marcat com a tesla)"
+                            "2": "<b>Tesla supercharger (destinació)</b> (Un tipus 2 amb cable de la marca Tesla)"
                         },
                         "13": {
-                            "2": "<b>USB</b> per carregar telèfons i electrònica petita"
+                            "2": "<b>USB</b> per carregar telèfons i dispositius electrònics petits"
                         },
                         "14": {
                             "2": "<b>Bosch Active Connect amb 3 pins</b> i cable"
@@ -2556,28 +2557,28 @@
                             "2": "<b>Bosch Active Connect amb 5 pins</b> i cable"
                         },
                         "16": {
-                            "2": "<b>BS1363</b> (tipus G)"
+                            "2": "<b>BS1363</b> (Tipus G)"
                         },
                         "17": {
-                            "2": "<b>NEMA 5-15</b> (tipus B)"
+                            "2": "<b>NEMA 5-15</b> (Tipus B)"
                         },
                         "18": {
                             "2": "<b>SEV 1011 T23</b> (Tipus J)"
                         },
                         "19": {
-                            "2": "<b>AS3112</b> (tipus I)"
+                            "2": "<b>AS3112</b> (Tipus I)"
                         },
                         "20": {
-                            "2": "<b>NEMA 5-20</b> (tipus B)"
+                            "2": "<b>NEMA 5-20</b> (Tipus B)"
                         },
                         "3": {
                             "2": "<b>Tipus 1 amb cable</b> (J1772)"
                         },
                         "4": {
-                            "2": "<b>Tipus 1 <i>sense el cable</i></b> (J1772)"
+                            "2": "<b>Tipus 1 <i>sense</i> el cable</b> (J1772)"
                         },
                         "5": {
-                            "2": "<b>Tipus 1 CCS</b> (àlies Type 1 Combo)"
+                            "2": "<b>Tipus 1 CCS</b> (també conegut com a Tipus 1 Combo)"
                         },
                         "6": {
                             "2": "<b>Tesla Supercharger</b>"
@@ -2598,7 +2599,7 @@
                 }
             },
             "questions-technical": {
-                "render": "<h3>Preguntes tècniques</h3>Les preguntes següents són molt tècniques. Sent-te lliure d'ignorar-los<br/>{questions(tècnica)}"
+                "render": "<h3>Preguntes tècniques</h3>Les preguntes següents són molt tècniques. Sent-te lliure d'ignorar-les<br/>{questions(tècnica)}"
             },
             "ref": {
                 "question": "Quin és el número de referència d'aquesta estació de càrrega?",
@@ -2639,14 +2640,14 @@
             },
             "opening_hours": {
                 "override": {
-                    "question": "Quan s'obre aquesta guarderia?"
+                    "question": "Quan obri aquesta guarderia?"
                 }
             }
         },
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Atenció infantil {name}"
+                    "then": "Guarderia {name}"
                 }
             }
         }
@@ -2688,8 +2689,8 @@
                 "render": "S'ha de pagar una tarifa de {charge} per a escalar aquí"
             },
             "max_bolts": {
-                "question": "Quantes rutes de {title()} tenen com a màxim?",
-                "render": "Les rutes d'escalada esportiva aquí tenen com a màxim {climbing:bolts:max} perns. <div class='subtle'>Això no té estacions d'aspiració i indica quant de ràpid necessita un escalador.</div>"
+                "question": "Quants parabolts tenen com a màxim les rutes a {title()} ?",
+                "render": "Les rutes d'escalada esportiva aquí tenen com a màxim {climbing:bolts:max} perns. <div class='subtle'>Això és sense estacions d'assegurament i indica quantes cintes necessita un escalador.</div>"
             },
             "max_difficulty": {
                 "question": "Quina és la ruta de grau més alt d'aquí, segons el sistema de classificació francès?",
@@ -12426,17 +12427,17 @@
     "assembly_point": {
         "tagRenderings": {
             "assembly_point_name": {
-                "render": "Aquest punt de muntatge s'anomena <b>{name}</b>",
-                "question": "Quin és el nom d'aquest punt de muntatge?"
+                "render": "Aquest punt de reunió s'anomena <b>{name}</b>",
+                "question": "Quin és el nom d'aquest punt de reunió?"
             },
             "assembly_point_operator": {
-                "question": "Quina organització opera aquest punt de muntatge?",
-                "render": "Aquest punt de muntatge és operat per <b>{operator}</b>"
+                "question": "Quina organització opera aquest punt de reunió?",
+                "render": "Aquest punt de reunió és operat per <b>{operator}</b>"
             },
             "disaster_type": {
                 "mappings": {
                     "0": {
-                        "then": "Terra"
+                        "then": "Terratrèmol"
                     },
                     "1": {
                         "then": "Inundació"
@@ -12448,49 +12449,49 @@
                         "then": "Esllavissada"
                     }
                 },
-                "question": "Per a quin tipus de desastre es vol dir aquest punt de muntatge?"
+                "question": "Per a quin tipus de desastre està destinant aquest punt de reunió?"
             }
         },
         "title": {
-            "render": "Punt de muntatge durant les emergències"
+            "render": "Punt de reunió durant les emergències"
         },
-        "description": "Aquesta capa conté punts de muntatge i zones d'espera on es reuneixen tots els empleats, passatgers o una gran multitud en cas d'emergència.",
-        "name": "Punts de muntatge d'emergències",
+        "description": "Aquesta capa conté punts de reunió i zones d'espera on es reuneixen tots els empleats, passatgers o una gran multitud en cas d'emergència.",
+        "name": "Punts de reunió en cas d'emergència",
         "presets": {
             "0": {
-                "title": "un punt de muntatge"
+                "title": "un punt de reunió"
             }
         }
     },
     "assisted_repair": {
-        "description": "Un taller autoassistit és un lloc on les persones poden venir i reparar els seus béns amb l'ajuda de voluntaris i amb les eines disponibles en el lloc donat. Un cafè de reparació és un tipus d'esdeveniment organitzat regularment seguint els mateixos principis.",
+        "description": "Un taller autoassistit és un lloc on les persones poden anar i reparar els seus béns amb l'ajuda de voluntaris i amb les eines disponibles en el lloc donat. Un cafè de reparació és un tipus d'esdeveniment organitzat regularment seguint els mateixos principis.",
         "name": "Cafeteria de reparació i tallers de reparació assistida",
         "presets": {
             "0": {
-                "description": "Un lloc amb un taller permanent on la gent pot venir a reparar articles amb l'ajuda de voluntaris.",
-                "title": "Taller de reparació assistida"
+                "description": "Un lloc amb un taller permanent on la gent pot anar a reparar articles amb l'ajuda de voluntaris.",
+                "title": "un taller de reparació assistida"
             }
         },
         "tagRenderings": {
             "item:repair": {
                 "mappings": {
                     "0": {
-                        "then": "Els telèfons mòbils es reparen aquí"
+                        "then": "Aquí es reparen telèfons mòbils"
                     },
                     "1": {
-                        "then": "Els ordinadors es reparen aquí"
+                        "then": "Aquí es reparen ordinadors"
                     },
                     "2": {
-                        "then": "Les bicicletes es reparen aquí"
+                        "then": "Aquí es reparen bicicletes"
                     },
                     "3": {
-                        "then": "Els dispositius electrònics es reparen aquí"
+                        "then": "Aquí es reparen dispositius electrònics"
                     },
                     "4": {
-                        "then": "Aquí es reparen els mobles"
+                        "then": "Aquí es reparen mobles"
                     },
                     "5": {
-                        "then": "Aquí es reparen roba"
+                        "then": "Aquí es repara roba"
                     }
                 },
                 "question": "Quin tipus d'articles es reparen aquí?"
@@ -12514,7 +12515,7 @@
         "presets": {
             "0": {
                 "description": "Una barbacoa instal·lada permanentment, normalment accessible al públic.",
-                "title": "BBQ"
+                "title": "Barbacoa"
             }
         },
         "tagRenderings": {
@@ -12550,7 +12551,7 @@
                         "then": "Aquesta barbacoa està coberta"
                     }
                 },
-                "question": "Aquesta barbacoa està coberta?"
+                "question": "Està coberta aquesta barbacoa?"
             },
             "fuel": {
                 "mappings": {
@@ -12561,7 +12562,7 @@
                         "then": "Aquesta barbacoa utilitza carbó com a combustible"
                     },
                     "2": {
-                        "then": "Aquesta barbacoa s'alimenta d'electricitat"
+                        "then": "Aquesta barbacoa funciona amb electricitat"
                     },
                     "3": {
                         "then": "Aquesta barbacoa utilitza gas com a combustible"
@@ -12571,13 +12572,13 @@
             }
         },
         "title": {
-            "render": "BBQ"
+            "render": "Barbacoa"
         },
-        "name": "BBQ"
+        "name": "Barbacoa"
     },
     "beehive": {
         "description": "Capa que mostra els ruscs",
-        "name": "ruscs",
+        "name": "Ruscs",
         "presets": {
             "0": {
                 "title": "un rusc"
@@ -12597,7 +12598,7 @@
                 "render": "Hi ha {capacity} ruscs"
             }
         },
-        "title": "rusc"
+        "title": "Rusc"
     },
     "bicycle_counter": {
         "description": "Capa que mostra les estacions de seguiment del trànsit de bicicletes",
@@ -12663,7 +12664,7 @@
                 "freeform": {
                     "placeholder": "Lloc web del comptador"
                 },
-                "question": "Hi ha una pàgina web per a aquest taulell de bicicletes?",
+                "question": "Hi ha una pàgina web per a aquest comptador de bicicletes?",
                 "render": "Lloc web del comptador: <a href='{website}'>{website}</a>"
             }
         },
@@ -12713,7 +12714,7 @@
         "tagRenderings": {
             "capacity_persons": {
                 "question": "Quantes persones poden quedar-se aquí?",
-                "render": "{capacity:persons} les persones poden quedar-se aquí"
+                "render": "{capacity:persons} persones poden quedar-se aquí"
             },
             "fee": {
                 "mappings": {
@@ -12724,8 +12725,8 @@
                         "then": "Aquí es cobra una tarifa."
                     }
                 },
-                "question": "Hi ha una comissió aquí?",
-                "render": "S'ha de pagar una comissió de {charge} aquí"
+                "question": "Aquí es cobra alguna tarifa?",
+                "render": "S'ha de pagar una tarifa de {charge} aquí"
             },
             "group_only": {
                 "mappings": {
@@ -12772,7 +12773,7 @@
         }
     },
     "cinema": {
-        "description": "Un lloc que mostra pel·lícules (pel·lícules), generalment obert al públic per un preu. Conegut comunament com una sala de cinema als EUA.",
+        "description": "Un lloc que mostra pel·lícules (cine), generalment obert al públic per un preu. Conegut comunament com una sala de cinema als EUA.",
         "tagRenderings": {
             "cinema_type": {
                 "mappings": {
@@ -12780,7 +12781,7 @@
                         "then": "Aquest és un cinema normal que mostra pel·lícules per a totes les edats"
                     },
                     "1": {
-                        "then": "Aquest és un cinema eròtic que mostra pel·lícules per a adults"
+                        "then": "Aquest és un cinema eròtic que projecta pel·lícules per a adults"
                     }
                 },
                 "question": "Quin tipus de cinema és aquest?"
