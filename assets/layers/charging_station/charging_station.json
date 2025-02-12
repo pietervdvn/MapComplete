@@ -3091,7 +3091,7 @@
         "nl": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions(technical)}",
         "de": "<h3>Technische Frage</h3>Die nächsten Fragen sind sehr technisch. Du kannst diese auch überspringen.<br/>{questions(technical)}",
         "es": "<h3>Preguntas técnicas</h3>Las preguntas a continuación son muy técnicas Siéntete libre de ignorarlas<br/>{questions(technical)}",
-        "ca": "<h3>Preguntes tècniques</h3>Les preguntes següents són molt tècniques. Sent-te lliure d'ignorar-los<br/>{questions(tècnica)}"
+        "ca": "<h3>Preguntes tècniques</h3>Les preguntes següents són molt tècniques. Sent-te lliure d'ignorar-los<br/>{questions(technical)}"
       }
     }
   ],
