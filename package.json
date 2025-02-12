@@ -289,7 +289,7 @@
     "tslib": "^2.5.0",
     "typescript": "^4.7.4",
     "vite": "^4.5.9",
-    "vite-node": "^2.1.9",
+    "vite-node": "^3.0.5",
     "vitest": "^3.0.5"
   }
 }
