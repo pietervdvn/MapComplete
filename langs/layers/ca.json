@@ -2851,7 +2851,7 @@
                 "render": "En cas de problemes, truqueu a <a href='tel:{phone}'>{phone}</a>"
             },
             "questions-technical": {
-                "render": "<h3>Preguntes tècniques</h3>Les preguntes següents són molt tècniques. Sent-te lliure d'ignorar-les<br/>{questions(tècnica)}"
+                "render": "<h3>Preguntes tècniques</h3>Les preguntes següents són molt tècniques. Sent-te lliure d'ignorar-les<br/>{questions(technical)}"
             },
             "ref": {
                 "question": "Quin és el número de referència d'aquesta estació de càrrega?",
