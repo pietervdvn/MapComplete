@@ -7,7 +7,7 @@
     "cs": "Nouzová shromaždiště",
     "es": "Puntos de reunión en caso de emergencia",
     "nl": "Noodverzamelplaatsen",
-    "ca": "Punts de muntatge d'emergències",
+    "ca": "Punts de reunió en cas d'emergència",
     "uk": "Пункти екстреного збору"
   },
   "description": {
@@ -18,7 +18,7 @@
     "cs": "Tato vrstva obsahuje shromaždiště a čekací prostory, kde se v případě nouze shromažďují všichni zaměstnanci, cestující nebo velký dav lidí.",
     "es": "Esta capa contiene puntos de reunión y áreas de espera donde todos los empleados, pasajeros o una gran multitud se reúnen en caso de emergencia.",
     "nl": "Deze laag bevat verzamelplaatsen en wachtzones waar werknemers, passagiers of menigten verzameld worden in een noodsituatie.",
-    "ca": "Aquesta capa conté punts de muntatge i zones d'espera on es reuneixen tots els empleats, passatgers o una gran multitud en cas d'emergència."
+    "ca": "Aquesta capa conté punts de reunió i zones d'espera on es reuneixen tots els empleats, passatgers o una gran multitud en cas d'emergència."
   },
   "source": {
     "osmTags": {
@@ -35,7 +35,7 @@
       "cs": "Shromaždiště při mimořádných událostech",
       "es": "Punto de reunión en caso de emergencia",
       "nl": "Verzamelpunt voor bij noodsituaties",
-      "ca": "Punt de muntatge durant les emergències"
+      "ca": "Punt de reunió durant les emergències"
     }
   },
   "pointRendering": [
@@ -63,7 +63,7 @@
         "cs": "shromaždiště",
         "es": "un punto de reunión",
         "nl": "een verzamelplaats",
-        "ca": "un punt de muntatge"
+        "ca": "un punt de reunió"
       },
       "tags": [
         "emergency=assembly_point"
@@ -85,7 +85,7 @@
         "cs": "Jak se jmenuje toto shromaždiště?",
         "es": "¿Cuál es el nombre de este punto de reunión?",
         "nl": "Wat is de naam van deze verzamelplaats?",
-        "ca": "Quin és el nom d'aquest punt de muntatge?"
+        "ca": "Quin és el nom d'aquest punt de reunió?"
       },
       "render": {
         "en": "This assembly point is named <b>{name}</b>",
@@ -95,7 +95,7 @@
         "cs": "Toto shromaždiště se jmenuje <b>{name}</b>",
         "es": "Este punto de reunión se llama <b>{name}</b>",
         "nl": "De naam van deze verzamelplaats is <b>{name}</b>",
-        "ca": "Aquest punt de muntatge s'anomena <b>{name}</b>"
+        "ca": "Aquest punt de reunió s'anomena <b>{name}</b>"
       }
     },
     {
@@ -107,7 +107,7 @@
         "cs": "Toto shromaždiště provozuje <b>{operator}</b>",
         "es": "Este punto de reunión es operado por <b>{operator}</b>",
         "nl": "Dit verzamelpunt wordt beheerd door <b>{operator}</b>",
-        "ca": "Aquest punt de muntatge és operat per <b>{operator}</b>"
+        "ca": "Aquest punt de reunió és operat per <b>{operator}</b>"
       },
       "question": {
         "en": "What organization operates this assembly point?",
@@ -116,7 +116,7 @@
         "cs": "Jaká organizace provozuje toto shromaždiště?",
         "es": "¿Qué organización opera este punto de reunión?",
         "nl": "Welke organisatie beheert dit verzamelpunt?",
-        "ca": "Quina organització opera aquest punt de muntatge?"
+        "ca": "Quina organització opera aquest punt de reunió?"
       },
       "freeform": {
         "key": "operator",
@@ -132,7 +132,7 @@
         "cs": "Pro jaký typ katastrofy je toto shromaždiště určeno?",
         "es": "¿Para qué tipo de desastre está destinado este punto de reunión?",
         "nl": "Voor welk soort ramp is dit verzamelpunt bedoeld?",
-        "ca": "Per a quin tipus de desastre es vol dir aquest punt de muntatge?"
+        "ca": "Per a quin tipus de desastre està destinant aquest punt de reunió?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -147,7 +147,7 @@
             "cs": "Zemětřesení",
             "es": "Terremoto",
             "nl": "Aardbeving",
-            "ca": "Terra"
+            "ca": "Terratrèmol"
           },
           "icon": {
             "path": "./assets/layers/assembly_point/earthquake.svg",

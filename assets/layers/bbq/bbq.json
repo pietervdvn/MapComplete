@@ -6,7 +6,7 @@
     "cs": "BBQ",
     "es": "Barbacoa",
     "nl": "Barbecue",
-    "ca": "BBQ",
+    "ca": "Barbacoa",
     "uk": "Барбекю"
   },
   "description": {
@@ -28,7 +28,7 @@
       "cs": "BBQ",
       "es": "Barbacoa",
       "nl": "BBQ",
-      "ca": "BBQ"
+      "ca": "Barbacoa"
     }
   },
   "pointRendering": [
@@ -58,7 +58,7 @@
         "cs": "BBQ",
         "es": "Barbacoa",
         "nl": "Barbecue",
-        "ca": "BBQ"
+        "ca": "Barbacoa"
       },
       "description": {
         "de": "Ein ortsfest installierter Grill, typischerweise öffentlich zugänglich.",
@@ -162,7 +162,7 @@
         "cs": "Je gril zakrytý?",
         "es": "¿Está cubierta la parrilla?",
         "nl": "Is deze barbecue overdekt?",
-        "ca": "Aquesta barbacoa està coberta?"
+        "ca": "Està coberta aquesta barbacoa?"
       },
       "mappings": [
         {
@@ -230,7 +230,7 @@
             "cs": "Elektrický",
             "es": "Eléctrica",
             "nl": "Deze barbecue werkt op elektriciteit",
-            "ca": "Aquesta barbacoa s'alimenta d'electricitat"
+            "ca": "Aquesta barbacoa funciona amb electricitat"
           }
         },
         {

@@ -191,7 +191,7 @@
         "da": "Er dette en fugletårn eller et fuglekiggerskjul?",
         "cs": "Jedná se o ptačí zástěnu nebo o úkryt pro pozorování ptáků?",
         "es": "¿Es un escondrijo para pájaros o un refugio para observar pájaros?",
-        "ca": "És un ocell cec o un refugi d'observació d'ocells?"
+        "ca": "És un amagatall o aguait d'observació d'ocells?"
       },
       "mappings": [
         {
@@ -208,7 +208,7 @@
             "de": "Sichtschutz zur Vogelbeobachtung",
             "fr": "Camouflage d’observation ornithologique",
             "da": "Fugletårn",
-            "ca": "Observatori d'ocells",
+            "ca": "Amagatall d'ocells",
             "cs": "Ptačí pozorovatelna",
             "es": "Escondrijo para pájaros"
           }
@@ -227,7 +227,7 @@
             "da": "Fugleskjul",
             "de": "Vogelbeobachtungsturm",
             "fr": "Observatoire ornithologique",
-            "ca": "Observatori d'ocells",
+            "ca": "Aguait d'ocells",
             "cs": "Ptačí skrýš",
             "es": "Escondite para pájaros"
           }
@@ -406,7 +406,7 @@
             "da": "Drives af Natur- og Skovstyrelsen",
             "cs": "Provozuje the Agency for Nature and Forests",
             "es": "Operado por la Agencia para la Naturaleza y los Bosques",
-            "ca": "Operat per l'Agència de Natura i Boscos"
+            "ca": "Operat per l'Agència per a la Natura i Boscos"
           }
         }
       ],

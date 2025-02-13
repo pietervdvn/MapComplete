@@ -206,7 +206,7 @@
         "fr": "Cette voie fait {canonical(climbing:length)} de long",
         "cs": "Tato trasa je {canonical(climbing:length)} dlouhá",
         "es": "Esta vía mide {canonical(climbing:length)} de largo",
-        "ca": "Aquesta ruta és {canonical(climbing:length)} llarga"
+        "ca": "Aquesta ruta és {canonical(escalada: longitud)} llarga"
       },
       "freeform": {
         "key": "climbing:length",

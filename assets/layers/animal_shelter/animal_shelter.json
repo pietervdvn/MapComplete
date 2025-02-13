@@ -21,7 +21,7 @@
     "de": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen.",
     "cs": "Útulek pro zvířata je zařízení, kam se přivážejí zvířata v nesnázích a zaměstnanci zařízení (ať už dobrovolníci, nebo ne) je krmí, starají se o ně a v případě potřeby je rehabilitují a léčí. Tato definice zahrnuje chovné stanice pro opuštěné psy, chovné stanice pro opuštěné kočky, útulky pro jiná opuštěná zvířata a centra pro záchranu volně žijících zvířat. ",
     "nl": "Een dierenasiel is een instelling waar dieren in nood binnengebracht worden en door de medewerkers gevoederd en verzorgd worden, eventueel met het oog op uitzetting. Hieronder vallen asielen voor achtergelaten huisdieren en opvangcentra voor wilde dieren.",
-    "ca": "Un refugi d'animals és una instal·lació on es porten animals en problemes i el personal de la instal·lació (voluntaris o no) els alimenta i cuida, rehabilitant-los i curant-los si cal. Aquesta definició inclou kennels per a gossos abandonats, catteries per a gats abandonats, refugis per a altres mascotes abandonades i centres de recuperació de fauna salvatge."
+    "ca": "Un refugi d'animals és una instal·lació on es porten animals en problemes i el personal de la instal·lació (voluntaris o no) els alimenta i cuida, rehabilitant-los i curant-los si cal. Aquesta definició inclou caneres per a gossos abandonats, gateres per a gats abandonats, refugis per a altres mascotes abandonades i centres de recuperació de fauna salvatge."
   },
   "source": {
     "osmTags": "amenity=animal_shelter"
@@ -213,7 +213,7 @@
             "cs": "Chovají se zde psi",
             "es": "Aquí se mantienen perros",
             "nl": "Honden worden hier opgevangen",
-            "ca": "Els gossos es guarden aquí"
+            "ca": "Aquí es mantenen gossos"
           }
         },
         {
@@ -225,7 +225,7 @@
             "cs": "Chovají se zde kočky",
             "es": "Aquí se mantienen gatos",
             "nl": "Katten worden hier opgevangen",
-            "ca": "Els gats es mantenen aquí"
+            "ca": "Aquí es mantenen gats"
           }
         },
         {
@@ -237,7 +237,7 @@
             "cs": "Chovají se zde koně",
             "es": "Aquí se mantienen caballos",
             "nl": "Paarden worden hier opgevangen",
-            "ca": "Els cavalls es guarden aquí"
+            "ca": "Aquí es mantenen cavalls"
           }
         },
         {
@@ -249,7 +249,7 @@
             "cs": "Chovají se zde ptáci",
             "es": "Aquí se mantienen aves",
             "nl": "Vogels worden hier opgevangen",
-            "ca": "Els ocells es mantenen aquí"
+            "ca": "Aquí es mantenen ocells"
           }
         },
         {
@@ -261,7 +261,7 @@
             "cs": "Chovají se zde divoká zvířata",
             "es": "Aquí se mantienen animales salvajes",
             "nl": "Wilde dieren worden hier opgevangen",
-            "ca": "Els animals salvatges es mantenen aquí"
+            "ca": "Aquí es mantenen animals salvatges"
           }
         }
       ],

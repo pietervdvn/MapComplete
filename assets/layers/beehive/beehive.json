@@ -3,7 +3,7 @@
   "name": {
     "en": "Beehives",
     "de": "Bienenstöcke",
-    "ca": "ruscs",
+    "ca": "Ruscs",
     "uk": "Бджолині вулики"
   },
   "description": {
@@ -18,7 +18,7 @@
   "title": {
     "en": "Beehive",
     "de": "Bienenstock",
-    "ca": "rusc"
+    "ca": "Rusc"
   },
   "pointRendering": [
     {

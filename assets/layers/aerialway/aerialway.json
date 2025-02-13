@@ -34,7 +34,7 @@
       "cs": "Dráha {name}",
       "es": "Teleférico {name}",
       "nl": "Kabelbaan {name}",
-      "ca": "Via aèria {name}"
+      "ca": "Telefèric {name}"
     }
   },
   "pointRendering": [
@@ -101,7 +101,7 @@
         "cs": "O jaký typ dráhy se jedná?",
         "es": "¿Qué tipo de teleférico es este?",
         "nl": "Wat voor kabelbaan is dit?",
-        "ca": "Quin tipus de via aèria és aquest?"
+        "ca": "Quin tipus de telefèric és aquest?"
       },
       "id": "type",
       "mappings": [
@@ -184,7 +184,7 @@
             "cs": "Vlek s tyčemi ve tvaru písmene L pro jednoho cestujícího",
             "es": "Un remonte con barras en forma de L para un solo pasajero a la vez",
             "nl": "Een sleeplift met L-vormige stangen voor één passagier",
-            "ca": "Un ascensor d'arrossegament amb barres en forma de L per a un sol passatger alhora"
+            "ca": "Un remuntador amb barres en forma de L per a un sol passatger alhora"
           }
         },
         {
@@ -195,7 +195,7 @@
             "cs": "Vlek s talířem, který táhne jednoho cestujícího",
             "es": "Un remonte con una plataforma para arrastrar a un solo pasajero a la vez",
             "nl": "Een sleeplift met stangen om skiërs naar boven te slepen",
-            "ca": "Un ascensor d'arrossegament amb plat per arrossegar un sol passatger alhora"
+            "ca": "Un remuntador amb una plataforma per arrossegar un sol passatger alhora"
           }
         },
         {
@@ -206,7 +206,7 @@
             "cs": "Vlečné lano, které táhne lyžaře",
             "es": "Un cable de remolque que arrastra a los esquiadores",
             "nl": "Een sleeplijn waar skiërs zich aan vasthouden of vastmaken",
-            "ca": "Una línia de remolc que els esquiadors mantenen o s'adhereixen a"
+            "ca": "Una línia de remolc a la qual els esquiadors s'agafen o s'enganxen"
           }
         },
         {
@@ -216,7 +216,7 @@
             "de": "Ein magic carpet (ein Förderband auf dem Boden)",
             "cs": "Kouzelný koberec (pásový dopravník na zemi)",
             "es": "Una alfombra mágica (una cinta transportadora en el suelo)",
-            "ca": "Una catifa màgica (un cinturó transportador a terra)"
+            "ca": "Una catifa màgica (un cinta transportador a terra)"
           }
         },
         {

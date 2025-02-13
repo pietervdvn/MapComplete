@@ -126,12 +126,12 @@
       "question": {
         "en": "Is a fee charged here?",
         "de": "Wird hier eine Gebühr erhoben?",
-        "ca": "Hi ha una comissió aquí?"
+        "ca": "Aquí es cobra alguna tarifa?"
       },
       "render": {
         "en": "A fee of {charge} should be paid for here",
         "de": "Hier wird eine Gebühr von {charge} erhoben",
-        "ca": "S'ha de pagar una comissió de {charge} aquí"
+        "ca": "S'ha de pagar una tarifa de {charge} aquí"
       },
       "freeform": {
         "key": "charge",
@@ -178,7 +178,7 @@
       "render": {
         "en": "{capacity:persons} people can stay here",
         "de": "Hier können {capacity:persons} Personen übernachten",
-        "ca": "{capacity:persons} les persones poden quedar-se aquí"
+        "ca": "{capacity:persons} persones poden quedar-se aquí"
       },
       "freeform": {
         "key": "capacity:persons",

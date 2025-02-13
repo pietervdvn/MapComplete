@@ -13,7 +13,7 @@
     "de": "Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind.",
     "es": "Un lugar donde se proyectan películas (cine), generalmente abierto al público por una tarifa Comúnmente conocido como cine en Estados Unidos.",
     "nl": "Een plaats die films toont, meestal open voor het publiek tegen een vergoeding.",
-    "ca": "Un lloc que mostra pel·lícules (pel·lícules), generalment obert al públic per un preu. Conegut comunament com una sala de cinema als EUA."
+    "ca": "Un lloc que mostra pel·lícules (cine), generalment obert al públic per un preu. Conegut comunament com una sala de cinema als EUA."
   },
   "source": {
     "osmTags": "amenity=cinema"
@@ -90,7 +90,7 @@
             "es": "Este es un cine erótico que proyecta películas para adultos",
             "cs": "Toto je erotické kino promítající filmy pro dospělé",
             "nl": "Dit is een erotische bioscoop met films voor volwassenen",
-            "ca": "Aquest és un cinema eròtic que mostra pel·lícules per a adults"
+            "ca": "Aquest és un cinema eròtic que projecta pel·lícules per a adults"
           }
         }
       ]

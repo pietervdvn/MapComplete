@@ -410,14 +410,14 @@
         "nl": "Wat is het maximum aantal bouten in routes ban {title()}?",
         "cs": "Kolik šroubů na trasu {title()} je potřeba?",
         "es": "¿Cuántos parabolts tienen como máximo las vías en {title()}?",
-        "ca": "Quantes rutes de {title()} tenen com a màxim?"
+        "ca": "Quants parabolts tenen com a màxim les rutes a {title()} ?"
       },
       "render": {
         "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>",
         "de": "Die Sportkletterrouten hier haben höchstens {climbing:bolts:max} Bohrhaken. <div class='subtle'>Dies gilt ohne Sicherungsstationen und gibt an, wie viele Expressschlingen ein Kletterer benötigt.</div>",
         "nl": "De sportklimroutes hebben maximum {climbing:bolts:max} haken. <div class='subtle'>Hierbij worden standplaatsen niet meegeteld. Dit geeft aan hoeveel setjes een klimmer nodig heeft.</div>",
         "es": "Las vías de escalada deportiva aquí tienen como máximo {climbing:bolts:max} parabolts.<div class='subtle'>Esto es sin reuniones e indica cuántos cintas exprés necesita un escalador</div>",
-        "ca": "Les rutes d'escalada esportiva aquí tenen com a màxim {climbing:bolts:max} perns. <div class='subtle'>Això no té estacions d'aspiració i indica quant de ràpid necessita un escalador.</div>"
+        "ca": "Les rutes d'escalada esportiva aquí tenen com a màxim {climbing:bolts:max} perns. <div class='subtle'>Això és sense estacions d'assegurament i indica quantes cintes necessita un escalador.</div>"
       },
       "freeform": {
         "key": "climbing:bolts:max",

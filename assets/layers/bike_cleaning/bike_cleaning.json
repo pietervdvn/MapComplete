@@ -328,7 +328,7 @@
         "de": "Muss die Reinigung selbständig erfolgen?",
         "cs": "Je tato mycí služba samoobslužná?",
         "es": "¿Es este servicio de limpieza de autoservicio?",
-        "ca": "Aquest servei de neteja és autoservei?"
+        "ca": "Aquest servei de neteja és d'autoservei?"
       },
       "id": "self_service",
       "mappings": [

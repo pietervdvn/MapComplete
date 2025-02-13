@@ -258,7 +258,7 @@
             "cs": "Tato lavice má jednu nebo více opěrek na ruce",
             "es": "Este banco tiene uno o más reposabrazos",
             "uk": "Ця лавка має один або кілька підлокітників",
-            "ca": "Aquest banc té un o més suports"
+            "ca": "Aquest banc té un o més reposabraços"
           }
         },
         {
@@ -270,7 +270,7 @@
             "cs": "Tato lavice <b>nemá opěrky rukou</b>",
             "es": "Este banco <b>no</b> tiene reposabrazos",
             "uk": "Ця лавка <b>не</b> має підлокітників",
-            "ca": "Aquest banc <b>no</b> té respatller"
+            "ca": "Aquest banc <b>no</b> té reposabraços"
           }
         }
       ],
@@ -281,7 +281,7 @@
         "cs": "Má tato lavice jednu nebo více opěrek?",
         "es": "¿Este banco tiene uno o más reposabrazos?",
         "uk": "Чи має ця лавка один або кілька підлокітників?",
-        "ca": "Aquest banc té un o més suports?"
+        "ca": "Aquest banc té un o més reposabraços?"
       },
       "id": "bench-armrest",
       "labels": [
