@@ -4,12 +4,14 @@
     "en": "Outdoor Seating",
     "de": "Außenbestuhlung",
     "es": "Asientos al aire libre",
-    "uk": "Сидіння на відкритому повітрі"
+    "uk": "Сидіння на відкритому повітрі",
+    "ca": "Sembra exterior"
   },
   "description": {
     "en": "Outdoor seating areas, usually located near cafes and restaurants.",
     "de": "Sitzgelegenheiten im Freien, die sich in der Regel in der Nähe von Cafés und Restaurants befinden.",
-    "es": "Áreas de asientos al aire libre, generalmente ubicadas cerca de cafés y restaurantes."
+    "es": "Áreas de asientos al aire libre, generalmente ubicadas cerca de cafés y restaurantes.",
+    "ca": "Zones d'estar a l'aire lliure, normalment situades a prop de cafeteries i restaurants."
   },
   "source": {
     "osmTags": "leisure=outdoor_seating"
@@ -19,7 +21,8 @@
     "render": {
       "en": "Outdoor Seating area",
       "de": "Sitzbereich im Freien",
-      "es": "Área de asientos al aire libre"
+      "es": "Área de asientos al aire libre",
+      "ca": "Zona exterior"
     },
     "mappings": [
       {
@@ -55,7 +58,8 @@
       "question": {
         "en": "Who can use this outdoor seating area?",
         "de": "Wer kann diesen Sitzbereich im Freien nutzen?",
-        "es": "¿Quién puede usar esta área de asientos al aire libre?"
+        "es": "¿Quién puede usar esta área de asientos al aire libre?",
+        "ca": "Qui pot utilitzar aquesta zona d'estar exterior?"
       },
       "mappings": [
         {
@@ -63,7 +67,8 @@
           "then": {
             "en": "Anyone can use this outdoor seating area.",
             "de": "Dieser Sitzbereich im Freien kann von jedermann genutzt werden.",
-            "es": "Cualquiera puede usar esta área de asientos al aire libre."
+            "es": "Cualquiera puede usar esta área de asientos al aire libre.",
+            "ca": "Qualsevol persona pot utilitzar aquesta zona d'estar a l'aire lliure."
           }
         },
         {
@@ -71,7 +76,8 @@
           "then": {
             "en": "Only customers can use this outdoor seating area.",
             "de": "Dieser Sitzbereich im Freien kann nur von Kunden genutzt werden.",
-            "es": "Sólo los clientes pueden usar esta área de asientos al aire libre."
+            "es": "Sólo los clientes pueden usar esta área de asientos al aire libre.",
+            "ca": "Només els clients poden utilitzar aquesta zona d'estar exterior."
           }
         },
         {
@@ -79,7 +85,8 @@
           "then": {
             "en": "This outdoor seating area is private.",
             "de": "Dieser Sitzbereich im Freien ist privat.",
-            "es": "Esta área de asientos al aire libre es privada."
+            "es": "Esta área de asientos al aire libre es privada.",
+            "ca": "Aquesta zona d'estar a l'aire lliure és privada."
           }
         }
       ]
@@ -89,7 +96,8 @@
       "question": {
         "en": "Is this outdoor seating area seasonal?",
         "de": "Ist dieser Sitzbereich im Freien saisonabhängig?",
-        "es": "¿Es esta área de asientos al aire libre de temporada?"
+        "es": "¿Es esta área de asientos al aire libre de temporada?",
+        "ca": "Aquesta zona d'estar exterior és estacional?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -98,7 +106,8 @@
           "then": {
             "en": "This outdoor seating area is available all year round.",
             "de": "Dieser Sitzbereich im Freien ist das ganze Jahr über verfügbar.",
-            "es": "Esta área de asientos al aire libre está disponible todo el año."
+            "es": "Esta área de asientos al aire libre está disponible todo el año.",
+            "ca": "Aquesta zona d'estar a l'aire lliure està disponible tot l'any."
           }
         },
         {
@@ -106,7 +115,8 @@
           "then": {
             "en": "This outdoor seating area is available in spring.",
             "de": "Dieser Sitzbereich im Freien ist im Frühjahr verfügbar.",
-            "es": "Esta área de asientos al aire libre está disponible en primavera."
+            "es": "Esta área de asientos al aire libre está disponible en primavera.",
+            "ca": "Aquesta zona d'estar exterior està disponible a la primavera."
           }
         },
         {
@@ -114,7 +124,8 @@
           "then": {
             "en": "This outdoor seating area is available in summer.",
             "de": "Dieser Sitzbereich im Freien ist im Sommer verfügbar.",
-            "es": "Esta área de asientos al aire libre está disponible en verano."
+            "es": "Esta área de asientos al aire libre está disponible en verano.",
+            "ca": "Aquesta zona d'estar a l'aire lliure està disponible a l'estiu."
           }
         },
         {
@@ -122,7 +133,8 @@
           "then": {
             "en": "This outdoor seating area is available in autumn.",
             "de": "Dieser Sitzbereich im Freien ist im Herbst verfügbar.",
-            "es": "Esta área de asientos al aire libre está disponible en otoño."
+            "es": "Esta área de asientos al aire libre está disponible en otoño.",
+            "ca": "Aquesta zona d'estar exterior està disponible a la tardor."
           }
         },
         {
@@ -130,7 +142,8 @@
           "then": {
             "en": "This outdoor seating area is available in winter.",
             "de": "Dieser Sitzbereich im Freien ist im Winter verfügbar.",
-            "es": "Esta área de asientos al aire libre está disponible en invierno."
+            "es": "Esta área de asientos al aire libre está disponible en invierno.",
+            "ca": "Aquesta zona d'estar exterior està disponible a l'hivern."
           }
         },
         {
@@ -138,7 +151,8 @@
           "then": {
             "en": "This outdoor seating area is available in the dry season.",
             "de": "Dieser Sitzbereich im Freien ist in der Trockenzeit verfügbar.",
-            "es": "Esta área de asientos al aire libre está disponible en la estación seca."
+            "es": "Esta área de asientos al aire libre está disponible en la estación seca.",
+            "ca": "Aquesta zona d'estar a l'aire lliure està disponible en temporada seca."
           }
         }
       ]
@@ -152,7 +166,8 @@
       "question": {
         "en": "Is this outdoor seating area heated?",
         "de": "Ist dieser Außensitzbereich beheizt?",
-        "es": "¿Tiene calefacción esta área de asientos al aire libre?"
+        "es": "¿Tiene calefacción esta área de asientos al aire libre?",
+        "ca": "Aquesta zona d'estar a l'aire lliure està climatitzada?"
       },
       "mappings": [
         {
@@ -160,7 +175,8 @@
           "then": {
             "en": "This outdoor seating area is heated.",
             "de": "Dieser Außensitzbereich ist beheizt.",
-            "es": "Esta área de asientos al aire libre tiene calefacción."
+            "es": "Esta área de asientos al aire libre tiene calefacción.",
+            "ca": "Aquesta zona d'estar a l'aire lliure és climatitzada."
           }
         },
         {
@@ -168,7 +184,8 @@
           "then": {
             "en": "This outdoor seating area is not heated.",
             "de": "Dieser Außensitzbereich ist nicht beheizt.",
-            "es": "Esta área de asientos al aire libre no tiene calefacción."
+            "es": "Esta área de asientos al aire libre no tiene calefacción.",
+            "ca": "Aquesta zona d'estar a l'aire lliure no està climatitzada."
           }
         }
       ]
@@ -178,7 +195,8 @@
       "question": {
         "en": "Is this outdoor seating area covered?",
         "de": "Ist dieser Sitzbereich im Freien überdacht?",
-        "es": "¿Está cubierta esta área de asientos al aire libre?"
+        "es": "¿Está cubierta esta área de asientos al aire libre?",
+        "ca": "Aquesta zona d'estar exterior està coberta?"
       },
       "mappings": [
         {
@@ -186,7 +204,8 @@
           "then": {
             "en": "This outdoor seating area is covered.",
             "de": "Dieser Sitzbereich im Freien ist überdacht.",
-            "es": "Esta área de asientos al aire libre está cubierta."
+            "es": "Esta área de asientos al aire libre está cubierta.",
+            "ca": "Aquesta zona d'estar a l'aire lliure està coberta."
           }
         },
         {
@@ -194,7 +213,8 @@
           "then": {
             "en": "This outdoor seating area is not covered.",
             "de": "Dieser Sitzbereich im Freien ist nicht überdacht.",
-            "es": "Esta área de asientos al aire libre no está cubierta."
+            "es": "Esta área de asientos al aire libre no está cubierta.",
+            "ca": "Aquesta zona d'estar a l'aire lliure no està coberta."
           }
         }
       ]

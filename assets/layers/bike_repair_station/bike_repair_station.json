@@ -13,7 +13,8 @@
     "da": "Cykelpumpe og reparation",
     "cs": "Vzduchový kompresor a opravy jízdních kol",
     "ca": "Manxa i reparació de bicicletes",
-    "pt": "Estações de bicicletas (reparo, bomba ou ambos)"
+    "pt": "Estações de bicicletas (reparo, bomba ou ambos)",
+    "uk": "Велосипедний насос і ремонт"
   },
   "description": {
     "en": "A layer showing bicycle pumps and bicycle repair tool stands",

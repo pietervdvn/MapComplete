@@ -3,12 +3,14 @@
   "name": {
     "en": "Firepit",
     "de": "Feuerstelle",
-    "es": "Hoguera"
+    "es": "Hoguera",
+    "ca": "Aixeta"
   },
   "description": {
     "en": "An outdoor place to make a fire, typically open to the public.",
     "de": "Eine Stelle im Freien zum Feuermachen, typischerweise öffentlich zugänglich.",
-    "es": "Un lugar al aire libre para hacer fuego, normalmente abierto al público."
+    "es": "Un lugar al aire libre para hacer fuego, normalmente abierto al público.",
+    "ca": "Un lloc a l'aire lliure per fer un foc, normalment obert al públic."
   },
   "source": {
     "osmTags": "leisure=firepit"
@@ -18,7 +20,8 @@
     "render": {
       "en": "Firepit",
       "de": "Feuerstelle",
-      "es": "Hoguera"
+      "es": "Hoguera",
+      "ca": "Aixeta"
     }
   },
   "titleIcons": [
@@ -48,12 +51,14 @@
       "title": {
         "en": "Firepit",
         "de": "Feuerstelle",
-        "es": "Hoguera"
+        "es": "Hoguera",
+        "ca": "Aixeta"
       },
       "description": {
         "de": "Eine Stelle im Freien zum Feuermachen, typischerweise öffentlich zugänglich.",
         "en": "An outdoor place to make a fire, typically open to the public.",
-        "es": "Un lugar al aire libre para hacer fuego, normalmente abierto al público."
+        "es": "Un lugar al aire libre para hacer fuego, normalmente abierto al público.",
+        "ca": "Un lloc a l'aire lliure per fer un foc, normalment obert al públic."
       },
       "tags": [
         "leisure=firepit"
@@ -67,7 +72,8 @@
       "question": {
         "en": "What is the permitted access?",
         "de": "Was ist der erlaubte Zugang?",
-        "es": "¿Cuál es el acceso permitido?"
+        "es": "¿Cuál es el acceso permitido?",
+        "ca": "Quin és l'accés permès?"
       },
       "mappings": [
         {
@@ -75,7 +81,8 @@
           "then": {
             "de": "Öffentlich",
             "en": "Public",
-            "es": "Público"
+            "es": "Público",
+            "ca": "Públic"
           }
         },
         {
@@ -83,7 +90,8 @@
           "then": {
             "de": "Kein Zugang",
             "en": "No access",
-            "es": "Sin acceso"
+            "es": "Sin acceso",
+            "ca": "Sense accés"
           }
         },
         {
@@ -91,7 +99,8 @@
           "then": {
             "de": "Privat",
             "en": "Private",
-            "es": "Privado"
+            "es": "Privado",
+            "ca": "Privat"
           }
         },
         {
@@ -99,7 +108,8 @@
           "then": {
             "de": "Zugang bis auf Widerruf",
             "en": "Access until revoked",
-            "es": "Acceso hasta que se revoque"
+            "es": "Acceso hasta que se revoque",
+            "ca": "Accés fins que es revoqui"
           }
         },
         {
@@ -107,7 +117,8 @@
           "then": {
             "de": "Zugang nur für Kunden",
             "en": "Access only for customers",
-            "es": "Acceso solo para clientes"
+            "es": "Acceso solo para clientes",
+            "ca": "Accés només per a clients"
           }
         },
         {
@@ -115,7 +126,8 @@
           "then": {
             "de": "Zugang nur für Berechtigte",
             "en": "Access only for authorized",
-            "es": "Acceso solo para autorizados"
+            "es": "Acceso solo para autorizados",
+            "ca": "Accés només per autoritzat"
           }
         }
       ]
@@ -127,7 +139,8 @@
           "en": "Is the firepit available all around the year?",
           "nl": "Is deze kampvuurplaats heel het jaar door beschikbaar?",
           "de": "Ist diese Feuerstelle rund um das Jahr nutzbar?",
-          "es": "¿Está la hoguera disponible todo el año?"
+          "es": "¿Está la hoguera disponible todo el año?",
+          "ca": "Està disponible la cabina durant tot l'any?"
         }
       }
     }

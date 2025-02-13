@@ -1158,7 +1158,8 @@
             "nl": "Plastic verpakkingen, metalen verpakkingen en drankpakken kunnen hier gerecycled worden",
             "de": "Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak) können hier recycelt werden",
             "uk": "Пластикова упаковка, металева упаковка та упаковка для напоїв (PMD)",
-            "es": "Los envases de plástico, los envases metálicos y los envases de bebidas (PMD) se pueden reciclar aquí"
+            "es": "Los envases de plástico, los envases metálicos y los envases de bebidas (PMD) se pueden reciclar aquí",
+            "ca": "Els envasos de plàstic, els envasos metàl·lics i els cartons de begudes (PMD) es poden reciclar aquí"
           },
           "icon": {
             "path": "./assets/layers/recycling/pmd.svg",
@@ -1445,7 +1446,8 @@
           "question": {
             "en": "Only recycling centres",
             "de": "Nur Recyclingzentren",
-            "uk": "Тільки пункти прийому вторсировини"
+            "uk": "Тільки пункти прийому вторсировини",
+            "ca": "Només centres de reciclatge"
           }
         }
       ]
@@ -1750,7 +1752,8 @@
             "en": "Recycling of plastic packaging, metal packaging and drink cartons (PMD)",
             "nl": "Recycling van plastic verkpakkingen, metalen verkpakkingen en drankpakken (PMD)",
             "de": "Recycling von Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak)",
-            "es": "Reciclaje de envases de plástico, envases metálicos y envases de bebidas (PMD)"
+            "es": "Reciclaje de envases de plástico, envases metálicos y envases de bebidas (PMD)",
+            "ca": "Reciclatge d'envasos de plàstic, envasos metàl·lics i cartons de begudes (PMD)"
           },
           "osmTags": "recycling:pmd=yes"
         }

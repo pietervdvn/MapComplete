@@ -85,7 +85,8 @@
         "en": "This organization is named <b>{name}</b>",
         "it": "Questa organizzazione si chiama <b>{name}</b>",
         "de": "Diese Organisation heißt <b>{name}</b>",
-        "es": "Esta organización se llama <b>{name}</b>"
+        "es": "Esta organización se llama <b>{name}</b>",
+        "ca": "Aquesta organització s'anomena <b>{name}</b>"
       }
     }
   ],

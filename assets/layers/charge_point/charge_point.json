@@ -3,11 +3,13 @@
   "name": {
     "en": "Charge points",
     "de": "Ladesäulen",
-    "uk": "Пункти зарядки"
+    "uk": "Пункти зарядки",
+    "ca": "Punts de càrrega"
   },
   "description": {
     "en": "Layer showing individual charge points within a charging station",
-    "de": "Ebene, die einzelne Ladepunkte innerhalb einer Ladestation anzeigt"
+    "de": "Ebene, die einzelne Ladepunkte innerhalb einer Ladestation anzeigt",
+    "ca": "Capa que mostra punts de càrrega individuals dins d'una estació de càrrega"
   },
   "source": {
     "osmTags": "man_made=charge_point"
@@ -16,7 +18,8 @@
   "title": {
     "render": {
       "en": "Charge point",
-      "de": "Ladesäule"
+      "de": "Ladesäule",
+      "ca": "Punt de càrrega"
     }
   },
   "pointRendering": [
@@ -41,14 +44,16 @@
     {
       "title": {
         "en": "a charge point",
-        "de": "eine Ladesäule"
+        "de": "eine Ladesäule",
+        "ca": "un punt de càrrega"
       },
       "tags": [
         "man_made=charge_point"
       ],
       "description": {
         "en": "Add an individual charge point within a larger charging station",
-        "de": "Füge eine einzelne Ladesäule innerhalb einer größeren Ladestation hinzu"
+        "de": "Füge eine einzelne Ladesäule innerhalb einer größeren Ladestation hinzu",
+        "ca": "Afegeix un punt de càrrega individual dins d'una estació de càrrega més gran"
       }
     }
   ],
@@ -58,19 +63,22 @@
       "id": "ref",
       "question": {
         "en": "What is the reference number of this charge point?",
-        "de": "Wie lautet die Referenznummer dieser Ladesäule?"
+        "de": "Wie lautet die Referenznummer dieser Ladesäule?",
+        "ca": "Quin és el número de referència d'aquest punt de càrrega?"
       },
       "freeform": {
         "key": "ref",
         "placeholder": {
           "en": "Reference number of the charge point, e.g. 2126",
           "de": "Referenznummer der Ladesäule, z. B. 2126",
-          "uk": "Реєстраційний номер точки заряду, наприклад, 2126"
+          "uk": "Реєстраційний номер точки заряду, наприклад, 2126",
+          "ca": "Número de referència del punt de càrrega, p. ex. 2126"
         }
       },
       "render": {
         "en": "The reference of this charge point is {ref}",
-        "de": "Die Referenz dieser Ladesäule ist {ref}"
+        "de": "Die Referenz dieser Ladesäule ist {ref}",
+        "ca": "La referència d'aquest punt de càrrega és {ref}"
       }
     },
     "charging_station.capacity",

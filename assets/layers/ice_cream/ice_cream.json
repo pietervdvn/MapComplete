@@ -5,13 +5,15 @@
     "de": "Eisdielen",
     "nl": "IJssalon",
     "es": "Heladerías",
-    "uk": "Кафе-морозиво"
+    "uk": "Кафе-морозиво",
+    "ca": "Sales de gelat"
   },
   "description": {
     "en": "A place where ice cream is sold over the counter",
     "de": "Ein Ort, an dem Eiscreme an der Theke verkauft wird",
     "nl": "Een plaats waar voornamelijk ijsjes verkocht worden, bedoeld voor onmiddelijke consumptie",
-    "es": "Un lugar donde se vende helado en el mostrador"
+    "es": "Un lugar donde se vende helado en el mostrador",
+    "ca": "Un lloc on es ven gelat sobre el taulell"
   },
   "source": {
     "osmTags": "amenity=ice_cream"
@@ -22,7 +24,8 @@
       "en": "Ice cream parlor",
       "de": "Eisdiele",
       "nl": "IJssalon",
-      "es": "Heladería"
+      "es": "Heladería",
+      "ca": "Crema de gel"
     },
     "mappings": [
       {
@@ -32,7 +35,8 @@
           "de": "{name}",
           "pl": "{name}",
           "nl": "{name}",
-          "es": "{name}"
+          "es": "{name}",
+          "ca": "{name}"
         }
       }
     ]
@@ -73,7 +77,8 @@
         "fr": "un glacier",
         "nl": "een ijssalon",
         "es": "una heladería",
-        "uk": "кафе-морозиво"
+        "uk": "кафе-морозиво",
+        "ca": "una gelateria"
       },
       "tags": [
         "amenity=ice_cream"
@@ -83,7 +88,8 @@
         "de": "Ein Geschäft, in dem man nur Eiscreme und damit verbundene Artikel kaufen kann. Normalerweise wird das Eis mit der Hand portioniert.",
         "nl": "Een plaats waar men voornamelijk ijsjes koopt, meestal met de hand geschept en bedoeld om onmiddellijk op te eten.",
         "es": "Una tienda donde solo se puede comprar helado y artículos relacionados. El helado normalmente se sirve con cuchara.",
-        "uk": "Магазин, де можна купити лише морозиво та супутні товари. Зазвичай морозиво набирають вручну."
+        "uk": "Магазин, де можна купити лише морозиво та супутні товари. Зазвичай морозиво набирають вручну.",
+        "ca": "Una botiga on només es poden comprar gelats i articles relacionats. El gelat normalment és cobert a mà."
       }
     }
   ],
@@ -95,7 +101,8 @@
         "en": "What is the name of this ice cream parlor?",
         "nl": "Wat is de naam van dit ijssalon?",
         "de": "Wie heißt diese Eisdiele?",
-        "es": "¿Cuál es el nombre de esta heladería?"
+        "es": "¿Cuál es el nombre de esta heladería?",
+        "ca": "Quin és el nom d'aquesta gelateria?"
       },
       "id": "1",
       "freeform": {
@@ -105,7 +112,8 @@
         "en": "This ice cream parlor is named <b>{name}</b>",
         "nl": "Dit ijssalon heet <b>{name}</b>",
         "de": "Diese Eisdiele heißt <b>{name}</b>",
-        "es": "Esta heladería se llama <b>{name}</b>"
+        "es": "Esta heladería se llama <b>{name}</b>",
+        "ca": "Aquesta gelateria es diu <b>{name}</b>"
       }
     },
     "opening_hours",

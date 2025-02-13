@@ -216,7 +216,8 @@
         "nl": "Pas telefoonnummer aan",
         "de": "Telefonnummer bearbeiten",
         "es": "Editar número de teléfono",
-        "uk": "Редагувати номер телефону"
+        "uk": "Редагувати номер телефону",
+        "ca": "Edita el número de telèfon"
       },
       "onSoftDelete": [
         "phone="
@@ -229,7 +230,8 @@
         "en": "What is the Mastodon-handle of {title()}?",
         "de": "Wie lautet der Mastodon-Handle von {title()}?",
         "cs": "Co je Mastodon-handle {title()}?",
-        "es": "¿Cuál es el identificador de Mastodon de {title()}?"
+        "es": "¿Cuál es el identificador de Mastodon de {title()}?",
+        "ca": "Què és el Mastodon-handle de {title()}?"
       },
       "freeform": {
         "key": "contact:mastodon",
@@ -250,7 +252,8 @@
       "question": {
         "en": "What is the facebook page of of {title()}?",
         "de": "Was ist die Facebook-Seite von {title()}?",
-        "es": "¿Cuál es la página de Facebook de {title()}"
+        "es": "¿Cuál es la página de Facebook de {title()}",
+        "ca": "Quina és la pàgina del facebook de {title()}?"
       },
       "freeform": {
         "key": "contact:facebook",
@@ -263,13 +266,15 @@
           "text": {
             "en": "Facebook page",
             "de": "Facebook Seite",
-            "es": "Página de Facebook"
+            "es": "Página de Facebook",
+            "ca": "Pàgina de Facebook"
           }
         },
         "after": {
           "en": "<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>",
           "de": "<div class='subtle text-sm'>Facebook ist bekannt dafür, die psychische Gesundheit zu beeinträchtigen, die öffentliche Meinung zu manipulieren und Hass zu verursachen. Versuche, gesündere Alternativen zu nutzen.</div>",
-          "es": "<div class='subtle text-sm'>Se sabe que Facebook perjudica la salud mental, manipula la opinión pública y causa odio. Prueba alternativas más saludables</div>"
+          "es": "<div class='subtle text-sm'>Se sabe que Facebook perjudica la salud mental, manipula la opinión pública y causa odio. Prueba alternativas más saludables</div>",
+          "ca": "<div class='subtle text-sm'>Facebook és conegut per danyar la salut mental, manipular l'opinió pública i causar odi. Intenta utilitzar alternatives més saludables</div>"
         }
       },
       "onSoftDelete": [
@@ -348,7 +353,8 @@
         "en": "Edit email address",
         "nl": "Pas emailadres aan",
         "de": "E-Mail Adresse bearbeiten",
-        "es": "Editar dirección de correo electrónico"
+        "es": "Editar dirección de correo electrónico",
+        "ca": "Edita l'adreça electrònica"
       },
       "onSoftDelete": [
         "email=",
@@ -411,7 +417,8 @@
         "de": "Webseite bearbeiten",
         "pl": "Edytuj stronę internetową",
         "es": "Editar sitio web",
-        "uk": "Редагувати веб-сайт"
+        "uk": "Редагувати веб-сайт",
+        "ca": "Edita el lloc web"
       },
       "onSoftDelete": [
         "website=",
@@ -703,7 +710,8 @@
             "en": "Dogs are allowed only outside",
             "it": "I cani sono ammessi solo all'esterno",
             "de": "Hunde sind nur draußen erlaubt",
-            "es": "Solo se admiten perros en el exterior"
+            "es": "Solo se admiten perros en el exterior",
+            "ca": "Els gossos només estan permesos fora"
           }
         }
       ],
@@ -836,7 +844,8 @@
             "en": "Marked as closed for an unspecified time",
             "nl": "Gesloten voor onbepaalde duur",
             "de": "Als geschlossen für eine unbestimmte Zeit markiert",
-            "es": "Marcado como cerrado por un tiempo no especificado"
+            "es": "Marcado como cerrado por un tiempo no especificado",
+            "ca": "Marcat com a tancat per a un temps no especificat"
           },
           "hideInAnswer": true
         }
@@ -1824,7 +1833,8 @@
         "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}.",
         "de": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden.",
         "cs": "V patrech {repeat_on} lze nalézt více identických objektů.",
-        "es": "Se pueden encontrar varios objetos idénticos en las plantas {repeat_on}."
+        "es": "Se pueden encontrar varios objetos idénticos en las plantas {repeat_on}.",
+        "ca": "Es poden trobar múltiples objectes idèntics a les plantes {repeat_on}."
       }
     },
     {
@@ -2286,7 +2296,8 @@
             "en": "This place offers both wireless internet and internet access via a terminal or computer",
             "de": "Dieser Ort bietet sowohl drahtloses Internet als auch Internetzugang über ein Terminal oder einen Computer",
             "es": "Este lugar ofrece internet inalámbrico y acceso a internet a través de un terminal o computadora",
-            "uk": "Тут можна скористатися як бездротовим інтернетом, так і доступом до інтернету через термінал або комп'ютер"
+            "uk": "Тут можна скористатися як бездротовим інтернетом, так і доступом до інтернету через термінал або комп'ютер",
+            "ca": "Aquest lloc ofereix tant internet sense fils com accés a Internet a través d'un terminal o ordinador"
           }
         }
       ],
@@ -2536,7 +2547,8 @@
         "en": "When was this object last surveyed?",
         "de": "Wann wurde dieses Objekt zuletzt geprüft?",
         "cs": "Kdy byl tento objekt naposledy zkoumán?",
-        "es": "¿Cuándo fue inspeccionado este objeto por última vez?"
+        "es": "¿Cuándo fue inspeccionado este objeto por última vez?",
+        "ca": "Quan es va enquestar per última vegada aquest objecte?"
       },
       "freeform": {
         "key": "survey:date",
@@ -2546,7 +2558,8 @@
         "en": "This object was last surveyed on <b>{survey:date}</b>",
         "de": "Dieses Objekt wurde zuletzt geprüft am <b>{survey:date}</b>",
         "cs": "Tento objekt byl naposledy zkoumán dne <b>{survey:date}</b>",
-        "es": "Este objeto fue inspeccionado por última vez el <b>{survey:date}</b>"
+        "es": "Este objeto fue inspeccionado por última vez el <b>{survey:date}</b>",
+        "ca": "Aquest objecte va ser enquestat per darrera vegada el <b>{survey:date}</b>"
       },
       "mappings": [
         {
@@ -2555,7 +2568,8 @@
             "en": "This object was last surveyed today",
             "de": "Dieses Objekt wurde heute zuletzt geprüft",
             "cs": "Tento objekt byl naposledy zkoumán dnes",
-            "es": "Este objeto fue inspeccionado por última vez hoy"
+            "es": "Este objeto fue inspeccionado por última vez hoy",
+            "ca": "Aquest objecte s'ha enquestat per darrera vegada avui"
           }
         }
       ]
@@ -2608,13 +2622,15 @@
         "en": "Does this shop have a sugar free offering?",
         "de": "Verkauft das Geschäft zuckerfreie Produkte?",
         "cs": "Nabízí tento obchod nabídku bez cukru?",
-        "es": "¿Tiene esta tienda una oferta de productos sin azúcar?"
+        "es": "¿Tiene esta tienda una oferta de productos sin azúcar?",
+        "ca": "Aquesta botiga té una oferta lliure de sucre?"
       },
       "questionHint": {
         "en": "This is important for people following a sugar-free diet, such as people with Diabetes",
         "de": "Dies ist wichtig für Menschen, die eine zuckerfreie Diät einhalten, z. B. für Menschen mit Diabetes",
         "cs": "To je důležité pro lidi, kteří dodržují dietu bez cukru, jako jsou lidé s diabetem",
-        "es": "Esto es importante para las personas que siguen una dieta sin azúcar, como las personas con diabetes"
+        "es": "Esto es importante para las personas que siguen una dieta sin azúcar, como las personas con diabetes",
+        "ca": "Això és important per a les persones que segueixen una dieta sense sucre, com les persones amb diabetis"
       },
       "mappings": [
         {
@@ -2624,7 +2640,8 @@
             "de": "Das Geschäft verkauft <b>ausschließlich</b> zuckerfreie Produkte",
             "cs": "Tento obchod <b>prodává pouze produkty bez cukru</b>",
             "es": "Esta tienda <b>solo vende productos sin azúcar</b>",
-            "uk": "У цьому магазині <b>продаються тільки продукти без цукру</b>"
+            "uk": "У цьому магазині <b>продаються тільки продукти без цукру</b>",
+            "ca": "Aquesta botiga <b>només ven productes sense sucre</b>"
           }
         },
         {
@@ -2633,7 +2650,8 @@
             "en": "This shop has a big sugar free offering",
             "de": "Das Geschäft verkauft <b>viele<b> zuckerfreie Produkte",
             "cs": "Tento obchod má velkou nabídku bez cukru",
-            "es": "Esta tienda tiene una gran oferta de productos sin azúcar"
+            "es": "Esta tienda tiene una gran oferta de productos sin azúcar",
+            "ca": "Aquesta botiga té una gran oferta lliure de sucre"
           }
         },
         {
@@ -2642,7 +2660,8 @@
             "en": "This shop has a <b>limited sugar free</b> offering",
             "de": "Das Geschäft verkauft <b>wenige</b> zuckerfreie Produkte",
             "cs": "Tento obchod má <b>omezenou nabídku bez cukru</b>",
-            "es": "Esta tienda tiene una oferta <b>limitada de productos sin azúcar</b>"
+            "es": "Esta tienda tiene una oferta <b>limitada de productos sin azúcar</b>",
+            "ca": "Aquesta botiga té una oferta de <b>limitada sense sucre</b>"
           }
         },
         {
@@ -2651,7 +2670,8 @@
             "en": "This shop has no sugar free offering",
             "de": "Das Geschäft verkauft <b>keine<b> zuckerfreie Produkte",
             "cs": "Tento obchod nemá žádnou nabídku bez cukru",
-            "es": "Esta tienda no tiene oferta de productos sin azúcar"
+            "es": "Esta tienda no tiene oferta de productos sin azúcar",
+            "ca": "Aquesta botiga no té oferta de sucre"
           }
         }
       ],
@@ -2671,7 +2691,8 @@
         "en": "Does {title()} have a lactose-free offering?",
         "de": "Verkauft {title()} laktosefreie Produkte?",
         "cs": "Má {title()} nabídku bez laktózy?",
-        "es": "¿Tiene {title()} una oferta sin lactosa?"
+        "es": "¿Tiene {title()} una oferta sin lactosa?",
+        "ca": "{title()} té una oferta lliure de lactosa?"
       },
       "mappings": [
         {
@@ -2680,7 +2701,8 @@
             "en": "<b>Only sells lactose free</b> products",
             "de": "<b>Ausschließlich</b> laktosefreie Produkte",
             "cs": "<b>Prodává pouze výrobky bez laktózy</b>",
-            "es": "<b>Solo vende productos sin lactosa</b>"
+            "es": "<b>Solo vende productos sin lactosa</b>",
+            "ca": "<b>Només ven productes de lactosa sense lactosa</b>"
           },
           "icon": "./assets/layers/questions/lactose_free.svg"
         },
@@ -2690,7 +2712,8 @@
             "en": "Big lactose free offering",
             "de": "Viele laktosefreie Produkte",
             "cs": "Velká nabídka bez laktózy",
-            "es": "Gran oferta de productos sin lactosa"
+            "es": "Gran oferta de productos sin lactosa",
+            "ca": "Gran oferta lliure de lactosa"
           },
           "icon": "./assets/layers/questions/lactose_free.svg"
         },
@@ -2700,7 +2723,8 @@
             "en": "<b>Limited lactose free</b> offering",
             "de": "<b>Wenige</b> laktosefreie Produkte",
             "cs": "<b>Omezená nabídka bez laktózy</b>",
-            "es": "Oferta <b>limitada de productos sin lactosa</b>"
+            "es": "Oferta <b>limitada de productos sin lactosa</b>",
+            "ca": "<b>Lliure de lactosa limitada</b> oferta"
           }
         },
         {
@@ -2709,7 +2733,8 @@
             "en": "No lactose free offering",
             "de": "Keine laktosefreie Produkte",
             "cs": "Žádná nabídka bez laktózy",
-            "es": "No hay oferta de productos sin lactosa"
+            "es": "No hay oferta de productos sin lactosa",
+            "ca": "Sense lactosa"
           }
         }
       ],
@@ -2729,7 +2754,8 @@
         "en": "Does this shop have a gluten free offering?",
         "de": "Verkauft das Geschäft glutenfreie Produkte?",
         "cs": "Má tento obchod bezlepkovou nabídku?",
-        "es": "¿Tiene esta tienda una oferta de productos sin gluten?"
+        "es": "¿Tiene esta tienda una oferta de productos sin gluten?",
+        "ca": "Aquesta botiga té una oferta sense gluten?"
       },
       "mappings": [
         {
@@ -2739,7 +2765,8 @@
             "de": "Das Geschäft verkauft <b>ausschließlich glutenfreie</b> Produkte",
             "cs": "Tento obchod <b>prodává pouze bezlepkové</b> produkty",
             "es": "Esta tienda <b>solo vende productos sin gluten</b>",
-            "uk": "Цей магазин <b>продає лише безглютенові продукти</b>"
+            "uk": "Цей магазин <b>продає лише безглютенові продукти</b>",
+            "ca": "Aquesta botiga <b>només ven productes sense gluten</b>"
           },
           "icon": "./assets/layers/questions/glutenfree.svg"
         },
@@ -2749,7 +2776,8 @@
             "en": "This shop has a big gluten free offering",
             "de": "Das Geschäft verkauft viele glutenfreie Produkte",
             "cs": "Tento obchod má velkou bezlepkovou nabídku",
-            "es": "Esta tienda tiene una gran oferta de productos sin gluten"
+            "es": "Esta tienda tiene una gran oferta de productos sin gluten",
+            "ca": "Aquesta botiga disposa d'una gran oferta sense gluten"
           },
           "icon": "./assets/layers/questions/glutenfree.svg"
         },
@@ -2759,7 +2787,8 @@
             "en": "This shop has a <b>limited gluten free</b> offering",
             "de": "Das Geschäft verkauft <b>wenige glutenfreie</b> Produkte",
             "cs": "Tento obchod má <b>omezenou nabídku bezlepkových produktů</b>",
-            "es": "Esta tienda tiene una oferta <b>limitada de productos sin gluten</b>"
+            "es": "Esta tienda tiene una oferta <b>limitada de productos sin gluten</b>",
+            "ca": "Aquesta botiga té una oferta de <b>sense gluten limitat</b>"
           }
         },
         {
@@ -2768,7 +2797,8 @@
             "en": "This shop has no gluten free offering",
             "de": "Das Geschäft verkauft keine glutenfreie Produkte",
             "cs": "Tento obchod nemá bezlepkovou nabídku",
-            "es": "Esta tienda no tiene oferta de productos sin gluten"
+            "es": "Esta tienda no tiene oferta de productos sin gluten",
+            "ca": "Aquesta botiga no disposa d'oferta sense gluten"
           }
         }
       ],
@@ -2788,7 +2818,8 @@
         "en": "Does this place offer a vegan option?",
         "de": "Bietet dieser Ort eine vegane Option an?",
         "pl": "Czy to miejsce oferuje opcję wegańską?",
-        "es": "¿Ofrece este lugar una opción vegana?"
+        "es": "¿Ofrece este lugar una opción vegana?",
+        "ca": "Aquest lloc ofereix una opció vegana?"
       },
       "mappings": [
         {
@@ -2796,7 +2827,8 @@
           "then": {
             "en": "This place <b>only sells vegan</b> products",
             "de": "Dieser Ort verkauft <b>nur vegane</b> Produkte",
-            "es": "Este lugar <b>solo vende productos veganos</b>"
+            "es": "Este lugar <b>solo vende productos veganos</b>",
+            "ca": "Aquest lloc <b>només ven productes vegans</b>"
           }
         },
         {
@@ -2804,7 +2836,8 @@
           "then": {
             "en": "This shop has a big vegan offering",
             "de": "Dieser Laden hat ein großes veganes Angebot",
-            "es": "Esta tienda tiene una gran oferta vegana"
+            "es": "Esta tienda tiene una gran oferta vegana",
+            "ca": "Aquesta botiga té una gran oferta vegana"
           }
         },
         {
@@ -2812,7 +2845,8 @@
           "then": {
             "en": "This shop has a <b>limited vegan</b> offering",
             "de": "Dieser Laden hat ein <b>begrenztes veganes</b> Angebot",
-            "es": "Esta tienda tiene una oferta <b>vegana limitada</b>"
+            "es": "Esta tienda tiene una oferta <b>vegana limitada</b>",
+            "ca": "Aquesta botiga té una oferta de <b>vegana limitada</b>"
           }
         },
         {
@@ -2820,7 +2854,8 @@
           "then": {
             "en": "This shop has no vegan offering",
             "de": "Dieser Laden bietet keine veganen Produkte an",
-            "es": "Esta tienda no tiene oferta vegana"
+            "es": "Esta tienda no tiene oferta vegana",
+            "ca": "Aquesta botiga no té oferta vegana"
           }
         }
       ],
@@ -2927,7 +2962,8 @@
             "de": "Standort teilen",
             "es": "Compartir esta ubicación",
             "cs": "Sdílet tuto lokalitu",
-            "uk": "Поділіться цією локацією"
+            "uk": "Поділіться цією локацією",
+            "ca": "Comparteix aquesta ubicació"
           }
         }
       }
@@ -2952,7 +2988,8 @@
           "hu": "Szkenneld be ezt a kódot, hogy egy másik eszközön is meg tudd nyitni a helyet",
           "uk": "Відскануйте цей код, щоб відкрити це місце на іншому пристрої",
           "es": "Escanea este código para abrir esta ubicación en otro dispositivo",
-          "cs": "Naskenováním tohoto kódu otevřete toto umístění na jiném zařízení"
+          "cs": "Naskenováním tohoto kódu otevřete toto umístění na jiném zařízení",
+          "ca": "Escaneja aquest codi per obrir aquesta ubicació en un altre dispositiu"
         }
       }
     },
@@ -3016,7 +3053,8 @@
             "en": "Nothing is known about this place. Help by filling out the questions",
             "nl": "Er is nog niets geweten. Help mee door de vragen te beantwoorden",
             "de": "Über diesen Ort ist nichts bekannt. Hilf mit, indem du die Fragen ausfüllst",
-            "es": "No se sabe nada sobre este lugar. Ayuda completando las preguntas"
+            "es": "No se sabe nada sobre este lugar. Ayuda completando las preguntas",
+            "ca": "No se sap res d'aquest lloc. Ajuda omplint les preguntes"
           },
           "cssClasses": "subtle m-4 italic flex items-center justify-center"
         }
@@ -3028,7 +3066,8 @@
         "en": "Is {title()} available all around the year?",
         "nl": "Is {title()} heel het jaar beschikbaar?",
         "de": "Ist {title()} rund um das Jahr nutzbar?",
-        "es": "¿Está {title()} disponible todo el año?"
+        "es": "¿Está {title()} disponible todo el año?",
+        "ca": "Està disponible {title()} durant tot l'any?"
       },
       "mappings": [
         {
@@ -3037,7 +3076,8 @@
             "en": "Available all around the year",
             "nl": "Heel het jaar door beschikbaar",
             "de": "Ganzjährig in Betrieb",
-            "es": "Disponible todo el año"
+            "es": "Disponible todo el año",
+            "ca": "Disponible durant tot l'any"
           }
         },
         {
@@ -3046,7 +3086,8 @@
             "en": "Only available in summer",
             "nl": "Enkel in de zomer beschikbaar",
             "de": "Nur im Sommer in Betrieb",
-            "es": "Solo disponible en verano"
+            "es": "Solo disponible en verano",
+            "ca": "Només disponible a l'estiu"
           }
         },
         {
@@ -3056,7 +3097,8 @@
             "en": "Closed during the winter",
             "nl": "Gesloten in de winter",
             "de": "Im Winter nicht in Betrieb",
-            "es": "Cerrado durante el invierno"
+            "es": "Cerrado durante el invierno",
+            "ca": "Tancat durant l'hivern"
           }
         }
       ],
@@ -3069,7 +3111,8 @@
       "question": {
         "en": "Does this facility offer showers?",
         "de": "Gibt es in dieser Einrichtung Duschen?",
-        "es": "¿Ofrece esta instalación duchas?"
+        "es": "¿Ofrece esta instalación duchas?",
+        "ca": "Aquesta instal·lació ofereix dutxes?"
       },
       "mappings": [
         {
@@ -3078,7 +3121,8 @@
           "then": {
             "en": "This facility does have showers with warm water",
             "de": "Diese Einrichtung verfügt über Duschen mit warmem Wasser",
-            "es": "Esta instalación tiene duchas con agua caliente"
+            "es": "Esta instalación tiene duchas con agua caliente",
+            "ca": "Aquesta instal·lació disposa de dutxes amb aigua calenta"
           }
         },
         {
@@ -3087,7 +3131,8 @@
           "then": {
             "en": "This facility does have showers, but the water is not heated",
             "de": "Diese Einrichtung verfügt zwar über Duschen, aber das Wasser ist nicht beheizt",
-            "es": "Esta instalación tiene duchas, pero el agua no está caliente"
+            "es": "Esta instalación tiene duchas, pero el agua no está caliente",
+            "ca": "Aquesta instal·lació té dutxes, però l'aigua no s'escalfa"
           }
         },
         {
@@ -3096,7 +3141,8 @@
           "then": {
             "en": "This facility does have showers",
             "de": "Diese Einrichtung hat Duschen",
-            "es": "Esta instalación tiene duchas"
+            "es": "Esta instalación tiene duchas",
+            "ca": "Aquesta instal·lació disposa de dutxes"
           }
         },
         {
@@ -3105,7 +3151,8 @@
           "then": {
             "en": "This facility does not offer a shower",
             "de": "Diese Einrichtung hat keine Duschen",
-            "es": "Esta instalación no ofrece ducha"
+            "es": "Esta instalación no ofrece ducha",
+            "ca": "Aquesta instal·lació no ofereix dutxa"
           }
         }
       ],
@@ -3125,13 +3172,15 @@
         "en": "Is {title()} part of a bigger brand?",
         "de": "Ist {title()} Teil einer großen Marke?",
         "es": "¿Forma parte {title()} de una marca más grande?",
-        "uk": "Чи є {title()} частиною більшого бренду?"
+        "uk": "Чи є {title()} частиною більшого бренду?",
+        "ca": "{title()} és part d'una marca més gran?"
       },
       "render": {
         "en": "Part of {brand}",
         "de": "Teil von {brand}",
         "es": "Parte de {brand}",
-        "uk": "Частина {brand}"
+        "uk": "Частина {brand}",
+        "ca": "Part de {brand}"
       },
       "freeform": {
         "key": "brand",
@@ -3150,7 +3199,8 @@
             "en": "Not part of a bigger brand",
             "de": "Nicht Teil einer großen Marke",
             "es": "No forma parte de una marca más grande",
-            "uk": "Не є частиною великого бренду"
+            "uk": "Не є частиною великого бренду",
+            "ca": "No forma part d'una marca més gran"
           }
         }
       ],
@@ -3164,7 +3214,8 @@
         "en": "Is this object located indoors?",
         "nl": "Bevindt dit object zich binnen?",
         "de": "Befindet sich das Objekt in einem Innenraum?",
-        "es": "¿Se encuentra este objeto en el interior?"
+        "es": "¿Se encuentra este objeto en el interior?",
+        "ca": "Aquest objecte està situat a l'interior?"
       },
       "mappings": [
         {
@@ -3173,7 +3224,8 @@
             "en": "This object is located indoors",
             "nl": "Dit object bevindt zich binnen",
             "de": "Dieses Objekt befindet sich in einem Innenraum",
-            "es": "Este objeto se encuentra en el interior"
+            "es": "Este objeto se encuentra en el interior",
+            "ca": "Aquest objecte es troba a l'interior"
           }
         },
         {
@@ -3182,7 +3234,8 @@
             "en": "This object is located outdoors",
             "nl": "Dit object bevindt zich buiten",
             "de": "Dieses Objekt befindet sich im Freien",
-            "es": "Este objeto se encuentra al aire libre"
+            "es": "Este objeto se encuentra al aire libre",
+            "ca": "Aquest objecte es troba a l'exterior"
           }
         }
       ]
@@ -3192,7 +3245,8 @@
       "question": {
         "en": "What kind of seating does {title()} have?",
         "nl": "Wat voor zitplaatsen heeft {title()}?",
-        "de": "Welche Art von Sitzgelegenheiten hat {title()}?"
+        "de": "Welche Art von Sitzgelegenheiten hat {title()}?",
+        "ca": "Quin tipus de seient té {title()}?"
       },
       "mappings": [
         {
@@ -3201,7 +3255,8 @@
           "then": {
             "en": "This place has outdoor seating",
             "nl": "Deze plaats heeft zitplaatsen buiten",
-            "de": "Dieser Ort hat Sitzgelegenheiten im Freien"
+            "de": "Dieser Ort hat Sitzgelegenheiten im Freien",
+            "ca": "Aquest lloc té seients exteriors"
           },
           "icon": "./assets/layers/outdoor_seating/outdoor_seating.svg"
         },
@@ -3211,7 +3266,8 @@
           "then": {
             "en": "This place has indoor seating",
             "nl": "Deze plaats heeft zitplaatsen binnen",
-            "de": "Dieser Ort hat Sitzplätze im Innenbereich"
+            "de": "Dieser Ort hat Sitzplätze im Innenbereich",
+            "ca": "Aquest lloc té seients interiors"
           }
         }
       ],
@@ -3222,7 +3278,8 @@
       "question": {
         "en": "What is the maximum amount of time one is allowed to stay here?",
         "nl": "Wat is de maximale tijd die je hier mag blijven?",
-        "de": "Wie lange darf man sich maximal hier aufhalten?"
+        "de": "Wie lange darf man sich maximal hier aufhalten?",
+        "ca": "Quina és la quantitat màxima de temps que se li permet romandre aquí?"
       },
       "freeform": {
         "key": "maxstay",
@@ -3231,7 +3288,8 @@
       "render": {
         "en": "One can stay at most <b>{canonical(maxstay)}</b>",
         "nl": "Je mag hier maximaal <b>{canonical(maxstay)}</b> blijven",
-        "de": "Man kann höchstens <b>{canonical(maxstay)}</b> bleiben"
+        "de": "Man kann höchstens <b>{canonical(maxstay)}</b> bleiben",
+        "ca": "Es pot quedar com a màxim <b>{canonical(maxstay)}</b>"
       },
       "mappings": [
         {
@@ -3239,7 +3297,8 @@
           "then": {
             "en": "There is no limit to the amount of time one can stay here",
             "nl": "Er is geen limiet aan de tijd die je hier mag blijven",
-            "de": "Es gibt keine zeitliche Begrenzung für den Aufenthalt hier"
+            "de": "Es gibt keine zeitliche Begrenzung für den Aufenthalt hier",
+            "ca": "No hi ha límit en la quantitat de temps que es pot quedar aquí"
           }
         }
       ]
@@ -3248,7 +3307,8 @@
       "id": "name",
       "question": {
         "en": "What is the name of this place?",
-        "de": "Wie heißt dieser Ort?"
+        "de": "Wie heißt dieser Ort?",
+        "ca": "Quin és el nom d'aquest lloc?"
       },
       "render": {
         "*": "<b>{name}</b>"

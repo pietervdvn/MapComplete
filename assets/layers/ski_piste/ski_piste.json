@@ -5,14 +5,16 @@
     "de": "Ski- und Snowboardpisten",
     "fr": "Pistes de ski et de snowboard",
     "es": "Pistas de esquí y snowboard",
-    "cs": "Lyžařské a snowboardové sjezdovky"
+    "cs": "Lyžařské a snowboardové sjezdovky",
+    "ca": "pistes d'esquí i snowboard"
   },
   "description": {
     "en": "Ski and snowboard pistes",
     "de": "Ski- und Snowboardpisten",
     "fr": "Pistes de ski et de snowboard",
     "es": "Pistas de esquí y snowboard",
-    "cs": "Lyžařské a snowboardové sjezdovky"
+    "cs": "Lyžařské a snowboardové sjezdovky",
+    "ca": "pistes d'esquí i snowboard"
   },
   "source": {
     "osmTags": {
@@ -34,7 +36,8 @@
       "de": "Skipiste {name}",
       "fr": "Piste de ski {name}",
       "es": "Pista de esquí {name}",
-      "cs": "Lyžařská sjezdovka {name}"
+      "cs": "Lyžařská sjezdovka {name}",
+      "ca": "Esquí de pista {name}"
     }
   },
   "pointRendering": [
@@ -92,7 +95,8 @@
         "de": "Was ist der Schwierigkeitsgrad der Piste?",
         "fr": "Quelle est la difficulté de cette piste ?",
         "es": "¿Cuál es la dificultad de esta pista?",
-        "cs": "Jaká je obtížnost této sjezdovky?"
+        "cs": "Jaká je obtížnost této sjezdovky?",
+        "ca": "Quina és la dificultat d'aquesta pista?"
       },
       "id": "piste_difficulty",
       "condition": "piste:type!=connection",
@@ -104,7 +108,8 @@
             "de": "Anfänger (grün)",
             "fr": "Débutant (vert)",
             "es": "Principiante (verde)",
-            "cs": "Nováček (zelená)"
+            "cs": "Nováček (zelená)",
+            "ca": "Novici (verd)"
           }
         },
         {
@@ -114,7 +119,8 @@
             "de": "Einfach (blau)",
             "fr": "Facile (bleu)",
             "es": "Fácil (azul)",
-            "cs": "Snadná (modrá)"
+            "cs": "Snadná (modrá)",
+            "ca": "Fàcil (blau)"
           }
         },
         {
@@ -124,7 +130,8 @@
             "de": "Mittel (rot)",
             "fr": "Intermédiaire (rouge)",
             "es": "Intermedio (rojo)",
-            "cs": "Střední (červená)"
+            "cs": "Střední (červená)",
+            "ca": "Intermedi (vermell)"
           }
         },
         {
@@ -134,7 +141,8 @@
             "de": "Fortgeschritten (schwarz)",
             "fr": "Avancé (noir)",
             "es": "Avanzado (negro)",
-            "cs": "Pokročilá(černá)"
+            "cs": "Pokročilá(černá)",
+            "ca": "Avançat (negre)"
           }
         },
         {
@@ -144,7 +152,8 @@
             "de": "Experte (orange/doppel schwarz)",
             "fr": "Expert (orange/double noir)",
             "es": "Experto (naranja/doble negro)",
-            "cs": "Expert (oranžová/dvojitá černá)"
+            "cs": "Expert (oranžová/dvojitá černá)",
+            "ca": "Expert (taronja/doble negre)"
           }
         },
         {
@@ -154,7 +163,8 @@
             "de": "Freeride",
             "fr": "Hors piste",
             "es": "Freeride",
-            "cs": "Freeride"
+            "cs": "Freeride",
+            "ca": "Fora Pista"
           }
         }
       ]
@@ -167,7 +177,8 @@
         "fr": "Ce tronçon de piste de ski mesure {_length:km} kilomètres de long",
         "es": "Esta parte de la pista de esquí tiene {_length:km} kilómetros de largo",
         "uk": "Ця частина лижної траси має довжину {_length:km} кілометрів",
-        "cs": "Tato část sjezdovky je dlouhá {_length:km} km"
+        "cs": "Tato část sjezdovky je dlouhá {_length:km} km",
+        "ca": "Aquesta part de la pista d'esquí és de {_length:km} quilòmetre"
       }
     }
   ],

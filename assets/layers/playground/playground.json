@@ -148,7 +148,8 @@
         "nl": "Moet men betalen om deze speeltuin te gebruiken?",
         "de": "Muss man zahlen, um den Spielplatz zu nutzen?",
         "uk": "Чи потрібно платити за користування цим майданчиком?",
-        "es": "¿Hay que pagar para usar este parque infantil?"
+        "es": "¿Hay que pagar para usar este parque infantil?",
+        "ca": "Cal pagar per utilitzar aquest parc infantil?"
       },
       "id": "fee",
       "mappings": [
@@ -160,7 +161,8 @@
             "nl": "Gratis te gebruiken",
             "de": "Nutzung kostenlos",
             "uk": "Вільне використання",
-            "es": "De uso gratuito"
+            "es": "De uso gratuito",
+            "ca": "Lliure d'utilitzar"
           }
         },
         {
@@ -170,7 +172,8 @@
             "nl": "Betalend",
             "de": "Gebührenpflichtiger Spielplatz",
             "uk": "Платний дитячий майданчик",
-            "es": "Parque infantil de pago"
+            "es": "Parque infantil de pago",
+            "ca": "Parc infantil pagat"
           }
         }
       ],
@@ -332,7 +335,8 @@
             "de": "Der Belag ist aus Tartan - ein synthetischer, federnder Belag, der typischerweise auf Sportbahnen zu finden ist",
             "fr": "La surface est en tartan - un revêtement synthétique typiquement utilisé sur les pistes d'athlétisme",
             "uk": "Покриття - тартан - синтетична, пружна поверхня, яку зазвичай можна побачити на спортивних трасах",
-            "es": "La superficie es de tartán - una superficie sintética, elástica, que se ve típicamente en pistas de atletismo"
+            "es": "La superficie es de tartán - una superficie sintética, elástica, que se ve típicamente en pistas de atletismo",
+            "ca": "La superfície és tartan - una superfície sintètica i molla típicament vista en pistes atlètiques"
           }
         },
         {
@@ -343,7 +347,8 @@
             "de": "Die Oberfläche besteht aus Gummi, z. B. aus Gummifliesen, Gummimulch oder einer großen Gummifläche",
             "fr": "La surface est en caoutchouc, comme des dalles de caoutchouc, des copeaux de caoutchouc ou une grande surface en caoutchouc",
             "uk": "Поверхня зроблена з гуми, наприклад, гумова плитка, гумова мульча або велика гумова площа",
-            "es": "La superficie está hecha de goma, como baldosas de goma, mantillo de goma o una gran área de goma"
+            "es": "La superficie está hecha de goma, como baldosas de goma, mantillo de goma o una gran área de goma",
+            "ca": "La superfície està feta de goma, com rajoles de goma, mulch de goma o una gran àrea de goma"
           }
         },
         {
@@ -353,7 +358,8 @@
             "nl": "De ondergrond bestaat uit <b>kleine grindsteentjes</b> (steentjes kleiner dan 2 cm)",
             "de": "Die Oberfläche ist <b>feiner Kies</b> (weniger als 2 cm pro Stein)",
             "uk": "Поверхня - <b>дрібний гравій</b> (менше 2 см на камінь)",
-            "es": "La superficie es <b>grava fina</b> (menos de 2 cm por piedra)"
+            "es": "La superficie es <b>grava fina</b> (menos de 2 cm por piedra)",
+            "ca": "La superfície és de <b>grava fina</b> (menys de 2 cm per pedra)"
           }
         }
       ],

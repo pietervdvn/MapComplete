@@ -66,7 +66,8 @@
         "da": "Se på OpenStreetMap.org",
         "fr": "Voir sur OpenStreetMap.org",
         "cs": "Zobrazit na OpenStreetMap.org",
-        "es": "Ver en OpenStreetMap.org"
+        "es": "Ver en OpenStreetMap.org",
+        "ca": "Vegeu a OpenStreetMap.org"
       },
       "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
     }
@@ -271,7 +272,8 @@
           "question": {
             "en": "Should mention {search} in any comment",
             "de": "Sollte {search} in jedem Kommentar erwähnen",
-            "es": "Debe mencionar {search} en cualquier comentario"
+            "es": "Debe mencionar {search} en cualquier comentario",
+            "ca": "Cal esmentar {search} en qualsevol comentari"
           }
         }
       ]
@@ -310,7 +312,8 @@
           "question": {
             "en": "Should <b>not</b> mention {search} in <b>any</b> comment",
             "de": "Sollte {search} in <b>keinem</b> Kommentar erwähnen",
-            "es": "No debe mencionar {search} en ningún comentario"
+            "es": "No debe mencionar {search} en ningún comentario",
+            "ca": "Si <b>no</b> menciona {search} a <b>qualsevol comentari</b>"
           }
         }
       ]
@@ -372,7 +375,8 @@
           "question": {
             "en": "Edited or commented on by any user with name {search}",
             "de": "Bearbeitet oder kommentiert von jedem Benutzer mit Namen {search}",
-            "es": "Editado o comentado por cualquier usuario con el nombre {search}"
+            "es": "Editado o comentado por cualquier usuario con el nombre {search}",
+            "ca": "Editat o comentat per qualsevol usuari amb el nom {search}"
           }
         }
       ]
@@ -417,7 +421,8 @@
             "de": "Nicht zuletzt bearbeitet von {search}",
             "hu": "Legutóbb nem {search} felhasználó szerkesztette",
             "es": "No editado por última vez por {search}",
-            "uk": "Не відредаговано як останнє {search}"
+            "uk": "Не відредаговано як останнє {search}",
+            "ca": "No editat com a últim per {search}"
           }
         }
       ]
@@ -484,7 +489,8 @@
             "de": "Zuletzt bearbeitet vor dem {search}",
             "hu": "Legutóbb {search} előtt szerkesztették",
             "es": "Última edición antes de {search}",
-            "uk": "Останнє редагування зроблено до {search}"
+            "uk": "Останнє редагування зроблено до {search}",
+            "ca": "Darrera edició abans de {search}"
           }
         }
       ]
@@ -505,7 +511,8 @@
             "de": "Zuletzt bearbeitet nach dem {search}",
             "hu": "Legutóbb {search} után szerkesztették",
             "es": "Última edición después de {search}",
-            "uk": "Останнє редагування після {search}"
+            "uk": "Останнє редагування після {search}",
+            "ca": "Darrera edició després de {search}"
           }
         }
       ]

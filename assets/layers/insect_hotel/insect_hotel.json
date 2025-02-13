@@ -3,12 +3,14 @@
   "name": {
     "en": "Insect Hotels",
     "nl": "Insectenhotels",
-    "de": "Insektenhotels"
+    "de": "Insektenhotels",
+    "ca": "Hotels d'Insectes"
   },
   "description": {
     "en": "Layer showing insect hotels",
     "nl": "Laag met insectenhotels",
-    "de": "Ebene mit Insektenhotels"
+    "de": "Ebene mit Insektenhotels",
+    "ca": "Capa que mostra els hotels d'insectes"
   },
   "source": {
     "osmTags": "man_made=insect_hotel"
@@ -17,7 +19,8 @@
   "title": {
     "en": "Insect Hotel",
     "nl": "Insectenhotel",
-    "de": "Insektenhotel"
+    "de": "Insektenhotel",
+    "ca": "Hotel Insect"
   },
   "pointRendering": [
     {
@@ -37,7 +40,8 @@
       "title": {
         "en": "an insect hotel",
         "nl": "een insectenhotel",
-        "de": "Ein Insektenhotel"
+        "de": "Ein Insektenhotel",
+        "ca": "un hotel d'insectes"
       },
       "tags": [
         "man_made=insect_hotel"

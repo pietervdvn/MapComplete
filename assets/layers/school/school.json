@@ -118,7 +118,9 @@
     {
       "title": {
         "en": "a kindergarten",
-        "nl": "een kleuterschool"
+        "nl": "een kleuterschool",
+        "ca": "una llar d'infants",
+        "de": "ein Kindergarten"
       },
       "description": "A kindergarten (also known as <i>preschool</i>) is a school where small kids receive early education.",
       "tags": [
@@ -319,28 +321,36 @@
       },
       "questionHint": {
         "en": "A special needs school has expertise and supports students with a (severe) diagnosis. In many countries, a certificate is needed to enroll.",
-        "nl": "Een buitengewone school is een school waar leerlingen met een attest op speciale zorg terecht kunnen."
+        "nl": "Een buitengewone school is een school waar leerlingen met een attest op speciale zorg terecht kunnen.",
+        "ca": "Una escola de necessitats especials té experiència i dona suport als estudiants amb un diagnòstic (greu). En molts països, es necessita un certificat per inscriure's.",
+        "de": "Eine Sonderschule verfügt über Fachwissen und unterstützt Schüler mit einer (schweren) Diagnose. In vielen Ländern ist für die Anmeldung eine Bescheinigung erforderlich."
       },
       "mappings": [
         {
           "if": "school:special_needs=only",
           "then": {
             "en": "This school is only for special need students; a certificate is needed to enroll",
-            "nl": "Deze school is enkel voor buitengewone leerlingen. Je hebt een attest nodig om hier school te mogen lopen."
+            "nl": "Deze school is enkel voor buitengewone leerlingen. Je hebt een attest nodig om hier school te mogen lopen.",
+            "ca": "Aquesta escola només és per a estudiants amb necessitats especials; es necessita un certificat per matricular-se",
+            "de": "Diese Schule ist nur für Schüler mit besonderem Förderbedarf; für die Einschreibung ist ein Zertifikat erforderlich."
           }
         },
         {
           "if": "school:special_needs=separated",
           "then": {
             "en": "This school has a separate section for special need students.",
-            "nl": "Deze school heeft een apart deel voor buitengewone leerlingen. "
+            "nl": "Deze school heeft een apart deel voor buitengewone leerlingen. ",
+            "ca": "Aquesta escola disposa d'una secció separada per a estudiants amb necessitats especials.",
+            "de": "Diese Schule hat einen separaten Bereich für Schüler mit besonderen Bedürfnissen."
           }
         },
         {
           "if": "school:special_needs=mixed",
           "then": {
             "en": "Students with special needs and non-special need students have classes together.",
-            "nl": "Buitengewone (geattesteerde) leerlingen en leerlingen zonder extra zorgnood zitten samen in de klas."
+            "nl": "Buitengewone (geattesteerde) leerlingen en leerlingen zonder extra zorgnood zitten samen in de klas.",
+            "ca": "Els estudiants amb necessitats especials i les necessitats no especials tenen classes junts.",
+            "de": "Schüler mit und ohne besonderen Förderbedarf haben gemeinsamen Unterricht."
           }
         },
         {
@@ -348,14 +358,18 @@
           "alsoShowIf": "school:special_needs=",
           "then": {
             "en": "This school offers limited, ad hoc support but has no significant expertise and is not considered a special needs school.",
-            "nl": "Deze school biedt ad hoc, beperkte extra zorg aan maar telt niet als buitengwoon onderwij.s"
+            "nl": "Deze school biedt ad hoc, beperkte extra zorg aan maar telt niet als buitengwoon onderwij.s",
+            "ca": "Aquesta escola ofereix un suport limitat i ad hoc, però no té una experiència significativa i no es considera una escola de necessitats especials.",
+            "de": "Diese Schule bietet begrenzte, ad hoc Unterstützung, verfügt jedoch nicht über nennenswertes Fachwissen und gilt nicht als Sonderschule."
           }
         },
         {
           "if": "school:special_needs=no",
           "then": {
             "en": "This school has no support for special need students.",
-            "nl": "Deze school heeft geen ondersteuning voor buitengewone leerlingen."
+            "nl": "Deze school heeft geen ondersteuning voor buitengewone leerlingen.",
+            "ca": "Aquesta escola no té suport per a estudiants amb necessitats especials.",
+            "de": "Diese Schule bietet keine Unterstützung für Schüler mit besonderen Bedürfnissen."
           }
         },
         {
@@ -363,7 +377,9 @@
           "hideInAnswer": true,
           "then": {
             "en": "This school is for special need students.",
-            "nl": "Deze school is voor buitengewone leerlingen."
+            "nl": "Deze school is voor buitengewone leerlingen.",
+            "ca": "Aquesta escola és per a estudiants amb necessitats especials.",
+            "de": "Diese Schule ist für Schüler mit besonderen Bedürfnissen."
           }
         }
       ]
@@ -372,7 +388,9 @@
       "id": "orientation_belgium",
       "question": {
         "en": "What does this school train pupils for?",
-        "nl": "Waarop wordt een leerling voorbereid?"
+        "nl": "Waarop wordt een leerling voorbereid?",
+        "ca": "Per a què capacita els alumnes?",
+        "de": "Was lernt man an dieser Schule?"
       },
       "condition": {
         "and": [
@@ -398,21 +416,27 @@
           "if": "school:orientation=academic",
           "then": {
             "en": "Prepares for an academic study at university",
-            "nl": "<b>Doorstroomfinaliteit</b>: een opleiding hier bereidt voor op universitaire studies"
+            "nl": "<b>Doorstroomfinaliteit</b>: een opleiding hier bereidt voor op universitaire studies",
+            "ca": "Preparació per a un estudi acadèmic a la universitat",
+            "de": "Bereitet sich auf ein akademisches Studium an der Universität vor"
           }
         },
         {
           "if": "school:orientation=professional",
           "then": {
             "en": "Prepares for a professional study at a college",
-            "nl": "<b>Dubbele finaliteit</b>: een opleiding hier bereidt voor op verdere studie (bv. aan een hogeschool of secundair-na-secundair) of op de arbeidsmarkt"
+            "nl": "<b>Dubbele finaliteit</b>: een opleiding hier bereidt voor op verdere studie (bv. aan een hogeschool of secundair-na-secundair) of op de arbeidsmarkt",
+            "ca": "Preparats per a un estudi professional en una universitat",
+            "de": "Bereitet sich auf ein Fachstudium an einer Hochschule vor"
           }
         },
         {
           "if": "school:orientation=vocational",
           "then": {
             "en": "Prepares for a job",
-            "nl": "<b>Arbeidsfinaliteit</b>: een opleiding hier bereidt voor op de arbeidsmarkt"
+            "nl": "<b>Arbeidsfinaliteit</b>: een opleiding hier bereidt voor op de arbeidsmarkt",
+            "ca": "Preparats per a una feina",
+            "de": "Bereitet sich auf einen Arbeitsplatz vor"
           }
         }
       ]
@@ -421,7 +445,9 @@
       "id": "orientation_belgium_special_needs",
       "question": {
         "en": "What does this school train pupils for?",
-        "nl": "Waar traint deze school de leerlingen voor?"
+        "nl": "Waar traint deze school de leerlingen voor?",
+        "ca": "Per a què capacita els alumnes?",
+        "de": "Wozu bildet diese Schule Schüler aus?"
       },
       "condition": {
         "and": [
@@ -445,28 +471,36 @@
           "if": "school:orientation=care_institution",
           "then": {
             "en": "<b>Training type 1</b>: trains elementary life skills to live in an institution. There is no intention to do a (paid) job after training",
-            "nl": "<b>Onderwijsvorm type 1</b>: leert elementaire vaardigheden om te functioneren in een zorginstelling"
+            "nl": "<b>Onderwijsvorm type 1</b>: leert elementaire vaardigheden om te functioneren in een zorginstelling",
+            "ca": "<b>Entrenament tipus 1</b>: entrena habilitats de vida elemental per viure en una institució. No hi ha intenció de fer una feina (retribuïda) després de la formació",
+            "de": "<b>Ausbildungstyp 1</b>: vermittelt elementare Lebenskompetenzen für das Leben in einer Einrichtung. Es besteht nicht die Absicht, nach der Ausbildung eine (bezahlte) Arbeit aufzunehmen."
           }
         },
         {
           "if": "school:orientation=sheltered_workshop",
           "then": {
             "en": "<b>Training type 2</b>: prepares to work in an environment with extra care and facilities such as a sheltered workshop",
-            "nl": "<b>Onderwijsvorm type 2</b>: leert vaardigheden om te werken in een een beschermde arbeidsomgeving zoals een maatwerkbedrijf"
+            "nl": "<b>Onderwijsvorm type 2</b>: leert vaardigheden om te werken in een een beschermde arbeidsomgeving zoals een maatwerkbedrijf",
+            "ca": "<b>Formació tipus 2</b>: es prepara per treballar en un entorn amb cures extra i instal·lacions com un taller tutelat",
+            "de": "<b>Ausbildungstyp 2</b>: bereitet auf die Arbeit in einem Umfeld mit zusätzlicher Betreuung und Einrichtungen wie z.B. einer Behindertenwerkstatt vor"
           }
         },
         {
           "if": "school:orientation=vocational",
           "then": {
             "en": "<b>Training type 3</b>: prepares for a job and a (more-or-less) independent life in society",
-            "nl": "<b>Onderwijsvorm type 3</b>: leert vaardigheden voor een een job op de reguliere arbeidsmarkt en zelfstandig wonen"
+            "nl": "<b>Onderwijsvorm type 3</b>: leert vaardigheden voor een een job op de reguliere arbeidsmarkt en zelfstandig wonen",
+            "ca": "<b>Formació tipus 3</b>: es prepara per a un treball i una vida independent (més o menys) en la societat",
+            "de": "<b>Ausbildungstyp 3</b>: bereitet auf einen Arbeitsplatz und ein (mehr oder weniger) unabhängiges Leben in der Gesellschaft vor"
           }
         },
         {
           "if": "school:orientation=professional",
           "then": {
             "en": "<b>Training type 4</b>: prepares for a job or continued education",
-            "nl": "<b>Onderwijsvorm type 4</b>: leert vaardigheden voor een een job op de reguliere arbeidsmarkt of voor voortgezette studies"
+            "nl": "<b>Onderwijsvorm type 4</b>: leert vaardigheden voor een een job op de reguliere arbeidsmarkt of voor voortgezette studies",
+            "ca": "<b>Formació tipus 4</b>: preparació per a un treball o educació continuada",
+            "de": "<b>Ausbildungstyp 4</b>: bereitet auf einen Arbeitsplatz oder eine weiterführende Ausbildung vor"
           }
         }
       ]
@@ -539,7 +573,8 @@
         "en": "What educational theory is applied on this school?",
         "de": "Welche Bildungstheorie wird auf dieser Schule angewendet?",
         "es": "¿Qué teoría educativa se aplica en esta escuela?",
-        "cs": "Jaká pedagogická teorie je na této škole aplikována?"
+        "cs": "Jaká pedagogická teorie je na této škole aplikována?",
+        "ca": "Quina teoria educativa s'aplica en aquesta escola?"
       },
       "mappings": [
         {
@@ -548,7 +583,8 @@
             "en": "This school does not use a specific pedagogy",
             "de": "Diese Schule benutzt keine spezifische Pädagogik",
             "es": "Esta escuela no utiliza una pedagogía específica",
-            "cs": "Tato škola nepoužívá specifickou pedagogiku"
+            "cs": "Tato škola nepoužívá specifickou pedagogiku",
+            "ca": "Aquesta escola no utilitza una pedagogia específica"
           }
         },
         {
@@ -557,7 +593,8 @@
             "en": "This school uses the Montessori method of education",
             "de": "Diese Schule nutzt die Montessori Methode der Bildung",
             "es": "Esta escuela utiliza el método Montessori de educación",
-            "cs": "Tato škola využívá Montessori metodu vzdělávání"
+            "cs": "Tato škola využívá Montessori metodu vzdělávání",
+            "ca": "Aquesta escola utilitza el mètode Montessori d'educació"
           }
         },
         {
@@ -566,7 +603,8 @@
             "en": "This school is associated with the Freinet Modern School Movement",
             "de": "Diese Schule ist mit der Freinet Modern School Movement verbunden",
             "es": "Esta escuela está asociada con el Movimiento de Escuelas Modernas Freinet",
-            "cs": "Tato škola je spojena s Freinet Modern School Movement"
+            "cs": "Tato škola je spojena s Freinet Modern School Movement",
+            "ca": "Aquesta escola està associada amb el Moviment Escolar Modern Freinet"
           }
         },
         {
@@ -575,7 +613,8 @@
             "en": "This school uses the Jenaplan teaching concept",
             "de": "Diese Schule nutzt das Lehrkonzept von Jenaplan",
             "es": "Esta escuela utiliza el concepto de enseñanza Jenaplan",
-            "cs": "Tato škola využívá koncept výuky Jenaplan"
+            "cs": "Tato škola využívá koncept výuky Jenaplan",
+            "ca": "Aquesta escola utilitza el concepte d'ensenyament de Jenaplan"
           }
         },
         {
@@ -584,7 +623,8 @@
             "en": "This school uses the Steiner/Waldorf educational philosophy",
             "de": "Diese Schule nutzt die Steiner/Waldorfer Bildungsphilosophie",
             "es": "Esta escuela utiliza la filosofía educativa Waldorf/Steiner",
-            "cs": "Tato škola využívá filozofii vzdělávání Steiner/Waldorf"
+            "cs": "Tato škola využívá filozofii vzdělávání Steiner/Waldorf",
+            "ca": "Aquesta escola utilitza la filosofia educativa Steiner/Waldorf"
           }
         },
         {
@@ -593,7 +633,8 @@
             "en": "This school uses the Dalton plan teaching concept",
             "de": "Diese Schule nutzt das Dalton Plan Lehrkonzept",
             "es": "Esta escuela utiliza el concepto de enseñanza del plan Dalton",
-            "cs": "Tato škola využívá koncept výuky podle Daltonského plánu"
+            "cs": "Tato škola využívá koncept výuky podle Daltonského plánu",
+            "ca": "Aquesta escola utilitza el concepte d'ensenyament del pla Dalton"
           }
         },
         {
@@ -602,7 +643,8 @@
             "en": "This school uses outdoor learning",
             "de": "Diese Schule nutzt Outdoor-Lernen",
             "es": "Esta escuela utiliza el aprendizaje al aire libre",
-            "cs": "Tato škola využívá venkovní výuku"
+            "cs": "Tato škola využívá venkovní výuku",
+            "ca": "Aquesta escola utilitza l'aprenentatge a l'exterior"
           }
         },
         {
@@ -611,7 +653,8 @@
             "en": "This school uses the Reggio Emilia approach",
             "de": "Diese Schule nutzt den Reggio Emilia-Ansatz",
             "es": "Esta escuela utiliza el enfoque Reggio Emilia",
-            "cs": "Tato škola využívá přístup Reggio Emilia"
+            "cs": "Tato škola využívá přístup Reggio Emilia",
+            "ca": "Aquesta escola utilitza l'enfocament Reggio Emilia"
           }
         },
         {
@@ -620,7 +663,8 @@
             "en": "This school uses the Sudbury system",
             "de": "Diese Schule nutzt das Sudbury-System",
             "es": "Esta escuela utiliza el sistema Sudbury",
-            "cs": "Tato škola používá systém Sudbury"
+            "cs": "Tato škola používá systém Sudbury",
+            "ca": "Aquesta escola utilitza el sistema Sudbury"
           }
         }
       ],
@@ -628,7 +672,8 @@
         "en": "This school uses {pedagogy}",
         "de": "Diese Schule benutzt {pedagogy}",
         "es": "Esta escuela utiliza {pedagogy}",
-        "cs": "Tato škola používá {pedagogy}"
+        "cs": "Tato škola používá {pedagogy}",
+        "ca": "Aquesta escola utilitza {pedagogy}"
       },
       "freeform": {
         "key": "pedagogy"
@@ -645,7 +690,9 @@
       },
       "question": {
         "en": "What type of special needs are given here?",
-        "nl": "Welke soorten zorg voor buitengewone leerlingen is hier beschikbaar?"
+        "nl": "Welke soorten zorg voor buitengewone leerlingen is hier beschikbaar?",
+        "ca": "Quin tipus de necessitats especials es donen aquí?",
+        "de": "Welche Art von besonderen Bedürfnissen wird hier behandelt?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -654,7 +701,9 @@
           "ifnot": "special_needs:intellectual_disability=no",
           "then": {
             "nl": "Voor leerlingen met een verstandelijke beperking (type 2)",
-            "en": "For students with an intellectual disability (type 2)"
+            "en": "For students with an intellectual disability (type 2)",
+            "ca": "Per a estudiants amb discapacitat intel·lectual (tipus 2)",
+            "de": "Für Schüler mit einer geistigen Behinderung (Typ 2)"
           }
         },
         {
@@ -662,7 +711,9 @@
           "ifnot": "special_needs:emotional_behavioural_disorder=no",
           "then": {
             "nl": "Voor leerlingen met een gedragsstoornis (type 3)",
-            "en": "For students with an emotional and behavioural problem (type 3)"
+            "en": "For students with an emotional and behavioural problem (type 3)",
+            "ca": "Per a estudiants amb un problema emocional i conductual (tipus 3)",
+            "de": "Für Schüler mit emotionalen und Verhaltensproblemen (Typ 3)"
           }
         },
         {
@@ -670,7 +721,9 @@
           "ifnot": "special_needs:physical_disability=no",
           "then": {
             "nl": "Voor leerlingen met een motorische of lichamelijke beperking (type 4)",
-            "en": "For students with an physical disability (type 4)"
+            "en": "For students with an physical disability (type 4)",
+            "ca": "Per a estudiants amb discapacitat física (tipus 4)",
+            "de": "Für Studierende mit einer körperlichen Behinderung (Typ 4)"
           }
         },
         {
@@ -678,7 +731,9 @@
           "ifnot": "special_needs:blind=no",
           "then": {
             "nl": "Voor blinde en slechtziende leerlingen (type 6)",
-            "en": "For blind and visually impaired students (type 6)"
+            "en": "For blind and visually impaired students (type 6)",
+            "ca": "Per a estudiants cecs i amb discapacitat visual (tipus 6)",
+            "de": "Für blinde und sehbehinderte Schüler (Typ 6)"
           }
         },
         {
@@ -686,7 +741,9 @@
           "ifnot": "special_needs:deaf=no",
           "then": {
             "nl": "Voor dove leerlingen and leerlingen met een auditieve beperking (type 7)",
-            "en": "For deaf students and students with hearing loss (type 7)"
+            "en": "For deaf students and students with hearing loss (type 7)",
+            "ca": "Per a estudiants sords i estudiants amb pèrdua auditiva (tipus 7)",
+            "de": "Für gehörlose Schüler und Schüler mit Hörverlust (Typ 7)"
           }
         },
         {
@@ -694,7 +751,9 @@
           "ifnot": "special_needs:language_disorder=no",
           "then": {
             "nl": "Voor leerlingen met een Spraak- of Taalontwikkelingsstoornis (type 7 - STOS/TOS)",
-            "en": "For students with a Developemental Language Disorder (type 7 - DLD)"
+            "en": "For students with a Developemental Language Disorder (type 7 - DLD)",
+            "ca": "Per a estudiants amb un trastorn del llenguatge de desenvolupament (tipus 7 - DLD)",
+            "de": "Für Schüler mit einer Entwicklungsbedingten Sprachstörung (Typ 7 – DLD)"
           }
         },
         {
@@ -702,7 +761,9 @@
           "ifnot": "special_needs:autism=no",
           "then": {
             "nl": "Voor leerlingen met een autisme spectrum stoornis (type 9)",
-            "en": "For students with an autism spectrum disorder (type 9)"
+            "en": "For students with an autism spectrum disorder (type 9)",
+            "ca": "Per a estudiants amb trastorn de l'espectre autista (tipus 9)",
+            "de": "Für Schüler mit einer Autismus-Spektrum-Störung (Typ 9)"
           }
         },
         {
@@ -711,7 +772,9 @@
           "hideInAnswer": "school!~.*primary.*",
           "then": {
             "nl": "Voor leerlingen die omwille van een leerprobleem niet in het gewone onderwijs terecht kunnen (basisaanbod)",
-            "en": "For students with a learning disability (basic offering )"
+            "en": "For students with a learning disability (basic offering )",
+            "ca": "Per a estudiants amb discapacitat d'aprenentatge (oferta bàsica )",
+            "de": "Für Schüler mit Lernschwierigkeiten (Grundangebot)"
           }
         }
       ]
@@ -772,13 +835,17 @@
       "options": [
         {
           "question": {
-            "en": "All levels of education"
+            "en": "All levels of education",
+            "ca": "Tots els nivells educatius",
+            "de": "Alle Bildungsstufen"
           }
         },
         {
           "question": {
             "en": "Has a kindergarten",
-            "nl": "Kleuterafdeling"
+            "nl": "Kleuterafdeling",
+            "ca": "Té una llar d'infants",
+            "de": "Hat einen Kindergarten"
           },
           "osmTags": {
             "or": [
@@ -790,21 +857,27 @@
         {
           "question": {
             "en": "Primary school",
-            "nl": "Lagere school"
+            "nl": "Lagere school",
+            "ca": "Escola primària",
+            "de": "Grundschule"
           },
           "osmTags": "school~i~(.+;)?primary(;.+)?"
         },
         {
           "question": {
             "en": "Secondary school with all grades",
-            "nl": "Secundaire school met alle graden"
+            "nl": "Secundaire school met alle graden",
+            "ca": "Escola secundària amb tots els graus",
+            "de": "Sekundarstufe I und II"
           },
           "osmTags": "school~i~(.+;)?secondary(;.+)?"
         },
         {
           "question": {
             "en": "Has first grade",
-            "nl": "Heeft eerste graad"
+            "nl": "Heeft eerste graad",
+            "ca": "Té primera qualificació",
+            "de": "Hat die erste Klasse"
           },
           "osmTags": {
             "or": [
@@ -816,7 +889,9 @@
         {
           "question": {
             "en": "Has second grade",
-            "nl": "Heeft tweede graad"
+            "nl": "Heeft tweede graad",
+            "ca": "Té segona qualificació",
+            "de": "Hat die zweite Klasse"
           },
           "osmTags": {
             "or": [
@@ -828,7 +903,9 @@
         {
           "question": {
             "en": "Has third grade",
-            "nl": "Heeft derde graad"
+            "nl": "Heeft derde graad",
+            "ca": "Té tercera qualificació",
+            "de": "Hat die dritte Klasse"
           },
           "osmTags": {
             "or": [
@@ -840,13 +917,17 @@
         {
           "question": {
             "en": "This school offers post-secondary education (e.g. a seventh or eight specialisation year)",
-            "nl": "Heeft specialisatiejaar"
+            "nl": "Heeft specialisatiejaar",
+            "ca": "Aquesta escola ofereix educació postsecundària (per exemple, un setè o vuit anys d'especialització)",
+            "de": "Diese Schule bietet eine postsekundäre Ausbildung (z. B. ein siebtes oder achtes Spezialisierungsjahr)"
           },
           "osmTags": "school~i~.+;)?post_secondary(;.+"
         },
         {
           "question": {
-            "en": "Unknown school level"
+            "en": "Unknown school level",
+            "ca": "Nivell escolar desconegut",
+            "de": "Unbekanntes Schulniveau"
           },
           "osmTags": {
             "and": [
@@ -862,13 +943,17 @@
       "options": [
         {
           "question": {
-            "en": "Does this school have special need education?"
+            "en": "Does this school have special need education?",
+            "ca": "Aquesta escola té una necessitat especial d'educació?",
+            "de": "Bietet diese Schule sonderpädagogische Förderung an?"
           }
         },
         {
           "question": {
             "en": "Has special education",
-            "nl": "Buitengewoon onderwijs"
+            "nl": "Buitengewoon onderwijs",
+            "ca": "Té educació especial",
+            "de": "Hat eine Sonderausbildung"
           },
           "osmTags": {
             "and": [
@@ -879,7 +964,9 @@
         },
         {
           "question": {
-            "en": "No or limited special need education"
+            "en": "No or limited special need education",
+            "ca": "Ensenyament de necessitat especial",
+            "de": "Keine oder nur eingeschränkte sonderpädagogische Förderung"
           },
           "osmTags": {
             "or": [

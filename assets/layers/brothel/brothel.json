@@ -5,14 +5,16 @@
     "de": "Bordelle",
     "cs": "Nevěstince",
     "es": "Burdeles",
-    "nl": "Bordelen"
+    "nl": "Bordelen",
+    "ca": "Bordells"
   },
   "description": {
     "en": "An establishment specifically dedicated to prostitution.",
     "de": "Eine Einrichtung, die speziell der Prostitution gewidmet ist.",
     "cs": "Zařízení zaměřené speciálně na prostituci.",
     "es": "Un establecimiento dedicado específicamente a la prostitución.",
-    "nl": "Een etablissement dat zich specifiek richt op prostitutie."
+    "nl": "Een etablissement dat zich specifiek richt op prostitutie.",
+    "ca": "Un establiment dedicat específicament a la prostitució."
   },
   "source": {
     "osmTags": "amenity=brothel"
@@ -74,7 +76,8 @@
         "de": "ein Bordell",
         "cs": "nevěstinec",
         "es": "un burdel",
-        "nl": "een bordeel"
+        "nl": "een bordeel",
+        "ca": "un bordell"
       },
       "tags": [
         "amenity=brothel"
@@ -104,7 +107,8 @@
         "de": "Der Name des Bordells lautet <b>{name}</b>",
         "cs": "Tento nevěstinec se jmenuje <b>{name}</b>",
         "es": "Este burdel se llama <b>{name}</b>",
-        "nl": "Dit bordeel heet <b>{name}</b>"
+        "nl": "Dit bordeel heet <b>{name}</b>",
+        "ca": "Aquest bordell s'anomena <b>{name}</b>"
       }
     },
     "opening_hours",

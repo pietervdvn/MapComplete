@@ -4,12 +4,14 @@
     "en": "Food Courts",
     "de": "Food Courts",
     "es": "Plazas de comida",
-    "uk": "Фуд-корти"
+    "uk": "Фуд-корти",
+    "ca": "Corts d'Aliments"
   },
   "description": {
     "en": "Food courts with a variety of food options.",
     "de": "Food-Courts mit einer Vielzahl von Essensmöglichkeiten.",
-    "es": "Plazas de comida con una variedad de opciones gastronómicas."
+    "es": "Plazas de comida con una variedad de opciones gastronómicas.",
+    "ca": "Pistes d'alimentació amb una gran varietat d'opcions alimentàries."
   },
   "source": {
     "osmTags": "amenity=food_court"
@@ -19,7 +21,8 @@
     "render": {
       "en": "Food Court",
       "de": "Food Court",
-      "es": "Plaza de comida"
+      "es": "Plaza de comida",
+      "ca": "Tribunal d'Aliments"
     },
     "mappings": [
       {
@@ -61,7 +64,8 @@
       "question": {
         "en": "What is the name of this food court?",
         "de": "Wie lautet der Name dieses Food-Courts?",
-        "es": "¿Cuál es el nombre de esta plaza de comida?"
+        "es": "¿Cuál es el nombre de esta plaza de comida?",
+        "ca": "Quin és el nom d'aquest tribunal alimentari?"
       },
       "freeform": {
         "key": "name",
@@ -69,13 +73,15 @@
         "placeholder": {
           "en": "Name of the food court",
           "de": "Name des Food-Courts",
-          "es": "Nombre de la plaza de comida"
+          "es": "Nombre de la plaza de comida",
+          "ca": "Nom de la pista de menjar"
         }
       },
       "render": {
         "en": "This food court is called <b>{name}</b>.",
         "de": "Dieser Food Court heißt <b>{name}</b>.",
-        "es": "Esta plaza de comida se llama <b>{name}</b>."
+        "es": "Esta plaza de comida se llama <b>{name}</b>.",
+        "ca": "Aquest tribunal alimentari es diu <b>{name}</b>."
       }
     },
     "reviews",

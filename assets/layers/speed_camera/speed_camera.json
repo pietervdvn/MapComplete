@@ -109,7 +109,8 @@
         "de": "Die Referenznummer dieses Blitzers ist {ref}",
         "nl": "De referentie van deze flitspaal is {ref}",
         "es": "El número de referencia de este radar es {ref}",
-        "cs": "Referenční číslo tohoto rychlostního radaru je {ref}"
+        "cs": "Referenční číslo tohoto rychlostního radaru je {ref}",
+        "ca": "El número de referència d'aquesta càmera de velocitat és {ref}"
       },
       "condition": "ref~*"
     },

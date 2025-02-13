@@ -9,14 +9,16 @@
     "fr": "Opportunités d’escalade ?",
     "it": "Opportunità di arrampicata?",
     "cs": "Lezecké příležitosti?",
-    "es": "¿Posibilidades de escalada?"
+    "es": "¿Posibilidades de escalada?",
+    "ca": "Oportunitats d'escalada?"
   },
   "description": {
     "en": "Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added",
     "de": "Rückfallebene mit Orten, auf denen Klettern eventuell möglich ist. Sie wird erst angezeigt, wenn man stark hineinzoomt, um zu verhindern, dass Elemente doppelt hinzugefügt werden",
     "nl": "Laag met plaatsen waar klimmen _misschien_ mogelijk is. Deze wordt geladen als je ver inzoomt, om te voorkomen dat je per ongeluk dubbels maakt",
     "cs": "Záložní vrstva s předměty, na které je _možné_ lézt. Načítá se při velkém přiblížení, aby se zabránilo přidávání duplicitních položek",
-    "es": "Capa de reserva con elementos en los que la escalada _podría_ ser posible Se carga cuando se acerca mucho, para evitar que se añadan elementos duplicados"
+    "es": "Capa de reserva con elementos en los que la escalada _podría_ ser posible Se carga cuando se acerca mucho, para evitar que se añadan elementos duplicados",
+    "ca": "Capa alternativa amb elements sobre els quals l'escalada podria ser possible. Es carrega quan s'amplia molt, per evitar que s'afegeixin elements duplicats"
   },
   "source": {
     "osmTags": {
@@ -48,7 +50,8 @@
       "fr": "Opportunité d’escalade ?",
       "it": "Opportunità di arrampicata?",
       "cs": "Lezecká příležitost?",
-      "es": "¿Posibilidad de escalada?"
+      "es": "¿Posibilidad de escalada?",
+      "ca": "Oportunitat d'escalada?"
     }
   },
   "pointRendering": [
@@ -100,7 +103,8 @@
         "it": "È possibile arrampicarsi qua?",
         "nl": "Is klimmen hier mogelijk?",
         "cs": "Je zde možné lezení?",
-        "es": "¿Es posible la escalada aquí?"
+        "es": "¿Es posible la escalada aquí?",
+        "ca": "És possible escalar aquí?"
       },
       "mappings": [
         {
@@ -118,7 +122,8 @@
             "fr": "Escalader est possible",
             "it": "È possibile arrampicarsi qua",
             "cs": "Lezení je zde možné",
-            "es": "La escalada es posible aquí"
+            "es": "La escalada es posible aquí",
+            "ca": "L'escalada és possible aquí"
           }
         },
         {
@@ -132,7 +137,8 @@
             "fr": "Escalader n’est pas possible",
             "it": "Non è possibile arrampicarsi qua",
             "cs": "Lezení zde není možné",
-            "es": "La escalada no es posible aquí"
+            "es": "La escalada no es posible aquí",
+            "ca": "L'escalada no és possible aquí"
           }
         },
         {
@@ -150,7 +156,8 @@
             "fr": "Escalader n’est pas possible",
             "it": "Non è possibile arrampicarsi qua",
             "cs": "Lezení zde není možné",
-            "es": "La escalada no es posible aquí"
+            "es": "La escalada no es posible aquí",
+            "ca": "L'escalada no és possible aquí"
           },
           "hideInAnswer": true
         }
@@ -163,6 +170,7 @@
     "de": "eine Wand, eine Klippe oder einen Felsen",
     "es": "una pared, un acantilado o una roca",
     "cs": "zeď, útes nebo skála",
-    "nl": "een muur, klif of rots"
+    "nl": "een muur, klif of rots",
+    "ca": "un mur, penya-segat o roca"
   }
 }

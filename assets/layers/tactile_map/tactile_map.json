@@ -2,11 +2,13 @@
   "id": "tactile_map",
   "name": {
     "en": "Tactile Maps",
-    "de": "Taktile Karten"
+    "de": "Taktile Karten",
+    "ca": "Mapa tàctil"
   },
   "description": {
     "en": "Layer showing tactile maps, which can be used by visually impaired people to navigate the city.",
-    "de": "Ebene mit taktilen Karten, die von sehbehinderten Menschen zur Navigation in der Stadt verwendet werden können."
+    "de": "Ebene mit taktilen Karten, die von sehbehinderten Menschen zur Navigation in der Stadt verwendet werden können.",
+    "ca": "Capa que mostra mapes tàctils, que poden ser utilitzats per persones amb discapacitat visual per navegar per la ciutat."
   },
   "source": {
     "osmTags": "information=tactile_map"
@@ -14,7 +16,8 @@
   "minzoom": 10,
   "title": {
     "en": "Tactile Map",
-    "de": "Taktile Karte"
+    "de": "Taktile Karte",
+    "ca": "Mapa tàctil"
   },
   "pointRendering": [
     {
@@ -41,11 +44,13 @@
       ],
       "title": {
         "en": "a tactile map",
-        "de": "eine taktile Karte"
+        "de": "eine taktile Karte",
+        "ca": "un mapa tàctil"
       },
       "description": {
         "en": "A tactile map that can be read using touch. Unlike a tactile model, this is relatively flat and does not feature three-dimensional buildings and such.",
-        "de": "Eine taktile Karte, die durch Berühren gelesen werden kann. Im Gegensatz zu einem taktilen Modell ist diese Karte relativ flach und enthält keine dreidimensionalen Gebäude oder ähnliches."
+        "de": "Eine taktile Karte, die durch Berühren gelesen werden kann. Im Gegensatz zu einem taktilen Modell ist diese Karte relativ flach und enthält keine dreidimensionalen Gebäude oder ähnliches.",
+        "ca": "Un mapa tàctil que es pot llegir amb el tacte. A diferència d'un model tàctil, aquest és relativament pla i no presenta edificis tridimensionals i tals."
       }
     }
   ],
@@ -55,39 +60,45 @@
       "id": "description",
       "question": {
         "en": "What does this tactile map show?",
-        "de": "Was zeigt diese taktile Karte?"
+        "de": "Was zeigt diese taktile Karte?",
+        "ca": "Què mostra aquest mapa tàctil?"
       },
       "freeform": {
         "key": "blind:description:en",
         "placeholder": {
           "en": "e.g. Tactile map of the city center",
-          "de": "z.B. Taktile Karte des Stadtzentrums"
+          "de": "z.B. Taktile Karte des Stadtzentrums",
+          "ca": "P. ex. Mapa tàctil del centre de la ciutat"
         }
       },
       "render": {
         "en": "Description: {blind:description:en}.",
-        "de": "Beschreibung: {blind:description:en}."
+        "de": "Beschreibung: {blind:description:en}.",
+        "ca": "Descripció: {blind:description:en}."
       }
     },
     {
       "id": "braille",
       "question": {
         "en": "Is there braille text on this tactile map?",
-        "de": "Gibt es einen Text in Blindenschrift auf dieser taktilen Karte?"
+        "de": "Gibt es einen Text in Blindenschrift auf dieser taktilen Karte?",
+        "ca": "Hi ha text en braille en aquest mapa tàctil?"
       },
       "mappings": [
         {
           "if": "braille=yes",
           "then": {
             "en": "This tactile map has braille text.",
-            "de": "Diese taktile Karte hat einen Text in Blindenschrift."
+            "de": "Diese taktile Karte hat einen Text in Blindenschrift.",
+            "ca": "Aquest mapa tàctil té text en braille."
           }
         },
         {
           "if": "braille=no",
           "then": {
             "en": "This tactile map does not have braille text.",
-            "de": "Diese taktile Karte hat keinen Text in Blindenschrift."
+            "de": "Diese taktile Karte hat keinen Text in Blindenschrift.",
+            "ca": "Aquest mapa tàctil no té text en braille."
           }
         }
       ]
@@ -101,15 +112,18 @@
           "key": "tactile_writing:braille",
           "question": {
             "en": "In which languages is the braille text on this tactile map?",
-            "de": "In welchen Sprachen ist der Text in Blindenschrift auf dieser taktilen Karte?"
+            "de": "In welchen Sprachen ist der Text in Blindenschrift auf dieser taktilen Karte?",
+            "ca": "En quines llengües es troba el text en braille en aquest mapa tàctil?"
           },
           "render_list_item": {
             "en": "This map has braille text in {language}",
-            "de": "Diese Karte hat Text in Blindenschrift in {language}"
+            "de": "Diese Karte hat Text in Blindenschrift in {language}",
+            "ca": "Aquest mapa té text en braille en {language}"
           },
           "render_single_language": {
             "en": "This map has braille text in {language}",
-            "de": "Diese Karte hat Text in Blindenschrift in {language}"
+            "de": "Diese Karte hat Text in Blindenschrift in {language}",
+            "ca": "Aquest mapa té text en braille en {language}"
           }
         }
       }
@@ -118,21 +132,24 @@
       "id": "embossed_letters",
       "question": {
         "en": "Are there embossed letters on this tactile map?",
-        "de": "Gibt es auf dieser taktilen Karte geprägte Buchstaben?"
+        "de": "Gibt es auf dieser taktilen Karte geprägte Buchstaben?",
+        "ca": "Hi ha lletres en relleu en aquest mapa tàctil?"
       },
       "mappings": [
         {
           "if": "embossed_letters=yes",
           "then": {
             "en": "This tactile map has embossed letters.",
-            "de": "Diese taktile Karte hat geprägte Buchstaben."
+            "de": "Diese taktile Karte hat geprägte Buchstaben.",
+            "ca": "Aquest mapa tàctil té lletres en relleu."
           }
         },
         {
           "if": "embossed_letters=no",
           "then": {
             "en": "This tactile map does not have embossed letters.",
-            "de": "Diese taktile Karte hat keine geprägten Buchstaben."
+            "de": "Diese taktile Karte hat keine geprägten Buchstaben.",
+            "ca": "Aquest mapa tàctil no té lletres en relleu."
           }
         }
       ]
@@ -146,15 +163,18 @@
           "key": "tactile_writing:embossed",
           "question": {
             "en": "In which languages are the embossed letters on this tactile map?",
-            "de": "In welchen Sprachen sind die geprägten Buchstaben auf dieser taktilen Karte?"
+            "de": "In welchen Sprachen sind die geprägten Buchstaben auf dieser taktilen Karte?",
+            "ca": "En quines llengües es troben les lletres en relleu en aquest mapa tàctil?"
           },
           "render_list_item": {
             "en": "This map has embossed letters in {language}",
-            "de": "Diese Karte hat geprägte Buchstaben in {language}"
+            "de": "Diese Karte hat geprägte Buchstaben in {language}",
+            "ca": "Aquest mapa té lletres en relleu en {language}"
           },
           "render_single_language": {
             "en": "This map has embossed letters in {language}",
-            "de": "Diese Karte hat geprägte Buchstaben in {language}"
+            "de": "Diese Karte hat geprägte Buchstaben in {language}",
+            "ca": "Aquest mapa té lletres en relleu en {language}"
           }
         }
       }

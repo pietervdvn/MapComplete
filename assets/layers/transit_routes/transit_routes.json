@@ -95,7 +95,8 @@
         "de": "Wie lautet der Name der Buslinie? (z.B. Bus XX: Von => Über => Nach)",
         "nl": "Wat is de naam van deze buslijn (bv. Bus XX: Van => Via => Naar)",
         "cs": "Jak se jmenuje tato autobusová linka? (tj. Autobus XX: Od => Přes => Do)",
-        "es": "¿Cuál es el nombre de esta línea de autobús? (es decir, Autobús XX: Desde => Vía => Hasta)"
+        "es": "¿Cuál es el nombre de esta línea de autobús? (es decir, Autobús XX: Desde => Vía => Hasta)",
+        "ca": "Quin és el nom d'aquesta línia d'autobús? (és a dir, Bus XX: De : Via ) A)"
       }
     },
     {
@@ -148,7 +149,8 @@
         "nl": "Via welk punt gaat deze buslijn?",
         "cs": "Jaký je průjezdní bod této autobusové linky?",
         "ru": "Где находится конечный пункт этого автобусного маршрута?",
-        "es": "¿Cuál es el punto intermedio de esta línea de autobús?"
+        "es": "¿Cuál es el punto intermedio de esta línea de autobús?",
+        "ca": "Quin és el punt de pas d'aquesta línia d'autobusos?"
       }
     },
     {

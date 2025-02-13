@@ -135,13 +135,15 @@
         "en": "This trail is maintained by {operator}",
         "nl": "Beheer door {operator}",
         "de": "Dieser Weg wird von {operator} gepflegt",
-        "es": "Este sendero es mantenido por {operator}"
+        "es": "Este sendero es mantenido por {operator}",
+        "ca": "{operator} manté aquest camí"
       },
       "question": {
         "en": "Who maintains this trail?",
         "nl": "Wie beheert deze wandeltocht?",
         "de": "Wer pflegt diesen Weg?",
-        "es": "¿Quién mantiene este sendero?"
+        "es": "¿Quién mantiene este sendero?",
+        "ca": "Qui manté aquest rastre?"
       },
       "freeform": {
         "key": "operator"
@@ -175,7 +177,8 @@
             "en": "This trail is maintained by {operator}",
             "nl": "Dit gebied wordt beheerd door {operator}",
             "de": "Dieser Weg wird von {operator} gepflegt",
-            "es": "Este sendero es mantenido por {operator}"
+            "es": "Este sendero es mantenido por {operator}",
+            "ca": "{operator} manté aquest camí"
           },
           "hideInAnswer": true,
           "icon": {
@@ -266,7 +269,8 @@
         "en": "Is this trail wheelchair accessible?",
         "nl": "Is deze wandeling toegankelijk met de rolstoel?",
         "de": "Ist dieser Weg rollstuhlgerecht?",
-        "es": "¿Es este sendero accesible para sillas de ruedas?"
+        "es": "¿Es este sendero accesible para sillas de ruedas?",
+        "ca": "És accessible aquesta cadira de rodes?"
       },
       "mappings": [
         {
@@ -274,7 +278,8 @@
             "en": "This trail is wheelchair-accessible",
             "nl": "deze wandeltocht is toegankelijk met de rolstoel",
             "de": "Dieser Weg ist rollstuhlgerecht",
-            "es": "Este sendero es accesible para sillas de ruedas"
+            "es": "Este sendero es accesible para sillas de ruedas",
+            "ca": "Aquest sender és accessible amb cadira de rodes"
           },
           "if": "wheelchair=yes"
         },
@@ -283,7 +288,8 @@
             "en": "This trail is not wheelchair accessible",
             "nl": "deze wandeltocht is niet toegankelijk met de rolstoel",
             "de": "Dieser Weg ist nicht rollstuhlgerecht",
-            "es": "Este sendero no es accesible para sillas de ruedas"
+            "es": "Este sendero no es accesible para sillas de ruedas",
+            "ca": "Aquest sender no és accessible amb cadira de rodes"
           },
           "if": "wheelchair=no"
         }
@@ -295,7 +301,8 @@
         "en": "Is this trail accessible with a pushchair?",
         "nl": "Is deze wandeltocht toegankelijk met de buggy?",
         "de": "Ist dieser Weg mit einem Kinderwagen zugänglich?",
-        "es": "¿Es este sendero accesible con una silla de paseo?"
+        "es": "¿Es este sendero accesible con una silla de paseo?",
+        "ca": "Aquest sender és accessible amb cadira de flexió?"
       },
       "mappings": [
         {
@@ -303,7 +310,8 @@
             "en": "This trail is accessible with a pushchair",
             "nl": "deze wandeltocht is toegankelijk met de buggy",
             "de": "Dieser Weg ist mit einem Kinderwagen zugänglich",
-            "es": "Este sendero es accesible con una silla de paseo"
+            "es": "Este sendero es accesible con una silla de paseo",
+            "ca": "Aquest sender és accessible amb cadira de butxaca"
           },
           "if": "pushchair=yes"
         },
@@ -312,7 +320,8 @@
             "en": "This trail is not accessible with a pushchair",
             "nl": "deze wandeltocht is niet toegankelijk met de buggy",
             "de": "Dieser Weg ist nicht mit einem Kinderwagen zugänglich",
-            "es": "Este sendero no es accesible con una silla de paseo"
+            "es": "Este sendero no es accesible con una silla de paseo",
+            "ca": "Aquest sender no és accessible amb cadira de butxaca"
           },
           "if": "pushchair=no"
         }

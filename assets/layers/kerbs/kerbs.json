@@ -102,7 +102,8 @@
         "de": "Bordstein in einem Fußweg",
         "fr": "Bordure dans un trottoir",
         "cs": "Obrubník na chodníku",
-        "es": "Bordillo en una acera"
+        "es": "Bordillo en una acera",
+        "ca": "Kerb en una pista"
       },
       "snapToLayer": [
         "cycleways_and_roads",
@@ -435,6 +436,7 @@
   "snapName": {
     "en": "a kerb",
     "de": "ein Bordstein",
-    "es": "un bordillo"
+    "es": "un bordillo",
+    "ca": "un kerb"
   }
 }

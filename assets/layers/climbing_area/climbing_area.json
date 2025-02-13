@@ -69,7 +69,8 @@
           "de": "Klettergarten <b>{name}</b>",
           "nl": "Klimrots of klimzone <b>{name}</b>",
           "cs": "Lezecká cesta <b>{name}</b>",
-          "es": "Pared de escalada <b>{name}</b>"
+          "es": "Pared de escalada <b>{name}</b>",
+          "ca": "Trenca d'escalada <b>{name}</b>"
         }
       },
       {
@@ -91,7 +92,8 @@
           "de": "Klettergebiet <b>{name}</b>",
           "it": "Area di arrampicata <b>{name}</b>",
           "cs": "Lezecká oblast <b>{name}</b>",
-          "es": "Área de escalada <b>{name}</b>"
+          "es": "Área de escalada <b>{name}</b>",
+          "ca": "Àrea d'escalada <b>{name}</b>"
         }
       },
       {
@@ -196,7 +198,8 @@
         "it": "<h3>Riassunto della lunghezza</h3>{histogram(_length_hist)}",
         "nl": "<h3>Overzicht van lengtes</h3>{histogram(_length_hist)}",
         "cs": "<h3>Přehled délky</h3>{histogram(_length_hist)}",
-        "es": "<h3>Resumen de longitudes</h3>{histogram(_length_hist)}"
+        "es": "<h3>Resumen de longitudes</h3>{histogram(_length_hist)}",
+        "ca": "<h3>Resum de la longitud</h3>{histogram(lengthhist)}"
       },
       "condition": "_length_hist!~\\[\\]",
       "id": "Contained routes length hist"
@@ -209,7 +212,8 @@
         "it": "<h3>Riassunto delle difficoltà</h3>{histogram(_difficulty_hist)}",
         "nl": "<h3>Overzicht van moeilijkheidsgraden</h>{histogram(_difficulty_hist)}",
         "cs": "<h3>Přehled hodnocení</h3>{histogram(_difficulty_hist)}",
-        "es": "<h3>Resumen de grados</h3>{histogram(_difficulty_hist)}"
+        "es": "<h3>Resumen de grados</h3>{histogram(_difficulty_hist)}",
+        "ca": "<h3>Resum de les qualificacions</h3>{histogram(dificultat)}"
       },
       "condition": "_difficulty_hist!~\\[\\]",
       "id": "Contained routes hist"
@@ -251,7 +255,8 @@
         "fr": "Quel est le nom de ce site ?",
         "it": "Qual è il nome di questa opportunità di arrampicata?",
         "cs": "Jak se jmenuje tato lezecká příležitost?",
-        "es": "¿Cuál es el nombre de esta posibilidad de escalada?"
+        "es": "¿Cuál es el nombre de esta posibilidad de escalada?",
+        "ca": "Quin és el nom d'aquesta oportunitat d'escalada?"
       },
       "freeform": {
         "key": "name"
@@ -272,7 +277,8 @@
             "fr": "Ce site n’a pas de nom",
             "it": "Questa opportunità di arrampicata non ha un nome",
             "cs": "Tato lezecká příležitost nemá jméno",
-            "es": "Esta posibilidad de escalada no tiene nombre"
+            "es": "Esta posibilidad de escalada no tiene nombre",
+            "ca": "Aquesta oportunitat d'escalada no té nom"
           }
         }
       ],
@@ -303,7 +309,8 @@
             "de": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten",
             "nl": "Een klimzone - een enkele rots of klif met klimroutes",
             "cs": "Lezecká skála - jediná skála nebo útes s alespoň několika lezeckými cestami",
-            "es": "Una pared de escalada - una sola roca o acantilado con al menos algunas vías de escalada"
+            "es": "Una pared de escalada - una sola roca o acantilado con al menos algunas vías de escalada",
+            "ca": "Un cinglera d'escalada - una sola roca o penya-segat amb almenys unes quantes rutes d'escalada"
           }
         },
         {
@@ -312,7 +319,8 @@
             "en": "A climbing area with one or more climbing crags and/or boulders",
             "de": "Ein Klettergebiet mit einem oder meheren Kletter- und/oder Boulderfelsen",
             "es": "Un área de escalada con una o más paredes y/o bloques de escalada",
-            "nl": "Een klimgebied met een of meer klimrotsen en/of boulders"
+            "nl": "Een klimgebied met een of meer klimrotsen en/of boulders",
+            "ca": "Una zona d'escalada amb un o més penya-segats i/o roques"
           }
         }
       ],

@@ -169,7 +169,9 @@
         "hidden"
       ],
       "render": {
-        "en": "{addr:street} <b>{addr:housenumber}</b> {addr:unit}"
+        "en": "{addr:street} <b>{addr:housenumber}</b> {addr:unit}",
+        "ca": "{addr:street} <b>{addr:housenumber}</b> {addr:unit}",
+        "de": "{addr:street} <b>{addr:housenumber}</b> {addr:unit}"
       },
       "mappings": [
         {
@@ -182,7 +184,9 @@
           },
           "then": {
             "en": "No address is known",
-            "nl": "Geen adresgegevens bekend"
+            "nl": "Geen adresgegevens bekend",
+            "ca": "No es coneix cap adreça",
+            "de": "Adresse unbekannt"
           }
         }
       ]
@@ -334,7 +338,9 @@
         "uk": "На якій вулиці знаходиться ця адреса?"
       },
       "questionHint": {
-        "en": "Do not include the house number"
+        "en": "Do not include the house number",
+        "ca": "No incloguis el número de casa",
+        "de": "Gib die Hausnummer nicht an"
       },
       "freeform": {
         "inline": false,
@@ -354,11 +360,15 @@
       ],
       "question": {
         "en": "What is the unit number or letter?",
-        "nl": "Wat is het busnummer?"
+        "nl": "Wat is het busnummer?",
+        "ca": "Quin és el número o la lletra de la unitat?",
+        "de": "Wie lautet die Nummer oder der Buchstabe der Einheit?"
       },
       "render": {
         "en": "The unit number is <b>{addr:unit}</b>",
-        "nl": "De bus is <b>{addr:unit}</b>"
+        "nl": "De bus is <b>{addr:unit}</b>",
+        "ca": "El número d'unitat és <b>{addr:unit}</b>",
+        "de": "Die Nummer der Einheit lautet <b>{addr:unit}</b>"
       },
       "freeform": {
         "key": "addr:unit"
@@ -368,7 +378,9 @@
           "if": "addr:unit=",
           "then": {
             "en": "No unit number",
-            "nl": "Geen apart busnummer of letter"
+            "nl": "Geen apart busnummer of letter",
+            "ca": "No hi ha número d'unitat",
+            "de": "Keine Einheitennummer"
           }
         }
       ]

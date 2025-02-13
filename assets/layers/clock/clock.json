@@ -134,14 +134,16 @@
         "nl": "een klok aan een muur, rechtstreeks bevestigd aan een muur",
         "de": "eine Wanduhr, die direkt an der Wand angebracht ist",
         "es": "un reloj, montado directamente en una pared",
-        "cs": "nástěnné hodiny, namontované přímo na stěnu"
+        "cs": "nástěnné hodiny, namontované přímo na stěnu",
+        "ca": "un rellotge muntat a la paret, muntat directament en una paret"
       },
       "description": {
         "en": "A publicly visible clock mounted directly on a wall",
         "nl": "Een publiekelijk zichtbare klok rechtstreeks bevestigd aan een muur",
         "de": "Eine öffentlich sichtbare Uhr, die direkt an einer Wand angebracht ist",
         "es": "Un reloj visible públicamente montado directamente en una pared",
-        "cs": "Veřejně viditelné hodiny namontované přímo na stěnu"
+        "cs": "Veřejně viditelné hodiny namontované přímo na stěnu",
+        "ca": "Un rellotge visible públicament muntat directament en una paret"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -196,7 +198,8 @@
             "nl": "Deze klok is rechtstreeks aan een muur bevestigd",
             "es": "Este reloj está montado directamente en una pared",
             "de": "Diese Uhr ist direkt an einer Wand montiert",
-            "cs": "Tyto hodiny jsou připevněné přímo na zeď"
+            "cs": "Tyto hodiny jsou připevněné přímo na zeď",
+            "ca": "Aquest rellotge està muntat directament en una paret"
           }
         },
         {
@@ -302,7 +305,8 @@
           "nl": "Is deze klok binnen?",
           "de": "Befindet sich diese Uhr in Innenräumen?",
           "es": "¿Este reloj está en el interior?",
-          "cs": "Jsou tyto hodiny uvnitř?"
+          "cs": "Jsou tyto hodiny uvnitř?",
+          "ca": "Aquest rellotge és a l'interior?"
         },
         "mappings": [
           {
@@ -311,7 +315,8 @@
               "nl": "Deze klok is binnen",
               "de": "Diese Uhr befindet sich in Innenräumen",
               "es": "Este reloj está en un espacio interior",
-              "cs": "Tyto hodiny jsou uvnitř"
+              "cs": "Tyto hodiny jsou uvnitř",
+              "ca": "Aquest rellotge és interior"
             }
           },
           {
@@ -321,7 +326,8 @@
               "nl": "Deze klok is buiten",
               "de": "Diese Uhr ist im Freien",
               "es": "Este reloj está en un espacio exterior",
-              "cs": "Tyto hodiny jsou venku"
+              "cs": "Tyto hodiny jsou venku",
+              "ca": "Aquest rellotge és a l'aire lliure"
             }
           }
         ]

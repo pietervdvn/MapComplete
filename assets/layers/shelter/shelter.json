@@ -13,7 +13,8 @@
     "en": "Layer showing shelter structures",
     "de": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt",
     "cs": "Vrstva zobrazující přístřešky",
-    "es": "Capa que muestra estructuras de refugio"
+    "es": "Capa que muestra estructuras de refugio",
+    "ca": "Capa que mostra estructures de refugi"
   },
   "source": {
     "osmTags": {
@@ -60,7 +61,8 @@
             "nl": "Dit is een schuilplaats bij een halte voor openbaar vervoer.",
             "cs": "Jedná se o přístřešek u zastávky MHD.",
             "uk": "Це притулок на зупинці громадського транспорту.",
-            "es": "Este es un refugio en una parada de transporte público."
+            "es": "Este es un refugio en una parada de transporte público.",
+            "ca": "Es tracta d'un refugi en una parada de transport públic."
           }
         },
         {
@@ -70,7 +72,8 @@
             "de": "Dies ist ein Unterstand zum Schutz vor Regen auf einem Picknickplatz.",
             "cs": "Jedná se o přístřešek chránící před deštěm na piknikovém místě.",
             "uk": "Це накриття, що захищає від дощу на місці для пікніка.",
-            "es": "Este es un refugio que protege de la lluvia en un área de picnic."
+            "es": "Este es un refugio que protege de la lluvia en un área de picnic.",
+            "ca": "Es tracta d'un refugi que protegeix de la pluja en un lloc de pícnic."
           }
         },
         {
@@ -80,7 +83,8 @@
             "de": "Das ist ein offener Gartenpavillon.",
             "cs": "Toto je altán.",
             "uk": "Це альтанка.",
-            "es": "Este es un cenador."
+            "es": "Este es un cenador.",
+            "ca": "Això és una glorieta."
           }
         },
         {
@@ -112,7 +116,8 @@
             "de": "Das ist ein Pavillon",
             "cs": "Toto je pavilon",
             "uk": "Це павільйон",
-            "es": "Este es un pabellón"
+            "es": "Este es un pabellón",
+            "ca": "Aquest és un pavelló"
           }
         },
         {
@@ -134,7 +139,8 @@
         "de": "Art des Unterstands: {shelter_type}",
         "cs": "Typ přístřešku: {shelter_type}",
         "uk": "Тип притулку: {shelter_type}",
-        "es": "Tipo de refugio: {shelter_type}"
+        "es": "Tipo de refugio: {shelter_type}",
+        "ca": "Tipus de refugi: {shelter_type}"
       },
       "freeform": {
         "key": "shelter_type",
@@ -150,6 +156,7 @@
     "en": "a shelter",
     "de": "ein Unterstand",
     "es": "un refugio",
-    "cs": "úkryt"
+    "cs": "úkryt",
+    "ca": "un refugi"
   }
 }

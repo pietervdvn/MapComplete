@@ -586,7 +586,8 @@
             "nl": "IJs wordt verkocht",
             "de": "Speiseeis wird verkauft",
             "es": "Se venden helados",
-            "uk": "Морозиво"
+            "uk": "Морозиво",
+            "ca": "Es ven gelat"
           },
           "icon": "./assets/layers/ice_cream/ice_cream.svg"
         },
@@ -994,7 +995,8 @@
               "en": "bicycle light",
               "nl": "een fietslichtje",
               "de": "Fahrradlicht",
-              "es": "luz para bicicleta"
+              "es": "luz para bicicleta",
+              "ca": "llum de la bicicleta"
             }
           ],
           [
@@ -1313,7 +1315,8 @@
             "en": "Sale of ice cream",
             "nl": "Verkoop van ijs",
             "de": "Verkauf von Speiseeis",
-            "es": "Venta de helados"
+            "es": "Venta de helados",
+            "ca": "Venda de gelat"
           },
           "osmTags": "vending~i~.*ice_cream.*"
         },

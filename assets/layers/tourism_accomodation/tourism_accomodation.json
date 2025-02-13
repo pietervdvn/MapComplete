@@ -4,13 +4,15 @@
     "en": "Tourism accomodation",
     "de": "Touristische Unterkunft",
     "nl": "Accomodatie voor toeristen",
-    "es": "Alojamientos turísticos"
+    "es": "Alojamientos turísticos",
+    "ca": "Allotjament turístic"
   },
   "description": {
     "en": "Various types of lodging facilities",
     "de": "Verschiedene Arten von Unterkünften",
     "nl": "Verschillende soorten overnachtingsmogelijkheden voor toeristen",
-    "es": "Varios tipos de alojamientos"
+    "es": "Varios tipos de alojamientos",
+    "ca": "Diversos tipus d'allotjaments"
   },
   "minzoom": 12,
   "title": {
@@ -34,7 +36,8 @@
           "en": "Hostel {name}",
           "de": "Hostel {name}",
           "nl": "Herberg {name}",
-          "es": "Hostal {name}"
+          "es": "Hostal {name}",
+          "ca": "Hostel {name}"
         }
       },
       {
@@ -43,7 +46,8 @@
           "en": "B&B {name}",
           "de": "B&B {name}",
           "nl": "B&B {name}",
-          "es": "B&B {name}"
+          "es": "B&B {name}",
+          "ca": "BB {name}"
         }
       },
       {
@@ -51,7 +55,8 @@
         "then": {
           "en": "Guest house {name}",
           "de": "Ferienhaus {name}",
-          "es": "Pensión {name}"
+          "es": "Pensión {name}",
+          "ca": "Casa de convidats {name}"
         }
       },
       {
@@ -59,7 +64,8 @@
         "then": {
           "en": "Motel {name}",
           "de": "Motel {name}",
-          "es": "Motel {name}"
+          "es": "Motel {name}",
+          "ca": "Motel {name}"
         }
       },
       {
@@ -67,7 +73,8 @@
         "then": {
           "en": "Apartment {name}",
           "de": "Ferienwohnung {name}",
-          "es": "Apartamento {name}"
+          "es": "Apartamento {name}",
+          "ca": "Apartament {name}"
         }
       },
       {
@@ -75,14 +82,16 @@
         "then": {
           "en": "Vacation home {name}",
           "de": "Ferienhaus {name}",
-          "es": "Casa de vacaciones {name}"
+          "es": "Casa de vacaciones {name}",
+          "ca": "Inici de vacances {name}"
         }
       }
     ],
     "render": {
       "en": "Tourist accomodation {name}",
       "de": "Touristenunterkunft {name}",
-      "es": "Alojamiento turístico {name}"
+      "es": "Alojamiento turístico {name}",
+      "ca": "Allotjament turístic {name}"
     }
   },
   "pointRendering": [
@@ -154,7 +163,8 @@
         "en": "A  hotel is an establishment that provides paid lodging, usually on a short-term basis. Rooms are not shared with strangers.",
         "de": "Ein Hotel ist eine Einrichtung, die eine bezahlte Unterkunft anbietet, in der Regel für einen kurzen Zeitraum. Die Zimmer werden nicht mit Fremden geteilt.",
         "nl": "En hotel is een gebouw waar je tegen betaling kan overnachten voor een korte periode. Je krijgt je eigen kamer.",
-        "es": "Un hotel es un establecimiento que proporciona alojamiento de pago, generalmente a corto plazo. Las habitaciones no se comparten con desconocidos."
+        "es": "Un hotel es un establecimiento que proporciona alojamiento de pago, generalmente a corto plazo. Las habitaciones no se comparten con desconocidos.",
+        "ca": "Un hotel és un establiment que ofereix allotjament de pagament, normalment a curt termini. Les habitacions no són compartides amb estranys."
       },
       "tags": [
         "tourism=hotel"
@@ -168,13 +178,15 @@
         "en": "a hostel",
         "de": "Ein Hostel",
         "nl": "een herberg",
-        "es": "un hostal"
+        "es": "un hostal",
+        "ca": "un hostal"
       },
       "description": {
         "en": "A hostel is a type of tourist accommodation where people can sleep in a room shared with strangers",
         "de": "Ein Hostel ist eine Art von Touristenherberge, in der man in einem Zimmer schlafen kann, das man mit Fremden teilt",
         "nl": "Een herberg is een gebouw waar je enkele dagen kan blijven. Je deelt een kamer met onbekenden.",
-        "es": "Un hostal es un tipo de alojamiento turístico donde las personas pueden dormir en una habitación compartida con desconocidos"
+        "es": "Un hostal es un tipo de alojamiento turístico donde las personas pueden dormir en una habitación compartida con desconocidos",
+        "ca": "Un hostal és un tipus d'allotjament turístic on la gent pot dormir en una habitació compartida amb estranys"
       }
     },
     {
@@ -185,13 +197,15 @@
         "en": "a vacation apartment",
         "de": "eine Ferienwohnung",
         "nl": "een vakantie-appartement",
-        "es": "un apartamento de vacaciones"
+        "es": "un apartamento de vacaciones",
+        "ca": "un apartament de vacances"
       },
       "description": {
         "en": "A furnished apartment or flat with cooking and bathroom facilities in a shared building that can be rented for vacations, typically without breakfast or reception desk",
         "de": "Ein möbliertes Appartement oder eine Wohnung mit Kochgelegenheit und Bad in einem Gemeinschaftsgebäude, das für Ferienzwecke gemietet werden kann, normalerweise ohne Frühstück oder Rezeption",
         "nl": "Een bemeubeld apparement met kookgelegenheid en een badkamer in een groter gebouw. Het appartement kan gehuurd worden voor vakanties. Er is geen receptie of ontbijt voorzien.",
-        "es": "Un apartamento o piso amueblado con cocina y baño en un edificio compartido que se puede alquilar para vacaciones, normalmente sin desayuno ni recepción"
+        "es": "Un apartamento o piso amueblado con cocina y baño en un edificio compartido que se puede alquilar para vacaciones, normalmente sin desayuno ni recepción",
+        "ca": "Un apartament moblat o pis amb cuina i bany instal·lacions en un edifici compartit que es pot llogar per vacances, típicament sense esmorzar o recepció"
       }
     },
     {
@@ -201,12 +215,14 @@
       "title": {
         "en": "a vacation chalet",
         "de": "ein Ferienchalet",
-        "es": "un chalet de vacaciones"
+        "es": "un chalet de vacaciones",
+        "ca": "un xalet de vacances"
       },
       "description": {
         "en": "A holiday cottage or vacation home with cooking and bathroom facilities that can be rented for holiday vacations, typically without breakfast or reception desk",
         "de": "Ein Ferienhaus oder eine Ferienwohnung mit Kochgelegenheit und Bad, das bzw. die für Ferienaufenthalte gemietet werden kann, in der Regel ohne Frühstück oder Rezeption",
-        "es": "Una casa de vacaciones o chalet con cocina y baño que se puede alquilar para vacaciones, normalmente sin desayuno ni recepción"
+        "es": "Una casa de vacaciones o chalet con cocina y baño que se puede alquilar para vacaciones, normalmente sin desayuno ni recepción",
+        "ca": "Una casa de vacances o casa de vacances amb instal·lacions de cuina i bany que es poden llogar per vacances, normalment sense esmorzar o recepció"
       }
     },
     {
@@ -217,12 +233,14 @@
         "en": "a motel",
         "de": "ein Motel",
         "nl": "een motel",
-        "es": "un motel"
+        "es": "un motel",
+        "ca": "un motel"
       },
       "description": {
         "en": "A motel is an establishment that provides paid lodging, usually on a short-term basis, with convenient parking for motor cars at or close to the room. They are typically cheaper then a hotel",
         "de": "Ein Motel ist eine Einrichtung, die eine bezahlte Unterkunft anbietet, in der Regel für kurze Zeit, mit bequemen Parkplätzen für Kraftfahrzeuge am oder in der Nähe des Zimmers. Sie sind in der Regel billiger als ein Hotel",
-        "es": "Un motel es un establecimiento que proporciona alojamiento de pago, generalmente a corto plazo, con estacionamiento conveniente para automóviles en o cerca de la habitación. Suelen ser más baratos que un hotel"
+        "es": "Un motel es un establecimiento que proporciona alojamiento de pago, generalmente a corto plazo, con estacionamiento conveniente para automóviles en o cerca de la habitación. Suelen ser más baratos que un hotel",
+        "ca": "Un motel és un establiment que ofereix allotjament de pagament, normalment a curt termini, amb un còmode aparcament per a cotxes de motor a o prop de l'habitació. Normalment són més barats, després un hotel"
       }
     },
     {
@@ -233,12 +251,14 @@
       "title": {
         "en": "a bed-and-breakfast",
         "de": "eine Frühstückspension",
-        "es": "un bed-and-breakfast"
+        "es": "un bed-and-breakfast",
+        "ca": "un llit i un trencament"
       },
       "description": {
         "en": "A bed-and-breakfast in a guesthouse is a small lodging establishment. These are often a few rooms within a private family home where the owners also accommodate the guests. There is no reception desk, nor is there staff at all times. In some cases, check-in happens remotely by sharing a code to get in.",
         "de": "Ein Bed-and-Breakfast in einem Gästehaus ist ein kleiner Beherbergungsbetrieb. Oft handelt es sich um einige Zimmer in einem Privathaus, in dem die Eigentümer auch die Gäste beherbergen. Es gibt keine Rezeption und es ist auch nicht ständig Personal anwesend. In einigen Fällen erfolgt das Einchecken aus der Ferne, indem ein Zugangscode mitgeteilt wird.",
-        "es": "Un bed-and-breakfast en una pensión es un pequeño establecimiento de alojamiento. A menudo son unas pocas habitaciones dentro de una casa familiar privada donde los propietarios también alojan a los huéspedes. No hay recepción ni personal en todo momento. En algunos casos, el check-in se realiza de forma remota compartiendo un código para entrar."
+        "es": "Un bed-and-breakfast en una pensión es un pequeño establecimiento de alojamiento. A menudo son unas pocas habitaciones dentro de una casa familiar privada donde los propietarios también alojan a los huéspedes. No hay recepción ni personal en todo momento. En algunos casos, el check-in se realiza de forma remota compartiendo un código para entrar.",
+        "ca": "Un bed-and-breakfast en una casa d'hostes és un petit establiment d'allotjament. Sovint es tracta d'unes poques habitacions dins d'una casa familiar privada on els propietaris també s'allotgen als hostes. No hi ha recepció, ni personal en tot moment. En alguns casos, el check-in passa remotament compartint un codi per entrar."
       }
     },
     {
@@ -248,7 +268,8 @@
       "title": {
         "en": "a small-scale lodging facility, typically operated by the owner",
         "de": "eine kleine Beherbergungseinrichtung, die in der Regel vom Eigentümer betrieben wird",
-        "es": "un alojamiento a pequeña escala, normalmente operado por el propietario"
+        "es": "un alojamiento a pequeña escala, normalmente operado por el propietario",
+        "ca": "una instal·lació d'allotjament a petita escala, típicament operada pel propietari"
       }
     },
     {
@@ -258,7 +279,8 @@
       "title": {
         "en": "a camp site or camp ground",
         "de": "een kempeerterrein",
-        "es": "un camping o área de acampada"
+        "es": "un camping o área de acampada",
+        "ca": "un camp o camp"
       }
     }
   ],
@@ -271,13 +293,15 @@
         "en": "What is the name of this {title()}?",
         "de": "Wie lautet der Name von {title()}?",
         "nl": "Wat is de naam van deze {title()}",
-        "es": "¿Cuál es el nombre de este {title()}?"
+        "es": "¿Cuál es el nombre de este {title()}?",
+        "ca": "Quin és el nom d'aquest {title()}?"
       },
       "render": {
         "en": "{name}",
         "de": "{name}",
         "nl": "{name}",
-        "es": "{name}"
+        "es": "{name}",
+        "ca": "{name}"
       },
       "freeform": {
         "key": "name"
@@ -299,7 +323,8 @@
             "en": "All types",
             "de": "Alle Arten",
             "nl": "Alle types",
-            "es": "Todos los tipos"
+            "es": "Todos los tipos",
+            "ca": "Tots els tipus"
           }
         },
         {
@@ -308,7 +333,8 @@
             "en": "Hotels",
             "de": "Hotels",
             "nl": "Hotels",
-            "es": "Hoteles"
+            "es": "Hoteles",
+            "ca": "Hotels"
           }
         },
         {
@@ -317,7 +343,8 @@
             "en": "Hostels",
             "de": "Hostels / Herbergen",
             "nl": "Hostels",
-            "es": "Hostales"
+            "es": "Hostales",
+            "ca": "Albergs"
           }
         },
         {
@@ -326,7 +353,8 @@
             "en": "Guest houses and Bed&Breakfasts",
             "de": "Gasthäuser und Bed & Breakfasts",
             "nl": "Gastenkamers en bed-en-breakfasts",
-            "es": "Pensiones y Bed&Breakfast"
+            "es": "Pensiones y Bed&Breakfast",
+            "ca": "Cases d'hostes i BedBreakfasts"
           }
         },
         {
@@ -335,7 +363,8 @@
             "en": "Motels",
             "de": "Motels",
             "nl": "Motels",
-            "es": "Moteles"
+            "es": "Moteles",
+            "ca": "Motels"
           }
         },
         {
@@ -344,7 +373,8 @@
             "en": "Vacation home",
             "de": "Ferienhaus",
             "nl": "Vakantiehuisje",
-            "es": "Casa de vacaciones"
+            "es": "Casa de vacaciones",
+            "ca": "Vacances a casa"
           }
         },
         {
@@ -353,7 +383,8 @@
             "en": "Vacation apartment",
             "de": "Ferienwohnung",
             "nl": "Vakantie-appartement",
-            "es": "Apartamento de vacaciones"
+            "es": "Apartamento de vacaciones",
+            "ca": "Apartament de vacances"
           }
         }
       ]

@@ -3,11 +3,13 @@
   "name": {
     "en": "Dog toilets",
     "de": "Hundetoiletten",
-    "uk": "Собачі туалети"
+    "uk": "Собачі туалети",
+    "ca": "Vàters per a gossos"
   },
   "description": {
     "en": "A dog toilet is a facility designated for dogs to urinate and excrete. This can be a designated, signposted patch of grass, a sand pit or a fenced area.",
-    "de": "Eine Hundetoilette ist eine Einrichtung, die für das Urinieren und die Ausscheidung von Hunden vorgesehen ist. Dabei kann es sich um eine ausgewiesene, ausgeschilderte Rasenfläche, eine Sandgrube oder einen eingezäunten Bereich handeln."
+    "de": "Eine Hundetoilette ist eine Einrichtung, die für das Urinieren und die Ausscheidung von Hunden vorgesehen ist. Dabei kann es sich um eine ausgewiesene, ausgeschilderte Rasenfläche, eine Sandgrube oder einen eingezäunten Bereich handeln.",
+    "ca": "Un vàter de gos és una instal·lació designada per a gossos per orinar i excretar. Aquest pot ser un pegat d'herba designat i senyalitzat, un pou de sorra o una zona tancada."
   },
   "source": {
     "osmTags": "amenity=dog_toilet"
@@ -16,7 +18,8 @@
   "title": {
     "render": {
       "en": "Dog toilet",
-      "de": "Hundetoilette"
+      "de": "Hundetoilette",
+      "ca": "Vàter per a gossos"
     }
   },
   "pointRendering": [
@@ -36,7 +39,8 @@
     {
       "title": {
         "en": "a dog toilet",
-        "de": "eine Hundetoilette"
+        "de": "eine Hundetoilette",
+        "ca": "un lavabo de gossos"
       },
       "tags": [
         "amenity=dog_toilet"
@@ -49,7 +53,8 @@
       "id": "barrier",
       "question": {
         "en": "Is this dog toilet fenced?",
-        "de": "Ist diese Hundetoilette eingezäunt?"
+        "de": "Ist diese Hundetoilette eingezäunt?",
+        "ca": "Està tancat aquest vàter de gos?"
       },
       "mappings": [
         {
@@ -59,7 +64,8 @@
           ],
           "then": {
             "en": "There is a fence around this dog toilet",
-            "de": "Diese Hundetoilette ist eingezäunt"
+            "de": "Diese Hundetoilette ist eingezäunt",
+            "ca": "Hi ha una tanca al voltant d'aquest vàter per a gossos"
           }
         },
         {
@@ -69,7 +75,8 @@
           ],
           "then": {
             "en": "There is a hedge around this dog toilet",
-            "de": "Diese Hundetoilette ist von einer Hecke umgeben"
+            "de": "Diese Hundetoilette ist von einer Hecke umgeben",
+            "ca": "Hi ha una tanca al voltant d'aquest vàter de gos"
           }
         },
         {
@@ -79,7 +86,8 @@
           ],
           "then": {
             "en": "There is a barrier around this dog toilet",
-            "de": "Um diese Hundetoilette herum befindet sich eine Barriere"
+            "de": "Um diese Hundetoilette herum befindet sich eine Barriere",
+            "ca": "Hi ha una barrera al voltant d'aquest vàter per a gossos"
           }
         },
         {
@@ -89,7 +97,8 @@
           ],
           "then": {
             "en": "There is no barrier around this dog toilet",
-            "de": "Es gibt keine Barriere um diese Hundetoilette herum"
+            "de": "Es gibt keine Barriere um diese Hundetoilette herum",
+            "ca": "No hi ha cap barrera al voltant d'aquest vàter per a gossos"
           }
         }
       ]

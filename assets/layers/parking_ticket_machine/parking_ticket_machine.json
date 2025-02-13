@@ -5,7 +5,8 @@
     "nl": "Parkeerkaartautomaten",
     "de": "Parkscheinautomaten",
     "cs": "Parkovací automaty",
-    "es": "Máquinas de Tickets de Aparcamiento"
+    "es": "Máquinas de Tickets de Aparcamiento",
+    "ca": "Màquines de tiquets d'aparcament"
   },
   "description": {
     "en": "Layer with parking ticket machines to pay for parking.",

@@ -3,7 +3,8 @@
   "description": {
     "en": "Library layer with all common units.  Units can _only_ be imported from this file.",
     "de": "Bibliotheksebene mit allen gängigen Einrichtungen.  Einrichtungen können _nur_ aus dieser Datei importiert werden.",
-    "es": "Capa de biblioteca con todas las unidades comunes. Las unidades solo se pueden importar de este archivo."
+    "es": "Capa de biblioteca con todas las unidades comunes. Las unidades solo se pueden importar de este archivo.",
+    "ca": "Capa de biblioteca amb totes les unitats comunes.  Les unitats només es poden importar des d'aquest fitxer."
   },
   "source": "special:library",
   "pointRendering": null,
@@ -125,7 +126,8 @@
             "nl": "{quantity} volt",
             "de": "{quantity} Volt",
             "hu": "{quantity} Volt",
-            "es": "{quantity} voltios"
+            "es": "{quantity} voltios",
+            "ca": "{quantity} Volt"
           }
         }
       ],
@@ -437,7 +439,8 @@
             "de": "ein Tag",
             "fr": "un jour",
             "hu": "egy nap",
-            "es": "un día"
+            "es": "un día",
+            "ca": "un dia"
           }
         },
         {
@@ -450,7 +453,8 @@
             "de": "ein Woche",
             "fr": "une semaine",
             "hu": "egy hét",
-            "es": "una semana"
+            "es": "una semana",
+            "ca": "una setmana"
           },
           "human": {
             "en": "{quantity} weeks",
@@ -458,7 +462,8 @@
             "de": "{quantity} Wochen",
             "fr": "{quantity} semaines",
             "hu": "{quantity} hét",
-            "es": "{quantity} semanas"
+            "es": "{quantity} semanas",
+            "ca": "{quantity} setmanes"
           }
         },
         {
@@ -471,7 +476,8 @@
             "de": "ein Monat",
             "fr": "un mois",
             "hu": "egy hónap",
-            "es": "un mes"
+            "es": "un mes",
+            "ca": "un mes"
           },
           "human": {
             "en": "{quantity} months",
@@ -479,7 +485,8 @@
             "de": "{quantity} Monate",
             "fr": "{quantity} mois",
             "hu": "{quantity} hónap",
-            "es": "{quantity} meses"
+            "es": "{quantity} meses",
+            "ca": "{quantity} mesos"
           }
         },
         {

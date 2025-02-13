@@ -3,12 +3,14 @@
   "name": {
     "en": "Police stations",
     "de": "Polizeiwachen",
-    "es": "Comisarías de Policía"
+    "es": "Comisarías de Policía",
+    "ca": "Comissaries"
   },
   "description": {
     "en": "Many types of police facilities ",
     "de": "Verschiedene Polizeieinrichtungen ",
-    "es": "Muchos tipos de instalaciones policiales "
+    "es": "Muchos tipos de instalaciones policiales ",
+    "ca": "Molts tipus d'instal·lacions policials "
   },
   "source": {
     "osmTags": {
@@ -23,7 +25,8 @@
     "render": {
       "en": "{name}",
       "de": "{name}",
-      "es": "{name}"
+      "es": "{name}",
+      "ca": "{name}"
     }
   },
   "pointRendering": [
@@ -88,12 +91,14 @@
       "title": {
         "en": "a police checkpoint",
         "de": "eine Polizeikontrolle",
-        "es": "un puesto de control policial"
+        "es": "un puesto de control policial",
+        "ca": "un punt de control policial"
       },
       "description": {
         "en": "A place where police performs checks on travelling people",
         "de": "Ein Ort, an dem die Polizei Kontrollen von Reisenden durchführt",
-        "es": "Un lugar donde la policía realiza controles a las personas que viajan"
+        "es": "Un lugar donde la policía realiza controles a las personas que viajan",
+        "ca": "Un lloc on la policia fa controls a les persones que viatgen"
       }
     },
     {
@@ -103,12 +108,14 @@
       "title": {
         "en": "an administrative, police backoffice",
         "de": "ein Verwaltungsbüro der Polizei",
-        "es": "una oficina administrativa policial"
+        "es": "una oficina administrativa policial",
+        "ca": "un backoffice administratiu i policial"
       },
       "description": {
         "en": "An administrative police office without services for the general public.",
         "de": "Ein Verwaltungsbüro der Polizei ohne Dienstleistungen für die Allgemeinheit.",
-        "es": "Una oficina administrativa de policía sin servicios para el público en general."
+        "es": "Una oficina administrativa de policía sin servicios para el público en general.",
+        "ca": "Una oficina administrativa de policia sense serveis per al públic en general."
       }
     },
     {
@@ -119,7 +126,8 @@
       "description": {
         "en": "A jail run by the police without public services. People are detained here for a short time (at most a few days), e.g. for small misdemeanors, disturbance of the public order or awaiting a trial",
         "de": "Ein von der Polizei betriebenes Gefängnis ohne öffentliche Dienstleistungen. Hier werden Menschen für kurze Zeit (höchstens ein paar Tage) inhaftiert, z. B. wegen kleinerer Vergehen, Störung der öffentlichen Ordnung oder in Erwartung eines Gerichtsverfahrens",
-        "es": "Una cárcel dirigida por la policía sin servicios públicos. Las personas son detenidas aquí por un corto tiempo (como máximo unos pocos días), por ejemplo, por pequeños delitos menores, alteración del orden público o a la espera de un juicio"
+        "es": "Una cárcel dirigida por la policía sin servicios públicos. Las personas son detenidas aquí por un corto tiempo (como máximo unos pocos días), por ejemplo, por pequeños delitos menores, alteración del orden público o a la espera de un juicio",
+        "ca": "Una presó dirigida per la policia sense serveis públics. Hi ha persones detingudes aquí durant un temps curt (com a màxim uns dies), per exemple, per petites faltes, pertorbacions de l'ordre públic o esperant un judici"
       }
     },
     {
@@ -130,7 +138,8 @@
       "description": {
         "en": "A naval or maritime base for the maritime police; often with a pier and police boats nearby",
         "de": "Ein Stützpunkt für die Schifffahrtspolizei; oft mit einem Anleger und Polizeibooten in der Nähe",
-        "es": "Una base naval o marítima para la policía marítima; a menudo con un muelle y barcos de policía cercanos"
+        "es": "Una base naval o marítima para la policía marítima; a menudo con un muelle y barcos de policía cercanos",
+        "ca": "Una base naval o marítima per a la policia marítima; sovint amb un moll i vaixells de policia a prop"
       }
     }
   ],
@@ -141,13 +150,15 @@
       "question": {
         "en": "What is the name of this police facility?",
         "de": "Wie lautet der Name der Polizeieinrichtung?",
-        "es": "¿Cuál es el nombre de esta instalación policial?"
+        "es": "¿Cuál es el nombre de esta instalación policial?",
+        "ca": "Quin és el nom d'aquesta instal·lació policial?"
       },
       "id": "police_name",
       "render": {
         "en": "<b>{name}</b>",
         "de": "<b>{name}</b>",
-        "es": "<b>{name}</b>"
+        "es": "<b>{name}</b>",
+        "ca": "<b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -160,7 +171,8 @@
       "question": {
         "en": "Does this police office have detention facilities?",
         "de": "Verfügt die Polizeidienststelle über Gewahrsamsräume?",
-        "es": "¿Tiene esta oficina de policía instalaciones de detención?"
+        "es": "¿Tiene esta oficina de policía instalaciones de detención?",
+        "ca": "Té aquesta oficina policial instal·lacions de detenció?"
       },
       "filter": true,
       "id": "4_z2nrdhy6tyyh4fd",
@@ -172,7 +184,8 @@
           "then": {
             "en": "This police office has some cells to detain people",
             "de": "Die Polizeidienststelle hat Zellen für die Inhaftierung von Personen",
-            "es": "Esta oficina de policía tiene algunas celdas para detener personas"
+            "es": "Esta oficina de policía tiene algunas celdas para detener personas",
+            "ca": "Aquesta oficina de policia té algunes cel·les per detenir persones"
           }
         },
         {
@@ -180,7 +193,8 @@
           "then": {
             "en": "This police office does not have cells to detain people",
             "de": "Die Polizeidienststelle hat keine Zellen für die Inhaftierung von Personen",
-            "es": "Esta oficina de policía no tiene celdas para detener personas"
+            "es": "Esta oficina de policía no tiene celdas para detener personas",
+            "ca": "Aquesta oficina de policia no té cel·les per detenir persones"
           }
         }
       ]

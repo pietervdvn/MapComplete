@@ -6,7 +6,8 @@
     "de": "Pfade, autofreie und geschwindigkeitsreduzierte Straßen",
     "fr": "Chemins, routes non carrossables et routes à vitesse réduite",
     "es": "Senderos, caminos lentos y sin coches",
-    "cs": "Stezky, silnice bez aut a pomalé cesty"
+    "cs": "Stezky, silnice bez aut a pomalé cesty",
+    "ca": "Camins, carreteres sense cotxes i lentes"
   },
   "description": {
     "en": "All carfree roads",
@@ -41,7 +42,8 @@
       "en": "Slow road",
       "nl": "Trage weg",
       "de": "Geschwindigkeitsreduzierte Straße",
-      "es": "Camino lento"
+      "es": "Camino lento",
+      "ca": "Carretera lenta"
     },
     "mappings": [
       {
@@ -57,7 +59,8 @@
           "en": "Footway",
           "nl": "Voetpad",
           "de": "Fußweg",
-          "es": "Acera"
+          "es": "Acera",
+          "ca": "Peu"
         }
       },
       {
@@ -66,7 +69,8 @@
           "en": "Cycleway",
           "nl": "Fietspad",
           "de": "Radweg",
-          "es": "Carril bici"
+          "es": "Carril bici",
+          "ca": "Via Ciclista"
         }
       },
       {
@@ -75,7 +79,8 @@
           "en": "Pedestrian street",
           "nl": "Voetgangersstraat",
           "de": "Fußgängerzone",
-          "es": "Calle peatonal"
+          "es": "Calle peatonal",
+          "ca": "Carrer de vianants"
         }
       },
       {
@@ -84,7 +89,8 @@
           "en": "Living street",
           "nl": "Woonerf",
           "de": "Wohnstraße",
-          "es": "Calle residencial"
+          "es": "Calle residencial",
+          "ca": "Carrer viu"
         }
       },
       {
@@ -93,7 +99,8 @@
           "en": "Small path",
           "nl": "Klein pad",
           "de": "Schmaler Pfad",
-          "es": "Sendero pequeño"
+          "es": "Sendero pequeño",
+          "ca": "Camí petit"
         }
       }
     ]
@@ -129,7 +136,8 @@
             "nl": "<div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div>",
             "de": "Dies ist eine Wohnstraße",
             "fr": "C'est une zone de rencontre",
-            "es": "Esta es una calle residencial"
+            "es": "Esta es una calle residencial",
+            "ca": "Aquest és un carrer viu"
           },
           "icon": {
             "path": "./assets/layers/slow_roads/woonerf.svg",
@@ -142,7 +150,8 @@
             "en": "This is a wide, carfree street",
             "nl": "Dit is een brede, autovrije straat",
             "de": "Dies ist eine breite, autofreie Straße",
-            "es": "Esta es una calle ancha sin coches"
+            "es": "Esta es una calle ancha sin coches",
+            "ca": "Aquest és un carrer ample i sense cotxes"
           }
         },
         {
@@ -152,7 +161,8 @@
             "nl": "Dit is een voetpaadje",
             "de": "Dies ist ein Fußweg",
             "fr": "C'est un chemin piéton",
-            "es": "Esta es una acera"
+            "es": "Esta es una acera",
+            "ca": "Aquest és un camí"
           }
         },
         {
@@ -162,7 +172,8 @@
             "nl": "Dit is een wegeltje of bospad",
             "de": "Dies ist ein schmaler Pfad",
             "fr": "C'est un petit sentier",
-            "es": "Este es un sendero pequeño"
+            "es": "Este es un sendero pequeño",
+            "ca": "Aquest és un camí petit"
           }
         },
         {
@@ -172,7 +183,8 @@
             "nl": "Dit is een ruiterswegel",
             "de": "Dies ist ein Reitweg",
             "fr": "C'est une voie équestre",
-            "es": "Este es un camino para cabalgatas"
+            "es": "Este es un camino para cabalgatas",
+            "ca": "Aquest és un camí de ferradura"
           }
         },
         {
@@ -181,7 +193,8 @@
             "en": "This is a land access road",
             "nl": "Dit is een tractorspoor of weg om landbouwgrond te bereikken",
             "de": "Dies ist eine Zufahrtsstraße",
-            "es": "Este es un camino de acceso a terrenos"
+            "es": "Este es un camino de acceso a terrenos",
+            "ca": "Aquesta és una carretera d'accés a la terra"
           }
         }
       ]
@@ -191,7 +204,8 @@
         "en": "What surface does this road have?",
         "nl": "Wat is de wegverharding van dit pad?",
         "de": "Welche Oberfläche hat diese Straße?",
-        "es": "¿Qué superficie tiene este camino?"
+        "es": "¿Qué superficie tiene este camino?",
+        "ca": "Quina superfície té aquesta carretera?"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
@@ -283,7 +297,8 @@
             "de": "Die Oberfläche ist aus <b>Pflastersteinen</b>",
             "es": "La superficie es de <b> adoquines</b>",
             "cs": "Povrch je <b>dlážděný</b>",
-            "uk": "Покриття - <b>бруківка</b>"
+            "uk": "Покриття - <b>бруківка</b>",
+            "ca": "La superfície és de <b>llambordes</b>"
           }
         },
         {
@@ -342,7 +357,8 @@
         "nl": "Is deze weg 's nachts verlicht?",
         "de": "Ist diese Straße nachts beleuchtet?",
         "fr": "Cette route est-elle éclairée la nuit ?",
-        "es": "¿Está iluminado este camino por la noche?"
+        "es": "¿Está iluminado este camino por la noche?",
+        "ca": "Aquest camí està il·luminat de nit?"
       },
       "mappings": [
         {
@@ -355,7 +371,8 @@
             "en": "Not lit",
             "nl": "Niet verlicht",
             "de": "Nicht beleuchtet",
-            "es": "Sin iluminación"
+            "es": "Sin iluminación",
+            "ca": "No il·luminat"
           }
         }
       ]

@@ -48,7 +48,8 @@
       "it": "Palestra di arrampicata",
       "ru": "Комплекс скалолазания",
       "cs": "Lezecká tělocvična",
-      "es": "Gimnasio de escalada"
+      "es": "Gimnasio de escalada",
+      "ca": "Gimnàs d'escalada"
     },
     "mappings": [
       {
@@ -62,7 +63,8 @@
           "it": "Palestra di arrampicata <strong>{name}</strong>",
           "cs": "Lezecká tělocvična <strong>{name}</strong>",
           "es": "Gimnasio de escalada <strong>{name}</strong>",
-          "uk": "Скеледром <strong>{name}</strong>"
+          "uk": "Скеледром <strong>{name}</strong>",
+          "ca": "gimnàs d'escalada <strong>{name}</strong>"
         }
       }
     ]
@@ -107,7 +109,8 @@
         "nl": "Klimzaal",
         "de": "Kletterhalle",
         "cs": "Lezecká tělocvična",
-        "es": "Gimnasio de escalada"
+        "es": "Gimnasio de escalada",
+        "ca": "Gimnàs d'escalada"
       },
       "tags": [
         "leisure=sports_centre",
@@ -130,7 +133,8 @@
         "it": "Qual è il nome di questa palestra di arrampicata?",
         "cs": "Jak se jmenuje tato lezecká tělocvična?",
         "es": "¿Cuál es el nombre de este gimnasio de escalada?",
-        "uk": "Як називається цей скеледром?"
+        "uk": "Як називається цей скеледром?",
+        "ca": "Quin és el nom d'aquest gimnàs d'escalada?"
       },
       "freeform": {
         "key": "name"
@@ -158,7 +162,8 @@
         "de": "Kann man hier Kletterschuhe für die Kletterwand ausleihen?",
         "pl": "Czy można tutaj wypożyczyć buty do wspinaczki?",
         "cs": "Lze si zde půjčit lezeckou obuv?",
-        "es": "¿Se pueden alquilar zapatillas de escalada aquí?"
+        "es": "¿Se pueden alquilar zapatillas de escalada aquí?",
+        "ca": "Es poden llogar sabates d'escalada aquí per utilitzar al gimnàs?"
       },
       "mappings": [
         {
@@ -174,7 +179,8 @@
             "fr": "Les chaussures d'escalade peuvent être empruntées gratuitement ici",
             "de": "Kletterschuhe können hier kostenlos ausgeliehen werden",
             "cs": "Lezeckou obuv si můžete zdarma vypůjčit zde",
-            "es": "Se pueden pedir prestadas zapatillas de escalada gratis aquí"
+            "es": "Se pueden pedir prestadas zapatillas de escalada gratis aquí",
+            "ca": "Les sabates d'escalada es poden demanar en préstec gratuïtament aquí"
           },
           "addExtraTags": [
             "service:climbing_shoes:rental:charge="
@@ -193,7 +199,8 @@
             "fr": "Les chaussures d'escalade peuvent être louées ici pour {service:climbing_shoes:rental:charge}",
             "de": "Kletterschuhe können hier ausgeliehen werden für {service:climbing_shoes:rental:charge}",
             "cs": "Lezeckou obuv si můžete zapůjčit zde za {service:climbing_shoes:rental:charge}",
-            "es": "Se pueden alquilar zapatillas de escalada aquí por {service:climbing_shoes:rental:charge}"
+            "es": "Se pueden alquilar zapatillas de escalada aquí por {service:climbing_shoes:rental:charge}",
+            "ca": "Les sabates d'escalada es poden llogar aquí per {service:climbing_shoes:rental:charge}"
           },
           "hideInAnswer": true
         },
@@ -211,7 +218,8 @@
             "de": "Kletterschuhe können hier ausgeliehen werden",
             "pl": "Można tutaj wypożyczyć buty do wspinaczki",
             "cs": "Lezeckou obuv si můžete půjčit zde",
-            "es": "Se pueden alquilar zapatillas de escalada aquí"
+            "es": "Se pueden alquilar zapatillas de escalada aquí",
+            "ca": "Es poden llogar sabates d'escalada aquí"
           },
           "addExtraTags": [
             "service:climbing_shoes:rental:charge="
@@ -226,7 +234,8 @@
             "de": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden",
             "pl": "<b>Nie</b> można wypożyczyć tutaj butów do wspinaczki",
             "cs": "Lezeckou obuv si zde <b>nemůžete</b> zapůjčit",
-            "es": "No se pueden alquilar zapatillas de escalada aquí"
+            "es": "No se pueden alquilar zapatillas de escalada aquí",
+            "ca": "Les sabates d'escalada poden llogar-se aquí <b>no</b>"
           },
           "addExtraTags": [
             "service:climbing_shoes:rental:fee=",
@@ -243,7 +252,8 @@
         "fr": "Peut-on louer un baudrier d'escalade ici ?",
         "de": "Kann man hier einen Klettergurt für die Kletterwand ausleihen?",
         "cs": "Lze si zde zapůjčit horolezecký postroj?",
-        "es": "¿Se puede alquilar un arnés de escalada aquí?"
+        "es": "¿Se puede alquilar un arnés de escalada aquí?",
+        "ca": "Es pot llogar un arnès d'escalada aquí per utilitzar al gimnàs?"
       },
       "condition": {
         "or": [
@@ -281,7 +291,8 @@
             "fr": "Un baudrier d'escalade peut être emprunté gratuitement ici",
             "de": "Ein Klettergurt kann hier kostenlos ausgeliehen werden",
             "cs": "Lezecký úvazek si můžete zdarma vypůjčit zde",
-            "es": "Se puede pedir prestado un arnés de escalada gratis aquí"
+            "es": "Se puede pedir prestado un arnés de escalada gratis aquí",
+            "ca": "Un arnès d'escalada es pot demanar prestat gratuïtament aquí"
           },
           "addExtraTags": [
             "service:climbing_harness:rental:charge="
@@ -300,7 +311,8 @@
             "fr": "Un baudrier d'escalade peut être loué ici pour {service:climbing_harness:rental:charge}",
             "de": "Ein Klettergurt kann hier ausgeliehen werden für {service:climbing_harness:rental:charge}",
             "cs": "Lezecký postroj si zde můžete zapůjčit za {service:climbing_harness:rental:charge}",
-            "es": "Se puede alquilar un arnés de escalada aquí por {service:climbing_harness:rental:charge}"
+            "es": "Se puede alquilar un arnés de escalada aquí por {service:climbing_harness:rental:charge}",
+            "ca": "Es pot llogar un arnès d'escalada aquí per {service:climbing_harness:rental:charge}"
           },
           "hideInAnswer": true
         },
@@ -312,7 +324,8 @@
             "fr": "Un baudrier d'escalade peut être loué ici",
             "de": "Ein Klettergurt kann hier ausgeliehen werden",
             "cs": "Lezecký postroj si můžete půjčit zde",
-            "es": "Se puede alquilar un arnés de escalada aquí"
+            "es": "Se puede alquilar un arnés de escalada aquí",
+            "ca": "Es pot llogar un arnès d'escalada aquí"
           },
           "addExtraTags": [
             "service:climbing_harness:rental:fee=",
@@ -327,7 +340,8 @@
             "fr": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici",
             "de": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden",
             "cs": "Lezecký úvazek si zde <b>nemůžete</b> zapůjčit",
-            "es": "No se puede alquilar un arnés de escalada aquí"
+            "es": "No se puede alquilar un arnés de escalada aquí",
+            "ca": "Un arnés d'escalada pot <b>no</b> ser llogat aquí"
           },
           "addExtraTags": [
             "service:climbing_harness:rental:fee=",
@@ -341,12 +355,14 @@
       "question": {
         "en": "Are there auto belays for top roping here?",
         "nl": "Zijn hier auto belays voor toprope?",
-        "de": "Gibt es hier Selbstsicherungen  für das Toprope-Klettern?"
+        "de": "Gibt es hier Selbstsicherungen  für das Toprope-Klettern?",
+        "ca": "Hi ha belays automàtics per a la corda superior aquí?"
       },
       "questionHint": {
         "en": "Excluding auto belays that are only for speed climbing",
         "nl": "Autobelays die enkel voor speed zijn, tellen niet mee",
-        "de": "Ausgenommen Selbstsicherungen, die nur für das Speedklettern gedacht sind"
+        "de": "Ausgenommen Selbstsicherungen, die nur für das Speedklettern gedacht sind",
+        "ca": "Excloent els relleus automàtics que només són per a l'escalada de velocitat"
       },
       "condition": {
         "and": [
@@ -364,7 +380,8 @@
           "then": {
             "en": "There are no auto belays for top roping",
             "nl": "Er zijn geen autobelays voor toprope",
-            "de": "Es gibt keine Selbstsicherungen für das Toprope-Klettern"
+            "de": "Es gibt keine Selbstsicherungen für das Toprope-Klettern",
+            "ca": "No hi ha relleus automàtics per a la corda superior"
           }
         },
         {
@@ -372,7 +389,8 @@
           "then": {
             "en": "There are a number of auto belays for top roping",
             "nl": "Er zijn enkele autobelays voor toprope",
-            "de": "Es gibt eine Reihe von Selbstsicherungen für das Toprope-Klettern"
+            "de": "Es gibt eine Reihe von Selbstsicherungen für das Toprope-Klettern",
+            "ca": "Hi ha una sèrie de relleus automàtics per a la corda superior"
           }
         },
         {
@@ -380,7 +398,8 @@
           "then": {
             "en": "There is an auto belay for every top rope route but manual belaying is also possible",
             "nl": "Elke toproperoute kan op autobelay geklommen worden maar handmatig zekeren is ook mogelijk",
-            "de": "Für jede Toprope-Route gibt es eine Selbstsicherung , aber auch manuelles Sichern ist möglich"
+            "de": "Für jede Toprope-Route gibt es eine Selbstsicherung , aber auch manuelles Sichern ist möglich",
+            "ca": "Hi ha un relleu automàtic per a cada ruta de la corda superior, però també és possible el relleu manual"
           }
         },
         {
@@ -388,14 +407,16 @@
           "then": {
             "en": "Top rope routes can only be climbed on auto belay",
             "nl": "Toproperoutes kunnen enkel op autobelay geklommen worden",
-            "de": "Klettersteige können nur mit Selbstsicherung geklettert werden"
+            "de": "Klettersteige können nur mit Selbstsicherung geklettert werden",
+            "ca": "Les rutes de corda més altes només es poden escalar en relleu automàtic"
           }
         }
       ],
       "render": {
         "en": "There are {climbing:autobelay:toprope} auto belay devices for top roping",
         "nl": "Er zijn {climbing:autobelay:toprope} autobelaytoestellen voor toprope",
-        "de": "Es gibt {climbing:autobelay:toprope} Selbstsicherungsgeräte für das Toprope-Klettern"
+        "de": "Es gibt {climbing:autobelay:toprope} Selbstsicherungsgeräte für das Toprope-Klettern",
+        "ca": "Hi ha {climbing:autobelay:toprope} dispositius de relleu automàtic per a cordes superiors"
       }
     },
     {
@@ -403,7 +424,8 @@
       "question": {
         "en": "Are there auto belays for lead climbing here?",
         "nl": "Zijn hier autobelays voor voorklimmen?",
-        "de": "Gibt es hier Selbstsicherungen für das Vorstiegsklettern?"
+        "de": "Gibt es hier Selbstsicherungen für das Vorstiegsklettern?",
+        "ca": "Hi ha rèpliques automàtiques per a l'escalada de plom?"
       },
       "condition": {
         "and": [
@@ -421,7 +443,8 @@
           "then": {
             "en": "There are no auto belays for lead climbing",
             "nl": "Er zijn geen autobelays voor voorklimmen",
-            "de": "Es gibt keine Selbstsicherungen für das Vorstiegsklettern"
+            "de": "Es gibt keine Selbstsicherungen für das Vorstiegsklettern",
+            "ca": "No hi ha relleus automàtics per a l'escalada de plom"
           }
         },
         {
@@ -429,7 +452,8 @@
           "then": {
             "en": "There is a number of auto belays for lead climbing",
             "nl": "Er zijn enkele autobelays voor voorklimmen",
-            "de": "Es gibt eine Reihe von Selbstsicherungen für das Vorstiegsklettern"
+            "de": "Es gibt eine Reihe von Selbstsicherungen für das Vorstiegsklettern",
+            "ca": "Hi ha una sèrie de relleus automàtics per a l'escalada de plom"
           }
         },
         {
@@ -437,14 +461,16 @@
           "then": {
             "en": "There is an auto belay for every lead climbing route",
             "nl": "Elke voorklimroute kan op autobelay geklommen worden",
-            "de": "Für jede Vorstiegskletterroute gibt es eine Selbstsicherung"
+            "de": "Für jede Vorstiegskletterroute gibt es eine Selbstsicherung",
+            "ca": "Hi ha un relleu automàtic per a cada ruta d'escalada de plom"
           }
         }
       ],
       "render": {
         "en": "There are {climbing:autobelay:sport} auto belays for lead climbing",
         "nl": "Er zijn {climbing:autobelay:sport} autobelays voor voorklimmen",
-        "de": "Es gibt {climbing:autobelay:sport} Selbstsicherungen für das Vorstiegsklettern"
+        "de": "Es gibt {climbing:autobelay:sport} Selbstsicherungen für das Vorstiegsklettern",
+        "ca": "Hi ha {climbing:autobelay:sport} relleus automàtics per a l'escalada de plom"
       }
     },
     {
@@ -455,7 +481,8 @@
         "fr": "Peut-on louer un dispositif d'assurage ici ?",
         "de": "Kann man hier ein Sicherungsgerät für die Kletterwand ausleihen?",
         "cs": "Lze si zde půjčit jištění?",
-        "es": "¿Se puede alquilar un dispositivo de aseguramiento aquí?"
+        "es": "¿Se puede alquilar un dispositivo de aseguramiento aquí?",
+        "ca": "Es pot llogar un aparell de belay aquí per utilitzar al gimnàs?"
       },
       "condition": {
         "or": [
@@ -482,7 +509,8 @@
             "fr": "Un dispositif d'assurage est prévu à chaque corde",
             "de": "Jedes Seil hat ein Sicherungsgerät",
             "cs": "U každého lana jsou k dispozici jistící zařízení",
-            "es": "Se proporcionan dispositivos de aseguramiento en cada cuerda"
+            "es": "Se proporcionan dispositivos de aseguramiento en cada cuerda",
+            "ca": "Els dispositius Belay es proporcionen a cada corda"
           },
           "addExtraTags": [
             "service:climbing_belay_device:rental=",
@@ -503,7 +531,8 @@
             "fr": "Un dispositif d'assurage peut être emprunté gratuitement ici",
             "de": "Ein Sicherungsgerät kann hier kostenlos ausgeliehen werden",
             "cs": "Jištění si můžete zdarma vypůjčit zde",
-            "es": "Se puede pedir prestado un dispositivo de aseguramiento gratis aquí"
+            "es": "Se puede pedir prestado un dispositivo de aseguramiento gratis aquí",
+            "ca": "Un dispositiu d'aspiració es pot demanar prestat gratuïtament aquí"
           },
           "addExtraTags": [
             "service:climbing_belay_device:provided_at_each_rope=",
@@ -523,7 +552,8 @@
             "fr": "Un dispositif d'assurage peut être loué ici pour {service:climbing_belay_device:rental:charge}",
             "de": "Ein Sicherungsgerät kann hier ausgeliehen werden für {service:climbing_belay_device:rental:charge}",
             "cs": "Jištění si můžete půjčit zde za {service:climbing_belay_device:rental:charge}",
-            "es": "Se puede alquilar un dispositivo de aseguramiento aquí por {service:climbing_belay_device:rental:charge}"
+            "es": "Se puede alquilar un dispositivo de aseguramiento aquí por {service:climbing_belay_device:rental:charge}",
+            "ca": "Es pot llogar un dispositiu de relleu aquí per {service:climbing_belay_device:rental:charge}"
           },
           "hideInAnswer": true
         },
@@ -535,7 +565,8 @@
             "fr": "Un dispositif d'assurage peut être loué ici",
             "de": "Ein Sicherungsgerät kann hier ausgeliehen werden",
             "cs": "Jištění si můžete zapůjčit zde",
-            "es": "Se puede alquilar un dispositivo de aseguramiento aquí"
+            "es": "Se puede alquilar un dispositivo de aseguramiento aquí",
+            "ca": "Es pot llogar un dispositiu d'aspiració aquí"
           },
           "addExtraTags": [
             "service:climbing_belay_device:provided_at_each_rope=",
@@ -551,7 +582,8 @@
             "fr": "Un dispositif d'assurage ne peut <b>pas</b> être loué ici",
             "de": "Ein Sicherungsgerät kann hier <b>nicht</b> ausgeliehen werden",
             "cs": "Zde si <b>nelze</b> půjčit jištění",
-            "es": "No se puede alquilar un dispositivo de aseguramiento aquí"
+            "es": "No se puede alquilar un dispositivo de aseguramiento aquí",
+            "ca": "Un dispositiu de relleu pot llogar <b>no</b> aquí"
           },
           "addExtraTags": [
             "service:climbing_belay_device:provided_at_each_rope=",
@@ -569,7 +601,8 @@
         "fr": "Peut-on louer une corde d'escalade ici ?",
         "de": "Kann man hier ein Kletterseil für die Kletterwand ausleihen?",
         "cs": "Lze si zde půjčit lezecké lano?",
-        "es": "¿Se puede alquilar una cuerda de escalada aquí?"
+        "es": "¿Se puede alquilar una cuerda de escalada aquí?",
+        "ca": "Es pot llogar una corda d'escalada aquí per utilitzar al gimnàs?"
       },
       "condition": "climbing:sport!=no",
       "mappings": [
@@ -586,7 +619,8 @@
             "fr": "Une corde d'escalade peut être empruntée gratuitement ici",
             "de": "Ein Kletterseil kann hier kostenlos ausgeliehen werden",
             "cs": "Lezecké lano si můžete zdarma vypůjčit zde",
-            "es": "Se puede pedir prestada una cuerda de escalada gratis aquí"
+            "es": "Se puede pedir prestada una cuerda de escalada gratis aquí",
+            "ca": "Una corda d'escalada es pot demanar prestat gratuïtament aquí"
           },
           "addExtraTags": [
             "service:climbing_rope:rental:charge="
@@ -605,7 +639,8 @@
             "fr": "Une corde d'escalade peut être louée ici pour {service:climbing_rope:rental:charge}",
             "de": "Ein Kletterseil kann hier ausgeliehen werden für {service:climbing_rope:rental:charge}",
             "cs": "Za {service:climbing_rope:rental:charge} si zde můžete zapůjčit horolezecké lano",
-            "es": "Se puede alquilar una cuerda de escalada aquí por {service:climbing_rope:rental:charge}"
+            "es": "Se puede alquilar una cuerda de escalada aquí por {service:climbing_rope:rental:charge}",
+            "ca": "Es pot llogar una corda d'escalada aquí per {service:climbing_rope:rental:charge}"
           },
           "hideInAnswer": true
         },
@@ -617,7 +652,8 @@
             "fr": "Une corde d'escalade peut être louée ici",
             "de": "Ein Kletterseil kann hier ausgeliehen werden",
             "cs": "Lezecké lano si můžete půjčit zde",
-            "es": "Se puede alquilar una cuerda de escalada aquí"
+            "es": "Se puede alquilar una cuerda de escalada aquí",
+            "ca": "Es pot llogar una corda d'escalada aquí"
           },
           "addExtraTags": [
             "service:climbing_rope:rental:fee=",
@@ -632,7 +668,8 @@
             "fr": "Une corde d'escalade ne peut <b>pas</b> être louée ici",
             "de": "Ein Kletterseil kann hier <b>nicht</b> ausgeliehen werden",
             "cs": "Lezecké lano si zde <b>nemůžete</b> zapůjčit",
-            "es": "No se puede alquilar una cuerda de escalada aquí"
+            "es": "No se puede alquilar una cuerda de escalada aquí",
+            "ca": "Es pot llogar una corda d'escalada <b>no</b> aquí"
           },
           "addExtraTags": [
             "service:climbing_rope:rental:fee=",
@@ -670,7 +707,8 @@
         "it": "È presente una prete per l’arrampicata di velocità?",
         "fr": "Y a-t-il un mur d'escalade de vitesse ?",
         "cs": "Je zde rychlostní lezecká stěna?",
-        "es": "¿Hay una pared de escalada de velocidad?"
+        "es": "¿Hay una pared de escalada de velocidad?",
+        "ca": "Hi ha una paret d'escalada ràpida?"
       },
       "mappings": [
         {
@@ -683,7 +721,8 @@
             "it": "È presente una parete per l’arrampicata di velocità",
             "fr": "Il y a un mur d'escalade de vitesse",
             "cs": "K dispozici je rychlostní lezecká stěna",
-            "es": "Hay una pared de escalada de velocidad"
+            "es": "Hay una pared de escalada de velocidad",
+            "ca": "Hi ha un mur d'escalada de velocitat"
           }
         },
         {
@@ -696,7 +735,8 @@
             "it": "Non è presente una parete per l’arrampicata di velocità",
             "fr": "Il n'y a pas de mur d'escalade de vitesse",
             "cs": "Není zde žádná rychlostní lezecká stěna",
-            "es": "No hay una pared de escalada de velocidad"
+            "es": "No hay una pared de escalada de velocidad",
+            "ca": "No hi ha paret d'escalada de velocitat"
           }
         },
         {
@@ -709,7 +749,8 @@
             "it": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità",
             "fr": "Il existe {climbing:speed} murs d'escalade de vitesse",
             "cs": "K dispozici jsou {climbing:speed} rychlostní lezecké stěny",
-            "es": "Hay {climbing:speed} paredes de escalada de velocidad"
+            "es": "Hay {climbing:speed} paredes de escalada de velocidad",
+            "ca": "Hi ha {climbing:speed} parets d'escalada de velocitat"
           },
           "hideInAnswer": true
         }

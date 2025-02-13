@@ -5,14 +5,17 @@
     "de": "Grillstelle",
     "cs": "BBQ",
     "es": "Barbacoa",
-    "nl": "Barbecue"
+    "nl": "Barbecue",
+    "ca": "Barbacoa",
+    "uk": "Барбекю"
   },
   "description": {
     "de": "Ein ortsfest installierter Grill, typischerweise öffentlich zugänglich.",
     "en": "A permanently installed barbecue, typically accessible to the public.",
     "cs": "Trvale instalovaný gril, obvykle přístupný veřejnosti.",
     "es": "Una barbacoa instalada permanentemente, normalmente accesible al público.",
-    "nl": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen."
+    "nl": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen.",
+    "ca": "Una barbacoa instal·lada permanentment, normalment accessible al públic."
   },
   "source": {
     "osmTags": "amenity=bbq"
@@ -24,7 +27,8 @@
       "de": "Grillstelle",
       "cs": "BBQ",
       "es": "Barbacoa",
-      "nl": "BBQ"
+      "nl": "BBQ",
+      "ca": "Barbacoa"
     }
   },
   "pointRendering": [
@@ -53,14 +57,16 @@
         "de": "Grillstelle",
         "cs": "BBQ",
         "es": "Barbacoa",
-        "nl": "Barbecue"
+        "nl": "Barbecue",
+        "ca": "Barbacoa"
       },
       "description": {
         "de": "Ein ortsfest installierter Grill, typischerweise öffentlich zugänglich.",
         "en": "A permanently installed barbecue, typically accessible to the public.",
         "cs": "Trvale instalovaný gril, obvykle přístupný veřejnosti.",
         "es": "Una barbacoa instalada permanentemente, normalmente accesible al público.",
-        "nl": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen."
+        "nl": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen.",
+        "ca": "Una barbacoa instal·lada permanentment, normalment accessible al públic."
       },
       "tags": [
         "amenity=bbq"
@@ -76,7 +82,8 @@
         "de": "Wer darf diesen Grill benutzen?",
         "cs": "Jaký přístup je povolen?",
         "es": "¿Cuál es el acceso permitido?",
-        "nl": "Wie mag deze barbecue gebruiken?"
+        "nl": "Wie mag deze barbecue gebruiken?",
+        "ca": "A qui se li permet utilitzar aquesta barbacoa?"
       },
       "mappings": [
         {
@@ -86,7 +93,8 @@
             "en": "This barbecue can be used by anyone",
             "cs": "Veřejné",
             "es": "Público",
-            "nl": "Deze barbecue mag door iedereen worden gebruikt"
+            "nl": "Deze barbecue mag door iedereen worden gebruikt",
+            "ca": "Aquesta barbacoa pot ser utilitzada per qualsevol persona"
           }
         },
         {
@@ -96,7 +104,8 @@
             "en": "This barbecue can't be used by anyone",
             "cs": "Zákaz vstupu",
             "es": "Sin acceso",
-            "nl": "Deze barbecue mag door niemand worden gebruikt"
+            "nl": "Deze barbecue mag door niemand worden gebruikt",
+            "ca": "Aquesta barbacoa no pot ser utilitzada per ningú"
           }
         },
         {
@@ -106,7 +115,8 @@
             "en": "This barbecue is private",
             "cs": "Soukromé",
             "es": "Privado",
-            "nl": "Deze barbecue is privé"
+            "nl": "Deze barbecue is privé",
+            "ca": "Aquesta barbacoa és privada"
           }
         },
         {
@@ -116,7 +126,8 @@
             "en": "This barbecue can be used by anyone, but the owner can revoke access at any time",
             "cs": "Přístup až do odvolání",
             "es": "Acceso hasta que se revoque",
-            "nl": "Deze barbecue mag door iedereen worden gebruikt, maar de eigenaar kan de toegang op elk moment ontzeggen"
+            "nl": "Deze barbecue mag door iedereen worden gebruikt, maar de eigenaar kan de toegang op elk moment ontzeggen",
+            "ca": "Aquesta barbacoa pot ser utilitzada per qualsevol persona, però el propietari pot revocar l'accés en qualsevol moment"
           }
         },
         {
@@ -126,7 +137,8 @@
             "en": "This barbecue can only be used by customers",
             "cs": "Přístup pouze pro zákazníky",
             "es": "Acceso solo para clientes",
-            "nl": "Deze barbecue mag alleen worden gebruikt door klanten"
+            "nl": "Deze barbecue mag alleen worden gebruikt door klanten",
+            "ca": "Aquesta barbacoa només pot ser utilitzada pels clients"
           }
         },
         {
@@ -136,7 +148,8 @@
             "en": "This barbecue can only be used by authorized persons",
             "cs": "Přístup pouze pro oprávněné osoby",
             "es": "Acceso solo para personas autorizadas",
-            "nl": "Deze barbecue mag alleen worden gebruikt door personen met toestemming"
+            "nl": "Deze barbecue mag alleen worden gebruikt door personen met toestemming",
+            "ca": "Aquesta barbacoa només pot ser utilitzada per persones autoritzades"
           }
         }
       ]
@@ -148,7 +161,8 @@
         "de": "Ist die Grillstelle überdacht?",
         "cs": "Je gril zakrytý?",
         "es": "¿Está cubierta la parrilla?",
-        "nl": "Is deze barbecue overdekt?"
+        "nl": "Is deze barbecue overdekt?",
+        "ca": "Està coberta aquesta barbacoa?"
       },
       "mappings": [
         {
@@ -158,7 +172,8 @@
             "en": "This barbecue is not covered",
             "cs": "Gril není zakrytý",
             "es": "La parrilla no está cubierta",
-            "nl": "Deze barbecue is niet overdekt"
+            "nl": "Deze barbecue is niet overdekt",
+            "ca": "Aquesta barbacoa no està coberta"
           }
         },
         {
@@ -168,7 +183,8 @@
             "en": "This barbecue is covered",
             "cs": "Gril je zakrytý",
             "es": "La parrilla está cubierta",
-            "nl": "Deze barbecue is overdekt"
+            "nl": "Deze barbecue is overdekt",
+            "ca": "Aquesta barbacoa està coberta"
           }
         }
       ]
@@ -180,7 +196,8 @@
         "de": "Womit wird dieser Grill angeheizt?",
         "cs": "Jak je gril napájen?",
         "es": "¿Cómo se alimenta la parrilla?",
-        "nl": "Wat voor brandstof gebruikt deze barbecue?"
+        "nl": "Wat voor brandstof gebruikt deze barbecue?",
+        "ca": "Com s'alimenta aquesta barbacoa?"
       },
       "mappings": [
         {
@@ -190,7 +207,8 @@
             "en": "This barbecue uses wood as fuel",
             "cs": "Dřevo",
             "es": "Madera",
-            "nl": "Deze barbecue gebruikt hout als brandstof"
+            "nl": "Deze barbecue gebruikt hout als brandstof",
+            "ca": "Aquesta barbacoa utilitza la fusta com a combustible"
           }
         },
         {
@@ -200,7 +218,8 @@
             "en": "This barbecue uses charcoal as fuel",
             "cs": "Dřevěné uhlí",
             "es": "Carbón",
-            "nl": "Deze barbecue gebruikt houtskool als brandstof"
+            "nl": "Deze barbecue gebruikt houtskool als brandstof",
+            "ca": "Aquesta barbacoa utilitza carbó com a combustible"
           }
         },
         {
@@ -210,7 +229,8 @@
             "en": "This barbecue is powered by electricity",
             "cs": "Elektrický",
             "es": "Eléctrica",
-            "nl": "Deze barbecue werkt op elektriciteit"
+            "nl": "Deze barbecue werkt op elektriciteit",
+            "ca": "Aquesta barbacoa funciona amb electricitat"
           }
         },
         {
@@ -220,7 +240,8 @@
             "en": "This barbecue uses gas as fuel",
             "cs": "Plynový",
             "es": "Gas",
-            "nl": "Deze barbecue gebruikt gas als brandstof"
+            "nl": "Deze barbecue gebruikt gas als brandstof",
+            "ca": "Aquesta barbacoa utilitza gas com a combustible"
           }
         }
       ]

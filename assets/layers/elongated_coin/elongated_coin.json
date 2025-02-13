@@ -275,7 +275,7 @@
             "en": "This penny press uses a 10 cent coin for pressing.",
             "de": "Der Automat prägt 10 Cent Münzen.",
             "es": "Esta prensa de monedas usa una moneda de 10 céntimos para prensar.",
-            "ca": "Esta premsa de cèntims utilitza una moneda de 10 cèntims per a premsar.",
+            "ca": "Esta premsa de monedes utilitza una moneda de 10 cèntims per a premsar.",
             "cs": "Tento lis na haléře používá k lisování minci v hodnotě 10 centů.",
             "nl": "Deze muntpers gebruikt een muntstuk van 10 cent voor het persen."
           },
@@ -314,7 +314,7 @@
           "if": "coin:type=10centimes",
           "then": {
             "en": "This penny press uses a 10 centimes coin for pressing.",
-            "ca": "Esta premsa de cèntims utilitza una moneda de 10 cèntims per a premsar.",
+            "ca": "Esta premsa de monedes utilitza una moneda de 10 cèntims per a premsar.",
             "de": "Der Automat prägt 10 Centime Münzen.",
             "es": "Esta prensa de monedas usa una moneda de 10 céntimos para prensar.",
             "nl": "Deze muntpers gebruikt een muntstuk van 10 rappen voor het persen."

@@ -19,7 +19,8 @@
     "ru": "Спортивная площадка",
     "de": "Ein Sportplatz",
     "es": "Una cancha deportiva",
-    "cs": "Sportovní hřiště"
+    "cs": "Sportovní hřiště",
+    "ca": "Un camp d'esport"
   },
   "source": {
     "osmTags": {
@@ -143,7 +144,8 @@
         "ru": "Стол для настольного тенниса",
         "de": "eine Tischtennisplatte",
         "cs": "stůl na stolní tenis",
-        "es": "una mesa de ping-pong"
+        "es": "una mesa de ping-pong",
+        "ca": "una taula de tabletennis"
       },
       "tags": [
         "leisure=pitch",
@@ -171,7 +173,8 @@
       "title": {
         "en": "a skatepark",
         "de": "einen Skatepark",
-        "es": "un skatepark"
+        "es": "un skatepark",
+        "ca": "un skatepark"
       },
       "tags": [
         "leisure=pitch",
@@ -182,7 +185,8 @@
       "title": {
         "en": "a horse riding arena",
         "de": "einen Reitplatz",
-        "es": "una pista ecuestre"
+        "es": "una pista ecuestre",
+        "ca": "un arena muntat a cavall"
       },
       "tags": [
         "leisure=pitch",
@@ -359,7 +363,8 @@
             "en": "This is a horse riding arena",
             "de": "Dies ist ein Reitplatz",
             "es": "Esta es una pista ecuestre",
-            "uk": "Це манеж для верхової їзди"
+            "uk": "Це манеж для верхової їзди",
+            "ca": "Aquest és un camp d'equitació"
           }
         }
       ],
@@ -382,7 +387,8 @@
             "en": "This basketball pitch has a single hoop",
             "de": "Dieses Basketballfeld hat einen einzigen Korb",
             "cs": "Toto basketbalové hřiště má jeden koš",
-            "es": "Esta cancha de baloncesto tiene un solo aro"
+            "es": "Esta cancha de baloncesto tiene un solo aro",
+            "ca": "Aquest camp de bàsquet té un sol cèrcol"
           }
         },
         {
@@ -759,7 +765,8 @@
         "ru": "В какое время доступна эта площадка?",
         "de": "Wann ist dieser Sportplatz zugänglich?",
         "es": "¿Cuándo es accesible esta cancha?",
-        "cs": "Kdy je toto hřiště přístupné?"
+        "cs": "Kdy je toto hřiště přístupné?",
+        "ca": "Quan és accessible aquest pitch?"
       },
       "render": "Openingsuren: {opening_hours_table()}",
       "freeform": {

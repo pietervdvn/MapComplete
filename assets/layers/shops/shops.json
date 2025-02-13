@@ -313,7 +313,8 @@
               "de": "Fahrradverleih",
               "uk": "Пункт прокату велосипедів",
               "es": "Tienda de alquiler de bicicletas",
-              "cs": "Půjčovna jízdních kol"
+              "cs": "Půjčovna jízdních kol",
+              "ca": "Botiga de lloguer de bicicletes"
             }
           }
         ],
@@ -323,7 +324,8 @@
             "then": {
               "en": "This shop is no longer used. It is vacant",
               "nl": "Deze winkel staat leeg",
-              "de": "Dieser Laden wird nicht mehr genutzt. Er steht leer"
+              "de": "Dieser Laden wird nicht mehr genutzt. Er steht leer",
+              "ca": "Aquesta botiga ja no s'utilitza. Està vacant"
             },
             "icon": "./assets/layers/shops/shop-disused.svg",
             "addExtraTags": [
@@ -351,14 +353,16 @@
         "de": "Zu welcher Marke gehört dieses Geschäft?",
         "uk": "Яка марка цього магазину?",
         "es": "¿Cuál es la marca de esta tienda?",
-        "cs": "Jaká je značka tohoto obchodu?"
+        "cs": "Jaká je značka tohoto obchodu?",
+        "ca": "Quina és la marca d'aquesta botiga?"
       },
       "render": {
         "en": "Part of <b>{brand}</b>",
         "de": "Teil von <b>{brand}</b>",
         "es": "Parte de <b>{brand}</b>",
         "uk": "Частина <b>{brand}</b>",
-        "cs": "Část <b>{brand}</b>"
+        "cs": "Část <b>{brand}</b>",
+        "ca": "Part de <b>{brand}</b>"
       },
       "freeform": {
         "key": "brand"
@@ -371,7 +375,8 @@
             "de": "Das Geschäft gehört zu keiner Marke oder Handelskette",
             "uk": "Цей магазин не має певного бренду, він не є частиною великої мережі",
             "es": "Esta tienda no tiene una marca específica, no forma parte de una cadena más grande",
-            "cs": "Tento obchod nemá konkrétní značku, není součástí většího řetězce"
+            "cs": "Tento obchod nemá konkrétní značku, není součástí většího řetězce",
+            "ca": "Aquesta botiga no té una marca concreta, no forma part d'una cadena més gran"
           }
         }
       ]
@@ -383,7 +388,8 @@
         "de": "Verlauft das Geschäft auch Second-Hand-Produkte?",
         "cs": "Prodává tento obchod použité zboží?",
         "es": "¿Esta tienda vende artículos de segunda mano?",
-        "uk": "Чи продає цей магазин вживані речі?"
+        "uk": "Чи продає цей магазин вживані речі?",
+        "ca": "Aquesta botiga ven articles de segona mà?"
       },
       "mappings": [
         {
@@ -517,13 +523,15 @@
         "en": "Does this shop offer a binding service?",
         "de": "Bietet dieser Laden einen Bindeservice an?",
         "es": "¿Esta tienda ofrece un servicio de encuadernación?",
-        "cs": "Nabízí tento obchod službu vazby?"
+        "cs": "Nabízí tento obchod službu vazby?",
+        "ca": "Aquesta botiga ofereix un servei vinculant?"
       },
       "questionHint": {
         "en": "Does this shop bind a bundle of pages into a small book, e.g. with a comb, a spiral, wire or by gluing?",
         "de": "Bindet dieser Laden ein Bündel von Seiten zu einem kleinen Buch, z.B. mit einer Kamm-, Spiral-, Drahtbindung oder durch Kleben?",
         "es": "¿Esta tienda encuaderna un conjunto de páginas en un pequeño libro, por ejemplo, con un peine, una espiral, alambre o pegamento?",
-        "cs": "Váže tento obchod svazek stránek do malé knihy, např. hřebenem, spirálou, drátem nebo lepením?"
+        "cs": "Váže tento obchod svazek stránek do malé knihy, např. hřebenem, spirálou, drátem nebo lepením?",
+        "ca": "Aquesta botiga lliga un paquet de pàgines a un llibre petit, per exemple amb una pinta, una espiral, un filferro o enganxant?"
       },
       "mappings": [
         {
@@ -532,7 +540,8 @@
             "en": "This shop binds papers into a booklet",
             "de": "Dieser Laden bindet Papiere zu einem Heft",
             "es": "Esta tienda encuaderna papeles en un folleto",
-            "cs": "Tento obchod váže papíry do brožury"
+            "cs": "Tento obchod váže papíry do brožury",
+            "ca": "Aquesta botiga vincula els papers a un llibret"
           }
         },
         {
@@ -541,7 +550,8 @@
             "en": "This shop does bind books",
             "de": "Dieser Laden bindet Bücher",
             "es": "Esta tienda encuaderna libros",
-            "cs": "Tento obchod váže knihy"
+            "cs": "Tento obchod váže knihy",
+            "ca": "Aquesta botiga vincula llibres"
           }
         }
       ]
@@ -559,7 +569,8 @@
       "question": {
         "en": "Are medical services available here?",
         "nl": "Zijn hier medische services beschikbaar?",
-        "de": "Gibt es hier medizinische Versorgung?"
+        "de": "Gibt es hier medizinische Versorgung?",
+        "ca": "Hi ha serveis mèdics disponibles aquí?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -569,7 +580,8 @@
           "then": {
             "en": "This shop offers eye exams by certified optometrists",
             "nl": "Hier kan men een oogtest door een erkende optometrist laten uitvoeren",
-            "de": "Dieser Shop bietet Augenuntersuchungen durch zertifizierte Optiker an"
+            "de": "Dieser Shop bietet Augenuntersuchungen durch zertifizierte Optiker an",
+            "ca": "Aquesta botiga ofereix exàmens oculars d'optometristes certificats"
           }
         },
         {
@@ -578,7 +590,8 @@
           "then": {
             "en": "This shop offers hearing tests by a certified audiologist",
             "nl": "HIer kan men een hoortest laten uitvoeren door een erkende audioloog",
-            "de": "Dieser Shop bietet Hörtests durch einen zertifizierten Audiologen an"
+            "de": "Dieser Shop bietet Hörtests durch einen zertifizierten Audiologen an",
+            "ca": "Aquesta botiga ofereix proves auditives d'un audiòleg certificat"
           }
         }
       ]
@@ -589,7 +602,8 @@
         "en": "Does this shop offer key cutting?",
         "de": "Bietet dieser Laden Schlüsselschneiden an?",
         "es": "¿Esta tienda ofrece el corte de llaves?",
-        "cs": "Nabízí tento obchod výrobu klíčů?"
+        "cs": "Nabízí tento obchod výrobu klíčů?",
+        "ca": "Aquesta botiga ofereix tall de clau?"
       },
       "mappings": [
         {
@@ -601,7 +615,8 @@
             "en": "This shop is also specialized in key cutting",
             "de": "Dieser Laden ist auch auf das Schlüsselschneiden spezialisiert",
             "es": "Esta tienda también está especializada en el corte de llaves",
-            "cs": "Tento obchod se také specializuje na výrobu klíčů"
+            "cs": "Tento obchod se také specializuje na výrobu klíčů",
+            "ca": "Aquesta botiga també està especialitzada en el tall de claus"
           },
           "addExtraTags": [
             "service:key_cutting=yes"
@@ -615,7 +630,8 @@
             "de": "Dieser Laden bietet Schlüsselschneiden als Dienstleistung an",
             "nl": "Deze winkel kopieert sleutels",
             "es": "Esta tienda ofrece el corte de llaves como servicio",
-            "cs": "Tento obchod nabízí výrobu klíčů jako službu"
+            "cs": "Tento obchod nabízí výrobu klíčů jako službu",
+            "ca": "Aquesta botiga ofereix el tall de claus com a servei"
           }
         },
         {
@@ -629,7 +645,8 @@
             "en": "This shops does not offer key cutting as a service",
             "de": "Dieser Laden bietet kein Schlüsselschneiden als Dienstleistung an",
             "es": "Esta tienda no ofrece el corte de llaves como servicio",
-            "cs": "Tyto obchody nenabízejí výrobu klíčů jako službu"
+            "cs": "Tyto obchody nenabízejí výrobu klíčů jako službu",
+            "ca": "Aquestes botigues no ofereixen tall de clau com a servei"
           }
         }
       ],
@@ -686,7 +703,8 @@
             "de": "Dieses Geschäft verkauft neue Fahrräder",
             "es": "Esta tienda vende bicicletas nuevas",
             "uk": "У цьому магазині продають нові велосипеди",
-            "cs": "Tento obchod prodává nová kola"
+            "cs": "Tento obchod prodává nová kola",
+            "ca": "Aquesta botiga ven bicicletes noves"
           }
         },
         {
@@ -698,7 +716,8 @@
             "de": "Dieses Geschäft verkauft keine neuen Fahrräder",
             "es": "Esta tienda no vende bicicletas nuevas",
             "uk": "Цей магазин не продає нові велосипеди",
-            "cs": "Tento obchod neprodává nová kola"
+            "cs": "Tento obchod neprodává nová kola",
+            "ca": "Aquesta botiga no ven bicicletes noves"
           }
         }
       ]
@@ -928,7 +947,8 @@
         "de": "Es geht um die Vermietung, z.B. an Touristen, die ein Fahrrad benötigen. Einige Fahrradwerkstätten bieten ein Fahrrad an, das man benutzen kann, während das eigene Fahrrad repariert wird, aber dies wird für diese Frage nicht als Vermietung betrachtet.",
         "uk": "Йдеться про прокат для туристів, яким потрібен велосипед. Деякі майстерні з ремонту велосипедів пропонують велосипед на час ремонту, але це не вважається прокатом в даному випадку.",
         "es": "Esto se refiere al alquiler para, por ejemplo, turistas que necesitan una bicicleta. Algunas tiendas de reparación de bicicletas ofrecen una bicicleta para usar mientras se repara la suya, pero esto no se considera alquiler para esta pregunta.",
-        "cs": "Jedná se o pronájem např. turisté, kteří potřebují kolo. Některé opravny jízdních kol nabízejí jízdní kolo k použití při opravě kola, ale u této otázky se to nepovažuje za pronájem."
+        "cs": "Jedná se o pronájem např. turisté, kteří potřebují kolo. Některé opravny jízdních kol nabízejí jízdní kolo k použití při opravě kola, ale u této otázky se to nepovažuje za pronájem.",
+        "ca": "Es tracta de lloguer per als turistes que necessiten una bicicleta. Alguns tallers de reparació de bicicletes ofereixen una bicicleta a utilitzar mentre la seva bicicleta està sent reparada, però això no es considera lloguer per a aquesta pregunta."
       },
       "mappings": [
         {
@@ -1313,7 +1333,8 @@
             "en": "Only show shops selling second-hand items",
             "de": "Nur Second-Hand-Geschäfte anzeigen",
             "cs": "Zobrazit pouze obchody prodávající použité zboží",
-            "es": "Mostrar solo tiendas que venden artículos de segunda mano"
+            "es": "Mostrar solo tiendas que venden artículos de segunda mano",
+            "ca": "Mostra només les botigues que venen articles de segona mà"
           },
           "osmTags": {
             "or": [

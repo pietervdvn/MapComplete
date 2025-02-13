@@ -180,7 +180,8 @@
           "then": {
             "en": "This is an escalator moving in the direction of the arrows",
             "nl": "Dit is een roltrap die beweegt in de richting van de pijlen",
-            "de": "Dies ist eine Rolltreppe, die sich in Richtung der Pfeile bewegt"
+            "de": "Dies ist eine Rolltreppe, die sich in Richtung der Pfeile bewegt",
+            "ca": "Aquesta és una escala mecànica que es mou en la direcció de les fletxes"
           },
           "hideInAnswer": true
         },
@@ -189,7 +190,8 @@
           "then": {
             "en": "This is a reversible escalator",
             "nl": "Dit is een roltrap die van richting kan veranderen",
-            "de": "Diese Rolltreppe ist beidseitig befahrbar"
+            "de": "Diese Rolltreppe ist beidseitig befahrbar",
+            "ca": "Es tracta d'una escaladora reversible"
           }
         },
         {
@@ -221,7 +223,8 @@
       "question": {
         "en": "Is this an escalator?",
         "nl": "Is dit een roltrap?",
-        "de": "Ist das eine Rolltreppe?"
+        "de": "Ist das eine Rolltreppe?",
+        "ca": "És una escala mecànica?"
       }
     },
     {
