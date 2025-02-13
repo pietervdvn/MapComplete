@@ -154,7 +154,7 @@
     "#": "Android development",
     "android:prepare": "./scripts/prepareAndroid.sh",
     "android:build": "./scripts/buildAndroid.sh",
-    "android:upload": "scp ./android/app/build/outputs/apk/release/app-release.apk hetzner:apk/mapcomplete-latest.apk && scp ./android/app/build/outputs/apk/release/app-release-unsigned.apk hetzner:app/mapcomplete-latest.apk",
+    "android:upload": "scp ./android/app/build/outputs/apk/release/app-release.apk hetzner:apk/mapcomplete-latest.apk && scp ./android/app/build/outputs/apk/release/app-release.apk hetzner:app/mapcomplete-latest.apk",
     "android:uninstall": "adb shell pm uninstall org.mapcomplete"
   },
   "keywords": [

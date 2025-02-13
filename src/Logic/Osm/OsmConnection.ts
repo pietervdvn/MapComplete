@@ -589,7 +589,10 @@ export class OsmConnection {
             // We are probably already logged in
             return
         }
-        const token = await AndroidPolyfill.requestLoginCodes()
+        const tokenPromise = AndroidPolyfill.requestLoginCodes()
+        console.trace("Opening login page")
+        await AndroidPolyfill.openLoginPage()
+        const token = await tokenPromise
         console.log("Got login token!", token)
         localStorage.setItem(key, token)
         if (this.auth.authenticated()) {

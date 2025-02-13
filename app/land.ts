@@ -4,6 +4,7 @@ import { Utils } from "../src/Utils"
 import { UIEventSource } from "../src/Logic/UIEventSource"
 import { VariableUiElement } from "../src/UI/Base/VariableUIElement"
 import Combine from "../src/UI/Base/Combine"
+import { QueryParameters } from "../src/Logic/Web/QueryParameters"
 
 console.log("Authorizing...")
 const key = Constants.osmAuthConfig.url + "oauth2_state"
@@ -36,6 +37,7 @@ connection.finishLogin(async () => {
         debug.set(dbg)
 
         if (attempt > 10) {
+            QueryParameters.ClearAll()
             window.location.reload()
         }
     } while (!token)

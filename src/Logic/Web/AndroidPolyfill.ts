@@ -70,6 +70,9 @@ export class AndroidPolyfill {
         AndroidPolyfill.backfillGeolocation(AndroidPolyfill.databridgePlugin)
     }
 
+    public static async  openLoginPage(){
+        await DatabridgePluginSingleton.request<{ oauth_token: string }>({ key: "open:login" })
+    }
     public static async requestLoginCodes() {
         const result = await DatabridgePluginSingleton.request<{ oauth_token: string }>({
             key: "request:login",
