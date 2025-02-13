@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.48.8](https://github.com/pietervdvn/mapcomplete/compare/v0.48.7...v0.48.8) (2025-02-13)
+
+
+### Bug Fixes
+
+* translations ([252a2d8](https://github.com/pietervdvn/mapcomplete/commits/252a2d8398e89f13ebc8785758e8212bb42c5e44))
+* typo in theme ([6bf193f](https://github.com/pietervdvn/mapcomplete/commits/6bf193f86f61500db70cc0dbf499afd40966efa2))
+
+
+### Theme improvements
+
+* **maxspeed:** remove unneeded 'widenFactor', fix typo ([151fad5](https://github.com/pietervdvn/mapcomplete/commits/151fad57e1848ca1b633440693c73cf7ca2fdd8f))
+
 ### [0.48.7](https://github.com/pietervdvn/mapcomplete/compare/v0.48.6...v0.48.7) (2025-02-10)
 
 
