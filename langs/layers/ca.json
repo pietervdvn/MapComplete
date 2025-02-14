@@ -3396,7 +3396,7 @@
             },
             "Length": {
                 "question": "Quant dura aquesta via d'escalada (en metres)?",
-                "render": "Aquesta ruta és {canonical(escalada: longitud)}  de llarg"
+                "render": "Aquesta ruta és {canonical(climbing:length)} de llarg"
             },
             "Name": {
                 "mappings": {
