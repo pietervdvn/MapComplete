@@ -4,7 +4,7 @@
     "en": "Cyclist Waiting Aids",
     "de": "Radfahrer-Wartehilfen",
     "es": "Ayudas a la espera de ciclistas",
-    "ca": "Ciclista que espera ajuda"
+    "ca": "Ajudes a l'espera dels ciclistes"
   },
   "description": {
     "en": "Various pieces of infrastructure that aid cyclists while they wait at a traffic light.",
@@ -21,7 +21,7 @@
       "de": "Radfahrer-Wartehilfe",
       "es": "Ayuda para ciclistas en espera",
       "nl": "Steuntje voor wachtende fietsers",
-      "ca": "Ciclista esperant ajuda"
+      "ca": "Ajuda per a ciclistes en espera"
     }
   },
   "pointRendering": [
@@ -54,7 +54,7 @@
         "en": "a cyclist waiting aid",
         "de": "eine Radfahrer-Wartehilfe",
         "es": "un ciclista espera ayuda",
-        "ca": "una ajuda d'espera ciclista"
+        "ca": "una ajuda a l'espera del ciclista"
       },
       "tags": [
         "highway=cyclist_waiting_aid"
@@ -77,7 +77,7 @@
         "en": "What kind of components does this waiting aid have?",
         "de": "Aus welchen Bestandteilen besteht diese Wartehilfe?",
         "es": "¿Qué tipo de componentes tiene esta ayuda a la espera?",
-        "ca": "Quin tipus de components té aquesta ajuda d'espera?"
+        "ca": "Quin tipus de components té aquesta ajuda a l'espera?"
       },
       "id": "type",
       "multiAnswer": true,
@@ -98,7 +98,7 @@
             "en": "There is a rail or a handle to hold on to here",
             "de": "Hier gibt es eine Schiene oder einen Griff zum Festhalten",
             "es": "Hay una barandilla o un asa para agarrarse aquí",
-            "ca": "Hi ha un tren o una nansa per aferrar-se aquí"
+            "ca": "Hi ha una barana o una nansa per aferrar-se aquí"
           },
           "ifnot": "handrest="
         }
@@ -119,7 +119,7 @@
             "en": "This waiting aid is located on the left side",
             "de": "Diese Wartehilfe befindet sich auf der linken Seite",
             "es": "Esta ayuda a la espera se encuentra en el lado izquierdo",
-            "ca": "Aquesta ajuda d'espera es troba a la banda esquerra"
+            "ca": "Aquesta ajuda a l'espera es troba a la banda esquerra"
           }
         },
         {
@@ -128,7 +128,7 @@
             "en": "This waiting aid is located on the right side",
             "de": "Diese Wartehilfe befindet sich auf der rechten Seite",
             "es": "Esta ayuda a la espera se encuentra en el lado derecho",
-            "ca": "Aquesta ajuda d'espera es troba al costat dret"
+            "ca": "Aquesta ajuda a l'espera es troba al costat dret"
           }
         },
         {
@@ -137,7 +137,7 @@
             "en": "There are waiting aids on both sides of the road",
             "de": "Auf beiden Seiten der Straße gibt es Wartehilfen",
             "es": "Hay ayudas a la espera a ambos lados de la carretera",
-            "ca": "Hi ha ajudes d'espera a banda i banda de la carretera"
+            "ca": "Hi ha ajudes a l'espera a ambdós costats de la carretera"
           }
         }
       ]
@@ -152,7 +152,7 @@
             "en": "This waiting aid can be used when going forward on this way",
             "de": "Diese Wartehilfe kann bei der Weiterfahrt auf diesem Weg genutzt werden",
             "es": "Esta ayuda a la espera puede utilizarse cuando se avanza por esta vía",
-            "ca": "Aquesta ajuda d'espera es pot utilitzar en avançar d'aquesta manera"
+            "ca": "Aquesta ajuda a l'espera es pot utilitzar quan s'avança en aquesta via"
           }
         },
         {
@@ -161,7 +161,7 @@
             "en": "This waiting aid can be used when going backward on this way",
             "de": "Diese Wartehilfe kann beim Rückwärtsfahren auf diesem Weg benutzt werden",
             "es": "Esta ayuda a la espera puede utilizarse cuando se retrocede por este camino",
-            "ca": "Aquesta ajuda d'espera es pot utilitzar en retrocedir d'aquesta manera"
+            "ca": "Aquesta ajuda a l'espera es pot utilitzar quan es retrocedeix per aquest camí"
           }
         }
       ],
@@ -169,7 +169,7 @@
         "en": "This waiting aid can be used when going in {direction} direction",
         "de": "Diese Wartehilfe kann in Fahrtrichtung {direction} benutzt werden",
         "es": "Esta ayuda a la espera puede utilizarse cuando se va en dirección {direction}",
-        "ca": "Aquesta ajuda d'espera es pot utilitzar en anar en direcció {direction}"
+        "ca": "Aquesta ajuda a l'espera es pot utilitzar quan es va en direcció {direction}"
       }
     }
   ],

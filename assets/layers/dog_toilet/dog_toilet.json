@@ -9,7 +9,7 @@
   "description": {
     "en": "A dog toilet is a facility designated for dogs to urinate and excrete. This can be a designated, signposted patch of grass, a sand pit or a fenced area.",
     "de": "Eine Hundetoilette ist eine Einrichtung, die für das Urinieren und die Ausscheidung von Hunden vorgesehen ist. Dabei kann es sich um eine ausgewiesene, ausgeschilderte Rasenfläche, eine Sandgrube oder einen eingezäunten Bereich handeln.",
-    "ca": "Un vàter de gos és una instal·lació designada per a gossos per orinar i excretar. Aquest pot ser un pegat d'herba designat i senyalitzat, un pou de sorra o una zona tancada."
+    "ca": "Un vàter de gos és una instal·lació designada per a gossos per orinar i excretar. Pot ser un tros d'herba senyalitzat, un pou de sorra o una zona tancada."
   },
   "source": {
     "osmTags": "amenity=dog_toilet"
@@ -76,7 +76,7 @@
           "then": {
             "en": "There is a hedge around this dog toilet",
             "de": "Diese Hundetoilette ist von einer Hecke umgeben",
-            "ca": "Hi ha una tanca al voltant d'aquest vàter de gos"
+            "ca": "Hi ha una esbardissa al voltant d'aquest vàter de gos"
           }
         },
         {

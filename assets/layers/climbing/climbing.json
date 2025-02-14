@@ -83,7 +83,7 @@
         "it": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?",
         "cs": "Jaký je stupeň nejjednodušší trasy podle francouzského klasifikačního systému?",
         "es": "¿Cuál es el grado de la vía más fácil aquí, según el sistema de clasificación francés?",
-        "ca": "Quin és el grau de la ruta més fàcil aquí, segons el sistema de classificació francès?"
+        "ca": "Quin és el grau de la ruta més fàcil aquí segons el sistema de classificació francès?"
       },
       "render": {
         "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
@@ -94,7 +94,7 @@
         "it": "Il minimo livello di difficoltà è {climbing:grade:french:min} secondo il sistema francese/belga",
         "cs": "Nejnižší stupeň je {climbing:grade:french:min} podle francouzského/belgického systému",
         "es": "El grado más bajo es {climbing:grade:french:min} según el sistema francés/belga",
-        "ca": "La nota més baixa és {climbing:grade:french:min} segons el sistema francès/belga"
+        "ca": "El grau més baix és {climbing:grade:french:min} segons el sistema francès/belga"
       },
       "freeform": {
         "key": "climbing:grade:french:min"
@@ -111,7 +111,7 @@
         "it": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?",
         "cs": "Jaká je zde trasa nejvyššího stupně podle francouzského klasifikačního systému?",
         "es": "¿Cuál es la vía de mayor grado aquí, según el sistema de clasificación francés?",
-        "ca": "Quina és la ruta de grau més alt d'aquí, segons el sistema de classificació francès?"
+        "ca": "Quina és la ruta de major aquí, segons el sistema de classificació francès?"
       },
       "render": {
         "de": "Die schwierigste Route hat hier die Schwierigkeitsstufe {climbing:grade:french:max} (französisch/belgisches System)",
@@ -122,7 +122,7 @@
         "it": "Il massimo livello di difficoltà è {climbing:grade:french:max} secondo il sistema francese/belga",
         "cs": "Nejvyšší stupeň je {climbing:grade:french:max} podle francouzského/belgického systému",
         "es": "El grado más alto es {climbing:grade:french:max} según el sistema francés/belga",
-        "ca": "La nota més alta és {climbing:grade:french:max} segons el sistema francès/belga"
+        "ca": "La grau més alt és {climbing:grade:french:max} segons el sistema francès/belga"
       },
       "freeform": {
         "key": "climbing:grade:french:max"
@@ -228,7 +228,7 @@
         "it": "È possibile arrampicarsi con la corda dall’alto qua?",
         "cs": "Je zde možné lezení po laně?",
         "es": "¿Es posible la escalada con cuerda desde arriba aquí?",
-        "ca": "És possible l'escalada propícia aquí?"
+        "ca": "És possible l'escalada en politja aquí?"
       },
       "mappings": [
         {
@@ -242,7 +242,7 @@
             "it": "È possibile arrampicarsi con moulinette qua",
             "cs": "Lezení po laně je zde možné",
             "es": "La escalada con cuerda desde arriba es posible aquí",
-            "ca": "L'escalada propícia és possible aquí"
+            "ca": "L'escalada en politja és possible aquí"
           }
         },
         {
@@ -256,7 +256,7 @@
             "it": "Non è possibile arrampicarsi con moulinette qua",
             "cs": "Lezení po laně zde není možné",
             "es": "La escalada con cuerda desde arriba no es posible aquí",
-            "ca": "L'escalada propícia no és possible aquí"
+            "ca": "L'escalada en politja no és possible aquí"
           }
         },
         {
@@ -270,7 +270,7 @@
             "it": "Sono presenti {climbing:toprope} vie con moulinette",
             "cs": "Je zde {climbing:toprope} tras pro lezení na laně",
             "es": "Hay {climbing:toprope} vías de escalada con cuerda desde arriba",
-            "ca": "Hi ha {climbing:toprope} rutes específiques"
+            "ca": "Hi ha {climbing:toprope} rutes d'escalada en politja"
           },
           "hideInAnswer": true
         }
@@ -357,7 +357,7 @@
         "it": "usando attrezzi propri, ad es. dadi",
         "cs": "Pomocí vlastního zařízení, např. klíny",
         "es": "Usando tu propio equipo, p. ej., fisureros",
-        "ca": "Utilitzant el vostre propi engranatge, p. ex., chocks"
+        "ca": "Utilitzant el vostre propi equipament, p. ex., cales"
       },
       "mappings": [
         {
@@ -396,7 +396,7 @@
             "it": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale",
             "cs": "Existují {climbing:traditional} tradiční lezecké cesty",
             "es": "Hay {climbing:traditional} vías de escalada tradicional",
-            "ca": "Hi ha {climbing:traditional} vies d'escalada tradicionals"
+            "ca": "Hi ha {climbing:traditional} rutes d'escalada tradicionals"
           },
           "hideInAnswer": true
         }
@@ -410,7 +410,7 @@
         "nl": "Wat is het maximum aantal bouten in routes ban {title()}?",
         "cs": "Kolik šroubů na trasu {title()} je potřeba?",
         "es": "¿Cuántos parabolts tienen como máximo las vías en {title()}?",
-        "ca": "Quants parabolts tenen com a màxim les rutes a {title()} ?"
+        "ca": "Quants ancoratges d'anella tenen com a màxim les rutes a {title()} ?"
       },
       "render": {
         "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>",

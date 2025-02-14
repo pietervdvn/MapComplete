@@ -206,7 +206,7 @@
         "fr": "Cette voie fait {canonical(climbing:length)} de long",
         "cs": "Tato trasa je {canonical(climbing:length)} dlouhá",
         "es": "Esta vía mide {canonical(climbing:length)} de largo",
-        "ca": "Aquesta ruta és {canonical(climbing:length)} llarga"
+        "ca": "Aquesta ruta és {canonical(escalada: longitud)}  de llarg"
       },
       "freeform": {
         "key": "climbing:length",
@@ -234,7 +234,7 @@
         "fr": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}",
         "cs": "Stupeň je {climbing:grade:french} podle francouzského/belgického systému",
         "es": "El grado es {climbing:grade:french} según el sistema francés/belga",
-        "ca": "La qualificació és {climbing:grade:french} segons el sistema francès/belga"
+        "ca": "El grau és {climbing:grade:french} segons el sistema francès/belga"
       },
       "freeform": {
         "key": "climbing:grade:french"
@@ -251,7 +251,7 @@
         "nl": "Hoeveel bouten heeft deze route voordat je het relay bereikt?",
         "cs": "Kolik šroubů má tato cesta před dosažením kotvy?",
         "es": "¿Cuántos parabolts tiene esta vía antes de llegar al anclaje?",
-        "ca": "Quants perns té aquesta ruta abans d'arribar a l'ancoratge?"
+        "ca": "Quants ancoratges d'anella té aquesta ruta abans d'arribar a l'ancoratge?"
       },
       "render": {
         "en": "This route has {climbing:bolts} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>",
@@ -260,7 +260,7 @@
         "it": "Questo percorso ha {climbing:bolts} bulloni <div class='subtle'>Questa è senza collettori e indica di quanti bloccaggi rapidi ha bisogno un arrampicatore</div>",
         "nl": "Deze route heeft {climbing:bolts} haken. <div class='subtle'>Hierbij wordt de standplaats niet meegeteld. Een klimmer heeft normaal gezien dus minstens {climbing:bolts} setjes nodig.</div>",
         "es": "Esta vía tiene {climbing:bolts} parabolts <div class='subtle'>Esto es sin reuniones e indica cuántos cintas exprés necesita un escalador</div>",
-        "ca": "Aquesta ruta té {climbing:bolts} perns. <div class='subtle'>Això no té estacions d'aspiració i indica quant de ràpid necessita un escalador.</div>"
+        "ca": "Aquesta ruta té {climbing:bolts} ancoratges d'anella. <div class='subtle'>Això és sense estacions d'assegurament i indica quantes cintes necessita un escalador.</div>"
       },
       "freeform": {
         "key": "climbing:bolts",
@@ -281,7 +281,7 @@
             "nl": "Deze route heeft geen bouten",
             "cs": "Tato trasa není vyšroubovaná",
             "es": "Esta vía no tiene parabolts",
-            "ca": "Aquesta ruta no està vorejada"
+            "ca": "Aquesta ruta no té ancoratges d'anella"
           },
           "addExtraTags": [
             "climbing:bolts="

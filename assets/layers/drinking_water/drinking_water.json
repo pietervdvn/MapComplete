@@ -244,7 +244,7 @@
             "de": "Die Trinkwasserstelle ist dauerhaft geschlossen",
             "uk": "Цей пункт питної води постійно закритий",
             "es": "Esta fuente de agua potable está cerrada permanentemente",
-            "ca": "Aquesta aigua potable està tancada permanentment"
+            "ca": "Aquesta font d'aigua potable està tancada permanentment"
           }
         }
       ],
@@ -305,7 +305,7 @@
             "de": "Dies ist ein Sprudelbrunnen. Ein Wasserstrahl zum Trinken wird nach oben gerichtet und in der Regel durch einen Druckknopf gesteuert.",
             "uk": "Це барботажний фонтан. Струмінь води, з якого можна пити, спрямовується вгору, зазвичай керується кнопкою.",
             "es": "Esta es una fuente de chorro. Un chorro de agua para beber se envía hacia arriba, típicamente controlado por un botón.",
-            "ca": "Aquesta és una font de bombolles. Un raig d'aigua per beure s'envia cap amunt, normalment controlat per un botó d'empenta."
+            "ca": "Aquesta és una font de raig. Un raig d'aigua per beure s'envia cap amunt, normalment controlat per un botó d'empenta."
           },
           "addExtraTags": [
             "man_made="
@@ -419,7 +419,7 @@
             "en": "Actively cooled water is available here",
             "nl": "Afgekoeld water is hier beschikbaar",
             "de": "Hier steht aktiv gekühltes Wasser zur Verfügung",
-            "ca": "L'aigua freda activa està disponible aquí"
+            "ca": "Aquí hi ha aigua refrigerada activament"
           }
         },
         {
@@ -429,7 +429,7 @@
             "en": "Ambient temperature water (without active cooling or heating) is available here",
             "nl": "Water aan omgevingstemperatuur (zonder actieve koeling of opwarming) is hier beschikbaar",
             "de": "Wasser mit Umgebungstemperatur (ohne aktive Kühlung oder Heizung) ist hier verfügbar",
-            "ca": "L'aigua a temperatura ambient (sense refrigeració activa ni calefacció) està disponible aquí"
+            "ca": "L'aigua a temperatura ambient (sense refrigeració ni calefacció activa) està disponible aquí"
           }
         },
         {
@@ -449,7 +449,7 @@
             "en": "Hot water is provided here",
             "nl": "Heet water is hier beschikbaar",
             "de": "Hier wird heißes Wasser bereitgestellt",
-            "ca": "L'aigua calenta es proporciona aquí"
+            "ca": "Aquí es proporciona aigua calenta"
           }
         }
       ]

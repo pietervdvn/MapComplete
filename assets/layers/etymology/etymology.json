@@ -122,7 +122,7 @@
         "da": "Hvilket Wikidata-emne er dette objekt opkaldt efter?",
         "es": "¿Cuál es el elemento de Wikidata en honor a  el cual se nombra este objeto?",
         "uk": "На честь якого елемента Вікіданих названо цей об'єкт?",
-        "ca": "Quin és l'element de Wikidata que porta el nom d'aquest objecte?"
+        "ca": "Quin és l'element de Wikidata en honor al qual s'anomena aquest objecte?"
       },
       "freeform": {
         "key": "name:etymology:wikidata",
@@ -272,7 +272,7 @@
         "fr": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Chercher sur inventaris onroerend erfgoed</a>",
         "cs": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Hledání na inventaris onroerend erfgoed</a>",
         "es": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Buscar en Inventaris Onroerend Erfgoed</a>",
-        "ca": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='blank'>Cerca en inventaris onroerend erfgoed</a>"
+        "ca": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Cerca en inventaris onroerend erfgoed</a>"
       },
       "condition": "_country=be"
     },
@@ -287,7 +287,7 @@
         "cs": "Po čem je tento objekt pojmenován?",
         "da": "Hvad er dette objekt opkaldt efter?",
         "es": "¿A qué se debe el nombre de este objeto?",
-        "ca": "De què porta aquest objecte?"
+        "ca": "A que es deu el nom d'aquest objecte?"
       },
       "render": {
         "en": "Named after {name:etymology}",
@@ -298,7 +298,7 @@
         "pl": "Nazwane po {name:etymology}",
         "cs": "Pojmenováno po {name:etymology}",
         "es": "Nombrado en honor a {name:etymology}",
-        "ca": "Anomenat després de {name:etymology}"
+        "ca": "Anomenat en honor a {name:etymology}"
       },
       "freeform": {
         "key": "name:etymology",

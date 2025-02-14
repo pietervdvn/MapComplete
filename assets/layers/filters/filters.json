@@ -14,7 +14,7 @@
             "en": "Now open",
             "nl": "Nu open",
             "de": "Jetzt geöffnet",
-            "ca": "Obert ara",
+            "ca": "Ara obert",
             "es": "Abierto ahora",
             "fr": "Ouvert maintenant",
             "hu": "Most nyitva van",
@@ -289,7 +289,7 @@
             "de": "Keine Bevorzugung von Hunden",
             "cs": "Bez preference psů",
             "es": "Sin preferencia por los perros",
-            "ca": "No hi ha preferència cap als gossos"
+            "ca": "Sense preferència pels gossos"
           }
         },
         {
@@ -299,7 +299,7 @@
             "de": "Hunde erlaubt",
             "cs": "Psi povoleny",
             "es": "Se permiten perros",
-            "ca": "Permesos"
+            "ca": "Es permeten gossos"
           },
           "emoji": "🐕",
           "osmTags": {
@@ -333,7 +333,7 @@
             "de": "Internetzugang vorhanden",
             "cs": "Nabízí internet",
             "es": "Ofrece internet",
-            "ca": "Ofertes d'internet"
+            "ca": "Ofereix internet"
           },
           "icon": "wifi",
           "osmTags": {
@@ -355,7 +355,7 @@
             "de": "Stromanschluss vorhanden",
             "cs": "Nabízí elektřinu",
             "es": "Ofrece electricidad",
-            "ca": "Ofertes d'electricitat"
+            "ca": "Ofereix electricitat"
           },
           "osmTags": "service:electricity=yes"
         }
@@ -370,7 +370,7 @@
             "cs": "Má nabídku bez cukru",
             "de": "Hat zuckerfreie Angebote",
             "es": "Tiene una oferta sin azúcar",
-            "ca": "Té una oferta sense sucre"
+            "ca": "Disposa d'oferta sense sucre"
           },
           "osmTags": {
             "or": [
@@ -413,7 +413,7 @@
             "cs": "Má nabídku bez laktózy",
             "de": "Hat laktosefreie Angebote",
             "es": "Tiene una oferta sin lactosa",
-            "ca": "Té una oferta lliure de lactosa"
+            "ca": "Disposa d'una oferta lliure de lactosa"
           },
           "icon": "./assets/layers/questions/lactose_free.svg",
           "osmTags": {
