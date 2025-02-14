@@ -838,7 +838,8 @@
                 "question": "Як називається цей бізнес?",
                 "render": "Цей бізнес називається {name}"
             }
-        }
+        },
+        "name": "Кафе та паби"
     },
     "caravansites": {
         "tagRenderings": {
