@@ -27,6 +27,7 @@
   import { AndroidPolyfill } from "../Logic/Web/AndroidPolyfill"
   import Forgejo from "../assets/svg/Forgejo.svelte"
   import Locale from "./i18n/Locale"
+
   AndroidPolyfill.init().then(() => console.log("Android polyfill setup completed"))
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -35,12 +36,14 @@
       "oauth_token",
       undefined,
       "Used to complete the login"
-    ),
+    )
   })
   const state = new UserRelatedState(osmConnection)
   const t = Translations.t.index
   const tu = Translations.t.general
   const tr = Translations.t.general.morescreen
+
+  const recentThemes = state.recentlyVisitedThemes.value.mapD(themes => themes.map(thId => ThemeSearch.officialThemesById.get(thId)))
 
   let userLanguages = osmConnection.userDetails.map((ud) => ud?.languages ?? [])
   let search: UIEventSource<string | undefined> = new UIEventSource<string>("")
@@ -64,6 +67,7 @@
   const customThemes: Store<MinimalThemeInformation[]> = Stores.ListStabilized<string>(
     state.installedUserThemes
   ).mapD((stableIds) => Utils.NoNullInplace(stableIds.map((id) => state.getUnofficialTheme(id))))
+
   function filtered(themes: Store<MinimalThemeInformation[]>): Store<MinimalThemeInformation[]> {
     const searchIndex = Locale.language.map(language => {
       return new ThemeSearchIndex(language, themes.data)
@@ -97,7 +101,7 @@
   let customSearched: Store<MinimalThemeInformation[]> = filtered(customThemes)
 
   let searchIsFocussed = new UIEventSource(false)
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", function(event) {
     if (event.ctrlKey && event.code === "KeyF") {
       searchIsFocussed.set(true)
       event.preventDefault()
@@ -161,6 +165,17 @@
         </a>
       </div>
     </div>
+
+    <LoginToggle {state}>
+      {#if $recentThemes.length > 2}
+        <div class="my-4">
+          <h2>
+            <Tr t={Translations.t.index.recentThemes} />
+          </h2>
+          <ThemesList {state} themes={$recentThemes} onlyIcons />
+        </div>
+      {/if}
+    </LoginToggle>
 
     <Searchbar
       value={search}
