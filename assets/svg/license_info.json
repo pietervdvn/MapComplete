@@ -730,18 +730,18 @@
     "license": "LOGO AND CC-BY-SA-4.0",
     "authors": [
       "Pieter Vander Vennet",
-      " OSM"
+      "OSM"
     ],
     "sources": [
       "https://mapcomplete.org"
     ]
   },
   {
-    "path": "mapcomplete_logo.svg",
+    "path": "mapcomplete_logo_centered.svg",
     "license": "LOGO AND CC-BY-SA-4.0",
     "authors": [
       "Pieter Vander Vennet",
-      " OSM"
+      "OSM"
     ],
     "sources": [
       "https://mapcomplete.org"
