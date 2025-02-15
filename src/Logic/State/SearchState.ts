@@ -4,7 +4,7 @@ import CombinedSearcher from "../Search/CombinedSearcher"
 import FilterSearch, { FilterSearchResult } from "../Search/FilterSearch"
 import LocalElementSearch from "../Search/LocalElementSearch"
 import CoordinateSearch from "../Search/CoordinateSearch"
-import ThemeSearch from "../Search/ThemeSearch"
+import { ThemeSearchIndex } from "../Search/ThemeSearch"
 import OpenStreetMapIdSearch from "../Search/OpenStreetMapIdSearch"
 import PhotonSearch from "../Search/PhotonSearch"
 import ThemeViewState from "../../Models/ThemeViewState"
@@ -67,8 +67,8 @@ export default class SearchState {
             Stores.concat(suggestions).map((suggestions) => CombinedSearcher.merge(suggestions))
         )
 
-        const themeSearch = new ThemeSearch(state)
-        this.themeSuggestions = this.searchTerm.mapD((query) => themeSearch.search(query, 3))
+        const themeSearch = ThemeSearchIndex.fromState(state)
+        this.themeSuggestions = this.searchTerm.mapD((query) => themeSearch.data.search(query, 3), [themeSearch])
 
         const layerSearch = new LayerSearch(state.theme)
         this.layerSuggestions = this.searchTerm.mapD((query) => layerSearch.search(query, 5))

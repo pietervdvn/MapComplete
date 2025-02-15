@@ -208,6 +208,7 @@
     "fake-dom": "^1.0.4",
     "flowbite-svelte": "^0.47.4",
     "follow-redirects": "^1.15.9",
+    "fuse.js": "^7.1.0",
     "geojson2svg": "^2.0.2",
     "html-to-image": "^1.11.11",
     "i18next-client": "^1.11.4",

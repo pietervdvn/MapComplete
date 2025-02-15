@@ -18,15 +18,15 @@
   import Mastodon from "../assets/svg/Mastodon.svelte"
   import Liberapay from "../assets/svg/Liberapay.svelte"
   import Bug from "../assets/svg/Bug.svelte"
-  import Github from "../assets/svg/Github.svelte"
   import { Utils } from "../Utils"
   import { ArrowTrendingUp } from "@babeard/svelte-heroicons/solid/ArrowTrendingUp"
   import Searchbar from "./Base/Searchbar.svelte"
-  import ThemeSearch from "../Logic/Search/ThemeSearch"
+  import ThemeSearch, { ThemeSearchIndex } from "../Logic/Search/ThemeSearch"
   import SearchUtils from "../Logic/Search/SearchUtils"
   import ChevronDoubleRight from "@babeard/svelte-heroicons/mini/ChevronDoubleRight"
   import { AndroidPolyfill } from "../Logic/Web/AndroidPolyfill"
   import Forgejo from "../assets/svg/Forgejo.svelte"
+  import Locale from "./i18n/Locale"
   AndroidPolyfill.init().then(() => console.log("Android polyfill setup completed"))
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -65,29 +65,26 @@
     state.installedUserThemes
   ).mapD((stableIds) => Utils.NoNullInplace(stableIds.map((id) => state.getUnofficialTheme(id))))
   function filtered(themes: Store<MinimalThemeInformation[]>): Store<MinimalThemeInformation[]> {
+    const searchIndex = Locale.language.map(language => {
+      return new ThemeSearchIndex(language, themes.data)
+    }, [themes])
+
+
     return searchStable.map(
-      (search) => {
+      (searchTerm) => {
         if (!themes.data) {
           return []
         }
-        if (!search) {
+        if (!searchTerm) {
           return themes.data
         }
 
-        const start = new Date().getTime()
-        const scores = ThemeSearch.sortedByLowestScores(search, themes.data)
-        const end = new Date().getTime()
-        console.trace("Scores for", search, "are", scores, "searching took", end - start, "ms")
-        const strict = scores.filter((sc) => sc.lowest < 2)
-        if (strict.length > 0) {
-          return strict.map((sc) => sc.theme)
-        }
-        return scores
-          .filter((sc) => sc.lowest < 4)
-          .slice(0, 6)
-          .map((sc) => sc.theme)
+        const index = searchIndex.data
+
+        return index.search(searchTerm)
+
       },
-      [themes]
+      [searchIndex]
     )
   }
 
