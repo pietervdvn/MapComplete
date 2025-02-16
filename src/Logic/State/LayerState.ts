@@ -8,7 +8,6 @@ import Translations from "../../UI/i18n/Translations"
 import { RegexTag } from "../Tags/RegexTag"
 import { Or } from "../Tags/Or"
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig"
-import Constants from "../../Models/Constants"
 
 export type ActiveFilter = {
     layer: LayerConfig

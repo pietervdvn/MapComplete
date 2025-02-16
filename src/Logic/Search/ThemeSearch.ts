@@ -16,7 +16,7 @@ export class ThemeSearchIndex {
     private readonly layerIndex: Fuse<{ id: string, description }>
 
     constructor(language: string, themesToSearch?: MinimalThemeInformation[], layersToIgnore: string[] = []) {
-        const themes = themesToSearch ?? ThemeSearch.officialThemes?.themes
+        const themes = Utils.NoNull(themesToSearch ?? ThemeSearch.officialThemes?.themes)
         if (!themes) {
             throw "No themes loaded. Did generate:layeroverview fail?"
         }
@@ -31,7 +31,7 @@ export class ThemeSearchIndex {
             ]
         }
 
-        this.themeIndex = new Fuse(themes.filter(th => th.id !== "personal"), fuseOptions)
+        this.themeIndex = new Fuse(themes.filter(th => th?.id !== "personal"), fuseOptions)
 
         const toIgnore = new Set(layersToIgnore)
         const layersAsList: { id: string, description: Record<string, string[]> }[] = []
