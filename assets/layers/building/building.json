@@ -1,0 +1,344 @@
+{
+  "id": "building",
+  "isCounted": false,
+  "source": {
+    "osmTags": "building~*"
+  },
+  "description": {
+    "en": "All buildings"
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        }
+      ],
+      "iconSize": "10,10"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#ff2222",
+      "width": 1
+    }
+  ],
+  "name": {
+    "en": "Buildings"
+  },
+  "title": {
+    "en": "Building"
+  },
+  "tagRenderings": [
+    {
+      "id": "architecture",
+      "question": {
+        "en": "What is the architectural style of this building?"
+      },
+      "mappings": [
+        {
+          "if": "building:architecture=islamic",
+          "then": {
+            "en": "Islamic architecture",
+            "fr": "Architecture islamique",
+            "nl": "Islamitische architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=mamluk",
+          "then": {
+            "en": "Mamluk architecture",
+            "fr": "Architecture mamelouke",
+            "nl": "Mamelukse architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=romanesque",
+          "then": {
+            "en": "Romanesque architecture",
+            "fr": "Architecture romane",
+            "nl": "Romaanse architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=gothic",
+          "then": {
+            "en": "Gothic architecture",
+            "fr": "Architecture gothique",
+            "nl": "Gotische architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=renaissance",
+          "then": {
+            "en": "Renaissance architecture",
+            "fr": "Architecture Renaissance",
+            "nl": "Renaissance-architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=mannerism",
+          "then": {
+            "en": "Mannerism",
+            "fr": "Maniérisme",
+            "nl": "Maniërisme"
+          }
+        },
+        {
+          "if": "building:architecture=ottoman",
+          "then": {
+            "en": "Ottoman architecture",
+            "fr": "Architecture ottomane",
+            "nl": "Ottomaanse architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=baroque",
+          "then": {
+            "en": "Baroque architecture",
+            "fr": "Architecture baroque",
+            "nl": "Barokarchitectuur"
+          }
+        },
+        {
+          "if": "building:architecture=rococo",
+          "then": {
+            "en": "Rococo",
+            "fr": "Rococo",
+            "nl": "Rococo"
+          }
+        },
+        {
+          "if": "building:architecture=empire",
+          "then": {
+            "en": "Empire style",
+            "fr": "Style Empire",
+            "nl": "Empirestijl"
+          }
+        },
+        {
+          "if": "building:architecture=moorish revival",
+          "then": {
+            "en": "Moorish Revival",
+            "fr": "Architecture néo-mauresque",
+            "nl": "Neo-Moorse architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=neoclassicism",
+          "then": {
+            "en": "Neoclassical architecture",
+            "fr": "Architecture néoclassique",
+            "nl": "Neoclassicistische architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=georgian",
+          "then": {
+            "en": "Georgian architecture",
+            "fr": "Architecture géorgienne",
+            "nl": "Georgian architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=victorian",
+          "then": {
+            "en": "Victorian architecture",
+            "fr": "Architecture victorienne",
+            "nl": "Victoriaanse architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=historicism",
+          "then": {
+            "en": "Historicism",
+            "fr": "Historicisme",
+            "nl": "Historisme"
+          }
+        },
+        {
+          "if": "building:architecture=neo-romanesque",
+          "then": {
+            "en": "Romanesque Revival",
+            "fr": "Architecture néo-romane",
+            "nl": "Neo-Romaanse architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=neo-byzantine",
+          "then": {
+            "en": "Byzantine Revival",
+            "fr": "Architecture néo-byzantine",
+            "nl": "Neo-Byzantijnse architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=neo-gothic",
+          "then": {
+            "en": "Gothic Revival",
+            "fr": "Architecture néo-gothique",
+            "nl": "Neo-Gotische architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=neo-renaissance",
+          "then": {
+            "en": "Renaissance Revival",
+            "fr": "Architecture néo-Renaissance",
+            "nl": "Neo-Renaissance architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=neo-baroque",
+          "then": {
+            "en": "Baroque Revival",
+            "fr": "Architecture néo-baroque",
+            "nl": "Neo-Barokarchitectuur"
+          }
+        },
+        {
+          "if": "building:architecture=art_nouveau",
+          "then": {
+            "en": "Art Nouveau",
+            "fr": "Art nouveau",
+            "nl": "Art Nouveau"
+          }
+        },
+        {
+          "if": "building:architecture=eclectic",
+          "then": {
+            "en": "Eclecticism in architecture",
+            "fr": "Éclectisme en architecture",
+            "nl": "Eclecticisme in architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=functionalism",
+          "then": {
+            "en": "Functionalism",
+            "fr": "Fonctionnalisme",
+            "nl": "Functionalisme"
+          }
+        },
+        {
+          "if": "building:architecture=cubism",
+          "then": {
+            "en": "Cubism",
+            "fr": "Cubisme",
+            "nl": "Kubisme"
+          }
+        },
+        {
+          "if": "building:architecture=new_objectivity",
+          "then": {
+            "en": "New Objectivity",
+            "fr": "Nouvelle Objectivité",
+            "nl": "Nieuwe Zakelijkheid"
+          }
+        },
+        {
+          "if": "building:architecture=art_deco",
+          "then": {
+            "en": "Art Deco",
+            "fr": "Art déco",
+            "nl": "Art Deco"
+          }
+        },
+        {
+          "if": "building:architecture=modern",
+          "then": {
+            "en": "Modern architecture",
+            "fr": "Architecture moderne",
+            "nl": "Moderne architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=amsterdam_school",
+          "then": {
+            "en": "Amsterdam School",
+            "fr": "École d'Amsterdam",
+            "nl": "Amsterdamse School"
+          }
+        },
+        {
+          "if": "building:architecture=international_style",
+          "then": {
+            "en": "International Style",
+            "fr": "Style international",
+            "nl": "Internationale Stijl"
+          }
+        },
+        {
+          "if": "building:architecture=constructivism",
+          "then": {
+            "en": "Constructivism",
+            "fr": "Constructivisme",
+            "nl": "Constructivisme"
+          }
+        },
+        {
+          "if": "building:architecture=stalinist_neoclassicism",
+          "then": {
+            "en": "Stalinist architecture",
+            "fr": "Architecture stalinienne",
+            "nl": "Stalinistische architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=brutalist",
+          "then": {
+            "en": "Brutalist architecture",
+            "fr": "Architecture brutaliste",
+            "nl": "Brutalistische architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=postmodern",
+          "then": {
+            "en": "Postmodern architecture",
+            "fr": "Architecture postmoderne",
+            "nl": "Postmoderne architectuur"
+          }
+        },
+        {
+          "if": "building:architecture=contemporary",
+          "then": {
+            "en": "Contemporary architecture",
+            "fr": "Architecture contemporaine",
+            "nl": "Hedendaagse architectuur"
+          }
+        }
+      ],
+      "render": {
+        "en": "{building:architecture}"
+      },
+      "multiAnswer": true,
+      "freeform": {
+        "key": "building:architecture"
+      }
+    },
+    {
+      "id": "construction_date",
+      "question": {
+        "en": "When was this built?"
+      },
+      "render": {
+        "en": "Built in <b>{construction_date}</b>"
+      },
+      "freeform": {
+        "key": "construction_date",
+        "type": "date"
+      }
+    },
+    "address.address"
+  ],
+  "minzoom": 18,
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  }
+}

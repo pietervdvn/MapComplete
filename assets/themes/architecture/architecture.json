@@ -1,0 +1,38 @@
+{
+  "id": "architecture",
+  "title": {
+    "en": "Buildings with an architectural style"
+  },
+  "description": {
+    "en": "A map showing the archetectural style of buildings"
+  },
+  "icon": "./assets/themes/architecture/architecture.svg",
+  "defaultBackgroundId": "protomaps.white",
+
+  "layers": [
+    {
+      "builtin": "building",
+      "override": {
+        "id": "buildings_with_architecture",
+        "isCounted": true,
+        "minzoom": 12,
+        "source": {
+          "osmTags": {
+            "and+": [
+              "building:architecture~*"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "building",
+      "override": {
+        "name": null,
+        "filter": {
+          "sameAs": "buildings_with_architecture"
+        }
+      }
+    }
+  ]
+}
