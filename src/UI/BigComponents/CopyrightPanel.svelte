@@ -8,7 +8,6 @@
   import Constants from "../../Models/Constants"
   import ContributorCount from "../../Logic/ContributorCount"
   import BaseUIElement from "../BaseUIElement"
-  import Github from "../../assets/svg/Github.svelte"
   import { TranslateIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Osm_logo from "../../assets/svg/Osm_logo.svelte"
   import Generic_map from "../../assets/svg/Generic_map.svelte"
