@@ -50,6 +50,7 @@ export default class ThemeSource implements IndexedFeatureSource {
         const features = (this.features = new UIEventSource<Feature[]>([]))
         const featuresById = (this.featuresById = new UIEventSource(new Map()))
         this.core = mvtAvailableLayers.mapD((mvtAvailableLayers) => {
+            this.core?.data?.destruct()
             const core = new ThemeSourceCore(
                 layers,
                 featureSwitches,
@@ -299,5 +300,10 @@ class ThemeSourceCore extends FeatureSourceMerger {
         await this._downloadAll.updateAsync(this._mapBounds.data)
         // await Promise.all(this.supportsForceDownload.map((i) => i.updateAsync()))
         console.log("Done")
+    }
+
+    public destruct() {
+        this.features.destroy()
+        this.featuresById.destroy()
     }
 }
