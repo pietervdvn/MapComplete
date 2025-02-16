@@ -626,11 +626,9 @@ class MappedStore<TIn, T> extends Store<T> {
     }
 
     private registerCallbacksToUpstream() {
-        const self = this
-
-        this._unregisterFromUpstream = this._upstream.addCallback((_) => self.update())
+        this._unregisterFromUpstream = this._upstream.addCallback((_) => this.update())
         this._unregisterFromExtraStores = this._extraStores?.map((store) =>
-            store?.addCallback((_) => self.update())
+            store?.addCallback((_) => this.update())
         )
         this._callbacksAreRegistered = true
     }
