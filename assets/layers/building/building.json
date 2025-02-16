@@ -31,7 +31,9 @@
     "en": "Buildings"
   },
   "title": {
-    "en": "Building"
+    "render": {
+      "en": "Building"
+    }
   },
   "tagRenderings": [
     {
