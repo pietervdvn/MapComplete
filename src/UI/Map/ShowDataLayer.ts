@@ -352,6 +352,11 @@ class LineRenderingLayer {
         // After waiting 'till the map has loaded, the data might have changed already
         // As such, we only now read the features from the featureSource and compare with the previously set data
         const features = featureSource.data
+        if (features.length === 0) {
+            // This is a very ugly workaround for https://source.mapcomplete.org/MapComplete/MapComplete/issues/2312,
+            // but I couldn't find the root cause
+            return
+        }
         const src = <GeoJSONSource>map.getSource(this._layername)
         {
             // Add source to the map or update the feature source

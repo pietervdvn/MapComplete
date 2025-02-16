@@ -235,7 +235,7 @@
         "nl": "Wat voor markering heeft deze oversteekplaats?",
         "de": "Welche Art von Markierungen gibt es an diesem Übergang?",
         "es": "¿Qué tipo de señalización tiene este cruce?",
-        "ca": "Quin tipus de marques té aquest encreuament?"
+        "ca": "Quin tipus de senyalització té aquest encreuament?"
       },
       "mappings": [
         {
@@ -261,7 +261,7 @@
             "de": "Dieser Übergang ist mit Zebrastreifen markiert",
             "es": "Este paso de cebra está señalizado",
             "cs": "Tento přechod má označení zebra",
-            "ca": "Aquest encreuament té marques zebra"
+            "ca": "Aquest pas de vianants té marques de zebra"
           },
           "icon": {
             "class": "large",
@@ -318,7 +318,7 @@
             "de": "Dieser Übergang hat gestrichelte Linien auf beiden Seiten des Übergangs",
             "es": "Este cruce tiene líneas discontinuas a ambos lados del cruce",
             "cs": "Tento přechod má po obou stranách přerušované čáry",
-            "ca": "Aquest encreuament ha traçat línies a banda i banda de la travessia"
+            "ca": "Aquest encreuament té traçades línies a banda i banda de la travessia"
           },
           "icon": {
             "class": "large",
@@ -347,7 +347,7 @@
             "nl": "Deze oversteekplaats is gemarkeerd door een anders gekleurd wegdek",
             "de": "Dieser Übergang wird durch eine andersfarbige Oberfläche gekennzeichnet",
             "es": "Este cruce se marca utilizando una superficie de color diferente",
-            "ca": "Aquest encreuament està marcat per l'ús d'una superfície de color diferent"
+            "ca": "Aquest encreuament està marcat usant una superfície de color diferent"
           },
           "icon": {
             "class": "large",
@@ -361,7 +361,7 @@
             "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met schuine strepen die ze verbinden",
             "de": "Diese Kreuzung hat Linien auf beiden Seiten der Kreuzung, zusammen mit abgewinkelten Stangen, die sie verbinden",
             "es": "Este cruce tiene líneas a ambos lados, junto con barras en ángulo que las conectan",
-            "ca": "Aquest encreuament té línies a banda i banda de l'encreuament, juntament amb barres angletes que les connecten"
+            "ca": "Aquest encreuament té línies a banda i banda de l'encreuament, juntament amb barres en diagonal que les connecten"
           },
           "icon": {
             "class": "large",
@@ -386,7 +386,7 @@
             "de": "Dieser Übergang hat Zebrastreifen in wechselnden Farben",
             "es": "Este paso tiene marcas de cebra en colores alternos",
             "cs": "Tento přechod má označení zebry ve střídavých barvách",
-            "ca": "Aquest encreuament té marques zebra en colors alterns"
+            "ca": "Aquest pas de vianants té marques de zebra en colors alterns"
           },
           "icon": {
             "class": "large",
@@ -401,7 +401,7 @@
             "de": "Dieser Übergang hat doppelte Zebrastreifen",
             "es": "Este paso de cebra tiene doble señalización",
             "cs": "Tento přechod má dvojité značení zebry",
-            "ca": "Aquest encreuament té marcacions de doble zebra"
+            "ca": "Aquest pas de vianants té marques de zebra doble"
           },
           "icon": {
             "class": "large",
@@ -438,7 +438,7 @@
             "de": "Dieser Übergang hat doppelte Linien auf beiden Seiten des Übergangs",
             "es": "Este cruce tiene líneas dobles a cada lado del cruce",
             "cs": "Tento přechod má dvojité čáry na obou stranách přechodu",
-            "ca": "Aquest encreuament té línies dobles a banda i banda de la travessia"
+            "ca": "Aquest encreuament té línies dobles a banda i banda del creuament"
           },
           "icon": {
             "class": "large",
@@ -451,7 +451,7 @@
         "nl": "Deze oversteekplaats heeft {crossing:markings} markeringen",
         "de": "Dieser Übergang hat {crossing:markings} Markierungen",
         "es": "Este cruce tiene marcas {crossing:markings}",
-        "ca": "Aquest encreuament té {crossing:markings} marques"
+        "ca": "Aquest encreuament té marques {crossing:markings}"
       },
       "freeform": {
         "key": "crossing:markings",

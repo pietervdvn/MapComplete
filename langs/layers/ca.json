@@ -3057,16 +3057,16 @@
                 "render": "S'ha de pagar una tarifa de {charge} per a escalar aquí"
             },
             "max_bolts": {
-                "question": "Quants parabolts tenen com a màxim les rutes a {title()} ?",
+                "question": "Quants ancoratges d'anella tenen com a màxim les rutes a {title()} ?",
                 "render": "Les rutes d'escalada esportiva aquí tenen com a màxim {climbing:bolts:max} perns. <div class='subtle'>Això és sense estacions d'assegurament i indica quantes cintes necessita un escalador.</div>"
             },
             "max_difficulty": {
-                "question": "Quina és la ruta de grau més alt d'aquí, segons el sistema de classificació francès?",
-                "render": "La nota més alta és {climbing:grade:french:max} segons el sistema francès/belga"
+                "question": "Quina és la ruta de major aquí, segons el sistema de classificació francès?",
+                "render": "La grau més alt és {climbing:grade:french:max} segons el sistema francès/belga"
             },
             "min_difficulty": {
-                "question": "Quin és el grau de la ruta més fàcil aquí, segons el sistema de classificació francès?",
-                "render": "La nota més baixa és {climbing:grade:french:min} segons el sistema francès/belga"
+                "question": "Quin és el grau de la ruta més fàcil aquí segons el sistema de classificació francès?",
+                "render": "El grau més baix és {climbing:grade:french:min} segons el sistema francès/belga"
             },
             "sportclimbing": {
                 "mappings": {
@@ -3085,16 +3085,16 @@
             "toprope": {
                 "mappings": {
                     "0": {
-                        "then": "L'escalada propícia és possible aquí"
+                        "then": "L'escalada en politja és possible aquí"
                     },
                     "1": {
-                        "then": "L'escalada propícia no és possible aquí"
+                        "then": "L'escalada en politja no és possible aquí"
                     },
                     "2": {
-                        "then": "Hi ha {climbing:toprope} rutes específiques"
+                        "then": "Hi ha {climbing:toprope} rutes d'escalada en politja"
                     }
                 },
-                "question": "És possible l'escalada propícia aquí?"
+                "question": "És possible l'escalada en politja aquí?"
             },
             "trad_climbing": {
                 "mappings": {
@@ -3105,11 +3105,11 @@
                         "then": "L'escalada tradicional no és possible aquí"
                     },
                     "2": {
-                        "then": "Hi ha {climbing:traditional} vies d'escalada tradicionals"
+                        "then": "Hi ha {climbing:traditional} rutes d'escalada tradicionals"
                     }
                 },
                 "question": "És possible l'escalada tradicional aquí?",
-                "questionHint": "Utilitzant el vostre propi engranatge, p. ex., chocks"
+                "questionHint": "Utilitzant el vostre propi equipament, p. ex., cales"
             },
             "website": {
                 "question": "Hi ha un lloc web (no oficial) amb més informació (p. ex. topos)?"
@@ -3150,7 +3150,7 @@
                         "then": "Una roca d'escalada: una única roca o penya-segat amb una o unes quantes vies d'escalada que es poden escalar amb seguretat sense corda"
                     },
                     "1": {
-                        "then": "Un cinglera d'escalada - una sola roca o penya-segat amb almenys unes quantes rutes d'escalada"
+                        "then": "Un cinglera d'escalada: una sola roca o penya-segat amb almenys unes quantes rutes d'escalada"
                     },
                     "2": {
                         "then": "Una zona d'escalada amb un o més penya-segats i/o roques"
@@ -3170,7 +3170,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Trenca d'escalada <b>{name}</b>"
+                    "then": "Paret d'escalada <b>{name}</b>"
                 },
                 "1": {
                     "then": "Àrea d'escalada <b>{name}</b>"
@@ -3194,8 +3194,8 @@
                 "title": "un club d'escalada"
             },
             "1": {
-                "description": "Una ONG que treballa per l'escalada",
-                "title": "un ngo d'escalada"
+                "description": "Una ONG que treballa amb l'escalada",
+                "title": "una ONG d'escalada"
             }
         },
         "tagRenderings": {
@@ -3234,78 +3234,78 @@
                         "then": "Hi ha {climbing:speed} parets d'escalada de velocitat"
                     }
                 },
-                "question": "Hi ha una paret d'escalada ràpida?"
+                "question": "Hi ha una paret d'escalada de velocitat?"
             },
             "auto_belay_lead": {
                 "mappings": {
                     "0": {
-                        "then": "No hi ha relleus automàtics per a l'escalada de plom"
+                        "then": "No hi ha asseguraments automàtics per al cap de corda"
                     },
                     "1": {
-                        "then": "Hi ha una sèrie de relleus automàtics per a l'escalada de plom"
+                        "then": "Hi ha una sèrie d'asseguraments automàtics per a cada cap de corda"
                     },
                     "2": {
-                        "then": "Hi ha un relleu automàtic per a cada ruta d'escalada de plom"
+                        "then": "Hi ha un assegurament automàtic per a cada cap de corda"
                     }
                 },
-                "question": "Hi ha rèpliques automàtiques per a l'escalada de plom?",
-                "render": "Hi ha {climbing:autobelay:sport} relleus automàtics per a l'escalada de plom"
+                "question": "Hi ha asseguraments automàtics per al cap de corda?",
+                "render": "Hi ha {climbing:autobelay:sport} asseguraments automàtics per al cap de corda"
             },
             "auto_belay_toprope": {
                 "mappings": {
                     "0": {
-                        "then": "No hi ha relleus automàtics per a la corda superior"
+                        "then": "No hi ha asseguraments automàtics per a l'escalada en politja"
                     },
                     "1": {
-                        "then": "Hi ha una sèrie de relleus automàtics per a la corda superior"
+                        "then": "Hi ha una sèrie d'asseguraments automàtics per a l'escalada en politja"
                     },
                     "2": {
-                        "then": "Hi ha un relleu automàtic per a cada ruta de la corda superior, però també és possible el relleu manual"
+                        "then": "Hi ha un assegurament automàtic per a cada ruta d'escalada en politja, però també és possible el relleu manual"
                     },
                     "3": {
-                        "then": "Les rutes de corda més altes només es poden escalar en relleu automàtic"
+                        "then": "Les rutes d'escalada en politja només es poden escalar en relleu automàtic"
                     }
                 },
-                "question": "Hi ha belays automàtics per a la corda superior aquí?",
+                "question": "Hi ha relleus automàtics per a l'escalada en politja aquí?",
                 "questionHint": "Excloent els relleus automàtics que només són per a l'escalada de velocitat",
-                "render": "Hi ha {climbing:autobelay:toprope} dispositius de relleu automàtic per a cordes superiors"
+                "render": "Hi ha {climbing:autobelay:toprope} dispositius de relleu automàtic per a l'escalada en politja"
             },
             "belay_device_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Els dispositius Belay es proporcionen a cada corda"
+                        "then": "Els dispositius d'assegurament es proporcionen a cada corda"
                     },
                     "1": {
-                        "then": "Un dispositiu d'aspiració es pot demanar prestat gratuïtament aquí"
+                        "then": "Aquí es pot sol·licitar prestat un dispositiu d'assegurament gratuït"
                     },
                     "2": {
                         "then": "Es pot llogar un dispositiu de relleu aquí per {service:climbing_belay_device:rental:charge}"
                     },
                     "3": {
-                        "then": "Es pot llogar un dispositiu d'aspiració aquí"
+                        "then": "Aquí es pot llogar un dispositiu d'assegurament"
                     },
                     "4": {
-                        "then": "Un dispositiu de relleu pot llogar <b>no</b> aquí"
+                        "then": "Aquí <b>no</b> es pot llogar un dispositiu d'assegurament"
                     }
                 },
-                "question": "Es pot llogar un aparell de belay aquí per utilitzar al gimnàs?"
+                "question": "Aquí es pot llogar un aparell d'assegurament per utilitzar al gimnàs?"
             },
             "harness_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Un arnès d'escalada es pot demanar prestat gratuïtament aquí"
+                        "then": "Aquí es pot demanar prestat gratuïtament un arnès d'escalada"
                     },
                     "1": {
                         "then": "Es pot llogar un arnès d'escalada aquí per {service:climbing_harness:rental:charge}"
                     },
                     "2": {
-                        "then": "Es pot llogar un arnès d'escalada aquí"
+                        "then": "Aquí es pot llogar un arnès d'escalada"
                     },
                     "3": {
-                        "then": "Un arnés d'escalada pot <b>no</b> ser llogat aquí"
+                        "then": "Aquí <b>no</b> es pot llogar un arnés d'escalada"
                     }
                 },
-                "question": "Es pot llogar un arnès d'escalada aquí per utilitzar al gimnàs?"
+                "question": "Aquí es pot llogar un arnès d'escalada per utilitzar al gimnàs?"
             },
             "name": {
                 "question": "Quin és el nom d'aquest gimnàs d'escalada?"
@@ -3313,42 +3313,42 @@
             "rope_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Una corda d'escalada es pot demanar prestat gratuïtament aquí"
+                        "then": "Aquí es pot demanar prestat gratuïtament una corda d'escalada"
                     },
                     "1": {
                         "then": "Es pot llogar una corda d'escalada aquí per {service:climbing_rope:rental:charge}"
                     },
                     "2": {
-                        "then": "Es pot llogar una corda d'escalada aquí"
+                        "then": "Aquí es pot llogar una corda d'escalada"
                     },
                     "3": {
-                        "then": "Es pot llogar una corda d'escalada <b>no</b> aquí"
+                        "then": "Aquí <b>no</b> es pot llogar una corda d'escalada"
                     }
                 },
-                "question": "Es pot llogar una corda d'escalada aquí per utilitzar al gimnàs?"
+                "question": "Aquí es pot llogar una corda d'escalada per a utilitzar al gimnàs?"
             },
             "shoe_rental": {
                 "mappings": {
                     "0": {
-                        "then": "Les sabates d'escalada es poden demanar en préstec gratuïtament aquí"
+                        "then": "Aquí es poden demanar en préstec gratuïtament sabates d'escalada"
                     },
                     "1": {
                         "then": "Les sabates d'escalada es poden llogar aquí per {service:climbing_shoes:rental:charge}"
                     },
                     "2": {
-                        "then": "Es poden llogar sabates d'escalada aquí"
+                        "then": "Aquí es poden llogar sabates d'escalada"
                     },
                     "3": {
-                        "then": "Les sabates d'escalada poden llogar-se aquí <b>no</b>"
+                        "then": "Aquí <b>no</b> poden llogar-se sabates d'escalada"
                     }
                 },
-                "question": "Es poden llogar sabates d'escalada aquí per utilitzar al gimnàs?"
+                "question": "Aquí es poden llogar sabates d'escalada per utilitzar al gimnàs?"
             }
         },
         "title": {
             "mappings": {
                 "0": {
-                    "then": "gimnàs d'escalada <strong>{name}</strong>"
+                    "then": "Gimnàs d'escalada <strong>{name}</strong>"
                 }
             },
             "render": "Gimnàs d'escalada"
@@ -3392,11 +3392,11 @@
         "tagRenderings": {
             "Difficulty": {
                 "question": "Quin és el grau d'aquesta via d'escalada segons el sistema francès/belga?",
-                "render": "La qualificació és {climbing:grade:french} segons el sistema francès/belga"
+                "render": "El grau és {climbing:grade:french} segons el sistema francès/belga"
             },
             "Length": {
                 "question": "Quant dura aquesta via d'escalada (en metres)?",
-                "render": "Aquesta ruta és {canonical(climbing:length)} llarga"
+                "render": "Aquesta ruta és {canonical(climbing:length)} de llarg"
             },
             "Name": {
                 "mappings": {
@@ -3413,11 +3413,11 @@
             "bolts": {
                 "mappings": {
                     "0": {
-                        "then": "Aquesta ruta no està vorejada"
+                        "then": "Aquesta ruta no té ancoratges d'anella"
                     }
                 },
-                "question": "Quants perns té aquesta ruta abans d'arribar a l'ancoratge?",
-                "render": "Aquesta ruta té {climbing:bolts} perns. <div class='subtle'>Això no té estacions d'aspiració i indica quant de ràpid necessita un escalador.</div>"
+                "question": "Quants ancoratges d'anella té aquesta ruta abans d'arribar a l'ancoratge?",
+                "render": "Aquesta ruta té {climbing:bolts} ancoratges d'anella. <div class='subtle'>Això és sense estacions d'assegurament i indica quantes cintes necessita un escalador.</div>"
             }
         },
         "title": {
@@ -3443,7 +3443,7 @@
             },
             "2": {
                 "description": "Un rellotge visible públicament muntat directament en una paret",
-                "title": "un rellotge muntat a la paret, muntat directament en una paret"
+                "title": "un rellotge muntat directament en una paret"
             }
         },
         "tagRenderings": {
@@ -3752,13 +3752,13 @@
                         "then": "Aquest encreuament no té marques"
                     },
                     "1": {
-                        "then": "Aquest encreuament té marques zebra"
+                        "then": "Aquest pas de vianants té marques de zebra"
                     },
                     "10": {
-                        "then": "Aquest encreuament té marques zebra en colors alterns"
+                        "then": "Aquest pas de vianants té marques de zebra en colors alterns"
                     },
                     "11": {
-                        "then": "Aquest encreuament té marcacions de doble zebra"
+                        "then": "Aquest pas de vianants té marques de zebra doble"
                     },
                     "12": {
                         "then": "Aquest encreuament té pictogrames a la carretera"
@@ -3767,7 +3767,7 @@
                         "then": "Aquest encreuament té línies a banda i banda de l'encreuament, juntament amb barres que les connecten, amb una interrupció a cada barra"
                     },
                     "14": {
-                        "then": "Aquest encreuament té línies dobles a banda i banda de la travessia"
+                        "then": "Aquest encreuament té línies dobles a banda i banda del creuament"
                     },
                     "2": {
                         "then": "Aquest encreuament té marques d'un tipus desconegut"
@@ -3779,23 +3779,23 @@
                         "then": "Aquest encreuament té línies a banda i banda de l'encreuament, juntament amb barres que els connecten"
                     },
                     "5": {
-                        "then": "Aquest encreuament ha traçat línies a banda i banda de la travessia"
+                        "then": "Aquest encreuament té traçades línies a banda i banda de la travessia"
                     },
                     "6": {
                         "then": "Aquest encreuament té línies de punts a banda i banda del encreuament"
                     },
                     "7": {
-                        "then": "Aquest encreuament està marcat per l'ús d'una superfície de color diferent"
+                        "then": "Aquest encreuament està marcat usant una superfície de color diferent"
                     },
                     "8": {
-                        "then": "Aquest encreuament té línies a banda i banda de l'encreuament, juntament amb barres angletes que les connecten"
+                        "then": "Aquest encreuament té línies a banda i banda de l'encreuament, juntament amb barres en diagonal que les connecten"
                     },
                     "9": {
                         "then": "Aquest encreuament té marques zebra amb una interrupció en cada barra"
                     }
                 },
-                "question": "Quin tipus de marques té aquest encreuament?",
-                "render": "Aquest encreuament té {crossing:markings} marques"
+                "question": "Quin tipus de senyalització té aquest encreuament?",
+                "render": "Aquest encreuament té marques {crossing:markings}"
             }
         },
         "title": {
@@ -3868,7 +3868,7 @@
                         "then": "Utilitzable per a vehicles tot terreny especialitzats: tractor, ATV"
                     },
                     "7": {
-                        "then": "Impassable / Sense vehicle rodat"
+                        "then": "Impassable / Cap vehicle amb rodes"
                     }
                 },
                 "question": "Quina és la suavitat d'aquesta via ciclista?"
@@ -3888,7 +3888,7 @@
                         "then": "Aquest carril bici està fet de pedra empedrada"
                     },
                     "12": {
-                        "then": "Aquest carril bici està fet de terra crua"
+                        "then": "Aquest carril bici està fet de terra"
                     },
                     "2": {
                         "then": "Aquesta via ciclista està feta d'asfalt"
@@ -3956,7 +3956,7 @@
             "Surface of the road": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest carril bici no està endurit"
+                        "then": "Aquest carril bici no està paviment"
                     },
                     "1": {
                         "then": "Aquest carril bici està pavimentat"
@@ -3968,22 +3968,22 @@
                         "then": "Aquest carril bici està fet de pedra empedrada"
                     },
                     "12": {
-                        "then": "Aquest carril bici està fet de terra crua"
+                        "then": "Aquest carril bici està fet de terra"
                     },
                     "2": {
                         "then": "Aquest carril bici està fet d'asfalt"
                     },
                     "3": {
-                        "then": "Aquest carril bici està fet de llises pedres de paviment"
+                        "then": "Aquest carril bici està fet adoquins llisos"
                     },
                     "4": {
                         "then": "Aquest carril bici està fet de formigó"
                     },
                     "5": {
-                        "then": "Aquest carril bici està fet de llamborda (sense mànigues o sett)"
+                        "then": "Aquest carril bici està fet de llambordes (sense tallar o carreu)"
                     },
                     "6": {
-                        "then": "Aquest carril bici és de pedra empedrada natural i crua"
+                        "then": "Aquest carril bici és de pedra empedrada natural sense tallar"
                     },
                     "7": {
                         "then": "Aquest carril bici és de pedra empedrada plana i quadrada"
@@ -4013,16 +4013,16 @@
                         "then": "Utilitzable per rodes robustes; Bicicleta de treking, cotxes, bicitaxi"
                     },
                     "4": {
-                        "then": "Utilitzable per a vehicles amb alta habilitació: vehicle off-road lleuger"
+                        "then": "Utilitzable per a vehicles amb gran espai lliure al terra: vehicle tot terreny lleuger"
                     },
                     "5": {
-                        "then": "Utilitzable per a vehicles off-road: vehicle off-road de gran consum"
+                        "then": "Utilitzable per a vehicles tot terreny: vehicle tot terreny pesat"
                     },
                     "6": {
-                        "then": "Utilitzable per a vehicles especialitzats off-road: tractor, ATV"
+                        "then": "Utilitzable per a vehicles tot terreny especialitzats: tractor, quad"
                     },
                     "7": {
-                        "then": "Impassable / Sense vehicle rodat"
+                        "then": "Impassable / Cap vehicle amb rodes"
                     }
                 },
                 "question": "Quina és la suavitat d'aquest carrer?"
@@ -4116,34 +4116,34 @@
                         "then": "Els ciclomotors han d'utilitzar la via ciclista"
                     },
                     "1": {
-                        "then": "Els acceleradors han d'utilitzar la via"
+                        "then": "Les bicicletes de pedaleig assistit han d'utilitzar el carril bici"
                     },
                     "2": {
-                        "then": "Els ciclomotors i els acceleradors han d'utilitzar la via"
+                        "then": "Els ciclomotors i bicicletes de pedaleig assistit han d'utilitzar la via"
                     },
                     "3": {
                         "then": "Els ciclomotors no estan permesos"
                     },
                     "4": {
-                        "then": "No es permet l'ús de peel·les ràpides"
+                        "then": "Les bicicletes de pedaleig assistit no estan permeses"
                     },
                     "5": {
-                        "then": "No es permet l'ús de ciclomotors i acceleradors"
+                        "then": "No es permet l'ús de ciclomotors i bicicletes de pedaleig assistit"
                     },
                     "6": {
                         "then": "No hi ha cap senyal de trànsit addicional"
                     }
                 },
-                "question": "El signe de trànsit D7 (<img src='./assets/layers/cyclewaysandroads/trafficsign/be/BelgianroadsignD07.svg' style='width: 1.5em'>) té un signe suplementari?"
+                "question": "El senyal de trànsit D7 (<img src='./assets/layers/cyclewaysandroads/trafficsign/be/BelgianroadsignD07.svg' style='width: 1.5em'>) té un senyal suplementari?"
             },
             "cycleways_and_roads-cycleway:buffer": {
                 "question": "Quina és la distància entre el carril bici i la carretera?",
-                "render": "La memòria intermèdia a més d'aquesta pista és {cycleway:buffer} m"
+                "render": "L'espai junt a aquest carril bici és de {cycleway:buffer} m"
             },
             "incline": {
                 "mappings": {
                     "0": {
-                        "then": "Hi ha (probablement) cap inclinació aquí"
+                        "then": "Probablement aquí no hi ha inclinació"
                     },
                     "1": {
                         "then": "Aquesta carretera té pendent"
@@ -4213,35 +4213,35 @@
     },
     "cyclist_waiting_aid": {
         "description": "Diverses infraestructures que ajuden els ciclistes mentre esperen a un semàfor.",
-        "name": "Ciclista que espera ajuda",
+        "name": "Ajudes a l'espera dels ciclistes",
         "presets": {
             "0": {
                 "description": "Un reposapeus, barana o altres ajudes, per millorar la comoditat mentre s'espera als semàfors",
-                "title": "una ajuda d'espera ciclista"
+                "title": "una ajuda a l'espera del ciclista"
             }
         },
         "tagRenderings": {
             "direction": {
                 "mappings": {
                     "0": {
-                        "then": "Aquesta ajuda d'espera es pot utilitzar en avançar d'aquesta manera"
+                        "then": "Aquesta ajuda a l'espera es pot utilitzar quan s'avança en aquesta via"
                     },
                     "1": {
-                        "then": "Aquesta ajuda d'espera es pot utilitzar en retrocedir d'aquesta manera"
+                        "then": "Aquesta ajuda a l'espera es pot utilitzar quan es retrocedeix per aquest camí"
                     }
                 },
-                "render": "Aquesta ajuda d'espera es pot utilitzar en anar en direcció {direction}"
+                "render": "Aquesta ajuda a l'espera es pot utilitzar quan es va en direcció {direction}"
             },
             "side": {
                 "mappings": {
                     "0": {
-                        "then": "Aquesta ajuda d'espera es troba a la banda esquerra"
+                        "then": "Aquesta ajuda a l'espera es troba a la banda esquerra"
                     },
                     "1": {
-                        "then": "Aquesta ajuda d'espera es troba al costat dret"
+                        "then": "Aquesta ajuda a l'espera es troba al costat dret"
                     },
                     "2": {
-                        "then": "Hi ha ajudes d'espera a banda i banda de la carretera"
+                        "then": "Hi ha ajudes a l'espera a ambdós costats de la carretera"
                     }
                 },
                 "question": "A quin costat de la carretera es troba?"
@@ -4252,14 +4252,14 @@
                         "then": "Hi ha un tauler o una clavilla per descansar el peu aquí"
                     },
                     "1": {
-                        "then": "Hi ha un tren o una nansa per aferrar-se aquí"
+                        "then": "Hi ha una barana o una nansa per aferrar-se aquí"
                     }
                 },
-                "question": "Quin tipus de components té aquesta ajuda d'espera?"
+                "question": "Quin tipus de components té aquesta ajuda a l'espera?"
             }
         },
         "title": {
-            "render": "Ciclista esperant ajuda"
+            "render": "Ajuda per a ciclistes en espera"
         }
     },
     "defibrillator": {
@@ -4474,7 +4474,7 @@
         }
     },
     "dog_toilet": {
-        "description": "Un vàter de gos és una instal·lació designada per a gossos per orinar i excretar. Aquest pot ser un pegat d'herba designat i senyalitzat, un pou de sorra o una zona tancada.",
+        "description": "Un vàter de gos és una instal·lació designada per a gossos per orinar i excretar. Pot ser un tros d'herba senyalitzat, un pou de sorra o una zona tancada.",
         "name": "Vàters per a gossos",
         "presets": {
             "0": {
@@ -4488,7 +4488,7 @@
                         "then": "Hi ha una tanca al voltant d'aquest vàter per a gossos"
                     },
                     "1": {
-                        "then": "Hi ha una tanca al voltant d'aquest vàter de gos"
+                        "then": "Hi ha una esbardissa al voltant d'aquest vàter de gos"
                     },
                     "2": {
                         "then": "Hi ha una barrera al voltant d'aquest vàter per a gossos"
@@ -4593,7 +4593,7 @@
                         "then": "Aquesta font d'aigua potable està tancada"
                     },
                     "3": {
-                        "then": "Aquesta aigua potable està tancada permanentment"
+                        "then": "Aquesta font d'aigua potable està tancada permanentment"
                     }
                 },
                 "question": "Aquest punt d'aigua potable continua operatiu?",
@@ -4649,16 +4649,16 @@
                         "then": "Aquí es proporciona aigua freda"
                     },
                     "1": {
-                        "then": "L'aigua freda activa està disponible aquí"
+                        "then": "Aquí hi ha aigua refrigerada activament"
                     },
                     "2": {
-                        "then": "L'aigua a temperatura ambient (sense refrigeració activa ni calefacció) està disponible aquí"
+                        "then": "L'aigua a temperatura ambient (sense refrigeració ni calefacció activa) està disponible aquí"
                     },
                     "3": {
                         "then": "Aquí es proporciona aigua calenta; l'aigua no és perillosament calenta"
                     },
                     "4": {
-                        "then": "L'aigua calenta es proporciona aquí"
+                        "then": "Aquí es proporciona aigua calenta"
                     }
                 },
                 "question": "Hi ha aigua freda aquí?"
@@ -4666,7 +4666,7 @@
             "type": {
                 "mappings": {
                     "0": {
-                        "then": "Aquesta és una font de bombolles. Un raig d'aigua per beure s'envia cap amunt, normalment controlat per un botó d'empenta."
+                        "then": "Aquesta és una font de raig. Un raig d'aigua per beure s'envia cap amunt, normalment controlat per un botó d'empenta."
                     },
                     "1": {
                         "then": "Aquest és un punt de reomplida d'ampolles on l'aigua s'envia cap avall, normalment controlat per un polsador o un sensor de moviment. Beure directament del raig pot ser molt difícil o impossible."
@@ -4842,7 +4842,7 @@
                         "then": "Aquest ascensor no té sortida de veu"
                     }
                 },
-                "question": "Té aquesta sortida de veu d'ascensor?",
+                "question": "Té sortida de veu aquest ascensor?",
                 "questionHint": "P. e. anuncia la planta actual"
             },
             "tactile_writing_available": {
@@ -5114,9 +5114,9 @@
                         "then": "L'origen d'aquest nom és desconegut en tota la literatura"
                     }
                 },
-                "question": "De què porta aquest objecte?",
+                "question": "A que es deu el nom d'aquest objecte?",
                 "questionHint": "Això podria estar escrit al cartell del nom del carrer",
-                "render": "Anomenat després de {name:etymology}"
+                "render": "Anomenat en honor a {name:etymology}"
             },
             "street-name-sign-image": {
                 "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Afegeix una imatge de la placa amb el nom del carrer)}"
@@ -5125,11 +5125,11 @@
                 "render": "Existeix un article de la Viquipèdia sobre aquest <b>carrer</b>:<br/>{wikipedia():max-height:25rem}"
             },
             "wikipedia-etymology": {
-                "question": "Quin és l'element de Wikidata que porta el nom d'aquest objecte?",
+                "question": "Quin és l'element de Wikidata en honor al qual s'anomena aquest objecte?",
                 "render": "<h3> Article de la Viquipèdia del nom donant</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
             },
             "zoeken op inventaris onroerend erfgoed": {
-                "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='blank'>Cerca en inventaris onroerend erfgoed</a>"
+                "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Cerca en inventaris onroerend erfgoed</a>"
             }
         }
     },
@@ -5165,7 +5165,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Obert ara"
+                        "question": "Ara obert"
                     }
                 }
             },
@@ -5179,10 +5179,10 @@
             "10": {
                 "options": {
                     "0": {
-                        "question": "No hi ha preferència cap als gossos"
+                        "question": "Sense preferència pels gossos"
                     },
                     "1": {
-                        "question": "Permesos"
+                        "question": "Es permeten gossos"
                     },
                     "2": {
                         "question": "No s'admeten gossos"
@@ -5192,21 +5192,21 @@
             "11": {
                 "options": {
                     "0": {
-                        "question": "Ofertes d'internet"
+                        "question": "Ofereix internet"
                     }
                 }
             },
             "12": {
                 "options": {
                     "0": {
-                        "question": "Ofertes d'electricitat"
+                        "question": "Ofereix electricitat"
                     }
                 }
             },
             "13": {
                 "options": {
                     "0": {
-                        "question": "Té una oferta sense sucre"
+                        "question": "Disposa d'oferta sense sucre"
                     }
                 }
             },
@@ -5220,7 +5220,7 @@
             "15": {
                 "options": {
                     "0": {
-                        "question": "Té una oferta lliure de lactosa"
+                        "question": "Disposa d'una oferta lliure de lactosa"
                     }
                 }
             },
@@ -5367,11 +5367,11 @@
     },
     "firepit": {
         "description": "Un lloc a l'aire lliure per fer un foc, normalment obert al públic.",
-        "name": "Aixeta",
+        "name": "Foguera",
         "presets": {
             "0": {
                 "description": "Un lloc a l'aire lliure per fer un foc, normalment obert al públic.",
-                "title": "Aixeta"
+                "title": "Foguera"
             }
         },
         "tagRenderings": {
@@ -5393,19 +5393,19 @@
                         "then": "Accés només per a clients"
                     },
                     "5": {
-                        "then": "Accés només per autoritzat"
+                        "then": "Accés només per a autoritzats"
                     }
                 },
                 "question": "Quin és l'accés permès?"
             },
             "seasonal": {
                 "override": {
-                    "question": "Està disponible la cabina durant tot l'any?"
+                    "question": "Està disponible la foguera durant tot l'any?"
                 }
             }
         },
         "title": {
-            "render": "Aixeta"
+            "render": "Foguera"
         }
     },
     "fitness_centre": {

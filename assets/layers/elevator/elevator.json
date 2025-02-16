@@ -390,7 +390,7 @@
         "cs": "Má tento výtah hlasový výstup?",
         "es": "¿Tiene este ascensor salida de voz?",
         "nl": "Heeft deze lift spraakuitvoer?",
-        "ca": "Té aquesta sortida de veu d'ascensor?"
+        "ca": "Té sortida de veu aquest ascensor?"
       },
       "questionHint": {
         "en": "E.g. it announces the current floor",

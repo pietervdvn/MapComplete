@@ -70,7 +70,7 @@
           "nl": "Klimrots of klimzone <b>{name}</b>",
           "cs": "Lezecká cesta <b>{name}</b>",
           "es": "Pared de escalada <b>{name}</b>",
-          "ca": "Trenca d'escalada <b>{name}</b>"
+          "ca": "Paret d'escalada <b>{name}</b>"
         }
       },
       {
@@ -310,7 +310,7 @@
             "nl": "Een klimzone - een enkele rots of klif met klimroutes",
             "cs": "Lezecká skála - jediná skála nebo útes s alespoň několika lezeckými cestami",
             "es": "Una pared de escalada - una sola roca o acantilado con al menos algunas vías de escalada",
-            "ca": "Un cinglera d'escalada - una sola roca o penya-segat amb almenys unes quantes rutes d'escalada"
+            "ca": "Un cinglera d'escalada: una sola roca o penya-segat amb almenys unes quantes rutes d'escalada"
           }
         },
         {

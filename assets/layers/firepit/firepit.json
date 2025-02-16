@@ -4,7 +4,7 @@
     "en": "Firepit",
     "de": "Feuerstelle",
     "es": "Hoguera",
-    "ca": "Aixeta"
+    "ca": "Foguera"
   },
   "description": {
     "en": "An outdoor place to make a fire, typically open to the public.",
@@ -21,7 +21,7 @@
       "en": "Firepit",
       "de": "Feuerstelle",
       "es": "Hoguera",
-      "ca": "Aixeta"
+      "ca": "Foguera"
     }
   },
   "titleIcons": [
@@ -52,7 +52,7 @@
         "en": "Firepit",
         "de": "Feuerstelle",
         "es": "Hoguera",
-        "ca": "Aixeta"
+        "ca": "Foguera"
       },
       "description": {
         "de": "Eine Stelle im Freien zum Feuermachen, typischerweise öffentlich zugänglich.",
@@ -127,7 +127,7 @@
             "de": "Zugang nur für Berechtigte",
             "en": "Access only for authorized",
             "es": "Acceso solo para autorizados",
-            "ca": "Accés només per autoritzat"
+            "ca": "Accés només per a autoritzats"
           }
         }
       ]
@@ -140,7 +140,7 @@
           "nl": "Is deze kampvuurplaats heel het jaar door beschikbaar?",
           "de": "Ist diese Feuerstelle rund um das Jahr nutzbar?",
           "es": "¿Está la hoguera disponible todo el año?",
-          "ca": "Està disponible la cabina durant tot l'any?"
+          "ca": "Està disponible la foguera durant tot l'any?"
         }
       }
     }
