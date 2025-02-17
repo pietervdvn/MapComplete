@@ -4,7 +4,7 @@
     "name": "MapComplete Restaurants and fast food",
     "description": "Restaurants and fast food",
     "project_url": "https://mapcomplete.org/food",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/food/restaurant.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

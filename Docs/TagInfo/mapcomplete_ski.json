@@ -4,7 +4,7 @@
     "name": "MapComplete Ski pistes and aerialways",
     "description": "Everything you need to go skiing",
     "project_url": "https://mapcomplete.org/ski",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/aerialway/chair_lift.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

@@ -4,7 +4,7 @@
     "name": "MapComplete Fireplaces and barbeques",
     "description": "Outdoor place to make a fire or a fixed barbecue in an official place",
     "project_url": "https://mapcomplete.org/fireplace",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/assembly_point/fire.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

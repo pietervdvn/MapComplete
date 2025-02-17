@@ -4,7 +4,7 @@
     "name": "MapComplete Etymology - what is a place named after?",
     "description": "What is the origin of a toponym?",
     "project_url": "https://mapcomplete.org/etymology",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/etymology/logo.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

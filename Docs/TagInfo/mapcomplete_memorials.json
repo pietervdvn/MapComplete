@@ -4,7 +4,7 @@
     "name": "MapComplete Memorials",
     "description": "Memorials are physical objects permantently placed in the public space to remember a person or event",
     "project_url": "https://mapcomplete.org/memorials",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/memorial/memorial.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

@@ -4,7 +4,7 @@
     "name": "MapComplete Vending Machines",
     "description": "Find vending machines for everything",
     "project_url": "https://mapcomplete.org/vending_machine",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/vending_machine/vending_machine.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

@@ -4,7 +4,7 @@
     "name": "MapComplete Shops",
     "description": "An editable map with basic shop information",
     "project_url": "https://mapcomplete.org/shops",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/themes/shops/shop.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

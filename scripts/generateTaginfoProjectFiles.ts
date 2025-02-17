@@ -155,7 +155,7 @@ function generateTagInfoEntry(layout: ThemeConfig): any {
             name: "MapComplete " + layout.title.txt, // name of the project (required)
             description: layout.shortDescription.txt, // short description of the project (required)
             project_url: "https://mapcomplete.org/" + layout.id, // home page of the project with general information (required)
-            doc_url: "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/", // documentation of the project and especially the tags used (optional)
+            doc_url: "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes", // documentation of the project and especially the tags used (optional)
             icon_url: "https://mapcomplete.org/" + icon, // project logo, should work in 16x16 pixels on white and light gray backgrounds (optional)
             contact_name: "Pieter Vander Vennet", // contact name, needed for taginfo maintainer (required)
             contact_email: "pietervdvn@posteo.net", // contact email, needed for taginfo maintainer (required)
@@ -172,14 +172,14 @@ function generateTagInfoEntry(layout: ThemeConfig): any {
 // Write the URLS to the taginfo repository. Might fail if the repository is not checked ou
 function generateProjectsOverview(files: string[]) {
     try {
-        const tagInfoList = "../taginfo-projects/project_list.txt"
-        let projectList = readFileSync(tagInfoList, { encoding: "utf8" })
+        const tagInfoList = "../../git/taginfo-projects/project_list.txt"
+        const projectList = readFileSync(tagInfoList, { encoding: "utf8" })
             .split("\n")
             .filter((entry) => entry.indexOf("mapcomplete_") < 0)
             .concat(
                 files.map(
                     (f) =>
-                        `${f} https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/Docs/TagInfo/${f}.json`
+                        `${f} https://source.mapcomplete.org/MapComplete/MapComplete/raw/branch/develop/Docs/TagInfo/${f}.json`
                 )
             )
             .sort()

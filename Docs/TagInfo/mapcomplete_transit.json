@@ -4,7 +4,7 @@
     "name": "MapComplete Bus routes",
     "description": "Plan your trip with the help of the public transport system",
     "project_url": "https://mapcomplete.org/transit",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/transit_stops/bus_stop.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

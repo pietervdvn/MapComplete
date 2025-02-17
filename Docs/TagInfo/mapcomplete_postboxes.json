@@ -4,7 +4,7 @@
     "name": "MapComplete Postbox and Post Office Map",
     "description": "A map showing postboxes and post offices",
     "project_url": "https://mapcomplete.org/postboxes",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/postboxes/postbox.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

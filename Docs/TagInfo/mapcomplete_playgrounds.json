@@ -4,7 +4,7 @@
     "name": "MapComplete Playgrounds",
     "description": "A map with playgrounds",
     "project_url": "https://mapcomplete.org/playgrounds",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/themes/playgrounds/playground.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

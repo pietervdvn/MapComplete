@@ -33,6 +33,7 @@ Available languages:
     + [theme-id](#theme-id)
     + [locale](#locale)
     + [host](#host)
+    + [platform](#platform)
     + [version](#version)
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
@@ -69,6 +70,7 @@ Elements must match the expression **editor~.+**
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/theme#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/theme/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [theme](https://wiki.openstreetmap.org/wiki/Key:theme) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/locale#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/locale/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [locale](https://wiki.openstreetmap.org/wiki/Key:locale) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/host#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/host/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [host](https://wiki.openstreetmap.org/wiki/Key:host) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/android#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/android/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [android](https://wiki.openstreetmap.org/wiki/Key:android) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:android%3D) [yes](https://wiki.openstreetmap.org/wiki/Tag:android%3Dyes) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/editor#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/editor/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [editor](https://wiki.openstreetmap.org/wiki/Key:editor) | [string](../SpecialInputElements.md#string) |  |
 
 ### show_changeset_id
@@ -98,6 +100,13 @@ The question is `What host (website) was this change made with?`
 
  -  *waldbrand-app.de* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:host' target='_blank'>host</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:host%3Dwww.waldbrand-app.de' target='_blank'>www.waldbrand-app.de</a>. _This option cannot be chosen as answer_
  -  *Develop* is shown if with host~^(https:\/\/pietervdvn.github.io\/mc\/develop\/.*)$. _This option cannot be chosen as answer_
+
+### platform
+
+The question is `With what platform was the change made?`
+
+ -  *Made on the web* is shown if with android=
+ -  *Made with the android app* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:android' target='_blank'>android</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:android%3Dyes' target='_blank'>yes</a>
 
 ### version
 
@@ -162,6 +171,12 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | exclude_etymology.0 | Exclude etymology theme | theme!=etymology |
+
+| id | question | osmTags |
+-----|-----|----- |
+| platform.0 | *All platforms* (default) |  |
+| platform.1 | Made with Android | android=yes |
+| platform.2 | Made on the web | android= |
 
 
 

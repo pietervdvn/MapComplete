@@ -7,6 +7,7 @@ MapComplete supports the following keys:
 -----|----- |
 | `B` | Opens the background layers panel |
 | `F` | Open the favourites page |
+| `H` | Jump to your home location. Only works if you did set your home location in the user preferences |
 | `L` | Pan the map to the current location or zoom the map to the current location. Requests geopermission |
 | `M` | Set the background to a map from external sources. Toggles between the two best, available layers |
 | `O` | Set the background layer to on OpenStreetMap-based map (or disable the background raster layer) |
