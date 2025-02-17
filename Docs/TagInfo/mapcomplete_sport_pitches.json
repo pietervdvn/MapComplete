@@ -4,7 +4,7 @@
     "name": "MapComplete Sport pitches",
     "description": "A map showing sport pitches",
     "project_url": "https://mapcomplete.org/sport_pitches",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/sport_pitch/table_tennis.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

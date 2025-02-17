@@ -4,7 +4,7 @@
     "name": "MapComplete Indoors",
     "description": "On this map, publicly accessible indoor places are shown",
     "project_url": "https://mapcomplete.org/indoors",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/entrance/entrance.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

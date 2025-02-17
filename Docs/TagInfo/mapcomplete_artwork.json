@@ -4,7 +4,7 @@
     "name": "MapComplete Artwork",
     "description": "An open map of statues, busts, graffitis and other artwork all over the world",
     "project_url": "https://mapcomplete.org/artwork",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/themes/artwork/artwork.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

@@ -306,7 +306,7 @@
             "oneway": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest telefèric només es prendre cap amunt"
+                        "then": "Aquest telefèric només es pot prendre cap amunt"
                     },
                     "1": {
                         "then": "Aquest telefèric es pot prendre en ambdues direccions"
@@ -354,7 +354,7 @@
             }
         },
         "title": {
-            "render": "Telefèric {name}"
+            "render": "Telecadira {name}"
         }
     },
     "ambulancestation": {
@@ -4108,7 +4108,7 @@
                         "then": "No hi ha cap senyal de trànsit"
                     }
                 },
-                "question": "Quina senyal de trànsit té aquesta via ciclista?"
+                "question": "Quin senyal de trànsit té aquesta via ciclista?"
             },
             "cycleway-traffic-signs-supplementary": {
                 "mappings": {
@@ -5507,16 +5507,16 @@
                         "then": "Aquesta estació de fitness té una bicicleta estacionària."
                     },
                     "21": {
-                        "then": "Aquesta estació de fitness té un entrenament creuat."
+                        "then": "Aquesta estació de fitness té una bicicleta el·líptica."
                     },
                     "22": {
                         "then": "Aquesta estació de fitness té un caminador aeri."
                     },
                     "23": {
-                        "then": "Aquesta estació de fitness té un rem."
+                        "then": "Aquesta estació de fitness té una màquina de rem."
                     },
                     "24": {
-                        "then": "Aquesta estació de fitness té una escletxa."
+                        "then": "Aquesta estació de fitness té una slackline."
                     },
                     "3": {
                         "then": "Aquest estació de fitness té una instal·lació per a flexions. Normalment consta d'una o més barres horitzontals baixes."
@@ -5673,13 +5673,13 @@
                         "then": "Tailandés"
                     },
                     "15": {
-                        "then": "Els plats mexicans se serveixen aquí"
+                        "then": "Aquí es serveixen plats mexicans"
                     },
                     "16": {
-                        "then": "Els plats japonesos se serveixen aquí"
+                        "then": "Aquí es serveixen plats japonesos"
                     },
                     "17": {
-                        "then": "Els plats a base de pollastre es serveixen aquí"
+                        "then": "Aquí es serveixen plats a base de pollastre"
                     },
                     "18": {
                         "then": "Aquí se serveixen plats de marisc"
@@ -5793,7 +5793,7 @@
                         "then": "Tots els plats són vegetarians"
                     },
                     "4": {
-                        "then": "Alguns plats poden adaptar-se a una versió vegetariana, però això s'ha de demanar"
+                        "then": "Alguns plats poden adaptar-se a una versió vegetariana, però s'ha de demanar"
                     }
                 },
                 "question": "Aquest restaurant té opció vegetariana?"
@@ -5801,7 +5801,7 @@
             "add-menu-image": {
                 "render": {
                     "special": {
-                        "label": "Afegeix una imatge des del menú"
+                        "label": "Afegeix una imatge del menú"
                     }
                 }
             },
@@ -5819,21 +5819,21 @@
             "drive-through": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest restaurant de menjar ràpid té un recorregut"
+                        "then": "Aquest restaurant de menjar ràpid té servei al cotxe"
                     },
                     "1": {
-                        "then": "Aquest restaurant de menjar ràpid no té un drive-through"
+                        "then": "Aquest restaurant de menjar ràpid no té servei al cotxe"
                     }
                 },
-                "question": "Aquest restaurant de menjar ràpid té un recorregut?"
+                "question": "Aquest restaurant de menjar ràpid té servei al cotxe?"
             },
             "drive-through-opening_hours": {
                 "mappings": {
                     "0": {
-                        "then": "L'horari d'obertura del passeig és el mateix que el restaurant"
+                        "then": "L'horari d'obertura del servei al cotxe és el mateix que el restaurant"
                     }
                 },
-                "question": "Quin és l'horari d'obertura de l'autovia?",
+                "question": "Quin és l'horari d'obertura del servei al cotxe?",
                 "render": "<h3>Horaris d'obertura de la unitat</h3>{opening_hours_table(openinghours:drivethrough)}"
             },
             "friture-oil": {
@@ -5878,7 +5878,7 @@
             "friture-vegan": {
                 "mappings": {
                     "0": {
-                        "then": "Servix només aperitius i hamburgueses veganes"
+                        "then": "Servix només snacks i hamburgueses veganes"
                     },
                     "1": {
                         "then": "Hi han snacks vegans disponibles"
@@ -5895,7 +5895,7 @@
             "friture-vegetarian": {
                 "mappings": {
                     "0": {
-                        "then": "Servix només aperitius i hamburgueses vegetarianes"
+                        "then": "Servix només snacks i hamburgueses vegetarianes"
                     },
                     "1": {
                         "then": "Hi ha snacks vegetarians disponibles"
@@ -5965,19 +5965,19 @@
         }
     },
     "food_courts": {
-        "description": "Pistes d'alimentació amb una gran varietat d'opcions alimentàries.",
-        "name": "Corts d'Aliments",
+        "description": "Places de restauració amb una gran varietat d'opcions gastronòmiques.",
+        "name": "Places de restauració",
         "tagRenderings": {
             "name": {
                 "freeform": {
-                    "placeholder": "Nom de la pista de menjar"
+                    "placeholder": "Nom de la plaça de restauració"
                 },
-                "question": "Quin és el nom d'aquest tribunal alimentari?",
-                "render": "Aquest tribunal alimentari es diu <b>{name}</b>."
+                "question": "Quin és el nom d'aquesta plaça de restauració?",
+                "render": "Aquesta plaça de restauració es diu <b>{name}</b>."
             }
         },
         "title": {
-            "render": "Tribunal d'Aliments"
+            "render": "Plaça de restauració"
         }
     },
     "ghost_bike": {
@@ -6039,7 +6039,7 @@
     },
     "ghostsign": {
         "description": "Capa que mostra rètols en desús dels edificis",
-        "name": "Signes fantasma",
+        "name": "Rètols fantasmes",
         "presets": {
             "0": {
                 "title": "un rètol fantasma"
@@ -6058,7 +6058,7 @@
                     "placeholder": "Text en el rètol"
                 },
                 "question": "Quin és el text del rètol?",
-                "render": "El text del signe és: {inscription}"
+                "render": "El text del rètol és: {inscription}"
             }
         },
         "title": {
@@ -6095,7 +6095,7 @@
         }
     },
     "grave": {
-        "description": "Les tombes (i les tombes) indiquen on va ser enterrada una persona. En aquest mapa, es poden gravar i es pot fer un enllaç a la Viquipèdia",
+        "description": "Les làpides (i les tombes) indiquen on va ser enterrada una persona. En aquest mapa, es poden registrar i es pot establir un enllaç a Viquipèdia",
         "filter": {
             "0": {
                 "options": {
@@ -6129,15 +6129,15 @@
             }
         },
         "title": {
-            "render": "Tomba"
+            "render": "Làpida"
         }
     },
     "guidepost": {
-        "description": "Els pals guia (també coneguts com a pals de dits o pals de dits) es troben sovint al llarg de rutes oficials de senderisme/ciclisme/riding/esquí per indicar les direccions a diferents destinacions",
-        "name": "Punts guia",
+        "description": "Els pals guia (també coneguts com a senyals o fites) es troben sovint al llarg de rutes oficials de senderisme/ciclisme/equitació/esquí per indicar les direccions a diferents destinacions",
+        "name": "Pals guia",
         "presets": {
             "0": {
-                "description": "Un lloc guia (també conegut com a fingerpost) es troba sovint al llarg de rutes oficials de senderisme/ciclisme/riding/esquí per indicar les direccions a diferents destinacions",
+                "description": "Un pal guia (també conegut com a senyal) es troba sovint al llarg de rutes oficials de senderisme/ciclisme/equitació/esquí per indicar les direccions a diferents destinacions",
                 "title": "un pal guia"
             }
         },
@@ -6145,25 +6145,25 @@
             "type": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest document guia mostra les rutes en bicicleta"
+                        "then": "Aquest pal guia mostra les rutes en bicicleta"
                     },
                     "1": {
-                        "then": "Aquest document guia mostra les rutes de senderisme"
+                        "then": "Aquest pal guia mostra les rutes de senderisme"
                     },
                     "2": {
-                        "then": "Aquest document guia mostra les rutes en bicicleta de muntanya"
+                        "then": "Aquest pal guia mostra les rutes en bicicleta de muntanya"
                     },
                     "3": {
-                        "then": "Aquest document guia mostra les rutes d'equitació"
+                        "then": "Aquest pal guia mostra les rutes d'equitació"
                     },
                     "4": {
-                        "then": "Aquest document guia mostra les rutes d'esquí"
+                        "then": "Aquest pal guia mostra les rutes d'esquí"
                     }
                 },
-                "question": "Quin tipus de rutes es mostren en aquesta guia?"
+                "question": "Quin tipus de rutes es mostren en aquest pal guia?"
             }
         },
-        "title": "Punts guia"
+        "title": "Pals guia"
     },
     "hackerspace": {
         "deletion": {
@@ -6229,20 +6229,20 @@
                             "2": "màquina de cosir"
                         },
                         "5": {
-                            "1": "Un taller de fusteria",
-                            "2": "Taller de treball en fusta"
+                            "1": "Un taller de fusta",
+                            "2": "taller de fusta"
                         },
                         "6": {
                             "1": "un taller de ceràmica",
-                            "2": "Taller de ceràmica"
+                            "2": "taller de ceràmica"
                         },
                         "7": {
-                            "1": "Un taller de metall",
-                            "2": "Taller de metall"
+                            "1": "un taller de metall",
+                            "2": "taller de metall"
                         },
                         "8": {
-                            "1": "Un taller de reparació de bicicletes",
-                            "2": "Taller de reparació de bicicletes"
+                            "1": "un taller de reparació de bicicletes",
+                            "2": "taller de reparació de bicicletes"
                         }
                     }
                 }
@@ -6275,7 +6275,7 @@
                         "then": "Aquest és un espai hacker tradicional (orientat al software)"
                     },
                     "2": {
-                        "then": "Aquest és un <b>hacklab</b> que es centra principalment en les habilitats informàtiques bàsiques, utilitzant dispositius reciclats i/o proporcionant internet a la comunitat. Normalment es troba en espais autònoms, places o instal·lacions socials"
+                        "then": "Aquest és un <b>hacklab</b> que es centra principalment en les habilitats informàtiques bàsiques, utilitzant dispositius reciclats i/o proporcionant internet a la comunitat. Normalment es troba en espais autònoms, okupes o instal·lacions socials"
                     }
                 },
                 "question": "Açò és un espai hacker o un espai maker?"
@@ -6424,11 +6424,11 @@
         }
     },
     "ice_cream": {
-        "description": "Un lloc on es ven gelat sobre el taulell",
-        "name": "Sales de gelat",
+        "description": "Un lloc on es ven gelat al taulell",
+        "name": "Gelateries",
         "presets": {
             "0": {
-                "description": "Una botiga on només es poden comprar gelats i articles relacionats. El gelat normalment és cobert a mà.",
+                "description": "Una botiga on només es poden comprar gelats i articles relacionats. El gelat normalment és serveix amb cullera.",
                 "title": "una gelateria"
             }
         },
@@ -6444,7 +6444,7 @@
                     "then": "{name}"
                 }
             },
-            "render": "Crema de gel"
+            "render": "Gelateria"
         }
     },
     "icons": {
@@ -6511,8 +6511,8 @@
                 "render": "Aquesta habitació té el número de referència {ref}"
             },
             "room-capacity": {
-                "question": "Quanta gent pot, com a màxim, encaixar en aquesta habitació?",
-                "render": "Com a màxim {capacity} persones encaixen en aquesta sala"
+                "question": "Quanta gent pot, com a màxim, cabre en aquesta habitació?",
+                "render": "Com a màxim {capacity} persones caben en aquesta sala"
             },
             "room-type": {
                 "mappings": {
@@ -6532,7 +6532,7 @@
                         "then": "Aquest és un vestuari"
                     },
                     "13": {
-                        "then": "Aquest és un viver"
+                        "then": "Aquest és un jardí d'infants"
                     },
                     "14": {
                         "then": "Açò és una oficina"
@@ -6636,12 +6636,12 @@
                 "title": "un hotel d'insectes"
             }
         },
-        "title": "Hotel Insect"
+        "title": "Hotel d'Insectes"
     },
     "item_with_image": {
         "name": "Elements amb almenys una imatge",
         "title": {
-            "render": "POI amb imatge"
+            "render": "PDI amb imatge"
         }
     },
     "kerbs": {
@@ -6673,11 +6673,11 @@
         "name": "Vroades",
         "presets": {
             "0": {
-                "description": "Kerb en una pista",
+                "description": "Vorada en una vorera",
                 "title": "una vorada"
             }
         },
-        "snapName": "un kerb",
+        "snapName": "una vorada",
         "tagRenderings": {
             "kerb-height": {
                 "freeform": {
@@ -6781,11 +6781,11 @@
     },
     "love_hotel": {
         "description": "Un hotel d'amor és un tipus d'hotel de curta estada que es troba a tot el món operat principalment amb el propòsit de permetre als hostes privacitat per a les activitats sexuals",
-        "name": "Hotels Love",
+        "name": "Hotels de l'amor",
         "presets": {
             "0": {
                 "description": "Un hotel d'amor és un tipus d'hotel de curta estada que es troba a tot el món operat principalment amb el propòsit de permetre als hostes la privacitat per a les activitats sexuals.",
-                "title": "Un hotel d'amor"
+                "title": "un hotel d'amor"
             }
         },
         "tagRenderings": {
@@ -6981,7 +6981,7 @@
             }
         },
         "title": {
-            "render": "Element MapRoulette: {parentName}"
+            "render": "Element de MapRoulette: {parentName}"
         }
     },
     "maproulette_challenge": {
@@ -7079,15 +7079,15 @@
         "name": "Memorials",
         "presets": {
             "0": {
-                "description": "Un monument és un objecte físic que recorda una persona o esdeveniment.",
-                "title": "un monument"
+                "description": "Un memorial és un objecte físic que recorda una persona o esdeveniment.",
+                "title": "un memorial"
             }
         },
         "tagRenderings": {
             "inscription": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest monument no té inscripció"
+                        "then": "Aquest memorial no té inscripció"
                     }
                 },
                 "question": "Quina és la inscripció d'aquest memorial?",
@@ -7096,49 +7096,49 @@
             "memorial-type": {
                 "mappings": {
                     "0": {
-                        "then": "Aquesta és una estàtua"
+                        "then": "És una estàtua"
                     },
                     "1": {
-                        "then": "Aquesta és una placa"
+                        "then": "És una placa"
                     },
                     "10": {
-                        "then": "Això és una creu"
+                        "then": "És una creu"
                     },
                     "11": {
-                        "then": "Aquesta és una placa blava"
+                        "then": "És una placa blava"
                     },
                     "12": {
-                        "then": "Es tracta d'un tanc històric, situat permanentment a l'espai públic com a monument"
+                        "then": "Es tracta d'un tanc històric, situat permanentment a l'espai públic com a memorial"
                     },
                     "13": {
                         "then": "Aquest és un arbre commemoratiu"
                     },
                     "14": {
-                        "then": "Aquesta és una làpida; la persona està enterrada aquí"
+                        "then": "És una làpida; la persona està enterrada aquí"
                     },
                     "2": {
-                        "then": "Aquest és un banc commemoratiu"
+                        "then": "És un banc commemoratiu"
                     },
                     "3": {
-                        "then": "Aquesta és una bicicleta fantasma - una bicicleta pintada de blanc per recordar un ciclista que va morir a causa d'un accident de cotxe"
+                        "then": "Aquesta és una bicicleta fantasma: una bicicleta pintada de blanc per recordar un ciclista que va morir a causa d'un accident de cotxe"
                     },
                     "4": {
-                        "then": "Es tracta d'un stolperstein (pedra d'afaitar)"
+                        "then": "Es tracta d'un stolperstein (pedra de memòria)"
                     },
                     "5": {
                         "then": "Això és una estela"
                     },
                     "6": {
-                        "then": "Aquesta és una pedra commemorativa"
+                        "then": "És una pedra commemorativa"
                     },
                     "7": {
-                        "then": "Això és un bust"
+                        "then": "És un bust"
                     },
                     "8": {
-                        "then": "Aquesta és una escultura"
+                        "then": "És una escultura"
                     },
                     "9": {
-                        "then": "Aquest és un obelisc"
+                        "then": "És un obelisc"
                     }
                 },
                 "question": "Quin tipus de memorial és aquest?",
@@ -7146,13 +7146,13 @@
             },
             "memorial-wikidata": {
                 "question": "Quina és la pàgina de la Viquipèdia sobre aquest memorial?",
-                "questionHint": "Es tracta d'un memorial en si, no de la persona o esdeveniment que el memorial recorda. Si aquest memorial no té una pàgina de Viquipèdia o una entitat de Wikidata, ometeu aquesta pregunta.",
+                "questionHint": "Es tracta sobre el memorial en si, no de la persona o esdeveniment que el memorial recorda. Si aquest memorial no té una pàgina de Viquipèdia o una entitat de Wikidata, ometeu aquesta pregunta.",
                 "render": {
                     "before": "<h3>Pàgina de la Viquipèdia sobre el memorial</h3>"
                 }
             },
             "start_date": {
-                "question": "Quan es va instal·lar aquest monument?",
+                "question": "Quan es va instal·lar aquest memorial?",
                 "render": "Col·locat el {start_date}"
             },
             "subject-wikidata": {
@@ -7173,7 +7173,7 @@
         }
     },
     "mountain_rescue": {
-        "description": "Un edifici on els primers auxilis emmagatzemen material i podria estar en vigilància",
+        "description": "Un edifici on els socorristes emmagatzemen material i poden estar de guardia",
         "name": "Estacions de rescat de muntanya",
         "presets": {
             "0": {
@@ -7401,7 +7401,7 @@
             "6": {
                 "options": {
                     "0": {
-                        "question": "Si <b>no</b> menciona {search} a <b>qualsevol comentari</b>"
+                        "question": "<b>no</b> ha de mencionar {search} a <b>cap</b> comentari"
                     }
                 }
             },
@@ -7462,7 +7462,7 @@
             "Fee": {
                 "mappings": {
                     "0": {
-                        "then": "Gratuït per visitar"
+                        "then": "Entrada gratuita"
                     }
                 },
                 "question": "Quant hi ha que pagar per entrar a aquesta torre?",
@@ -7581,7 +7581,7 @@
     },
     "outdoor_seating": {
         "description": "Zones d'estar a l'aire lliure, normalment situades a prop de cafeteries i restaurants.",
-        "name": "Sembra exterior",
+        "name": "Zona d'estar exterior",
         "tagRenderings": {
             "access": {
                 "mappings": {
@@ -7644,7 +7644,7 @@
             }
         },
         "title": {
-            "render": "Zona exterior"
+            "render": "Zona d'estar exterior"
         }
     },
     "parcel_lockers": {
@@ -7764,7 +7764,7 @@
                         "then": "Aquest és un carril per aparcar al carrer"
                     },
                     "6": {
-                        "then": "Es tracta d'aparcament cobert per ports"
+                        "then": "Es tracta d'aparcament cobert per garatges"
                     },
                     "7": {
                         "then": "Aquest aparcament consta de caixes de garatge"
@@ -7813,7 +7813,7 @@
                         "then": "Es tracta d'una plaça d'aparcament reservada per a vehicles que remolquen un remolc."
                     },
                     "13": {
-                        "then": "Es tracta d'una plaça d'aparcament reservada per a compartir cotxe."
+                        "then": "Es tracta d'una plaça d'aparcament reservada per a cotxes compartits."
                     },
                     "2": {
                         "then": "Aquesta és una plaça d'aparcament per a minusvàlids."
@@ -9028,7 +9028,7 @@
             "seating": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest lloc té seients exteriors"
+                        "then": "Aquest lloc té zona d'estar exterior"
                     },
                     "1": {
                         "then": "Aquest lloc té seients interiors"
@@ -9857,7 +9857,7 @@
                         "then": "Es tracta d'un cobert amb 3 parets, destinat principalment a l'acampada."
                     },
                     "5": {
-                        "then": "Aquest és un pavelló"
+                        "then": "És un pavelló"
                     }
                 },
                 "question": "Quin tipus de refugi és aquest?",
@@ -10398,7 +10398,7 @@
                     }
                 },
                 "question": "Quants dissenys hi ha disponibles?",
-                "render": "Aquesta màquina té disponibles {note:design_count}."
+                "render": "Aquesta màquina té disponibles {note:design_count} dissenys."
             },
             "indoor": {
                 "mappings": {
@@ -11343,7 +11343,7 @@
                         "then": "Una càmera panoràmica"
                     },
                     "3": {
-                        "then": "Un timbre que es pot activar remotament en qualsevol moment o mitjançant la detecció de moviment. Aquests són típicament <i>Smart</i>, banderes connectades a Internet. Les marques típiques són Ring, Google Nest, Eufy, ..."
+                        "then": "Un timbre que es pot activar remotament en qualsevol moment o mitjançant la detecció de moviment. Aquests són típicament <i>Smart</i>, timbres connectats a Internet. Les marques típiques són Ring, Google Nest, Eufy, ..."
                     }
                 },
                 "question": "Quin tipus de càmera és aquesta?"

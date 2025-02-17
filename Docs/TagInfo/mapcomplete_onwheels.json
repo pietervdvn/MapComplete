@@ -4,7 +4,7 @@
     "name": "MapComplete OnWheels",
     "description": "On this map, publicly weelchair accessible places are shown and can be easily added",
     "project_url": "https://mapcomplete.org/onwheels",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/themes/onwheels/crest.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

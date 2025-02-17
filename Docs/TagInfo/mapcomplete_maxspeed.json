@@ -4,7 +4,7 @@
     "name": "MapComplete Maxspeed",
     "description": "This map shows the legally allowed maximum speed on every road.",
     "project_url": "https://mapcomplete.org/maxspeed",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/themes/maxspeed/maxspeed_logo.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

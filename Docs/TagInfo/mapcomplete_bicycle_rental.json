@@ -4,7 +4,7 @@
     "name": "MapComplete Bicycle rental",
     "description": "A map with bicycle rental stations and bicycle rental shops",
     "project_url": "https://mapcomplete.org/bicycle_rental",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/themes/bicycle_rental/logo.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

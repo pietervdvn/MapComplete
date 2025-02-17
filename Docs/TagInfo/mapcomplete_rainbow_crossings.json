@@ -4,7 +4,7 @@
     "name": "MapComplete Rainbow pedestrian crossings",
     "description": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added",
     "project_url": "https://mapcomplete.org/rainbow_crossings",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/themes/rainbow_crossings/logo.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

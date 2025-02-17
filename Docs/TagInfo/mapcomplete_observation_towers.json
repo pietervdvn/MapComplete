@@ -4,7 +4,7 @@
     "name": "MapComplete Observation towers",
     "description": "Publicly accessible towers to enjoy the view",
     "project_url": "https://mapcomplete.org/observation_towers",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/observation_tower/Tower_observation.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

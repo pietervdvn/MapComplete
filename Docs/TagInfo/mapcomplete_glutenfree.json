@@ -4,7 +4,7 @@
     "name": "MapComplete Glutenfree",
     "description": "A crowdsourced map with glutenfree items",
     "project_url": "https://mapcomplete.org/glutenfree",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/questions/glutenfree.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

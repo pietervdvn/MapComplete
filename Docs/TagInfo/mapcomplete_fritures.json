@@ -4,7 +4,7 @@
     "name": "MapComplete Fries shops",
     "description": "On this map, you'll find your favourite fries shop!",
     "project_url": "https://mapcomplete.org/fritures",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/themes/fritures/logo.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

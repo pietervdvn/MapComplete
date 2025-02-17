@@ -4,7 +4,7 @@
     "name": "MapComplete Climbing gyms, clubs and spots",
     "description": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature",
     "project_url": "https://mapcomplete.org/climbing",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/themes/climbing/climbing_icon.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

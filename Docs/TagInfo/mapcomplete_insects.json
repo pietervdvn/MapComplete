@@ -4,7 +4,7 @@
     "name": "MapComplete Insect Hotels",
     "description": "Insect hotels provide shelter for insects",
     "project_url": "https://mapcomplete.org/insects",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/insect_hotel/insect_hotel.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

@@ -4,7 +4,7 @@
     "name": "MapComplete Scouting groups",
     "description": "A scouting group is a social youth movement with a heavy emphasis on the outdoors",
     "project_url": "https://mapcomplete.org/scouting",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/scouting_group/scouting.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
