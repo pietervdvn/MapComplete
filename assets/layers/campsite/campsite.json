@@ -188,6 +188,34 @@
       },
       "id": "capacity_persons"
     },
+    {
+      "question": {
+        "en": "Are toilets available?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "toilets=yes"
+            ]
+          },
+          "then": {
+            "en": "Toilets are available."
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "toilets=no"
+            ]
+          },
+          "then": {
+            "en": "There are no toilets."
+          }
+        }
+      ],
+      "id": "toilets"
+    },
     "questions",
     "mastodon"
   ],
@@ -197,7 +225,7 @@
       "options": [
         {
           "question": {
-            "en": "fee"
+            "en": "Fee"
           }
         },
         {
@@ -302,6 +330,36 @@
             "de": "?"
           },
           "osmTags": "capacity:persons="
+        }
+      ]
+    },
+    {
+      "id": "toilets_filter",
+      "options": [
+        {
+          "question": {
+            "en": "Toilets"
+          }
+        },
+        {
+          "question": {
+            "en": "Toilets are available."
+          },
+          "osmTags": {
+            "and": [
+              "toilets=yes"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "There are no toilets."
+          },
+          "osmTags": {
+            "and": [
+              "toilets=no"
+            ]
+          }
         }
       ]
     }
