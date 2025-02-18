@@ -193,6 +193,26 @@
   ],
   "filter": [
     {
+      "id": "fee_filter",
+      "options": [
+        {
+          "question": {
+            "en": "fee"
+          }
+        },
+        {
+          "question": {
+            "en": "free of charge"
+          },
+          "osmTags": {
+            "and": [
+              "fee=no"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "capacity_persons_filter",
       "options": [
         {
