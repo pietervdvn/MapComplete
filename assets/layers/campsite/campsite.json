@@ -71,6 +71,7 @@
     }
   ],
   "tagRenderings": [
+    "images",
     {
       "question": {
         "de": "Ist dieser Zeltplatz ausschließlich für Gruppen?",
@@ -121,6 +122,7 @@
       },
       "id": "name"
     },
+    "contact",
     {
       "id": "fee",
       "question": {
@@ -186,10 +188,8 @@
       },
       "id": "capacity_persons"
     },
-    "contact",
     "questions",
-    "mastodon",
-    "images"
+    "mastodon"
   ],
   "filter": [
     {
