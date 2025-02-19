@@ -82,39 +82,6 @@
               "group_only=yes"
             ]
           }
-        ],
-        "+tagRenderings": [
-          {
-            "question": {
-              "de": "Ist diese Unterkunft ausschließlich für Gruppen?",
-              "en": "Is this hostel exclusively for groups?"
-            },
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "group_only=yes"
-                  ]
-                },
-                "then": {
-                  "en": "This hostel is exclusively for groups",
-                  "de": "Diese Unterkunft ist ausschließlich für Gruppen"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "group_only=no"
-                  ]
-                },
-                "then": {
-                  "en": "This hostel is not exclusively for groups",
-                  "de": "Diese Unterkunft ist nicht ausschließlich für Gruppen"
-                }
-              }
-            ],
-            "id": "group_only"
-          }
         ]
       }
     },
@@ -144,39 +111,6 @@
             "tags": [
               "tourism=hostel"
             ]
-          }
-        ],
-        "+tagRenderings": [
-          {
-            "question": {
-              "de": "Ist diese Unterkunft ausschließlich für Gruppen?",
-              "en": "Is this hostel exclusively for groups?"
-            },
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "group_only=yes"
-                  ]
-                },
-                "then": {
-                  "en": "This hostel is exclusively for groups",
-                  "de": "Diese Unterkunft ist ausschließlich für Gruppen"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "group_only=no"
-                  ]
-                },
-                "then": {
-                  "en": "This hostel is not exclusively for groups",
-                  "de": "Diese Unterkunft ist nicht ausschließlich für Gruppen"
-                }
-              }
-            ],
-            "id": "group_only"
           }
         ]
       }
