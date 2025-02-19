@@ -47,6 +47,73 @@
         "name": null,
         "isCounted": false
       }
+    },
+    {
+      "builtin": "tourism_accomodation",
+      "override": {
+        "id": "group_hostel",
+        "minzoom": 7,
+        "=filter": null,
+        "name": {
+          "en": "Hostels for groups and scouts",
+          "de": "Gruppenunterkünfte für Gruppen/Pfadfinder:innen"
+        },
+        "source": {
+          "=osmTags": {
+            "and": [
+              "tourism=hostel",
+              {
+                "or": [
+                  "scout=yes",
+                  "group_only=yes"
+                ]
+              }
+            ]
+          }
+        },
+        "=presets": [
+          {
+            "title": {
+              "en": "Hostel exclusively for groups",
+              "de": "Unterkunft ausschließlich für Gruppen/Pfadfinder:innen"
+            },
+            "tags": [
+              "tourism=hostel",
+              "group_only=yes"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "tourism_accomodation",
+      "override": {
+        "id": "hostel",
+        "minzoom": 16,
+        "filter": {
+          "sameAs": "group_hostel"
+        },
+        "name": null,
+        "isCounted": false,
+        "source": {
+          "=osmTags": {
+            "and": [
+              "tourism=hostel"
+            ]
+          }
+        },
+        "=presets": [
+          {
+            "title": {
+              "en": "Hostel",
+              "de": "Gruppenunterkunft"
+            },
+            "tags": [
+              "tourism=hostel"
+            ]
+          }
+        ]
+      }
     }
   ]
 }
