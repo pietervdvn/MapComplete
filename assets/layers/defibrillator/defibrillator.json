@@ -50,102 +50,46 @@
     {
       "iconBadges": [
         {
-          "if": "opening_hours~*",
+          "if": {
+            "and": [
+              "opening_hours~*",
+              "opening_hours!=unknown",
+              "opening_hours!=closed",
+              "opening_hours!=off",
+              {
+                "or": [
+                  "access=yes",
+                  "access=public",
+                  "access=permissive"
+                ]
+              }
+            ]
+          },
           "then": "icons.isOpen"
         },
         {
           "if": {
             "or": [
-              "wheelchair=yes",
-              "wheelchair=designated"
+              {
+                "and": [
+                  "access~*",
+                  "access!=yes",
+                  "access!=public",
+                  "access!=permissive"
+                ]
+              },
+              "opening_hours=unknown",
+              "opening_hours=closed",
+              "opening_hours=off"
             ]
           },
-          "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
+          "then": "./assets/layers/barrier/barrier.svg"
         }
       ],
-      "iconSize": {
-        "render": "20,20",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                {
-                  "#": "Keep these access conditions in sync with those further down in the marker's square icon",
-                  "or": [
-                    "access=yes",
-                    "access=public",
-                    "access=permissive"
-                  ]
-                },
-                "opening_hours!=",
-                "opening_hours!=unknown",
-                "opening_hours!=closed",
-                "opening_hours!=off"
-              ]
-            },
-            "then": "40,40"
-          }
-        ]
-      },
       "marker": [
         {
           "icon": "square",
-          "color": {
-            "render": "#878787",
-            "mappings": [
-              {
-                "if": {
-                  "or": [
-                    "access=private",
-                    "access=no",
-                    "opening_hours=closed",
-                    "opening_hours=off"
-                  ]
-                },
-                "then": "#cfc6c6"
-              },
-              {
-                "if": {
-                  "or": [
-                    "access=customers",
-                    "opening_hours=unknown"
-                  ]
-                },
-                "then": "#d8c37f"
-              },
-              {
-                "if": "opening_hours=",
-                "then": "#878787"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_recently_surveyed=true",
-                    {
-                      "or": [
-                        "access=yes",
-                        "access=public",
-                        "access=permissive"
-                      ],
-                      "#": "Keep these access conditions in sync with those below and with those in iconSize"
-                    }
-                  ]
-                },
-                "then": "#28ba3d"
-              },
-              {
-                "if": {
-                  "#": "Keep these access conditions in sync with those above",
-                  "or": [
-                    "access=yes",
-                    "access=public",
-                    "access=permissive"
-                  ]
-                },
-                "then": "#008754"
-              }
-            ]
-          }
+          "color": "#008754"
         },
         {
           "icon": "./assets/layers/defibrillator/defibrillator.svg"
@@ -321,6 +265,7 @@
         },
         {
           "if": "access=customers",
+          "icon": "./assets/layers/barrier/barrier.svg",
           "then": {
             "en": "Only accessible to customers",
             "ca": "Només accessible a clients",
@@ -337,6 +282,7 @@
         },
         {
           "if": "access=private",
+          "icon": "./assets/layers/barrier/barrier.svg",
           "then": {
             "en": "Not accessible to the general public (e.g. only accesible to staff, the owners, …)",
             "ca": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)",
@@ -352,6 +298,7 @@
         },
         {
           "if": "access=no",
+          "icon": "./assets/layers/barrier/barrier.svg",
           "then": {
             "en": "Not accessible, possibly only for professional use",
             "nl": "Niet toegankelijk, mogelijk enkel voor professionals",
@@ -641,7 +588,18 @@
           "ca": "En quins horaris està disponible aquest desfibril·lador?",
           "pl": "W jakich godzinach dostępny jest ten defibrylator?",
           "cs": "V jakých hodinách je tento defibrilátor k dispozici?"
-        }
+        },
+        "mappings+": [
+          {
+            "if": "opening_hours=unknown",
+            "icon": "./assets/layers/barrier/barrier.svg",
+            "then": {
+              "en": "Not accessible 24/7, but the exact hours are unknown",
+              "nl": "Niet 24/7 bereikbaar, maar de exacte uren zijn niet bekend"
+            },
+            "hideInAnswer": true
+          }
+        ]
       }
     },
     {
@@ -759,7 +717,47 @@
     "has_image",
     "public_access",
     "open_now",
-    "wheelchair_accessible"
+    "wheelchair_accessible",
+    {
+      "id": "not_recently_surveyed",
+      "options": [
+        {
+          "osmTags": "_recently_surveyed=false",
+          "question": {
+            "en": "Only where survey was more than 90 days ago",
+            "nl": "Enkel die meer dan 90 dagen geleden ter plaatse zijn nagezien"
+          }
+        }
+      ]
+    },
+    {
+      "id": "no_opening_hours",
+      "options": [
+        {
+          "osmTags": {
+            "or": [
+              "access=",
+              {
+                "and": [
+                  "opening_hours=",
+                  {
+                    "or": [
+                      "access=yes",
+                      "access=public",
+                      "access=permissive"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "question": {
+            "en": "Unknown access or times of accessibility",
+            "nl": "Onbekende toegang of onbekende tijden waarop toegankelijk"
+          }
+        }
+      ]
+    }
   ],
   "deletion": {
     "softDeletionTags": {
