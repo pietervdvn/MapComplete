@@ -1,6 +1,6 @@
 builds.mapcomplete.org {
 	root * public/
-	file_server
+	file_server browse
 	header {
 		+Permissions-Policy "interest-cohort=()"
 	}
