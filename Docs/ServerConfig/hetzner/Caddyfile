@@ -64,7 +64,7 @@ velopark.mapcomplete.org {
 
 countrycoder.mapcomplete.org {
 	root * tiles/
-	file_server
+	file_server browse
 	header {
 		+Permissions-Policy "interest-cohort=()"
 		+Access-Control-Allow-Origin *
