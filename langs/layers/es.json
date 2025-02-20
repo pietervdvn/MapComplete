@@ -8040,35 +8040,35 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "¿Ofrece envío de cartas?"
+                        "question": "Ofrece envío de cartas"
                     }
                 }
             },
             "2": {
                 "options": {
                     "0": {
-                        "question": "¿Ofrece envío de paquetes?"
+                        "question": "Ofrece envío de paquetes"
                     }
                 }
             },
             "3": {
                 "options": {
                     "0": {
-                        "question": "¿Ofrece recogida de paquetes perdidos?"
+                        "question": "Ofrece recogida de paquetes perdidos"
                     }
                 }
             },
             "4": {
                 "options": {
                     "0": {
-                        "question": "¿Acepta la recogida de paquetes enviados aquí?"
+                        "question": "Acepta la recogida de paquetes enviados aquí"
                     }
                 }
             },
             "5": {
                 "options": {
                     "0": {
-                        "question": "¿Vende sellos?"
+                        "question": "Vende sellos"
                     }
                 }
             }
