@@ -145,9 +145,6 @@
     },
     "cyclestreets": {
         "layers": {
-            "0": {
-                "name": "Sykkelgater"
-            },
             "1": {
                 "description": "Denne gaten vil bli sykkelgate snart",
                 "name": "Fremtidig sykkelvei",
@@ -165,38 +162,6 @@
                 "name": "Alle gater",
                 "title": {
                     "render": "Gate"
-                }
-            }
-        },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)"
-                        },
-                        "3": {
-                            "then": "Denne gaten er en sykkelvei"
-                        },
-                        "4": {
-                            "then": "Denne gaten vil bli sykkelvei ganske snart"
-                        },
-                        "6": {
-                            "then": "Denne gaten er ikke en sykkelvei"
-                        }
-                    },
-                    "question": "Er <b>{name}</b>-gaten en sykkelgate?"
-                },
-                "1": {
-                    "mappings": {
-                        "3": {
-                            "then": "Biler tillatt"
-                        }
-                    }
-                },
-                "2": {
-                    "question": "Når vil denne gaten bli en sykkelgate?",
-                    "render": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}"
                 }
             }
         },

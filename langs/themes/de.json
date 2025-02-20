@@ -350,10 +350,6 @@
     "cyclestreets": {
         "description": "Eine Fahrradstraße ist eine Straße, auf der <b>motorisierter Verkehr Radfahrer nicht überholen darf</b>. Sie sind durch ein spezielles Verkehrsschild gekennzeichnet. Fahrradstraßen gibt es in den Niederlanden und Belgien, aber auch in Deutschland und Frankreich. ",
         "layers": {
-            "0": {
-                "description": "Eine Fahrradstraße ist eine Straße, auf der motorisierter Verkehr einen Radfahrer nicht überholen darf",
-                "name": "Fahrradstraßen"
-            },
             "1": {
                 "description": "Diese Straße wird bald eine Fahrradstraße sein",
                 "name": "Zukünftige Fahrradstraßen",
@@ -371,60 +367,6 @@
                 "name": "Alle Straßen",
                 "title": {
                     "render": "Straße"
-                }
-            }
-        },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
-                        },
-                        "1": {
-                            "then": "Diese Straße ist eine Fahrradstraße"
-                        },
-                        "2": {
-                            "then": "Diese Straße ist eine Fahrradstraße (hat eine Geschwindigkeitsbegrenzung von 30 km/h und Fahrzeuge sind nicht erlaubt) (Schild wird später abgefragt)"
-                        },
-                        "3": {
-                            "then": "Diese Straße ist eine Fahrradstraße"
-                        },
-                        "4": {
-                            "then": "Diese Straße wird bald eine Fahrradstraße sein"
-                        },
-                        "5": {
-                            "then": "Diese Straße wird bald zu einer Fahrradstraße"
-                        },
-                        "6": {
-                            "then": "Diese Straße ist keine Fahrradstraße"
-                        }
-                    },
-                    "question": "Ist die Straße <b>{name}</b> eine Fahrradstraße?"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "Anlieger frei"
-                        },
-                        "1": {
-                            "then": "KFZ frei"
-                        },
-                        "2": {
-                            "then": "Motorräder frei"
-                        },
-                        "3": {
-                            "then": "Autos erlaubt"
-                        },
-                        "4": {
-                            "then": "An dieser Fahrradstraße gibt es keine zusätzlichen Schilder."
-                        }
-                    },
-                    "question": "Welches Schild hat diese Fahrradstraße?"
-                },
-                "2": {
-                    "question": "Wann wird diese Straße eine Fahrradstraße?",
-                    "render": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
                 }
             }
         },

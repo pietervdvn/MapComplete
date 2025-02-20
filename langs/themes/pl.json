@@ -330,10 +330,6 @@
     "cyclestreets": {
         "description": "Ulica rowerowa to ulica, na której <b>ruch samochodowy nie może wyprzedzać rowerzystów</b>. Są one oznaczone specjalnym znakiem drogowym. Ulice rowerowe można znaleźć w Holandii i Belgii, ale także w Niemczech i Francji. ",
         "layers": {
-            "0": {
-                "description": "Ulica rowerowa to ulica, na której pojazdy zmotoryzowane nie mogą wyprzedzać rowerzystów",
-                "name": "Ulice rowerowe"
-            },
             "1": {
                 "description": "Ta ulica wkrótce stanie się ulicą rowerową",
                 "name": "Przyszła ulica rowerowa",
@@ -351,60 +347,6 @@
                 "name": "Wszystkie ulice",
                 "title": {
                     "render": "Ulica"
-                }
-            }
-        },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Ta ulica jest ulicą rowerową (na której obowiązuje ograniczenie prędkości do 30 km/h)"
-                        },
-                        "1": {
-                            "then": "To jest droga dla rowerów"
-                        },
-                        "2": {
-                            "then": "Ulica ta jest drogą rowerową (ograniczona prędkość wynosi 30 km/h i nie wolno wjeżdżać pojazdom) (znak zostanie poproszony później)"
-                        },
-                        "3": {
-                            "then": "Ta ulica jest ulicą rowerową"
-                        },
-                        "4": {
-                            "then": "Ta ulica wkrótce stanie się ulicą rowerową"
-                        },
-                        "5": {
-                            "then": "Już niedługo ta ulica stanie się drogą rowerową"
-                        },
-                        "6": {
-                            "then": "Ta ulica nie jest ulicą rowerową"
-                        }
-                    },
-                    "question": "Czy ulica <b>{name}</b> jest ulicą rowerową?"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "Mieszkańcy dopuszczeni"
-                        },
-                        "1": {
-                            "then": "Pojazdy silnikowe dozwolone"
-                        },
-                        "2": {
-                            "then": "Motocykle dozwolone"
-                        },
-                        "3": {
-                            "then": "Samochody dozwolone"
-                        },
-                        "4": {
-                            "then": "Na tej drodze rowerowej nie ma żadnych dodatkowych znaków."
-                        }
-                    },
-                    "question": "Jaki znak ma ta droga rowerowa?"
-                },
-                "2": {
-                    "question": "Kiedy ta ulica stanie się ulicą rowerową?",
-                    "render": "Ta ulica stanie się ulicą rowerową {cyclestreet:start_date}"
                 }
             }
         },

@@ -76,9 +76,6 @@
     },
     "cyclestreets": {
         "layers": {
-            "0": {
-                "name": "Cyclestreets"
-            },
             "2": {
                 "name": "Все улицы",
                 "title": {

@@ -106,9 +106,6 @@
     },
     "cyclestreets": {
         "layers": {
-            "0": {
-                "name": "Bidegorriak"
-            },
             "1": {
                 "title": {
                     "mappings": {
