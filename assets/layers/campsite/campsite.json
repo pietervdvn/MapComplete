@@ -188,35 +188,7 @@
       },
       "id": "capacity_persons"
     },
-    {
-      "question": {
-        "en": "Are toilets available?"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "toilets=yes"
-            ]
-          },
-          "then": {
-            "en": "Toilets are available."
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "toilets=no"
-            ]
-          },
-          "then": {
-            "en": "There are no toilets."
-          }
-        }
-      ],
-      "icon": "🚽",
-      "id": "toilets"
-    },
+    "caravansites.caravansites-toilets",
     "questions",
     "mastodon"
   ],
