@@ -350,10 +350,6 @@
     "cyclestreets": {
         "description": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
         "layers": {
-            "0": {
-                "description": "A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist",
-                "name": "Cyclestreets"
-            },
             "1": {
                 "description": "This street will become a cyclestreet soon",
                 "name": "Future cyclestreet",
@@ -371,60 +367,6 @@
                 "name": "All streets",
                 "title": {
                     "render": "Street"
-                }
-            }
-        },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "This street is a cyclestreet (and has a speed limit of 30 km/h)"
-                        },
-                        "1": {
-                            "then": "This street is a bicycle road"
-                        },
-                        "2": {
-                            "then": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)"
-                        },
-                        "3": {
-                            "then": "This street is a cyclestreet"
-                        },
-                        "4": {
-                            "then": "This street will become a cyclestreet soon"
-                        },
-                        "5": {
-                            "then": "This street will become a bicycle road soon"
-                        },
-                        "6": {
-                            "then": "This street is not a cyclestreet"
-                        }
-                    },
-                    "question": "Is the street <b>{name}</b> a cyclestreet?"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "Residents allowed"
-                        },
-                        "1": {
-                            "then": "Motor vehicles allowed"
-                        },
-                        "2": {
-                            "then": "Motorcycles allowed"
-                        },
-                        "3": {
-                            "then": "Cars allowed"
-                        },
-                        "4": {
-                            "then": "There are no supplementary signs at this bicycle road."
-                        }
-                    },
-                    "question": "What sign does this bicycle road have?"
-                },
-                "2": {
-                    "question": "When will this street become a cyclestreet?",
-                    "render": "This street will become a cyclestreet at {cyclestreet:start_date}"
                 }
             }
         },

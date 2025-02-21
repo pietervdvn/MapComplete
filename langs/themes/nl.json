@@ -350,10 +350,6 @@
     "cyclestreets": {
         "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. <b>Fietszones</b> worden aangeduid door elke straat apart als fietsstraat te markeren. <br/>Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
         "layers": {
-            "0": {
-                "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen",
-                "name": "Fietsstraten"
-            },
             "1": {
                 "description": "Deze straat wordt binnenkort een fietsstraat",
                 "name": "Toekomstige fietsstraat",
@@ -371,60 +367,6 @@
                 "name": "Alle straten",
                 "title": {
                     "render": "Straat"
-                }
-            }
-        },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Deze straat is een fietsstraat (en dus zone 30)"
-                        },
-                        "1": {
-                            "then": "Deze straat is een fietsstraat"
-                        },
-                        "2": {
-                            "then": "Deze straat is een fietsstraat (snelheid van 30 km/h en voertuigen niet toegestaan) (bord wordt later gevraagd)"
-                        },
-                        "3": {
-                            "then": "Deze straat is een fietsstraat"
-                        },
-                        "4": {
-                            "then": "Deze straat wordt binnenkort een fietsstraat"
-                        },
-                        "5": {
-                            "then": "Deze straat wordt binnenkort een fietsstraat"
-                        },
-                        "6": {
-                            "then": "Deze straat is geen fietsstraat"
-                        }
-                    },
-                    "question": "Is de straat <b>{name}</b> een fietsstraat?"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "Aanwonenden toegestaan"
-                        },
-                        "1": {
-                            "then": "Motorvoertuigen toegestaan"
-                        },
-                        "2": {
-                            "then": "Motoren toegestaan"
-                        },
-                        "3": {
-                            "then": "Auto's toegestaan"
-                        },
-                        "4": {
-                            "then": "Er zijn geen onderborden bij deze fietsstraat."
-                        }
-                    },
-                    "question": "Welk bord heeft deze fietsstraat?"
-                },
-                "2": {
-                    "question": "Wanneer wordt deze straat een fietsstraat?",
-                    "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
                 }
             }
         },

@@ -220,10 +220,6 @@
     "cyclestreets": {
         "description": "En cykelgade er en gade, hvor <b>motoriseret trafik ikke må overhale cyklister</b>. De er skiltet med et særligt trafikskilt. Cykelgader findes i Holland og Belgien, men også i Tyskland og Frankrig. ",
         "layers": {
-            "0": {
-                "description": "En cykelgade er en gade, hvor motoriseret trafik ikke må overhale en cyklist",
-                "name": "Cykelgader"
-            },
             "1": {
                 "description": "Denne gade bliver snart en cykelgade",
                 "name": "Fremtidig cykelgade",
@@ -241,47 +237,6 @@
                 "name": "Alle gader",
                 "title": {
                     "render": "Gade"
-                }
-            }
-        },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)"
-                        },
-                        "3": {
-                            "then": "Denne gade er en cykelgade"
-                        },
-                        "4": {
-                            "then": "Denne gade bliver snart en cykelgade"
-                        },
-                        "6": {
-                            "then": "Denne gade er ikke en cykelgade"
-                        }
-                    },
-                    "question": "Er gaden <b>{name}</b> en cykelgade?"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "Beboere tilladt"
-                        },
-                        "1": {
-                            "then": "Motorkøretøjer tilladt"
-                        },
-                        "2": {
-                            "then": "Motorcykler tilladt"
-                        },
-                        "3": {
-                            "then": "Biler tilladt"
-                        }
-                    }
-                },
-                "2": {
-                    "question": "Hvornår bliver denne gade en cykelgade?",
-                    "render": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}"
                 }
             }
         },

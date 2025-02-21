@@ -330,10 +330,6 @@
     "cyclestreets": {
         "description": "Un ciclocarrer és un carrer en el que <b>el trànsit motoritzat no pot sobrepassar als ciclistes</b>. Està senyalitzat per una senyal de trànsit especial. Els ciclocarrers es poden trobar a Holanda i Bèlgica, però també a Alemnya i França. ",
         "layers": {
-            "0": {
-                "description": "Un ciclocarrer és un carrer on el trànsit motoritzat no pot sobrepassar a un ciclista",
-                "name": "Carrers ciclistes"
-            },
             "1": {
                 "description": "Aquest carrer es convertirà en un ciclocarrer pròximament",
                 "name": "Futur carrer ciclista",
@@ -351,60 +347,6 @@
                 "name": "Tots els carrers",
                 "title": {
                     "render": "Carrer"
-                }
-            }
-        },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Aquest carrer és un ciclocarrer (i té un límit de velocitat de 30km/h)"
-                        },
-                        "1": {
-                            "then": "Aquest carrer és una pista ciclable"
-                        },
-                        "2": {
-                            "then": "Aquest carrer és una carretera ciclista (té un límit de velocitat de 30km/h i els vehicles no estan permesos)(el senyal es preguntarà més tard)"
-                        },
-                        "3": {
-                            "then": "Aquest carrer és una ciclocarrer"
-                        },
-                        "4": {
-                            "then": "Aquest carrer es convertirà en un ciclocarrer pròximament"
-                        },
-                        "5": {
-                            "then": "Aquest carrer es convertirà aviat en una senda ciclable"
-                        },
-                        "6": {
-                            "then": "Aquest carrer no és un ciclocarrer"
-                        }
-                    },
-                    "question": "El carrer <b>{name}</b> és un ciclocarrer?"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "Residents permesos"
-                        },
-                        "1": {
-                            "then": "Vehicles a motor permesos"
-                        },
-                        "2": {
-                            "then": "Motos permeses"
-                        },
-                        "3": {
-                            "then": "Cotxes permesos"
-                        },
-                        "4": {
-                            "then": "No hi ha senyals addicionals en aquesta senda ciclable."
-                        }
-                    },
-                    "question": "Quin senyal té aquesta senda ciclable?"
-                },
-                "2": {
-                    "question": "Quan es convertirà aquest carrer en un ciclocarrer?",
-                    "render": "Aquest carrer es convertirà un ciclocarrer el {cyclestreet:start_date}"
                 }
             }
         },

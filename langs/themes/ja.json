@@ -57,10 +57,6 @@
     "cyclestreets": {
         "description": "cyclestreetとは、<b>自動車がサイクリストを追い越すことができない</b>道です。専用の道路標識で表示されます。Cyclestreetsはオランダやベルギーにもありますが、ドイツやフランスにもあります。 ",
         "layers": {
-            "0": {
-                "description": "cyclestreetとは、自動車による交通がサイクリストを追い越すことができない道路です",
-                "name": "Cyclestreets"
-            },
             "1": {
                 "description": "この通りはまもなくcyclestreetになります",
                 "name": "将来のcyclestreet",
@@ -78,30 +74,6 @@
                 "name": "すべての道路",
                 "title": {
                     "render": "ストリート"
-                }
-            }
-        },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "cyclestreet(最高速度は30km/h)"
-                        },
-                        "3": {
-                            "then": "この通りはcyclestreetだ"
-                        },
-                        "4": {
-                            "then": "この通りはまもなくcyclestreetになるだろう"
-                        },
-                        "6": {
-                            "then": "この通りはcyclestreetではない"
-                        }
-                    }
-                },
-                "2": {
-                    "question": "この通りはいつcyclestreetになるんですか?",
-                    "render": "この通りは{cyclestreet:start_date}に、cyclestreetになります"
                 }
             }
         },
