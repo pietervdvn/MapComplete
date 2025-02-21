@@ -8,6 +8,10 @@
         "description": "On this map, one can find and mark nearby defibrillators",
         "title": "Defibrillators"
     },
+    "architecture": {
+        "description": "A map showing the archetectural style of buildings",
+        "title": "Buildings with an architectural style"
+    },
     "artwork": {
         "description": "An open map of statues, busts, graffitis and other artwork all over the world",
         "title": "Artwork"
@@ -1137,6 +1141,25 @@
             "1": {
                 "override": {
                     "name": "Group Campsites"
+                }
+            },
+            "3": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "Hostel exclusively for groups"
+                        }
+                    },
+                    "name": "Hostels for groups and scouts"
+                }
+            },
+            "4": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "Hostel"
+                        }
+                    }
                 }
             }
         },

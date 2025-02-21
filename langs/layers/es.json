@@ -3626,6 +3626,62 @@
             "render": "Carretera para bicicletas"
         }
     },
+    "cyclestreets": {
+        "description": "Una ciclocalle es una calle donde el tráfico motorizado no puede adelantar a un ciclista",
+        "name": "Ciclocalles",
+        "tagRenderings": {
+            "future_cyclestreet": {
+                "question": "¿Cuándo se convertirá esta calle en una ciclocalle?",
+                "render": "Esta calle se convertirá en una ciclocalle en {cyclestreet:start_date}"
+            },
+            "is_cyclestreet": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta calle es una ciclocalle (y tiene un límite de velocidad de 30 km/h)"
+                    },
+                    "1": {
+                        "then": "Esta calle tiene ciclovías"
+                    },
+                    "2": {
+                        "then": "Esta calle es una vía ciclista (tiene un límite de velocidad de 30 km/h y no se permiten vehículos) (la señal se solicitará más tarde)"
+                    },
+                    "3": {
+                        "then": "Esta calle es una ciclocalle"
+                    },
+                    "4": {
+                        "then": "Esta calle se convertirá pronto en una ciclocalle"
+                    },
+                    "5": {
+                        "then": "Esta calle se convertirá pronto en una vía ciclista"
+                    },
+                    "6": {
+                        "then": "Esta calle no es una ciclocalle"
+                    }
+                },
+                "question": "¿Es la calle <b>{name}</b> una ciclocalle?"
+            },
+            "supplementary_sign": {
+                "mappings": {
+                    "0": {
+                        "then": "Residentes permitidos"
+                    },
+                    "1": {
+                        "then": "Vehículos motorizados permitidos"
+                    },
+                    "2": {
+                        "then": "Motocicletas permitidas"
+                    },
+                    "3": {
+                        "then": "Coches permitidos"
+                    },
+                    "4": {
+                        "then": "No hay señales complementarias en esta vía ciclista."
+                    }
+                },
+                "question": "¿Qué señal tiene esta vía ciclista?"
+            }
+        }
+    },
     "cycleways_and_roads": {
         "description": "Toda la infraestructura por la que alguien puede circular en bicicleta, acompañada de preguntas sobre esta infraestructura",
         "name": "Carriles bici y carreteras",
@@ -3727,20 +3783,6 @@
                 },
                 "question": "¿De qué material está hecha la superficie del carril bici?",
                 "render": "Este carril bici está hecho de {cycleway:surface}"
-            },
-            "Is this a cyclestreet? (For a road)": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta es una calle para bicicletas, y una zona de 30 km/h"
-                    },
-                    "1": {
-                        "then": "Esta es una calle para bicicletas"
-                    },
-                    "2": {
-                        "then": "Esta no es una calle para bicicletas"
-                    }
-                },
-                "question": "¿Es esta una calle para bicicletas?"
             },
             "Maxspeed (for road)": {
                 "mappings": {
@@ -6417,7 +6459,7 @@
                     "1": {
                         "then": "Este bordillo no tiene pavimento táctil."
                     },
-                    "2": {
+                    "3": {
                         "then": "Este bordillo tiene pavimento táctil, pero es incorrecto."
                     }
                 },

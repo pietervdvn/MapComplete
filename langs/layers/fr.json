@@ -1578,6 +1578,116 @@
             "render": "Lieu d’observation d’oiseaux"
         }
     },
+    "building": {
+        "tagRenderings": {
+            "architecture": {
+                "mappings": {
+                    "0": {
+                        "then": "Architecture islamique"
+                    },
+                    "1": {
+                        "then": "Architecture mamelouke"
+                    },
+                    "10": {
+                        "then": "Architecture néo-mauresque"
+                    },
+                    "11": {
+                        "then": "Architecture néoclassique"
+                    },
+                    "12": {
+                        "then": "Architecture géorgienne"
+                    },
+                    "13": {
+                        "then": "Architecture victorienne"
+                    },
+                    "14": {
+                        "then": "Historicisme"
+                    },
+                    "15": {
+                        "then": "Architecture néo-romane"
+                    },
+                    "16": {
+                        "then": "Architecture néo-byzantine"
+                    },
+                    "17": {
+                        "then": "Architecture néo-gothique"
+                    },
+                    "18": {
+                        "then": "Architecture néo-Renaissance"
+                    },
+                    "19": {
+                        "then": "Architecture néo-baroque"
+                    },
+                    "2": {
+                        "then": "Architecture romane"
+                    },
+                    "20": {
+                        "then": "Art nouveau"
+                    },
+                    "21": {
+                        "then": "Éclectisme en architecture"
+                    },
+                    "22": {
+                        "then": "Fonctionnalisme"
+                    },
+                    "23": {
+                        "then": "Cubisme"
+                    },
+                    "24": {
+                        "then": "Nouvelle Objectivité"
+                    },
+                    "25": {
+                        "then": "Art déco"
+                    },
+                    "26": {
+                        "then": "Architecture moderne"
+                    },
+                    "27": {
+                        "then": "École d'Amsterdam"
+                    },
+                    "28": {
+                        "then": "Style international"
+                    },
+                    "29": {
+                        "then": "Constructivisme"
+                    },
+                    "3": {
+                        "then": "Architecture gothique"
+                    },
+                    "30": {
+                        "then": "Architecture stalinienne"
+                    },
+                    "31": {
+                        "then": "Architecture brutaliste"
+                    },
+                    "32": {
+                        "then": "Architecture postmoderne"
+                    },
+                    "33": {
+                        "then": "Architecture contemporaine"
+                    },
+                    "4": {
+                        "then": "Architecture Renaissance"
+                    },
+                    "5": {
+                        "then": "Maniérisme"
+                    },
+                    "6": {
+                        "then": "Architecture ottomane"
+                    },
+                    "7": {
+                        "then": "Architecture baroque"
+                    },
+                    "8": {
+                        "then": "Rococo"
+                    },
+                    "9": {
+                        "then": "Style Empire"
+                    }
+                }
+            }
+        }
+    },
     "cafe_pub": {
         "deletion": {
             "extraDeleteReasons": {
@@ -2456,6 +2566,62 @@
             "render": "Aménagement cyclable"
         }
     },
+    "cyclestreets": {
+        "description": "Une rue cyclable est une rue où les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes",
+        "name": "Rue cyclables",
+        "tagRenderings": {
+            "future_cyclestreet": {
+                "question": "Quand cette rue deviendra-t-elle cyclable ?",
+                "render": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}"
+            },
+            "is_cyclestreet": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette rue est une rue cyclable (et est limitée à 30 km/h)"
+                    },
+                    "1": {
+                        "then": "Cette rue est une piste cyclable"
+                    },
+                    "2": {
+                        "then": "Cette rue est une piste cyclable (avec une limitation de vitesse a 30 km/h et les véhicules ne sont pas autorisés) (un panneau sera demandé plus tard)"
+                    },
+                    "3": {
+                        "then": "Cette rue est une rue cyclable"
+                    },
+                    "4": {
+                        "then": "Cette rue sera bientôt une rue cyclable"
+                    },
+                    "5": {
+                        "then": "Cette rue va bientôt devenir une piste cyclable"
+                    },
+                    "6": {
+                        "then": "Cette rue n’est pas une rue cyclable"
+                    }
+                },
+                "question": "La rue <b>{name}</b> est-elle une rue cyclable ?"
+            },
+            "supplementary_sign": {
+                "mappings": {
+                    "0": {
+                        "then": "Riverains autorisés"
+                    },
+                    "1": {
+                        "then": "Véhicules motorisés autorisés"
+                    },
+                    "2": {
+                        "then": "Motos autorisées"
+                    },
+                    "3": {
+                        "then": "Voitures autorisées"
+                    },
+                    "4": {
+                        "then": "Il n'y a pas de panneaux supplémentaires à cette piste cyclable."
+                    }
+                },
+                "question": "Quel panneau comporte cette piste cyclable ?"
+            }
+        }
+    },
     "cycleways_and_roads": {
         "description": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure",
         "name": "Pistes cyclables et routes",
@@ -2556,20 +2722,6 @@
                 },
                 "question": "De quoi est faite la surface de la piste cyclable ?",
                 "render": "Cette piste cyclable est faite de {cycleway:surface}"
-            },
-            "Is this a cyclestreet? (For a road)": {
-                "mappings": {
-                    "0": {
-                        "then": "C'est une rue cyclable, et une zone à 30 km/h."
-                    },
-                    "1": {
-                        "then": "Ceci est une route cyclable"
-                    },
-                    "2": {
-                        "then": "Ceci n'est pas une rue cyclable (vélorue)"
-                    }
-                },
-                "question": "Est-ce une route cyclable ?"
             },
             "Maxspeed (for road)": {
                 "mappings": {
@@ -4049,7 +4201,7 @@
                     "1": {
                         "then": "Cette bordure n'a pas de revêtement podotactile."
                     },
-                    "2": {
+                    "3": {
                         "then": "Cette bordure a un pavage tactile, mais il est incorrect."
                     }
                 },

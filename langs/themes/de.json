@@ -1109,6 +1109,27 @@
     },
     "scouting": {
         "description": "Eine Pfadfindergruppe ist eine soziale Jugendbewegung mit einem starken Fokus auf Aktivitäten im Freien. Die Aktivitäten reichen von Camping, Wandern, Wassersport, Rucksacktouren, Erkundung der Natur, ...",
+        "layers": {
+            "3": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "Unterkunft ausschließlich für Gruppen/Pfadfinder:innen"
+                        }
+                    },
+                    "name": "Gruppenunterkünfte für Gruppen/Pfadfinder:innen"
+                }
+            },
+            "4": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "Gruppenunterkunft"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Pfadfindergruppen"
     },
     "shops": {

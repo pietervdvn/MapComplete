@@ -3382,6 +3382,62 @@
             "render": "cyklodálnice"
         }
     },
+    "cyclestreets": {
+        "description": "Cyklostezka je ulice, kde motorová doprava nesmí předjíždět cyklisty",
+        "name": "Cyklostezky",
+        "tagRenderings": {
+            "future_cyclestreet": {
+                "question": "Kdy se tato ulice stane cyklostezkou?",
+                "render": "Tato ulice se stane cyklostezkou {cyclestreet:start_date}"
+            },
+            "is_cyclestreet": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato ulice je cyklostezkou (s omezením rychlosti na 30 km/h)"
+                    },
+                    "1": {
+                        "then": "Tato ulice je cyklistickou silnicí"
+                    },
+                    "2": {
+                        "then": "Tato ulice je cyklistická (rychlost je zde omezena na 30 km/h vozidla sem mají zákaz vjezdu) (na značku se zeptáme později)"
+                    },
+                    "3": {
+                        "then": "Tato ulice je cykloulicí"
+                    },
+                    "4": {
+                        "then": "Tato ulice se brzy stane cyklostezkou"
+                    },
+                    "5": {
+                        "then": "Tato ulice se brzy stane cyklistickou silnicí"
+                    },
+                    "6": {
+                        "then": "Tato ulice není cyklo ulicí"
+                    }
+                },
+                "question": "Je ulice <b>{name}</b> cyklo ulicí?"
+            },
+            "supplementary_sign": {
+                "mappings": {
+                    "0": {
+                        "then": "Přístup povolen obyvatelům"
+                    },
+                    "1": {
+                        "then": "Vjezd motorových vozidel povolen"
+                    },
+                    "2": {
+                        "then": "Vjezd motocyklů povolen"
+                    },
+                    "3": {
+                        "then": "Vjezd aut povolen"
+                    },
+                    "4": {
+                        "then": "Na této cyklostezce nejsou žádná doplňková značení."
+                    }
+                },
+                "question": "Jakou značku má tato cyklostezka?"
+            }
+        }
+    },
     "cycleways_and_roads": {
         "description": "Veškerá infrastruktura, kterou může někdo projet na kole, doplněná o otázky týkající se této infrastruktury",
         "name": "Cyklostezky a silnice",
@@ -3483,20 +3539,6 @@
                 },
                 "question": "Jaký je povrch cyklostezky?",
                 "render": "Povrch cyklostezky je {cycleway:surface}"
-            },
-            "Is this a cyclestreet? (For a road)": {
-                "mappings": {
-                    "0": {
-                        "then": "Jedná se o cyklostezku a zónu s rychlostí 30 km/h."
-                    },
-                    "1": {
-                        "then": "Tohle je cyklostezka"
-                    },
-                    "2": {
-                        "then": "Toto není cyklostezka."
-                    }
-                },
-                "question": "Je toto cyklostezka?"
             },
             "Maxspeed (for road)": {
                 "mappings": {
@@ -5751,7 +5793,7 @@
                     "1": {
                         "then": "Tento obrubník nemá hmatovou dlažbu."
                     },
-                    "2": {
+                    "3": {
                         "then": "Tento obrubník má hmatovou dlažbu, ale je nesprávný."
                     }
                 },

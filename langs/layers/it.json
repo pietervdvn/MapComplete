@@ -1307,6 +1307,55 @@
             "render": "strada per bicilette"
         }
     },
+    "cyclestreets": {
+        "description": "Una strada ciclabile è una strada in cui i veicoli a motore non possono sorpassare le persone in bicicletta",
+        "name": "Strade ciclabili",
+        "tagRenderings": {
+            "future_cyclestreet": {
+                "question": "Questa strada diventerà una strada ciclabile quando?",
+                "render": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}"
+            },
+            "is_cyclestreet": {
+                "mappings": {
+                    "0": {
+                        "then": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)"
+                    },
+                    "1": {
+                        "then": "Questa strada è una strada per biciclette"
+                    },
+                    "2": {
+                        "then": "Questa strada è una strada per biciclette (ha un limite di velocità di 30 km/h e i veicoli non sono ammessi)(il segnale verrà richiesto più tardi)"
+                    },
+                    "3": {
+                        "then": "Questa è una strada ciclabile"
+                    },
+                    "4": {
+                        "then": "Diverrà tra poco una strada ciclabile"
+                    },
+                    "6": {
+                        "then": "Questa strada non è una strada ciclabile"
+                    }
+                },
+                "question": "È <b>{name}</b> una strada ciclabile?"
+            },
+            "supplementary_sign": {
+                "mappings": {
+                    "0": {
+                        "then": "Permesso l'accesso ai residenti"
+                    },
+                    "1": {
+                        "then": "Permesso l'accesso ai veicoli a motore"
+                    },
+                    "2": {
+                        "then": "Permesso l'accesso ai motocicli"
+                    },
+                    "3": {
+                        "then": "Permesso l'accesso alle auto"
+                    }
+                }
+            }
+        }
+    },
     "defibrillator": {
         "name": "Defibrillatori",
         "presets": {

@@ -317,6 +317,9 @@
             }
         }
     },
+    "cyclestreets": {
+        "name": "Bidegorriak"
+    },
     "dumpstations": {
         "tagRenderings": {
             "dumpstations-access": {

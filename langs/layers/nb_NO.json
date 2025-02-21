@@ -531,6 +531,39 @@
             "render": "sykkelmotorvei"
         }
     },
+    "cyclestreets": {
+        "name": "Sykkelgater",
+        "tagRenderings": {
+            "future_cyclestreet": {
+                "question": "Når vil denne gaten bli en sykkelgate?",
+                "render": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}"
+            },
+            "is_cyclestreet": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)"
+                    },
+                    "3": {
+                        "then": "Denne gaten er en sykkelvei"
+                    },
+                    "4": {
+                        "then": "Denne gaten vil bli sykkelvei ganske snart"
+                    },
+                    "6": {
+                        "then": "Denne gaten er ikke en sykkelvei"
+                    }
+                },
+                "question": "Er <b>{name}</b>-gaten en sykkelgate?"
+            },
+            "supplementary_sign": {
+                "mappings": {
+                    "3": {
+                        "then": "Biler tillatt"
+                    }
+                }
+            }
+        }
+    },
     "dumpstations": {
         "tagRenderings": {
             "dumpstations-access": {
