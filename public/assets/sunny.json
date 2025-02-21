@@ -2203,7 +2203,20 @@
       ],
       "paint": {
         "line-opacity": 1,
-        "line-color": "#666",
+        "line-color": [
+          "match",
+          [
+            "get",
+            "kind_detail"
+          ],
+          "disused",
+          "#666666aa",
+          "tram",
+          "#999",
+          "subway",
+          "#999",
+          "#666"
+        ],
         "line-width": [
           "interpolate",
           [
