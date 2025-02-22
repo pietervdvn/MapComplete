@@ -2561,10 +2561,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
-.grid-rows-2 {
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-}
-
 .flex-row {
   flex-direction: row;
 }
@@ -5815,6 +5811,18 @@ svg.apply-fill path {
   }
 }
 
+.badge {
+  /* Used in the search results for layers */
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: 999rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  border: 1px solid var(--low-interaction-border);
+  background-color: var(--low-interaction-background);
+}
+
 /************************* LEGACY MARKER - CLEANUP BELOW ********************************/
 
 .animate-height {
@@ -8727,10 +8735,6 @@ svg.apply-fill path {
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .md\:grid-rows-1 {
-    grid-template-rows: repeat(1, minmax(0, 1fr));
   }
 
   .md\:flex-row {

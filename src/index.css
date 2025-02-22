@@ -632,6 +632,18 @@ svg.apply-fill path {
 }
 
 
+.badge {
+    /* Used in the search results for layers */
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    border-radius: 999rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border: 1px solid var(--low-interaction-border);
+    background-color: var(--low-interaction-background);
+}
+
 /************************* LEGACY MARKER - CLEANUP BELOW ********************************/
 
 
