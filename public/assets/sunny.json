@@ -55,7 +55,7 @@
         "any",
         [
           "in",
-          " kind",
+          "kind",
           "residential"
         ]
       ],
@@ -240,16 +240,12 @@
       "id": "natural_wood",
       "type": "fill",
       "source": "protomaps",
-      "source-layer": "natural",
+      "source-layer": "landuse",
       "filter": [
-        "any",
-        [
-          "in",
-          "kind",
-          "wood",
-          "nature_reserve",
-          "forest"
-        ]
+        "in",
+        "kind",
+        "wood",
+        "forest"
       ],
       "paint": {
         "fill-color": [
@@ -262,39 +258,10 @@
           ],
           2,
           "#f0efdd",
-          10,
+          9,
           "#d0ded0",
-          18,
-          "#add19e"
-        ]
-      }
-    },
-    {
-      "id": "landuse_forest",
-      "type": "fill",
-      "source": "protomaps",
-      "source-layer": "landuse",
-      "filter": [
-        "any",
-        [
-          "in",
-          "kind",
-          "forest"
-        ]
-      ],
-      "paint": {
-        "fill-color": [
-          "interpolate",
-          [
-            "linear"
-          ],
-          [
-            "zoom"
-          ],
-          6,
-          "#f0efdd",
-          12,
-          "#d0ded0",
+          13,
+          "#add19e",
           18,
           "#add19e"
         ]
@@ -304,7 +271,7 @@
       "id": "natural_scrub",
       "type": "fill",
       "source": "protomaps",
-      "source-layer": "natural",
+      "source-layer": "landuse",
       "filter": [
         "in",
         "kind",
@@ -332,7 +299,7 @@
       "id": "natural_glacier",
       "type": "fill",
       "source": "protomaps",
-      "source-layer": "natural",
+      "source-layer": "landuse",
       "filter": [
         "==",
         "kind",
@@ -346,7 +313,7 @@
       "id": "natural_sand",
       "type": "fill",
       "source": "protomaps",
-      "source-layer": "natural",
+      "source-layer": "landuse",
       "filter": [
         "==",
         "kind",
@@ -370,7 +337,6 @@
           "park",
           "cemetery",
           "nature_reserve",
-          "forest",
           "golf_course"
         ]
       ],
