@@ -68,8 +68,7 @@
       "type": "fill",
       "source": "protomaps",
       "source-layer": "landuse",
-      "filter": [
-        "any",
+      "filter":
         [
           "in",
           "kind",
@@ -78,7 +77,6 @@
           "cemetery",
           "nature_reserve",
           "golf_course"
-        ]
       ],
       "paint": {
         "fill-color": [

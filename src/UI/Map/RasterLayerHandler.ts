@@ -1,4 +1,4 @@
-import { Map as MLMap, RasterSourceSpecification, VectorTileSource } from "maplibre-gl"
+import { Map as MLMap, RasterSourceSpecification } from "maplibre-gl"
 import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
@@ -144,8 +144,8 @@ class SingleBackgroundHandler {
                         type: "raster",
                         source: background.id,
                         paint: {
-                            "raster-opacity": 0,
-                        },
+                            "raster-opacity": 0
+                        }
                     },
                     addLayerBeforeId
                 )
@@ -166,14 +166,14 @@ class SingleBackgroundHandler {
         Stores.Chronic(
             8,
             () => this.opacity.data > 0 && this._deactivationTime !== undefined
-        ).addCallback((_) => this.opacity.setData(Math.max(0, this.opacity.data - this.fadeStep)))
+        ).addCallback(() => this.opacity.setData(Math.max(0, this.opacity.data - this.fadeStep)))
     }
 
     private fadeIn() {
         Stores.Chronic(
             8,
             () => this.opacity.data < 1.0 && this._deactivationTime === undefined
-        ).addCallback((_) => this.opacity.setData(Math.min(1.0, this.opacity.data + this.fadeStep)))
+        ).addCallback(() => this.opacity.setData(Math.min(1.0, this.opacity.data + this.fadeStep)))
     }
 }
 
@@ -193,11 +193,10 @@ export default class RasterLayerHandler {
         layer: RasterLayerProperties
     ): RasterSourceSpecification | VectorSourceSpecification {
         if (layer.type === "vector") {
-            const vs: VectorSourceSpecification = {
+            return {
                 type: "vector",
-                url: layer.url,
+                url: layer.url
             }
-            return vs
         }
         return {
             type: "raster",
@@ -208,7 +207,7 @@ export default class RasterLayerHandler {
             minzoom: layer["min_zoom"] ?? 1,
             maxzoom: layer["max_zoom"] ?? 25,
             // Bit of a hack, but seems to work
-            scheme: layer.url.includes("{-y}") ? "tms" : "xyz",
+            scheme: layer.url.includes("{-y}") ? "tms" : "xyz"
         }
     }
 
@@ -222,7 +221,7 @@ export default class RasterLayerHandler {
             "{width}": "" + size,
             "{height}": "" + size,
             "{zoom}": "{z}",
-            "{-y}": "{y}",
+            "{-y}": "{y}"
         }
 
         for (const key in toReplace) {
