@@ -189,7 +189,7 @@
       "id": "capacity_persons"
     },
     "caravansites.caravansites-toilets",
-    "toilets.toilets-wheelchair",
+    "toilet_at_amenity.toilets-wheelchair",
     "questions",
     "mastodon"
   ],
