@@ -40,7 +40,7 @@
           "de": "Behindertenparkplatz",
           "cs": "Parkovací místo pro osoby se zdravotním postižením",
           "es": "Plaza de Aparcamiento para Discapacitados",
-          "ca": "Espai d'aparcament desactivat"
+          "ca": "Espai d'aparcament per a discapacitats"
         }
       },
       {
@@ -50,7 +50,7 @@
           "nl": "Parkeerplek voor opladen van elektrische voertuigen",
           "de": "Parkplatz zum Laden von Elektrofahrzeugen",
           "es": "Plaza de Aparcamiento para Vehículos Eléctricos",
-          "ca": "Aparcament de càrrega de vehicles elèctrics"
+          "ca": "Aparcament per a la càrrega de vehicles elèctrics"
         }
       }
     ]
@@ -189,7 +189,7 @@
             "nl": "Deze parkeerplek is gereserveerd voor caravans of campers.",
             "cs": "Jedná se o parkovací místo vyhrazené pro karavany nebo obytná vozidla.",
             "es": "Esta es una plaza de aparcamiento reservada para caravanas o autocaravanas.",
-            "ca": "Es tracta de plaça d'aparcament reservada per a caravanes o RVs."
+            "ca": "Es tracta de plaça d'aparcament reservada per a caravanes o autocaravanes."
           }
         },
         {
@@ -271,7 +271,7 @@
             "nl": "Deze parkeerplek is gereserveerd voor autodelen.",
             "cs": "Jedná se o parkovací místo vyhrazené pro sdílení automobilů.",
             "es": "Esta es una plaza de aparcamiento reservada para coches compartidos.",
-            "ca": "Es tracta d'una plaça d'aparcament reservada per a compartir cotxe."
+            "ca": "Es tracta d'una plaça d'aparcament reservada per a cotxes compartits."
           }
         }
       ]

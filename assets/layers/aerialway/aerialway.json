@@ -34,7 +34,7 @@
       "cs": "Dráha {name}",
       "es": "Teleférico {name}",
       "nl": "Kabelbaan {name}",
-      "ca": "Telefèric {name}"
+      "ca": "Telecadira {name}"
     }
   },
   "pointRendering": [
@@ -314,7 +314,7 @@
             "cs": "Touto lanovkou lze vyjet pouze na vrchol",
             "es": "Este teleférico solo se puede tomar hacia arriba",
             "nl": "Deze kabelbaan kan alleen naar de top worden genomen",
-            "ca": "Aquest telefèric només es prendre cap amunt"
+            "ca": "Aquest telefèric només es pot prendre cap amunt"
           }
         },
         {

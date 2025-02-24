@@ -5,13 +5,13 @@
     "de": "Spielgeräte",
     "es": "Equipamiento del Parque Infantil",
     "uk": "Обладнання для дитячих майданчиків",
-    "ca": "Equips de Playground"
+    "ca": "Equipament del Parc Infantil"
   },
   "description": {
     "en": "Layer showing playground equipment",
     "de": "Ebene mit Spielplatzausrüstung",
     "es": "Capa que muestra el equipamiento del parque infantil",
-    "ca": "Capa que mostra l'equipament del pati"
+    "ca": "Capa que mostra l'equipament del parc infantil"
   },
   "source": {
     "osmTags": "playground~*"
@@ -22,7 +22,7 @@
       "en": "Playground device",
       "de": "Spielplatzgerät",
       "es": "Elemento del Parque Infantil",
-      "ca": "Dispositiu de Playground"
+      "ca": "Element del Parc Infantil"
     }
   },
   "pointRendering": [
@@ -58,13 +58,13 @@
         "en": "a playground device",
         "de": "ein Spielgerät",
         "es": "un elemento del parque infantil",
-        "ca": "un dispositiu de jocs"
+        "ca": "un element del parc infantil"
       },
       "description": {
         "en": "An exact type is asked later",
         "de": "Ein genauer Typ wird später gefragt",
         "es": "Se te pedirá el tipo exacto más adelante",
-        "ca": "Més tard es demana un tipus exacte"
+        "ca": "Més tard es demanarà un tipus exacte"
       }
     }
   ],
@@ -84,7 +84,7 @@
           "en": "Type of device",
           "de": "Art des Geräts",
           "es": "Tipo de elemento",
-          "ca": "Tipus de dispositiu"
+          "ca": "Tipus d'element"
         },
         "addExtraTags": [
           "fixme=Freeform input used"
@@ -95,7 +95,7 @@
         "nl": "Wat voor speeltoestel is dit?",
         "de": "Was ist das für ein Gerät?",
         "es": "¿Qué tipo de elemento es este?",
-        "ca": "Quin tipus de dispositiu és aquest?"
+        "ca": "Quin tipus d'element és aquest?"
       },
       "invalidValues": "playground=yes",
       "mappings": [
@@ -117,7 +117,7 @@
             "de": "Dies ist eine Struktur aus mehreren angeschlossenen Spielgeräten",
             "pl": "To jest struktura składająca się z wielu połączonych urządzeń",
             "es": "Esta es una estructura que consta de varios elementos de parque infantil conectados",
-            "ca": "Aquesta és una estructura que consisteix en diversos dispositius de pati connectats"
+            "ca": "Aquesta és una estructura que consisteix en diversos elements de parc infantils connectats"
           },
           "icon": {
             "path": "./assets/layers/playground_equipment/SunwardCohousingPlayStructure2005.jpg",
@@ -131,7 +131,7 @@
             "de": "Das ist eine Rutsche",
             "pl": "To jest zjeżdżalnia",
             "es": "Este es un tobogán",
-            "ca": "Aquesta és una diapositiva"
+            "ca": "Aquesta és un tobogan"
           }
         },
         {
@@ -161,7 +161,7 @@
             "nl": "Dit is een veertoestel",
             "de": "Dies ist ein Springreiter",
             "es": "Este es un caballito de muelles",
-            "ca": "Aquest és un genet de primavera"
+            "ca": "Aquest és un cavallet amb molls"
           },
           "searchTerms": {
             "en": [
@@ -199,7 +199,7 @@
             "nl": "Dit is een wipwap",
             "de": "Dies ist eine Wippe",
             "es": "Este es un sube y baja",
-            "ca": "Això és una vista"
+            "ca": "Això és una balança"
           },
           "searchTerms": {
             "en": [
@@ -218,7 +218,7 @@
             "en": "This is a playhouse",
             "de": "Das ist ein Spielhaus",
             "es": "Este es una caseta de juegos",
-            "ca": "Aquesta és una casa de jocs"
+            "ca": "Aquesta és una caseta de jocs"
           },
           "searchTerms": {
             "en": [
@@ -237,7 +237,7 @@
             "de": "Dies ist ein Karussell",
             "pl": "To jest rondo",
             "es": "Este es un tiovivo",
-            "ca": "Aquesta és una rotonda"
+            "ca": "Açò son cavallets"
           },
           "searchTerms": {
             "en": [
@@ -269,7 +269,7 @@
             "de": "Dies ist ein Seilzug",
             "pl": "To jest tyrolka",
             "es": "Este es una tirolina",
-            "ca": "Aquest és un filferro"
+            "ca": "Aquesta és una tirolina"
           }
         },
         {
@@ -292,7 +292,7 @@
             "en": "This is a hopscotch",
             "de": "Dies ist ein Hüpfspiel",
             "es": "Este es un juego de la rayuela",
-            "ca": "Això és un hopscotch"
+            "ca": "Això és un joc de la ratlleta"
           },
           "icon": {
             "path": "./assets/layers/playground_equipment/Hinkelbaan_tegels.jpg",
@@ -305,7 +305,7 @@
             "en": "This is a splash pad",
             "de": "Dies ist ein Planschbecken",
             "es": "Este es un parque acuático",
-            "ca": "Aquest és un coixinet"
+            "ca": "Aquest és un esquitxador"
           },
           "searchTerms": {
             "en": "spray pool"
@@ -350,7 +350,7 @@
             "de": "Dies ist eine Brücke (entweder als eigenständiges Gerät oder als Teil einer größeren Struktur)",
             "uk": "Це міст (або як окремий пристрій, або як частина більшої конструкції)",
             "es": "Este es un puente (ya sea como un elemento independiente o como parte de una estructura más grande)",
-            "ca": "Aquest és un pont (ja sigui com un dispositiu independent o com a part d'una estructura més gran)"
+            "ca": "Aquest és un pont (ja sigui com un element independent o com a part d'una estructura més gran)"
           },
           "icon": {
             "path": "./assets/layers/playground_equipment/Playground_in_Muchall_Park,_Wolverhampton_-_geograph.org.uk_-_2735437.jpg",
@@ -403,7 +403,7 @@
             "en": "This is a funnel used to play with funnel ball",
             "de": "Dies ist ein Trichter, mit dem man Trichterball spielen kann",
             "es": "Este es un embudo que se utiliza para jugar con bolas de embudo",
-            "ca": "Aquest és un embut utilitzat per jugar amb la pilota d'embut"
+            "ca": "Aquest és un embut utilitzat per jugar amb pilotes d'embut"
           },
           "icon": {
             "path": "./assets/layers/playground_equipment/Funnel_ball.jpg",
@@ -432,7 +432,7 @@
           "en": "Is this device accessible by wheelchair?",
           "de": "Ist dieses Gerät mit Rollstuhl erreichbar?",
           "es": "¿Es este elemento accesible en silla de ruedas?",
-          "ca": "Aquest dispositiu és accessible amb cadira de rodes?"
+          "ca": "Aquest element és accessible amb cadira de rodes?"
         }
       }
     }

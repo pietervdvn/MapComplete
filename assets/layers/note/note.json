@@ -313,7 +313,7 @@
             "en": "Should <b>not</b> mention {search} in <b>any</b> comment",
             "de": "Sollte {search} in <b>keinem</b> Kommentar erwähnen",
             "es": "No debe mencionar {search} en ningún comentario",
-            "ca": "Si <b>no</b> menciona {search} a <b>qualsevol comentari</b>"
+            "ca": "<b>no</b> ha de mencionar {search} a <b>cap</b> comentari"
           }
         }
       ]

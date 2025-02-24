@@ -84,14 +84,14 @@
         "fr": "un mémorial",
         "nl": "een gedenkteken",
         "es": "un monumento",
-        "ca": "un monument"
+        "ca": "un memorial"
       },
       "description": {
         "en": "A memorial is a physical object which remembers a person or event.",
         "de": "Ein Mahnmal ist ein physischer Gegenstand, der an eine Person oder ein Ereignis erinnert.",
         "fr": "Un mémorial est un élément physique disposé en mémoire d'une personne ou d'un évènement.",
         "es": "Un monumento es un objeto físico que recuerda a una persona o un evento.",
-        "ca": "Un monument és un objecte físic que recorda una persona o esdeveniment."
+        "ca": "Un memorial és un objecte físic que recorda una persona o esdeveniment."
       },
       "tags": [
         "historic=memorial"
@@ -123,7 +123,7 @@
             "nl": "Dit is een standbeeld",
             "sl": "To je kip",
             "es": "Es una estatua",
-            "ca": "Aquesta és una estàtua"
+            "ca": "És una estàtua"
           },
           "addExtraTags": [
             "tourism=artwork",
@@ -139,7 +139,7 @@
             "sl": "To je plošča",
             "uk": "Це меморіальна дошка",
             "es": "Es una placa",
-            "ca": "Aquesta és una placa"
+            "ca": "És una placa"
           }
         },
         {
@@ -150,7 +150,7 @@
             "fr": "C'est un banc commémoratif",
             "nl": "Dit is een zitbank die ook als herdenking dienst doet",
             "es": "Es un banco conmemorativo",
-            "ca": "Aquest és un banc commemoratiu"
+            "ca": "És un banc commemoratiu"
           },
           "addExtraTags": [
             "amenity=bench"
@@ -164,7 +164,7 @@
             "fr": "C'est un vélo fantôme - un vélo blanc peint en mémoire d'un cycliste mort à cet endroit suite à un accident avec une voiture",
             "nl": "Dit is een witte fiets of spookfiets - een witgeschilderede fiets die een omgekomen fietsen herdenkt",
             "es": "Es una bicicleta fantasma - una bicicleta pintada de blanco para recordar a un ciclista que falleció debido a un accidente de coche",
-            "ca": "Aquesta és una bicicleta fantasma - una bicicleta pintada de blanc per recordar un ciclista que va morir a causa d'un accident de cotxe"
+            "ca": "Aquesta és una bicicleta fantasma: una bicicleta pintada de blanc per recordar un ciclista que va morir a causa d'un accident de cotxe"
           }
         },
         {
@@ -175,7 +175,7 @@
             "fr": "C'est un stolperstein (pierre d'achoppement)",
             "nl": "Dit is een struikelsteen (stolperstein)",
             "es": "Es un stolperstein (piedra de tropiezo)",
-            "ca": "Es tracta d'un stolperstein (pedra d'afaitar)"
+            "ca": "Es tracta d'un stolperstein (pedra de memòria)"
           }
         },
         {
@@ -196,7 +196,7 @@
             "fr": "C'est une pierre commémorative",
             "sl": "To je spominski kamen",
             "es": "Es una piedra conmemorativa",
-            "ca": "Aquesta és una pedra commemorativa"
+            "ca": "És una pedra commemorativa"
           }
         },
         {
@@ -207,7 +207,7 @@
             "fr": "C'est un buste",
             "sl": "To je doprsni kip",
             "es": "Es un busto",
-            "ca": "Això és un bust"
+            "ca": "És un bust"
           }
         },
         {
@@ -219,7 +219,7 @@
             "nl": "Dit is een sculptuur",
             "sl": "To je skulptura",
             "es": "Es una escultura",
-            "ca": "Aquesta és una escultura"
+            "ca": "És una escultura"
           }
         },
         {
@@ -230,7 +230,7 @@
             "es": "Es un obelisco",
             "fr": "C'est un obélisque",
             "sl": "To je obelisk",
-            "ca": "Aquest és un obelisc"
+            "ca": "És un obelisc"
           }
         },
         {
@@ -243,7 +243,7 @@
             "nl": "Dit is een kruis",
             "pl": "To jest krzyż",
             "sl": "To je križ",
-            "ca": "Això és una creu"
+            "ca": "És una creu"
           }
         },
         {
@@ -253,7 +253,7 @@
             "de": "Dies ist eine blaue Plaque",
             "fr": "C'est une plaque bleue (spécifique aux pays anglo-saxons)",
             "es": "Es una placa azul",
-            "ca": "Aquesta és una placa blava"
+            "ca": "És una placa blava"
           },
           "onlyShowIf": "_country=gb"
         },
@@ -266,7 +266,7 @@
             "nl": "Dit is een historische tank, permanent in de publieke ruimte geplaatst als gedenkteken",
             "sl": "To je zgodovinski tank, ki je stalno postavljen v spomin na javnem kraju",
             "es": "Es un tanque histórico, colocado permanentemente en el espacio público como monumento",
-            "ca": "Es tracta d'un tanc històric, situat permanentment a l'espai públic com a monument"
+            "ca": "Es tracta d'un tanc històric, situat permanentment a l'espai públic com a memorial"
           }
         },
         {
@@ -291,7 +291,7 @@
             "sl": "To je nagrobni kamen; oseba je pokopana tu",
             "fr": "C'est une pierre tombale, une personne est enterrée ici",
             "es": "Es una lápida; la persona está enterrada aquí",
-            "ca": "Aquesta és una làpida; la persona està enterrada aquí"
+            "ca": "És una làpida; la persona està enterrada aquí"
           },
           "addExtraTags": [
             "memorial="
@@ -358,7 +358,7 @@
             "sl": "Ta spomenik nima napisa",
             "uk": "Цей пам'ятник не має напису",
             "es": "Este monumento no tiene inscripción",
-            "ca": "Aquest monument no té inscripció"
+            "ca": "Aquest memorial no té inscripció"
           },
           "addExtraTags": [
             "inscription="
@@ -384,7 +384,7 @@
         "de": "Hier geht es um das Denkmal selbst, nicht um die Person oder das Ereignis, an das die Denkmal erinnert. Wenn diese Gedenkstätte keine Wikipedia-Seite oder Wikidata-Entität hat, überspringe diese Frage.",
         "fr": "C'est la page Wikipédia du mémorial et non celle de la personne ou de l'évènement commémoré. Si le mémorial n'a pas de page Wikipédia ou d'entité Wikidata, passez cette question.",
         "es": "Se trata del propio monumento, no de la persona o el evento que recuerda el monumento. Si este monumento no tiene una página de Wikipedia o una entidad Wikidata, omite esta pregunta.",
-        "ca": "Es tracta d'un memorial en si, no de la persona o esdeveniment que el memorial recorda. Si aquest memorial no té una pàgina de Viquipèdia o una entitat de Wikidata, ometeu aquesta pregunta."
+        "ca": "Es tracta sobre el memorial en si, no de la persona o esdeveniment que el memorial recorda. Si aquest memorial no té una pàgina de Viquipèdia o una entitat de Wikidata, ometeu aquesta pregunta."
       },
       "render": {
         "special": {
@@ -443,7 +443,7 @@
         "de": "Wann wurde dieses Denkmal installiert?",
         "fr": "Quand ce mémorial a-t-il été installé ?",
         "es": "¿Cuándo se instaló este monumento?",
-        "ca": "Quan es va instal·lar aquest monument?"
+        "ca": "Quan es va instal·lar aquest memorial?"
       },
       "render": {
         "nl": "Geplaatst op {start_date}",

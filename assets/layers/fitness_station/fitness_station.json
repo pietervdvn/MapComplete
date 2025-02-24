@@ -446,7 +446,7 @@
             "de": "Die Fitness-Station hat einen Crosstrainer.",
             "cs": "Tato fitness stanice má crossový trenažér.",
             "es": "Esta estación de fitness tiene una elíptica.",
-            "ca": "Aquesta estació de fitness té un entrenament creuat."
+            "ca": "Aquesta estació de fitness té una bicicleta el·líptica."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/07-12-2016,_Fitness_trail,_Parque_da_Alfarrobeira,_Albufeira_2.jpg",
@@ -474,7 +474,7 @@
             "de": "Die Fitness-Station hat ein Rudergerät.",
             "cs": "Tato fitness stanice má veslař.",
             "es": "Esta estación de fitness tiene una máquina de remo.",
-            "ca": "Aquesta estació de fitness té un rem."
+            "ca": "Aquesta estació de fitness té una màquina de rem."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Annecy_-_rower.jpg",
@@ -488,7 +488,7 @@
             "de": "Die Fitness-Station hat eine Slackline.",
             "cs": "Tato fitness stanice má slackline.",
             "es": "Esta estación de fitness tiene una slackline.",
-            "ca": "Aquesta estació de fitness té una escletxa."
+            "ca": "Aquesta estació de fitness té una slackline."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Slacklineanlage_im_Dietenbachpark.jpg",

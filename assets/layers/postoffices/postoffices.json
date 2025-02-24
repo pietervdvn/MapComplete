@@ -65,7 +65,7 @@
           "nl": "Postpartner in een winkel",
           "cs": "Poštovní partner v obchodě",
           "es": "Socio postal en una tienda",
-          "ca": "Col·laborador de correus en una botiga"
+          "ca": "Soci postal en una botiga"
         }
       },
       {
@@ -208,14 +208,14 @@
         "en": "To which brand does this post office belong?",
         "de": "Zu welcher Marke gehört die Poststelle?",
         "es": "¿A qué marca pertenece esta oficina de correos?",
-        "ca": "A quina marca pertany aquesta oficina de correus?"
+        "ca": "A quina marca pertany aquesta oficina postal?"
       },
       "render": {
         "en": "This is a {brand} post office",
         "de": "Dies ist eine Poststelle von {brand}",
         "es": "Esta es una oficina de correos {brand}",
         "uk": "Це поштове відділення {brand}",
-        "ca": "Aquesta és una oficina de correus de {brand}"
+        "ca": "Aquesta és una oficina postal de {brand}"
       },
       "freeform": {
         "type": "nsi",
@@ -224,7 +224,7 @@
           "en": "Brand of the post office",
           "de": "Marke der Poststelle",
           "es": "Marca de la oficina de correos",
-          "ca": "Marca de l'oficina de correus"
+          "ca": "Marca de l'oficina postal"
         },
         "helperArgs": [
           "amenity=post_office"
@@ -645,8 +645,8 @@
           "question": {
             "en": "Offers letter posting",
             "de": "Bietet Briefpost an",
-            "es": "¿Ofrece envío de cartas?",
-            "ca": "Ofereix la publicació de cartes"
+            "es": "Ofrece envío de cartas",
+            "ca": "Ofereix enviament de cartes"
           },
           "osmTags": {
             "and": [
@@ -664,8 +664,8 @@
           "question": {
             "en": "Offers parcel posting",
             "de": "Bietet Paketaufgabe an",
-            "es": "¿Ofrece envío de paquetes?",
-            "ca": "Ofereix la publicació de paquets"
+            "es": "Ofrece envío de paquetes",
+            "ca": "Ofereix enviament de paquets"
           },
           "osmTags": {
             "and": [
@@ -683,8 +683,8 @@
           "question": {
             "en": "Offers pickup of missed parcels",
             "de": "Bietet die Abholung von verpassten Paketen an",
-            "es": "¿Ofrece recogida de paquetes perdidos?",
-            "ca": "Ofertes de recollida de paquets perduts"
+            "es": "Ofrece recogida de paquetes perdidos",
+            "ca": "Ofereix la recollida de paquets perduts"
           },
           "osmTags": {
             "and": [
@@ -702,7 +702,7 @@
           "question": {
             "en": "Accepts pickup of parcels sent here",
             "de": "Akzeptiert die Abholung von Paketen, die hierher geschickt werden",
-            "es": "¿Acepta la recogida de paquetes enviados aquí?",
+            "es": "Acepta la recogida de paquetes enviados aquí",
             "ca": "Accepta la recollida de paquets enviats aquí"
           },
           "osmTags": {
@@ -721,7 +721,7 @@
           "question": {
             "en": "Sells stamps",
             "de": "Verkauft Briefmarken",
-            "es": "¿Vende sellos?",
+            "es": "Vende sellos",
             "ca": "Ven segells"
           },
           "osmTags": {

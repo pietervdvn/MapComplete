@@ -231,7 +231,7 @@
         "de": "Wie lautet der Mastodon-Handle von {title()}?",
         "cs": "Co je Mastodon-handle {title()}?",
         "es": "¿Cuál es el identificador de Mastodon de {title()}?",
-        "ca": "Què és el Mastodon-handle de {title()}?"
+        "ca": "Què és l'identificador de Mastodon de {title()}?"
       },
       "freeform": {
         "key": "contact:mastodon",
@@ -2297,7 +2297,7 @@
             "de": "Dieser Ort bietet sowohl drahtloses Internet als auch Internetzugang über ein Terminal oder einen Computer",
             "es": "Este lugar ofrece internet inalámbrico y acceso a internet a través de un terminal o computadora",
             "uk": "Тут можна скористатися як бездротовим інтернетом, так і доступом до інтернету через термінал або комп'ютер",
-            "ca": "Aquest lloc ofereix tant internet sense fils com accés a Internet a través d'un terminal o ordinador"
+            "ca": "Aquest lloc ofereix tant internet sense fil com accés a Internet a través d'un terminal o ordinador"
           }
         }
       ],
@@ -2692,7 +2692,7 @@
         "de": "Verkauft {title()} laktosefreie Produkte?",
         "cs": "Má {title()} nabídku bez laktózy?",
         "es": "¿Tiene {title()} una oferta sin lactosa?",
-        "ca": "{title()} té una oferta lliure de lactosa?"
+        "ca": "{title()} té una oferta sense lactosa?"
       },
       "mappings": [
         {
@@ -2702,7 +2702,7 @@
             "de": "<b>Ausschließlich</b> laktosefreie Produkte",
             "cs": "<b>Prodává pouze výrobky bez laktózy</b>",
             "es": "<b>Solo vende productos sin lactosa</b>",
-            "ca": "<b>Només ven productes de lactosa sense lactosa</b>"
+            "ca": "<b>Només ven productes sense lactosa</b>"
           },
           "icon": "./assets/layers/questions/lactose_free.svg"
         },
@@ -2713,7 +2713,7 @@
             "de": "Viele laktosefreie Produkte",
             "cs": "Velká nabídka bez laktózy",
             "es": "Gran oferta de productos sin lactosa",
-            "ca": "Gran oferta lliure de lactosa"
+            "ca": "Gran oferta sense lactosa"
           },
           "icon": "./assets/layers/questions/lactose_free.svg"
         },
@@ -2724,7 +2724,7 @@
             "de": "<b>Wenige</b> laktosefreie Produkte",
             "cs": "<b>Omezená nabídka bez laktózy</b>",
             "es": "Oferta <b>limitada de productos sin lactosa</b>",
-            "ca": "<b>Lliure de lactosa limitada</b> oferta"
+            "ca": "Oferta <b>limitada de productes sense lactosa</b>"
           }
         },
         {
@@ -2734,7 +2734,7 @@
             "de": "Keine laktosefreie Produkte",
             "cs": "Žádná nabídka bez laktózy",
             "es": "No hay oferta de productos sin lactosa",
-            "ca": "Sense lactosa"
+            "ca": "No hi ha oferta de productes sense lactosa"
           }
         }
       ],
@@ -2788,7 +2788,7 @@
             "de": "Das Geschäft verkauft <b>wenige glutenfreie</b> Produkte",
             "cs": "Tento obchod má <b>omezenou nabídku bezlepkových produktů</b>",
             "es": "Esta tienda tiene una oferta <b>limitada de productos sin gluten</b>",
-            "ca": "Aquesta botiga té una oferta de <b>sense gluten limitat</b>"
+            "ca": "Aquesta botiga té una oferta <b>sense gluten limitat</b>"
           }
         },
         {
@@ -3256,7 +3256,7 @@
             "en": "This place has outdoor seating",
             "nl": "Deze plaats heeft zitplaatsen buiten",
             "de": "Dieser Ort hat Sitzgelegenheiten im Freien",
-            "ca": "Aquest lloc té seients exteriors"
+            "ca": "Aquest lloc té zona d'estar exterior"
           },
           "icon": "./assets/layers/outdoor_seating/outdoor_seating.svg"
         },
@@ -3279,7 +3279,7 @@
         "en": "What is the maximum amount of time one is allowed to stay here?",
         "nl": "Wat is de maximale tijd die je hier mag blijven?",
         "de": "Wie lange darf man sich maximal hier aufhalten?",
-        "ca": "Quina és la quantitat màxima de temps que se li permet romandre aquí?"
+        "ca": "Quina és la quantitat màxima de temps que a un se li permet romandre aquí?"
       },
       "freeform": {
         "key": "maxstay",
@@ -3289,7 +3289,7 @@
         "en": "One can stay at most <b>{canonical(maxstay)}</b>",
         "nl": "Je mag hier maximaal <b>{canonical(maxstay)}</b> blijven",
         "de": "Man kann höchstens <b>{canonical(maxstay)}</b> bleiben",
-        "ca": "Es pot quedar com a màxim <b>{canonical(maxstay)}</b>"
+        "ca": "Un es pot quedar com a màxim <b>{canonical(maxstay)}</b>"
       },
       "mappings": [
         {
@@ -3298,7 +3298,7 @@
             "en": "There is no limit to the amount of time one can stay here",
             "nl": "Er is geen limiet aan de tijd die je hier mag blijven",
             "de": "Es gibt keine zeitliche Begrenzung für den Aufenthalt hier",
-            "ca": "No hi ha límit en la quantitat de temps que es pot quedar aquí"
+            "ca": "No hi ha límit en la quantitat de temps que un es pot quedar aquí"
           }
         }
       ]

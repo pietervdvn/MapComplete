@@ -4,7 +4,7 @@
     "en": "Ghost Signs",
     "de": "Geisterzeichen",
     "es": "Letreros fantasma",
-    "ca": "Signes fantasma"
+    "ca": "Rètols fantasmes"
   },
   "description": {
     "en": "Layer showing disused signs on buildings",
@@ -98,7 +98,7 @@
         "de": "Der Text auf dem Schild ist: {inscription}",
         "es": "El texto en el letrero es: {inscription}",
         "uk": "Текст на табличці: {inscription}",
-        "ca": "El text del signe és: {inscription}"
+        "ca": "El text del rètol és: {inscription}"
       }
     },
     {
