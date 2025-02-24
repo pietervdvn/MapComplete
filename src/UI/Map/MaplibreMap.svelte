@@ -66,7 +66,6 @@
       _map.resize()
       const canvas = _map.getCanvas()
       canvas.addEventListener("webglcontextlost", (e) => {
-        console.warn("A MapLibreMap lost their context. Recovery is", autorecovery, e)
         try {
           _map?.remove()
         } catch (e) {

@@ -31,6 +31,47 @@
          }
       },
       {
+         "id": "landcover_low_zooms",
+         "type": "fill",
+         "source": "protomaps",
+         "source-layer": "landcover",
+         "paint": {
+            "fill-color": [
+               "match",
+               [
+                  "get",
+                  "kind"
+               ],
+               "grassland",
+               "#e5f2c9",
+               "barren",
+               "rgba(255, 243, 215, 1)",
+               "urban_area",
+               "rgba(230, 230, 230, 1)",
+               "farmland",
+               "rgba(216, 239, 210, 1)",
+               "glacier",
+               "rgba(255, 255, 255, 1)",
+               "scrub",
+               "rgba(234, 239, 210, 1)",
+               "#f0efdd"
+            ],
+            "fill-opacity": [
+               "interpolate",
+               [
+                  "linear"
+               ],
+               [
+                  "zoom"
+               ],
+               5,
+               1,
+               7,
+               0
+            ]
+         }
+      },
+      {
          "id": "landuse_farmland",
          "type": "fill",
          "source": "protomaps",
@@ -70,16 +111,13 @@
          "source": "protomaps",
          "source-layer": "landuse",
          "filter": [
-            "any",
-            [
-               "in",
-               "kind",
-               "national_park",
-               "park",
-               "cemetery",
-               "nature_reserve",
-               "golf_course"
-            ]
+            "in",
+            "kind",
+            "national_park",
+            "park",
+            "cemetery",
+            "nature_reserve",
+            "golf_course"
          ],
          "paint": {
             "fill-color": [

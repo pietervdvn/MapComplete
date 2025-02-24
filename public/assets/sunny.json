@@ -109,15 +109,14 @@
       "type": "fill",
       "source": "protomaps",
       "source-layer": "landuse",
-      "filter":
-        [
-          "in",
-          "kind",
-          "national_park",
-          "park",
-          "cemetery",
-          "nature_reserve",
-          "golf_course"
+      "filter": [
+        "in",
+        "kind",
+        "national_park",
+        "park",
+        "cemetery",
+        "nature_reserve",
+        "golf_course"
       ],
       "paint": {
         "fill-color": [
@@ -3010,19 +3009,16 @@
       }
     },
     {
-      "id": "physical_line_waterway_label",
+      "id": "water_waterway_label",
       "type": "symbol",
       "source": "protomaps",
-      "source-layer": "physical_line",
+      "source-layer": "water",
       "minzoom": 13,
       "filter": [
-        "all",
-        [
-          "in",
-          "kind",
-          "river",
-          "stream"
-        ]
+        "in",
+        "kind",
+        "river",
+        "stream"
       ],
       "layout": {
         "symbol-placement": "line",
@@ -3120,10 +3116,10 @@
       }
     },
     {
-      "id": "pois_ocean",
+      "id": "water_label_ocean",
       "type": "symbol",
       "source": "protomaps",
-      "source-layer": "pois",
+      "source-layer": "water",
       "filter": [
         "any",
         [
@@ -3168,7 +3164,7 @@
       }
     },
     {
-      "id": "pois_lakes",
+      "id": "water_label_lakes",
       "type": "symbol",
       "source": "protomaps",
       "source-layer": "water",
@@ -3313,7 +3309,7 @@
       }
     },
     {
-      "id": "pois_important",
+      "id": "pois",
       "type": "symbol",
       "source": "protomaps",
       "source-layer": "pois",

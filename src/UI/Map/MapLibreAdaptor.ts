@@ -7,11 +7,11 @@ import { ExportableMap, KeyNavigationEvent, MapProperties } from "../../Models/M
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
 import * as htmltoimage from "html-to-image"
-import RasterLayerHandler from "./RasterLayerHandler"
 import Constants from "../../Models/Constants"
 import { Protocol } from "pmtiles"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { Feature, LineString } from "geojson"
+import RasterLayerHandler from "./RasterLayerHandler"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
