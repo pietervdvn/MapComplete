@@ -226,7 +226,7 @@
     "marked": "^12.0.2",
     "monaco-editor": "^0.46.0",
     "mvt-to-geojson": "^0.0.6",
-    "name-suggestion-index": "^6.0.20250119",
+    "name-suggestion-index": "^6.0.20250223",
     "npm": "^11.1.0",
     "opening_hours": "^3.6.0",
     "osm-auth": "^2.6.0",

@@ -256,7 +256,7 @@ class NsiLogos extends Script {
     private static headers: Readonly<Record<string, ReadonlyArray<ReadonlyArray<number>>>> = {
         png: [[137, 80, 78, 71, 13, 10, 26, 10]],
         jpg: [
-            [255, 216],
+            [255, 216], // FF D8
             [255, 232],
         ],
         gif: [[71, 73]],
@@ -317,16 +317,18 @@ class NsiLogos extends Script {
     }
 
     private async addExtensions() {
+        console.log("Adding all extensions in ", NsiLogos.path)
         const allFiles = ScriptUtils.readDirRecSync(NsiLogos.path, 1)
+        let changed = 0
         for (const f of allFiles) {
-            if (f.match("[a-zA-Z0-9-].[a-z]{3}$")) {
+            if (f.match(/[a-zA-Z0-9-]\.[a-z]{3}$/)) {
                 continue
             }
 
             const fd = openSync(f, "r")
             const buffer = Buffer.alloc(10)
             const num = readSync(fd, buffer, 0, 10, null)
-            if (num === 0) throw "INvalid file:" + f
+            if (num === 0) throw "Invalid file:" + f
 
             let matchFound = false
             for (const format in NsiLogos.headers) {
@@ -334,6 +336,7 @@ class NsiLogos extends Script {
                 if (matches) {
                     renameSync(f, f + "." + format)
                     matchFound = true
+                    changed++
                     break
                 }
             }
@@ -354,6 +357,7 @@ class NsiLogos extends Script {
                 text.slice(0, 40)
             )
         }
+        console.log("Added", changed, "extensions")
     }
 
     private async patchNsiFile() {
@@ -374,7 +378,10 @@ class NsiLogos extends Script {
                 if (!file) {
                     continue
                 }
-                const extension = file.match(/.*\.([a-z]{3})/)[1]
+                const extension = file.match(/.*\.([a-z]{3})/)?.[1]
+                if (!extension) {
+                    console.error("No extension found for file", file)
+                }
                 nsiItem["ext"] = extension
             }
         }

@@ -156,7 +156,7 @@ class GenerateStats extends Script {
         )
         const batchSize = 50
         for (let i = 0; i < allBrandNames.length; i += batchSize) {
-            console.warn("Downloading", batchSize, "items: ", i + "/" + allBrandNames.length)
+            console.warn("Downloading ", batchSize, "occurence counts, items: ", i + "/" + allBrandNames.length)
             let downloaded = 0
             await Promise.all(
                 Utils.TimesT(batchSize, async (j) => {
