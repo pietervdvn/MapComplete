@@ -826,6 +826,71 @@
         }
       }
     },
+    {
+      "id": "uniform",
+      "question": {
+        "en": "Do pupils have to wear a uniform or obey a dresscode?",
+        "nl": "Moeten leerlingen een uniform dragen of specifieke kledingsvoorschriften volgen?"
+      },
+      "multiAnswer": true,
+      "render": {
+        "en": "{dress_code}"
+      },
+      "freeform": {
+        "key": "dress_code"
+      },
+      "mappings": [
+        {
+          "if": "dress_code=uniform",
+          "then": {
+            "en": "Students must wear a uniform, which is extensively described",
+            "nl": "Studenten moeten een specifiek uniform dragen"
+          }
+        },
+        {
+          "if": "dress_code=obligated_colour",
+          "then": {
+            "en": "Students must wear clothes in a specific colour scheme",
+            "nl": "Leerlingen moeten kleren van een bepaalde kleur dragen"
+          }
+        },
+        {
+          "if": "dress_code=casual",
+          "then": {
+            "en": "There is no formal dress code, students are allowed to come in casual wear such as t-shirt, jeans, ...",
+            "nl": "Er is geen uniformverplichting, leerlingen mogen kledij zoals t-shirts, jeans, ... dragen"
+          }
+        },
+        {
+          "if": "dress_code=arms_covered",
+          "then": {
+            "en": "Arms must be covered by the clothes",
+            "nl": "De armen moeten volledig bedekt zijn"
+          }
+        },
+        {
+          "if": "dress_code=knees_covered",
+          "then": {
+            "en": "Knees must be covered by the clothes",
+            "nl": "De knieën moeten volledig bedekt zijn"
+          }
+        },
+        {
+          "if": "dress_code=legs_covered",
+          "then": {
+            "en": "Legs must be covered by the clothes",
+            "nl": "De benen moeten volledig bedekt zijn"
+          }
+        },
+        {
+          "if": "dress_code=belly_covered",
+          "then": {
+            "en": "The belly must be covered by the clothes",
+            "nl": "De buik mag niet zichtbaar zijn"
+          }
+        }
+      ]
+    },
     "wikipedia"
   ],
   "filter": [
