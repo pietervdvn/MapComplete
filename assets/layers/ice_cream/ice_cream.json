@@ -6,14 +6,14 @@
     "nl": "IJssalon",
     "es": "Heladerías",
     "uk": "Кафе-морозиво",
-    "ca": "Gelateries"
+    "ca": "Sales de gelat"
   },
   "description": {
     "en": "A place where ice cream is sold over the counter",
     "de": "Ein Ort, an dem Eiscreme an der Theke verkauft wird",
     "nl": "Een plaats waar voornamelijk ijsjes verkocht worden, bedoeld voor onmiddelijke consumptie",
     "es": "Un lugar donde se vende helado en el mostrador",
-    "ca": "Un lloc on es ven gelat al taulell"
+    "ca": "Un lloc on es ven gelat sobre el taulell"
   },
   "source": {
     "osmTags": "amenity=ice_cream"
@@ -25,7 +25,7 @@
       "de": "Eisdiele",
       "nl": "IJssalon",
       "es": "Heladería",
-      "ca": "Gelateria"
+      "ca": "Crema de gel"
     },
     "mappings": [
       {
@@ -89,7 +89,7 @@
         "nl": "Een plaats waar men voornamelijk ijsjes koopt, meestal met de hand geschept en bedoeld om onmiddellijk op te eten.",
         "es": "Una tienda donde solo se puede comprar helado y artículos relacionados. El helado normalmente se sirve con cuchara.",
         "uk": "Магазин, де можна купити лише морозиво та супутні товари. Зазвичай морозиво набирають вручну.",
-        "ca": "Una botiga on només es poden comprar gelats i articles relacionats. El gelat normalment és serveix amb cullera."
+        "ca": "Una botiga on només es poden comprar gelats i articles relacionats. El gelat normalment és cobert a mà."
       }
     }
   ],

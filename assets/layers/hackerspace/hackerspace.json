@@ -200,7 +200,7 @@
             "de": "Dies ist ein <b>Hackerspace/Hack-Lab</b>, das sich hauptsächlich auf grundlegende Computerkenntnisse konzentriert, recycelte Geräte verwendet und/oder der Gemeinschaft Internet bereitstellt. Es befindet sich typischerweise in autonomen Räumen, besetzten Häusern oder sozialen Einrichtungen",
             "uk": "Це <b>хак-лабораторія</b>, яка здебільшого зосереджена на базових комп'ютерних навичках, використовує перероблені пристрої та/або надає доступ до Інтернету громаді. Зазвичай вони розташовані в автономних приміщеннях, сквотах або соціальних об'єктах",
             "es": "Este es un <b>hacklab</b> que se centra principalmente en habilidades informáticas básicas, utilizando dispositivos reciclados y/o proporcionando internet a la comunidad. Por lo general, se encuentra en espacios autónomos, okupas o instalaciones sociales",
-            "ca": "Aquest és un <b>hacklab</b> que es centra principalment en les habilitats informàtiques bàsiques, utilitzant dispositius reciclats i/o proporcionant internet a la comunitat. Normalment es troba en espais autònoms, okupes o instal·lacions socials"
+            "ca": "Aquest és un <b>hacklab</b> que es centra principalment en les habilitats informàtiques bàsiques, utilitzant dispositius reciclats i/o proporcionant internet a la comunitat. Normalment es troba en espais autònoms, places o instal·lacions socials"
           }
         }
       ]
@@ -367,14 +367,14 @@
               "nl": "een houtbewerkingsatelier",
               "de": "eine Holzwerkstatt",
               "es": "un taller de carpintería",
-              "ca": "Un taller de fusta"
+              "ca": "Un taller de fusteria"
             },
             {
               "en": "woodworking workshop",
               "nl": "houtbewerkingsatelier",
               "de": "Holzwerkstatt",
               "es": "taller de carpintería",
-              "ca": "taller de fusta"
+              "ca": "Taller de treball en fusta"
             },
             "./assets/layers/hackerspace/woodworking.svg",
             false
@@ -393,7 +393,7 @@
               "nl": "keramiekatelier",
               "de": "Keramikwerkstatt",
               "es": "taller de cerámica",
-              "ca": "taller de ceràmica"
+              "ca": "Taller de ceràmica"
             },
             "./assets/layers/hackerspace/ceramics.svg",
             false
@@ -405,14 +405,14 @@
               "nl": "een metaalatelier",
               "de": "eine Metallwerkstatt",
               "es": "un taller de metal",
-              "ca": "un taller de metall"
+              "ca": "Un taller de metall"
             },
             {
               "en": "metal workshop",
               "nl": "metaalatelier",
               "de": "Metallwerkstatt",
               "es": "taller de metal",
-              "ca": "taller de metall"
+              "ca": "Taller de metall"
             },
             "./assets/layers/hackerspace/metal.svg",
             false
@@ -424,14 +424,14 @@
               "nl": "een fietsherstelplaats",
               "de": "eine Fahrradwerkstatt",
               "es": "un taller de reparación de bicicletas",
-              "ca": "un taller de reparació de bicicletes"
+              "ca": "Un taller de reparació de bicicletes"
             },
             {
               "en": "bicycle repair workshop",
               "nl": "fietsherstelplaats",
               "de": "Fahrradwerkstatt",
               "es": "taller de reparación de bicicletas",
-              "ca": "taller de reparació de bicicletes"
+              "ca": "Taller de reparació de bicicletes"
             },
             "./assets/layers/hackerspace/bicycle.svg",
             false

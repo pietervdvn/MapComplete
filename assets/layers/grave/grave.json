@@ -10,7 +10,7 @@
     "en": "Tombstones (and graves) indicate where a person was buried. On this map, those can be recorded and a link to Wikipedia can be made",
     "de": "Grabsteine (und Gräber) zeigen an, wo eine Person begraben wurde. Auf dieser Karte können diese aufgezeichnet werden und ein Wikipedialink erstellt werden",
     "es": "Las lápidas (y las tumbas) indican dónde fue enterrada una persona. En este mapa, estas pueden registrarse y se puede establecer un enlace a Wikipedia",
-    "ca": "Les làpides (i les tombes) indiquen on va ser enterrada una persona. En aquest mapa, es poden registrar i es pot establir un enllaç a Viquipèdia"
+    "ca": "Les tombes (i les tombes) indiquen on va ser enterrada una persona. En aquest mapa, es poden gravar i es pot fer un enllaç a la Viquipèdia"
   },
   "source": {
     "osmTags": "historic=tomb"
@@ -21,7 +21,7 @@
       "en": "Tombstone",
       "de": "Grabstein",
       "es": "Lápida",
-      "ca": "Làpida"
+      "ca": "Tomba"
     }
   },
   "pointRendering": [

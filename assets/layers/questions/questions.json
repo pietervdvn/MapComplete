@@ -3256,7 +3256,7 @@
             "en": "This place has outdoor seating",
             "nl": "Deze plaats heeft zitplaatsen buiten",
             "de": "Dieser Ort hat Sitzgelegenheiten im Freien",
-            "ca": "Aquest lloc té zona d'estar exterior"
+            "ca": "Aquest lloc té seients exteriors"
           },
           "icon": "./assets/layers/outdoor_seating/outdoor_seating.svg"
         },

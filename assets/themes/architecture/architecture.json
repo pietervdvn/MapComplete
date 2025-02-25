@@ -8,7 +8,6 @@
   },
   "icon": "./assets/themes/architecture/architecture.svg",
   "defaultBackgroundId": "protomaps.white",
-
   "layers": [
     {
       "builtin": "building",

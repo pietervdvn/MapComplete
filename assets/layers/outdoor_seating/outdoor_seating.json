@@ -5,7 +5,7 @@
     "de": "Außenbestuhlung",
     "es": "Asientos al aire libre",
     "uk": "Сидіння на відкритому повітрі",
-    "ca": "Zona d'estar exterior"
+    "ca": "Sembra exterior"
   },
   "description": {
     "en": "Outdoor seating areas, usually located near cafes and restaurants.",
@@ -22,7 +22,7 @@
       "en": "Outdoor Seating area",
       "de": "Sitzbereich im Freien",
       "es": "Área de asientos al aire libre",
-      "ca": "Zona d'estar exterior"
+      "ca": "Zona exterior"
     },
     "mappings": [
       {

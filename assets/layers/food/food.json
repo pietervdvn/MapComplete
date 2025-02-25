@@ -568,7 +568,7 @@
             "nl": "Dit is een mexicaans restaurant",
             "de": "Hier werden mexikanische Gerichte serviert",
             "es": "Aquí se sirven platillos mexicanos",
-            "ca": "Aquí es serveixen plats mexicans"
+            "ca": "Els plats mexicans se serveixen aquí"
           }
         },
         {
@@ -579,7 +579,7 @@
             "nl": "Dit is een japans restaurant",
             "de": "Hier werden japanische Gerichte serviert",
             "es": "Aquí se sirven platillos japoneses",
-            "ca": "Aquí es serveixen plats japonesos"
+            "ca": "Els plats japonesos se serveixen aquí"
           }
         },
         {
@@ -590,7 +590,7 @@
             "nl": "Dit is een kiprestaurant",
             "de": "Hier werden Hühnergerichte serviert",
             "es": "Aquí se sirven platillos a base de pollo",
-            "ca": "Aquí es serveixen plats a base de pollastre"
+            "ca": "Els plats a base de pollastre es serveixen aquí"
           }
         },
         {
@@ -626,7 +626,7 @@
             "de": "Ein Bild aus dem Menü hinzufügen",
             "es": "Añadir una imagen del menú",
             "uk": "Додати зображення з меню",
-            "ca": "Afegeix una imatge del menú"
+            "ca": "Afegeix una imatge des del menú"
           }
         }
       }
@@ -824,7 +824,7 @@
         "en": "Does this fast-food restaurant have a drive-through?",
         "nl": "Heeft dit fastfoodrestaurant een drive-through?",
         "de": "Hat dieses Fast-Food-Restaurant eine Durchfahrtsmöglichkeit?",
-        "ca": "Aquest restaurant de menjar ràpid té servei al cotxe?"
+        "ca": "Aquest restaurant de menjar ràpid té un recorregut?"
       },
       "mappings": [
         {
@@ -833,7 +833,7 @@
             "en": "This fast-food restaurant has a drive-through",
             "nl": "Dit fastfoodrestaurant heeft een drive-through",
             "de": "Dieses Fast-Food-Restaurant hat einen Drive-In",
-            "ca": "Aquest restaurant de menjar ràpid té servei al cotxe"
+            "ca": "Aquest restaurant de menjar ràpid té un recorregut"
           }
         },
         {
@@ -842,7 +842,7 @@
             "en": "This fast-food restaurant does not have a drive-through",
             "nl": "Dit fastfoodrestaurant heeft geen drive-through",
             "de": "Dieses Fast-Food-Restaurant hat keinen Drive-in",
-            "ca": "Aquest restaurant de menjar ràpid no té servei al cotxe"
+            "ca": "Aquest restaurant de menjar ràpid no té un drive-through"
           }
         }
       ]
@@ -854,7 +854,7 @@
         "en": "What are the opening hours of the drive-through?",
         "nl": "Wat zijn de openingsuren van de drive-through?",
         "de": "Wie sind die Öffnungszeiten des Drive-Ins?",
-        "ca": "Quin és l'horari d'obertura del servei al cotxe?"
+        "ca": "Quin és l'horari d'obertura de l'autovia?"
       },
       "freeform": {
         "key": "opening_hours:drive_through",
@@ -867,7 +867,7 @@
             "en": "The opening hours of the drive-through are the same as the restaurant",
             "nl": "De openingsuren van de drive-through zijn dezelfde als die van het restaurant",
             "de": "Die Öffnungszeiten des Drive-Ins sind dieselben wie die des Restaurants",
-            "ca": "L'horari d'obertura del servei al cotxe és el mateix que el restaurant"
+            "ca": "L'horari d'obertura del passeig és el mateix que el restaurant"
           }
         }
       ],
@@ -952,7 +952,7 @@
             "nl": "Sommige gerechten kunnen op vraag vegetarisch gemaakt worden",
             "de": "Einige Gerichte können auf Nachfrage in eine vegetarische Version umgewandelt werden",
             "es": "Algunos platillos podrían adaptarse a una versión vegetariana, pero esto debe solicitarse",
-            "ca": "Alguns plats poden adaptar-se a una versió vegetariana, però s'ha de demanar"
+            "ca": "Alguns plats poden adaptar-se a una versió vegetariana, però això s'ha de demanar"
           }
         }
       ],
@@ -1168,7 +1168,7 @@
             "en": "Serves only vegetarian snacks and burgers",
             "de": "Nur vegetarische Snacks und Burger erhältlich",
             "es": "Sirve solo refrigerios y hamburguesas vegetarianas",
-            "ca": "Servix només snacks i hamburgueses vegetarianes"
+            "ca": "Servix només aperitius i hamburgueses vegetarianes"
           }
         },
         {
@@ -1228,7 +1228,7 @@
             "en": "Serves only vegan snacks and burgers",
             "de": "Nur vegane Snacks und Burger erhältlich",
             "es": "Sirve solo refrigerios y hamburguesas veganas",
-            "ca": "Servix només snacks i hamburgueses veganes"
+            "ca": "Servix només aperitius i hamburgueses veganes"
           }
         },
         {

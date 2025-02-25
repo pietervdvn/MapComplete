@@ -34,7 +34,7 @@
       "pl": "Obiekt MapRoulette: {parentName}",
       "cs": "Položka MapRoulette: {parentName}",
       "es": "Elemento de MapRoulette: {parentName}",
-      "ca": "Element de MapRoulette: {parentName}"
+      "ca": "Element MapRoulette: {parentName}"
     }
   },
   "titleIcons": [

@@ -13,7 +13,7 @@
     "de": "Ein Gebäude, in dem die Ersthelfer Material lagern und möglicherweise Wache halten",
     "fr": "Un bâtiment où les organismes de secours stockent du matériel ou assurent la garde",
     "es": "Un edificio donde los socorristas guardan material y pueden estar de guardia",
-    "ca": "Un edifici on els socorristes emmagatzemen material i poden estar de guardia"
+    "ca": "Un edifici on els primers auxilis emmagatzemen material i podria estar en vigilància"
   },
   "source": {
     "osmTags": "emergency=mountain_rescue"

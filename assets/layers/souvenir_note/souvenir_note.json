@@ -111,7 +111,7 @@
         "de": "Diese Maschine verfügt über {note:design_count} Designs.",
         "es": "Esta máquina tiene {note:design_count} diseños disponibles.",
         "nl": "Deze machine heeft {note:design_count} ontwerpen beschikbaar.",
-        "ca": "Aquesta màquina té disponibles {note:design_count} dissenys."
+        "ca": "Aquesta màquina té disponibles {note:design_count}."
       },
       "mappings": [
         {

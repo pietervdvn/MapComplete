@@ -496,7 +496,7 @@
             "de": "Dies ist ein Kinderzimmer",
             "cs": "Jedná se o školku",
             "es": "Esta es una guardería",
-            "ca": "Aquest és un jardí d'infants"
+            "ca": "Aquest és un viver"
           },
           "icon": "./assets/layers/indoors/room_nursery.svg"
         },
@@ -630,7 +630,7 @@
         "cs": "Kolik lidí se maximálně vejde do této místnosti?",
         "pl": "Ile osób może pomieścić to pomieszczenie?",
         "es": "¿Cuántas personas pueden caber como máximo en esta habitación?",
-        "ca": "Quanta gent pot, com a màxim, cabre en aquesta habitació?"
+        "ca": "Quanta gent pot, com a màxim, encaixar en aquesta habitació?"
       },
       "condition": {
         "or": [
@@ -651,7 +651,7 @@
         "cs": "Do této místnosti se vejde maximálně {capacity} osob",
         "pl": "To pomieszczenie może pomieścić maksymalnie {capacity} osób",
         "es": "En esta habitación caben como máximo {capacity} personas",
-        "ca": "Com a màxim {capacity} persones caben en aquesta sala"
+        "ca": "Com a màxim {capacity} persones encaixen en aquesta sala"
       },
       "freeform": {
         "key": "capacity",
