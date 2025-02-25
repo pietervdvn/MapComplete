@@ -1,6 +1,4 @@
 <script lang="ts">
-  // All the relevant links
-  import ThemeViewState from "../../Models/ThemeViewState"
   import Translations from "../i18n/Translations"
   import { CogIcon, EyeIcon, HeartIcon, TranslateIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Page from "../Base/Page.svelte"
@@ -17,7 +15,6 @@
   import Mastodon from "../../assets/svg/Mastodon.svelte"
   import Liberapay from "../../assets/svg/Liberapay.svelte"
   import DocumentMagnifyingGlass from "@babeard/svelte-heroicons/outline/DocumentMagnifyingGlass"
-  import DocumentChartBar from "@babeard/svelte-heroicons/outline/DocumentChartBar"
   import OpenIdEditor from "./OpenIdEditor.svelte"
   import OpenJosm from "../Base/OpenJosm.svelte"
   import MapillaryLink from "./MapillaryLink.svelte"
@@ -53,20 +50,37 @@
   import MagnifyingGlassCircle from "@babeard/svelte-heroicons/mini/MagnifyingGlassCircle"
   import { AndroidPolyfill } from "../../Logic/Web/AndroidPolyfill"
   import Forgejo from "../../assets/svg/Forgejo.svelte"
-  import DocumentArrowUp from "@babeard/svelte-heroicons/mini/DocumentArrowUp"
   import ChartBar from "@babeard/svelte-heroicons/solid/ChartBar"
   import QueueList from "@babeard/svelte-heroicons/solid/QueueList"
+  import { MenuState } from "../../Models/MenuState"
+  import { OsmConnection } from "../../Logic/Osm/OsmConnection"
+  import FeatureSwitchState from "../../Logic/State/FeatureSwitchState"
+  import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
+  import type { MapProperties } from "../../Models/MapProperties"
+  import FavouritesFeatureSource from "../../Logic/FeatureSource/Sources/FavouritesFeatureSource"
+  import Hotkeys from "../Base/Hotkeys"
+  import { ArrowTrendingUp } from "@babeard/svelte-heroicons/solid/ArrowTrendingUp"
+  import ArrowTopRightOnSquare from "@babeard/svelte-heroicons/mini/ArrowTopRightOnSquare"
 
-  export let state: ThemeViewState
+  export let state: {
+    favourites: FavouritesFeatureSource
+    guistate: MenuState,
+    osmConnection: OsmConnection,
+    theme?: ThemeConfig,
+    featureSwitches: Partial<FeatureSwitchState>,
+    mapProperties?: MapProperties,
+    userRelatedState?: UserRelatedState
+  }
+  let hotkeys = Hotkeys._docs
   let userdetails = state.osmConnection.userDetails
 
   let usersettingslayer = new LayerConfig(<LayerConfigJson>usersettings, "usersettings", true)
 
   let theme = state.theme
   let featureSwitches = state.featureSwitches
-  let showHome = featureSwitches.featureSwitchBackToThemeOverview
+  let showHome = featureSwitches?.featureSwitchBackToThemeOverview
   let pg = state.guistate.pageStates
-  let location = state.mapProperties.location
+  let location = state.mapProperties?.location
   export let onlyLink: boolean
   const t = Translations.t.general.menu
   let shown = new UIEventSource(state.guistate.pageStates.menu.data || !onlyLink)
@@ -143,32 +157,36 @@
     </Page>
 
     <LoginToggle {state} silentFail>
-      <Page {onlyLink} shown={pg.favourites}>
-        <svelte:fragment slot="header">
-          <HeartIcon />
-          <Tr t={Translations.t.favouritePoi.tab} />
-        </svelte:fragment>
-
-        <h3>
-          <Tr t={Translations.t.favouritePoi.title} />
-        </h3>
-        <div>
-          <Favourites {state} />
-          <h3>
-            <Tr t={Translations.t.reviews.your_reviews} />
-          </h3>
-          <ReviewsOverview {state} />
-        </div>
-      </Page>
-      <div class="hidden-on-mobile w-full">
-        <Page {onlyLink} shown={pg.hotkeys}>
+      {#if state.favourites}
+        <Page {onlyLink} shown={pg.favourites}>
           <svelte:fragment slot="header">
-            <BoltIcon />
-            <Tr t={Translations.t.hotkeyDocumentation.title} />
+            <HeartIcon />
+            <Tr t={Translations.t.favouritePoi.tab} />
           </svelte:fragment>
-          <HotkeyTable />
+
+          <h3>
+            <Tr t={Translations.t.favouritePoi.title} />
+          </h3>
+          <div>
+            <Favourites {state} />
+            <h3>
+              <Tr t={Translations.t.reviews.your_reviews} />
+            </h3>
+            <ReviewsOverview {state} />
+          </div>
         </Page>
-      </div>
+      {/if}
+      {#if $hotkeys.length > 0}
+        <div class="hidden-on-mobile w-full">
+          <Page {onlyLink} shown={pg.hotkeys}>
+            <svelte:fragment slot="header">
+              <BoltIcon />
+              <Tr t={Translations.t.hotkeyDocumentation.title} />
+            </svelte:fragment>
+            <HotkeyTable />
+          </Page>
+        </div>
+      {/if}
 
       <div class="self-end">
         <LogoutButton osmConnection={state.osmConnection} />
@@ -178,108 +196,103 @@
   </SidebarUnit>
 
   <!-- Theme related: documentation links, download, ... -->
-  <SidebarUnit>
-    <h3>
-      <Tr t={t.aboutCurrentThemeTitle} />
-    </h3>
+  {#if state.theme}
+    <SidebarUnit>
+      <h3>
+        <Tr t={t.aboutCurrentThemeTitle} />
+      </h3>
 
-    <Page {onlyLink} shown={pg.about_theme}>
-      <svelte:fragment slot="link">
-        <Marker size="h-7 w-7" icons={theme.icon} />
-        <Tr t={t.showIntroduction} />
-      </svelte:fragment>
-      <svelte:fragment slot="header">
-        <Marker size="h-8 w-8 mr-3" icons={theme.icon} />
-        <Tr t={theme.title} />
-      </svelte:fragment>
-      <ThemeIntroPanel {state} />
-    </Page>
-
-    <FilterPage {onlyLink} {state} />
-
-    <RasterLayerOverview {onlyLink} {state} />
-
-    <Page {onlyLink} shown={pg.share}>
-      <svelte:fragment slot="header">
-        <Share />
-        <Tr t={Translations.t.general.sharescreen.title} />
-      </svelte:fragment>
-      <ShareScreen {state} />
-    </Page>
-
-    {#if state.featureSwitches.featureSwitchEnableExport}
-      <Page {onlyLink} shown={pg.download}>
-        <svelte:fragment slot="header">
-          <ArrowDownTray />
-          <Tr t={Translations.t.general.download.title} />
+      <Page {onlyLink} shown={pg.about_theme}>
+        <svelte:fragment slot="link">
+          <Marker size="h-7 w-7" icons={theme.icon} />
+          <Tr t={t.showIntroduction} />
         </svelte:fragment>
-        <DownloadPanel {state} />
+        <svelte:fragment slot="header">
+          <Marker size="h-8 w-8 mr-3" icons={theme.icon} />
+          <Tr t={theme.title} />
+        </svelte:fragment>
+        <ThemeIntroPanel {state} />
       </Page>
-    {/if}
 
-    {#if theme.official}
-      <a
-        class="flex"
-        href={"https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes/" +
+      <FilterPage {onlyLink} {state} />
+
+      <RasterLayerOverview {onlyLink} {state} />
+
+      <Page {onlyLink} shown={pg.share}>
+        <svelte:fragment slot="header">
+          <Share />
+          <Tr t={Translations.t.general.sharescreen.title} />
+        </svelte:fragment>
+        <ShareScreen {state} />
+      </Page>
+
+      {#if state.featureSwitches?.featureSwitchEnableExport}
+        <Page {onlyLink} shown={pg.download}>
+          <svelte:fragment slot="header">
+            <ArrowDownTray />
+            <Tr t={Translations.t.general.download.title} />
+          </svelte:fragment>
+          <DownloadPanel {state} />
+        </Page>
+      {/if}
+
+      {#if theme.official}
+        <a
+          class="flex"
+          href={"https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes/" +
           theme.id +
           ".md"}
-        target="_blank"
-      >
-        <DocumentMagnifyingGlass class="h-6 w-6" />
-        <Tr
-          t={Translations.t.general.attribution.openThemeDocumentation.Subs({
+          target="_blank"
+        >
+          <DocumentMagnifyingGlass class="h-6 w-6" />
+          <Tr
+            t={Translations.t.general.attribution.openThemeDocumentation.Subs({
             name: theme.title,
           })}
-        />
-      </a>
+          />
+        </a>
 
-      <a class="flex" href={Utils.OsmChaLinkFor(31, theme.id)} target="_blank">
-        <QueueList class="h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: theme.title })} />
-      </a>
-      <a class="flex" href={`./statistics.html?filter-mapcomplete-changes-theme-search={"search"%3A"${theme.id}"}`}
-         target="_blank">
-        <ChartBar class="h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.openStatistics.Subs({theme: theme.title})} />
-      </a>
-    {/if}
-  </SidebarUnit>
+        <a class="flex" href={Utils.OsmChaLinkFor(31, theme.id)} target="_blank">
+          <QueueList class="h-6 w-6" />
+          <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: theme.title })} />
+        </a>
+        <a class="flex" href={`./statistics.html?filter-mapcomplete-changes-theme-search={"search"%3A"${theme.id}"}`}
+           target="_blank">
+          <ChartBar class="h-6 w-6" />
+          <Tr t={Translations.t.general.attribution.openStatistics.Subs({theme: theme.title})} />
+        </a>
+      {/if}
+    </SidebarUnit>
+  {/if}
 
   <!-- Other links and tools for the given location: open iD/JOSM; community index, ... -->
-  <SidebarUnit>
-    <h3>
-      <Tr t={t.moreUtilsTitle} />
-    </h3>
+  {#if state.mapProperties?.location}
+    <SidebarUnit>
+      <h3>
+        <Tr t={t.moreUtilsTitle} />
+      </h3>
 
-    <Page {onlyLink} shown={pg.community_index}>
-      <svelte:fragment slot="header">
-        <Community />
-        <Tr t={Translations.t.communityIndex.title} />
-      </svelte:fragment>
-      <CommunityIndexView location={state.mapProperties.location} />
-    </Page>
+      <Page {onlyLink} shown={pg.community_index}>
+        <svelte:fragment slot="header">
+          <Community />
+          <Tr t={Translations.t.communityIndex.title} />
+        </svelte:fragment>
+        <CommunityIndexView location={state.mapProperties.location} />
+      </Page>
 
-    <If condition={featureSwitches.featureSwitchEnableLogin}>
-      <OpenIdEditor mapProperties={state.mapProperties} />
-      <OpenJosm {state} />
-      <PanoramaxLink large={false} mapProperties={state.mapProperties} />
-      <MapillaryLink large={false} mapProperties={state.mapProperties} />
-    </If>
+      <If condition={featureSwitches?.featureSwitchEnableLogin}>
+        <OpenIdEditor mapProperties={state.mapProperties} />
+        <OpenJosm {state} />
+        <PanoramaxLink large={false} mapProperties={state.mapProperties} />
+        <MapillaryLink large={false} mapProperties={state.mapProperties} />
+      </If>
 
-    <a class="sidebar-button flex" href="geo:{$location.lat},{$location.lon}">
-      <ShareIcon />
-      <Tr t={t.openHereDifferentApp} />
-    </a>
-
-    <a
-      class="flex"
-      href={window.location.protocol + "//" + window.location.host + "/inspector.html"}
-    >
-      <MagnifyingGlassCircle class="mr-2 h-6 w-6" />
-      <Tr t={Translations.t.inspector.menu} />
-    </a>
-
-  </SidebarUnit>
+      <a class="sidebar-button flex" href="geo:{$location.lat},{$location.lon}">
+        <ShareIcon />
+        <Tr t={t.openHereDifferentApp} />
+      </a>
+    </SidebarUnit>
+  {/if}
 
   <!-- About MC: various outward links, legal info, ... -->
   <SidebarUnit>
@@ -291,8 +304,6 @@
       <Pencil class="mr-2 h-6 w-6" />
       <Tr t={Translations.t.general.morescreen.createYourOwnTheme} />
     </a>
-
-
 
 
     <a class="flex" href="mailto:info@mapcomplete.org">
@@ -329,6 +340,27 @@
       <Tr t={Translations.t.translations.activateButton} />
     </a>
 
+
+    <a
+      class="flex"
+      href={window.location.protocol + "//" + window.location.host + "/inspector.html"}
+    >
+      <MagnifyingGlassCircle class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.inspector.menu} />
+    </a>
+
+    {#if !state.theme}
+      <a class="flex" href={`./statistics.html"}`}
+         target="_blank">
+        <ChartBar class="h-6 w-6" />
+        <Tr t={Translations.t.general.attribution.openStatistics.Subs({theme: "MapComplete"})} />
+      </a>
+    {/if}
+
+    <a class="flex" href={Utils.OsmChaLinkFor(7)} target="_blank">
+      <ArrowTrendingUp class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.general.attribution.openOsmchaLastWeek} />
+    </a>
   </SidebarUnit>
   <SidebarUnit>
     <h3>
@@ -341,13 +373,15 @@
       </svelte:fragment>
       <CopyrightPanel {state} />
     </Page>
-    <Page {onlyLink} shown={pg.copyright_icons}>
-      <svelte:fragment slot="header">
-        <Copyright />
-        <Tr t={Translations.t.general.attribution.iconAttribution.title} />
-      </svelte:fragment>
-      <CopyrightAllIcons {state} />
-    </Page>
+    {#if state?.theme}
+      <Page {onlyLink} shown={pg.copyright_icons}>
+        <svelte:fragment slot="header">
+          <Copyright />
+          <Tr t={Translations.t.general.attribution.iconAttribution.title} />
+        </svelte:fragment>
+        <CopyrightAllIcons {state} />
+      </Page>
+    {/if}
 
     <Page {onlyLink} shown={pg.privacy}>
       <svelte:fragment slot="header">
@@ -355,6 +389,9 @@
         <Tr t={Translations.t.privacy.title} />
       </svelte:fragment>
       <PrivacyPolicy {state} />
+      <a href="./privacy.html" class="button w-fit float-right" target="_blank">
+        <ArrowTopRightOnSquare class="w-8 h-8" />
+      </a>
     </Page>
 
   </SidebarUnit>

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
   import Translations from "../i18n/Translations"
   import contributors from "../../assets/contributors.json"
   import translators from "../../assets/translators.json"
@@ -14,18 +13,21 @@
   import { UserGroupIcon } from "@babeard/svelte-heroicons/solid"
   import Marker from "../Map/Marker.svelte"
   import Forgejo from "../../assets/svg/Forgejo.svelte"
+  import type { MapProperties } from "../../Models/MapProperties"
+  import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
+  import { ImmutableStore } from "../../Logic/UIEventSource"
 
-  export let state: SpecialVisualizationState
+  export let state: { theme?: ThemeConfig, mapProperties?: MapProperties }
 
   const t = Translations.t.general.attribution
   const layoutToUse = state.theme
 
   let maintainer: Translation = undefined
-  if (layoutToUse.credits !== undefined && layoutToUse.credits !== "") {
+  if (layoutToUse?.credits !== undefined && layoutToUse?.credits !== "") {
     maintainer = t.themeBy.Subs({ author: layoutToUse.credits })
   }
 
-  const bgMapAttribution = state.mapProperties.rasterLayer.mapD((layer) => {
+  const bgMapAttribution = state.mapProperties?.rasterLayer?.mapD((layer) => {
     const props = layer.properties
     const attrUrl = props.attribution?.url
     const attrText = props.attribution?.text
@@ -45,7 +47,7 @@
       })
     }
     return Translations.t.general.attribution.attributionBackgroundLayer.Subs(props)
-  })
+  }) ?? new ImmutableStore(undefined)
 
   function calculateDataContributions(contributions: Map<string, number>): Translation {
     if (contributions === undefined) {
@@ -81,7 +83,7 @@
     }
   }
 
-  const datacontributions = new ContributorCount(state).Contributors.map((counts) =>
+  const datacontributions = (state.mapProperties ? new ContributorCount(<any>state).Contributors : new ImmutableStore([])).map((counts) =>
     calculateDataContributions(counts)
   )
 

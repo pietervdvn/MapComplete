@@ -27,6 +27,11 @@
   import { AndroidPolyfill } from "../Logic/Web/AndroidPolyfill"
   import Forgejo from "../assets/svg/Forgejo.svelte"
   import Locale from "./i18n/Locale"
+  import DrawerLeft from "./Base/DrawerLeft.svelte"
+  import MenuDrawer from "./BigComponents/MenuDrawer.svelte"
+  import { MenuState } from "../Models/MenuState"
+  import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import AccordionSingle from "./Flowbite/AccordionSingle.svelte"
 
   AndroidPolyfill.init().then(() => console.log("Android polyfill setup completed"))
   const featureSwitches = new OsmConnectionFeatureSwitches()
@@ -39,6 +44,13 @@
     )
   })
   const state = new UserRelatedState(osmConnection)
+  const guistate = new MenuState(undefined)
+  const menuDrawerState = {
+    guistate, osmConnection,
+    userRelatedState: state,
+    featureSwitches: { featureSwitchEnableLogin: new UIEventSource(true) }
+  }
+
   const t = Translations.t.index
   const tu = Translations.t.general
   const tr = Translations.t.general.morescreen
@@ -138,20 +150,36 @@
 </script>
 
 <main>
+  <div class="absolute h-screen w-screen bg-white top-0 left-0" style="z-index: -1;"></div>
+
+  <div class="h-full overflow-hidden">
+    <DrawerLeft shown={guistate.pageStates.menu}>
+      <div class="h-screen overflow-y-auto">
+        <MenuDrawer onlyLink={true} state={menuDrawerState} />
+      </div>
+    </DrawerLeft>
+  </div>
+
   <div class="m-4 flex flex-col">
-    <LanguagePicker
-      clss="self-end max-w-full"
-      assignTo={state.language}
-      availableLanguages={t.title.SupportedLanguages()}
-      preferredLanguages={userLanguages}
-    />
+    <div class="w-ful flex justify-between">
+      <button on:click={() => guistate.pageStates.menu.set(true)} class="rounded-full m-0 p-2">
+        <MenuIcon class="h-6 w-6 cursor-pointer" />
+      </button>
+
+      <LanguagePicker
+        clss="self-end max-w-full"
+        assignTo={state.language}
+        availableLanguages={t.title.SupportedLanguages()}
+        preferredLanguages={userLanguages}
+      />
+    </div>
 
     <div class="mt-4 flex">
       <div class="m-3 flex-none">
         <Logo alt="MapComplete Logo" class="h-12 w-12 sm:h-24 sm:w-24" />
       </div>
 
-      <div class="link-underline flex flex-col">
+      <div class="link-underline flex flex-col w-full">
         <h1 class="m-0 font-extrabold tracking-tight md:text-6xl">
           <Tr t={t.title} />
         </h1>
@@ -159,10 +187,12 @@
           cls="mr-4 text-base font-semibold sm:text-lg md:mt-5 md:text-xl lg:mx-0"
           t={Translations.t.index.intro}
         />
-        <a href="#about">
-          <Tr t={Translations.t.index.learnMore} />
-          <ChevronDoubleRight class="inline h-4 w-4" />
-        </a>
+
+        <AccordionSingle>
+          <Tr slot="header" t={Translations.t.index.about} />
+          <Tr cls="link-underline" t={Translations.t.general.aboutMapComplete.intro} />
+          <Tr t={tr.streetcomplete} />
+        </AccordionSingle>
       </div>
     </div>
 
@@ -229,65 +259,15 @@
       {/if}
     </LoginToggle>
 
-    <a
-      class="button flex"
-      href={window.location.protocol + "//" + window.location.host + "/studio.html"}
-    >
-      <Pencil class="mr-2 h-6 w-6" />
-      <Tr t={Translations.t.general.morescreen.createYourOwnTheme} />
-    </a>
 
-    <h3 id="about">
-      <Tr t={Translations.t.index.about} />
-    </h3>
-    <Tr cls="link-underline" t={Translations.t.general.aboutMapComplete.intro} />
-
-    <span class="link-underline flex flex-col gap-y-1">
-      <a
-        class="flex"
-        href="https://source.mapcomplete.org/MapComplete/MapComplete/"
-        target="_blank"
-      >
-        <Forgejo class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.gotoSourceCode} />
-      </a>
-      <a
-        class="flex"
-        href="https://source.mapcomplete.org/MapComplete/MapComplete/issues"
-        target="_blank"
-      >
-        <Bug class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.openIssueTracker} />
-      </a>
-
-      <a class="flex" href={Utils.OsmChaLinkFor(7)} target="_blank">
-        <ArrowTrendingUp class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.openOsmchaLastWeek} />
-      </a>
-
-      <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
-        <Mastodon class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.followOnMastodon} />
-      </a>
-
-      <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
-        <Liberapay class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.donate} />
-      </a>
-
-      <a
-        class="flex"
-        href={window.location.protocol + "//" + window.location.host + "/privacy.html"}
-      >
-        <Eye class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.privacy.title} />
-      </a>
-    </span>
-
-    <Tr t={tr.streetcomplete} />
 
     <div class="subtle mb-16 self-end">
       v{Constants.vNumber}
     </div>
   </div>
+
+  <div class="absolute top-0 w-0 h-0" style="margin-left: -10em">
+    <MenuDrawer onlyLink={false} state={menuDrawerState} />
+  </div>
+
 </main>

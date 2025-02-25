@@ -21,7 +21,7 @@
   if (fullscreen) {
     defaultClass = shared
   }
-  let dialogClass = "fixed top-0 start-0 end-0 h-modal inset-0 w-full p-4 flex " + zIndex
+  let dialogClass = "fixed top-0 start-0 end-0 h-modal inset-0 w-full p-4 flex class-marker-dialog " + zIndex
   if (fullscreen) {
     dialogClass += " h-full-child"
   }

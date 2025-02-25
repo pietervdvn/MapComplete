@@ -44,9 +44,9 @@ export class MenuState {
         undefined
     )
     public highlightedUserSetting: UIEventSource<string> = new UIEventSource<string>(undefined)
-    private readonly _selectedElement: UIEventSource<any>
+    private readonly _selectedElement: UIEventSource<any> | undefined
 
-    constructor(selectedElement: UIEventSource<any>) {
+    constructor(selectedElement: UIEventSource<any> | undefined) {
         this._selectedElement = selectedElement
         // Note: this class is _not_ responsible to update the Hash, @see ThemeViewStateHashActor for this
         const states = {}
@@ -118,7 +118,7 @@ export class MenuState {
         if (MenuState.previewedImage.data !== undefined) {
             return true
         }
-        if (this._selectedElement.data) {
+        if (this._selectedElement?.data) {
             return true
         }
         return Object.values(this.pageStates).some((t) => t.data)
