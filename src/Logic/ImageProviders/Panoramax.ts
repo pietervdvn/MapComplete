@@ -246,6 +246,7 @@ export class PanoramaxUploader implements ImageUploader {
                 tags.DateTime.value[0] ??
                 tags.DateTimeOriginal.value[0] ??
                 tags.GPSDateStamp ??
+                tags.CreateDate ??
                 tags["Date Created"]
             ).split(" ")
             const exifDatetime = new Date(date.replaceAll(":", "-") + "T" + time)
