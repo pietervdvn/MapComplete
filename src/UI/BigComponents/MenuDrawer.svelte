@@ -350,7 +350,7 @@
     </a>
 
     {#if !state.theme}
-      <a class="flex" href={`./statistics.html"}`}
+      <a class="flex" href={`./statistics.html`}
          target="_blank">
         <ChartBar class="h-6 w-6" />
         <Tr t={Translations.t.general.attribution.openStatistics.Subs({theme: "MapComplete"})} />
