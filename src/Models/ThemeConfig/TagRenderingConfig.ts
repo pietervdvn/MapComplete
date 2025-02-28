@@ -479,6 +479,9 @@ export default class TagRenderingConfig {
                 if (TagUtils.MatchesMultiAnswer(m.if, tags)) {
                     return true
                 }
+                if (m.alsoShowIf?.matchesProperties(tags)) {
+                    return true
+                }
             }
 
             const free = this.freeform?.key
@@ -522,14 +525,17 @@ export default class TagRenderingConfig {
             then: TypedTranslation<Record<string, string>>
             img?: string
         }[] = Utils.NoNull(
-            (this.mappings ?? [])?.map((mapping) => {
+            (this.mappings ?? [])?.filter((mapping) => {
                 if (mapping.if === undefined) {
-                    return mapping
+                    return true
                 }
                 if (TagUtils.MatchesMultiAnswer(mapping.if, tags)) {
-                    return mapping
+                    return true
                 }
-                return undefined
+                if (mapping.alsoShowIf?.matchesProperties(tags)) {
+                    return true
+                }
+                return false
             })
         )
 

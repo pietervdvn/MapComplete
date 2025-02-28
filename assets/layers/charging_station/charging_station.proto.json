@@ -80,6 +80,12 @@
         {
           "if": "bicycle=yes",
           "ifnot": "bicycle=no",
+          "alsoShowIf": {
+            "or": [
+              "bicycle=designated",
+              "bicycle=customers"
+            ]
+          },
           "then": {
             "en": "<b>Bicycles</b> can be charged here",
             "nl": "<b>Elektrische fietsen</b> kunnen hier opgeladen worden"
@@ -87,6 +93,12 @@
         },
         {
           "if": "motorcar=yes",
+          "alsoShowIf": {
+            "or": [
+              "motorcar=designated",
+              "motorcar=customers"
+            ]
+          },
           "ifnot": "motorcar=no",
           "then": {
             "en": "<b>Cars</b> can be charged here",
@@ -95,6 +107,12 @@
         },
         {
           "if": "scooter=yes",
+          "alsoShowIf": {
+            "or": [
+              "scooter=designated",
+              "scooter=customers"
+            ]
+          },
           "ifnot": "scooter=no",
           "then": {
             "en": "<b>Scooters</b> can be charged here",
@@ -103,6 +121,12 @@
         },
         {
           "if": "hgv=yes",
+          "alsoShowIf": {
+            "or": [
+              "hgv=designated",
+              "hgv=customers"
+            ]
+          },
           "ifnot": "hgv=no",
           "then": {
             "en": "<b>Heavy good vehicles</b> (such as trucks) can be charged here",
@@ -111,6 +135,12 @@
         },
         {
           "if": "bus=yes",
+          "alsoShowIf": {
+            "or": [
+              "bus=designated",
+              "bus=customers"
+            ]
+          },
           "ifnot": "bus=no",
           "then": {
             "en": "<b>Buses</b> can be charged here",
