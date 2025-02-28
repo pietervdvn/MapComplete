@@ -700,6 +700,10 @@
           "then": "<b>brothel</b> (builtin) - An establishment specifically dedicated to prostitution."
         },
         {
+          "if": "value=building",
+          "then": "<b>building</b> (builtin) - All buildings"
+        },
+        {
           "if": "value=cafe_pub",
           "then": "<b>cafe_pub</b> (builtin) - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
         },
@@ -778,6 +782,10 @@
         {
           "if": "value=cycle_highways",
           "then": "<b>cycle_highways</b> (builtin) - undefined"
+        },
+        {
+          "if": "value=cyclestreets",
+          "then": "<b>cyclestreets</b> (builtin) - A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist"
         },
         {
           "if": "value=cycleways_and_roads",
@@ -13440,6 +13448,10 @@
           "then": "brothel - An establishment specifically dedicated to prostitution."
         },
         {
+          "if": "value=building",
+          "then": "building - All buildings"
+        },
+        {
           "if": "value=cafe_pub",
           "then": "cafe_pub - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
         },
@@ -13518,6 +13530,10 @@
         {
           "if": "value=cycle_highways",
           "then": "cycle_highways - undefined"
+        },
+        {
+          "if": "value=cyclestreets",
+          "then": "cyclestreets - A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist"
         },
         {
           "if": "value=cycleways_and_roads",
@@ -35216,6 +35232,10 @@
           "then": "brothel - An establishment specifically dedicated to prostitution."
         },
         {
+          "if": "value=building",
+          "then": "building - All buildings"
+        },
+        {
           "if": "value=cafe_pub",
           "then": "cafe_pub - A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions"
         },
@@ -35294,6 +35314,10 @@
         {
           "if": "value=cycle_highways",
           "then": "cycle_highways - undefined"
+        },
+        {
+          "if": "value=cyclestreets",
+          "then": "cyclestreets - A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist"
         },
         {
           "if": "value=cycleways_and_roads",

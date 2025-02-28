@@ -218,10 +218,10 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
      */
     freeform?: {
         /**
-         * question: What is the name of the attribute that should be written to?
-         * This is the OpenStreetMap-key that that value will be written to
-         * ifunset: do not offer a freeform textfield as answer option
-         *
+         * question: What is the name of the key (attribute) that should be filled if an answer is given?
+         * This data will be uploaded to OpenStreetMap
+         * If this key is present in the feature, then 'render' is used to display the value and should contain this.
+         * ifunset: Do not allow a text/value field that a contributor can type into. (Only if no question is defined): always show "render", no matter the values
          */
         key?: string
 

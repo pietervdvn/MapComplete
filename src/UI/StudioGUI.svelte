@@ -58,9 +58,7 @@
     fakeUser: fakeUser.data,
   })
   const expertMode = UIEventSource.asBoolean(
-    osmConnection.GetPreference("studio-expert-mode", "false", {
-      documentation: "Indicates if more options are shown in mapcomplete studio",
-    })
+    osmConnection.GetPreference("studio-expert-mode", "false")
   )
   expertMode.addCallbackAndRunD((expert) => console.log("Expert mode is", expert))
   const createdBy = osmConnection.userDetails.data?.name
@@ -71,63 +69,63 @@
   const studio = new StudioServer(studioUrl, uid)
 
   let layersWithErr = studio.fetchOverview()
-  let layerFilterTerm: string = ""
+  let layerFilterTerm: UIEventSource<string> = new UIEventSource<string>("")
   let layers: Store<{ owner: number; id: string }[]> = layersWithErr.mapD((l) =>
     l["success"]?.filter((l) => l.category === "layers")
   )
-  $: selfLayers = layers.mapD(
+  let selfLayers = layers.mapD(
     (ls) =>
       ls.filter(
-        (l) => l.owner === uid.data && l.id.toLowerCase().includes(layerFilterTerm.toLowerCase())
+        (l) => l.owner === uid.data && l.id.toLowerCase().includes(layerFilterTerm.data.toLowerCase())
       ),
-    [uid]
+    [uid, layerFilterTerm]
   )
-  $: otherLayers = layers.mapD(
+  let otherLayers = layers.mapD(
     (ls) =>
       ls.filter(
         (l) =>
           l.owner !== undefined &&
           l.owner !== uid.data &&
-          l.id.toLowerCase().includes(layerFilterTerm.toLowerCase())
+          l.id.toLowerCase().includes(layerFilterTerm.data.toLowerCase())
       ),
-    [uid]
+    [uid, layerFilterTerm]
   )
-  $: officialLayers = layers.mapD(
+  let officialLayers = layers.mapD(
     (ls) =>
       ls.filter(
-        (l) => l.owner === undefined && l.id.toLowerCase().includes(layerFilterTerm.toLowerCase())
+        (l) => l.owner === undefined && l.id.toLowerCase().includes(layerFilterTerm.data.toLowerCase())
       ),
-    [uid]
+    [uid, layerFilterTerm]
   )
 
-  let themeFilterTerm: string = ""
+  let themeFilterTerm: UIEventSource<string> = new UIEventSource("")
 
   let themes: Store<{ owner: number; id: string }[]> = layersWithErr.mapD((l) =>
     l["success"]?.filter((l) => l.category === "themes")
   )
-  $: selfThemes = themes.mapD(
+  let selfThemes = themes.mapD(
     (ls) =>
       ls.filter(
-        (l) => l.owner === uid.data && l.id.toLowerCase().includes(themeFilterTerm.toLowerCase())
+        (l) => l.owner === uid.data && l.id.toLowerCase().includes(themeFilterTerm.data.toLowerCase())
       ),
-    [uid]
+    [uid, themeFilterTerm]
   )
-  $: otherThemes = themes.mapD(
+  let otherThemes = themes.mapD(
     (ls) =>
       ls.filter(
         (l) =>
           l.owner !== undefined &&
           l.owner !== uid.data &&
-          l.id.toLowerCase().includes(themeFilterTerm.toLowerCase())
+          l.id.toLowerCase().includes(themeFilterTerm.data.toLowerCase())
       ),
-    [uid]
+    [uid, themeFilterTerm]
   )
-  $: officialThemes = themes.mapD(
+  let officialThemes = themes.mapD(
     (ls) =>
       ls.filter(
-        (l) => l.owner === undefined && l.id.toLowerCase().includes(themeFilterTerm.toLowerCase())
+        (l) => l.owner === undefined && l.id.toLowerCase().includes(themeFilterTerm.data.toLowerCase())
       ),
-    [uid]
+    [uid, themeFilterTerm]
   )
 
   let state:
@@ -321,12 +319,12 @@
               id="layer-search"
               type="search"
               placeholder="Filter layers by name"
-              bind:value={layerFilterTerm}
+              bind:value={$layerFilterTerm}
             />
           </label>
         </form>
 
-        <ChooseLayerToEdit {osmConnection} layerIds={$selfLayers} on:layerSelected={editLayer}>
+        <ChooseLayerToEdit {osmConnection} layerIds={selfLayers} on:layerSelected={editLayer}>
           <h3 slot="title">Your layers</h3>
           <div class="subtle">Your id is {$uid}</div>
         </ChooseLayerToEdit>
@@ -335,7 +333,7 @@
           Selecting a layer will create a copy in your account that you edit. You will not change
           the version of the other contributor
         </div>
-        <ChooseLayerToEdit {osmConnection} layerIds={$otherLayers} on:layerSelected={editLayer} />
+        <ChooseLayerToEdit {osmConnection} layerIds={otherLayers} on:layerSelected={editLayer} />
 
         <h3>Official layers by MapComplete</h3>
         <div>
@@ -344,7 +342,7 @@
         </div>
         <ChooseLayerToEdit
           {osmConnection}
-          layerIds={$officialLayers}
+          layerIds={officialLayers}
           on:layerSelected={editLayer}
         />
       </div>
@@ -370,15 +368,15 @@
           </label>
         </form>
 
-        <ChooseLayerToEdit {osmConnection} layerIds={$selfThemes} on:layerSelected={editTheme}>
+        <ChooseLayerToEdit {osmConnection} layerIds={selfThemes} on:layerSelected={editTheme}>
           <h3 slot="title">Your themes</h3>
         </ChooseLayerToEdit>
         <h3>Themes by other contributors</h3>
-        <ChooseLayerToEdit {osmConnection} layerIds={$otherThemes} on:layerSelected={editTheme} />
+        <ChooseLayerToEdit {osmConnection} layerIds={otherThemes} on:layerSelected={editTheme} />
         <h3>Official themes by MapComplete</h3>
         <ChooseLayerToEdit
           {osmConnection}
-          layerIds={$officialThemes}
+          layerIds={officialThemes}
           on:layerSelected={editTheme}
         />
       </div>

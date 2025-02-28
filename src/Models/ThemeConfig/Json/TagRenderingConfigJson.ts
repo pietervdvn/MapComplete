@@ -147,9 +147,10 @@ export interface TagRenderingConfigJson {
      */
     freeform?: {
         /**
-         * What attribute should be filled out
-         * If this key is present in the feature, then 'render' is used to display the value.
-         * If this is undefined, the rendering is _always_ shown
+         * question: What is the name of the key (attribute) that should be filled if an answer is given?
+         * This data will be uploaded to OpenStreetMap
+         * If this key is present in the feature, then 'render' is used to display the value and should contain this.
+         * ifunset: Do not allow a text/value field that a contributor can type into. (Only if no question is defined): always show "render", no matter the values
          */
         key?: string
     }
