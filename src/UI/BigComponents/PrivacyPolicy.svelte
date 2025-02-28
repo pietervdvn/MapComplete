@@ -9,6 +9,10 @@
   export let state: SpecialVisualizationState
   const usersettings = UserRelatedState.usersettingsConfig
   const editPrivacy = usersettings.tagRenderings.find((tr) => tr.id === "more_privacy")
+  const editThemeHistory = usersettings.tagRenderings.find((tr) => tr.id === "sync-visited-themes")
+  const editLocationHistory = usersettings.tagRenderings.find((tr) => tr.id === "sync-visited-locations")
+
+
   const isLoggedIn = state.osmConnection.isLoggedIn
 </script>
 
@@ -65,6 +69,46 @@
 
   <Tr t={t.editingOutro} />
 
+  <h3>
+    <Tr t={t.browsingHistoryTitle} />
+  </h3>
+  <Tr t={t.browsingHistoryIntro} />
+  {#if $isLoggedIn}
+    <Tr t={t.browsingHistoryLoggedIn} />
+
+    <ul>
+      <li>
+        <TagRenderingEditable
+          config={editLocationHistory}
+          selectedElement={{
+            type: "Feature",
+            properties: { id: "settings" },
+            geometry: { type: "Point", coordinates: [0, 0] },
+          }}
+          {state}
+          tags={state.userRelatedState.preferencesAsTags}
+        />
+      </li>
+      <li>
+
+        <TagRenderingEditable
+          config={editThemeHistory}
+          selectedElement={{
+            type: "Feature",
+            properties: { id: "settings" },
+            geometry: { type: "Point", coordinates: [0, 0] },
+          }}
+          {state}
+          tags={state.userRelatedState.preferencesAsTags}
+        />
+      </li>
+    </ul>
+
+  {:else }
+    <button class="as-link" on:click={() => state.osmConnection.AttemptLogin()}>
+      <Tr t={t.browsingHistoryNotLoggedIn} />
+    </button>
+  {/if}
   <h3>
     <Tr t={t.miscCookiesTitle} />
   </h3>
