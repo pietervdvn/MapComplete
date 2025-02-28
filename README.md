@@ -1,3 +1,7 @@
+# WE MOVED
+
+Hi all! The development of mapcomplete moved to [source.mapcomplete.org](https://source.mapcomplete.org/Mapcomplete/mapcomplete). Find us there!
+
 # MapComplete
 
 > Let a thousand flowers bloom
@@ -76,7 +80,7 @@ There are plenty more. [Discover them in the app](https://mapcomplete.org/index.
 
 To see statistics,
 consult [OsmCha](https://osmcha.org/?filters=%7B%22comment%22%3A%5B%7B%22label%22%3A%22%23mapcomplete%22%2C%22value%22%3A%22%23mapcomplete%22%7D%5D%2C%22date__gte%22%3A%5B%7B%22label%22%3A%222020-07-05%22%2C%22value%22%3A%222020-07-05%22%7D%5D%7D)
-or the [analytics page](https://pietervdvn.goatcounter.com/
+or the [analytics page](https://pietervdvn.goatcounter.com/).
 
 The first ever (testing) changeset https://www.openstreetmap.org/changeset/85856178 and first _proper_ changeset: https://www.openstreetmap.org/changeset/85903433
 

@@ -813,6 +813,7 @@
                 }
             }
         },
+        "name": "Кафе та паби",
         "tagRenderings": {
             "Classification": {
                 "mappings": {
@@ -838,8 +839,7 @@
                 "question": "Як називається цей бізнес?",
                 "render": "Цей бізнес називається {name}"
             }
-        },
-        "name": "Кафе та паби"
+        }
     },
     "caravansites": {
         "tagRenderings": {
@@ -1097,6 +1097,9 @@
                 "question": "Чи має цей світлофор вібраційні сигнали для полегшення переходу? (зазвичай розташовані внизу кнопки переходу)"
             }
         }
+    },
+    "cyclestreets": {
+        "name": "Велодороги"
     },
     "defibrillator": {
         "tagRenderings": {

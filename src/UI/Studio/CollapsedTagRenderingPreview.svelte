@@ -10,8 +10,11 @@
   import QuestionPreview from "./QuestionPreview.svelte"
   import SchemaBasedMultiType from "./SchemaBasedMultiType.svelte"
   import { EditJsonState } from "./EditLayerState"
-  import type { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+  import type {
+    QuestionableTagRenderingConfigJson
+  } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
   import { AccordionItem } from "flowbite-svelte"
+  import { ExclamationTriangle } from "@babeard/svelte-heroicons/solid/ExclamationTriangle"
 
   export let state: EditJsonState<any>
 
@@ -25,6 +28,8 @@
   export let path: (string | number)[] = []
 
   export let expanded = new UIEventSource(false)
+
+  let errors = state.messagesFor(path).mapD(msgs => msgs.filter(msg => msg.level === "error"))
 
   const subparts: ConfigMeta[] = state
     .getSchemaStartingWith(schema.path)
@@ -87,10 +92,10 @@
     } catch (e) {
       console.log(
         "Warning: could not translate a title for " +
-          `${singular} ${i} with function ` +
-          schema.hints.title +
-          " and value " +
-          JSON.stringify(value)
+        `${singular} ${i} with function ` +
+        schema.hints.title +
+        " and value " +
+        JSON.stringify(value)
       )
     }
     return Translations.T(`${singular} ${i}`)
@@ -146,6 +151,11 @@
       reused tagrendering <span class="font-bold">{JSON.stringify(value["builtin"])}</span>
     {:else}
       <Tr cls="font-bold" t={Translations.T(value?.question ?? value?.render)} />
+      {#if $errors.length > 0}
+        <div class="alert w-fit inline">
+          <ExclamationTriangle class="w-6 h-6 inline" />{$errors.length}
+        </div>
+      {/if}
     {/if}
   </div>
   <div class="normal-background border border-gray-300 p-2">

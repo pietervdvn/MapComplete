@@ -451,71 +451,31 @@
       "id": "is lit?"
     },
     {
-      "question": {
-        "en": "Is this a cyclestreet?",
-        "nl": "Is dit een fietsstraat?",
-        "de": "Ist das eine Fahrradstraße?",
-        "es": "¿Es esta una calle para bicicletas?",
-        "fr": "Est-ce une route cyclable ?",
-        "ca": "Açò és un ciclocarrer?",
-        "cs": "Je toto cyklostezka?"
-      },
-      "condition": {
-        "and": [
-          "highway!=cycleway",
-          "highway!=path",
-          "highway!=footway"
-        ]
-      },
-      "mappings": [
-        {
-          "if": "cyclestreet=yes",
-          "then": {
-            "en": "This is a cyclestreet, and a 30km/h zone.",
-            "nl": "Dit is een fietsstraat, en dus een 30km/h zone",
-            "de": "Dies ist eine Fahrradstraße in einer 30km/h Zone.",
-            "es": "Esta es una calle para bicicletas, y una zona de 30 km/h",
-            "fr": "C'est une rue cyclable, et une zone à 30 km/h.",
-            "ca": "Açò és un ciclocarrer, i una zona de 30km/h.",
-            "cs": "Jedná se o cyklostezku a zónu s rychlostí 30 km/h."
-          },
-          "addExtraTags": [
-            "overtaking:motor_vehicle=no",
-            "maxspeed=30"
-          ],
-          "hideInAnswer": "_country!=be"
-        },
-        {
-          "if": "cyclestreet=yes",
-          "then": {
-            "en": "This is a cyclestreet",
-            "nl": "Dit is een fietsstraat",
-            "de": "Dies ist eine Fahrradstraße",
-            "es": "Esta es una calle para bicicletas",
-            "fr": "Ceci est une route cyclable",
-            "ca": "Açò és un ciclocarrer",
-            "cs": "Tohle je cyklostezka"
-          },
-          "hideInAnswer": "_country=be"
-        },
-        {
-          "if": "cyclestreet=",
-          "then": {
-            "en": "This is not a cyclestreet.",
-            "nl": "Dit is geen fietsstraat",
-            "de": "Dies ist keine Fahrradstraße.",
-            "es": "Esta no es una calle para bicicletas",
-            "fr": "Ceci n'est pas une rue cyclable (vélorue)",
-            "ca": "Açò no és un ciclocarrer.",
-            "cs": "Toto není cyklostezka."
-          },
-          "addExtraTags": [
-            "overtaking:motor_vehicle="
+      "id": "is_cyclestreet_road",
+      "builtin": "cyclestreets.is_cyclestreet",
+      "override": {
+        "condition": {
+          "and": [
+            "highway!=cycleway",
+            "highway!=path",
+            "highway!=footway"
           ]
-        }
-      ],
-      "id": "Is this a cyclestreet? (For a road)"
+        },
+        "mappings": [
+          {},
+          {},
+          {},
+          {},
+          {
+            "hideInAnswer": true
+          },
+          {
+            "hideInAnswer": true
+          }
+        ]
+      }
     },
+    "cyclestreets.supplementary_sign",
     {
       "render": {
         "en": "The maximum speed on this road is {maxspeed} km/h",

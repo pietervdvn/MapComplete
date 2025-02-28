@@ -350,10 +350,6 @@
     "cyclestreets": {
         "description": "Cyklostezka je ulice, kde <b>motorizovaná doprava nesmí předjíždět cyklisty</b>. Jsou označeny speciální dopravní značkou. Cyklostezky najdete v Nizozemsku a Belgii, ale také v Německu a Francii. ",
         "layers": {
-            "0": {
-                "description": "Cyklostezka je ulice, kde motorová doprava nesmí předjíždět cyklisty",
-                "name": "Cyklostezky"
-            },
             "1": {
                 "description": "Tato ulice se brzy stane cyklostezkou",
                 "name": "Budoucí cyklostezka",
@@ -371,60 +367,6 @@
                 "name": "Všechny ulice",
                 "title": {
                     "render": "Ulice"
-                }
-            }
-        },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Tato ulice je cyklostezkou (s omezením rychlosti na 30 km/h)"
-                        },
-                        "1": {
-                            "then": "Tato ulice je cyklistickou silnicí"
-                        },
-                        "2": {
-                            "then": "Tato ulice je cyklistická (rychlost je zde omezena na 30 km/h vozidla sem mají zákaz vjezdu) (na značku se zeptáme později)"
-                        },
-                        "3": {
-                            "then": "Tato ulice je cykloulicí"
-                        },
-                        "4": {
-                            "then": "Tato ulice se brzy stane cyklostezkou"
-                        },
-                        "5": {
-                            "then": "Tato ulice se brzy stane cyklistickou silnicí"
-                        },
-                        "6": {
-                            "then": "Tato ulice není cyklo ulicí"
-                        }
-                    },
-                    "question": "Je ulice <b>{name}</b> cyklo ulicí?"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "Přístup povolen obyvatelům"
-                        },
-                        "1": {
-                            "then": "Vjezd motorových vozidel povolen"
-                        },
-                        "2": {
-                            "then": "Vjezd motocyklů povolen"
-                        },
-                        "3": {
-                            "then": "Vjezd aut povolen"
-                        },
-                        "4": {
-                            "then": "Na této cyklostezce nejsou žádná doplňková značení."
-                        }
-                    },
-                    "question": "Jakou značku má tato cyklostezka?"
-                },
-                "2": {
-                    "question": "Kdy se tato ulice stane cyklostezkou?",
-                    "render": "Tato ulice se stane cyklostezkou {cyclestreet:start_date}"
                 }
             }
         },

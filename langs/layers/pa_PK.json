@@ -111,6 +111,21 @@
             "render": "سائیکل‌وے"
         }
     },
+    "cyclestreets": {
+        "name": "سائیکاں دیاں سڑکاں",
+        "tagRenderings": {
+            "supplementary_sign": {
+                "mappings": {
+                    "2": {
+                        "then": "موٹرسائیکلاں دی اِجازت اے"
+                    },
+                    "3": {
+                        "then": "موٹرکاراں دی اِجازت اے"
+                    }
+                }
+            }
+        }
+    },
     "cycleways_and_roads": {
         "title": {
             "mappings": {

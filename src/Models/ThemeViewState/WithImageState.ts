@@ -1,6 +1,5 @@
 import { ImageUploadManager } from "../../Logic/ImageProviders/ImageUploadManager"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
+import { Store } from "../../Logic/UIEventSource"
 import { CombinedFetcher } from "../../Logic/Web/NearbyImagesSearch"
 import ThemeConfig from "../ThemeConfig/ThemeConfig"
 import { PanoramaxUploader } from "../../Logic/ImageProviders/Panoramax"
@@ -13,7 +12,6 @@ import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
 export class WithImageState extends WithGuiState implements SpecialVisualizationState {
     readonly imageUploadManager: ImageUploadManager
-    readonly previewedImage = new UIEventSource<ProvidedImage>(undefined)
     readonly nearbyImageSearcher: CombinedFetcher
 
     constructor(layout: ThemeConfig, mvtAvailableLayers: Store<Set<string>>) {

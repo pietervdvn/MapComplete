@@ -191,6 +191,15 @@
 |genre= POI, editor, circular_economy
 }}
 {{service_item
+|name= [https://mapcomplete.org/architecture architecture]
+|region= Worldwide
+|lang= {{#language:en|en}}
+|descr= A MapComplete theme: A map showing the archetectural style of buildings
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, architecture
+}}
+{{service_item
 |name= [https://mapcomplete.org/atm atm]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:id|en}}, {{#language:zh_Hant|en}}, {{#language:eu|en}}, {{#language:it|en}}, {{#language:pl|en}}, {{#language:da|en}}, {{#language:zh_Hans|en}}, {{#language:uk|en}}, {{#language:ko|en}}

@@ -350,10 +350,6 @@
     "cyclestreets": {
         "description": "Una ciclocalle es una calle donde <b>el tráfico motorizado no puede adelantar a los ciclistas</b>. Están señalizadas con una señal de tráfico especial. Las ciclocalles se pueden encontrar en los Países Bajos y Bélgica, pero también en Alemania y Francia. ",
         "layers": {
-            "0": {
-                "description": "Una ciclocalle es una calle donde el tráfico motorizado no puede adelantar a un ciclista",
-                "name": "Ciclocalles"
-            },
             "1": {
                 "description": "Esta calle se convertirá pronto en una ciclocalle",
                 "name": "Futuras ciclocalles",
@@ -371,60 +367,6 @@
                 "name": "Todas las calles",
                 "title": {
                     "render": "Calle"
-                }
-            }
-        },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Esta calle es una ciclocalle (y tiene un límite de velocidad de 30 km/h)"
-                        },
-                        "1": {
-                            "then": "Esta calle tiene ciclovías"
-                        },
-                        "2": {
-                            "then": "Esta calle es una vía ciclista (tiene un límite de velocidad de 30 km/h y no se permiten vehículos) (la señal se solicitará más tarde)"
-                        },
-                        "3": {
-                            "then": "Esta calle es una ciclocalle"
-                        },
-                        "4": {
-                            "then": "Esta calle se convertirá pronto en una ciclocalle"
-                        },
-                        "5": {
-                            "then": "Esta calle se convertirá pronto en una vía ciclista"
-                        },
-                        "6": {
-                            "then": "Esta calle no es una ciclocalle"
-                        }
-                    },
-                    "question": "¿Es la calle <b>{name}</b> una ciclocalle?"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "Residentes permitidos"
-                        },
-                        "1": {
-                            "then": "Vehículos motorizados permitidos"
-                        },
-                        "2": {
-                            "then": "Motocicletas permitidas"
-                        },
-                        "3": {
-                            "then": "Coches permitidos"
-                        },
-                        "4": {
-                            "then": "No hay señales complementarias en esta vía ciclista."
-                        }
-                    },
-                    "question": "¿Qué señal tiene esta vía ciclista?"
-                },
-                "2": {
-                    "question": "¿Cuándo se convertirá esta calle en una ciclocalle?",
-                    "render": "Esta calle se convertirá en una ciclocalle en {cyclestreet:start_date}"
                 }
             }
         },

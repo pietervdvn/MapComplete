@@ -2209,7 +2209,7 @@
     "campsite": {
         "description": "Càmpings",
         "filter": {
-            "0": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Totes les capacitats"
@@ -3816,6 +3816,62 @@
             "render": "via ciclista"
         }
     },
+    "cyclestreets": {
+        "description": "Un ciclocarrer és un carrer on el trànsit motoritzat no pot sobrepassar a un ciclista",
+        "name": "Carrers ciclistes",
+        "tagRenderings": {
+            "future_cyclestreet": {
+                "question": "Quan es convertirà aquest carrer en un ciclocarrer?",
+                "render": "Aquest carrer es convertirà un ciclocarrer el {cyclestreet:start_date}"
+            },
+            "is_cyclestreet": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest carrer és un ciclocarrer (i té un límit de velocitat de 30km/h)"
+                    },
+                    "1": {
+                        "then": "Aquest carrer és una pista ciclable"
+                    },
+                    "2": {
+                        "then": "Aquest carrer és una carretera ciclista (té un límit de velocitat de 30km/h i els vehicles no estan permesos)(el senyal es preguntarà més tard)"
+                    },
+                    "3": {
+                        "then": "Aquest carrer és una ciclocarrer"
+                    },
+                    "4": {
+                        "then": "Aquest carrer es convertirà en un ciclocarrer pròximament"
+                    },
+                    "5": {
+                        "then": "Aquest carrer es convertirà aviat en una senda ciclable"
+                    },
+                    "6": {
+                        "then": "Aquest carrer no és un ciclocarrer"
+                    }
+                },
+                "question": "El carrer <b>{name}</b> és un ciclocarrer?"
+            },
+            "supplementary_sign": {
+                "mappings": {
+                    "0": {
+                        "then": "Residents permesos"
+                    },
+                    "1": {
+                        "then": "Vehicles a motor permesos"
+                    },
+                    "2": {
+                        "then": "Motos permeses"
+                    },
+                    "3": {
+                        "then": "Cotxes permesos"
+                    },
+                    "4": {
+                        "then": "No hi ha senyals addicionals en aquesta senda ciclable."
+                    }
+                },
+                "question": "Quin senyal té aquesta senda ciclable?"
+            }
+        }
+    },
     "cycleways_and_roads": {
         "description": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
         "name": "Vies ciclistes i carreteres",
@@ -3917,20 +3973,6 @@
                 },
                 "question": "De quina superfície està fet aquesta via ciclista?",
                 "render": "Aquesta via ciclista està feta de {cycleway:surface}"
-            },
-            "Is this a cyclestreet? (For a road)": {
-                "mappings": {
-                    "0": {
-                        "then": "Açò és un ciclocarrer, i una zona de 30km/h."
-                    },
-                    "1": {
-                        "then": "Açò és un ciclocarrer"
-                    },
-                    "2": {
-                        "then": "Açò no és un ciclocarrer."
-                    }
-                },
-                "question": "Açò és un ciclocarrer?"
             },
             "Maxspeed (for road)": {
                 "mappings": {
@@ -4294,23 +4336,6 @@
                 },
                 "question": "Està el desfibril·lador accessible lliurement?",
                 "render": "L'accés és {access}"
-            },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "0": {
-                        "then": "No hi ha informació sobre el tipus de dispositiu"
-                    },
-                    "1": {
-                        "then": "Aquest és un desfibril·lador manual per a professionals"
-                    },
-                    "2": {
-                        "then": "Aquest és un desfibril·lador automàtic normal"
-                    },
-                    "3": {
-                        "then": "Aquest és un tipus especial de desfibril·lador: {defibrillator}"
-                    }
-                },
-                "question": "És un desfibril·lador automàtic normal o un desfibril·lador manual només per a professionals?"
             },
             "defibrillator-defibrillator:location": {
                 "question": "Dóna detalls d'on es pot trobar el desfibril·lador",
@@ -6719,7 +6744,7 @@
                     "1": {
                         "then": "Aquest gual no té superfície podotàctil."
                     },
-                    "2": {
+                    "3": {
                         "then": "La vorera té superfície podotàctil, però és incorrecte."
                     }
                 },
@@ -7828,7 +7853,7 @@
                         "then": "Es tracta d'una plaça d'aparcament reservada per a vehicles pesants de mercaderies."
                     },
                     "6": {
-                        "then": "Es tracta de plaça d'aparcament reservada per a caravanes o RVs."
+                        "then": "Es tracta de plaça d'aparcament reservada per a caravanes o autocaravanes."
                     },
                     "7": {
                         "then": "Es tracta d'una plaça d'aparcament reservada per a autobusos."
@@ -7846,10 +7871,10 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Espai d'aparcament desactivat"
+                    "then": "Espai d'aparcament per a discapacitats"
                 },
                 "1": {
-                    "then": "Aparcament de càrrega de vehicles elèctrics"
+                    "then": "Aparcament per a la càrrega de vehicles elèctrics"
                 }
             },
             "render": "Espai d'aparcament"
@@ -8011,10 +8036,10 @@
             "fee": {
                 "mappings": {
                     "0": {
-                        "then": "Lliure d'utilitzar"
+                        "then": "D'ús lliure"
                     },
                     "1": {
-                        "then": "Parc infantil pagat"
+                        "then": "Parc infantil de pagament"
                     }
                 },
                 "question": "Cal pagar per utilitzar aquest parc infantil?"
@@ -8114,10 +8139,10 @@
                         "then": "La superfície està <b>pavimentada</b>"
                     },
                     "8": {
-                        "then": "La superfície és tartan - una superfície sintètica i molla típicament vista en pistes atlètiques"
+                        "then": "La superfície és tartan: una superfície sintètica i molla típicament vista en pistes atlètiques"
                     },
                     "9": {
-                        "then": "La superfície està feta de goma, com rajoles de goma, mulch de goma o una gran àrea de goma"
+                        "then": "La superfície està feta de goma, com rajoles de goma, jaç protector de goma o una gran àrea de goma"
                     }
                 },
                 "question": "Quina és la superfície d'aquest parc infantil?",
@@ -8135,37 +8160,37 @@
         }
     },
     "playground_equipment": {
-        "description": "Capa que mostra l'equipament del pati",
-        "name": "Equips de Playground",
+        "description": "Capa que mostra l'equipament del parc infantil",
+        "name": "Equipament del Parc Infantil",
         "presets": {
             "0": {
-                "description": "Més tard es demana un tipus exacte",
-                "title": "un dispositiu de jocs"
+                "description": "Més tard es demanarà un tipus exacte",
+                "title": "un element del parc infantil"
             }
         },
         "tagRenderings": {
             "type": {
                 "freeform": {
-                    "placeholder": "Tipus de dispositiu"
+                    "placeholder": "Tipus d'element"
                 },
                 "mappings": {
                     "0": {
                         "then": "Això és un gronxador"
                     },
                     "1": {
-                        "then": "Aquesta és una estructura que consisteix en diversos dispositius de pati connectats"
+                        "then": "Aquesta és una estructura que consisteix en diversos elements de parc infantils connectats"
                     },
                     "10": {
-                        "then": "Aquest és un filferro"
+                        "then": "Aquesta és una tirolina"
                     },
                     "11": {
                         "then": "Aquesta és una barra horitzontal"
                     },
                     "12": {
-                        "then": "Això és un hopscotch"
+                        "then": "Això és un joc de la ratlleta"
                     },
                     "13": {
-                        "then": "Aquest és un coixinet"
+                        "then": "Aquest és un esquitxador"
                     },
                     "14": {
                         "then": "Aquest és un rocòdrom"
@@ -8174,7 +8199,7 @@
                         "then": "Aquest és un mapa"
                     },
                     "16": {
-                        "then": "Aquest és un pont (ja sigui com un dispositiu independent o com a part d'una estructura més gran)"
+                        "then": "Aquest és un pont (ja sigui com un element independent o com a part d'una estructura més gran)"
                     },
                     "17": {
                         "then": "Això és un coixí inflat"
@@ -8186,10 +8211,10 @@
                         "then": "Aquest és un refugi per a adolescents"
                     },
                     "2": {
-                        "then": "Aquesta és una diapositiva"
+                        "then": "Aquesta és un tobogan"
                     },
                     "20": {
-                        "then": "Aquest és un embut utilitzat per jugar amb la pilota d'embut"
+                        "then": "Aquest és un embut utilitzat per jugar amb pilotes d'embut"
                     },
                     "21": {
                         "then": "Això és un cercle giratori"
@@ -8198,35 +8223,35 @@
                         "then": "Aquest és un pou de sorra"
                     },
                     "4": {
-                        "then": "Aquest és un genet de primavera"
+                        "then": "Aquest és un cavallet amb molls"
                     },
                     "5": {
                         "then": "Aquest és un marc d'escalada"
                     },
                     "6": {
-                        "then": "Això és una vista"
+                        "then": "Això és una balança"
                     },
                     "7": {
-                        "then": "Aquesta és una casa de jocs"
+                        "then": "Aquesta és una caseta de jocs"
                     },
                     "8": {
-                        "then": "Aquesta és una rotonda"
+                        "then": "Açò son cavallets"
                     },
                     "9": {
                         "then": "Aquest és un gronxador de cistella"
                     }
                 },
-                "question": "Quin tipus de dispositiu és aquest?",
+                "question": "Quin tipus d'element és aquest?",
                 "render": "Aquest és un {playground}"
             },
             "wheelchair-access": {
                 "override": {
-                    "question": "Aquest dispositiu és accessible amb cadira de rodes?"
+                    "question": "Aquest element és accessible amb cadira de rodes?"
                 }
             }
         },
         "title": {
-            "render": "Dispositiu de Playground"
+            "render": "Element del Parc Infantil"
         }
     },
     "police": {
@@ -8243,7 +8268,7 @@
             },
             "2": {
                 "description": "Una oficina administrativa de policia sense serveis per al públic en general.",
-                "title": "un backoffice administratiu i policial"
+                "title": "una oficina administrativa policial"
             },
             "3": {
                 "description": "Una presó dirigida per la policia sense serveis públics. Hi ha persones detingudes aquí durant un temps curt (com a màxim uns dies), per exemple, per petites faltes, pertorbacions de l'ordre públic o esperant un judici"
@@ -8300,21 +8325,21 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "Ofereix la publicació de cartes"
+                        "question": "Ofereix enviament de cartes"
                     }
                 }
             },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Ofereix la publicació de paquets"
+                        "question": "Ofereix enviament de paquets"
                     }
                 }
             },
             "3": {
                 "options": {
                     "0": {
-                        "question": "Ofertes de recollida de paquets perduts"
+                        "question": "Ofereix la recollida de paquets perduts"
                     }
                 }
             },
@@ -8439,10 +8464,10 @@
             },
             "post_offic_brand": {
                 "freeform": {
-                    "placeholder": "Marca de l'oficina de correus"
+                    "placeholder": "Marca de l'oficina postal"
                 },
-                "question": "A quina marca pertany aquesta oficina de correus?",
-                "render": "Aquesta és una oficina de correus de {brand}"
+                "question": "A quina marca pertany aquesta oficina postal?",
+                "render": "Aquesta és una oficina postal de {brand}"
             },
             "post_partner": {
                 "mappings": {
@@ -8471,7 +8496,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Col·laborador de correus en una botiga"
+                    "then": "Soci postal en una botiga"
                 },
                 "1": {
                     "then": "Col·laborador postal a {name}"
@@ -8481,7 +8506,7 @@
         }
     },
     "public_bookcase": {
-        "description": "Un armari al carrer amb llibres, accessible per a tothom",
+        "description": "Una prestatgeria al carrer amb llibres, accessible per a tothom",
         "filter": {
             "0": {
                 "options": {
@@ -8591,7 +8616,7 @@
                     }
                 },
                 "question": "Quin és el número de referència d'aquesta prestatgeria pública?",
-                "render": "El número de referència d'aquest fullet públic a {brand} és {ref}"
+                "render": "El número de referència d'aquesta prestatgeria pública a {brand} és {ref}"
             },
             "public_bookcase-start_date": {
                 "question": "Quan es va instal·lar aquesta prestatgeria pública?",
@@ -8775,7 +8800,7 @@
                         "then": "Aquesta botiga disposa d'una gran oferta sense gluten"
                     },
                     "2": {
-                        "then": "Aquesta botiga té una oferta de <b>sense gluten limitat</b>"
+                        "then": "Aquesta botiga té una oferta <b>sense gluten limitat</b>"
                     },
                     "3": {
                         "then": "Aquesta botiga no disposa d'oferta sense gluten"
@@ -8823,7 +8848,7 @@
                         "then": "Aquest lloc ofereix accés a internet per cable"
                     },
                     "5": {
-                        "then": "Aquest lloc ofereix tant internet sense fils com accés a Internet a través d'un terminal o ordinador"
+                        "then": "Aquest lloc ofereix tant internet sense fil com accés a Internet a través d'un terminal o ordinador"
                     }
                 },
                 "question": "Aquest lloc ofereix accés a internet?"
@@ -8859,19 +8884,19 @@
             "lactose_free": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Només ven productes de lactosa sense lactosa</b>"
+                        "then": "<b>Només ven productes sense lactosa</b>"
                     },
                     "1": {
-                        "then": "Gran oferta lliure de lactosa"
+                        "then": "Gran oferta sense lactosa"
                     },
                     "2": {
-                        "then": "<b>Lliure de lactosa limitada</b> oferta"
+                        "then": "Oferta <b>limitada de productes sense lactosa</b>"
                     },
                     "3": {
-                        "then": "Sense lactosa"
+                        "then": "No hi ha oferta de productes sense lactosa"
                     }
                 },
-                "question": "{title()} té una oferta lliure de lactosa?"
+                "question": "{title()} té una oferta sense lactosa?"
             },
             "last_edit": {
                 "render": {
@@ -8898,16 +8923,16 @@
                 "question": "Aquest objecte està il·luminat o emet llum?"
             },
             "mastodon": {
-                "question": "Què és el Mastodon-handle de {title()}?"
+                "question": "Què és l'identificador de Mastodon de {title()}?"
             },
             "maxstay": {
                 "mappings": {
                     "0": {
-                        "then": "No hi ha límit en la quantitat de temps que es pot quedar aquí"
+                        "then": "No hi ha límit en la quantitat de temps que un es pot quedar aquí"
                     }
                 },
-                "question": "Quina és la quantitat màxima de temps que se li permet romandre aquí?",
-                "render": "Es pot quedar com a màxim <b>{canonical(maxstay)}</b>"
+                "question": "Quina és la quantitat màxima de temps que a un se li permet romandre aquí?",
+                "render": "Un es pot quedar com a màxim <b>{canonical(maxstay)}</b>"
             },
             "multilevels": {
                 "override": {

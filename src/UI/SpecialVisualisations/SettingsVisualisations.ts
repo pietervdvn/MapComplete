@@ -24,7 +24,7 @@ export class SettingsVisualisations {
                 docs: "A component to set the language of the user interface",
                 constr(state: SpecialVisualizationState): SvelteUIElement {
                     const availableLanguages = Locale.showLinkToWeblate.map((showTranslations) =>
-                        showTranslations ? LanguageUtils.usedLanguagesSorted : state.theme.language
+                        showTranslations ? LanguageUtils.usedLanguagesSorted : (state?.theme?.language ?? LanguageUtils.usedLanguagesSorted)
                     )
                     return new SvelteUIElement(LanguagePicker, {
                         assignTo: state.userRelatedState.language,

@@ -1,0 +1,241 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Buildings with an architectural style",
+    "description": "A map showing the archetectural style of buildings",
+    "project_url": "https://mapcomplete.org/architecture",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
+    "icon_url": "https://mapcomplete.org/assets/themes/architecture/architecture.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "building",
+      "description": "The MapComplete theme Buildings with an architectural style has a layer Buildings showing features with this tag"
+    },
+    {
+      "key": "building:architecture",
+      "description": "The MapComplete theme Buildings with an architectural style has a layer Buildings showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Buildings' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Buildings with an architectural style') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows and asks freeform values for key 'building:architecture' (in the mapcomplete.org theme 'Buildings with an architectural style')"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=islamic with a fixed text, namely 'Islamic architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "islamic"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=mamluk with a fixed text, namely 'Mamluk architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "mamluk"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=romanesque with a fixed text, namely 'Romanesque architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "romanesque"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=gothic with a fixed text, namely 'Gothic architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "gothic"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=renaissance with a fixed text, namely 'Renaissance architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "renaissance"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=mannerism with a fixed text, namely 'Mannerism' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "mannerism"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=ottoman with a fixed text, namely 'Ottoman architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "ottoman"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=baroque with a fixed text, namely 'Baroque architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "baroque"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=rococo with a fixed text, namely 'Rococo' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "rococo"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=empire with a fixed text, namely 'Empire style' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "empire"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=moorish revival with a fixed text, namely 'Moorish Revival' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "moorish revival"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=neoclassicism with a fixed text, namely 'Neoclassical architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "neoclassicism"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=georgian with a fixed text, namely 'Georgian architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "georgian"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=victorian with a fixed text, namely 'Victorian architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "victorian"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=historicism with a fixed text, namely 'Historicism' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "historicism"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=neo-romanesque with a fixed text, namely 'Romanesque Revival' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "neo-romanesque"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=neo-byzantine with a fixed text, namely 'Byzantine Revival' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "neo-byzantine"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=neo-gothic with a fixed text, namely 'Gothic Revival' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "neo-gothic"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=neo-renaissance with a fixed text, namely 'Renaissance Revival' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "neo-renaissance"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=neo-baroque with a fixed text, namely 'Baroque Revival' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "neo-baroque"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=art_nouveau with a fixed text, namely 'Art Nouveau' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "art_nouveau"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=eclectic with a fixed text, namely 'Eclecticism in architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "eclectic"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=functionalism with a fixed text, namely 'Functionalism' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "functionalism"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=cubism with a fixed text, namely 'Cubism' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "cubism"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=new_objectivity with a fixed text, namely 'New Objectivity' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "new_objectivity"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=art_deco with a fixed text, namely 'Art Deco' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "art_deco"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=modern with a fixed text, namely 'Modern architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "modern"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=amsterdam_school with a fixed text, namely 'Amsterdam School' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "amsterdam_school"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=international_style with a fixed text, namely 'International Style' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "international_style"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=constructivism with a fixed text, namely 'Constructivism' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "constructivism"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=stalinist_neoclassicism with a fixed text, namely 'Stalinist architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "stalinist_neoclassicism"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=brutalist with a fixed text, namely 'Brutalist architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "brutalist"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=postmodern with a fixed text, namely 'Postmodern architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "postmodern"
+    },
+    {
+      "key": "building:architecture",
+      "description": "Layer 'Buildings' shows building:architecture=contemporary with a fixed text, namely 'Contemporary architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "contemporary"
+    },
+    {
+      "key": "construction_date",
+      "description": "Layer 'Buildings' shows and asks freeform values for key 'construction_date' (in the mapcomplete.org theme 'Buildings with an architectural style')"
+    },
+    {
+      "key": "addr:street",
+      "description": "Layer 'Buildings' shows addr:street= & addr:unit= & addr:housenumber= with a fixed text, namely 'No address is known' (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": ""
+    },
+    {
+      "key": "addr:unit",
+      "description": "Layer 'Buildings' shows addr:street= & addr:unit= & addr:housenumber= with a fixed text, namely 'No address is known' (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": ""
+    },
+    {
+      "key": "addr:housenumber",
+      "description": "Layer 'Buildings' shows addr:street= & addr:unit= & addr:housenumber= with a fixed text, namely 'No address is known' (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": ""
+    },
+    {
+      "key": "addr:housenumber",
+      "description": "Layer 'Buildings' shows and asks freeform values for key 'addr:housenumber' (in the mapcomplete.org theme 'Buildings with an architectural style')"
+    },
+    {
+      "key": "nohousenumber",
+      "description": "Layer 'Buildings' shows nohousenumber=yes with a fixed text, namely 'This building has no house number' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style')",
+      "value": "yes"
+    },
+    {
+      "key": "addr:street",
+      "description": "Layer 'Buildings' shows and asks freeform values for key 'addr:street' (in the mapcomplete.org theme 'Buildings with an architectural style') (This is only shown if nohousenumber!~^(yes)$)"
+    },
+    {
+      "key": "addr:unit",
+      "description": "Layer 'Buildings' shows and asks freeform values for key 'addr:unit' (in the mapcomplete.org theme 'Buildings with an architectural style')"
+    },
+    {
+      "key": "addr:unit",
+      "description": "Layer 'Buildings' shows addr:unit= with a fixed text, namely 'No unit number' and allows to pick this as a default answer (in the mapcomplete.org theme 'Buildings with an architectural style') Picking this answer will delete the key addr:unit.",
+      "value": ""
+    }
+  ]
+}

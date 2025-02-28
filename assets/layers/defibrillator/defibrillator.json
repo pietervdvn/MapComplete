@@ -48,18 +48,48 @@
   },
   "pointRendering": [
     {
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "opening_hours~*",
+              "opening_hours!=unknown",
+              "opening_hours!=closed",
+              "opening_hours!=off",
+              {
+                "or": [
+                  "access=yes",
+                  "access=public",
+                  "access=permissive"
+                ]
+              }
+            ]
+          },
+          "then": "icons.isOpen"
+        },
+        {
+          "if": {
+            "or": [
+              {
+                "and": [
+                  "access~*",
+                  "access!=yes",
+                  "access!=public",
+                  "access!=permissive"
+                ]
+              },
+              "opening_hours=unknown",
+              "opening_hours=closed",
+              "opening_hours=off"
+            ]
+          },
+          "then": "./assets/layers/barrier/barrier.svg"
+        }
+      ],
       "marker": [
         {
           "icon": "square",
-          "color": {
-            "render": "#008754",
-            "mappings": [
-              {
-                "if": "_recently_surveyed=true",
-                "then": "#28ba3d"
-              }
-            ]
-          }
+          "color": "#008754"
         },
         {
           "icon": "./assets/layers/defibrillator/defibrillator.svg"
@@ -235,6 +265,7 @@
         },
         {
           "if": "access=customers",
+          "icon": "./assets/layers/barrier/barrier.svg",
           "then": {
             "en": "Only accessible to customers",
             "ca": "Només accessible a clients",
@@ -251,6 +282,7 @@
         },
         {
           "if": "access=private",
+          "icon": "./assets/layers/barrier/barrier.svg",
           "then": {
             "en": "Not accessible to the general public (e.g. only accesible to staff, the owners, …)",
             "ca": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)",
@@ -266,6 +298,7 @@
         },
         {
           "if": "access=no",
+          "icon": "./assets/layers/barrier/barrier.svg",
           "then": {
             "en": "Not accessible, possibly only for professional use",
             "nl": "Niet toegankelijk, mogelijk enkel voor professionals",
@@ -281,92 +314,6 @@
         }
       ],
       "id": "defibrillator-access"
-    },
-    {
-      "question": {
-        "en": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?",
-        "nl": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?",
-        "fr": "Est-ce un défibrillateur automatique normal ou un défibrillateur manuel à usage professionnel uniquement ?",
-        "it": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?",
-        "de": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?",
-        "sl": "Ali je to navaden avtomatski defibrilator ali ročni defibrilator namenjen poklicnim reševalcem?",
-        "es": "¿Es este un desfibrilador automático normal o un desfibrilador manual solo para profesionales?",
-        "ca": "És un desfibril·lador automàtic normal o un desfibril·lador manual només per a professionals?",
-        "pl": "Czy to jest zwykły automatyczny defibrylator czy ręczny defibrylator tylko dla profesjonalistów?",
-        "cs": "Jedná se o běžný automatický defibrilátor nebo manuální defibrilátor pouze pro profesionály?"
-      },
-      "condition": {
-        "and": [
-          "access=no"
-        ]
-      },
-      "mappings": [
-        {
-          "if": "defibrillator=",
-          "then": {
-            "en": "There is no info about the type of device",
-            "nl": "Er is geen info over het soort toestel",
-            "fr": "Il n'y a pas d'information sur le type de dispositif",
-            "it": "Non vi sono informazioni riguardanti il tipo di questo dispositivo",
-            "de": "Es gibt keine Informationen über den Gerätetyp",
-            "sl": "Ni informacij o vrsti naprave",
-            "es": "No hay información sobre el tipo de dispositivo",
-            "ca": "No hi ha informació sobre el tipus de dispositiu",
-            "pl": "Nie ma informacji o rodzaju urządzenia",
-            "cs": "Neexistují žádné informace o typu zařízení"
-          },
-          "hideInAnswer": true
-        },
-        {
-          "if": "defibrillator=manual",
-          "then": {
-            "en": "This is a manual defibrillator for professionals",
-            "nl": "Dit is een manueel toestel enkel voor professionals",
-            "fr": "C'est un défibrillateur manuel pour professionnel",
-            "it": "Questo è un defibrillatore manuale per professionisti",
-            "de": "Dies ist ein manueller Defibrillator für den professionellen Einsatz",
-            "sl": "To je ročni defibrilator za poklicne reševalce",
-            "da": "Dette er en manuel hjertestarter til professionelle",
-            "es": "Este es un desfibrilador manual para profesionales",
-            "ca": "Aquest és un desfibril·lador manual per a professionals",
-            "pl": "To jest ręczny defibrylator dla profesjonalistów",
-            "cs": "Jedná se o ruční defibrilátor pro profesionály"
-          }
-        },
-        {
-          "if": "defibrillator=automatic",
-          "then": {
-            "en": "This is a normal automatic defibrillator",
-            "nl": "Dit is een gewone automatische defibrillator",
-            "fr": "C'est un défibrillateur automatique manuel",
-            "it": "È un normale defibrillatore automatico",
-            "ru": "Это обычный автоматический дефибриллятор",
-            "de": "Dies ist ein normaler automatischer Defibrillator",
-            "sl": "To je normalen avtomatski defibrilator",
-            "da": "Dette er en normal automatisk hjertestarter",
-            "es": "Este es un desfibrilador automático normal",
-            "ca": "Aquest és un desfibril·lador automàtic normal",
-            "pl": "To jest zwykły automatyczny defibrylator",
-            "cs": "Jedná se o běžný automatický defibrilátor"
-          }
-        },
-        {
-          "if": "defibrillator~*",
-          "then": {
-            "en": "This is a special type of defibrillator: {defibrillator}",
-            "nl": "Dit is een speciaal type defibrillator: {defibrillator}",
-            "sl": "To je posebna vrsta defibrilatorja: {defibrillator}",
-            "da": "Dette er en særlig type hjertestarter: {defibrillator}",
-            "de": "Dies ist eine besondere Art von Defibrillator: {defibrillator}",
-            "es": "Este es un tipo especial de desfibrilador: {defibrillator}",
-            "ca": "Aquest és un tipus especial de desfibril·lador: {defibrillator}",
-            "pl": "To jest specjalny rodzaj defibrylatora: {defibrillator}",
-            "cs": "Toto je speciální typ defibrilátoru: {defibrillator}"
-          },
-          "hideInAnswer": true
-        }
-      ],
-      "id": "defibrillator-defibrillator"
     },
     {
       "question": {
@@ -641,7 +588,18 @@
           "ca": "En quins horaris està disponible aquest desfibril·lador?",
           "pl": "W jakich godzinach dostępny jest ten defibrylator?",
           "cs": "V jakých hodinách je tento defibrilátor k dispozici?"
-        }
+        },
+        "mappings+": [
+          {
+            "if": "opening_hours=unknown",
+            "icon": "./assets/layers/barrier/barrier.svg",
+            "then": {
+              "en": "Not accessible 24/7, but the exact hours are unknown",
+              "nl": "Niet 24/7 bereikbaar, maar de exacte uren zijn niet bekend"
+            },
+            "hideInAnswer": true
+          }
+        ]
       }
     },
     {
@@ -757,7 +715,49 @@
   ],
   "filter": [
     "has_image",
-    "open_now"
+    "public_access",
+    "open_now",
+    "wheelchair_accessible",
+    {
+      "id": "not_recently_surveyed",
+      "options": [
+        {
+          "osmTags": "_recently_surveyed=false",
+          "question": {
+            "en": "Only where survey was more than 90 days ago",
+            "nl": "Enkel die meer dan 90 dagen geleden ter plaatse zijn nagezien"
+          }
+        }
+      ]
+    },
+    {
+      "id": "no_opening_hours",
+      "options": [
+        {
+          "osmTags": {
+            "or": [
+              "access=",
+              {
+                "and": [
+                  "opening_hours=",
+                  {
+                    "or": [
+                      "access=yes",
+                      "access=public",
+                      "access=permissive"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "question": {
+            "en": "Unknown access or times of accessibility",
+            "nl": "Onbekende toegang of onbekende tijden waarop toegankelijk"
+          }
+        }
+      ]
+    }
   ],
   "deletion": {
     "softDeletionTags": {

@@ -259,6 +259,14 @@
           }
         },
         {
+          "if": "tactile_paving=contrasted",
+          "then": {
+            "en": "This kerb has tactile paving, which has a contrasting colour to the surrounding pavement.",
+            "nl": "Deze stoeprand heeft voelbare bestrating, die een contrasterende kleur heeft ten opzichte van de omliggende bestrating."
+          },
+          "hideInAnswer": true
+        },
+        {
           "if": "tactile_paving=incorrect",
           "then": {
             "en": "This kerb has tactile paving, but it is incorrect.",
@@ -274,6 +282,56 @@
           "hideInAnswer": true
         }
       ],
+      "condition": "_geometry:type=Point"
+    },
+    {
+      "id": "tactile-paving-colour",
+      "question": {
+        "en": "What is the colour of the tactile paving?",
+        "nl": "Wat is de kleur van de voelbare bestrating?"
+      },
+      "mappings": [
+        {
+          "if": "tactile_paving:colour=yellow",
+          "then": {
+            "en": "The tactile paving is yellow.",
+            "nl": "De voelbare bestrating is geel."
+          }
+        },
+        {
+          "if": "tactile_paving:colour=red",
+          "then": {
+            "en": "The tactile paving is red.",
+            "nl": "De voelbare bestrating is rood."
+          }
+        },
+        {
+          "if": "tactile_paving:colour=white",
+          "then": {
+            "en": "The tactile paving is white.",
+            "nl": "De voelbare bestrating is wit."
+          }
+        },
+        {
+          "if": "tactile_paving:colour=grey",
+          "then": {
+            "en": "The tactile paving is grey.",
+            "nl": "De voelbare bestrating is grijs."
+          }
+        }
+      ],
+      "freeform": {
+        "key": "tactile_paving:colour",
+        "type": "color",
+        "placeholder": {
+          "en": "Colour of the tactile paving",
+          "nl": "Kleur van de voelbare bestrating"
+        }
+      },
+      "render": {
+        "en": "The tactile paving is coloured {tactile_paving:colour}.",
+        "nl": "De voelbare bestrating is {tactile_paving:colour} gekleurd."
+      },
       "condition": "_geometry:type=Point"
     },
     {

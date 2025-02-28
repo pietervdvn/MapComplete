@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.50.1](https://github.com/pietervdvn/mapcomplete/compare/v0.50.0...v0.50.1) (2025-02-24)
+
+## [0.50.0](https://github.com/pietervdvn/mapcomplete/compare/v0.49.0...v0.50.0) (2025-02-24)
+
+
+### Bug Fixes
+
+* attempt to fix [#2312](https://github.com/pietervdvn/MapComplete/issues/2312) ([225b079](https://github.com/pietervdvn/mapcomplete/commits/225b07970d7a335085fa28316863a63584be595b))
+* attempt to fix [#2312](https://github.com/pietervdvn/MapComplete/issues/2312) ([a11f2d0](https://github.com/pietervdvn/mapcomplete/commits/a11f2d0cbcd52b2272decadbaa13b15296df74ab))
+* destroy the old core if needed ([44b094e](https://github.com/pietervdvn/mapcomplete/commits/44b094e84ba9b3bd0375441ead54a6230de71b42))
+* destroy the old core if needed ([1406fd5](https://github.com/pietervdvn/mapcomplete/commits/1406fd5f25daadaa85dd18997b79e462b21bbe96))
+* small fixes and crashes ([d17d07e](https://github.com/pietervdvn/mapcomplete/commits/d17d07ec52ce1d0907e5e0e3cfc7ba101111f2a1))
+* **UI:** restore 'badge'-class in CSS ([7ce2c4d](https://github.com/pietervdvn/mapcomplete/commits/7ce2c4d730faba642df807e924068220b5c08a08))
+
+
+### Theme improvements
+
+* **aed:** add iconBadges for opening hours and wheelchair access ([6a1e816](https://github.com/pietervdvn/mapcomplete/commits/6a1e816b2e387fdaf3d3cb9c472b89bc88eb57c5))
+* **aed:** add more filters ([4f0b1c1](https://github.com/pietervdvn/mapcomplete/commits/4f0b1c198e57b657faffeb0f7d3aa343869e17e2))
+* **aed:** change marker size and colour based on access and presence of opening hours ([5138610](https://github.com/pietervdvn/mapcomplete/commits/51386102841b7d0b4b5b4d03479872b7e4e749ff))
+* **aed:** correct license information for the defibrillator SVGs ([02e514f](https://github.com/pietervdvn/mapcomplete/commits/02e514f26006d3516ff7a8891f350a9219980be1))
+* **aed:** remove defibrillator=manual ([d3da075](https://github.com/pietervdvn/mapcomplete/commits/d3da075f4e942214c8b8a92c8c90a42dcc05b46d))
+* **aed:** un-differentiate icons, revise badges ([7c2ec46](https://github.com/pietervdvn/mapcomplete/commits/7c2ec46ca176182528749ff3868dc023c62ccedd))
+* **architecture:** add architecture theme ([33ec303](https://github.com/pietervdvn/mapcomplete/commits/33ec30339b9f0c809dfdc41233430ca1b73d8038))
+* **architecture:** add title ([e6112f2](https://github.com/pietervdvn/mapcomplete/commits/e6112f2d2759514a84d6f4e2042c400a9caa17b8))
+* **cyclofix:** don't handle bicycle repair stations in shops, even if they have service:bicycle-tags, fix https://source.mapcomplete.org/MapComplete/MapComplete/issues/2318 ([083d588](https://github.com/pietervdvn/mapcomplete/commits/083d588361766d3ac9f77e408df725a78b3f9b4f))
+
 ## [0.49.0](https://github.com/pietervdvn/mapcomplete/compare/v0.48.8...v0.49.0) (2025-02-13)
 
 ### [0.48.8](https://github.com/pietervdvn/mapcomplete/compare/v0.48.7...v0.48.8) (2025-02-13)

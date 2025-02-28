@@ -1,10 +1,7 @@
 <script lang="ts">
   import Hotkeys from "../Base/Hotkeys"
-  import { Translation } from "../i18n/Translation"
-  import { Utils } from "../../Utils"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
-  import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
 
   let keys = Hotkeys._docs
   const t = Translations.t.hotkeyDocumentation

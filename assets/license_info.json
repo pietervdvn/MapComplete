@@ -1,0 +1,46 @@
+[
+  {
+    "path": "icon-background.png",
+    "license": "LOGO AND CC-BY-SA-4.0",
+    "authors": [
+      "Pieter Vander Vennet",
+      "OSM"
+    ],
+    "sources": [
+      "https://mapcomplete.org"
+    ]
+  },
+  {
+    "path": "icon-foreground.png",
+    "license": "LOGO AND CC-BY-SA-4.0",
+    "authors": [
+      "Pieter Vander Vennet",
+      "OSM"
+    ],
+    "sources": [
+      "https://mapcomplete.org"
+    ]
+  },
+  {
+    "path": "icon-only.png",
+    "license": "LOGO AND CC-BY-SA-4.0",
+    "authors": [
+      "Pieter Vander Vennet",
+      "OSM"
+    ],
+    "sources": [
+      "https://mapcomplete.org"
+    ]
+  },
+  {
+    "path": "splash-dark.png",
+    "license": "LOGO AND CC-BY-SA-4.0",
+    "authors": [
+      "Pieter Vander Vennet",
+      "OSM"
+    ],
+    "sources": [
+      "https://mapcomplete.org"
+    ]
+  }
+]

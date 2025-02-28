@@ -1072,7 +1072,7 @@ The special element which shows the questions which are unkown. Added by default
 | name | default | description |
 -----|-----|----- |
 | labels | _undefined_ | One or more ';'-separated labels. If these are given, only questions with these labels will be given. Use `unlabeled` for all questions that don't have an explicit label. If none given, all questions will be shown |
-| blacklisted-labels | _undefined_ | One or more ';'-separated labels of questions which should _not_ be included |
+| blacklisted-labels | _undefined_ | One or more ';'-separated labels of questions which should _not_ be included. Default: 'hidden' |
 
 #### Example usage of questions
 

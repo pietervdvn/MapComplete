@@ -601,6 +601,48 @@
             "render": "單車高速公路"
         }
     },
+    "cyclestreets": {
+        "description": "單車街道是機動車輛不被允許超車單車",
+        "name": "單車街道",
+        "tagRenderings": {
+            "is_cyclestreet": {
+                "mappings": {
+                    "0": {
+                        "then": "這條道路是單車街道 (而且有速限30km/h)"
+                    },
+                    "1": {
+                        "then": "這條道路是單車街道"
+                    },
+                    "4": {
+                        "then": "這條道路即將成為單車街道"
+                    },
+                    "5": {
+                        "then": "這條道路即將成為單車道路"
+                    },
+                    "6": {
+                        "then": "這條道路並非單車街道"
+                    }
+                },
+                "question": "這條道路<b>{name}</b>是單車街道嗎？"
+            },
+            "supplementary_sign": {
+                "mappings": {
+                    "0": {
+                        "then": "允許居民通行"
+                    },
+                    "1": {
+                        "then": "允許機動車輛通行"
+                    },
+                    "2": {
+                        "then": "允許機車通行"
+                    },
+                    "3": {
+                        "then": "允許汽車通行"
+                    }
+                }
+            }
+        }
+    },
     "dumpstations": {
         "description": "垃圾處理站",
         "name": "垃圾處理站",

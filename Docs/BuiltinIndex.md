@@ -428,6 +428,16 @@
 
              - bike_shop
             
+            ### address.address
+
+             - building
+ - dentist
+ - doctors
+ - hospital
+ - pharmacy
+ - physiotherapist
+ - school
+            
             ### wheelchair-access
 
              - cafe_pub
@@ -580,15 +590,6 @@
  - fixme
  - search
  - summary
-            
-            ### address.address
-
-             - dentist
- - doctors
- - hospital
- - pharmacy
- - physiotherapist
- - school
             
             ### seasonal
 

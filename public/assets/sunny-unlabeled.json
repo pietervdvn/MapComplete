@@ -1,14 +1,14 @@
 {
    "#": "AUTOMATICALLY GENERATED! Do not edit.",
    "version": 8,
-   "name": "style@2.0.0-alpha.0 theme@sunny-unlabeled",
+   "name": "style@4.0.0-alpha.0 theme@sunny-unlabeled",
    "glyphs": "https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf",
    "sources": {
       "protomaps": {
          "attribution": "<a href=\"https://github.com/protomaps/basemaps\">Protomaps</a> © <a href=\"https://openstreetmap.org\">OpenStreetMap</a>",
          "type": "vector",
          "tiles": [
-            "https://api.protomaps.com/tiles/v3/{z}/{x}/{y}.mvt?key=2af8b969a9e8b692"
+            "https://api.protomaps.com/tiles/v4/{z}/{x}/{y}.mvt?key=2af8b969a9e8b692"
          ],
          "maxzoom": 15
       }
@@ -31,6 +31,47 @@
          }
       },
       {
+         "id": "landcover_low_zooms",
+         "type": "fill",
+         "source": "protomaps",
+         "source-layer": "landcover",
+         "paint": {
+            "fill-color": [
+               "match",
+               [
+                  "get",
+                  "kind"
+               ],
+               "grassland",
+               "#e5f2c9",
+               "barren",
+               "rgba(255, 243, 215, 1)",
+               "urban_area",
+               "rgba(230, 230, 230, 1)",
+               "farmland",
+               "rgba(216, 239, 210, 1)",
+               "glacier",
+               "rgba(255, 255, 255, 1)",
+               "scrub",
+               "rgba(234, 239, 210, 1)",
+               "#f0efdd"
+            ],
+            "fill-opacity": [
+               "interpolate",
+               [
+                  "linear"
+               ],
+               [
+                  "zoom"
+               ],
+               5,
+               1,
+               7,
+               0
+            ]
+         }
+      },
+      {
          "id": "landuse_farmland",
          "type": "fill",
          "source": "protomaps",
@@ -39,7 +80,7 @@
             "any",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "farmland"
             ]
          ],
@@ -56,7 +97,7 @@
             "any",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "residential"
             ]
          ],
@@ -70,16 +111,13 @@
          "source": "protomaps",
          "source-layer": "landuse",
          "filter": [
-            "any",
-            [
-               "in",
-               "pmap:kind",
-               "national_park",
-               "park",
-               "cemetery",
-               "nature_reserve",
-               "golf_course"
-            ]
+            "in",
+            "kind",
+            "national_park",
+            "park",
+            "cemetery",
+            "nature_reserve",
+            "golf_course"
          ],
          "paint": {
             "fill-color": [
@@ -108,7 +146,7 @@
             "any",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "allotments",
                "village_green",
                "playground"
@@ -128,7 +166,7 @@
             "any",
             [
                "==",
-               "pmap:kind",
+               "kind",
                "hospital"
             ]
          ],
@@ -145,7 +183,7 @@
             "any",
             [
                "==",
-               "pmap:kind",
+               "kind",
                "industrial"
             ]
          ],
@@ -162,7 +200,7 @@
             "any",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "school",
                "university",
                "college"
@@ -181,7 +219,7 @@
             "any",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "beach"
             ]
          ],
@@ -198,7 +236,7 @@
             "any",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "zoo"
             ]
          ],
@@ -215,30 +253,38 @@
             "any",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "military",
                "naval_base",
                "airfield"
             ]
          ],
          "paint": {
-            "fill-color": "#c6dcdc"
+            "fill-color": [
+               "interpolate",
+               [
+                  "linear"
+               ],
+               [
+                  "zoom"
+               ],
+               5,
+               "#f0efdd",
+               8,
+               "#ecad9366"
+            ]
          }
       },
       {
          "id": "natural_wood",
          "type": "fill",
          "source": "protomaps",
-         "source-layer": "natural",
+         "source-layer": "landuse",
          "filter": [
-            "any",
-            [
-               "in",
-               "pmap:kind",
-               "wood",
-               "nature_reserve",
-               "forest"
-            ]
+            "in",
+            "kind",
+            "wood",
+            "forest"
          ],
          "paint": {
             "fill-color": [
@@ -251,39 +297,10 @@
                ],
                2,
                "#f0efdd",
-               10,
+               9,
                "#d0ded0",
-               18,
-               "#add19e"
-            ]
-         }
-      },
-      {
-         "id": "landuse_forest",
-         "type": "fill",
-         "source": "protomaps",
-         "source-layer": "landuse",
-         "filter": [
-            "any",
-            [
-               "in",
-               "pmap:kind",
-               "forest"
-            ]
-         ],
-         "paint": {
-            "fill-color": [
-               "interpolate",
-               [
-                  "linear"
-               ],
-               [
-                  "zoom"
-               ],
-               6,
-               "#f0efdd",
-               12,
-               "#d0ded0",
+               13,
+               "#add19e",
                18,
                "#add19e"
             ]
@@ -293,10 +310,10 @@
          "id": "natural_scrub",
          "type": "fill",
          "source": "protomaps",
-         "source-layer": "natural",
+         "source-layer": "landuse",
          "filter": [
             "in",
-            "pmap:kind",
+            "kind",
             "scrub",
             "grassland",
             "grass"
@@ -321,10 +338,10 @@
          "id": "natural_glacier",
          "type": "fill",
          "source": "protomaps",
-         "source-layer": "natural",
+         "source-layer": "landuse",
          "filter": [
             "==",
-            "pmap:kind",
+            "kind",
             "glacier"
          ],
          "paint": {
@@ -335,10 +352,10 @@
          "id": "natural_sand",
          "type": "fill",
          "source": "protomaps",
-         "source-layer": "natural",
+         "source-layer": "landuse",
          "filter": [
             "==",
-            "pmap:kind",
+            "kind",
             "sand"
          ],
          "paint": {
@@ -354,12 +371,11 @@
             "any",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "national_park",
                "park",
                "cemetery",
                "nature_reserve",
-               "forest",
                "golf_course"
             ]
          ],
@@ -390,7 +406,7 @@
             "any",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "aerodrome"
             ]
          ],
@@ -399,15 +415,15 @@
          }
       },
       {
-         "id": "transit_runway",
+         "id": "roads_runway",
          "type": "line",
          "source": "protomaps",
-         "source-layer": "transit",
+         "source-layer": "roads",
          "filter": [
             "any",
             [
                "in",
-               "pmap:kind_detail",
+               "kind_detail",
                "runway"
             ]
          ],
@@ -432,16 +448,16 @@
          }
       },
       {
-         "id": "transit_taxiway",
+         "id": "roads_taxiway",
          "type": "line",
          "source": "protomaps",
-         "source-layer": "transit",
+         "source-layer": "roads",
          "minzoom": 13,
          "filter": [
             "any",
             [
                "in",
-               "pmap:kind_detail",
+               "kind_detail",
                "taxiway"
             ]
          ],
@@ -466,10 +482,33 @@
          }
       },
       {
+         "id": "landuse_runway",
+         "type": "fill",
+         "source": "protomaps",
+         "source-layer": "landuse",
+         "filter": [
+            "any",
+            [
+               "in",
+               "kind",
+               "runway",
+               "taxiway"
+            ]
+         ],
+         "paint": {
+            "fill-color": "#e9e9ed"
+         }
+      },
+      {
          "id": "water",
          "type": "fill",
          "source": "protomaps",
          "source-layer": "water",
+         "filter": [
+            "==",
+            "$type",
+            "Polygon"
+         ],
          "paint": {
             "fill-color": "#85c2e9"
          }
@@ -484,13 +523,8 @@
             "all",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "stream"
-            ],
-            [
-               ">=",
-               "pmap:level",
-               0
             ]
          ],
          "paint": {
@@ -505,17 +539,9 @@
          "source-layer": "physical_line",
          "minzoom": 9,
          "filter": [
-            "all",
-            [
-               "in",
-               "pmap:kind",
-               "river"
-            ],
-            [
-               ">=",
-               "pmap:level",
-               0
-            ]
+            "in",
+            "kind",
+            "river"
          ],
          "paint": {
             "line-color": "#85c2e9",
@@ -547,13 +573,12 @@
             "all",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "stream"
             ],
             [
-               "<",
-               "pmap:level",
-               0
+               "has",
+               "is_tunnel"
             ]
          ],
          "paint": {
@@ -571,12 +596,12 @@
             "all",
             [
                "in",
-               "pmap:kind",
+               "kind",
                "river"
             ],
             [
                "<",
-               "pmap:level",
+               "level",
                0
             ]
          ],
@@ -616,7 +641,7 @@
             "any",
             [
                "==",
-               "pmap:kind",
+               "kind",
                "pedestrian"
             ]
          ],
@@ -633,7 +658,7 @@
             "any",
             [
                "==",
-               "pmap:kind",
+               "kind",
                "pier"
             ]
          ],
@@ -650,12 +675,12 @@
             "all",
             [
                "<",
-               "pmap:level",
+               "level",
                0
             ],
             [
                "in",
-               "pmap:kind",
+               "kind",
                "other",
                "path"
             ]
@@ -687,12 +712,12 @@
             "all",
             [
                "<",
-               "pmap:level",
+               "level",
                0
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "minor_road"
             ]
          ],
@@ -745,12 +770,12 @@
             "all",
             [
                "<",
-               "pmap:level",
+               "level",
                0
             ],
             [
                "==",
-               "pmap:link",
+               "link",
                1
             ]
          ],
@@ -793,62 +818,6 @@
          }
       },
       {
-         "id": "roads_tunnels_medium_casing",
-         "type": "line",
-         "source": "protomaps",
-         "source-layer": "roads",
-         "filter": [
-            "all",
-            [
-               "<",
-               "pmap:level",
-               0
-            ],
-            [
-               "==",
-               "pmap:kind",
-               "medium_road"
-            ]
-         ],
-         "paint": {
-            "line-color": "#e0e0e0",
-            "line-dasharray": [
-               3,
-               2
-            ],
-            "line-gap-width": [
-               "interpolate",
-               [
-                  "exponential",
-                  1.6
-               ],
-               [
-                  "zoom"
-               ],
-               7,
-               0,
-               7.5,
-               0.5,
-               18,
-               13
-            ],
-            "line-width": [
-               "interpolate",
-               [
-                  "exponential",
-                  1.6
-               ],
-               [
-                  "zoom"
-               ],
-               10,
-               0,
-               10.5,
-               1
-            ]
-         }
-      },
-      {
          "id": "roads_tunnels_major_casing",
          "type": "line",
          "source": "protomaps",
@@ -857,12 +826,12 @@
             "all",
             [
                "<",
-               "pmap:level",
+               "level",
                0
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "major_road"
             ]
          ],
@@ -913,17 +882,17 @@
             "all",
             [
                "<",
-               "pmap:level",
+               "level",
                0
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "highway"
             ],
             [
                "!=",
-               "pmap:link",
+               "link",
                1
             ]
          ],
@@ -976,12 +945,12 @@
             "all",
             [
                "<",
-               "pmap:level",
+               "level",
                0
             ],
             [
                "in",
-               "pmap:kind",
+               "kind",
                "other",
                "path"
             ]
@@ -1017,12 +986,12 @@
             "all",
             [
                "<",
-               "pmap:level",
+               "level",
                0
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "minor_road"
             ]
          ],
@@ -1057,12 +1026,12 @@
             "all",
             [
                "<",
-               "pmap:level",
+               "level",
                0
             ],
             [
                "==",
-               "pmap:link",
+               "link",
                1
             ]
          ],
@@ -1087,90 +1056,6 @@
          }
       },
       {
-         "id": "roads_tunnels_medium_outline",
-         "type": "line",
-         "source": "protomaps",
-         "source-layer": "roads",
-         "filter": [
-            "all",
-            [
-               "<",
-               "pmap:level",
-               0
-            ],
-            [
-               "==",
-               "pmap:kind",
-               "medium_road"
-            ]
-         ],
-         "paint": {
-            "line-dasharray": [
-               0.4,
-               0.1
-            ],
-            "line-color": "#bca664",
-            "line-width": [
-               "interpolate",
-               [
-                  "exponential",
-                  1.6
-               ],
-               [
-                  "zoom"
-               ],
-               7,
-               0,
-               12,
-               3.2,
-               15,
-               6,
-               18,
-               17
-            ]
-         }
-      },
-      {
-         "id": "roads_tunnels_medium",
-         "type": "line",
-         "source": "protomaps",
-         "source-layer": "roads",
-         "filter": [
-            "all",
-            [
-               "<",
-               "pmap:level",
-               0
-            ],
-            [
-               "==",
-               "pmap:kind",
-               "medium_road"
-            ]
-         ],
-         "paint": {
-            "line-color": "#fcd6a4",
-            "line-width": [
-               "interpolate",
-               [
-                  "exponential",
-                  1.6
-               ],
-               [
-                  "zoom"
-               ],
-               7,
-               0,
-               12,
-               1.2,
-               15,
-               3,
-               18,
-               13
-            ]
-         }
-      },
-      {
          "id": "roads_tunnels_major_outline",
          "type": "line",
          "source": "protomaps",
@@ -1179,12 +1064,12 @@
             "all",
             [
                "<",
-               "pmap:level",
+               "level",
                0
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "major_road"
             ]
          ],
@@ -1222,13 +1107,12 @@
          "filter": [
             "all",
             [
-               "<",
-               "pmap:level",
-               0
+               "has",
+               "is_tunnel"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "major_road"
             ]
          ],
@@ -1274,18 +1158,17 @@
          "filter": [
             "all",
             [
-               "<",
-               "pmap:level",
-               0
+               "has",
+               "is_tunnel"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "highway"
             ],
             [
                "!=",
-               "pmap:link",
+               "link",
                1
             ]
          ],
@@ -1314,21 +1197,20 @@
          }
       },
       {
-         "id": "transit_railway_tunnel",
+         "id": "roads_railway_tunnel",
          "type": "line",
          "source": "protomaps",
-         "source-layer": "transit",
+         "source-layer": "roads",
          "filter": [
             "all",
             [
                "==",
-               "pmap:kind",
+               "kind",
                "rail"
             ],
             [
-               "<",
-               "pmap:level",
-               0
+               "has",
+               "is_tunnel"
             ]
          ],
          "paint": {
@@ -1370,14 +1252,11 @@
          "id": "transit_pier",
          "type": "line",
          "source": "protomaps",
-         "source-layer": "transit",
+         "source-layer": "roads",
          "filter": [
-            "any",
-            [
-               "==",
-               "pmap:kind",
-               "pier"
-            ]
+            "==",
+            "kind_detail",
+            "pier"
          ],
          "paint": {
             "line-color": "#e0e0e0",
@@ -1408,18 +1287,21 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "minor_road"
             ],
             [
                "==",
-               "pmap:kind_detail",
+               "kind_detail",
                "service"
             ]
          ],
@@ -1463,18 +1345,21 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "minor_road"
             ],
             [
                "!=",
-               "pmap:kind_detail",
+               "kind_detail",
                "service"
             ]
          ],
@@ -1524,7 +1409,7 @@
             "all",
             [
                "==",
-               "pmap:link",
+               "link",
                1
             ]
          ],
@@ -1563,60 +1448,6 @@
          }
       },
       {
-         "id": "roads_medium_casing",
-         "type": "line",
-         "source": "protomaps",
-         "source-layer": "roads",
-         "filter": [
-            "all",
-            [
-               "==",
-               "pmap:level",
-               0
-            ],
-            [
-               "==",
-               "pmap:kind",
-               "medium_road"
-            ]
-         ],
-         "paint": {
-            "line-color": "#e0e0e0",
-            "line-gap-width": [
-               "interpolate",
-               [
-                  "exponential",
-                  1.6
-               ],
-               [
-                  "zoom"
-               ],
-               7,
-               0,
-               12,
-               1.2,
-               15,
-               3,
-               18,
-               13
-            ],
-            "line-width": [
-               "interpolate",
-               [
-                  "exponential",
-                  1.6
-               ],
-               [
-                  "zoom"
-               ],
-               10,
-               0,
-               10.5,
-               1.5
-            ]
-         }
-      },
-      {
          "id": "roads_major_casing_late",
          "type": "line",
          "source": "protomaps",
@@ -1625,13 +1456,16 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "major_road"
             ]
          ],
@@ -1680,18 +1514,21 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "highway"
             ],
             [
                "!=",
-               "pmap:link",
+               "link",
                1
             ]
          ],
@@ -1739,19 +1576,22 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "in",
-               "pmap:kind",
+               "kind",
                "other",
                "path"
             ],
             [
                "==",
-               "pmap:kind_detail",
+               "kind_detail",
                "footway"
             ]
          ],
@@ -1785,19 +1625,22 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "in",
-               "pmap:kind",
+               "kind",
                "other",
                "path"
             ],
             [
                "==",
-               "pmap:kind_detail",
+               "kind_detail",
                "cycleway"
             ]
          ],
@@ -1831,25 +1674,33 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "in",
-               "pmap:kind",
+               "kind",
                "other",
                "path"
             ],
             [
                "!=",
-               "pmap:kind_detail",
+               "kind_detail",
                "cycleway"
             ],
             [
                "!=",
-               "pmap:kind_detail",
+               "kind_detail",
                "footway"
+            ],
+            [
+               "!=",
+               "kind_detail",
+               "pier"
             ]
          ],
          "paint": {
@@ -1882,13 +1733,16 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:link",
+               "link",
                1
             ]
          ],
@@ -1934,18 +1788,21 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "minor_road"
             ],
             [
                "==",
-               "pmap:kind_detail",
+               "kind_detail",
                "service"
             ]
          ],
@@ -1975,18 +1832,21 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "minor_road"
             ],
             [
                "!=",
-               "pmap:kind_detail",
+               "kind_detail",
                "service"
             ]
          ],
@@ -2026,86 +1886,6 @@
          }
       },
       {
-         "id": "roads_medium_outline",
-         "type": "line",
-         "source": "protomaps",
-         "source-layer": "roads",
-         "filter": [
-            "all",
-            [
-               "==",
-               "pmap:level",
-               0
-            ],
-            [
-               "==",
-               "pmap:kind",
-               "medium_road"
-            ]
-         ],
-         "paint": {
-            "line-color": "#bca664",
-            "line-width": [
-               "interpolate",
-               [
-                  "exponential",
-                  1.6
-               ],
-               [
-                  "zoom"
-               ],
-               7,
-               0,
-               12,
-               3.2,
-               15,
-               6,
-               18,
-               17
-            ]
-         }
-      },
-      {
-         "id": "roads_medium",
-         "type": "line",
-         "source": "protomaps",
-         "source-layer": "roads",
-         "filter": [
-            "all",
-            [
-               "==",
-               "pmap:level",
-               0
-            ],
-            [
-               "==",
-               "pmap:kind",
-               "medium_road"
-            ]
-         ],
-         "paint": {
-            "line-color": "#fcd6a4",
-            "line-width": [
-               "interpolate",
-               [
-                  "exponential",
-                  1.6
-               ],
-               [
-                  "zoom"
-               ],
-               7,
-               0,
-               12,
-               1.2,
-               15,
-               3,
-               18,
-               13
-            ]
-         }
-      },
-      {
          "id": "roads_major_casing_early",
          "type": "line",
          "source": "protomaps",
@@ -2114,13 +1894,16 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "major_road"
             ]
          ],
@@ -2166,13 +1949,16 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "major_road"
             ]
          ],
@@ -2206,13 +1992,16 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "major_road"
             ]
          ],
@@ -2259,18 +2048,21 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "highway"
             ],
             [
                "!=",
-               "pmap:link",
+               "link",
                1
             ]
          ],
@@ -2316,18 +2108,21 @@
          "filter": [
             "all",
             [
-               "==",
-               "pmap:level",
-               0
+               "!has",
+               "is_tunnel"
+            ],
+            [
+               "!has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "highway"
             ],
             [
                "!=",
-               "pmap:link",
+               "link",
                1
             ]
          ],
@@ -2356,26 +2151,77 @@
          }
       },
       {
-         "id": "transit_railway_centerline",
+         "id": "roads_railway_bridge_centerline",
          "type": "line",
          "source": "protomaps",
-         "source-layer": "transit",
+         "source-layer": "roads",
          "filter": [
             "all",
             [
                "==",
-               "pmap:kind",
+               "kind",
                "rail"
             ],
             [
-               ">=",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ]
          ],
          "paint": {
             "line-opacity": 1,
-            "line-color": "#666",
+            "line-color": "#ccc",
+            "line-width": [
+               "interpolate",
+               [
+                  "linear"
+               ],
+               [
+                  "zoom"
+               ],
+               11,
+               0,
+               11.5,
+               2,
+               13,
+               8,
+               18,
+               14
+            ]
+         }
+      },
+      {
+         "id": "roads_railway_centerline",
+         "type": "line",
+         "source": "protomaps",
+         "source-layer": "roads",
+         "filter": [
+            "all",
+            [
+               "==",
+               "kind",
+               "rail"
+            ],
+            [
+               "!has",
+               "is_tunnel"
+            ]
+         ],
+         "paint": {
+            "line-opacity": 1,
+            "line-color": [
+               "match",
+               [
+                  "get",
+                  "kind_detail"
+               ],
+               "disused",
+               "#666666aa",
+               "tram",
+               "#999",
+               "subway",
+               "#999",
+               "#666"
+            ],
             "line-width": [
                "interpolate",
                [
@@ -2396,21 +2242,16 @@
          }
       },
       {
-         "id": "transit_railway",
+         "id": "roads_railway",
          "type": "line",
          "source": "protomaps",
-         "source-layer": "transit",
+         "source-layer": "roads",
          "filter": [
             "all",
             [
                "==",
-               "pmap:kind",
+               "kind",
                "rail"
-            ],
-            [
-               ">=",
-               "pmap:level",
-               0
             ]
          ],
          "paint": {
@@ -2445,7 +2286,7 @@
          "source-layer": "boundaries",
          "filter": [
             "<=",
-            "pmap:min_admin_level",
+            "kind_detail",
             2
          ],
          "paint": {
@@ -2464,7 +2305,7 @@
          "source-layer": "boundaries",
          "filter": [
             ">",
-            "pmap:min_admin_level",
+            "kind_detail",
             2
          ],
          "paint": {
@@ -2485,13 +2326,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "in",
-               "pmap:kind",
+               "kind",
                "other",
                "path"
             ]
@@ -2523,14 +2363,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
-               "==",
-               "pmap:link",
-               1
+               "has",
+               "is_link"
             ]
          ],
          "paint": {
@@ -2576,13 +2414,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "minor_road"
             ]
          ],
@@ -2631,13 +2468,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "medium_road"
             ]
          ],
@@ -2686,13 +2522,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "major_road"
             ]
          ],
@@ -2739,13 +2574,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "medium_road"
             ]
          ],
@@ -2779,13 +2613,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "major_road"
             ]
          ],
@@ -2831,19 +2664,17 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "highway"
             ],
             [
-               "!=",
-               "pmap:link",
-               1
+               "!has",
+               "is_link"
             ]
          ],
          "paint": {
@@ -2889,13 +2720,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "minor_road"
             ]
          ],
@@ -2930,14 +2760,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
-               "==",
-               "pmap:link",
-               1
+               "has",
+               "is_link"
             ]
          ],
          "paint": {
@@ -2983,13 +2811,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "medium_road"
             ]
          ],
@@ -3024,13 +2851,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "==",
-               "pmap:kind",
+               "kind",
                "major_road"
             ]
          ],
@@ -3077,19 +2903,18 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "in",
-               "pmap:kind",
+               "kind",
                "other",
                "path"
             ],
             [
                "==",
-               "pmap:kind_detail",
+               "kind_detail",
                "cycleway"
             ]
          ],
@@ -3124,13 +2949,12 @@
          "filter": [
             "all",
             [
-               ">",
-               "pmap:level",
-               0
+               "has",
+               "is_bridge"
             ],
             [
                "in",
-               "pmap:kind",
+               "kind",
                "other",
                "path"
             ]
@@ -3164,7 +2988,7 @@
          "source-layer": "places",
          "filter": [
             "==",
-            "pmap:kind",
+            "kind",
             "locality"
          ],
          "paint": {

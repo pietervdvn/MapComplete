@@ -4,7 +4,7 @@
     "name": "MapComplete Guideposts",
     "description": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking, cycling, skiing or horseback riding routes to indicate the directions to different destinations\n\nThe position of a signpost can be used by a hiker/biker/rider/s…",
     "project_url": "https://mapcomplete.org/guideposts",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/layers/guidepost/guidepost.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

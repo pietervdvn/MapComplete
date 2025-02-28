@@ -247,6 +247,10 @@
                     "then": "./assets/themes/aed/aed.svg"
                   },
                   {
+                    "if": "theme=architecture",
+                    "then": "./assets/themes/architecture/architecture.svg"
+                  },
+                  {
                     "if": "theme=artwork",
                     "then": "./assets/themes/artwork/artwork.svg"
                   },

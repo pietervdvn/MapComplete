@@ -42,23 +42,6 @@
                 "question": "Ali je ta defibrilator prosto dostopen?",
                 "render": "Dostop je {access}"
             },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "0": {
-                        "then": "Ni informacij o vrsti naprave"
-                    },
-                    "1": {
-                        "then": "To je ročni defibrilator za poklicne reševalce"
-                    },
-                    "2": {
-                        "then": "To je normalen avtomatski defibrilator"
-                    },
-                    "3": {
-                        "then": "To je posebna vrsta defibrilatorja: {defibrillator}"
-                    }
-                },
-                "question": "Ali je to navaden avtomatski defibrilator ali ročni defibrilator namenjen poklicnim reševalcem?"
-            },
             "defibrillator-defibrillator:location": {
                 "question": "Prosimo, opišite kje se nahaja defibrilator (v lokalnem jeziku)",
                 "render": "<i>Dodatne informacije o lokaciji (v lokalnem jeziku):</i><br/>{defibrillator:location}"

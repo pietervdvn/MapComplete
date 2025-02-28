@@ -81,7 +81,7 @@ function WalkScheme<T>(
 
     fullScheme = fullScheme ?? scheme
     if (!skipRoot) {
-        let t = onEach(scheme, path)
+        const t = onEach(scheme, path)
         if (t !== undefined) {
             const isRequired = required?.indexOf(path.at(-1)) >= 0
             results.push({
@@ -385,7 +385,7 @@ function main() {
         console.log("Trying to read", path)
         let content = readFileSync(path, { encoding: "utf8" })
         content = content.substring("export default ".length)
-        let parsed = JSON.parse(content)
+        const parsed = JSON.parse(content)
         parsed["additionalProperties"] = false
 
         for (const key in parsed.definitions) {

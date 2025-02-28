@@ -45,7 +45,7 @@ export class WithSelectedElementState extends UserMapFeatureswitchState {
                 selected?.properties?.name,
                 selected?.properties?.alt_name,
                 selected?.properties?.local_name,
-                layer?.title.GetRenderValue(selected?.properties ?? {}).txt,
+                layer?.title?.GetRenderValue(selected?.properties ?? {})?.txt,
                 selected.properties.display_name,
                 selected.properties.id,
             ]

@@ -22,7 +22,7 @@
     "hu": "Egy utcai szekrény könyvekkel, amelyet bárki használhat",
     "cs": "Skříňka s knihami na ulici, která je přístupná komukoli",
     "es": "Un armario callejero con libros, accesible para cualquiera",
-    "ca": "Un armari al carrer amb llibres, accessible per a tothom"
+    "ca": "Una prestatgeria al carrer amb llibres, accessible per a tothom"
   },
   "source": {
     "osmTags": "amenity=public_bookcase"
@@ -465,7 +465,7 @@
         "hu": "A(z) {brand} márkanéven belül ennek a nyilvános könyvespolcnak az azonosító száma: {ref}",
         "cs": "Referenční číslo této veřejné knihobudky v rámci {brand} je {ref}",
         "es": "El número de referencia de este librero público dentro de {brand} es {ref}",
-        "ca": "El número de referència d'aquest fullet públic a {brand} és {ref}"
+        "ca": "El número de referència d'aquesta prestatgeria pública a {brand} és {ref}"
       },
       "question": {
         "en": "What is the reference number of this public bookcase?",

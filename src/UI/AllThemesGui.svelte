@@ -18,15 +18,21 @@
   import Mastodon from "../assets/svg/Mastodon.svelte"
   import Liberapay from "../assets/svg/Liberapay.svelte"
   import Bug from "../assets/svg/Bug.svelte"
-  import Github from "../assets/svg/Github.svelte"
   import { Utils } from "../Utils"
   import { ArrowTrendingUp } from "@babeard/svelte-heroicons/solid/ArrowTrendingUp"
   import Searchbar from "./Base/Searchbar.svelte"
-  import ThemeSearch from "../Logic/Search/ThemeSearch"
+  import ThemeSearch, { ThemeSearchIndex } from "../Logic/Search/ThemeSearch"
   import SearchUtils from "../Logic/Search/SearchUtils"
   import ChevronDoubleRight from "@babeard/svelte-heroicons/mini/ChevronDoubleRight"
   import { AndroidPolyfill } from "../Logic/Web/AndroidPolyfill"
   import Forgejo from "../assets/svg/Forgejo.svelte"
+  import Locale from "./i18n/Locale"
+  import DrawerLeft from "./Base/DrawerLeft.svelte"
+  import MenuDrawer from "./BigComponents/MenuDrawer.svelte"
+  import { MenuState } from "../Models/MenuState"
+  import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import AccordionSingle from "./Flowbite/AccordionSingle.svelte"
+
   AndroidPolyfill.init().then(() => console.log("Android polyfill setup completed"))
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -35,12 +41,21 @@
       "oauth_token",
       undefined,
       "Used to complete the login"
-    ),
+    )
   })
   const state = new UserRelatedState(osmConnection)
+  const guistate = new MenuState(undefined)
+  const menuDrawerState = {
+    guistate, osmConnection,
+    userRelatedState: state,
+    featureSwitches: { featureSwitchEnableLogin: new UIEventSource(true) }
+  }
+
   const t = Translations.t.index
   const tu = Translations.t.general
   const tr = Translations.t.general.morescreen
+
+  const recentThemes = state.recentlyVisitedThemes.value.mapD(themes => themes.map(thId => ThemeSearch.officialThemesById.get(thId)))
 
   let userLanguages = osmConnection.userDetails.map((ud) => ud?.languages ?? [])
   let search: UIEventSource<string | undefined> = new UIEventSource<string>("")
@@ -64,30 +79,28 @@
   const customThemes: Store<MinimalThemeInformation[]> = Stores.ListStabilized<string>(
     state.installedUserThemes
   ).mapD((stableIds) => Utils.NoNullInplace(stableIds.map((id) => state.getUnofficialTheme(id))))
+
   function filtered(themes: Store<MinimalThemeInformation[]>): Store<MinimalThemeInformation[]> {
+    const searchIndex = Locale.language.map(language => {
+      return new ThemeSearchIndex(language, themes.data)
+    }, [themes])
+
+
     return searchStable.map(
-      (search) => {
+      (searchTerm) => {
         if (!themes.data) {
           return []
         }
-        if (!search) {
+        if (!searchTerm) {
           return themes.data
         }
 
-        const start = new Date().getTime()
-        const scores = ThemeSearch.sortedByLowestScores(search, themes.data)
-        const end = new Date().getTime()
-        console.trace("Scores for", search, "are", scores, "searching took", end - start, "ms")
-        const strict = scores.filter((sc) => sc.lowest < 2)
-        if (strict.length > 0) {
-          return strict.map((sc) => sc.theme)
-        }
-        return scores
-          .filter((sc) => sc.lowest < 4)
-          .slice(0, 6)
-          .map((sc) => sc.theme)
+        const index = searchIndex.data
+
+        return index.search(searchTerm)
+
       },
-      [themes]
+      [searchIndex]
     )
   }
 
@@ -100,7 +113,7 @@
   let customSearched: Store<MinimalThemeInformation[]> = filtered(customThemes)
 
   let searchIsFocussed = new UIEventSource(false)
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", function(event) {
     if (event.ctrlKey && event.code === "KeyF") {
       searchIsFocussed.set(true)
       event.preventDefault()
@@ -137,20 +150,36 @@
 </script>
 
 <main>
+  <div class="absolute h-screen w-screen bg-white top-0 left-0" style="z-index: -1;"></div>
+
+  <div class="h-full overflow-hidden">
+    <DrawerLeft shown={guistate.pageStates.menu}>
+      <div class="h-screen overflow-y-auto">
+        <MenuDrawer onlyLink={true} state={menuDrawerState} />
+      </div>
+    </DrawerLeft>
+  </div>
+
   <div class="m-4 flex flex-col">
-    <LanguagePicker
-      clss="self-end max-w-full"
-      assignTo={state.language}
-      availableLanguages={t.title.SupportedLanguages()}
-      preferredLanguages={userLanguages}
-    />
+    <div class="w-ful flex justify-between">
+      <button on:click={() => guistate.pageStates.menu.set(true)} class="rounded-full m-0 p-2">
+        <MenuIcon class="h-6 w-6 cursor-pointer" />
+      </button>
+
+      <LanguagePicker
+        clss="self-end max-w-full"
+        assignTo={state.language}
+        availableLanguages={t.title.SupportedLanguages()}
+        preferredLanguages={userLanguages}
+      />
+    </div>
 
     <div class="mt-4 flex">
       <div class="m-3 flex-none">
         <Logo alt="MapComplete Logo" class="h-12 w-12 sm:h-24 sm:w-24" />
       </div>
 
-      <div class="link-underline flex flex-col">
+      <div class="link-underline flex flex-col w-full">
         <h1 class="m-0 font-extrabold tracking-tight md:text-6xl">
           <Tr t={t.title} />
         </h1>
@@ -158,12 +187,25 @@
           cls="mr-4 text-base font-semibold sm:text-lg md:mt-5 md:text-xl lg:mx-0"
           t={Translations.t.index.intro}
         />
-        <a href="#about">
-          <Tr t={Translations.t.index.learnMore} />
-          <ChevronDoubleRight class="inline h-4 w-4" />
-        </a>
+
+        <AccordionSingle>
+          <Tr slot="header" t={Translations.t.index.about} />
+          <Tr cls="link-underline" t={Translations.t.general.aboutMapComplete.intro} />
+          <Tr t={tr.streetcomplete} />
+        </AccordionSingle>
       </div>
     </div>
+
+    <LoginToggle {state}>
+      {#if $recentThemes.length > 2}
+        <div class="my-4">
+          <h2>
+            <Tr t={Translations.t.index.recentThemes} />
+          </h2>
+          <ThemesList {state} themes={$recentThemes} onlyIcons />
+        </div>
+      {/if}
+    </LoginToggle>
 
     <Searchbar
       value={search}
@@ -217,65 +259,15 @@
       {/if}
     </LoginToggle>
 
-    <a
-      class="button flex"
-      href={window.location.protocol + "//" + window.location.host + "/studio.html"}
-    >
-      <Pencil class="mr-2 h-6 w-6" />
-      <Tr t={Translations.t.general.morescreen.createYourOwnTheme} />
-    </a>
 
-    <h3 id="about">
-      <Tr t={Translations.t.index.about} />
-    </h3>
-    <Tr cls="link-underline" t={Translations.t.general.aboutMapComplete.intro} />
-
-    <span class="link-underline flex flex-col gap-y-1">
-      <a
-        class="flex"
-        href="https://source.mapcomplete.org/MapComplete/MapComplete/"
-        target="_blank"
-      >
-        <Forgejo class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.gotoSourceCode} />
-      </a>
-      <a
-        class="flex"
-        href="https://source.mapcomplete.org/MapComplete/MapComplete/issues"
-        target="_blank"
-      >
-        <Bug class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.openIssueTracker} />
-      </a>
-
-      <a class="flex" href={Utils.OsmChaLinkFor(7)} target="_blank">
-        <ArrowTrendingUp class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.openOsmchaLastWeek} />
-      </a>
-
-      <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
-        <Mastodon class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.followOnMastodon} />
-      </a>
-
-      <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
-        <Liberapay class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.donate} />
-      </a>
-
-      <a
-        class="flex"
-        href={window.location.protocol + "//" + window.location.host + "/privacy.html"}
-      >
-        <Eye class="mr-2 h-6 w-6" />
-        <Tr t={Translations.t.privacy.title} />
-      </a>
-    </span>
-
-    <Tr t={tr.streetcomplete} />
 
     <div class="subtle mb-16 self-end">
       v{Constants.vNumber}
     </div>
   </div>
+
+  <div class="absolute top-0 w-0 h-0" style="margin-left: -10em">
+    <MenuDrawer onlyLink={false} state={menuDrawerState} />
+  </div>
+
 </main>

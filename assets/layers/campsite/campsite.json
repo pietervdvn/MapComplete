@@ -71,6 +71,7 @@
     }
   ],
   "tagRenderings": [
+    "images",
     {
       "question": {
         "de": "Ist dieser Zeltplatz ausschließlich für Gruppen?",
@@ -121,6 +122,7 @@
       },
       "id": "name"
     },
+    "contact",
     {
       "id": "fee",
       "question": {
@@ -186,12 +188,32 @@
       },
       "id": "capacity_persons"
     },
-    "contact",
+    "caravansites.caravansites-toilets",
+    "toilet_at_amenity.toilets-wheelchair",
     "questions",
-    "mastodon",
-    "images"
+    "mastodon"
   ],
   "filter": [
+    {
+      "id": "fee_filter",
+      "options": [
+        {
+          "question": {
+            "en": "Fee"
+          }
+        },
+        {
+          "question": {
+            "en": "free of charge"
+          },
+          "osmTags": {
+            "and": [
+              "fee=no"
+            ]
+          }
+        }
+      ]
+    },
     {
       "id": "capacity_persons_filter",
       "options": [
@@ -282,6 +304,36 @@
             "de": "?"
           },
           "osmTags": "capacity:persons="
+        }
+      ]
+    },
+    {
+      "id": "toilets_filter",
+      "options": [
+        {
+          "question": {
+            "en": "Toilets"
+          }
+        },
+        {
+          "question": {
+            "en": "Toilets are available."
+          },
+          "osmTags": {
+            "and": [
+              "toilets=yes"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "There are no toilets."
+          },
+          "osmTags": {
+            "and": [
+              "toilets=no"
+            ]
+          }
         }
       ]
     }

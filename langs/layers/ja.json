@@ -447,6 +447,32 @@
             "render": "登坂ルート"
         }
     },
+    "cyclestreets": {
+        "description": "cyclestreetとは、自動車による交通がサイクリストを追い越すことができない道路です",
+        "name": "Cyclestreets",
+        "tagRenderings": {
+            "future_cyclestreet": {
+                "question": "この通りはいつcyclestreetになるんですか?",
+                "render": "この通りは{cyclestreet:start_date}に、cyclestreetになります"
+            },
+            "is_cyclestreet": {
+                "mappings": {
+                    "0": {
+                        "then": "cyclestreet(最高速度は30km/h)"
+                    },
+                    "3": {
+                        "then": "この通りはcyclestreetだ"
+                    },
+                    "4": {
+                        "then": "この通りはまもなくcyclestreetになるだろう"
+                    },
+                    "6": {
+                        "then": "この通りはcyclestreetではない"
+                    }
+                }
+            }
+        }
+    },
     "dumpstations": {
         "description": "衛生ゴミ捨て場",
         "name": "衛生ゴミ捨て場",

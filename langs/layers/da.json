@@ -1320,6 +1320,49 @@
             "render": "cykelmotorvej"
         }
     },
+    "cyclestreets": {
+        "description": "En cykelgade er en gade, hvor motoriseret trafik ikke må overhale en cyklist",
+        "name": "Cykelgader",
+        "tagRenderings": {
+            "future_cyclestreet": {
+                "question": "Hvornår bliver denne gade en cykelgade?",
+                "render": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}"
+            },
+            "is_cyclestreet": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)"
+                    },
+                    "3": {
+                        "then": "Denne gade er en cykelgade"
+                    },
+                    "4": {
+                        "then": "Denne gade bliver snart en cykelgade"
+                    },
+                    "6": {
+                        "then": "Denne gade er ikke en cykelgade"
+                    }
+                },
+                "question": "Er gaden <b>{name}</b> en cykelgade?"
+            },
+            "supplementary_sign": {
+                "mappings": {
+                    "0": {
+                        "then": "Beboere tilladt"
+                    },
+                    "1": {
+                        "then": "Motorkøretøjer tilladt"
+                    },
+                    "2": {
+                        "then": "Motorcykler tilladt"
+                    },
+                    "3": {
+                        "then": "Biler tilladt"
+                    }
+                }
+            }
+        }
+    },
     "cycleways_and_roads": {
         "tagRenderings": {
             "is lit?": {
@@ -1372,19 +1415,6 @@
                     }
                 },
                 "question": "Er denne hjertestarter frit tilgængelig?"
-            },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "1": {
-                        "then": "Dette er en manuel hjertestarter til professionelle"
-                    },
-                    "2": {
-                        "then": "Dette er en normal automatisk hjertestarter"
-                    },
-                    "3": {
-                        "then": "Dette er en særlig type hjertestarter: {defibrillator}"
-                    }
-                }
             }
         }
     },

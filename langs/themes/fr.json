@@ -319,10 +319,6 @@
     "cyclestreets": {
         "description": "Une rue cyclable est une rue où <b>les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes</b>. Elles sont signalées par un signal routier particulier. On trouve des rues cyclables en Belgique et aux Pays-Bas, mais aussi en Allemagne et en France. ",
         "layers": {
-            "0": {
-                "description": "Une rue cyclable est une rue où les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes",
-                "name": "Rue cyclables"
-            },
             "1": {
                 "description": "Cette rue va bientôt devenir une rue cyclable",
                 "name": "Future rue cyclable",
@@ -340,60 +336,6 @@
                 "name": "Toutes les rues",
                 "title": {
                     "render": "Rue"
-                }
-            }
-        },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Cette rue est une rue cyclable (et est limitée à 30 km/h)"
-                        },
-                        "1": {
-                            "then": "Cette rue est une piste cyclable"
-                        },
-                        "2": {
-                            "then": "Cette rue est une piste cyclable (avec une limitation de vitesse a 30 km/h et les véhicules ne sont pas autorisés) (un panneau sera demandé plus tard)"
-                        },
-                        "3": {
-                            "then": "Cette rue est une rue cyclable"
-                        },
-                        "4": {
-                            "then": "Cette rue sera bientôt une rue cyclable"
-                        },
-                        "5": {
-                            "then": "Cette rue va bientôt devenir une piste cyclable"
-                        },
-                        "6": {
-                            "then": "Cette rue n’est pas une rue cyclable"
-                        }
-                    },
-                    "question": "La rue <b>{name}</b> est-elle une rue cyclable ?"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "Riverains autorisés"
-                        },
-                        "1": {
-                            "then": "Véhicules motorisés autorisés"
-                        },
-                        "2": {
-                            "then": "Motos autorisées"
-                        },
-                        "3": {
-                            "then": "Voitures autorisées"
-                        },
-                        "4": {
-                            "then": "Il n'y a pas de panneaux supplémentaires à cette piste cyclable."
-                        }
-                    },
-                    "question": "Quel panneau comporte cette piste cyclable ?"
-                },
-                "2": {
-                    "question": "Quand cette rue deviendra-t-elle cyclable ?",
-                    "render": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}"
                 }
             }
         },

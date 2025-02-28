@@ -4,7 +4,7 @@
     "name": "MapComplete Surveillance under Surveillance",
     "description": "Surveillance cameras and other means of surveillance",
     "project_url": "https://mapcomplete.org/surveillance",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/themes/surveillance/logo.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

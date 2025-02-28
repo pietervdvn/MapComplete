@@ -2131,6 +2131,127 @@
             "render": "Brothel"
         }
     },
+    "building": {
+        "description": "All buildings",
+        "name": "Buildings",
+        "tagRenderings": {
+            "architecture": {
+                "mappings": {
+                    "0": {
+                        "then": "Islamic architecture"
+                    },
+                    "1": {
+                        "then": "Mamluk architecture"
+                    },
+                    "10": {
+                        "then": "Moorish Revival"
+                    },
+                    "11": {
+                        "then": "Neoclassical architecture"
+                    },
+                    "12": {
+                        "then": "Georgian architecture"
+                    },
+                    "13": {
+                        "then": "Victorian architecture"
+                    },
+                    "14": {
+                        "then": "Historicism"
+                    },
+                    "15": {
+                        "then": "Romanesque Revival"
+                    },
+                    "16": {
+                        "then": "Byzantine Revival"
+                    },
+                    "17": {
+                        "then": "Gothic Revival"
+                    },
+                    "18": {
+                        "then": "Renaissance Revival"
+                    },
+                    "19": {
+                        "then": "Baroque Revival"
+                    },
+                    "2": {
+                        "then": "Romanesque architecture"
+                    },
+                    "20": {
+                        "then": "Art Nouveau"
+                    },
+                    "21": {
+                        "then": "Eclecticism in architecture"
+                    },
+                    "22": {
+                        "then": "Functionalism"
+                    },
+                    "23": {
+                        "then": "Cubism"
+                    },
+                    "24": {
+                        "then": "New Objectivity"
+                    },
+                    "25": {
+                        "then": "Art Deco"
+                    },
+                    "26": {
+                        "then": "Modern architecture"
+                    },
+                    "27": {
+                        "then": "Amsterdam School"
+                    },
+                    "28": {
+                        "then": "International Style"
+                    },
+                    "29": {
+                        "then": "Constructivism"
+                    },
+                    "3": {
+                        "then": "Gothic architecture"
+                    },
+                    "30": {
+                        "then": "Stalinist architecture"
+                    },
+                    "31": {
+                        "then": "Brutalist architecture"
+                    },
+                    "32": {
+                        "then": "Postmodern architecture"
+                    },
+                    "33": {
+                        "then": "Contemporary architecture"
+                    },
+                    "4": {
+                        "then": "Renaissance architecture"
+                    },
+                    "5": {
+                        "then": "Mannerism"
+                    },
+                    "6": {
+                        "then": "Ottoman architecture"
+                    },
+                    "7": {
+                        "then": "Baroque architecture"
+                    },
+                    "8": {
+                        "then": "Rococo"
+                    },
+                    "9": {
+                        "then": "Empire style"
+                    }
+                },
+                "question": "What is the architectural style of this building?",
+                "render": "{building:architecture}"
+            },
+            "construction_date": {
+                "question": "When was this built?",
+                "render": "Built in <b>{construction_date}</b>"
+            }
+        },
+        "title": {
+            "render": "Building"
+        }
+    },
     "cafe_pub": {
         "deletion": {
             "extraDeleteReasons": {
@@ -2212,6 +2333,16 @@
             "0": {
                 "options": {
                     "0": {
+                        "question": "Fee"
+                    },
+                    "1": {
+                        "question": "free of charge"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
                         "question": "All capacities"
                     },
                     "1": {
@@ -2234,6 +2365,19 @@
                     },
                     "7": {
                         "question": "?"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Toilets"
+                    },
+                    "1": {
+                        "question": "Toilets are available."
+                    },
+                    "2": {
+                        "question": "There are no toilets."
                     }
                 }
             }
@@ -3816,6 +3960,62 @@
             "render": "cycle highway"
         }
     },
+    "cyclestreets": {
+        "description": "A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist",
+        "name": "Cyclestreets",
+        "tagRenderings": {
+            "future_cyclestreet": {
+                "question": "When will this street become a cyclestreet?",
+                "render": "This street will become a cyclestreet at {cyclestreet:start_date}"
+            },
+            "is_cyclestreet": {
+                "mappings": {
+                    "0": {
+                        "then": "This street is a cyclestreet (and has a speed limit of 30 km/h)"
+                    },
+                    "1": {
+                        "then": "This street is a bicycle road"
+                    },
+                    "2": {
+                        "then": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)"
+                    },
+                    "3": {
+                        "then": "This street is a cyclestreet"
+                    },
+                    "4": {
+                        "then": "This street will become a cyclestreet soon"
+                    },
+                    "5": {
+                        "then": "This street will become a bicycle road soon"
+                    },
+                    "6": {
+                        "then": "This street is not a cyclestreet"
+                    }
+                },
+                "question": "Is the street <b>{name}</b> a cyclestreet?"
+            },
+            "supplementary_sign": {
+                "mappings": {
+                    "0": {
+                        "then": "Residents allowed"
+                    },
+                    "1": {
+                        "then": "Motor vehicles allowed"
+                    },
+                    "2": {
+                        "then": "Motorcycles allowed"
+                    },
+                    "3": {
+                        "then": "Cars allowed"
+                    },
+                    "4": {
+                        "then": "There are no supplementary signs at this bicycle road."
+                    }
+                },
+                "question": "What sign does this bicycle road have?"
+            }
+        }
+    },
     "cycleways_and_roads": {
         "description": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
         "name": "Cycleways and roads",
@@ -3917,20 +4117,6 @@
                 },
                 "question": "What is the surface of the cycleway made from?",
                 "render": "This cyleway is made of {cycleway:surface}"
-            },
-            "Is this a cyclestreet? (For a road)": {
-                "mappings": {
-                    "0": {
-                        "then": "This is a cyclestreet, and a 30km/h zone."
-                    },
-                    "1": {
-                        "then": "This is a cyclestreet"
-                    },
-                    "2": {
-                        "then": "This is not a cyclestreet."
-                    }
-                },
-                "question": "Is this a cyclestreet?"
             },
             "Maxspeed (for road)": {
                 "mappings": {
@@ -4264,6 +4450,22 @@
     },
     "defibrillator": {
         "description": "A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device",
+        "filter": {
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Only where survey was more than 90 days ago"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Unknown access or times of accessibility"
+                    }
+                }
+            }
+        },
         "name": "Defibrillators",
         "presets": {
             "0": {
@@ -4294,23 +4496,6 @@
                 },
                 "question": "Is this defibrillator freely accessible?",
                 "render": "Access is {access}"
-            },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "0": {
-                        "then": "There is no info about the type of device"
-                    },
-                    "1": {
-                        "then": "This is a manual defibrillator for professionals"
-                    },
-                    "2": {
-                        "then": "This is a normal automatic defibrillator"
-                    },
-                    "3": {
-                        "then": "This is a special type of defibrillator: {defibrillator}"
-                    }
-                },
-                "question": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?"
             },
             "defibrillator-defibrillator:location": {
                 "question": "Please give some explanation on where the defibrillator can be found (in the local language)",
@@ -4378,6 +4563,11 @@
             },
             "opening_hours_24_7": {
                 "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Not accessible 24/7, but the exact hours are unknown"
+                        }
+                    },
                     "question": "At what times is this defibrillator available?"
                 }
             }
@@ -5235,6 +5425,20 @@
                 "options": {
                     "0": {
                         "question": "Has indoor seating"
+                    }
+                }
+            },
+            "18": {
+                "options": {
+                    "0": {
+                        "question": "Open to the public"
+                    }
+                }
+            },
+            "19": {
+                "options": {
+                    "0": {
+                        "question": "Accessible to wheelchair users"
                     }
                 }
             },
@@ -6720,10 +6924,34 @@
                         "then": "This kerb does not have tactile paving."
                     },
                     "2": {
+                        "then": "This kerb has tactile paving, which has a contrasting colour to the surrounding pavement."
+                    },
+                    "3": {
                         "then": "This kerb has tactile paving, but it is incorrect."
                     }
                 },
                 "question": "Is there tactile paving at this kerb?"
+            },
+            "tactile-paving-colour": {
+                "freeform": {
+                    "placeholder": "Colour of the tactile paving"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "The tactile paving is yellow."
+                    },
+                    "1": {
+                        "then": "The tactile paving is red."
+                    },
+                    "2": {
+                        "then": "The tactile paving is white."
+                    },
+                    "3": {
+                        "then": "The tactile paving is grey."
+                    }
+                },
+                "question": "What is the colour of the tactile paving?",
+                "render": "The tactile paving is coloured {tactile_paving:colour}."
             }
         },
         "title": {
@@ -9795,6 +10023,33 @@
                     }
                 },
                 "question": "What type of special needs are given here?"
+            },
+            "uniform": {
+                "mappings": {
+                    "0": {
+                        "then": "Students must wear a uniform, which is extensively described"
+                    },
+                    "1": {
+                        "then": "Students must wear clothes in a specific colour scheme"
+                    },
+                    "2": {
+                        "then": "There is no formal dress code, students are allowed to come in casual wear such as t-shirt, jeans, ..."
+                    },
+                    "3": {
+                        "then": "Arms must be covered by the clothes"
+                    },
+                    "4": {
+                        "then": "Knees must be covered by the clothes"
+                    },
+                    "5": {
+                        "then": "Legs must be covered by the clothes"
+                    },
+                    "6": {
+                        "then": "The belly must be covered by the clothes"
+                    }
+                },
+                "question": "Do pupils have to wear a uniform or obey a dresscode?",
+                "render": "{dress_code}"
             }
         },
         "title": {
@@ -12132,6 +12387,17 @@
             }
         },
         "tagRenderings": {
+            "group_only": {
+                "mappings": {
+                    "0": {
+                        "then": "This hostel is exclusively for groups"
+                    },
+                    "1": {
+                        "then": "This hostel is not exclusively for groups"
+                    }
+                },
+                "question": "Is this hostel exclusively for groups?"
+            },
             "name": {
                 "question": "What is the name of this {title()}?",
                 "render": "{name}"
@@ -12870,6 +13136,23 @@
                         "text": "Download the private key for your Mangrove Account"
                     }
                 }
+            },
+            "mangrove-reviews-allowed": {
+                "mappings": {
+                    "0": {
+                        "then": "Show reviews by default, also in sensitive themes"
+                    },
+                    "1": {
+                        "then": "Show reviews by default, except in sensitive themes (where we'll ask per feature)"
+                    },
+                    "2": {
+                        "then": "Always ask before loading"
+                    },
+                    "3": {
+                        "then": "Never show reviews at all"
+                    }
+                },
+                "question": "Should reviews be loaded when browsing an item?"
             },
             "more_privacy": {
                 "mappings": {

@@ -1,8 +1,8 @@
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { Map as MlMap } from "maplibre-gl"
 import { Utils } from "../../Utils"
-import { MapLibreAdaptor } from "./MapLibreAdaptor"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
+import RasterLayerHandler from "./RasterLayerHandler"
 
 export default class ShowOverlayRasterLayer {
     private readonly _map: UIEventSource<MlMap>
@@ -42,9 +42,9 @@ export default class ShowOverlayRasterLayer {
     }
 
     private setVisibility() {
-        let zoom = this._mapProperties?.zoom?.data
-        let withinRange = zoom === undefined || zoom > this._layer.min_zoom
-        let isDisplayed = (this._isDisplayed?.data ?? true) && withinRange
+        const zoom = this._mapProperties?.zoom?.data
+        const withinRange = zoom === undefined || zoom > this._layer.min_zoom
+        const isDisplayed = (this._isDisplayed?.data ?? true) && withinRange
         try {
             this._map.data?.setLayoutProperty(
                 this._layer.id,
@@ -78,8 +78,7 @@ export default class ShowOverlayRasterLayer {
             return
         }
         const background: RasterLayerProperties = this._layer
-
-        map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
+        map.addSource(background.id, RasterLayerHandler.prepareSource(background))
         this._mllayer = map.addLayer({
             id: background.id,
             type: "raster",

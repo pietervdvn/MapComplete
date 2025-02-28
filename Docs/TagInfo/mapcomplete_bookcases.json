@@ -4,7 +4,7 @@
     "name": "MapComplete Public bookcases",
     "description": "A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored",
     "project_url": "https://mapcomplete.org/bookcases",
-    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "doc_url": "https://source.mapcomplete.org/MapComplete/MapComplete/src/branch/develop/Docs/Themes",
     "icon_url": "https://mapcomplete.org/assets/themes/bookcases/bookcase.svg",
     "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"

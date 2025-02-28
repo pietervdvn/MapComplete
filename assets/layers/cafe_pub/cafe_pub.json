@@ -11,7 +11,8 @@
     "da": "Caféer og pubber",
     "ca": "Cafés i bars",
     "pl": "Kawiarnie i puby",
-    "cs": "Kavárny a hospody"
+    "cs": "Kavárny a hospody",
+    "uk": "Кафе та паби"
   },
   "description": {
     "en": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",

@@ -29,7 +29,7 @@ class QuestionViz implements SpecialVisualizationSvelte {
         },
         {
             name: "blacklisted-labels",
-            doc: "One or more ';'-separated labels of questions which should _not_ be included",
+            doc: "One or more ';'-separated labels of questions which should _not_ be included. Default: 'hidden'"
         },
     ]
     svelteBased = true
@@ -46,10 +46,13 @@ class QuestionViz implements SpecialVisualizationSvelte {
             ?.split(";")
             ?.map((s) => s.trim())
             ?.filter((s) => s !== "")
-        const blacklist = args[1]
+        const blacklist = (args[1])
             ?.split(";")
             ?.map((s) => s.trim())
             ?.filter((s) => s !== "")
+        if (blacklist.length === 0) {
+            blacklist.push("hidden")
+        }
         return new SvelteUIElement(Questionbox, {
             layer,
             tags,

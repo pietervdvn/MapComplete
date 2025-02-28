@@ -103,7 +103,7 @@ export default class SubstitutingTag extends TagsFilter {
 
     asChange(properties: Readonly<Record<string, string>>): { k: string; v: string }[] {
         if (this._invert) {
-            throw "An inverted substituting tag can not be used to create a change"
+            throw "An inverted substituting tag can not be used to create a change. The offending tag is " + this.asHumanString()
         }
         const v = SubstitutingTag.substituteString(this._value, properties)
         if (v.match(/{.*}/) !== null) {

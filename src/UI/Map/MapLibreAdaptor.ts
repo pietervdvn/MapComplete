@@ -1,23 +1,17 @@
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import maplibregl, {
-    Map as MLMap,
-    Map as MlMap,
-    ScaleControl,
-    SourceSpecification,
-} from "maplibre-gl"
+import maplibregl, { Map as MLMap, Map as MlMap, ScaleControl } from "maplibre-gl"
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
 import { ExportableMap, KeyNavigationEvent, MapProperties } from "../../Models/MapProperties"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
-import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import * as htmltoimage from "html-to-image"
-import RasterLayerHandler from "./RasterLayerHandler"
 import Constants from "../../Models/Constants"
 import { Protocol } from "pmtiles"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { Feature, LineString } from "geojson"
+import RasterLayerHandler from "./RasterLayerHandler"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -125,7 +119,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             nearestFeature?: Feature
         }>(undefined)
         this.lastClickLocation = lastClickLocation
-        const self = this
 
         new RasterLayerHandler(this._maplibreMap, this.rasterLayer)
 
@@ -292,10 +285,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             }),
             mapproperties: new MapLibreAdaptor(mlmap),
         }
-    }
-
-    public static prepareWmsSource(layer: RasterLayerProperties): SourceSpecification {
-        return RasterLayerHandler.prepareSource(layer)
     }
 
     /**

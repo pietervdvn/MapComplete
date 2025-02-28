@@ -1,12 +1,15 @@
-import { Map as MLMap, RasterSourceSpecification, VectorTileSource } from "maplibre-gl"
+import { Map as MLMap, RasterSourceSpecification } from "maplibre-gl"
 import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import { Utils } from "../../Utils"
 import { VectorSourceSpecification } from "@maplibre/maplibre-gl-style-spec"
+import { ProtomapsLanguageSupport } from "./ProtomapsLanguageSupport"
 
 class SingleBackgroundHandler {
-    // Value between 0 and 1.0
+    /**
+     * Current opacity of this layer, Value between 0 and 1.0
+     * */
     public opacity = new UIEventSource<number>(0.0)
     private _map: Store<MLMap>
     private _background: UIEventSource<RasterLayerPolygon | undefined>
@@ -18,15 +21,18 @@ class SingleBackgroundHandler {
      */
     public static readonly DEACTIVATE_AFTER = 60
     private fadeStep = 0.1
+    private _languageSupport: ProtomapsLanguageSupport
 
     constructor(
         map: Store<MLMap>,
         targetLayer: RasterLayerPolygon,
-        background: UIEventSource<RasterLayerPolygon | undefined>
+        background: UIEventSource<RasterLayerPolygon | undefined>,
+        languageSupport: ProtomapsLanguageSupport
     ) {
         this._targetLayer = targetLayer
         this._map = map
         this._background = background
+        this._languageSupport = languageSupport
 
         background.addCallback(async () => {
             await this.update()
@@ -64,7 +70,7 @@ class SingleBackgroundHandler {
                 map.removeLayer(<string>this._targetLayer.properties.id)
             }
         } catch (e) {
-            console.warn("Could not (try to) remove the raster layer", e)
+            // Probably already removed
         }
     }
 
@@ -95,7 +101,7 @@ class SingleBackgroundHandler {
     private async enable() {
         let ttl = 15
         await this.awaitStyleIsLoaded()
-        while (!this.tryEnable() && ttl > 0) {
+        while (this._background.data.properties.id === this._targetLayer.properties.id && !this.tryEnable() && ttl > 0) {
             ttl--
             await Utils.waitFor(250)
         }
@@ -137,6 +143,11 @@ class SingleBackgroundHandler {
             if (background.type === "vector") {
                 const styleToSet = background.style ?? background.url
                 map.setStyle(styleToSet)
+                this.awaitStyleIsLoaded().then(() => {
+                    console.log("UPDATING")
+                    this._languageSupport.update()
+                })
+
             } else {
                 map.addLayer(
                     {
@@ -144,12 +155,15 @@ class SingleBackgroundHandler {
                         type: "raster",
                         source: background.id,
                         paint: {
-                            "raster-opacity": 0,
-                        },
+                            "raster-opacity": 0
+                        }
                     },
                     addLayerBeforeId
                 )
                 this.opacity.addCallbackAndRun((o) => {
+                    if (map.getStyle() === undefined || map.getLayer(background.id) === undefined) {
+                        return true
+                    }
                     try {
                         map.setPaintProperty(background.id, "raster-opacity", o)
                     } catch (e) {
@@ -166,38 +180,53 @@ class SingleBackgroundHandler {
         Stores.Chronic(
             8,
             () => this.opacity.data > 0 && this._deactivationTime !== undefined
-        ).addCallback((_) => this.opacity.setData(Math.max(0, this.opacity.data - this.fadeStep)))
+        ).addCallback(() => {
+            try {
+                this.opacity.setData(Math.max(0, this.opacity.data - this.fadeStep))
+            } catch (e) {
+                // The layer probably got pruned; we just unregister
+                return true
+            }
+        })
     }
 
     private fadeIn() {
         Stores.Chronic(
             8,
             () => this.opacity.data < 1.0 && this._deactivationTime === undefined
-        ).addCallback((_) => this.opacity.setData(Math.min(1.0, this.opacity.data + this.fadeStep)))
+        ).addCallback(() => {
+            try {
+                this.opacity.setData(Math.min(1.0, this.opacity.data + this.fadeStep))
+            } catch (e) {
+                // The layer probably got pruned; we just unregister
+                return true
+            }
+        })
     }
 }
 
 export default class RasterLayerHandler {
     private _singleLayerHandlers: Record<string, SingleBackgroundHandler> = {}
+    private _languageSupport: ProtomapsLanguageSupport
 
     constructor(map: Store<MLMap>, background: UIEventSource<RasterLayerPolygon | undefined>) {
         background.addCallbackAndRunD((l) => {
             const key = l.properties.id
             if (!this._singleLayerHandlers[key]) {
-                this._singleLayerHandlers[key] = new SingleBackgroundHandler(map, l, background)
+                this._singleLayerHandlers[key] = new SingleBackgroundHandler(map, l, background, this._languageSupport)
             }
         })
+        this._languageSupport = new ProtomapsLanguageSupport(map)
     }
 
     public static prepareSource(
         layer: RasterLayerProperties
     ): RasterSourceSpecification | VectorSourceSpecification {
         if (layer.type === "vector") {
-            const vs: VectorSourceSpecification = {
+            return {
                 type: "vector",
-                url: layer.url,
+                url: layer.url
             }
-            return vs
         }
         return {
             type: "raster",
@@ -208,7 +237,7 @@ export default class RasterLayerHandler {
             minzoom: layer["min_zoom"] ?? 1,
             maxzoom: layer["max_zoom"] ?? 25,
             // Bit of a hack, but seems to work
-            scheme: layer.url.includes("{-y}") ? "tms" : "xyz",
+            scheme: layer.url.includes("{-y}") ? "tms" : "xyz"
         }
     }
 
@@ -222,7 +251,7 @@ export default class RasterLayerHandler {
             "{width}": "" + size,
             "{height}": "" + size,
             "{zoom}": "{z}",
-            "{-y}": "{y}",
+            "{-y}": "{y}"
         }
 
         for (const key in toReplace) {

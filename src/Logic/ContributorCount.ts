@@ -16,10 +16,9 @@ export default class ContributorCount {
         perLayer: ReadonlyMap<string, GeoIndexedStore>
     }) {
         this.perLayer = state.perLayer
-        const self = this
         state.mapProperties.bounds.mapD(
             (bbox) => {
-                self.update(bbox)
+                this.update(bbox)
             },
             [state.dataIsLoading]
         )

@@ -2065,6 +2065,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -2091,6 +2094,116 @@
         },
         "title": {
             "render": "Bordeel"
+        }
+    },
+    "building": {
+        "tagRenderings": {
+            "architecture": {
+                "mappings": {
+                    "0": {
+                        "then": "Islamitische architectuur"
+                    },
+                    "1": {
+                        "then": "Mamelukse architectuur"
+                    },
+                    "10": {
+                        "then": "Neo-Moorse architectuur"
+                    },
+                    "11": {
+                        "then": "Neoclassicistische architectuur"
+                    },
+                    "12": {
+                        "then": "Georgian architectuur"
+                    },
+                    "13": {
+                        "then": "Victoriaanse architectuur"
+                    },
+                    "14": {
+                        "then": "Historisme"
+                    },
+                    "15": {
+                        "then": "Neo-Romaanse architectuur"
+                    },
+                    "16": {
+                        "then": "Neo-Byzantijnse architectuur"
+                    },
+                    "17": {
+                        "then": "Neo-Gotische architectuur"
+                    },
+                    "18": {
+                        "then": "Neo-Renaissance architectuur"
+                    },
+                    "19": {
+                        "then": "Neo-Barokarchitectuur"
+                    },
+                    "2": {
+                        "then": "Romaanse architectuur"
+                    },
+                    "20": {
+                        "then": "Art Nouveau"
+                    },
+                    "21": {
+                        "then": "Eclecticisme in architectuur"
+                    },
+                    "22": {
+                        "then": "Functionalisme"
+                    },
+                    "23": {
+                        "then": "Kubisme"
+                    },
+                    "24": {
+                        "then": "Nieuwe Zakelijkheid"
+                    },
+                    "25": {
+                        "then": "Art Deco"
+                    },
+                    "26": {
+                        "then": "Moderne architectuur"
+                    },
+                    "27": {
+                        "then": "Amsterdamse School"
+                    },
+                    "28": {
+                        "then": "Internationale Stijl"
+                    },
+                    "29": {
+                        "then": "Constructivisme"
+                    },
+                    "3": {
+                        "then": "Gotische architectuur"
+                    },
+                    "30": {
+                        "then": "Stalinistische architectuur"
+                    },
+                    "31": {
+                        "then": "Brutalistische architectuur"
+                    },
+                    "32": {
+                        "then": "Postmoderne architectuur"
+                    },
+                    "33": {
+                        "then": "Hedendaagse architectuur"
+                    },
+                    "4": {
+                        "then": "Renaissance-architectuur"
+                    },
+                    "5": {
+                        "then": "Maniërisme"
+                    },
+                    "6": {
+                        "then": "Ottomaanse architectuur"
+                    },
+                    "7": {
+                        "then": "Barokarchitectuur"
+                    },
+                    "8": {
+                        "then": "Rococo"
+                    },
+                    "9": {
+                        "then": "Empirestijl"
+                    }
+                }
+            }
         }
     },
     "cafe_pub": {
@@ -3666,6 +3779,62 @@
             "render": "fietssnelweg"
         }
     },
+    "cyclestreets": {
+        "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen",
+        "name": "Fietsstraten",
+        "tagRenderings": {
+            "future_cyclestreet": {
+                "question": "Wanneer wordt deze straat een fietsstraat?",
+                "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
+            },
+            "is_cyclestreet": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze straat is een fietsstraat (en dus zone 30)"
+                    },
+                    "1": {
+                        "then": "Deze straat is een fietsstraat"
+                    },
+                    "2": {
+                        "then": "Deze straat is een fietsstraat (snelheid van 30 km/h en voertuigen niet toegestaan) (bord wordt later gevraagd)"
+                    },
+                    "3": {
+                        "then": "Deze straat is een fietsstraat"
+                    },
+                    "4": {
+                        "then": "Deze straat wordt binnenkort een fietsstraat"
+                    },
+                    "5": {
+                        "then": "Deze straat wordt binnenkort een fietsstraat"
+                    },
+                    "6": {
+                        "then": "Deze straat is geen fietsstraat"
+                    }
+                },
+                "question": "Is de straat <b>{name}</b> een fietsstraat?"
+            },
+            "supplementary_sign": {
+                "mappings": {
+                    "0": {
+                        "then": "Aanwonenden toegestaan"
+                    },
+                    "1": {
+                        "then": "Motorvoertuigen toegestaan"
+                    },
+                    "2": {
+                        "then": "Motoren toegestaan"
+                    },
+                    "3": {
+                        "then": "Auto's toegestaan"
+                    },
+                    "4": {
+                        "then": "Er zijn geen onderborden bij deze fietsstraat."
+                    }
+                },
+                "question": "Welk bord heeft deze fietsstraat?"
+            }
+        }
+    },
     "cycleways_and_roads": {
         "description": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
         "name": "Fietspaden, straten en wegen",
@@ -3767,20 +3936,6 @@
                 },
                 "question": "Waaruit is het oppervlak van het fietspad van gemaakt?",
                 "render": "Dit fietspad is gemaakt van {cycleway:surface}"
-            },
-            "Is this a cyclestreet? (For a road)": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit is een fietsstraat, en dus een 30km/h zone"
-                    },
-                    "1": {
-                        "then": "Dit is een fietsstraat"
-                    },
-                    "2": {
-                        "then": "Dit is geen fietsstraat"
-                    }
-                },
-                "question": "Is dit een fietsstraat?"
             },
             "Maxspeed (for road)": {
                 "mappings": {
@@ -4068,6 +4223,22 @@
     },
     "defibrillator": {
         "description": "Een laag die defibrillatoren toont die je kan gebruiken bij noodgevallen. Dit omvat zowel publiek beschikbare toestellen als defibrillatoren waarvoor het toestel enkel door personeel aangeboden kan worden",
+        "filter": {
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Enkel die meer dan 90 dagen geleden ter plaatse zijn nagezien"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Onbekende toegang of onbekende tijden waarop toegankelijk"
+                    }
+                }
+            }
+        },
         "name": "Defibrillatoren",
         "presets": {
             "0": {
@@ -4098,23 +4269,6 @@
                 },
                 "question": "Is deze defibrillator vrij toegankelijk?",
                 "render": "Toegankelijkheid is {access}"
-            },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "0": {
-                        "then": "Er is geen info over het soort toestel"
-                    },
-                    "1": {
-                        "then": "Dit is een manueel toestel enkel voor professionals"
-                    },
-                    "2": {
-                        "then": "Dit is een gewone automatische defibrillator"
-                    },
-                    "3": {
-                        "then": "Dit is een speciaal type defibrillator: {defibrillator}"
-                    }
-                },
-                "question": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?"
             },
             "defibrillator-defibrillator:location": {
                 "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in de plaatselijke taal)",
@@ -4182,6 +4336,11 @@
             },
             "opening_hours_24_7": {
                 "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Niet 24/7 bereikbaar, maar de exacte uren zijn niet bekend"
+                        }
+                    },
                     "question": "Wanneer is deze defibrillator beschikbaar?"
                 }
             }
@@ -4897,6 +5056,20 @@
                     },
                     "2": {
                         "question": "Geen honden toegelaten"
+                    }
+                }
+            },
+            "18": {
+                "options": {
+                    "0": {
+                        "question": "Publiek toegankelijk"
+                    }
+                }
+            },
+            "19": {
+                "options": {
+                    "0": {
+                        "question": "Toegankelijk voor rolstoelgebruikers"
                     }
                 }
             },
@@ -5959,10 +6132,34 @@
                         "then": "Deze stoeprand heeft geen voelbare bestrating."
                     },
                     "2": {
+                        "then": "Deze stoeprand heeft voelbare bestrating, die een contrasterende kleur heeft ten opzichte van de omliggende bestrating."
+                    },
+                    "3": {
                         "then": "Deze stoeprand heeft voelbare bestrating, maar deze is incorrect."
                     }
                 },
                 "question": "Is er voelbare bestrating bij deze stoeprand?"
+            },
+            "tactile-paving-colour": {
+                "freeform": {
+                    "placeholder": "Kleur van de voelbare bestrating"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "De voelbare bestrating is geel."
+                    },
+                    "1": {
+                        "then": "De voelbare bestrating is rood."
+                    },
+                    "2": {
+                        "then": "De voelbare bestrating is wit."
+                    },
+                    "3": {
+                        "then": "De voelbare bestrating is grijs."
+                    }
+                },
+                "question": "Wat is de kleur van de voelbare bestrating?",
+                "render": "De voelbare bestrating is {tactile_paving:colour} gekleurd."
             }
         },
         "title": {
@@ -6380,6 +6577,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
             "render": "Natuurgebied"
         }
     },
@@ -6909,6 +7111,21 @@
         },
         "title": {
             "render": "Picknicktafel"
+        }
+    },
+    "play_forest": {
+        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
+        "name": "Speelbossen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "Speelbos {name}"
+                }
+            },
+            "render": "Speelbos"
         }
     },
     "playground": {
@@ -8275,6 +8492,32 @@
                     }
                 },
                 "question": "Welke soorten zorg voor buitengewone leerlingen is hier beschikbaar?"
+            },
+            "uniform": {
+                "mappings": {
+                    "0": {
+                        "then": "Studenten moeten een specifiek uniform dragen"
+                    },
+                    "1": {
+                        "then": "Leerlingen moeten kleren van een bepaalde kleur dragen"
+                    },
+                    "2": {
+                        "then": "Er is geen uniformverplichting, leerlingen mogen kledij zoals t-shirts, jeans, ... dragen"
+                    },
+                    "3": {
+                        "then": "De armen moeten volledig bedekt zijn"
+                    },
+                    "4": {
+                        "then": "De knieën moeten volledig bedekt zijn"
+                    },
+                    "5": {
+                        "then": "De benen moeten volledig bedekt zijn"
+                    },
+                    "6": {
+                        "then": "De buik mag niet zichtbaar zijn"
+                    }
+                },
+                "question": "Moeten leerlingen een uniform dragen of specifieke kledingsvoorschriften volgen?"
             }
         },
         "title": {
@@ -8564,6 +8807,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -10729,13 +10975,25 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
+        "name": "Speelweide",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Speelweide"
+        }
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
                 "1": {
                     "then": "{name}"
                 }
