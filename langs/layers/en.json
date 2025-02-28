@@ -10023,6 +10023,33 @@
                     }
                 },
                 "question": "What type of special needs are given here?"
+            },
+            "uniform": {
+                "mappings": {
+                    "0": {
+                        "then": "Students must wear a uniform, which is extensively described"
+                    },
+                    "1": {
+                        "then": "Students must wear clothes in a specific colour scheme"
+                    },
+                    "2": {
+                        "then": "There is no formal dress code, students are allowed to come in casual wear such as t-shirt, jeans, ..."
+                    },
+                    "3": {
+                        "then": "Arms must be covered by the clothes"
+                    },
+                    "4": {
+                        "then": "Knees must be covered by the clothes"
+                    },
+                    "5": {
+                        "then": "Legs must be covered by the clothes"
+                    },
+                    "6": {
+                        "then": "The belly must be covered by the clothes"
+                    }
+                },
+                "question": "Do pupils have to wear a uniform or obey a dresscode?",
+                "render": "{dress_code}"
             }
         },
         "title": {
@@ -13109,6 +13136,23 @@
                         "text": "Download the private key for your Mangrove Account"
                     }
                 }
+            },
+            "mangrove-reviews-allowed": {
+                "mappings": {
+                    "0": {
+                        "then": "Show reviews by default, also in sensitive themes"
+                    },
+                    "1": {
+                        "then": "Show reviews by default, except in sensitive themes (where we'll ask per feature)"
+                    },
+                    "2": {
+                        "then": "Always ask before loading"
+                    },
+                    "3": {
+                        "then": "Never show reviews at all"
+                    }
+                },
+                "question": "Should reviews be loaded when browsing an item?"
             },
             "more_privacy": {
                 "mappings": {

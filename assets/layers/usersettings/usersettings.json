@@ -1151,6 +1151,39 @@
       "metacondition": "_uid~*"
     },
     {
+      "id": "mangrove-reviews-allowed",
+      "question": {
+        "en": "Should reviews be loaded when browsing an item?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-reviews-allowed=always",
+          "then": {
+            "en": "Show reviews by default, also in sensitive themes"
+          }
+        },
+        {
+          "if": "mapcomplete-reviews-allowed=yes",
+          "alsoShowIf": "mapcomplete-reviews-allowed=",
+          "then": {
+            "en": "Show reviews by default, except in sensitive themes (where we'll ask per feature)"
+          }
+        },
+        {
+          "if": "mapcomplete-reviews-allowed=ask",
+          "then": {
+            "en": "Always ask before loading reviews"
+          }
+        },
+        {
+          "if": "mapcomplete-reviews-allowed=hidden",
+          "then": {
+            "en": "Never show reviews at all"
+          }
+        }
+      ]
+    },
+    {
       "id": "title-id",
       "render": {
         "en": "<h3>Mangrove ID management</h3>",

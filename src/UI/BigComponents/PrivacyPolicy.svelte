@@ -4,15 +4,22 @@
   import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import UserRelatedState from "../../Logic/State/UserRelatedState"
+  import type { Feature } from "geojson"
 
   const t = Translations.t.privacy
   export let state: SpecialVisualizationState
   const usersettings = UserRelatedState.usersettingsConfig
   const editPrivacy = usersettings.tagRenderings.find((tr) => tr.id === "more_privacy")
   const editThemeHistory = usersettings.tagRenderings.find((tr) => tr.id === "sync-visited-themes")
+  const editReviews = usersettings.tagRenderings.find((tr) => tr.id === "mangrove-reviews-allowed")
+
   const editLocationHistory = usersettings.tagRenderings.find((tr) => tr.id === "sync-visited-locations")
 
-
+  const selectedElement: Feature = {
+    type: "Feature",
+    properties: { id: "settings" },
+    geometry: { type: "Point", coordinates: [0, 0] }
+  }
   const isLoggedIn = state.osmConnection.isLoggedIn
 </script>
 
@@ -80,11 +87,7 @@
       <li>
         <TagRenderingEditable
           config={editLocationHistory}
-          selectedElement={{
-            type: "Feature",
-            properties: { id: "settings" },
-            geometry: { type: "Point", coordinates: [0, 0] },
-          }}
+          {selectedElement}
           {state}
           tags={state.userRelatedState.preferencesAsTags}
         />
@@ -93,11 +96,7 @@
 
         <TagRenderingEditable
           config={editThemeHistory}
-          selectedElement={{
-            type: "Feature",
-            properties: { id: "settings" },
-            geometry: { type: "Point", coordinates: [0, 0] },
-          }}
+          {selectedElement}
           {state}
           tags={state.userRelatedState.preferencesAsTags}
         />
@@ -113,6 +112,14 @@
     <Tr t={t.miscCookiesTitle} />
   </h3>
   <Tr t={t.miscCookies} />
+
+  <TagRenderingEditable
+    config={editReviews}
+    {selectedElement}
+    {state}
+    tags={state.userRelatedState.preferencesAsTags}
+  />
+
 
   <h3>
     <Tr t={t.whileYoureHere} />

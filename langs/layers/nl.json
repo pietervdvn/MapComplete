@@ -8492,6 +8492,32 @@
                     }
                 },
                 "question": "Welke soorten zorg voor buitengewone leerlingen is hier beschikbaar?"
+            },
+            "uniform": {
+                "mappings": {
+                    "0": {
+                        "then": "Studenten moeten een specifiek uniform dragen"
+                    },
+                    "1": {
+                        "then": "Leerlingen moeten kleren van een bepaalde kleur dragen"
+                    },
+                    "2": {
+                        "then": "Er is geen uniformverplichting, leerlingen mogen kledij zoals t-shirts, jeans, ... dragen"
+                    },
+                    "3": {
+                        "then": "De armen moeten volledig bedekt zijn"
+                    },
+                    "4": {
+                        "then": "De knieën moeten volledig bedekt zijn"
+                    },
+                    "5": {
+                        "then": "De benen moeten volledig bedekt zijn"
+                    },
+                    "6": {
+                        "then": "De buik mag niet zichtbaar zijn"
+                    }
+                },
+                "question": "Moeten leerlingen een uniform dragen of specifieke kledingsvoorschriften volgen?"
             }
         },
         "title": {

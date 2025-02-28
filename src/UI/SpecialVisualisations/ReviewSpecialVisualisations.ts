@@ -47,7 +47,7 @@ export class ReviewSpecialVisualisations {
                         nameKey: nameKey,
                         fallbackName,
                     },
-                    state.featureSwitchIsTesting
+                    state
                 )
                 return new SvelteUIElement(ReviewForm, {
                     reviews,
@@ -76,7 +76,7 @@ export class ReviewSpecialVisualisations {
                     doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
                 },
             ],
-            constr: (state, tags, args, feature, layer) => {
+            constr: (state, tags, args, feature) => {
                 const nameKey = args[0] ?? "name"
                 const fallbackName = args[1]
                 const reviews = FeatureReviews.construct(
@@ -87,9 +87,9 @@ export class ReviewSpecialVisualisations {
                         nameKey: nameKey,
                         fallbackName,
                     },
-                    state.featureSwitchIsTesting
+                    state
                 )
-                return new SvelteUIElement(AllReviews, { reviews, state, tags, feature, layer })
+                return new SvelteUIElement(AllReviews, { reviews, state })
             },
         }
         return [
@@ -120,7 +120,7 @@ export class ReviewSpecialVisualisations {
                             nameKey: nameKey,
                             fallbackName,
                         },
-                        state.featureSwitchIsTesting
+                        state
                     )
                     return new SvelteUIElement(StarsBarIcon, {
                         score: reviews.average,
@@ -181,7 +181,6 @@ export class ReviewSpecialVisualisations {
                 ): BaseUIElement {
                     return new Combine([
                         createReview.constr(state, tagSource, args, feature, layer),
-
                         listReviews.constr(state, tagSource, args, feature, layer),
                     ])
                 },

@@ -5,20 +5,15 @@
   import StarsBar from "./StarsBar.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import { UIEventSource } from "../../Logic/UIEventSource"
-  import type { Feature } from "geojson"
-  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-  import Mangrove_logo from "../../assets/svg/Mangrove_logo.svelte"
+  import ReviewPrivacyShield from "./ReviewPrivacyShield.svelte"
+  import ThemeViewState from "../../Models/ThemeViewState"
 
   /**
    * An element showing all reviews
    */
   export let reviews: FeatureReviews
-  export let state: SpecialVisualizationState
-  export let tags: UIEventSource<Record<string, string>>
-  export let feature: Feature
-  export let layer: LayerConfig
+  export let state: ThemeViewState
+
   let average = reviews.average
   let _reviews = []
   reviews.reviews.addCallbackAndRunD((r) => {
@@ -26,20 +21,22 @@
   })
 </script>
 
-<div class="border-2 border-dashed border-gray-300 p-2">
-  {#if _reviews.length > 1}
-    <StarsBar score={$average} />
-  {/if}
-  {#if _reviews.length > 0}
-    {#each _reviews as review}
-      <SingleReview {review} />
-    {/each}
-  {:else}
-    <div class="subtle m-2 italic">
-      <Tr t={Translations.t.reviews.no_reviews_yet} />
+<ReviewPrivacyShield {reviews} guistate={state.guistate}>
+  <div class="border-2 border-dashed border-gray-300 p-2">
+    {#if _reviews.length > 1}
+      <StarsBar score={$average} />
+    {/if}
+    {#if _reviews.length > 0}
+      {#each _reviews as review}
+        <SingleReview {review} />
+      {/each}
+    {:else}
+      <div class="subtle m-2 italic">
+        <Tr t={Translations.t.reviews.no_reviews_yet} />
+      </div>
+    {/if}
+    <div class="flex justify-end">
+      <Tr cls="text-sm subtle" t={Translations.t.reviews.attribution} />
     </div>
-  {/if}
-  <div class="flex justify-end">
-    <Tr cls="text-sm subtle" t={Translations.t.reviews.attribution} />
   </div>
-</div>
+</ReviewPrivacyShield>

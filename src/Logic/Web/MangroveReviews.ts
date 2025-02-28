@@ -3,6 +3,7 @@ import { MangroveReviews, Review } from "mangrove-reviews-typescript"
 import { Utils } from "../../Utils"
 import { Feature, Position } from "geojson"
 import { GeoOperations } from "../GeoOperations"
+import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
 export class MangroveIdentity {
     private readonly keypair: UIEventSource<CryptoKeyPair> = new UIEventSource<CryptoKeyPair>(
@@ -116,12 +117,12 @@ export class MangroveIdentity {
                 return []
             }
             const allReviews = await MangroveReviews.getReviews({
-                kid: pem,
+                kid: pem
             })
             this.allReviewsById.setData(
                 allReviews.reviews.map((r) => ({
                     ...r,
-                    ...r.payload,
+                    ...r.payload
                 }))
             )
         })
@@ -157,6 +158,7 @@ export default class FeatureReviews {
     private readonly _name: Store<string>
     private readonly _identity: MangroveIdentity
     private readonly _testmode: Store<boolean>
+    public loadingAllowed: UIEventSource<boolean | null>
 
     private constructor(
         feature: Feature,
@@ -167,8 +169,10 @@ export default class FeatureReviews {
             fallbackName?: string
             uncertaintyRadius?: number
         },
-        testmode?: Store<boolean>
+        testmode?: Store<boolean>,
+        loadingAllowed?: UIEventSource<boolean | null>
     ) {
+        this.loadingAllowed = loadingAllowed
         const centerLonLat = GeoOperations.centerpointCoordinates(feature)
         ;[this._lon, this._lat] = centerLonLat
         this._identity = mangroveIdentity
@@ -222,6 +226,9 @@ export default class FeatureReviews {
          */
         this.ConstructSubjectUri(true).mapD(
             async (sub) => {
+                if (!loadingAllowed.data) {
+                    return
+                }
                 try {
                     const reviews = await MangroveReviews.getReviews({ sub })
                     console.debug("Got reviews (no-encode) for", feature, reviews, sub)
@@ -230,7 +237,7 @@ export default class FeatureReviews {
                     console.log("Could not fetch reviews for partially incorrect query ", sub)
                 }
             },
-            [this._name]
+            [this._name, loadingAllowed]
         )
         this.average = this._reviews.map((reviews) => {
             if (!reviews) {
@@ -268,19 +275,39 @@ export default class FeatureReviews {
             fallbackName?: string
             uncertaintyRadius?: number
         },
-        testmode: Store<boolean>
+        state: SpecialVisualizationState
     ): FeatureReviews {
         const key = feature.properties.id
         const cached = FeatureReviews._featureReviewsCache[key]
         if (cached !== undefined) {
             return cached
         }
+        const themeIsSensitive = state.theme?.enableMorePrivacy
+        const settings = state.osmConnection.getPreference<"always" | "yes" | "ask" | "hidden">("reviews-allowed")
+        const loadingAllowed = new UIEventSource(false)
+        settings.addCallbackAndRun((s) => {
+            console.log("Reviews allowed is", s)
+            if (s === "hidden") {
+                loadingAllowed.set(null)
+                return
+            }
+            if (s === "always") {
+                loadingAllowed.set(true)
+                return
+            }
+            if (themeIsSensitive || s === "ask") {
+                loadingAllowed.set(false)
+                return
+            }
+            loadingAllowed.set(true)
+        })
         const featureReviews = new FeatureReviews(
             feature,
             tagsSource,
             mangroveIdentity,
             options,
-            testmode
+            state.featureSwitchIsTesting,
+            loadingAllowed
         )
         FeatureReviews._featureReviewsCache[key] = featureReviews
         return featureReviews
@@ -302,7 +329,7 @@ export default class FeatureReviews {
         }
         const r: Review = {
             sub: this.subjectUri.data,
-            ...review,
+            ...review
         }
         const keypair: CryptoKeyPair = await this._identity.getKeypair()
         const jwt = await MangroveReviews.signReview(keypair, r)
@@ -317,7 +344,7 @@ export default class FeatureReviews {
             ...r,
             kid,
             signature: jwt,
-            madeByLoggedInUser: new ImmutableStore(true),
+            madeByLoggedInUser: new ImmutableStore(true)
         }
         this._reviews.data.push(reviewWithKid)
         this._reviews.ping()
@@ -375,7 +402,7 @@ export default class FeatureReviews {
                 signature: reviewData.signature,
                 madeByLoggedInUser: this._identity.getKeyId().map((user_key_id) => {
                     return reviewData.kid === user_key_id
-                }),
+                })
             })
             hasNew = true
         }
@@ -401,8 +428,8 @@ export default class FeatureReviews {
             } else if (this._uncertainty > 1000) {
                 console.error(
                     "Not fetching reviews. Only got a point and a very big uncertainty range (" +
-                        this._uncertainty +
-                        "), so you'd probably only get garbage. Specify a name"
+                    this._uncertainty +
+                    "), so you'd probably only get garbage. Specify a name"
                 )
                 return undefined
             }
