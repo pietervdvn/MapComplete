@@ -1,3 +1,7 @@
+# WE MOVED
+
+Hi all! The development of mapcomplete moved to [source.mapcomplete.org](https://source.mapcomplete.org/Mapcomplete/mapcomplete). Find us there!
+
 # MapComplete
 
 > Let a thousand flowers bloom
