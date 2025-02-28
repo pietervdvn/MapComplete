@@ -9,7 +9,7 @@
   import { Utils } from "../../Utils"
   import type { ConversionMessage } from "../../Models/ThemeConfig/Conversion/Conversion"
   import ErrorIndicatorForRegion from "./ErrorIndicatorForRegion.svelte"
-  import { ChevronRightIcon, TrashIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { ChevronRightIcon } from "@rgossiaux/svelte-heroicons/solid"
   import SchemaBasedInput from "./SchemaBasedInput.svelte"
   import FloatOver from "../Base/FloatOver.svelte"
   import TagRenderingInput from "./TagRenderingInput.svelte"
